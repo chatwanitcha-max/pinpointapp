@@ -1,0 +1,29 @@
+﻿# Pinpoint Accounting & Service, Ltd.
+
+> Bilingual accounting, tax, DBD, visa/work permit, licensing, and company dissolution services in Thailand.
+
+## Core pages
+- Home: https://pinpointaccountingservice.com/
+- Services: https://pinpointaccountingservice.com/services
+- About: https://pinpointaccountingservice.com/about
+- Resources: https://pinpointaccountingservice.com/resources
+- FAQ: https://pinpointaccountingservice.com/faq
+- Blog: https://pinpointaccountingservice.com/blog
+- Feed: https://pinpointaccountingservice.com/feed.xml
+- Sitemap: https://pinpointaccountingservice.com/sitemap.xml
+
+## Service focus
+- Monthly accounting and tax compliance for Thai and foreign-owned businesses in Thailand.
+- Company registration, DBD amendments, and company dissolution support.
+- Visa, work permit, and business license coordination.
+- Thai and English client communication.
+
+## Content patterns
+- Blog articles include bilingual Thai/English content, executive summaries, and reference-source links.
+- FAQ answers cover onboarding, service scope, English communication, and mobile compatibility.
+- Service pages explain accounting, tax, DBD, visa/work permit, licensing, and dissolution scope.
+
+## Contact
+- Phone: +66-92-749-7442
+- LINE OA: https://lin.ee/58aU8oE
+- Address: 294 Soi Yoo Charoen 29, Ratchadaphisek 18 Rd., Sam Sen Nok, Huai Khwang, Bangkok 10310, Thailand

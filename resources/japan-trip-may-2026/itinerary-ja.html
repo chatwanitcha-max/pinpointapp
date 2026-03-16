@@ -1,0 +1,720 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>日本旅行プラン Osaka + Tokyo（2026/5/11–5/16）</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;800&family=Noto+Sans+Thai:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --paper: #fffdf6;
+        --ink: #0b1b2a;
+        --muted: #5a6773;
+        --line: rgba(11, 27, 42, 0.12);
+        --accent: #d14e3a;
+        --accent-2: #0b6b7a;
+        --shadow: 0 18px 40px rgba(11, 27, 42, 0.18);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: radial-gradient(
+            1100px 520px at 10% 6%,
+            rgba(209, 78, 58, 0.17),
+            transparent 60%
+          ),
+          radial-gradient(
+            900px 520px at 92% 14%,
+            rgba(11, 107, 122, 0.18),
+            transparent 55%
+          ),
+          radial-gradient(
+            840px 520px at 18% 98%,
+            rgba(11, 27, 42, 0.12),
+            transparent 52%
+          ),
+          linear-gradient(180deg, #ffffff, var(--paper));
+        font-family: "Noto Sans JP", "Noto Sans Thai", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .doc {
+        width: 210mm;
+        margin: 0 auto;
+        padding: 14mm;
+      }
+
+      .page {
+        min-height: calc(297mm - 28mm);
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        padding: 0;
+        break-after: page;
+      }
+
+      .page:last-child {
+        break-after: auto;
+      }
+
+      .cover {
+        position: relative;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        background: #0b1b2a;
+      }
+
+      .cover .bg {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(11, 27, 42, 0.05), rgba(11, 27, 42, 0.85));
+        z-index: 2;
+      }
+
+      .cover .grid {
+        display: grid;
+        grid-template-columns: 1.3fr 1fr;
+        gap: 10px;
+        padding: 14px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .cover .grid img {
+        width: 100%;
+        height: 216px;
+        object-fit: cover;
+        border-radius: 14px;
+        filter: saturate(1.08) contrast(1.04);
+      }
+
+      .cover .grid .tall {
+        height: 442px;
+      }
+
+      .cover .text {
+        position: absolute;
+        left: 18px;
+        right: 18px;
+        bottom: 18px;
+        z-index: 3;
+        color: #fff;
+      }
+
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(255, 253, 246, 0.14);
+        border: 1px solid rgba(255, 253, 246, 0.22);
+        backdrop-filter: blur(8px);
+        font-weight: 600;
+        letter-spacing: 0.2px;
+      }
+
+      .cover h1 {
+        margin: 10px 0 6px;
+        font-size: 30px;
+        line-height: 1.12;
+        letter-spacing: 0.2px;
+      }
+
+      .cover p {
+        margin: 0;
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.88);
+      }
+
+      .facts {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin-top: 12px;
+      }
+
+      .fact {
+        padding: 10px 12px;
+        border-radius: 14px;
+        background: rgba(255, 253, 246, 0.12);
+        border: 1px solid rgba(255, 253, 246, 0.2);
+      }
+
+      .fact .k {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 4px;
+      }
+
+      .fact .v {
+        font-size: 13px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.25;
+      }
+
+      .row {
+        display: grid;
+        grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+        gap: 12px;
+      }
+
+      .row > * {
+        min-width: 0;
+      }
+
+      .card {
+        border-radius: 16px;
+        background: rgba(255, 253, 246, 0.72);
+        border: 1px solid var(--line);
+        box-shadow: 0 10px 30px rgba(11, 27, 42, 0.08);
+        overflow: hidden;
+      }
+
+      .card .hd {
+        padding: 12px 14px 10px;
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+        border-bottom: 1px solid var(--line);
+        background: linear-gradient(180deg, rgba(209, 78, 58, 0.09), rgba(255, 253, 246, 0.7));
+      }
+
+      .card .hd h2 {
+        margin: 0;
+        font-size: 14px;
+        letter-spacing: 0.2px;
+      }
+
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: rgba(11, 107, 122, 0.08);
+        border: 1px solid rgba(11, 107, 122, 0.18);
+        color: var(--ink);
+        font-size: 12px;
+        font-weight: 700;
+        white-space: normal;
+        max-width: 100%;
+      }
+
+      .card .bd {
+        padding: 12px 14px 14px;
+      }
+
+      .itinerary {
+        display: grid;
+        gap: 10px;
+      }
+
+      .day {
+        display: grid;
+        grid-template-columns: 82px 1fr;
+        gap: 12px;
+        padding: 10px;
+        border-radius: 14px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.66);
+      }
+
+      .thumb {
+        width: 82px;
+        height: 82px;
+        border-radius: 14px;
+        overflow: hidden;
+        border: 1px solid rgba(11, 27, 42, 0.12);
+        background: #f2f4f6;
+      }
+
+      .thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .day h3 {
+        margin: 0 0 4px;
+        font-size: 14px;
+        letter-spacing: 0.2px;
+      }
+
+      .meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin: 0 0 6px;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        padding: 5px 9px;
+        border-radius: 999px;
+        background: rgba(209, 78, 58, 0.08);
+        border: 1px solid rgba(209, 78, 58, 0.18);
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--ink);
+        white-space: nowrap;
+      }
+
+      .pill.alt {
+        background: rgba(11, 107, 122, 0.08);
+        border-color: rgba(11, 107, 122, 0.18);
+      }
+
+      .desc {
+        margin: 0;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.45;
+      }
+
+      .desc strong {
+        color: var(--ink);
+      }
+
+      .links {
+        display: grid;
+        gap: 8px;
+      }
+
+      .link {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2px;
+        padding: 10px 12px;
+        border-radius: 14px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.7);
+      }
+
+      .link .t {
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.2px;
+      }
+
+      .link .u {
+        font-size: 11px;
+        color: var(--muted);
+        word-break: break-all;
+      }
+
+      .note {
+        padding: 10px 12px;
+        border-radius: 14px;
+        background: rgba(11, 27, 42, 0.04);
+        border: 1px dashed rgba(11, 27, 42, 0.22);
+        color: var(--muted);
+        font-size: 11px;
+        line-height: 1.45;
+      }
+
+      .two {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 10px;
+      }
+
+      .two > * {
+        min-width: 0;
+      }
+
+      .hotel-list {
+        display: grid;
+        gap: 8px;
+      }
+
+      .hotel {
+        padding: 10px 12px;
+        border-radius: 14px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.72);
+      }
+
+      .hotel .n {
+        font-size: 12px;
+        font-weight: 800;
+        margin: 0 0 2px;
+      }
+
+      .hotel .u {
+        font-size: 11px;
+        color: var(--muted);
+        word-break: break-all;
+      }
+
+      .credits {
+        margin-top: 10px;
+        font-size: 10px;
+        color: rgba(90, 103, 115, 0.9);
+        line-height: 1.35;
+      }
+
+      .credits .h {
+        font-weight: 800;
+        color: var(--ink);
+        margin-bottom: 4px;
+        letter-spacing: 0.2px;
+      }
+
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      @media print {
+        body {
+          background: #fff;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="doc">
+      <!-- PAGE 1: COVER -->
+      <section class="page">
+        <div class="cover">
+          <div class="grid">
+            <img class="tall" src="./assets/dotonbori.jpg" alt="Osaka - Dotonbori" />
+            <div style="display: grid; gap: 10px">
+              <img src="./assets/sensoji.jpg" alt="Tokyo - Asakusa Senso-ji" />
+              <img src="./assets/yokohama-minatomirai.jpg" alt="Yokohama - Minato Mirai" />
+            </div>
+          </div>
+          <div class="bg"></div>
+          <div class="text">
+            <div class="tag">Osaka + Tokyo | 2026/5/11–5/16</div>
+            <h1>日本旅行プラン<br />大人2名＋子ども1名（11歳・男の子）</h1>
+            <p>Disney・鉄道・水族館・アニメ | 到着 KIX（大阪）・出発 NRT（東京）</p>
+            <div class="facts">
+              <div class="fact">
+                <div class="k">往路（到着）</div>
+                <div class="v">5/11 18:25<br />KIX → 大阪（なんば）</div>
+              </div>
+              <div class="fact">
+                <div class="k">復路（出発）</div>
+                <div class="v">5/16 21:15<br />NRT → BKK</div>
+              </div>
+              <div class="fact">
+                <div class="k">旅行者</div>
+                <div class="v">大人2名＋子ども1名（11歳）<br />宿泊 なんば / 浅草</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="card">
+            <div class="hd">
+              <h2>主なハイライト</h2>
+              <span class="chip">子どもが楽しめる・移動は無理なく</span>
+            </div>
+            <div class="bd">
+              <p class="desc">
+                <strong>大阪:</strong> USJ（1日）＋ 海遊館（Kaiyukan）＋ LEGOLAND Discovery Center
+                <br />
+                <strong>東京/近郊:</strong> 横浜 カップヌードルミュージアム（体験）＋ 東京ディズニーランド
+                <br />
+                <strong>最終日:</strong> 浅草＋スカイツリー＋（任意）すみだ水族館
+              </p>
+              <div class="note" style="margin-top: 10px">
+                注: 公道カートは年齢要件のため除外し、代わりに LEGO / カップヌードル / 水族館を組み込みました。
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="hd">
+              <h2>事前予約がおすすめ</h2>
+              <span class="chip" style="background: rgba(209, 78, 58, 0.1); border-color: rgba(209, 78, 58, 0.22)">
+                予約リンクは次ページ
+              </span>
+            </div>
+            <div class="bd">
+              <p class="desc">
+                <strong>USJ:</strong> スタジオ・パス（WEBで購入推奨）
+                <br />
+                <strong>海遊館 / LEGOLAND:</strong> e-ticketで待ち時間を短縮
+                <br />
+                <strong>新幹線:</strong> SmartEXで座席指定（3人並び推奨）
+                <br />
+                <strong>カップヌードル:</strong> チキンラーメンファクトリー（父＋子）を予約、当日は早めに到着し整理券確保
+                <br />
+                <strong>ディズニー:</strong> チケットは事前購入（価格は日によって変動）
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PAGE 2: ITINERARY -->
+      <section class="page">
+        <div class="card">
+          <div class="hd">
+            <h2>スケジュール概要（2026/5/11–5/16）</h2>
+            <span class="chip">目安時間・当日調整可</span>
+          </div>
+          <div class="bd">
+            <div class="itinerary">
+              <div class="day">
+                <div class="thumb"><img src="./assets/dotonbori.jpg" alt="Osaka" /></div>
+                <div>
+                  <h3>5/11(月) | 大阪（なんば）</h3>
+                  <div class="meta">
+                    <span class="pill">KIX 18:25着</span>
+                    <span class="pill alt">南海でなんばへ</span>
+                    <span class="pill">なんば泊</span>
+                  </div>
+                  <p class="desc">
+                    入国手続き・荷物受取後、<strong>南海電鉄</strong>（ラピート / 空港急行）でなんばへ → チェックイン → <strong>道頓堀〜なんば</strong>周辺で夕食・散策
+                  </p>
+                </div>
+              </div>
+
+              <div class="day">
+                <div class="thumb"><img src="./assets/usj.jpg" alt="USJ" /></div>
+                <div>
+                  <h3>5/12(火) | ユニバーサル・スタジオ・ジャパン（USJ）</h3>
+                  <div class="meta">
+                    <span class="pill">終日</span>
+                    <span class="pill alt">チケット事前購入</span>
+                  </div>
+                  <p class="desc">
+                    開園前の到着推奨（人気エリアを優先）→ 夕方〜夜にホテルへ戻って休憩
+                  </p>
+                </div>
+              </div>
+
+              <div class="day">
+                <div class="thumb"><img src="./assets/kaiyukan-whaleshark.jpg" alt="Kaiyukan" /></div>
+                <div>
+                  <h3>5/13(水) | 大阪（天保山）→ 東京（浅草）</h3>
+                  <div class="meta">
+                    <span class="pill">海遊館 + LEGO</span>
+                    <span class="pill alt">新幹線</span>
+                    <span class="pill">浅草泊</span>
+                  </div>
+                  <p class="desc">
+                    チェックアウト/荷物預け → <strong>海遊館</strong>＋<strong>LEGOLAND Discovery Center Osaka</strong>（同エリア）
+                    → 夕方 荷物回収 → <strong>新大阪</strong> → 新幹線で東京へ → 浅草チェックイン
+                  </p>
+                </div>
+              </div>
+
+              <div class="day">
+                <div class="thumb"><img src="./assets/cupnoodles-yokohama.jpg" alt="CupNoodles Museum Yokohama" /></div>
+                <div>
+                  <h3>5/14(木) | 横浜 日帰り（カップヌードルミュージアム）</h3>
+                  <div class="meta">
+                    <span class="pill">チキンラーメン（父＋子）</span>
+                    <span class="pill alt">マイカップ（全員）</span>
+                  </div>
+                  <p class="desc">
+                    10:00の開館に合わせて到着し、<strong>マイカップヌードルファクトリー</strong>の整理券を確保（500円/1人1個）
+                    → <strong>チキンラーメンファクトリー</strong> 90分（要予約・2人1組：子ども600円＋大人1,200円＝1,800円）
+                    → みなとみらい散策 → 早めに浅草へ（翌日ディズニー）
+                  </p>
+                </div>
+              </div>
+
+              <div class="day">
+                <div class="thumb"><img src="./assets/tokyo-disneyland-castle.jpg" alt="Tokyo Disneyland" /></div>
+                <div>
+                  <h3>5/15(金) | 東京ディズニーランド</h3>
+                  <div class="meta">
+                    <span class="pill">終日</span>
+                    <span class="pill alt">チケット事前購入</span>
+                  </div>
+                  <p class="desc">
+                    東京ディズニーリゾートの公式サイト/アプリで事前購入（子ども 4–11 の料金あり）→ 夜は浅草で休憩
+                  </p>
+                </div>
+              </div>
+
+              <div class="day">
+                <div class="thumb"><img src="./assets/sensoji.jpg" alt="Asakusa" /></div>
+                <div>
+                  <h3>5/16(土) | 浅草 / スカイツリー → 成田（NRT）</h3>
+                  <div class="meta">
+                    <span class="pill">午前 浅草</span>
+                    <span class="pill alt">すみだ水族館（任意）</span>
+                    <span class="pill">21:15 出発</span>
+                  </div>
+                  <p class="desc">
+                    午前 <strong>浅草寺 / 仲見世</strong> → 昼 <strong>東京スカイツリー</strong>、（任意）<strong>すみだ水族館</strong>
+                    → 17:30〜18:00頃 浅草発 → 19:00頃までに成田空港到着
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PAGE 3: LINKS + HOTELS -->
+      <section class="page">
+        <div class="row">
+          <div class="card">
+            <div class="hd">
+              <h2>チケット/体験 予約リンク（公式）</h2>
+              <span class="chip">PDF内でクリック可</span>
+            </div>
+            <div class="bd">
+              <div class="links">
+                <a class="link" href="https://store.usj.co.jp/en/us/c/ticket" target="_blank" rel="noreferrer">
+                  <div class="t">USJ | WEB Ticket Store（スタジオ・パス / エクスプレス）</div>
+                  <div class="u">https://store.usj.co.jp/en/us/c/ticket</div>
+                </a>
+
+                <a class="link" href="https://pop.kaiyukan.com/language/eng/ticket.html" target="_blank" rel="noreferrer">
+                  <div class="t">海遊館（Kaiyukan）| e-ticket</div>
+                  <div class="u">https://pop.kaiyukan.com/language/eng/ticket.html</div>
+                </a>
+
+                <a class="link" href="https://www.legolanddiscoverycenter.com/osaka/en/tickets-passes/" target="_blank" rel="noreferrer">
+                  <div class="t">LEGOLAND Discovery Center Osaka | Tickets</div>
+                  <div class="u">https://www.legolanddiscoverycenter.com/osaka/en/tickets-passes/</div>
+                </a>
+
+                <a class="link" href="https://smart-ex.jp/en/index.php" target="_blank" rel="noreferrer">
+                  <div class="t">新幹線 | SmartEX（大阪 → 東京）</div>
+                  <div class="u">https://smart-ex.jp/en/index.php</div>
+                </a>
+
+                <a class="link" href="https://www.cupnoodles-museum.jp/reservation/yokohama/?lang=en" target="_blank" rel="noreferrer">
+                  <div class="t">カップヌードルミュージアム横浜 | チキンラーメンファクトリー予約（父＋子）</div>
+                  <div class="u">https://www.cupnoodles-museum.jp/reservation/yokohama/?lang=en</div>
+                </a>
+
+                <a class="link" href="https://www.cupnoodles-museum.jp/en/yokohama/attractions/mc-factory/" target="_blank" rel="noreferrer">
+                  <div class="t">カップヌードルミュージアム横浜 | マイカップ（整理券）</div>
+                  <div class="u">https://www.cupnoodles-museum.jp/en/yokohama/attractions/mc-factory/</div>
+                </a>
+
+                <a class="link" href="https://www.tokyodisneyresort.jp/en/ticket/index.html" target="_blank" rel="noreferrer">
+                  <div class="t">東京ディズニーリゾート | 東京ディズニーランド チケット</div>
+                  <div class="u">https://www.tokyodisneyresort.jp/en/ticket/index.html</div>
+                </a>
+
+                <a class="link" href="https://www.sumida-aquarium.com/en/index.php" target="_blank" rel="noreferrer">
+                  <div class="t">すみだ水族館 | 情報/チケット（任意）</div>
+                  <div class="u">https://www.sumida-aquarium.com/en/index.php</div>
+                </a>
+
+                <a class="link" href="https://www.keisei.co.jp/keisei/tetudou/skyliner/us/skyliner/purchase.php" target="_blank" rel="noreferrer">
+                  <div class="t">京成スカイライナー | 成田空港（NRT）アクセス</div>
+                  <div class="u">https://www.keisei.co.jp/keisei/tetudou/skyliner/us/skyliner/purchase.php</div>
+                </a>
+              </div>
+
+              <div class="note" style="margin-top: 10px">
+                Tip: チキンラーメンファクトリーは「2人1組」の体験です（予約も偶数のみ）。参加者以外は体験ルームに入れません。
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="hd">
+              <h2>ホテル候補（リンク付き）</h2>
+              <span class="chip">料金は日程/プランで変動</span>
+            </div>
+            <div class="bd">
+              <div class="two">
+                <div>
+                  <div class="chip" style="margin-bottom: 8px">大阪 | なんば周辺（おすすめ）</div>
+                  <div class="hotel-list">
+                    <a class="hotel" href="https://swissotelnankaiosaka.com/" target="_blank" rel="noreferrer">
+                      <div class="n">Swissôtel Nankai Osaka</div>
+                      <div class="u">https://swissotelnankaiosaka.com/</div>
+                    </a>
+                    <a class="hotel" href="https://hotel-royalclassic.jp/en/" target="_blank" rel="noreferrer">
+                      <div class="n">HOTEL ROYAL CLASSIC OSAKA</div>
+                      <div class="u">https://hotel-royalclassic.jp/en/</div>
+                    </a>
+                    <a class="hotel" href="https://www.discoverasr.com/en/citadines/japan/citadines-namba-osaka" target="_blank" rel="noreferrer">
+                      <div class="n">Citadines Namba Osaka</div>
+                      <div class="u">https://www.discoverasr.com/en/citadines/japan/citadines-namba-osaka</div>
+                    </a>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="chip" style="margin-bottom: 8px">東京 | 浅草周辺</div>
+                  <div class="hotel-list">
+                    <a class="hotel" href="https://mimaruhotels.com/en/hotel/asakusa-station/" target="_blank" rel="noreferrer">
+                      <div class="n">MIMARU Tokyo Asakusa Station</div>
+                      <div class="u">https://mimaruhotels.com/en/hotel/asakusa-station/</div>
+                    </a>
+                    <a class="hotel" href="https://mimaruhotels.com/en/hotel/suites-tokyo-asakusa/" target="_blank" rel="noreferrer">
+                      <div class="n">MIMARU SUITES Tokyo Asakusa</div>
+                      <div class="u">https://mimaruhotels.com/en/hotel/suites-tokyo-asakusa/</div>
+                    </a>
+                    <a class="hotel" href="https://www.viewhotels.jp/asakusa" target="_blank" rel="noreferrer">
+                      <div class="n">Asakusa View Hotel</div>
+                      <div class="u">https://www.viewhotels.jp/asakusa</div>
+                    </a>
+                    <a class="hotel" href="https://www.gate-hotel.jp/en/asakusa-kaminarimon/" target="_blank" rel="noreferrer">
+                      <div class="n">THE GATE HOTEL KAMINARIMON by HULIC</div>
+                      <div class="u">https://www.gate-hotel.jp/en/asakusa-kaminarimon/</div>
+                    </a>
+                    <a class="hotel" href="https://www.hotelwing.co.jp/en/select/asakusa/" target="_blank" rel="noreferrer">
+                      <div class="n">Hotel Wing International Select Asakusa Komagata</div>
+                      <div class="u">https://www.hotelwing.co.jp/en/select/asakusa/</div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="credits">
+                <div class="h">写真クレジット（Wikimedia Commons）</div>
+                Dotonbori: Martin Falbisoner, CC BY-SA 4.0
+                <br />
+                Senso-ji: Guilhem Vellut, CC BY 2.0
+                <br />
+                Yokohama Minato Mirai: Thirteen-fri, CC BY-SA 3.0
+                <br />
+                Shinkansen (N700): David Kernan, CC BY 4.0
+                <br />
+                Kaiyukan (Whale shark): David Kernan, CC0
+                <br />
+                CupNoodles Museum Yokohama: Hal 0005, CC BY-SA 4.0
+                <br />
+                Tokyo Disneyland Castle: PublicDomainFan08, CC0
+                <br />
+                USJ: Amada44, CC BY-SA 4.0
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
+

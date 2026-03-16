@@ -1,0 +1,6 @@
+﻿User-agent: *
+Allow: /
+
+Host: pinpointaccountingservice.com
+Sitemap: https://pinpointaccountingservice.com/sitemap.xml
+# Feed: https://pinpointaccountingservice.com/feed.xml

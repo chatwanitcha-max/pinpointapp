@@ -1,0 +1,812 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>โปรแกรมเที่ยวภาคเหนือ 1-7 ต.ค. 2569</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --paper: #fffbf4;
+        --ink: #1b2a22;
+        --muted: #5a665f;
+        --line: rgba(27, 42, 34, 0.12);
+        --green: #476a55;
+        --green-soft: rgba(71, 106, 85, 0.1);
+        --gold: #d39a47;
+        --shadow: 0 18px 42px rgba(32, 45, 38, 0.16);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        background:
+          radial-gradient(1000px 520px at 10% 8%, rgba(211, 154, 71, 0.18), transparent 60%),
+          radial-gradient(900px 540px at 88% 10%, rgba(71, 106, 85, 0.16), transparent 56%),
+          radial-gradient(1000px 500px at 24% 100%, rgba(27, 42, 34, 0.1), transparent 54%),
+          linear-gradient(180deg, #ffffff, var(--paper));
+        font-family: "Noto Sans Thai", "Leelawadee UI", Tahoma, sans-serif;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .doc {
+        width: 210mm;
+        margin: 0 auto;
+        padding: 14mm;
+      }
+
+      .page {
+        min-height: calc(297mm - 28mm);
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        break-after: page;
+      }
+
+      .page:last-child {
+        break-after: auto;
+      }
+
+      .cover {
+        position: relative;
+        overflow: hidden;
+        border-radius: 20px;
+        box-shadow: var(--shadow);
+        background: #14211a;
+      }
+
+      .cover::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(14, 23, 19, 0.08), rgba(14, 23, 19, 0.86));
+        z-index: 2;
+      }
+
+      .cover-grid {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: 1.3fr 1fr;
+        gap: 10px;
+        padding: 14px;
+      }
+
+      .cover-grid .stack {
+        display: grid;
+        gap: 10px;
+      }
+
+      .cover-tile {
+        position: relative;
+        display: block;
+      }
+
+      .cover-grid img {
+        width: 100%;
+        border-radius: 16px;
+        object-fit: cover;
+        display: block;
+        filter: saturate(1.05) contrast(1.03);
+      }
+
+      .cover-grid .hero {
+        height: 458px;
+      }
+
+      .cover-grid .half {
+        height: 224px;
+      }
+
+      .cover-grid .mini {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+
+      .cover-grid .mini img {
+        height: 140px;
+      }
+
+      .cover-actions {
+        position: absolute;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 6px;
+      }
+
+      .cover-chip {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 22px;
+        padding: 4px 6px;
+        border-radius: 999px;
+        background: rgba(255, 251, 244, 0.92);
+        border: 1px solid rgba(255, 251, 244, 0.96);
+        color: var(--green);
+        font-size: 9px;
+        font-weight: 800;
+        line-height: 1;
+        box-shadow: 0 4px 12px rgba(27, 42, 34, 0.16);
+      }
+
+      .cover-chip.map {
+        background: rgba(211, 154, 71, 0.95);
+        border-color: rgba(211, 154, 71, 0.98);
+        color: #fff;
+      }
+
+      .cover-copy {
+        position: absolute;
+        left: 18px;
+        right: 18px;
+        bottom: 18px;
+        z-index: 3;
+        color: #fff;
+      }
+
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(255, 251, 244, 0.13);
+        border: 1px solid rgba(255, 251, 244, 0.22);
+        backdrop-filter: blur(8px);
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .cover h1 {
+        margin: 10px 0 6px;
+        font-size: 31px;
+        line-height: 1.12;
+      }
+
+      .cover p {
+        margin: 0;
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .facts {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin-top: 14px;
+      }
+
+      .fact {
+        padding: 10px 12px;
+        border-radius: 15px;
+        background: rgba(255, 251, 244, 0.12);
+        border: 1px solid rgba(255, 251, 244, 0.2);
+      }
+
+      .fact .k {
+        margin-bottom: 4px;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.78);
+      }
+
+      .fact .v {
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 1.32;
+      }
+
+      .row {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 12px;
+      }
+
+      .row > * {
+        min-width: 0;
+      }
+
+      .card {
+        background: rgba(255, 251, 244, 0.78);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 10px 28px rgba(27, 42, 34, 0.08);
+      }
+
+      .card .hd {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 12px 14px 10px;
+        border-bottom: 1px solid var(--line);
+        background: linear-gradient(180deg, rgba(211, 154, 71, 0.1), rgba(255, 251, 244, 0.72));
+      }
+
+      .card .hd h2 {
+        margin: 0;
+        font-size: 16px;
+        line-height: 1.25;
+      }
+
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        max-width: 100%;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: var(--green-soft);
+        border: 1px solid rgba(71, 106, 85, 0.18);
+        font-size: 12px;
+        font-weight: 700;
+        white-space: normal;
+      }
+
+      .card .bd {
+        padding: 12px 14px 14px;
+      }
+
+      .itinerary {
+        display: grid;
+        gap: 10px;
+      }
+
+      .day {
+        display: grid;
+        grid-template-columns: 88px 1fr;
+        gap: 12px;
+        padding: 10px;
+        border-radius: 14px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.7);
+      }
+
+      .thumb {
+        position: relative;
+        width: 88px;
+        height: 88px;
+        overflow: hidden;
+        border-radius: 14px;
+        border: 1px solid rgba(27, 42, 34, 0.1);
+        background: #f2f1ea;
+      }
+
+      .thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .thumb-actions {
+        position: absolute;
+        left: 5px;
+        right: 5px;
+        bottom: 5px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 4px;
+      }
+
+      .thumb-chip {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 17px;
+        padding: 2px 4px;
+        border-radius: 999px;
+        background: rgba(255, 251, 244, 0.9);
+        border: 1px solid rgba(255, 251, 244, 0.95);
+        color: var(--green);
+        font-size: 8.4px;
+        font-weight: 800;
+        line-height: 1;
+        box-shadow: 0 3px 10px rgba(27, 42, 34, 0.12);
+      }
+
+      .thumb-chip.map {
+        background: rgba(211, 154, 71, 0.92);
+        border-color: rgba(211, 154, 71, 0.98);
+        color: #fff;
+      }
+
+      .day .date {
+        font-size: 12px;
+        font-weight: 800;
+        color: var(--green);
+      }
+
+      .day h3 {
+        margin: 2px 0 4px;
+        font-size: 13.6px;
+        line-height: 1.3;
+      }
+
+      .day p {
+        margin: 0;
+        font-size: 11.7px;
+        line-height: 1.45;
+        color: var(--muted);
+      }
+
+      .note {
+        margin-top: 10px;
+        padding: 12px 13px;
+        border-radius: 14px;
+        background: rgba(71, 106, 85, 0.08);
+        border: 1px dashed rgba(71, 106, 85, 0.26);
+        font-size: 12.5px;
+        line-height: 1.55;
+      }
+
+      .day-links,
+      .day-link {
+        display: none;
+      }
+
+      .list {
+        display: grid;
+        gap: 10px;
+      }
+
+      .link-card {
+        display: block;
+        padding: 12px 13px;
+        border-radius: 14px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.74);
+      }
+
+      .link-card .name {
+        font-size: 14px;
+        font-weight: 800;
+        line-height: 1.35;
+      }
+
+      .link-card .url {
+        margin-top: 3px;
+        color: var(--muted);
+        font-size: 11.8px;
+        line-height: 1.5;
+        overflow-wrap: anywhere;
+      }
+
+      .split {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 10px;
+      }
+
+      .pill-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 8px;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: rgba(211, 154, 71, 0.12);
+        border: 1px solid rgba(211, 154, 71, 0.2);
+        font-size: 11.8px;
+        font-weight: 700;
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .gallery-item {
+        border-radius: 14px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.7);
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 118px;
+        object-fit: cover;
+        display: block;
+      }
+
+      .gallery-media {
+        position: relative;
+      }
+
+      .gallery-actions {
+        position: absolute;
+        left: 8px;
+        right: 8px;
+        bottom: 8px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 6px;
+      }
+
+      .gallery-chip {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 21px;
+        padding: 4px 6px;
+        border-radius: 999px;
+        background: rgba(255, 251, 244, 0.92);
+        border: 1px solid rgba(255, 251, 244, 0.96);
+        color: var(--green);
+        font-size: 9px;
+        font-weight: 800;
+        line-height: 1;
+        box-shadow: 0 4px 12px rgba(27, 42, 34, 0.12);
+      }
+
+      .gallery-chip.map {
+        background: rgba(211, 154, 71, 0.94);
+        border-color: rgba(211, 154, 71, 0.98);
+        color: #fff;
+      }
+
+      .gallery-item .cap {
+        padding: 9px 10px 10px;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 1.4;
+      }
+
+      .tiny {
+        font-size: 11.5px;
+        line-height: 1.5;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <main class="doc">
+      <section class="page cover">
+        <div class="cover-grid">
+          <div class="cover-tile">
+            <img class="hero" src="./assets-render/test-phu-ka-na.jpg" alt="วิวภาคเหนือ" />
+            <div class="cover-actions">
+              <a class="cover-chip" href="https://www.tourismthailand.org/Articles/4-day-and-3-night-road-trip-to-conquer-nan-s-mountain-ranges">เว็บ</a>
+              <a class="cover-chip map" href="https://www.google.com/maps/search/?api=1&query=Doi+Samer+Dao+Nan">Map</a>
+            </div>
+          </div>
+          <div class="stack">
+            <div class="cover-tile">
+              <img class="half" src="./assets-render/hotel_bantunglom_maerim_opt.jpg" alt="Bantunglom Resort Mae Rim" />
+              <div class="cover-actions">
+                <a class="cover-chip" href="https://www.booking.com/hotel/th/bantunglom-resort.html">เว็บ</a>
+                <a class="cover-chip map" href="https://www.google.com/maps/search/?api=1&query=Bantunglom+Resort+Mae+Rim+Chiang+Mai">Map</a>
+              </div>
+            </div>
+            <div class="mini">
+              <div class="cover-tile">
+                <img src="./assets-render/test-qsbg-site.jpg" alt="Queen Sirikit Botanic Garden" />
+                <div class="cover-actions">
+                  <a class="cover-chip" href="https://botanic.qsbg.org/">เว็บ</a>
+                  <a class="cover-chip map" href="https://www.google.com/maps/search/?api=1&query=Queen+Sirikit+Botanic+Garden+Chiang+Mai">Map</a>
+                </div>
+              </div>
+              <div class="cover-tile">
+                <img src="./assets-render/test-phu-ka-na.jpg" alt="Phu Ka Na Nan Resort" />
+                <div class="cover-actions">
+                  <a class="cover-chip" href="https://phu-ka-na-nan-resort.mydirectstay.com/">เว็บ</a>
+                  <a class="cover-chip map" href="https://www.google.com/maps/search/?api=1&query=Phu+Ka+Na+Nan+Resort+Nan">Map</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cover-copy">
+          <div class="tag">ทริปเหนือ 7 วัน | ธรรมชาติ + slow travel + น้ำพุร้อน</div>
+          <h1>โปรแกรมเที่ยวภาคเหนือ<br />เชียงใหม่ + น่าน</h1>
+          <p>เหมาะกับคู่รักที่ชอบวิวธรรมชาติ หมู่บ้านสงบ น้ำพุร้อน และเมืองเก่าบรรยากาศดี</p>
+          <div class="facts">
+            <div class="fact">
+              <div class="k">ช่วงเที่ยว</div>
+              <div class="v">1-7 ต.ค. 2569<br />ต่อกรุงเทพฯ 8-10 ต.ค.</div>
+            </div>
+            <div class="fact">
+              <div class="k">เชียงใหม่</div>
+              <div class="v">พัก Bantunglom<br />Resort</div>
+            </div>
+            <div class="fact">
+              <div class="k">น่าน</div>
+              <div class="v">พัก Phu Ka Na Nan<br />Resort</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="page">
+        <div class="row">
+          <article class="card">
+            <div class="hd">
+              <h2>เชียงใหม่ | 1-4 ต.ค. 2569</h2>
+              <div class="chip">โฟกัสธรรมชาติ + เมืองเก่า + น้ำร้อน</div>
+            </div>
+            <div class="bd">
+              <div class="itinerary">
+                <div class="day">
+                  <div class="thumb">
+                    <img src="./assets-render/hotel_bantunglom_maerim_opt.jpg" alt="Bantunglom Resort" />
+                    <div class="thumb-actions">
+                      <a class="thumb-chip" href="https://www.booking.com/hotel/th/bantunglom-resort.html">เว็บ</a>
+                      <a class="thumb-chip map" href="https://www.google.com/maps/dir/?api=1&origin=Chiang+Mai+International+Airport&destination=Bantunglom+Resort+Mae+Rim+Chiang+Mai&travelmode=driving">Map</a>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="date">พฤ. 1 ต.ค.</div>
+                    <h3>บินลงเชียงใหม่ • เช็คอิน Mae Rim • พักผ่อนวิวเขา</h3>
+                    <p>วันแรกวางแบบเบาๆ เพื่อไม่เร่งเกินไป หลังรับรถ/เข้าที่พักแล้วพักผ่อนที่ Bantunglom Resort และออกไปชมวิวหรือคาเฟ่โซน Mae Rim ในช่วงเย็น</p>
+                  </div>
+                </div>
+                <div class="day">
+                  <div class="thumb">
+                    <img src="./assets-render/test-qsbg-site.jpg" alt="Queen Sirikit Botanic Garden" />
+                    <div class="thumb-actions">
+                      <a class="thumb-chip" href="https://botanic.qsbg.org/">เว็บ</a>
+                      <a class="thumb-chip map" href="https://www.google.com/maps/dir/?api=1&origin=Bantunglom+Resort+Mae+Rim+Chiang+Mai&destination=Queen+Sirikit+Botanic+Garden+Chiang+Mai&travelmode=driving">Map</a>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="date">ศ. 2 ต.ค.</div>
+                    <h3>Queen Sirikit Botanic Garden + เส้นวิวแม่ริม</h3>
+                    <p>เหมาะมากกับวันที่อยากเที่ยวธรรมชาติแบบไม่เหนื่อยเกินไป ได้ทั้งสวนพฤกษศาสตร์ วิวเขา และจังหวะเที่ยวสบายๆ ใกล้ที่พัก</p>
+                  </div>
+                </div>
+                <div class="day">
+                  <div class="thumb">
+                    <img src="./assets-render/test-hot-springs-site.jpg" alt="San Kamphaeng Hot Springs" />
+                    <div class="thumb-actions">
+                      <a class="thumb-chip" href="https://www.skphotsprings.com/public/change-lang/en">เว็บ</a>
+                      <a class="thumb-chip map" href="https://www.google.com/maps/dir/?api=1&origin=Bantunglom+Resort+Mae+Rim+Chiang+Mai&destination=San+Kamphaeng+Hot+Springs+Chiang+Mai&waypoints=Mae+Kampong+Village+Chiang+Mai&travelmode=driving">Map</a>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="date">ส. 3 ต.ค.</div>
+                    <h3>แม่กำปอง + San Kamphaeng Hot Springs</h3>
+                    <p>วันไฮไลต์สำหรับสายธรรมชาติและแช่น้ำร้อน เดินหมู่บ้านแม่กำปองแบบ slow life แล้วค่อยต่อไปแช่น้ำพุร้อนธรรมชาติช่วงบ่าย</p>
+                  </div>
+                </div>
+                <div class="day">
+                  <div class="thumb">
+                    <img src="./assets-render/test-google-tha-phae.jpg" alt="Tha Phae Gate" />
+                    <div class="thumb-actions">
+                      <a class="thumb-chip" href="https://www.tourismthailand.org/Articles/jing-jai-market-chiang-mai">เว็บ</a>
+                      <a class="thumb-chip map" href="https://www.google.com/maps/dir/?api=1&origin=Bantunglom+Resort+Mae+Rim+Chiang+Mai&destination=Wat+Phra+That+Doi+Suthep&waypoints=Jing+Jai+Market+Chiang+Mai|Tha+Phae+Gate+Chiang+Mai&travelmode=driving">Map</a>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="date">อา. 4 ต.ค.</div>
+                    <h3>Jing Jai Market + เมืองเก่าเชียงใหม่ + ดอยสุเทพ</h3>
+                    <p>เช้าแวะตลาด Jing Jai Market ซึ่งตรงวันอาทิตย์พอดี จากนั้นเข้าเมืองเก่า/ประตูท่าแพ แล้วปิดวันด้วยวิวและบรรยากาศที่วัดพระธาตุดอยสุเทพ</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="hd">
+              <h2>น่าน | 5-7 ต.ค. 2569</h2>
+              <div class="chip">ถนนวิวภูเขา + เมืองเก่า + หมู่บ้านธรรมชาติ</div>
+            </div>
+            <div class="bd">
+              <div class="itinerary">
+                <div class="day">
+                  <div class="thumb">
+                    <img src="./assets-render/test-phu-ka-na.jpg" alt="Nan scenic view" />
+                    <div class="thumb-actions">
+                      <a class="thumb-chip" href="https://phu-ka-na-nan-resort.mydirectstay.com/">เว็บ</a>
+                      <a class="thumb-chip map" href="https://www.google.com/maps/search/?api=1&query=Phu+Ka+Na+Nan+Resort+Nan">Map</a>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="date">จ. 5 ต.ค.</div>
+                    <h3>เดินทางต่อไปน่าน • เช็คอิน Phu Ka Na Nan Resort</h3>
+                    <p>วันนี้ควรเผื่อเวลาเดินทางให้มากหน่อย แล้ววางช่วงเย็นเป็นการพักผ่อนกับวิวธรรมชาติในที่พัก เพื่อเก็บแรงสำหรับเส้นทางภูเขาวันถัดไป</p>
+                  </div>
+                </div>
+                <div class="day">
+                  <div class="thumb">
+                    <img src="./assets-render/test-google-bo-kluea.jpg" alt="Bo Kluea" />
+                    <div class="thumb-actions">
+                      <a class="thumb-chip" href="https://www.tourismthailand.org/Articles/4-day-and-3-night-road-trip-to-conquer-nan-s-mountain-ranges">เว็บ</a>
+                      <a class="thumb-chip map" href="https://www.google.com/maps/dir/?api=1&origin=Phu+Ka+Na+Nan+Resort+Nan&destination=Sapan+Village+Bo+Kluea+Nan&waypoints=Doi+Phu+Kha+National+Park|Bo+Kluea+District+Nan&travelmode=driving">Map</a>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="date">อ. 6 ต.ค.</div>
+                    <h3>Floating Road / Route 1256 + ดอยภูคา + บ่อเกลือ + สะปัน</h3>
+                    <p>เป็นวันหลักของน่านสำหรับสายธรรมชาติและถ่ายรูป แนะนำออกแต่เช้าเพื่อเก็บวิวภูเขา ถนนโค้งสวยๆ และหมู่บ้านสะปันแบบไม่รีบ</p>
+                  </div>
+                </div>
+                <div class="day">
+                  <div class="thumb">
+                    <img src="./assets-render/test-google-wat-phumin.jpg" alt="Wat Phumin" />
+                    <div class="thumb-actions">
+                      <a class="thumb-chip" href="https://www.tourismthailand.org/Trip-Planner/Suggestion-Detail/nan-3-days">เว็บ</a>
+                      <a class="thumb-chip map" href="https://www.google.com/maps/dir/?api=1&origin=Phu+Ka+Na+Nan+Resort+Nan&destination=Wat+Phumin+Nan&travelmode=driving">Map</a>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="date">พ. 7 ต.ค.</div>
+                    <h3>Nan Old Town + วัดภูมินทร์ + เดินทางเข้ากรุงเทพฯ</h3>
+                    <p>ปิดทริปเหนือด้วยบรรยากาศเมืองเก่าน่าน แวะวัดภูมินทร์และจุดเมืองเก่าที่เดินง่าย ก่อนเดินทางเข้ากรุงเทพฯ สำหรับช่วง 8-10 ต.ค.</p>
+                    <div class="day-links">
+                      <a class="day-link" href="https://www.tourismthailand.org/Trip-Planner/Suggestion-Detail/nan-3-days">Nan Old Town / วัดภูมินทร์</a>
+                      <a class="day-link" href="https://7greens.tourismthailand.org/en/2020/08/21/%E0%B8%A2%E0%B9%88%E0%B8%B2%E0%B8%99%E0%B9%80%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%81%E0%B9%88%E0%B8%B2%E0%B8%99%E0%B9%88%E0%B8%B2%E0%B8%99/">Nan Old Town บรรยากาศเมืองเก่า</a>
+                      <a class="day-link map" href="https://www.google.com/maps/dir/?api=1&origin=Phu+Ka+Na+Nan+Resort+Nan&destination=Wat+Phumin+Nan&travelmode=driving">Google Maps เข้าเมืองน่าน</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="note">
+                แนะนำเชิงจัดทริป: ช่วงเชียงใหม่เหมาะกับการเช่ารถมาก เพราะจุดเที่ยวอยู่รอบเมืองและขึ้นเขาได้สะดวก ส่วนวันเดินทางไปน่านควรออกแต่เช้าหรือปรับเป็นเดินทางแบบบินเข้า-ออกถ้าอยากลดเวลาบนรถ
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="page">
+        <div class="row">
+          <article class="card">
+            <div class="hd">
+              <h2>ที่พักที่เลือก</h2>
+              <div class="chip">กดลิงก์เพื่อดูรายละเอียดได้</div>
+            </div>
+            <div class="bd">
+              <div class="list">
+                <a class="link-card" href="https://www.booking.com/hotel/th/bantunglom-resort.html">
+                  <div class="name">Bantunglom Resort</div>
+                  <div class="url">https://www.booking.com/hotel/th/bantunglom-resort.html</div>
+                </a>
+                <a class="link-card" href="https://phu-ka-na-nan-resort.mydirectstay.com/">
+                  <div class="name">Phu Ka Na Nan Resort</div>
+                  <div class="url">https://phu-ka-na-nan-resort.mydirectstay.com/</div>
+                </a>
+                <a class="link-card" href="https://www.skphotsprings.com/public/change-lang/en">
+                  <div class="name">San Kamphaeng Hot Springs</div>
+                  <div class="url">https://www.skphotsprings.com/public/change-lang/en</div>
+                </a>
+              </div>
+              <div class="pill-row">
+                <div class="pill">เชียงใหม่ 4 คืน</div>
+                <div class="pill">น่าน 2 คืน</div>
+                <div class="pill">เหมาะกับธรรมชาติ + คู่รัก</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="hd">
+              <h2>ลิงก์สถานที่เที่ยว</h2>
+              <div class="chip">ทางการ / แหล่งข้อมูลหลัก</div>
+            </div>
+            <div class="bd">
+              <div class="split">
+                <div class="list">
+                  <a class="link-card" href="https://www.tourismthailand.org/Attraction/mae-kampong-village">
+                    <div class="name">แม่กำปอง (Mae Kampong Village)</div>
+                    <div class="url">tourismthailand.org/Attraction/mae-kampong-village</div>
+                  </a>
+                  <a class="link-card" href="https://botanic.qsbg.org/">
+                    <div class="name">Queen Sirikit Botanic Garden</div>
+                    <div class="url">https://botanic.qsbg.org/</div>
+                  </a>
+                  <a class="link-card" href="https://www.tourismthailand.org/Articles/jing-jai-market-chiang-mai">
+                    <div class="name">Jing Jai Market</div>
+                    <div class="url">tourismthailand.org/Articles/jing-jai-market-chiang-mai</div>
+                  </a>
+                </div>
+                <div class="list">
+                  <a class="link-card" href="https://www.tourismthailand.org/Attraction/wat-phra-that-doi-suthep/">
+                    <div class="name">วัดพระธาตุดอยสุเทพ</div>
+                    <div class="url">tourismthailand.org/Attraction/wat-phra-that-doi-suthep/</div>
+                  </a>
+                  <a class="link-card" href="https://www.tourismthailand.org/Articles/4-day-and-3-night-road-trip-to-conquer-nan-s-mountain-ranges">
+                    <div class="name">Floating Road / เส้นวิวภูเขาน่าน</div>
+                    <div class="url">tourismthailand.org/Articles/4-day-and-3-night-road-trip-to-conquer-nan-s-mountain-ranges</div>
+                  </a>
+                  <a class="link-card" href="https://www.tourismthailand.org/Trip-Planner/Suggestion-Detail/nan-3-days">
+                    <div class="name">Nan Old Town + วัดภูมินทร์</div>
+                    <div class="url">tourismthailand.org/Trip-Planner/Suggestion-Detail/nan-3-days</div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <article class="card">
+          <div class="hd">
+            <h2>ภาพรวมบรรยากาศทริป</h2>
+            <div class="chip">สถานที่เด่นของทริปนี้</div>
+          </div>
+          <div class="bd">
+            <div class="gallery">
+              <div class="gallery-item">
+                <div class="gallery-media">
+                  <img src="./assets-render/test-hot-springs-site.jpg" alt="San Kamphaeng Hot Springs" />
+                  <div class="gallery-actions">
+                    <a class="gallery-chip" href="https://www.skphotsprings.com/public/change-lang/en">เว็บ</a>
+                    <a class="gallery-chip map" href="https://www.google.com/maps/search/?api=1&query=San+Kamphaeng+Hot+Springs+Chiang+Mai">Map</a>
+                  </div>
+                </div>
+                <div class="cap">San Kamphaeng Hot Springs<br /><span class="tiny">จุดแช่น้ำร้อนธรรมชาติของทริปเชียงใหม่</span></div>
+              </div>
+              <div class="gallery-item">
+                <div class="gallery-media">
+                  <img src="./assets-render/test-qsbg-site.jpg" alt="QSBG" />
+                  <div class="gallery-actions">
+                    <a class="gallery-chip" href="https://botanic.qsbg.org/">เว็บ</a>
+                    <a class="gallery-chip map" href="https://www.google.com/maps/search/?api=1&query=Queen+Sirikit+Botanic+Garden+Chiang+Mai">Map</a>
+                  </div>
+                </div>
+                <div class="cap">Queen Sirikit Botanic Garden<br /><span class="tiny">วันเที่ยวธรรมชาติที่ไม่หนักเกินไป</span></div>
+              </div>
+              <div class="gallery-item">
+                <div class="gallery-media">
+                  <img src="./assets-render/test-google-bo-kluea.jpg" alt="Bo Kluea" />
+                  <div class="gallery-actions">
+                    <a class="gallery-chip" href="https://www.tourismthailand.org/Articles/4-day-and-3-night-road-trip-to-conquer-nan-s-mountain-ranges">เว็บ</a>
+                    <a class="gallery-chip map" href="https://www.google.com/maps/search/?api=1&query=Bo+Kluea+District+Nan">Map</a>
+                  </div>
+                </div>
+                <div class="cap">บ่อเกลือ / เส้นทางภูเขาน่าน<br /><span class="tiny">เหมาะกับขับรถชมวิวและถ่ายรูป</span></div>
+              </div>
+              <div class="gallery-item">
+                <div class="gallery-media">
+                  <img src="./assets-render/test-google-wat-phumin.jpg" alt="Wat Phumin" />
+                  <div class="gallery-actions">
+                    <a class="gallery-chip" href="https://www.tourismthailand.org/Trip-Planner/Suggestion-Detail/nan-3-days">เว็บ</a>
+                    <a class="gallery-chip map" href="https://www.google.com/maps/search/?api=1&query=Wat+Phumin+Nan">Map</a>
+                  </div>
+                </div>
+                <div class="cap">วัดภูมินทร์<br /><span class="tiny">ปิดทริปด้วยเมืองเก่าน่านแบบสบายๆ</span></div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

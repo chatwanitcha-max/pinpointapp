@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Northern Thailand Itinerary | Chiang Mai + Nan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;800&display=swap" rel="stylesheet" />
+    <style>
+      :root{--paper:#fffbf4;--ink:#1b2a22;--muted:#5a665f;--line:rgba(27,42,34,.12);--green:#476a55;--gold:#d39a47;--shadow:0 18px 42px rgba(32,45,38,.16)}
+      *{box-sizing:border-box} @page{size:A4;margin:0} html,body{height:100%}
+      body{margin:0;color:var(--ink);background:radial-gradient(1000px 520px at 10% 8%,rgba(211,154,71,.18),transparent 60%),radial-gradient(900px 540px at 88% 10%,rgba(71,106,85,.16),transparent 56%),linear-gradient(180deg,#fff,var(--paper));font-family:"Noto Sans",Arial,sans-serif}
+      a{color:inherit;text-decoration:none}.doc{width:210mm;margin:0 auto;padding:14mm}.page{min-height:calc(297mm - 28mm);display:flex;flex-direction:column;gap:12px;break-after:page}.page:last-child{break-after:auto}
+      .cover{position:relative;overflow:hidden;border-radius:20px;box-shadow:var(--shadow);background:#14211a}.cover:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,23,19,.08),rgba(14,23,19,.86));z-index:2}
+      .cover-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.25fr 1fr;gap:10px;padding:14px}.tile{position:relative}.stack{display:grid;gap:10px}.mini{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+      .cover img{width:100%;display:block;object-fit:cover;border-radius:16px;filter:saturate(1.05) contrast(1.03)}.hero{height:458px}.half{height:224px}.mini img{height:140px}
+      .actions,.thumb-actions,.gallery-actions{position:absolute;left:8px;right:8px;bottom:8px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+      .btn{display:inline-flex;align-items:center;justify-content:center;min-height:22px;padding:4px 6px;border-radius:999px;background:rgba(255,251,244,.92);border:1px solid rgba(255,251,244,.96);color:var(--green);font-size:9px;font-weight:800;line-height:1;box-shadow:0 4px 12px rgba(27,42,34,.16)} .map{background:rgba(211,154,71,.95);border-color:rgba(211,154,71,.98);color:#fff}
+      .copy{position:absolute;left:18px;right:18px;bottom:18px;z-index:3;color:#fff}.tag{display:inline-flex;padding:8px 12px;border-radius:999px;background:rgba(255,251,244,.13);border:1px solid rgba(255,251,244,.22);font-size:12px;font-weight:700}
+      h1{margin:10px 0 6px;font-size:31px;line-height:1.12}.cover p{margin:0;font-size:14px;color:rgba(255,255,255,.9)}
+      .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}.fact{padding:10px 12px;border-radius:15px;background:rgba(255,251,244,.12);border:1px solid rgba(255,251,244,.2)}.k{margin-bottom:4px;font-size:12px;color:rgba(255,255,255,.78)}.v{font-size:13px;font-weight:700;line-height:1.32}
+      .row{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:12px}.card{background:rgba(255,251,244,.78);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 10px 28px rgba(27,42,34,.08)}.hd{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 14px 10px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,rgba(211,154,71,.1),rgba(255,251,244,.72))}.hd h2{margin:0;font-size:16px}.chip{display:inline-flex;padding:6px 10px;border-radius:999px;background:rgba(71,106,85,.1);border:1px solid rgba(71,106,85,.18);font-size:12px;font-weight:700}.bd{padding:12px 14px 14px}
+      .itinerary{display:grid;gap:10px}.day{display:grid;grid-template-columns:88px 1fr;gap:12px;padding:10px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.7)}.thumb{position:relative;width:88px;height:88px;overflow:hidden;border-radius:14px;border:1px solid rgba(27,42,34,.1);background:#f2f1ea}.thumb img{width:100%;height:100%;object-fit:cover;display:block}.thumb-actions{left:5px;right:5px;bottom:5px;gap:4px}.thumb-actions .btn{min-height:17px;padding:2px 4px;font-size:8.4px}
+      .date{font-size:12px;font-weight:800;color:var(--green)}.day h3{margin:2px 0 4px;font-size:13.2px;line-height:1.3}.day p{margin:0;font-size:11.2px;line-height:1.45;color:var(--muted)}.note{margin-top:10px;padding:12px 13px;border-radius:14px;background:rgba(71,106,85,.08);border:1px dashed rgba(71,106,85,.26);font-size:12px;line-height:1.55}
+      .list{display:grid;gap:10px}.link-card{display:block;padding:12px 13px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.74)}.name{font-size:14px;font-weight:800;line-height:1.35}.url{margin-top:3px;color:var(--muted);font-size:11.2px;line-height:1.4;overflow-wrap:anywhere}
+      .gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:12px}.gallery-item{border-radius:14px;overflow:hidden;border:1px solid var(--line);background:rgba(255,255,255,.7)}.gallery-media{position:relative}.gallery img{width:100%;height:118px;object-fit:cover;display:block}.cap{padding:9px 10px 10px;font-size:12px;font-weight:700;line-height:1.35}.tiny{font-size:11px;line-height:1.45;color:var(--muted)}.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}.pill{display:inline-flex;padding:6px 10px;border-radius:999px;background:rgba(211,154,71,.12);border:1px solid rgba(211,154,71,.2);font-size:11.5px;font-weight:700}
+    </style>
+  </head>
+  <body>
+    <main class="doc">
+      <section class="page cover">
+        <div class="cover-grid">
+          <div class="tile">
+            <img class="hero" src="./assets-render/test-phu-ka-na.jpg" alt="Nan view" />
+            <div class="actions"><a class="btn" href="https://www.tourismthailand.org/Articles/4-day-and-3-night-road-trip-to-conquer-nan-s-mountain-ranges">Web</a><a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Doi+Samer+Dao+Nan">Map</a></div>
+          </div>
+          <div class="stack">
+            <div class="tile">
+              <img class="half" src="./assets-render/hotel_bantunglom_maerim_opt.jpg" alt="Bantunglom Resort Mae Rim" />
+              <div class="actions"><a class="btn" href="https://www.booking.com/hotel/th/bantunglom-resort.html">Web</a><a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Bantunglom+Resort+Mae+Rim+Chiang+Mai">Map</a></div>
+            </div>
+            <div class="mini">
+              <div class="tile">
+                <img src="./assets-render/test-qsbg-site.jpg" alt="QSBG" />
+                <div class="actions"><a class="btn" href="https://botanic.qsbg.org/">Web</a><a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Queen+Sirikit+Botanic+Garden+Chiang+Mai">Map</a></div>
+              </div>
+              <div class="tile">
+                <img src="./assets-render/test-phu-ka-na.jpg" alt="Phu Ka Na Nan Resort" />
+                <div class="actions"><a class="btn" href="https://phu-ka-na-nan-resort.mydirectstay.com/">Web</a><a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Phu+Ka+Na+Nan+Resort+Nan">Map</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="copy">
+          <div class="tag">7-day northern escape | nature + slow travel + hot springs</div>
+          <h1>Northern Thailand Itinerary<br />Chiang Mai + Nan</h1>
+          <p>Made for a nature-loving couple who want mountain views, quiet villages, hot springs, and a relaxed old-town atmosphere.</p>
+          <div class="facts">
+            <div class="fact"><div class="k">Travel dates</div><div class="v">1-7 Oct 2026<br />Bangkok 8-10 Oct</div></div>
+            <div class="fact"><div class="k">Chiang Mai stay</div><div class="v">Bantunglom<br />Resort</div></div>
+            <div class="fact"><div class="k">Nan stay</div><div class="v">Phu Ka Na Nan<br />Resort</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="page">
+        <div class="row">
+          <article class="card">
+            <div class="hd"><h2>Daily plan | 1-7 Oct 2026</h2><div class="chip">click image buttons for web/map</div></div>
+            <div class="bd">
+              <div class="itinerary">
+                <div class="day">
+                  <div class="thumb"><img src="./assets-render/hotel_bantunglom_maerim_opt.jpg" alt="Bantunglom Resort" /><div class="thumb-actions"><a class="btn" href="https://www.booking.com/hotel/th/bantunglom-resort.html">Web</a><a class="btn map" href="https://www.google.com/maps/dir/?api=1&origin=Chiang+Mai+International+Airport&destination=Bantunglom+Resort+Mae+Rim+Chiang+Mai&travelmode=driving">Map</a></div></div>
+                  <div><div class="date">Thu, 1 Oct</div><h3>Fly into Chiang Mai • Check in at Mae Rim • Relax with mountain views</h3><p>Keep the first day light. After picking up the car and checking in, relax at Bantunglom Resort and enjoy a slow evening around Mae Rim.</p></div>
+                </div>
+                <div class="day">
+                  <div class="thumb"><img src="./assets-render/test-qsbg-site.jpg" alt="QSBG" /><div class="thumb-actions"><a class="btn" href="https://botanic.qsbg.org/">Web</a><a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Queen+Sirikit+Botanic+Garden+Chiang+Mai">Map</a></div></div>
+                  <div><div class="date">Fri, 2 Oct</div><h3>Queen Sirikit Botanic Garden + Mae Rim scenic route</h3><p>A low-stress nature day with garden views, mountain scenery, and an easy rhythm close to your Chiang Mai base.</p></div>
+                </div>
+                <div class="day">
+                  <div class="thumb"><img src="./assets-render/test-hot-springs-site.jpg" alt="San Kamphaeng Hot Springs" /><div class="thumb-actions"><a class="btn" href="https://www.skphotsprings.com/public/change-lang/en">Web</a><a class="btn map" href="https://www.google.com/maps/dir/?api=1&origin=Bantunglom+Resort+Mae+Rim+Chiang+Mai&destination=San+Kamphaeng+Hot+Springs+Chiang+Mai&waypoints=Mae+Kampong+Village+Chiang+Mai&travelmode=driving">Map</a></div></div>
+                  <div><div class="date">Sat, 3 Oct</div><h3>Mae Kampong + San Kamphaeng Hot Springs</h3><p>The signature slow-travel day. Explore Mae Kampong first, then continue to the natural hot springs in the afternoon.</p></div>
+                </div>
+                <div class="day">
+                  <div class="thumb"><img src="./assets-render/test-google-tha-phae.jpg" alt="Tha Phae Gate" /><div class="thumb-actions"><a class="btn" href="https://www.tourismthailand.org/Articles/jing-jai-market-chiang-mai">Web</a><a class="btn map" href="https://www.google.com/maps/dir/?api=1&origin=Bantunglom+Resort+Mae+Rim+Chiang+Mai&destination=Wat+Phra+That+Doi+Suthep&waypoints=Jing+Jai+Market+Chiang+Mai|Tha+Phae+Gate+Chiang+Mai&travelmode=driving">Map</a></div></div>
+                  <div><div class="date">Sun, 4 Oct</div><h3>Jing Jai Market + Chiang Mai Old Town + Doi Suthep</h3><p>Start at Jing Jai Market, move through the old city and Tha Phae Gate, and end the day with the atmosphere and view at Doi Suthep.</p></div>
+                </div>
+                <div class="day">
+                  <div class="thumb"><img src="./assets-render/test-phu-ka-na.jpg" alt="Nan" /><div class="thumb-actions"><a class="btn" href="https://phu-ka-na-nan-resort.mydirectstay.com/">Web</a><a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Phu+Ka+Na+Nan+Resort+Nan">Map</a></div></div>
+                  <div><div class="date">Mon, 5 Oct</div><h3>Travel on to Nan • Check in at Phu Ka Na Nan Resort</h3><p>Allow extra time for the transfer day, then keep the evening easy and rest in the natural setting of the resort.</p></div>
+                </div>
+                <div class="day">
+                  <div class="thumb"><img src="./assets-render/test-google-bo-kluea.jpg" alt="Bo Kluea" /><div class="thumb-actions"><a class="btn" href="https://www.tourismthailand.org/Articles/4-day-and-3-night-road-trip-to-conquer-nan-s-mountain-ranges">Web</a><a class="btn map" href="https://www.google.com/maps/dir/?api=1&origin=Phu+Ka+Na+Nan+Resort+Nan&destination=Sapan+Village+Bo+Kluea+Nan&waypoints=Doi+Phu+Kha+National+Park|Bo+Kluea+District+Nan&travelmode=driving">Map</a></div></div>
+                  <div><div class="date">Tue, 6 Oct</div><h3>Floating Road / Route 1256 + Doi Phu Kha + Bo Kluea + Sapan</h3><p>The main nature day in Nan. Leave early for mountain scenery, scenic curves, and the calm village atmosphere around Sapan.</p></div>
+                </div>
+                <div class="day">
+                  <div class="thumb"><img src="./assets-render/test-google-wat-phumin.jpg" alt="Wat Phumin" /><div class="thumb-actions"><a class="btn" href="https://www.tourismthailand.org/Trip-Planner/Suggestion-Detail/nan-3-days">Web</a><a class="btn map" href="https://www.google.com/maps/dir/?api=1&origin=Phu+Ka+Na+Nan+Resort+Nan&destination=Wat+Phumin+Nan&travelmode=driving">Map</a></div></div>
+                  <div><div class="date">Wed, 7 Oct</div><h3>Nan Old Town + Wat Phumin + travel to Bangkok</h3><p>Finish the northern leg with Nan Old Town and Wat Phumin before heading on to Bangkok for the 8-10 Oct stay.</p></div>
+                </div>
+              </div>
+              <div class="note">Planning note: Chiang Mai works especially well with a rental car because the main highlights are spread around the outskirts and hills. If you want less road time on the way to Nan, we can later switch that transfer to a flight-based route.</div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="hd"><h2>Stays and links</h2><div class="chip">English reference pack</div></div>
+            <div class="bd">
+              <div class="list">
+                <a class="link-card" href="https://www.booking.com/hotel/th/bantunglom-resort.html"><div class="name">Bantunglom Resort</div><div class="url">https://www.booking.com/hotel/th/bantunglom-resort.html</div></a>
+                <a class="link-card" href="https://phu-ka-na-nan-resort.mydirectstay.com/"><div class="name">Phu Ka Na Nan Resort</div><div class="url">https://phu-ka-na-nan-resort.mydirectstay.com/</div></a>
+                <a class="link-card" href="https://www.skphotsprings.com/public/change-lang/en"><div class="name">San Kamphaeng Hot Springs</div><div class="url">https://www.skphotsprings.com/public/change-lang/en</div></a>
+                <a class="link-card" href="https://botanic.qsbg.org/"><div class="name">Queen Sirikit Botanic Garden</div><div class="url">https://botanic.qsbg.org/</div></a>
+                <a class="link-card" href="https://www.tourismthailand.org/Attraction/wat-phra-that-doi-suthep/"><div class="name">Wat Phra That Doi Suthep</div><div class="url">tourismthailand.org/Attraction/wat-phra-that-doi-suthep/</div></a>
+                <a class="link-card" href="https://www.tourismthailand.org/Trip-Planner/Suggestion-Detail/nan-3-days"><div class="name">Nan Old Town + Wat Phumin</div><div class="url">tourismthailand.org/Trip-Planner/Suggestion-Detail/nan-3-days</div></a>
+              </div>
+              <div class="pills"><div class="pill">4 nights in Chiang Mai</div><div class="pill">2 nights in Nan</div><div class="pill">best for nature + slow travel</div></div>
+            </div>
+          </article>
+        </div>
+        <article class="card">
+          <div class="hd"><h2>Trip mood board</h2><div class="chip">click Web / Map on each photo</div></div>
+          <div class="bd">
+            <div class="gallery">
+              <div class="gallery-item"><div class="gallery-media"><img src="./assets-render/test-hot-springs-site.jpg" alt="San Kamphaeng Hot Springs" /><div class="gallery-actions"><a class="btn" href="https://www.skphotsprings.com/public/change-lang/en">Web</a><a class="btn map" href="https://www.google.com/maps/search/?api=1&query=San+Kamphaeng+Hot+Springs+Chiang+Mai">Map</a></div></div><div class="cap">San Kamphaeng Hot Springs<br /><span class="tiny">A relaxing hot-spring stop in the Chiang Mai part of the trip.</span></div></div>
+              <div class="gallery-item"><div class="gallery-media"><img src="./assets-render/test-qsbg-site.jpg" alt="QSBG" /><div class="gallery-actions"><a class="btn" href="https://botanic.qsbg.org/">Web</a><a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Queen+Sirikit+Botanic+Garden+Chiang+Mai">Map</a></div></div><div class="cap">Queen Sirikit Botanic Garden<br /><span class="tiny">An easy scenic nature day near Mae Rim.</span></div></div>
+              <div class="gallery-item"><div class="gallery-media"><img src="./assets-render/test-google-bo-kluea.jpg" alt="Bo Kluea" /><div class="gallery-actions"><a class="btn" href="https://www.tourismthailand.org/Articles/4-day-and-3-night-road-trip-to-conquer-nan-s-mountain-ranges">Web</a><a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Bo+Kluea+District+Nan">Map</a></div></div><div class="cap">Bo Kluea / Nan mountain road<br /><span class="tiny">Best for scenic drives, curves, and mountain views.</span></div></div>
+              <div class="gallery-item"><div class="gallery-media"><img src="./assets-render/test-google-wat-phumin.jpg" alt="Wat Phumin" /><div class="gallery-actions"><a class="btn" href="https://www.tourismthailand.org/Trip-Planner/Suggestion-Detail/nan-3-days">Web</a><a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Wat+Phumin+Nan">Map</a></div></div><div class="cap">Wat Phumin<br /><span class="tiny">A relaxed finish in Nan Old Town before Bangkok.</span></div></div>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

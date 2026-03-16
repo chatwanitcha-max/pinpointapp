@@ -1,0 +1,10 @@
+.vercel
+.env.local
+.env.local.txt
+references/
+releases/
+Japan_Trip_*
+Thailand_North_Trip_*
+OPEN_Japan_Trip_*
+OPEN_Thailand_North_Trip_*
+utf8-*

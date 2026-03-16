@@ -1,0 +1,73 @@
+<!doctype html>
+<html
+  lang="th"
+  data-title-th="Thank You | Pinpoint Accounting & Service, Ltd."
+  data-title-en="Thank You | Pinpoint Accounting & Service, Ltd."
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thank You | Pinpoint Accounting & Service, Ltd.</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" type="image/jpeg" href="/assets/logo-original-large.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Sarabun:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+    <script>
+      window.PINPOINT_CONFIG = {
+        lineOaUrl: "https://lin.ee/58aU8oE",
+        ga4MeasurementId: "",
+        googleAdsId: "",
+        googleAdsLeadLabel: "",
+        metaPixelId: ""
+      };
+    </script>
+  </head>
+  <body
+    data-title-th="Thank You | Pinpoint Accounting & Service, Ltd."
+    data-title-en="Thank You | Pinpoint Accounting & Service, Ltd."
+  >
+    <main class="page-wrap">
+      <section class="section cta-band">
+        <p class="kicker" id="kickerText">REQUEST RECEIVED</p>
+        <h1
+          id="titleText"
+          data-th="ขอบคุณที่ส่งข้อมูลเข้ามา"
+          data-en="Thank you for your submission"
+        >
+          ขอบคุณที่ส่งข้อมูลเข้ามา
+        </h1>
+        <p
+          id="descText"
+          data-th="ทีมงานได้รับข้อมูลของคุณแล้ว และจะติดต่อกลับตามช่องทางที่คุณระบุไว้"
+          data-en="Your request has been received. The team will contact you through your preferred channel."
+        >
+          ทีมงานได้รับข้อมูลของคุณแล้ว และจะติดต่อกลับตามช่องทางที่คุณระบุไว้
+        </p>
+        <p id="leadIdText" class="micro-copy"></p>
+        <div class="hero-actions" style="justify-content:center;">
+          <a id="homeBtn" class="btn btn-primary" href="/" data-th="กลับหน้าแรก" data-en="Back to Home">กลับหน้าแรก</a>
+          <a id="callBtn" class="btn btn-secondary" href="tel:0927497442" data-th="โทร 092-749-7442" data-en="Call 092-749-7442">โทร 092-749-7442</a>
+        </div>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const leadId = params.get("leadId");
+      const lang = params.get("lang") === "en" ? "en" : "th";
+      document.documentElement.lang = lang;
+      document.body.dataset.lang = lang;
+
+      if (leadId) {
+        const leadNode = document.getElementById("leadIdText");
+        leadNode.textContent = lang === "th" ? `รหัสอ้างอิง: ${leadId}` : `Reference ID: ${leadId}`;
+      }
+    </script>
+  </body>
+</html>

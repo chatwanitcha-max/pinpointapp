@@ -1,0 +1,720 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>โปรแกรมเที่ยวญี่ปุ่น Osaka + Tokyo (11–16 พ.ค. 2569)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;800&family=Noto+Sans+Thai:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --paper: #fffdf6;
+        --ink: #0b1b2a;
+        --muted: #5a6773;
+        --line: rgba(11, 27, 42, 0.12);
+        --accent: #d14e3a;
+        --accent-2: #0b6b7a;
+        --shadow: 0 18px 40px rgba(11, 27, 42, 0.18);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: radial-gradient(
+            1100px 520px at 10% 6%,
+            rgba(209, 78, 58, 0.17),
+            transparent 60%
+          ),
+          radial-gradient(
+            900px 520px at 92% 14%,
+            rgba(11, 107, 122, 0.18),
+            transparent 55%
+          ),
+          radial-gradient(
+            840px 520px at 18% 98%,
+            rgba(11, 27, 42, 0.12),
+            transparent 52%
+          ),
+          linear-gradient(180deg, #ffffff, var(--paper));
+        font-family: "Noto Sans Thai", "Noto Sans JP", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .doc {
+        width: 210mm;
+        margin: 0 auto;
+        padding: 14mm;
+      }
+
+      .page {
+        min-height: calc(297mm - 28mm);
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        padding: 0;
+        break-after: page;
+      }
+
+      .page:last-child {
+        break-after: auto;
+      }
+
+      .cover {
+        position: relative;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        background: #0b1b2a;
+      }
+
+      .cover .bg {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(11, 27, 42, 0.05), rgba(11, 27, 42, 0.85));
+        z-index: 2;
+      }
+
+      .cover .grid {
+        display: grid;
+        grid-template-columns: 1.3fr 1fr;
+        gap: 10px;
+        padding: 14px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .cover .grid img {
+        width: 100%;
+        height: 216px;
+        object-fit: cover;
+        border-radius: 14px;
+        filter: saturate(1.08) contrast(1.04);
+      }
+
+      .cover .grid .tall {
+        height: 442px;
+      }
+
+      .cover .text {
+        position: absolute;
+        left: 18px;
+        right: 18px;
+        bottom: 18px;
+        z-index: 3;
+        color: #fff;
+      }
+
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(255, 253, 246, 0.14);
+        border: 1px solid rgba(255, 253, 246, 0.22);
+        backdrop-filter: blur(8px);
+        font-weight: 600;
+        letter-spacing: 0.2px;
+      }
+
+      .cover h1 {
+        margin: 10px 0 6px;
+        font-size: 30px;
+        line-height: 1.12;
+        letter-spacing: 0.2px;
+      }
+
+      .cover p {
+        margin: 0;
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.88);
+      }
+
+      .facts {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin-top: 12px;
+      }
+
+      .fact {
+        padding: 10px 12px;
+        border-radius: 14px;
+        background: rgba(255, 253, 246, 0.12);
+        border: 1px solid rgba(255, 253, 246, 0.2);
+      }
+
+      .fact .k {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 4px;
+      }
+
+      .fact .v {
+        font-size: 13px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.25;
+      }
+
+      .row {
+        display: grid;
+        /* Use minmax(0, …) so grid tracks can shrink below min-content. Prevents right-edge clipping in PDF. */
+        grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+        gap: 12px;
+      }
+
+      .row > * {
+        min-width: 0;
+      }
+
+      .card {
+        border-radius: 16px;
+        background: rgba(255, 253, 246, 0.72);
+        border: 1px solid var(--line);
+        box-shadow: 0 10px 30px rgba(11, 27, 42, 0.08);
+        overflow: hidden;
+      }
+
+      .card .hd {
+        padding: 12px 14px 10px;
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+        border-bottom: 1px solid var(--line);
+        background: linear-gradient(180deg, rgba(209, 78, 58, 0.09), rgba(255, 253, 246, 0.7));
+      }
+
+      .card .hd h2 {
+        margin: 0;
+        font-size: 14px;
+        letter-spacing: 0.2px;
+      }
+
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: rgba(11, 107, 122, 0.08);
+        border: 1px solid rgba(11, 107, 122, 0.18);
+        color: var(--ink);
+        font-size: 12px;
+        font-weight: 700;
+        /* Allow wrap so pills never force a wider layout (important for PDF page width). */
+        white-space: normal;
+        max-width: 100%;
+      }
+
+      .card .bd {
+        padding: 12px 14px 14px;
+      }
+
+      .itinerary {
+        display: grid;
+        gap: 10px;
+      }
+
+      .day {
+        display: grid;
+        grid-template-columns: 82px 1fr;
+        gap: 12px;
+        padding: 10px;
+        border-radius: 14px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.66);
+      }
+
+      .thumb {
+        width: 82px;
+        height: 82px;
+        border-radius: 14px;
+        overflow: hidden;
+        border: 1px solid rgba(11, 27, 42, 0.12);
+        background: #f2f4f6;
+      }
+
+      .thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .day h3 {
+        margin: 0 0 4px;
+        font-size: 14px;
+        letter-spacing: 0.2px;
+      }
+
+      .meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin: 0 0 6px;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        padding: 5px 9px;
+        border-radius: 999px;
+        background: rgba(209, 78, 58, 0.08);
+        border: 1px solid rgba(209, 78, 58, 0.18);
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--ink);
+        white-space: nowrap;
+      }
+
+      .pill.alt {
+        background: rgba(11, 107, 122, 0.08);
+        border-color: rgba(11, 107, 122, 0.18);
+      }
+
+      .desc {
+        margin: 0;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.45;
+      }
+
+      .desc strong {
+        color: var(--ink);
+      }
+
+      .links {
+        display: grid;
+        gap: 8px;
+      }
+
+      .link {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2px;
+        padding: 10px 12px;
+        border-radius: 14px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.7);
+      }
+
+      .link .t {
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.2px;
+      }
+
+      .link .u {
+        font-size: 11px;
+        color: var(--muted);
+        word-break: break-all;
+      }
+
+      .note {
+        padding: 10px 12px;
+        border-radius: 14px;
+        background: rgba(11, 27, 42, 0.04);
+        border: 1px dashed rgba(11, 27, 42, 0.22);
+        color: var(--muted);
+        font-size: 11px;
+        line-height: 1.45;
+      }
+
+      .two {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 10px;
+      }
+
+      .two > * {
+        min-width: 0;
+      }
+
+      .hotel-list {
+        display: grid;
+        gap: 8px;
+      }
+
+      .hotel {
+        padding: 10px 12px;
+        border-radius: 14px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.72);
+      }
+
+      .hotel .n {
+        font-size: 12px;
+        font-weight: 800;
+        margin: 0 0 2px;
+      }
+
+      .hotel .u {
+        font-size: 11px;
+        color: var(--muted);
+        word-break: break-all;
+      }
+
+      .credits {
+        margin-top: 10px;
+        font-size: 10px;
+        color: rgba(90, 103, 115, 0.9);
+        line-height: 1.35;
+      }
+
+      .credits .h {
+        font-weight: 800;
+        color: var(--ink);
+        margin-bottom: 4px;
+        letter-spacing: 0.2px;
+      }
+
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      @media print {
+        body { background: #fff; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="doc">
+      <!-- PAGE 1: COVER -->
+      <section class="page">
+        <div class="cover">
+          <div class="grid">
+            <img class="tall" src="./assets/dotonbori.jpg" alt="Osaka - Dotonbori" />
+            <div style="display: grid; gap: 10px">
+              <img src="./assets/sensoji.jpg" alt="Tokyo - Asakusa Senso-ji" />
+              <img src="./assets/yokohama-minatomirai.jpg" alt="Yokohama - Minato Mirai" />
+            </div>
+          </div>
+          <div class="bg"></div>
+          <div class="text">
+            <div class="tag">Osaka + Tokyo | 11–16 พ.ค. 2569 (2026)</div>
+            <h1>โปรแกรมเที่ยวญี่ปุ่น<br />สำหรับผู้ใหญ่ 2 เด็ก 1 (เด็ก 11 ปี)</h1>
+            <p>ชอบ Disney • รถไฟ • สัตว์น้ำ • การ์ตูน | เข้า KIX (Osaka) • กลับ NRT (Tokyo)</p>
+            <div class="facts">
+              <div class="fact">
+                <div class="k">ขาเข้า</div>
+                <div class="v">11 พ.ค. 18:25<br />KIX → Osaka (Namba)</div>
+              </div>
+              <div class="fact">
+                <div class="k">ขากลับ</div>
+                <div class="v">16 พ.ค. 21:15<br />NRT → BKK</div>
+              </div>
+              <div class="fact">
+                <div class="k">ผู้เดินทาง</div>
+                <div class="v">ผู้ใหญ่ 2 เด็ก 1 (เด็กชาย 11 ปี)<br />พัก Namba / Asakusa</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="card">
+            <div class="hd">
+              <h2>ไฮไลต์ที่เลือก</h2>
+              <span class="chip">เน้นเด็กสนุก + เดินทางไม่หนัก</span>
+            </div>
+            <div class="bd">
+              <p class="desc">
+                <strong>Osaka:</strong> USJ (1 วัน) + Kaiyukan Aquarium + LEGOLAND Discovery Center
+                <br />
+                <strong>Tokyo/ใกล้เคียง:</strong> Yokohama CupNoodles Museum (ทำกิจกรรม) + Tokyo Disneyland
+                <br />
+                <strong>ปิดท้าย:</strong> Asakusa + Skytree + (ตัวเลือก) Sumida Aquarium
+              </p>
+              <div class="note" style="margin-top: 10px">
+                หมายเหตุ: ยกเลิกกิจกรรมโกคาร์ทบนถนน (เด็ก 11 ปีขับไม่ได้ตามเงื่อนไขส่วนใหญ่) และปรับเป็น LEGO/คัพนูดเดิล/สัตว์น้ำ
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="hd">
+              <h2>สิ่งที่ควรจองล่วงหน้า</h2>
+              <span class="chip" style="background: rgba(209, 78, 58, 0.1); border-color: rgba(209, 78, 58, 0.22)">
+                ลิงค์จองอยู่หน้าถัดไป
+              </span>
+            </div>
+            <div class="bd">
+              <p class="desc">
+                <strong>USJ:</strong> Studio Pass (แนะนำซื้อใน WEB Ticket Store)
+                <br />
+                <strong>Kaiyukan / LEGOLAND:</strong> ซื้อ e-ticket ลดเวลาต่อคิว
+                <br />
+                <strong>Shinkansen:</strong> จองที่นั่ง (SmartEX) เพื่อให้ได้นั่งติดกัน
+                <br />
+                <strong>CupNoodles Museum:</strong> จอง Chicken Ramen Factory (พ่อ+ลูก) และไปถึงไวเพื่อกดคิว My CUPNOODLES
+                <br />
+                <strong>Tokyo Disneyland:</strong> ซื้อตั๋วล่วงหน้า (ราคาแปรผันตามวัน)
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PAGE 2: ITINERARY -->
+      <section class="page">
+        <div class="card">
+          <div class="hd">
+            <h2>ตารางเที่ยวแบบสรุป (11–16 พ.ค. 2569)</h2>
+            <span class="chip">เวลาโดยประมาณ • ปรับได้หน้างาน</span>
+          </div>
+          <div class="bd">
+            <div class="itinerary">
+              <div class="day">
+                <div class="thumb"><img src="./assets/dotonbori.jpg" alt="Osaka" /></div>
+                <div>
+                  <h3>จ. 11 พ.ค. | Osaka (Namba)</h3>
+                  <div class="meta">
+                    <span class="pill">ถึง KIX 18:25</span>
+                    <span class="pill alt">รถไฟเข้า Namba</span>
+                    <span class="pill">พัก Namba</span>
+                  </div>
+                  <p class="desc">
+                    หลังผ่าน ตม.+รับกระเป๋า เดินทางเข้าเมืองด้วย <strong>Nankai</strong> (Rapi:t/Airport Express) → เช็คอิน → เดินเล่น/กินข้าว
+                    แถว <strong>Dotonbori–Namba</strong> แล้วพักผ่อน
+                  </p>
+                </div>
+              </div>
+
+              <div class="day">
+                <div class="thumb"><img src="./assets/usj.jpg" alt="USJ" /></div>
+                <div>
+                  <h3>อ. 12 พ.ค. | Universal Studios Japan (USJ)</h3>
+                  <div class="meta">
+                    <span class="pill">สวนสนุกเต็มวัน</span>
+                    <span class="pill alt">ควรซื้อตั๋วล่วงหน้า</span>
+                  </div>
+                  <p class="desc">
+                    แนะนำไปถึงก่อนเวลาเปิดจริงเพื่อเข้าเครื่องเล่นฮิตได้มากขึ้น (พกเสื้อกันฝน/ขวดน้ำ) → กลับ Namba พัก
+                  </p>
+                </div>
+              </div>
+
+              <div class="day">
+                <div class="thumb"><img src="./assets/kaiyukan-whaleshark.jpg" alt="Kaiyukan" /></div>
+                <div>
+                  <h3>พ. 13 พ.ค. | Osaka (Tempozan) → Tokyo (Asakusa)</h3>
+                  <div class="meta">
+                    <span class="pill">Kaiyukan + LEGO</span>
+                    <span class="pill alt">Shinkansen</span>
+                    <span class="pill">พัก Asakusa</span>
+                  </div>
+                  <p class="desc">
+                    เช็คเอาต์/ฝากกระเป๋า → <strong>Kaiyukan Aquarium</strong> + <strong>LEGOLAND Discovery Center Osaka</strong> (โซนเดียวกัน)
+                    → ช่วงเย็นไปรับกระเป๋า → <strong>Shin-Osaka</strong> → Shinkansen ไปโตเกียว → เข้าโรงแรมย่าน Asakusa
+                  </p>
+                </div>
+              </div>
+
+              <div class="day">
+                <div class="thumb"><img src="./assets/cupnoodles-yokohama.jpg" alt="CupNoodles Museum Yokohama" /></div>
+                <div>
+                  <h3>พฤ. 14 พ.ค. | Yokohama Day Trip (CupNoodles Museum)</h3>
+                  <div class="meta">
+                    <span class="pill">Chicken Ramen (พ่อ+ลูก)</span>
+                    <span class="pill alt">My CUPNOODLES (ทุกคน)</span>
+                  </div>
+                  <p class="desc">
+                    ไปถึงช่วงเปิด 10:00 เพื่อกดคิว/รับบัตรคิว <strong>My CUPNOODLES Factory</strong> (500 เยน/ถ้วย/คน) แล้วทำกิจกรรม
+                    <strong>Chicken Ramen Factory</strong> 90 นาที (ทำเป็นคู่, จองล่วงหน้า: เด็ก ป. 600 เยน + ผู้ใหญ่ 1,200 เยน = 1,800 เยน)
+                    → บ่ายเดินเล่นย่าน Minato Mirai แล้วกลับ Asakusa พัก (พรุ่งนี้ Disneyland)
+                  </p>
+                </div>
+              </div>
+
+              <div class="day">
+                <div class="thumb"><img src="./assets/tokyo-disneyland-castle.jpg" alt="Tokyo Disneyland" /></div>
+                <div>
+                  <h3>ศ. 15 พ.ค. | Tokyo Disneyland</h3>
+                  <div class="meta">
+                    <span class="pill">Disneyland เต็มวัน</span>
+                    <span class="pill alt">ตั๋วราคาแปรผัน</span>
+                  </div>
+                  <p class="desc">
+                    ซื้อตั๋วล่วงหน้าในเว็บ/แอป Tokyo Disney Resort (เด็ก 4–11 มีเรตราคาเด็ก) → กลับ Asakusa พักผ่อน
+                  </p>
+                </div>
+              </div>
+
+              <div class="day">
+                <div class="thumb"><img src="./assets/sensoji.jpg" alt="Asakusa" /></div>
+                <div>
+                  <h3>ส. 16 พ.ค. | Asakusa/Skytree → NRT</h3>
+                  <div class="meta">
+                    <span class="pill">เช้า Asakusa</span>
+                    <span class="pill alt">Sumida Aquarium (ตัวเลือก)</span>
+                    <span class="pill">ไฟลต์ 21:15</span>
+                  </div>
+                  <p class="desc">
+                    เช้าเดิน <strong>Senso-ji / Nakamise</strong> → เที่ยงไป <strong>Tokyo Skytree</strong> และ (ถ้าอยากเพิ่มสัตว์น้ำ) <strong>Sumida Aquarium</strong>
+                    → ออกจากย่าน Asakusa ราว <strong>17:30–18:00</strong> เพื่อไป <strong>Narita (NRT)</strong> ให้ถึงสนามบินประมาณ 19:00
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PAGE 3: LINKS + HOTELS -->
+      <section class="page">
+        <div class="row">
+          <div class="card">
+            <div class="hd">
+              <h2>ลิงค์จองตั๋ว/จองกิจกรรม (ทางการ)</h2>
+              <span class="chip">คลิกได้ในไฟล์ PDF</span>
+            </div>
+            <div class="bd">
+              <div class="links">
+                <a class="link" href="https://store.usj.co.jp/en/us/c/ticket" target="_blank" rel="noreferrer">
+                  <div class="t">USJ | WEB Ticket Store (Studio Pass / Express)</div>
+                  <div class="u">https://store.usj.co.jp/en/us/c/ticket</div>
+                </a>
+
+                <a class="link" href="https://pop.kaiyukan.com/language/eng/ticket.html" target="_blank" rel="noreferrer">
+                  <div class="t">Osaka Aquarium Kaiyukan | e-ticket</div>
+                  <div class="u">https://pop.kaiyukan.com/language/eng/ticket.html</div>
+                </a>
+
+                <a class="link" href="https://www.legolanddiscoverycenter.com/osaka/en/tickets-passes/" target="_blank" rel="noreferrer">
+                  <div class="t">LEGOLAND Discovery Center Osaka | Tickets</div>
+                  <div class="u">https://www.legolanddiscoverycenter.com/osaka/en/tickets-passes/</div>
+                </a>
+
+                <a class="link" href="https://smart-ex.jp/en/index.php" target="_blank" rel="noreferrer">
+                  <div class="t">Shinkansen | SmartEX (จองที่นั่ง Osaka → Tokyo)</div>
+                  <div class="u">https://smart-ex.jp/en/index.php</div>
+                </a>
+
+                <a class="link" href="https://www.cupnoodles-museum.jp/reservation/yokohama/?lang=en" target="_blank" rel="noreferrer">
+                  <div class="t">CupNoodles Museum Yokohama | จอง Chicken Ramen Factory (พ่อ+ลูก)</div>
+                  <div class="u">https://www.cupnoodles-museum.jp/reservation/yokohama/?lang=en</div>
+                </a>
+
+                <a class="link" href="https://www.cupnoodles-museum.jp/en/yokohama/attractions/mc-factory/" target="_blank" rel="noreferrer">
+                  <div class="t">CupNoodles Museum Yokohama | My CUPNOODLES Factory (บัตรคิวหน้างาน)</div>
+                  <div class="u">https://www.cupnoodles-museum.jp/en/yokohama/attractions/mc-factory/</div>
+                </a>
+
+                <a class="link" href="https://www.tokyodisneyresort.jp/en/ticket/index.html" target="_blank" rel="noreferrer">
+                  <div class="t">Tokyo Disney Resort | ตั๋ว Tokyo Disneyland</div>
+                  <div class="u">https://www.tokyodisneyresort.jp/en/ticket/index.html</div>
+                </a>
+
+                <a class="link" href="https://www.sumida-aquarium.com/en/index.php" target="_blank" rel="noreferrer">
+                  <div class="t">Sumida Aquarium | ข้อมูล/ตั๋ว (ตัวเลือกวันที่ 16)</div>
+                  <div class="u">https://www.sumida-aquarium.com/en/index.php</div>
+                </a>
+
+                <a class="link" href="https://www.keisei.co.jp/keisei/tetudou/skyliner/us/skyliner/purchase.php" target="_blank" rel="noreferrer">
+                  <div class="t">Keisei Skyliner | เดินทางไปสนามบิน Narita (NRT)</div>
+                  <div class="u">https://www.keisei.co.jp/keisei/tetudou/skyliner/us/skyliner/purchase.php</div>
+                </a>
+              </div>
+
+              <div class="note" style="margin-top: 10px">
+                Tip: เวิร์กช็อป <strong>Chicken Ramen Factory</strong> เป็นการทำงาน “เป็นคู่” เท่านั้น (ต้องจองเป็นจำนวนคู่) และเฉพาะผู้เข้าร่วมเท่านั้นที่เข้าห้องเวิร์กช็อปได้
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="hd">
+              <h2>ที่พัก (พร้อมลิงค์)</h2>
+              <span class="chip">ราคาเปลี่ยนตามวัน/โปรฯ</span>
+            </div>
+            <div class="bd">
+              <div class="two">
+                <div>
+                  <div class="chip" style="margin-bottom: 8px">Osaka | แนะนำโซน Namba</div>
+                  <div class="hotel-list">
+                    <a class="hotel" href="https://swissotelnankaiosaka.com/" target="_blank" rel="noreferrer">
+                      <div class="n">Swissôtel Nankai Osaka</div>
+                      <div class="u">https://swissotelnankaiosaka.com/</div>
+                    </a>
+                    <a class="hotel" href="https://hotel-royalclassic.jp/en/" target="_blank" rel="noreferrer">
+                      <div class="n">HOTEL ROYAL CLASSIC OSAKA</div>
+                      <div class="u">https://hotel-royalclassic.jp/en/</div>
+                    </a>
+                    <a class="hotel" href="https://www.discoverasr.com/en/citadines/japan/citadines-namba-osaka" target="_blank" rel="noreferrer">
+                      <div class="n">Citadines Namba Osaka</div>
+                      <div class="u">https://www.discoverasr.com/en/citadines/japan/citadines-namba-osaka</div>
+                    </a>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="chip" style="margin-bottom: 8px">Tokyo | พักย่าน Asakusa</div>
+                  <div class="hotel-list">
+                    <a class="hotel" href="https://mimaruhotels.com/en/hotel/asakusa-station/" target="_blank" rel="noreferrer">
+                      <div class="n">MIMARU Tokyo Asakusa Station</div>
+                      <div class="u">https://mimaruhotels.com/en/hotel/asakusa-station/</div>
+                    </a>
+                    <a class="hotel" href="https://mimaruhotels.com/en/hotel/suites-tokyo-asakusa/" target="_blank" rel="noreferrer">
+                      <div class="n">MIMARU SUITES Tokyo Asakusa</div>
+                      <div class="u">https://mimaruhotels.com/en/hotel/suites-tokyo-asakusa/</div>
+                    </a>
+                    <a class="hotel" href="https://www.viewhotels.jp/asakusa" target="_blank" rel="noreferrer">
+                      <div class="n">Asakusa View Hotel</div>
+                      <div class="u">https://www.viewhotels.jp/asakusa</div>
+                    </a>
+                    <a class="hotel" href="https://www.gate-hotel.jp/en/asakusa-kaminarimon/" target="_blank" rel="noreferrer">
+                      <div class="n">THE GATE HOTEL KAMINARIMON by HULIC</div>
+                      <div class="u">https://www.gate-hotel.jp/en/asakusa-kaminarimon/</div>
+                    </a>
+                    <a class="hotel" href="https://www.hotelwing.co.jp/en/select/asakusa/" target="_blank" rel="noreferrer">
+                      <div class="n">Hotel Wing International Select Asakusa Komagata</div>
+                      <div class="u">https://www.hotelwing.co.jp/en/select/asakusa/</div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="credits">
+                <div class="h">เครดิตรูปภาพ (Wikimedia Commons)</div>
+                Dotonbori: Martin Falbisoner, CC BY-SA 4.0
+                <br />
+                Senso-ji: Guilhem Vellut, CC BY 2.0
+                <br />
+                Yokohama Minato Mirai: Thirteen-fri, CC BY-SA 3.0
+                <br />
+                Shinkansen (N700): David Kernan, CC BY 4.0
+                <br />
+                Kaiyukan (Whale shark): David Kernan, CC0
+                <br />
+                CupNoodles Museum Yokohama: Hal 0005, CC BY-SA 4.0
+                <br />
+                Tokyo Disneyland Castle: PublicDomainFan08, CC0
+                <br />
+                USJ: Amada44, CC BY-SA 4.0
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

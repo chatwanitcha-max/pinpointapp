@@ -1,0 +1,665 @@
+[
+  {
+    "slug": "company-registration-thailand-checklist",
+    "date": "2026-03-13",
+    "category_th": "จดทะเบียนบริษัท",
+    "category_en": "Company Registration",
+    "read_time_th": "อ่าน 8 นาที",
+    "read_time_en": "8 min read",
+    "title_th": "เช็กลิสต์จดทะเบียนจัดตั้งบริษัทในไทยสำหรับผู้เริ่มธุรกิจ",
+    "title_en": "Thailand Company Registration Checklist for New Business Owners",
+    "description_th": "สรุปข้อมูลและเอกสารที่ควรเตรียมก่อนเริ่มจดทะเบียนบริษัท พร้อมจุดที่ควรตรวจสอบกับระบบ DBD",
+    "description_en": "A practical checklist for company incorporation in Thailand, including key documents and official DBD checkpoints.",
+    "summary_th": [
+      "เริ่มจากกำหนดชื่อบริษัท วัตถุประสงค์ธุรกิจ และโครงสร้างผู้ถือหุ้นให้ชัด",
+      "เตรียมเอกสารผู้ถือหุ้น กรรมการ และสถานที่ประกอบการให้ครบก่อนยื่น",
+      "ตรวจข้อมูลล่าสุดจากเว็บไซต์ DBD ก่อนส่งเอกสารทุกครั้ง"
+    ],
+    "summary_en": [
+      "Define company name, objectives, and shareholding structure before filing.",
+      "Prepare shareholder, director, and registered-office documents in one complete set.",
+      "Re-check current filing requirements on official DBD channels before submission."
+    ],
+    "sections": [
+      {
+        "heading_th": "1) วางโครงสร้างบริษัทให้ชัดก่อนยื่น",
+        "heading_en": "1) Define the company structure before filing",
+        "paragraphs_th": [
+          "ก่อนเริ่มยื่นจดทะเบียน ควรกำหนดข้อมูลหลักให้ครบ ได้แก่ ชื่อบริษัทที่ต้องการใช้ วัตถุประสงค์ธุรกิจ รายชื่อผู้ถือหุ้น กรรมการ และผู้มีอำนาจลงนาม",
+          "การเตรียมข้อมูลส่วนนี้ให้ชัดตั้งแต่ต้นช่วยลดการแก้ไขเอกสารภายหลังและทำให้ขั้นตอนดำเนินงานเร็วขึ้น"
+        ],
+        "paragraphs_en": [
+          "Before filing, prepare the core structure: company name options, objectives, shareholders, directors, and authorized signatories.",
+          "Clear setup data at the start reduces rework and shortens the incorporation timeline."
+        ],
+        "checklist_th": [
+          "ชื่อบริษัทสำรอง (หลายตัวเลือก)",
+          "วัตถุประสงค์ธุรกิจที่ตรงกับกิจกรรมจริง",
+          "โครงสร้างหุ้นและผู้มีอำนาจลงนาม"
+        ],
+        "checklist_en": [
+          "Backup company name options",
+          "Business objectives aligned with actual operations",
+          "Shareholding and signing authority structure"
+        ]
+      },
+      {
+        "heading_th": "2) รวมเอกสารให้ครบในชุดเดียว",
+        "heading_en": "2) Build one complete document pack",
+        "paragraphs_th": [
+          "เอกสารที่ขาดเพียงรายการเดียวมักทำให้กระบวนการล่าช้า จึงควรรวบรวมเอกสารผู้เกี่ยวข้องและเอกสารสถานที่ให้ครบก่อนยื่น",
+          "ในทางปฏิบัติ ควรทำรายการเช็กลิสต์ภายในบริษัทและกำหนดผู้รับผิดชอบเอกสารแต่ละหมวด"
+        ],
+        "paragraphs_en": [
+          "Missing just one document can delay the process, so assemble participant and premises documents in one package.",
+          "A practical approach is to maintain an internal checklist with clear document owners."
+        ],
+        "checklist_th": [
+          "เอกสารยืนยันตัวตนของผู้ถือหุ้น/กรรมการ",
+          "เอกสารสถานที่ตั้งและหลักฐานประกอบ",
+          "แบบฟอร์มและมติที่เกี่ยวข้องตามประเภทงาน"
+        ],
+        "checklist_en": [
+          "Identity records for shareholders/directors",
+          "Registered-address documents and supporting proof",
+          "Required forms and resolutions"
+        ]
+      },
+      {
+        "heading_th": "3) ตรวจขั้นตอนล่าสุดจาก DBD ก่อนยื่นจริง",
+        "heading_en": "3) Validate latest DBD procedures before submission",
+        "paragraphs_th": [
+          "ข้อกำหนดหรือระบบยื่นอาจมีการปรับปรุงเป็นระยะ จึงควรตรวจข้อมูลจากช่องทางทางการก่อนดำเนินการทุกครั้ง",
+          "การเช็กข้อมูลล่าสุดช่วยลดความเสี่ยงด้านเอกสารไม่ผ่านและลดรอบแก้ไข"
+        ],
+        "paragraphs_en": [
+          "Requirements and e-filing workflows may change over time, so always verify official instructions before filing.",
+          "This step lowers rejection risk and avoids unnecessary correction cycles."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label_th": "กรมพัฒนาธุรกิจการค้า (DBD)",
+        "label_en": "Department of Business Development (DBD)",
+        "url": "https://www.dbd.go.th"
+      },
+      {
+        "label_th": "DBD e-Service",
+        "label_en": "DBD e-Service",
+        "url": "https://e-service.dbd.go.th"
+      }
+    ]
+  },
+  {
+    "slug": "dbd-amendment-checklist",
+    "date": "2026-03-13",
+    "category_th": "เปลี่ยนแปลง DBD",
+    "category_en": "DBD Amendments",
+    "read_time_th": "อ่าน 7 นาที",
+    "read_time_en": "7 min read",
+    "title_th": "เช็กลิสต์งานเปลี่ยนแปลงข้อมูลนิติบุคคลกับ DBD",
+    "title_en": "DBD Amendment Checklist for Corporate Record Changes",
+    "description_th": "แนวทางเตรียมเอกสารสำหรับเปลี่ยนกรรมการ เพิ่มทุน ย้ายที่ตั้ง และแก้ไขวัตถุประสงค์บริษัท",
+    "description_en": "How to prepare amendment filings for director changes, capital updates, office relocation, and objective revisions.",
+    "summary_th": [
+      "แยกประเภทการเปลี่ยนแปลงก่อน เพื่อเลือกแบบฟอร์มและเอกสารที่ถูกต้อง",
+      "จัดทำมติและเอกสารรับรองให้ครบก่อนเริ่มยื่น",
+      "อัปเดตข้อมูลต่อในระบบภายในและหน่วยงานที่เกี่ยวข้องหลังงานเสร็จ"
+    ],
+    "summary_en": [
+      "Classify the amendment type first to select the right filing path.",
+      "Prepare resolutions and supporting documents before submission.",
+      "Update internal records and related external systems after completion."
+    ],
+    "sections": [
+      {
+        "heading_th": "1) แยกประเภทงานให้ชัดเจน",
+        "heading_en": "1) Define amendment scope clearly",
+        "paragraphs_th": [
+          "งานเปลี่ยนแปลงแต่ละประเภทใช้เอกสารและลำดับขั้นต่างกัน เช่น เปลี่ยนกรรมการ เปลี่ยนที่ตั้ง เพิ่มทุน หรือแก้ไขวัตถุประสงค์",
+          "การระบุประเภทงานชัดตั้งแต่แรกช่วยให้ประเมินเวลาทำงานและจุดที่ต้องขอเอกสารเพิ่มได้แม่นยำ"
+        ],
+        "paragraphs_en": [
+          "Each amendment type has its own filing order and document requirements.",
+          "Defining the exact amendment type early improves timeline and document planning."
+        ]
+      },
+      {
+        "heading_th": "2) เตรียมมติประชุมและเอกสารประกอบ",
+        "heading_en": "2) Prepare meeting resolutions and supporting records",
+        "paragraphs_th": [
+          "เอกสารมติประชุม หนังสือรับรอง และเอกสารลงนามเป็นจุดที่ต้องตรวจความถูกต้องอย่างละเอียดก่อนยื่น",
+          "ควรทำรอบตรวจภายในหนึ่งครั้งก่อนส่งจริงเพื่อป้องกันความคลาดเคลื่อนด้านชื่อ วันที่ และอำนาจลงนาม"
+        ],
+        "paragraphs_en": [
+          "Resolutions, certificates, and signatory documents should be reviewed carefully before filing.",
+          "A final internal validation round reduces name/date/signature mismatches."
+        ]
+      },
+      {
+        "heading_th": "3) งานหลังการเปลี่ยนแปลง",
+        "heading_en": "3) Post-amendment follow-through",
+        "paragraphs_th": [
+          "หลังเอกสาร DBD เสร็จ ควรอัปเดตข้อมูลต่อกับธนาคาร กรมสรรพากร และเอกสารภายในบริษัทให้สอดคล้องกัน",
+          "ขั้นตอนนี้ช่วยลดปัญหาเอกสารคนละชุดเมื่อมีการตรวจสอบหรือทำธุรกรรมต่อ"
+        ],
+        "paragraphs_en": [
+          "After DBD completion, align data with bank, tax, and internal records.",
+          "Consistent records reduce downstream compliance and transaction risk."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label_th": "กรมพัฒนาธุรกิจการค้า (DBD)",
+        "label_en": "Department of Business Development (DBD)",
+        "url": "https://www.dbd.go.th"
+      },
+      {
+        "label_th": "ระบบ e-Filing DBD",
+        "label_en": "DBD e-Filing",
+        "url": "https://efiling.dbd.go.th"
+      }
+    ]
+  },
+  {
+    "slug": "vat-readiness-thailand",
+    "date": "2026-03-13",
+    "category_th": "ภาษีมูลค่าเพิ่ม",
+    "category_en": "VAT",
+    "read_time_th": "อ่าน 8 นาที",
+    "read_time_en": "8 min read",
+    "title_th": "VAT Readiness สำหรับธุรกิจที่รายได้กำลังเติบโต",
+    "title_en": "VAT Readiness for Growing Businesses in Thailand",
+    "description_th": "วางระบบเอกสารและกระบวนการก่อนจด VAT เพื่อลดความเสี่ยงด้านภาษีและงานแก้ย้อนหลัง",
+    "description_en": "How to prepare process and documentation before VAT registration to reduce tax risk and rework.",
+    "summary_th": [
+      "เตรียมระบบเอกสารภาษีซื้อ-ขายให้พร้อมก่อนจดทะเบียน VAT",
+      "กำหนดผู้รับผิดชอบและรอบตรวจเอกสารรายเดือนตั้งแต่ต้น",
+      "ตรวจข้อมูลล่าสุดจากกรมสรรพากรเป็นระยะ"
+    ],
+    "summary_en": [
+      "Set up purchase and sales tax documentation before VAT onboarding.",
+      "Assign monthly owner and review cadence early.",
+      "Continuously validate updates from the Revenue Department."
+    ],
+    "sections": [
+      {
+        "heading_th": "1) วางระบบก่อน เพื่อไม่แก้ย้อนหลัง",
+        "heading_en": "1) Build the process first to avoid back corrections",
+        "paragraphs_th": [
+          "ธุรกิจที่ยอดขายเติบโตเร็วควรจัดระบบเอกสารภาษีซื้อ-ขายและการเก็บหลักฐานให้พร้อมก่อนจด VAT",
+          "หากเริ่มต้นด้วยระบบที่ชัดเจน จะลดภาระงานแก้ย้อนหลังและลดความเสี่ยงจากข้อมูลไม่ครบ"
+        ],
+        "paragraphs_en": [
+          "Fast-growing businesses should establish VAT document flow before registration becomes urgent.",
+          "A structured process significantly reduces later correction burden."
+        ]
+      },
+      {
+        "heading_th": "2) คุมงานรายเดือนให้เป็นวินัย",
+        "heading_en": "2) Keep monthly discipline in VAT operations",
+        "paragraphs_th": [
+          "ควรกำหนด cut-off เอกสารรายเดือน ผู้ตรวจ และรอบสรุป เพื่อให้การยื่นภาษีมีข้อมูลพร้อมใช้งาน",
+          "เมื่องานรายเดือนเป็นระบบเดียวกันทุกเดือน ความแม่นยำและความน่าเชื่อถือของข้อมูลจะดีขึ้นมาก"
+        ],
+        "paragraphs_en": [
+          "Define monthly cut-off, reviewer, and reporting cadence for filing readiness.",
+          "Consistent monthly operation improves both accuracy and confidence."
+        ]
+      },
+      {
+        "heading_th": "3) ตรวจเงื่อนไขและแบบฟอร์มจากช่องทางทางการ",
+        "heading_en": "3) Verify requirements and forms through official channels",
+        "paragraphs_th": [
+          "รายละเอียดแบบฟอร์มและเงื่อนไขอาจมีการปรับได้ จึงควรเช็กจากเว็บไซต์กรมสรรพากรก่อนทุกครั้ง",
+          "การอ้างอิงแหล่งทางการช่วยลดความเสี่ยงจากการใช้ข้อมูลเก่า"
+        ],
+        "paragraphs_en": [
+          "Forms and conditions can change, so verify current instructions from official Revenue Department pages.",
+          "Official-source verification helps avoid outdated guidance."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label_th": "กรมสรรพากร",
+        "label_en": "Revenue Department",
+        "url": "https://www.rd.go.th"
+      },
+      {
+        "label_th": "บริการ e-Filing ของกรมสรรพากร",
+        "label_en": "Revenue Department e-Filing",
+        "url": "https://efiling.rd.go.th"
+      }
+    ]
+  },
+  {
+    "slug": "corporate-tax-planning-thailand",
+    "date": "2026-03-13",
+    "category_th": "วางแผนภาษี",
+    "category_en": "Tax Planning",
+    "read_time_th": "อ่าน 8 นาที",
+    "read_time_en": "8 min read",
+    "title_th": "วางแผนภาษีบริษัทอย่างปลอดภัยและตรวจสอบได้",
+    "title_en": "How to Plan Corporate Tax Safely and Defensibly",
+    "description_th": "แนวทางวางแผนภาษีแบบ compliance-first เพื่อรักษาสภาพคล่องและลดความเสี่ยงการตรวจสอบ",
+    "description_en": "A compliance-first framework for corporate tax planning to preserve cash flow and reduce audit risk.",
+    "summary_th": [
+      "เริ่มจากคุณภาพข้อมูลบัญชี ไม่ใช่เริ่มจากสูตรลดภาษี",
+      "จัดหมวดค่าใช้จ่ายและหลักฐานสนับสนุนให้ครบตั้งแต่รายเดือน",
+      "ติดตามตัวชี้วัดภาษีเพื่อวางแผนล่วงหน้าได้แม่นขึ้น"
+    ],
+    "summary_en": [
+      "Start with accounting quality, not tax-saving shortcuts.",
+      "Organize expenses and evidence monthly.",
+      "Track tax KPIs for better forward planning."
+    ],
+    "sections": [
+      {
+        "heading_th": "1) คุณภาพข้อมูลคือฐานของแผนภาษี",
+        "heading_en": "1) Data quality is the base of tax planning",
+        "paragraphs_th": [
+          "แผนภาษีที่ดีควรยืนอยู่บนข้อมูลบัญชีที่ตรวจย้อนกลับได้ ไม่ควรเริ่มจากการคาดการณ์แบบไม่มีหลักฐาน",
+          "เมื่อข้อมูลต้นทางชัด การวิเคราะห์กำไรสุทธิและภาระภาษีจะมีความแม่นยำมากขึ้น"
+        ],
+        "paragraphs_en": [
+          "A reliable tax strategy must be built on traceable accounting data.",
+          "Strong data quality improves profit and tax forecasting accuracy."
+        ]
+      },
+      {
+        "heading_th": "2) จัดการค่าใช้จ่ายเชิงภาษีอย่างมีระบบ",
+        "heading_en": "2) Manage tax-related expenses systematically",
+        "paragraphs_th": [
+          "ควรจัดหมวดค่าใช้จ่ายและเอกสารประกอบตามนโยบายเดียวกันทั้งปี เพื่อให้สรุปและทบทวนได้รวดเร็ว",
+          "งานส่วนนี้ช่วยลดความเสี่ยงเรื่องเอกสารไม่ครบเมื่อมีการตรวจสอบ"
+        ],
+        "paragraphs_en": [
+          "Use one expense classification policy throughout the year.",
+          "This helps accelerate reviews and lowers documentary risk."
+        ]
+      },
+      {
+        "heading_th": "3) ใช้ KPI ภาษีสำหรับผู้บริหาร",
+        "heading_en": "3) Use tax KPIs for management decisions",
+        "paragraphs_th": [
+          "ตัวชี้วัดอย่าง effective tax rate หรือ tax-to-profit ratio ช่วยให้ผู้บริหารเห็นแนวโน้มภาระภาษีและวางแผนล่วงหน้าได้ดีขึ้น",
+          "เมื่อ KPI ถูกติดตามต่อเนื่อง ทีมจะเห็นความเสี่ยงได้ก่อนกลายเป็นปัญหา"
+        ],
+        "paragraphs_en": [
+          "KPIs such as effective tax rate and tax-to-profit ratio support proactive planning.",
+          "Consistent KPI monitoring surfaces risk earlier."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label_th": "กรมสรรพากร",
+        "label_en": "Revenue Department",
+        "url": "https://www.rd.go.th"
+      }
+    ]
+  },
+  {
+    "slug": "payroll-social-security-guide",
+    "date": "2026-03-13",
+    "category_th": "Payroll และประกันสังคม",
+    "category_en": "Payroll and Social Security",
+    "read_time_th": "อ่าน 7 นาที",
+    "read_time_en": "7 min read",
+    "title_th": "ระบบเงินเดือนและประกันสังคมสำหรับธุรกิจที่กำลังโต",
+    "title_en": "Payroll and Social Security Setup for Growing Teams",
+    "description_th": "แนวทางออกแบบกระบวนการ payroll ให้จ่ายตรงเวลา ตรวจสอบได้ และรองรับการเติบโตของทีม",
+    "description_en": "A practical payroll setup guide focused on timely processing, traceability, and team growth readiness.",
+    "summary_th": [
+      "แยกขั้นตอนรับข้อมูล คำนวณ จ่ายเงิน และเก็บหลักฐานให้เป็นระบบ",
+      "กำหนด cut-off และ owner ของข้อมูล HR/Payroll ชัดเจน",
+      "ตรวจขั้นตอนล่าสุดจาก SSO และหน่วยงานที่เกี่ยวข้องสม่ำเสมอ"
+    ],
+    "summary_en": [
+      "Separate data intake, calculation, payment, and documentation steps.",
+      "Define payroll cut-off and ownership clearly.",
+      "Regularly validate updates from SSO and related channels."
+    ],
+    "sections": [
+      {
+        "heading_th": "1) ออกแบบ flow เงินเดือนให้เสถียร",
+        "heading_en": "1) Build a stable payroll flow",
+        "paragraphs_th": [
+          "ธุรกิจที่กำลังขยายทีมควรแยกขั้นตอน payroll ให้ชัดตั้งแต่การรับข้อมูลพนักงาน การตรวจข้อมูล การคำนวณ และการอนุมัติ",
+          "เมื่อ flow ชัดเจนจะลดงานแก้ซ้ำและลดข้อผิดพลาดช่วงจ่ายเงินจริง"
+        ],
+        "paragraphs_en": [
+          "As teams grow, payroll needs a clear end-to-end flow from data intake to approval.",
+          "A structured process reduces rework and payment-period errors."
+        ]
+      },
+      {
+        "heading_th": "2) กำหนด cut-off และผู้รับผิดชอบ",
+        "heading_en": "2) Define cut-off and accountability",
+        "paragraphs_th": [
+          "ควรกำหนดวันปิดข้อมูลและผู้รับผิดชอบในแต่ละขั้นตอน เพื่อให้ข้อมูล HR และ payroll ตรงกัน",
+          "ความชัดเจนเรื่อง owner ช่วยลดงานข้ามทีมและลดการส่งข้อมูลไม่ทันรอบ"
+        ],
+        "paragraphs_en": [
+          "Set fixed cut-off dates and clear owners per step.",
+          "Ownership clarity minimizes cross-team delays and late data submission."
+        ]
+      },
+      {
+        "heading_th": "3) อ้างอิงข้อมูลทางการก่อนยื่น",
+        "heading_en": "3) Verify official guidance before filing",
+        "paragraphs_th": [
+          "งานประกันสังคมและเอกสารแรงงานควรตรวจเงื่อนไขและแบบฟอร์มล่าสุดจากช่องทางทางการเสมอ",
+          "การอ้างอิงแหล่งข้อมูลทางการช่วยลดความเสี่ยงจากการใช้แบบฟอร์มเก่า"
+        ],
+        "paragraphs_en": [
+          "Payroll-related social-security filings should always be checked against official guidance.",
+          "Official validation lowers risk from outdated forms or assumptions."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label_th": "สำนักงานประกันสังคม",
+        "label_en": "Social Security Office (SSO)",
+        "url": "https://www.sso.go.th"
+      }
+    ]
+  },
+  {
+    "slug": "visa-work-permit-business-guide",
+    "date": "2026-03-13",
+    "category_th": "วีซ่าและ Work Permit",
+    "category_en": "Visa and Work Permit",
+    "read_time_th": "อ่าน 9 นาที",
+    "read_time_en": "9 min read",
+    "title_th": "แนวทางเตรียมวีซ่าและ Work Permit สำหรับผู้บริหาร/พนักงานต่างชาติ",
+    "title_en": "Business Visa and Work Permit Preparation Guide",
+    "description_th": "สรุปการเตรียมเอกสารฝั่งบริษัทและฝั่งผู้ยื่น พร้อมจุดตรวจสอบสำคัญก่อนยื่นจริง",
+    "description_en": "A practical guide to prepare company-side and applicant-side documents before visa and work permit filings.",
+    "summary_th": [
+      "เริ่มจากกำหนดบทบาทงานและประเภทการยื่นให้ชัด",
+      "แยกเอกสารบริษัท เอกสารผู้ยื่น และเอกสารสนับสนุนแรงงาน",
+      "วางปฏิทินต่ออายุล่วงหน้าเพื่อไม่ให้ใบอนุญาตขาดช่วง"
+    ],
+    "summary_en": [
+      "Define role and filing pathway before preparing documents.",
+      "Separate company, applicant, and labor-support document packs.",
+      "Set renewal timelines early to avoid permit gaps."
+    ],
+    "sections": [
+      {
+        "heading_th": "1) กำหนดประเภทงานและเส้นทางยื่น",
+        "heading_en": "1) Define role and filing path",
+        "paragraphs_th": [
+          "ก่อนเตรียมเอกสาร ควรกำหนดบทบาทหน้าที่ ระยะเวลาทำงาน และประเภทการยื่นให้ตรงกับสภาพการจ้างจริง",
+          "การกำหนดเส้นทางตั้งแต่ต้นช่วยลดการยื่นผิดประเภทและลดเวลาการแก้ไข"
+        ],
+        "paragraphs_en": [
+          "Before collecting documents, align role, employment context, and filing type.",
+          "Correct filing path selection at the start reduces mismatch risk."
+        ]
+      },
+      {
+        "heading_th": "2) แยกเอกสารเป็น 3 ชุดหลัก",
+        "heading_en": "2) Organize documents into three packs",
+        "paragraphs_th": [
+          "ควรแยกเอกสารเป็นชุดบริษัท ชุดผู้ยื่น และชุดเอกสารสนับสนุนอื่นเพื่อให้ง่ายต่อการตรวจทาน",
+          "รูปแบบนี้ช่วยให้ทีมเห็นช่องว่างเอกสารและติดตามสถานะได้ชัด"
+        ],
+        "paragraphs_en": [
+          "Use three packs: company documents, applicant documents, and supporting records.",
+          "This structure makes gap analysis and status tracking easier."
+        ],
+        "checklist_th": [
+          "ชุดเอกสารนิติบุคคลบริษัท",
+          "ชุดเอกสารส่วนบุคคลผู้ยื่น",
+          "ชุดเอกสารประกอบตามเงื่อนไขหน่วยงาน"
+        ],
+        "checklist_en": [
+          "Corporate legal document pack",
+          "Applicant personal document pack",
+          "Authority-specific supporting pack"
+        ]
+      },
+      {
+        "heading_th": "3) ตั้งระบบเตือนต่ออายุ",
+        "heading_en": "3) Set renewal reminders",
+        "paragraphs_th": [
+          "ควรกำหนดปฏิทินเตือนล่วงหน้าและคนรับผิดชอบแต่ละงานต่ออายุให้ชัดเจน",
+          "การทำเช่นนี้ช่วยป้องกันความเสี่ยงใบอนุญาตขาดช่วงและกระทบการดำเนินธุรกิจ"
+        ],
+        "paragraphs_en": [
+          "Set advance reminders and owner responsibilities for renewals.",
+          "This prevents permit lapses that could disrupt operations."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label_th": "กรมการจัดหางาน",
+        "label_en": "Department of Employment",
+        "url": "https://www.doe.go.th"
+      },
+      {
+        "label_th": "ระบบ e-Workpermit",
+        "label_en": "e-Workpermit",
+        "url": "https://ewp.doe.go.th"
+      }
+    ]
+  },
+  {
+    "slug": "business-license-readiness-checklist",
+    "date": "2026-03-13",
+    "category_th": "ใบอนุญาตธุรกิจ",
+    "category_en": "Business Licensing",
+    "read_time_th": "อ่าน 8 นาที",
+    "read_time_en": "8 min read",
+    "title_th": "เช็กลิสต์ความพร้อมก่อนขอใบอนุญาตประกอบธุรกิจ",
+    "title_en": "Business License Readiness Checklist",
+    "description_th": "แนวทางเตรียมเอกสารและลำดับงานก่อนยื่นใบอนุญาตธุรกิจที่เกี่ยวข้องกับกิจการ",
+    "description_en": "A practical readiness checklist for documents and process sequencing before business-license applications.",
+    "summary_th": [
+      "ตรวจหน่วยงานกำกับและเงื่อนไขเฉพาะของประเภทธุรกิจให้ชัด",
+      "เตรียมเอกสารนิติบุคคลและเอกสารสถานประกอบการให้ครบ",
+      "ตั้งระบบติดตามสถานะและต่ออายุใบอนุญาต"
+    ],
+    "summary_en": [
+      "Identify regulator and category-specific requirements first.",
+      "Prepare both corporate and premises documentation.",
+      "Establish status tracking and renewal control."
+    ],
+    "sections": [
+      {
+        "heading_th": "1) เริ่มจากแผนที่หน่วยงานกำกับ",
+        "heading_en": "1) Start with the regulatory map",
+        "paragraphs_th": [
+          "ใบอนุญาตแต่ละประเภทใช้หน่วยงานและเงื่อนไขต่างกัน การเริ่มจากแผนที่หน่วยงานกำกับช่วยลดการเดินเอกสารผิดทาง",
+          "ควรทำสรุปว่าใบอนุญาตไหนเป็นเงื่อนไขก่อนเปิดกิจการ และใบอนุญาตไหนเป็นเงื่อนไขต่อเนื่อง"
+        ],
+        "paragraphs_en": [
+          "Different licenses involve different authorities and conditions.",
+          "Define which licenses are pre-operation requirements and which are ongoing obligations."
+        ]
+      },
+      {
+        "heading_th": "2) เตรียมเอกสารให้ตรงตามประเภทใบอนุญาต",
+        "heading_en": "2) Prepare documents by license type",
+        "paragraphs_th": [
+          "นอกจากเอกสารบริษัททั่วไป หลายกรณียังต้องใช้เอกสารสถานที่ แผนผัง และรูปถ่ายประกอบ",
+          "การจัดเอกสารเป็นแพ็กแยกตามใบอนุญาตช่วยให้ตรวจเช็กและติดตามได้ง่าย"
+        ],
+        "paragraphs_en": [
+          "Beyond standard corporate records, many licenses require premises layout, maps, and photo evidence.",
+          "Create separate packs per license to simplify review and progress tracking."
+        ]
+      },
+      {
+        "heading_th": "3) วางระบบติดตามสถานะและอายุใบอนุญาต",
+        "heading_en": "3) Build status and renewal tracking",
+        "paragraphs_th": [
+          "หลังยื่นแล้ว ควรมี dashboard หรือปฏิทินติดตามสถานะงานและวันหมดอายุใบอนุญาต",
+          "ขั้นตอนนี้ช่วยลดความเสี่ยงด้าน compliance ระยะยาว"
+        ],
+        "paragraphs_en": [
+          "After filing, track status and expiration dates in one visible system.",
+          "This improves long-term compliance control."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label_th": "Biz Portal",
+        "label_en": "Biz Portal",
+        "url": "https://bizportal.go.th"
+      },
+      {
+        "label_th": "กรมพัฒนาธุรกิจการค้า (DBD)",
+        "label_en": "Department of Business Development (DBD)",
+        "url": "https://www.dbd.go.th"
+      }
+    ]
+  },
+  {
+    "slug": "company-dissolution-process-thailand",
+    "date": "2026-03-13",
+    "category_th": "ปิดบริษัท",
+    "category_en": "Company Dissolution",
+    "read_time_th": "อ่าน 8 นาที",
+    "read_time_en": "8 min read",
+    "title_th": "ขั้นตอนปิดบริษัทและชำระบัญชีในไทยแบบเป็นลำดับ",
+    "title_en": "Structured Guide to Company Dissolution and Liquidation in Thailand",
+    "description_th": "อธิบายลำดับงานปิดบริษัท การแต่งตั้งผู้ชำระบัญชี และจุดควบคุมเอกสารที่ต้องไม่พลาด",
+    "description_en": "Step-by-step dissolution guidance covering liquidator appointment and key documentation control points.",
+    "summary_th": [
+      "เริ่มจากมติผู้ถือหุ้นและการแต่งตั้งผู้ชำระบัญชีอย่างถูกต้อง",
+      "วางไทม์ไลน์เอกสารเพื่อไม่พลาดกำหนดเวลา",
+      "ปิดภาระภาษี บัญชี และเอกสารปลายทางให้ครบก่อนจบกระบวนการ"
+    ],
+    "summary_en": [
+      "Start with valid shareholder resolution and liquidator appointment.",
+      "Use a timeline to avoid missing legal deadlines.",
+      "Close tax, accounting, and final documentation obligations completely."
+    ],
+    "sections": [
+      {
+        "heading_th": "1) มติเลิกบริษัทและผู้ชำระบัญชี",
+        "heading_en": "1) Dissolution resolution and liquidator setup",
+        "paragraphs_th": [
+          "งานปิดบริษัทต้องเริ่มจากมติที่ถูกต้องและกำหนดผู้รับผิดชอบชำระบัญชีอย่างชัดเจน",
+          "เอกสารต้นทางที่ชัดเจนช่วยให้ขั้นตอนต่อเนื่องไม่สะดุด"
+        ],
+        "paragraphs_en": [
+          "Dissolution begins with valid corporate resolution and clear liquidator responsibility.",
+          "Accurate foundational documents keep later steps predictable."
+        ]
+      },
+      {
+        "heading_th": "2) จัดการเอกสารตามไทม์ไลน์",
+        "heading_en": "2) Manage documentation by timeline",
+        "paragraphs_th": [
+          "ขั้นตอนประกาศและยื่นเอกสารต้องเดินตามลำดับเวลา จึงควรมีแผนงานและผู้รับผิดชอบรายขั้น",
+          "การบริหารไทม์ไลน์ลดความเสี่ยงจากการส่งเอกสารเกินกำหนด"
+        ],
+        "paragraphs_en": [
+          "Notices and filings must follow legal sequence and timing.",
+          "Timeline management reduces deadline risk."
+        ]
+      },
+      {
+        "heading_th": "3) ปิดภาระปลายทางให้ครบ",
+        "heading_en": "3) Complete terminal obligations",
+        "paragraphs_th": [
+          "ก่อนปิดเคส ควรตรวจรายการภาระภาษี ภาระบัญชี และเอกสารปลายทางทั้งหมดให้ครบถ้วน",
+          "การปิดแบบครบวงจรช่วยลดปัญหาตกค้างหลังเลิกนิติบุคคล"
+        ],
+        "paragraphs_en": [
+          "Before closure, reconcile tax, accounting, and final submission obligations.",
+          "Complete closure minimizes residual compliance issues."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label_th": "กรมพัฒนาธุรกิจการค้า (DBD)",
+        "label_en": "Department of Business Development (DBD)",
+        "url": "https://www.dbd.go.th"
+      },
+      {
+        "label_th": "กรมสรรพากร",
+        "label_en": "Revenue Department",
+        "url": "https://www.rd.go.th"
+      }
+    ]
+  },
+  {
+    "slug": "sme-year-end-closing",
+    "date": "2026-03-13",
+    "category_th": "ปิดงบสิ้นปี",
+    "category_en": "Year-End Closing",
+    "read_time_th": "อ่าน 7 นาที",
+    "read_time_en": "7 min read",
+    "title_th": "คู่มือปิดงบสิ้นปีสำหรับ SME แบบใช้งานได้จริง",
+    "title_en": "Practical SME Year-End Closing Guide",
+    "description_th": "เช็กลิสต์ปลายปีบัญชีเพื่อลดงานตกค้างและเตรียมข้อมูลสำหรับการตรวจสอบได้ดีขึ้น",
+    "description_en": "A practical year-end checklist to reduce backlogs and improve audit readiness for SMEs.",
+    "summary_th": [
+      "ปิดงานรายเดือนให้ครบก่อนเริ่มปิดงบสิ้นปี",
+      "กระทบยอดบัญชีสำคัญกับเอกสารจริงทุกชุด",
+      "วางแผนภาษีก่อนล็อกงบสุดท้าย"
+    ],
+    "summary_en": [
+      "Complete monthly close first, then move to year-end close.",
+      "Reconcile critical balances against source documents.",
+      "Review tax impact before final lock."
+    ],
+    "sections": [
+      {
+        "heading_th": "1) ปิดงานรายเดือนย้อนหลังให้ครบ",
+        "heading_en": "1) Complete all monthly close tasks",
+        "paragraphs_th": [
+          "หลายบริษัทมีงานค้างปลายปีเพราะปิดรายเดือนไม่ครบ ควรเคลียร์ backlog ก่อนเริ่มงานสิ้นปี",
+          "การเก็บงานเป็นรายเดือนช่วยให้การปิดงบเร็วและแม่นยำขึ้น"
+        ],
+        "paragraphs_en": [
+          "Year-end delays often come from unfinished monthly close work.",
+          "Clearing monthly backlog first improves speed and accuracy."
+        ]
+      },
+      {
+        "heading_th": "2) กระทบยอดบัญชีสำคัญ",
+        "heading_en": "2) Reconcile key accounts",
+        "paragraphs_th": [
+          "ควรกระทบยอดธนาคาร ลูกหนี้ เจ้าหนี้ และบัญชีภาษีกับหลักฐานจริงให้ครบ",
+          "จุดนี้เป็นฐานสำคัญของความน่าเชื่อถืองบการเงิน"
+        ],
+        "paragraphs_en": [
+          "Reconcile bank, AR, AP, and tax accounts against real evidence.",
+          "This is a core reliability checkpoint for financial statements."
+        ]
+      },
+      {
+        "heading_th": "3) ตรวจผลกระทบภาษีก่อนปิดงบ",
+        "heading_en": "3) Review tax impact before final close",
+        "paragraphs_th": [
+          "ก่อนล็อกงบ ควรประเมินผลกระทบภาษีจากรายการสำคัญเพื่อป้องกันการปรับแก้รอบใหญ่หลังปิด",
+          "การทบทวนนี้ช่วยให้ผู้บริหารตัดสินใจปลายปีได้ดีขึ้น"
+        ],
+        "paragraphs_en": [
+          "Assess major tax implications before final lock to avoid large post-close adjustments.",
+          "This supports better year-end management decisions."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label_th": "กรมสรรพากร",
+        "label_en": "Revenue Department",
+        "url": "https://www.rd.go.th"
+      }
+    ]
+  }
+]
