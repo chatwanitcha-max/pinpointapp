@@ -615,6 +615,7 @@ function renderSitemap(posts) {
   const today = new Date().toISOString().slice(0, 10);
   const staticPaths = [
     { path: "/", lastmod: today },
+    { path: "/bangkok-accounting", lastmod: today },
     { path: "/services", lastmod: today },
     { path: "/about", lastmod: today },
     { path: "/resources", lastmod: today },

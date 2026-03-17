@@ -85,9 +85,9 @@
         "url": "https://www.dbd.go.th"
       },
       {
-        "label_th": "DBD e-Service",
-        "label_en": "DBD e-Service",
-        "url": "https://e-service.dbd.go.th"
+        "label_th": "ระบบ DBD Biz Regist",
+        "label_en": "DBD Biz Regist",
+        "url": "https://edbr.dbd.go.th/"
       }
     ]
   },
@@ -157,9 +157,9 @@
         "url": "https://www.dbd.go.th"
       },
       {
-        "label_th": "ระบบ e-Filing DBD",
-        "label_en": "DBD e-Filing",
-        "url": "https://efiling.dbd.go.th"
+        "label_th": "ระบบ DBD Biz Regist",
+        "label_en": "DBD Biz Regist",
+        "url": "https://edbr.dbd.go.th/"
       }
     ]
   },
@@ -447,7 +447,7 @@
       {
         "label_th": "ระบบ e-Workpermit",
         "label_en": "e-Workpermit",
-        "url": "https://ewp.doe.go.th"
+        "url": "https://eworkpermit.doe.go.th/"
       }
     ]
   },
