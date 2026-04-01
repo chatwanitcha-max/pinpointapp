@@ -210,6 +210,23 @@ function applyLineLinks() {
   });
 }
 
+function applyLeadChannelAvailability() {
+  const emailLeadEnabled = Boolean(
+    window.PINPOINT_CONFIG && window.PINPOINT_CONFIG.emailLeadEnabled
+  );
+  const preferredSelect = document.getElementById("leadPreferred");
+  const emailOption = preferredSelect?.querySelector('[data-contact-option="email"]');
+
+  if (emailOption) {
+    emailOption.hidden = !emailLeadEnabled;
+    emailOption.disabled = !emailLeadEnabled;
+  }
+
+  if (preferredSelect && preferredSelect.value === "email" && !emailLeadEnabled) {
+    preferredSelect.value = "phone";
+  }
+}
+
 async function handleLeadSubmit(event) {
   event.preventDefault();
 
@@ -231,7 +248,9 @@ async function handleLeadSubmit(event) {
     businessName: document.getElementById("leadBusiness")?.value.trim() || "",
     serviceNeed: document.getElementById("leadService")?.value || "",
     revenueRange: document.getElementById("leadRevenue")?.value || "",
-    preferredContact: document.getElementById("leadPreferred")?.value || "",
+    preferredContact:
+      document.getElementById("leadPreferred")?.value ||
+      ((window.PINPOINT_CONFIG && window.PINPOINT_CONFIG.emailLeadEnabled) ? "email" : "phone"),
     notes: document.getElementById("leadNotes")?.value.trim() || "",
     website: document.getElementById("trapField")?.value || "",
     utmSource: document.getElementById("utmSource")?.value || "",
@@ -697,6 +716,7 @@ function init() {
   initYear();
   populateUtmFields();
   applyLineLinks();
+  applyLeadChannelAvailability();
   initMobileTopbar();
   bindMobileTopbarAutoHide();
   bindEvents();

@@ -1,6 +1,7 @@
 .vercel
 .env.local
 .env.local.txt
+node_modules/
 references/
 releases/
 Japan_Trip_*
@@ -9,3 +10,20 @@ OPEN_Japan_Trip_*
 OPEN_Thailand_North_Trip_*
 utf8-*
 tools/itinerary/node_modules/
+tools/supabase-admin/
+operations/daily-growth-brief.md
+operations/runtime/
+
+# Personal/local docs not part of product
+ChiangMai_4D3N_11-14Oct2026_Bilingual.pdf
+Pai_4D3N_14-17Oct2026_Bilingual_v3.pdf
+Pai_4D3N_14-17Oct2026_Bilingual_v4.pdf
+Home_Cardio_Video_Links_TH.pdf
+IF_14-10_Weight_Loss_Plan_TH.pdf
+OPEN_ChiangMai_4D3N_Bilingual_PDF.cmd
+OPEN_ChiangMai_Pai_Guide_PDF.cmd
+OPEN_Pai_4D3N_PDF.cmd
+OPEN_Home_Cardio_Video_Links_PDF.cmd
+OPEN_IF_14-10_Plan_PDF.cmd
+
+.vercel

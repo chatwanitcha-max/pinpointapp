@@ -1,0 +1,385 @@
+[
+  {
+    "id": "research-vat36-foreign-service",
+    "type": "manual_faq",
+    "category": "tax",
+    "serviceBucket": "accounting-tax",
+    "priority": 118,
+    "question_th": "ภ.พ.36 ใช้กรณีไหน และยื่นเมื่อไร",
+    "question_en": "When is P.P.36 used, and when is it due?",
+    "answer_th": "ภ.พ.36 ใช้ในกรณีผู้จ่ายในไทยจ่ายค่าบริการหรือค่าสิทธิให้ผู้ประกอบการต่างประเทศที่ไม่ได้จด VAT ในไทย และมีหน้าที่นำส่ง VAT แทน โดยควรตรวจข้อเท็จจริงของธุรกรรมและวันที่จ่ายเงินก่อน เพื่อกำหนดรอบยื่นให้ถูกต้องตามเกณฑ์ของสรรพากร",
+    "answer_en": "P.P.36 is generally used when a payer in Thailand pays service fees or royalties to an overseas party that is not VAT-registered in Thailand, and VAT must be remitted on that party’s behalf. The facts of the transaction and payment date should be checked first so the filing period is handled correctly under Revenue Department rules.",
+    "follow_up_th": "หากสะดวก ส่งลักษณะบริการจากต่างประเทศ วันที่จ่ายเงิน และคู่สัญญามาได้เลยค่ะ ทีมจะช่วยเช็กว่าควรใช้ ภ.พ.36 หรือไม่",
+    "follow_up_en": "If convenient, send the type of overseas service, payment date, and counterparty details, and we can check whether P.P.36 applies.",
+    "source_url": "https://www.rd.go.th/33475.html",
+    "official_links": [
+      {
+        "label_th": "ข้อมูล ภ.พ.36 ของกรมสรรพากร",
+        "label_en": "Revenue Department guidance on P.P.36",
+        "url": "https://www.rd.go.th/33475.html"
+      },
+      {
+        "label_th": "แบบฟอร์ม ภ.พ.36",
+        "label_en": "P.P.36 form",
+        "url": "https://www.rd.go.th/fileadmin/tax_pdf/vat/2568/pp36_010968.pdf"
+      }
+    ],
+    "keywords": [
+      "ภ.พ.36",
+      "pp36",
+      "บริการจากต่างประเทศ",
+      "imported service vat",
+      "royalty tax vat"
+    ]
+  },
+  {
+    "id": "research-vat-branch-separate-filing",
+    "type": "manual_faq",
+    "category": "tax",
+    "serviceBucket": "accounting-tax",
+    "priority": 110,
+    "question_th": "ถ้ามีหลายสาขา ต้องยื่น VAT แยกสาขาหรือไม่",
+    "question_en": "If a business has multiple branches, must VAT be filed separately by branch?",
+    "answer_th": "กรณีมีหลายสาขา ต้องดูรูปแบบการจดทะเบียน VAT และการได้รับอนุมัติให้ยื่นรวมหรือแยกสาขาตามข้อมูลของสรรพากรก่อน ไม่ควรสรุปจากชื่อสาขาอย่างเดียว เพราะวิธียื่นและเอกสารที่ใช้ต่างกันได้",
+    "answer_en": "For a business with multiple branches, the VAT registration structure and whether the Revenue Department approved consolidated or branch-based filing should be checked first. Filing should not be assumed from branch naming alone because the filing method and supporting documents can differ.",
+    "follow_up_th": "รบกวนแจ้งว่าจด VAT ในนามสำนักงานใหญ่หรือมีจดแยกสาขาไว้แล้ว ทีมจะช่วยเช็กแนวทางยื่นให้ตรงค่ะ",
+    "follow_up_en": "Please let us know whether VAT was registered only at head office or separately for branches, and we can guide the correct filing approach.",
+    "source_url": "https://www.rd.go.th/24903.html",
+    "official_links": [
+      {
+        "label_th": "ข้อมูล VAT หลายสาขา",
+        "label_en": "Revenue Department VAT branch guidance",
+        "url": "https://www.rd.go.th/24903.html"
+      }
+    ],
+    "keywords": [
+      "vat หลายสาขา",
+      "vat สาขา",
+      "branch vat filing",
+      "ยื่น vat แยกสาขา"
+    ]
+  },
+  {
+    "id": "research-dbd-eservice-certificate-copy",
+    "type": "manual_faq",
+    "category": "corporate",
+    "serviceBucket": "corporate-dbd",
+    "priority": 114,
+    "question_th": "ขอหนังสือรับรองบริษัทหรือคัดสำเนาเอกสารบริษัทออนไลน์ได้ไหม",
+    "question_en": "Can company certificates or certified copies be requested online?",
+    "answer_th": "ได้ค่ะ DBD มีช่องทาง e-Service สำหรับขอหนังสือรับรอง รับรองสำเนาเอกสาร และบริการข้อมูลนิติบุคคลบางส่วนแบบออนไลน์ แต่ควรเช็กประเภทเอกสารที่ต้องใช้ก่อน เพราะขั้นตอนและรูปแบบรับเอกสารอาจต่างกัน",
+    "answer_en": "Yes. DBD provides e-Service channels for requesting company certificates, certified copies, and some juristic-person information online. The exact document type should be confirmed first because the request flow and document delivery method may differ.",
+    "follow_up_th": "หากสะดวก แจ้งได้เลยค่ะว่าต้องการหนังสือรับรองหรือสำเนาเอกสารประเภทใด ทีมจะช่วยชี้ช่องทางที่เหมาะให้",
+    "follow_up_en": "If convenient, let us know which certificate or company document you need and we can point you to the right channel.",
+    "source_url": "https://ebiz.dbd.go.th/eservice-web/index.xhtml",
+    "official_links": [
+      {
+        "label_th": "DBD e-Service",
+        "label_en": "DBD e-Service",
+        "url": "https://ebiz.dbd.go.th/eservice-web/index.xhtml"
+      },
+      {
+        "label_th": "คู่มือ DBD e-Service",
+        "label_en": "DBD e-Service manual",
+        "url": "https://ebiz.dbd.go.th/eservice-web/pdf/DBD_UM_ES_WEB_P5_V1.pdf"
+      }
+    ],
+    "keywords": [
+      "หนังสือรับรองบริษัท",
+      "คัดสำเนาเอกสาร",
+      "dbd e-service",
+      "company certificate online"
+    ]
+  },
+  {
+    "id": "research-dbd-efiling-approved-copy",
+    "type": "manual_faq",
+    "category": "corporate",
+    "serviceBucket": "corporate-dbd",
+    "priority": 104,
+    "question_th": "ยื่น DBD e-Filing แล้ว จะได้สำเนาที่อนุมัติเมื่อไร",
+    "question_en": "After submitting DBD e-Filing, when is the approved copy available?",
+    "answer_th": "หลังยื่นผ่าน DBD e-Filing ระยะเวลาพิจารณาและการได้รับเอกสารที่อนุมัติขึ้นกับประเภทคำขอและความครบถ้วนของเอกสาร ควรตรวจสถานะคำขอและเอกสารแนบให้ครบตามคู่มือของ DBD ก่อน หากงานเร่ง ทีมควรช่วยเช็กให้ตั้งแต่ต้น",
+    "answer_en": "After submission through DBD e-Filing, the review time and the timing for approved copies depend on the request type and document completeness. Status should be checked together with the supporting documents required by DBD. For urgent cases, it is better to review the file before submission.",
+    "follow_up_th": "ถ้าต้องการให้ทีมช่วยดูเคสนี้ รบกวนส่งประเภทคำขอ วันที่ยื่น และสถานะล่าสุดที่เห็นในระบบมาได้เลยค่ะ",
+    "follow_up_en": "If you want us to review this case, please send the request type, submission date, and the latest status shown in the system.",
+    "source_url": "https://efiling.dbd.go.th/efiling-documents/fnq.pdf",
+    "official_links": [
+      {
+        "label_th": "FAQ DBD e-Filing",
+        "label_en": "DBD e-Filing FAQ",
+        "url": "https://efiling.dbd.go.th/efiling-documents/fnq.pdf"
+      }
+    ],
+    "keywords": [
+      "dbd e-filing",
+      "สำเนาที่อนุมัติ",
+      "approved copy",
+      "dbd status"
+    ]
+  },
+  {
+    "id": "research-dbd-english-certificate-verification",
+    "type": "manual_faq",
+    "category": "corporate",
+    "serviceBucket": "corporate-dbd",
+    "priority": 101,
+    "question_th": "ตรวจสอบหนังสือรับรองภาษาอังกฤษของ DBD ได้จากที่ไหน",
+    "question_en": "Where can an English DBD certificate be verified?",
+    "answer_th": "DBD มีระบบ encert สำหรับตรวจสอบหนังสือรับรองภาษาอังกฤษและข้อมูลที่เกี่ยวข้องแบบออนไลน์ ควรใช้ลิงก์ทางการของ DBD เพื่อให้ตรวจสอบได้ตรงเอกสารจริง",
+    "answer_en": "DBD provides the encert system for verifying English company certificates and related information online. The official DBD link should be used so the verification matches the actual document.",
+    "follow_up_th": "หากต้องการ ทีมสามารถช่วยเช็กได้ว่าควรใช้หนังสือรับรองภาษาไทย อังกฤษ หรือสำเนาเอกสารรูปแบบใดให้เหมาะกับงานของคุณ",
+    "follow_up_en": "If needed, we can help confirm whether the Thai certificate, English certificate, or another company document is the right one for your purpose.",
+    "source_url": "https://encert.dbd.go.th/encert-inter/public/th/index",
+    "official_links": [
+      {
+        "label_th": "DBD encert",
+        "label_en": "DBD encert",
+        "url": "https://encert.dbd.go.th/encert-inter/public/th/index"
+      }
+    ],
+    "keywords": [
+      "encert",
+      "หนังสือรับรองภาษาอังกฤษ",
+      "verify english certificate",
+      "dbd english certificate"
+    ]
+  },
+  {
+    "id": "research-social-security-insured-registration",
+    "type": "manual_faq",
+    "category": "social-security",
+    "serviceBucket": "accounting-tax",
+    "priority": 107,
+    "question_th": "รับพนักงานใหม่แล้ว ต้องขึ้นทะเบียนประกันสังคมภายในกี่วัน",
+    "question_en": "After hiring a new employee, within how many days must Social Security registration be completed?",
+    "answer_th": "ตามข้อมูลของสำนักงานประกันสังคม นายจ้างควรดำเนินการขึ้นทะเบียนผู้ประกันตนภายในระยะเวลาที่กฎหมายกำหนด ซึ่งโดยหลักมักต้องรีบดำเนินการหลังเริ่มจ้างจริง เพื่อไม่ให้เกิดปัญหาย้อนหลังเรื่องสิทธิและค่าปรับ",
+    "answer_en": "According to Social Security Office guidance, an employer should register an employee within the legal time frame, and in practice this should be handled promptly after employment starts to avoid benefit issues and penalties.",
+    "follow_up_th": "หากสะดวก แจ้งวันเริ่มงาน จำนวนพนักงาน และสถานะการขึ้นทะเบียนนายจ้างมาได้เลยค่ะ ทีมจะช่วยเช็กขั้นตอนต่อให้",
+    "follow_up_en": "If convenient, send the employment start date, number of employees, and current employer-registration status, and we can guide the next step.",
+    "source_url": "https://catalog.sso.go.th/dataset/c72fd51f-8e63-4565-8b6a-120fe5a95e60/resource/bd8da94a-a375-482b-a233-b9069c390f03/download/.pdf",
+    "official_links": [
+      {
+        "label_th": "ข้อมูลขึ้นทะเบียนผู้ประกันตน",
+        "label_en": "Social Security registration guidance",
+        "url": "https://catalog.sso.go.th/dataset/c72fd51f-8e63-4565-8b6a-120fe5a95e60/resource/bd8da94a-a375-482b-a233-b9069c390f03/download/.pdf"
+      },
+      {
+        "label_th": "สำนักงานประกันสังคม",
+        "label_en": "Social Security Office",
+        "url": "https://www.sso.go.th"
+      }
+    ],
+    "keywords": [
+      "ประกันสังคม พนักงานใหม่",
+      "ขึ้นทะเบียนผู้ประกันตน",
+      "social security employee registration"
+    ]
+  },
+  {
+    "id": "research-social-security-status-change",
+    "type": "manual_faq",
+    "category": "social-security",
+    "serviceBucket": "accounting-tax",
+    "priority": 98,
+    "question_th": "ถ้าพนักงานเข้าออกงาน ต้องแจ้งประกันสังคมเมื่อไร",
+    "question_en": "When must Social Security be notified if an employee joins or leaves?",
+    "answer_th": "การแจ้งเข้าออกและการเปลี่ยนแปลงข้อมูลผู้ประกันตนควรทำภายในกำหนดเวลาของสำนักงานประกันสังคม โดยทั่วไปไม่ควรรอจนข้ามรอบเดือน เพราะอาจกระทบสิทธิและการยื่นเงินสมทบ",
+    "answer_en": "Employee joiner, leaver, and insured-status changes should be filed within the Social Security Office’s required timeline. In practice, this should not be left past the next reporting cycle because it can affect contribution filings and employee entitlements.",
+    "follow_up_th": "รบกวนแจ้งวันที่พนักงานเริ่มงานหรือสิ้นสุดงาน และว่าตอนนี้แจ้งประกันสังคมไปแล้วหรือยัง ทีมจะช่วยเช็กให้ตรงรอบค่ะ",
+    "follow_up_en": "Please share the employee start or end date and whether the Social Security update has already been filed, and we can check the correct cycle.",
+    "source_url": "https://catalog.sso.go.th/dataset/ebf3f9f0-1df8-4e7a-9b59-6f978a360359/resource/eeecf89c-e564-4f8c-b27b-ff2d772ef807/download/.pdf",
+    "official_links": [
+      {
+        "label_th": "ข้อมูลแจ้งเปลี่ยนแปลงผู้ประกันตน",
+        "label_en": "Insured-status change guidance",
+        "url": "https://catalog.sso.go.th/dataset/ebf3f9f0-1df8-4e7a-9b59-6f978a360359/resource/eeecf89c-e564-4f8c-b27b-ff2d772ef807/download/.pdf"
+      },
+      {
+        "label_th": "สำนักงานประกันสังคม",
+        "label_en": "Social Security Office",
+        "url": "https://www.sso.go.th"
+      }
+    ],
+    "keywords": [
+      "แจ้งเข้าออกประกันสังคม",
+      "พนักงานลาออก ประกันสังคม",
+      "social security change employee"
+    ]
+  },
+  {
+    "id": "research-eworkpermit-first-registration",
+    "type": "manual_faq",
+    "category": "immigration",
+    "serviceBucket": "visa-license",
+    "priority": 108,
+    "question_th": "ลงทะเบียน e-Workpermit ครั้งแรก ใครเป็นคนสมัครได้",
+    "question_en": "Who can register for e-Workpermit for the first time?",
+    "answer_th": "จากเงื่อนไขของระบบ e-Workpermit การสมัครใช้งานครั้งแรกควรทำโดยเจ้าของกิจการหรือผู้มีอำนาจที่เกี่ยวข้องตามเงื่อนไขของระบบ และควรตรวจสิทธิผู้ยื่นกับสถานะบริษัทก่อนเริ่มดำเนินการ",
+    "answer_en": "Under the e-Workpermit conditions, the first registration should generally be made by the business owner or an authorized person, subject to the system’s conditions. The applicant’s authority and the company status should be checked first.",
+    "follow_up_th": "หากต้องการให้ทีมช่วยดู รบกวนแจ้งสถานะบริษัท ชื่อผู้ยื่น และว่าเป็นกรรมการหรือผู้รับมอบอำนาจค่ะ",
+    "follow_up_en": "If you want us to review it, please share the company status, the applicant name, and whether the applicant is a director or an authorized representative.",
+    "source_url": "https://eworkpermit.doe.go.th/login/register",
+    "official_links": [
+      {
+        "label_th": "ลงทะเบียน e-Workpermit",
+        "label_en": "e-Workpermit registration",
+        "url": "https://eworkpermit.doe.go.th/login/register"
+      },
+      {
+        "label_th": "ระบบ e-Workpermit",
+        "label_en": "e-Workpermit system",
+        "url": "https://eworkpermit.doe.go.th"
+      }
+    ],
+    "keywords": [
+      "e-workpermit สมัครครั้งแรก",
+      "ลงทะเบียน work permit online",
+      "authorized person e-workpermit"
+    ]
+  },
+  {
+    "id": "research-eworkpermit-identity-methods",
+    "type": "manual_faq",
+    "category": "immigration",
+    "serviceBucket": "visa-license",
+    "priority": 95,
+    "question_th": "ระบบ e-Workpermit ใช้วิธียืนยันตัวตนแบบไหน",
+    "question_en": "What identity-verification methods does the e-Workpermit system use?",
+    "answer_th": "ระบบ e-Workpermit อาจกำหนดวิธียืนยันตัวตนผ่านช่องทางดิจิทัลที่รัฐรองรับ เช่น DGA หรือ ThaiD ตามเงื่อนไขของระบบในช่วงเวลานั้น จึงควรตรวจหน้าลงทะเบียนล่าสุดก่อนเริ่มใช้งานจริง",
+    "answer_en": "The e-Workpermit system may require identity verification through approved digital-government channels such as DGA or ThaiD, depending on the current system conditions. The latest registration page should be checked before starting.",
+    "follow_up_th": "ถ้าสะดวก แจ้งได้เลยค่ะว่าผู้ยื่นถือสัญชาติอะไร และตอนนี้มีบัญชีดิจิทัลภาครัฐที่ใช้งานได้อยู่แล้วหรือไม่",
+    "follow_up_en": "If convenient, let us know the applicant’s nationality and whether they already have an available Thai digital-government identity method.",
+    "source_url": "https://eworkpermit.doe.go.th/login/register",
+    "official_links": [
+      {
+        "label_th": "ลงทะเบียน e-Workpermit",
+        "label_en": "e-Workpermit registration",
+        "url": "https://eworkpermit.doe.go.th/login/register"
+      }
+    ],
+    "keywords": [
+      "e-workpermit identity",
+      "thaid work permit",
+      "dga work permit"
+    ]
+  },
+  {
+    "id": "research-bizportal-multi-agency-license",
+    "type": "manual_faq",
+    "category": "license",
+    "serviceBucket": "visa-license",
+    "priority": 96,
+    "question_th": "Biz Portal ใช้ยื่นใบอนุญาตธุรกิจอะไรได้บ้าง",
+    "question_en": "What business-license applications can be handled through Biz Portal?",
+    "answer_th": "Biz Portal เป็นช่องทางกลางสำหรับยื่นคำขออนุญาตและบริการภาครัฐหลายหน่วยงานในที่เดียว แต่ใบอนุญาตที่รองรับจริงขึ้นกับประเภทกิจการและหน่วยงานเจ้าของเรื่อง จึงควรเริ่มจากการเช็กว่าธุรกิจของคุณเข้าข่ายใบอนุญาตใดก่อน",
+    "answer_en": "Biz Portal is a central government channel for various license and service applications across multiple agencies. The exact licenses available depend on the business activity and the responsible authority, so the first step is to confirm which license your business actually needs.",
+    "follow_up_th": "หากสะดวก แจ้งประเภทธุรกิจและกิจกรรมที่จะทำมาได้เลยค่ะ ทีมจะช่วยเช็กว่าควรไปที่ Biz Portal หรือหน่วยงานใดโดยตรง",
+    "follow_up_en": "If convenient, send the business type and planned activity, and we can check whether Biz Portal or another direct agency channel is more suitable.",
+    "source_url": "https://bizportal.go.th",
+    "official_links": [
+      {
+        "label_th": "Biz Portal",
+        "label_en": "Biz Portal",
+        "url": "https://bizportal.go.th"
+      }
+    ],
+    "keywords": [
+      "biz portal",
+      "ใบอนุญาตธุรกิจออนไลน์",
+      "business license portal"
+    ]
+  },
+  {
+    "id": "research-dbd-company-status-search",
+    "type": "manual_faq",
+    "category": "corporate",
+    "serviceBucket": "corporate-dbd",
+    "priority": 97,
+    "question_th": "ตรวจสถานะนิติบุคคลหรือข้อมูลบริษัทจาก DBD ได้ที่ไหน",
+    "question_en": "Where can company status or juristic-person information be checked from DBD?",
+    "answer_th": "DBD มีระบบค้นหาข้อมูลนิติบุคคลและสถานะบริษัทผ่านช่องทางข้อมูลทางการของกรมพัฒนาธุรกิจการค้า เหมาะสำหรับเช็กสถานะเบื้องต้นก่อนใช้เอกสารหรือดำเนินการเรื่องต่อเนื่อง",
+    "answer_en": "DBD provides official search channels for juristic-person data and company status. This is useful for checking the company’s baseline status before relying on documents or proceeding with related filings.",
+    "follow_up_th": "หากต้องการ ทีมสามารถช่วยดูต่อได้ค่ะว่าหลังเช็กสถานะแล้วควรขอหนังสือรับรอง สำเนาเอกสาร หรือดำเนินการ DBD ขั้นไหนต่อ",
+    "follow_up_en": "If needed, we can also help decide whether the next step should be a company certificate, certified copy, or a DBD filing after checking status.",
+    "source_url": "https://datawarehouse.dbd.go.th/searchJuristicInfo",
+    "official_links": [
+      {
+        "label_th": "ค้นหาข้อมูลนิติบุคคล DBD",
+        "label_en": "DBD juristic-person search",
+        "url": "https://datawarehouse.dbd.go.th/searchJuristicInfo"
+      },
+      {
+        "label_th": "กรมพัฒนาธุรกิจการค้า",
+        "label_en": "Department of Business Development",
+        "url": "https://www.dbd.go.th"
+      }
+    ],
+    "keywords": [
+      "ค้นหานิติบุคคล",
+      "สถานะบริษัท",
+      "dbd company status",
+      "juristic search"
+    ]
+  },
+  {
+    "id": "research-dbd-online-registration-channel",
+    "type": "manual_faq",
+    "category": "corporate",
+    "serviceBucket": "corporate-dbd",
+    "priority": 100,
+    "question_th": "จดทะเบียนนิติบุคคลออนไลน์ของ DBD ทำผ่านช่องทางไหน",
+    "question_en": "Which channel is used for DBD online juristic registration?",
+    "answer_th": "การจดทะเบียนนิติบุคคลออนไลน์ของ DBD ใช้ช่องทางระบบที่กรมกำหนดสำหรับการยื่นจดทะเบียนดิจิทัลโดยเฉพาะ ก่อนยื่นควรเตรียมข้อมูลผู้ถือหุ้น กรรมการ ที่ตั้ง และเอกสารประกอบให้ครบ เพราะขั้นตอนออนไลน์ยังต้องอาศัยข้อมูลที่ถูกต้องตั้งแต่ต้น",
+    "answer_en": "DBD online juristic registration is handled through the official digital-registration channel designated by DBD. Before submission, shareholder, director, registered-address, and supporting documents should be prepared carefully because the online flow still depends on correct information from the start.",
+    "follow_up_th": "หากต้องการให้ทีมช่วยเตรียมก่อนยื่น รบกวนส่งชื่อบริษัทที่ต้องการ ประเภทธุรกิจ และรายชื่อผู้ถือหุ้นเบื้องต้นมาได้เลยค่ะ",
+    "follow_up_en": "If you want help preparing before submission, please send the proposed company name, business activity, and initial shareholder list.",
+    "source_url": "https://www.dbd.go.th/storage/manual/3e378e48-621c-4fac-83d8-f3a084d8f8fc.pdf",
+    "official_links": [
+      {
+        "label_th": "คู่มือจดทะเบียนนิติบุคคลดิจิทัล",
+        "label_en": "Digital juristic-registration manual",
+        "url": "https://www.dbd.go.th/storage/manual/3e378e48-621c-4fac-83d8-f3a084d8f8fc.pdf"
+      },
+      {
+        "label_th": "DBD Biz Regist",
+        "label_en": "DBD Biz Regist",
+        "url": "https://edbr.dbd.go.th/"
+      }
+    ],
+    "keywords": [
+      "จดทะเบียนออนไลน์ dbd",
+      "biz regist",
+      "digital juristic registration",
+      "edbr"
+    ]
+  },
+  {
+    "id": "research-restaurant-license-scope",
+    "type": "manual_faq",
+    "category": "license",
+    "serviceBucket": "visa-license",
+    "priority": 112,
+    "question_th": "หากต้องการขอใบอนุญาตประกอบกิจการร้านอาหาร ควรเริ่มจากข้อมูลอะไรบ้าง",
+    "question_en": "What basic information should be prepared for a restaurant-license case?",
+    "answer_th": "ควรเริ่มจากการแยกก่อนว่ากิจการจดทะเบียนแล้วหรือยัง ร้านตั้งอยู่เขตหรือจังหวัดใด และเป็นร้านอาหารทั่วไป คาเฟ่ หรือมีการจำหน่ายแอลกอฮอล์ด้วยหรือไม่ เพื่อให้แยกได้ว่าต้องใช้ใบอนุญาตใดบ้าง",
+    "answer_en": "The first step is to confirm whether the business is already registered, where the shop is located, and whether it is a restaurant, cafe, or a venue serving alcohol, so the correct license scope can be separated.",
+    "follow_up_th": "หากสะดวก แจ้งประเภทกิจการ ที่ตั้งร้าน และลักษณะการให้บริการมาได้เลยค่ะ ทีมจะช่วยเช็กใบอนุญาตและเอกสารที่เกี่ยวข้องให้",
+    "follow_up_en": "If convenient, share the business type, shop location, and service format, and the team will check the relevant licenses and documents for you.",
+    "source_url": "https://bizportal.go.th",
+    "official_links": [
+      {
+        "label_th": "Biz Portal",
+        "label_en": "Biz Portal",
+        "url": "https://bizportal.go.th"
+      }
+    ],
+    "keywords": [
+      "ใบอนุญาตร้านอาหาร",
+      "ร้านอาหารและเครื่องดื่ม",
+      "restaurant license",
+      "cafe license",
+      "food business license"
+    ]
+  }
+]

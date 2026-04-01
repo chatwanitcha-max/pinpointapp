@@ -1,0 +1,65 @@
+[
+  {
+    "id": "dbd-main",
+    "label_th": "กรมพัฒนาธุรกิจการค้า (DBD)",
+    "label_en": "Department of Business Development (DBD)",
+    "url": "https://www.dbd.go.th",
+    "topics": ["จดทะเบียนบริษัท", "DBD", "นิติบุคคล", "company registration", "dbd"]
+  },
+  {
+    "id": "dbd-biz-regist",
+    "label_th": "ระบบ DBD Biz Regist",
+    "label_en": "DBD Biz Regist",
+    "url": "https://edbr.dbd.go.th/",
+    "topics": ["จดทะเบียนออนไลน์", "DBD Biz Regist", "company registration online"]
+  },
+  {
+    "id": "dbd-eservice",
+    "label_th": "DBD e-Service",
+    "label_en": "DBD e-Service",
+    "url": "https://ebiz.dbd.go.th/eservice-web/",
+    "topics": ["DBD e-Service", "เปลี่ยนแปลงข้อมูลบริษัท", "eservice"]
+  },
+  {
+    "id": "rd-main",
+    "label_th": "กรมสรรพากร",
+    "label_en": "Revenue Department",
+    "url": "https://www.rd.go.th",
+    "topics": ["ภาษี", "สรรพากร", "tax", "revenue department"]
+  },
+  {
+    "id": "rd-efiling",
+    "label_th": "ระบบ e-Filing กรมสรรพากร",
+    "label_en": "Revenue Department e-Filing",
+    "url": "https://efiling.rd.go.th",
+    "topics": ["ยื่นภาษีออนไลน์", "e-filing", "vat filing"]
+  },
+  {
+    "id": "sso-main",
+    "label_th": "สำนักงานประกันสังคม",
+    "label_en": "Social Security Office",
+    "url": "https://www.sso.go.th",
+    "topics": ["ประกันสังคม", "social security", "payroll"]
+  },
+  {
+    "id": "doe-main",
+    "label_th": "กรมการจัดหางาน",
+    "label_en": "Department of Employment",
+    "url": "https://www.doe.go.th",
+    "topics": ["แรงงาน", "work permit", "employment"]
+  },
+  {
+    "id": "doe-eworkpermit",
+    "label_th": "ระบบ e-Workpermit",
+    "label_en": "e-Workpermit",
+    "url": "https://eworkpermit.doe.go.th/",
+    "topics": ["e-workpermit", "work permit online", "ใบอนุญาตทำงาน"]
+  },
+  {
+    "id": "bizportal",
+    "label_th": "Biz Portal",
+    "label_en": "Biz Portal",
+    "url": "https://bizportal.go.th",
+    "topics": ["เปิดกิจการ", "ใบอนุญาตธุรกิจ", "bizportal", "license"]
+  }
+]

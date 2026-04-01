@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>โปรแกรมเที่ยวเชียงใหม่แบบไม่มีรูป | 1-4 ต.ค. 2569</title>
+    <style>
+      :root {
+        --paper: #fffdf8;
+        --ink: #1d2b24;
+        --muted: #5e695f;
+        --line: #d8dfd7;
+        --green: #3f6550;
+        --green-soft: #eef4ef;
+        --sand: #f4ead8;
+      }
+
+      * { box-sizing: border-box; }
+      @page { size: A4; margin: 0; }
+      html, body { height: 100%; }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Segoe UI", Tahoma, sans-serif;
+      }
+
+      a { color: var(--green); text-decoration: none; }
+      .doc { width: 210mm; margin: 0 auto; padding: 12mm; }
+      .page {
+        min-height: calc(297mm - 24mm);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        break-after: page;
+      }
+      .page:last-child { break-after: auto; }
+
+      .hero {
+        padding: 16px 18px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: linear-gradient(180deg, #f7fbf8 0%, #fffdf8 100%);
+      }
+
+      .tag {
+        display: inline-flex;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: var(--green-soft);
+        color: var(--green);
+        font-size: 11px;
+        font-weight: 700;
+      }
+
+      h1 {
+        margin: 10px 0 6px;
+        font-size: 28px;
+        line-height: 1.15;
+      }
+
+      .lead {
+        margin: 0;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.6;
+      }
+
+      .facts {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 14px;
+      }
+
+      .fact {
+        padding: 10px 12px;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: #fff;
+      }
+
+      .fact .k {
+        margin-bottom: 5px;
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 700;
+      }
+
+      .fact .v {
+        font-size: 14px;
+        font-weight: 800;
+        line-height: 1.4;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: 1.35fr 0.95fr;
+        gap: 10px;
+      }
+
+      .card {
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        overflow: hidden;
+        background: #fff;
+      }
+
+      .hd {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        padding: 11px 14px 10px;
+        border-bottom: 1px solid var(--line);
+        background: linear-gradient(180deg, #faf6ed 0%, #fff 100%);
+      }
+
+      .hd h2 {
+        margin: 0;
+        font-size: 16px;
+      }
+
+      .chip {
+        display: inline-flex;
+        padding: 5px 9px;
+        border-radius: 999px;
+        border: 1px solid #d6e3da;
+        background: var(--green-soft);
+        color: var(--green);
+        font-size: 11px;
+        font-weight: 700;
+      }
+
+      .bd { padding: 12px 14px 14px; }
+
+      .day-list {
+        display: grid;
+        gap: 10px;
+      }
+
+      .day {
+        padding: 12px 12px 11px;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: #fff;
+      }
+
+      .date {
+        color: var(--green);
+        font-size: 12px;
+        font-weight: 800;
+      }
+
+      .day h3 {
+        margin: 3px 0 5px;
+        font-size: 14px;
+        line-height: 1.35;
+      }
+
+      .day p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.6;
+      }
+
+      .stay {
+        margin-top: 8px;
+        padding-top: 8px;
+        border-top: 1px dashed var(--line);
+        font-size: 11.5px;
+        line-height: 1.6;
+      }
+
+      .hotel-main {
+        padding: 12px;
+        border: 1px solid #d6e3da;
+        border-radius: 14px;
+        background: var(--green-soft);
+      }
+
+      .hotel-main h3 {
+        margin: 0 0 6px;
+        font-size: 15px;
+      }
+
+      .hotel-main p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.6;
+      }
+
+      .hotel-list {
+        display: grid;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      .hotel {
+        padding: 11px 12px;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: #fff;
+      }
+
+      .hotel .name {
+        font-size: 13px;
+        font-weight: 800;
+        line-height: 1.45;
+      }
+
+      .hotel .meta,
+      .hotel .desc {
+        margin-top: 4px;
+        color: var(--muted);
+        font-size: 11.5px;
+        line-height: 1.55;
+      }
+
+      .note {
+        padding: 11px 12px;
+        border: 1px dashed #d7c7ab;
+        border-radius: 14px;
+        background: #fffbf2;
+        color: #5f5a4f;
+        font-size: 11.5px;
+        line-height: 1.65;
+      }
+
+      .bullets {
+        display: grid;
+        gap: 7px;
+      }
+
+      .bullet {
+        padding: 10px 12px;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: #fff;
+        font-size: 12px;
+        line-height: 1.6;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="doc">
+      <section class="page">
+        <div class="hero">
+          <div class="tag">เวอร์ชันไม่มีรูป | เปิดไฟล์ไวกว่า</div>
+          <h1>โปรแกรมเที่ยวเชียงใหม่<br />1-4 ต.ค. 2569</h1>
+          <p class="lead">
+            อิงจากช่วงเชียงใหม่ของทริปเดิม และปรับให้ใช้ที่พักแนวธรรมชาติ/โฮมสเตย์ในงบประมาณไม่เกิน 2,000-2,500 บาทต่อคืน
+            โดยไม่ต้องย้ายโรงแรมหลายรอบ
+          </p>
+          <div class="facts">
+            <div class="fact">
+              <div class="k">แนวทริป</div>
+              <div class="v">ธรรมชาติ<br />สบายๆ<br />ไม่แน่นเกินไป</div>
+            </div>
+            <div class="fact">
+              <div class="k">ที่พักหลัก</div>
+              <div class="v">Baandindon<br />Private Earthhouse<br />Homestay</div>
+            </div>
+            <div class="fact">
+              <div class="k">งบที่พัก</div>
+              <div class="v">ประมาณ 1,500-1,900 บาท/คืน<br />สำหรับตัวเลือกหลักที่คัดไว้</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <div class="hd">
+              <h2>แผนเที่ยวรายวัน</h2>
+              <div class="chip">ไม่มีลิงก์กิจกรรม</div>
+            </div>
+            <div class="bd">
+              <div class="day-list">
+                <div class="day">
+                  <div class="date">พฤ. 1 ต.ค. 2569</div>
+                  <h3>ถึงเชียงใหม่ • รับรถ • เช็กอินแม่ริม • พักผ่อนวิวธรรมชาติ</h3>
+                  <p>
+                    วันแรกวางเบาๆ ไม่เร่งเกินไป หลังรับรถให้ตรงเข้าที่พักก่อน จากนั้นค่อยออกไปคาเฟ่เงียบๆ แถวแม่ริม
+                    หรือแวะจุดชมวิวช่วงเย็น แล้วกลับพักเร็ว
+                  </p>
+                  <div class="stay">
+                    พัก: <a href="https://www.booking.com/hotel/th/baandindon-homestay.th.html">Baandindon Private Earthhouse Homestay</a>
+                  </div>
+                </div>
+
+                <div class="day">
+                  <div class="date">ศ. 2 ต.ค. 2569</div>
+                  <h3>Queen Sirikit Botanic Garden • เส้นวิวแม่ริม • ม่อนแจ่ม</h3>
+                  <p>
+                    วันนี้เหมาะกับสายธรรมชาติแบบไม่เหนื่อยเกินไป เริ่มจากสวนพฤกษศาสตร์ ต่อด้วยเส้นทางวิวแม่ริม
+                    แล้วจบวันที่ม่อนแจ่มหรือคาเฟ่วิวเขา
+                  </p>
+                  <div class="stay">
+                    พัก: <a href="https://www.booking.com/hotel/th/baandindon-homestay.th.html">Baandindon Private Earthhouse Homestay</a>
+                  </div>
+                </div>
+
+                <div class="day">
+                  <div class="date">ส. 3 ต.ค. 2569</div>
+                  <h3>แม่กำปอง • กิ่วฝิ่น • San Kamphaeng Hot Springs</h3>
+                  <p>
+                    วันขับรถไกลที่สุดของช่วงเชียงใหม่ ออกเช้าไปแม่กำปองก่อน แล้วค่อยต่อกิ่วฝิ่นถ้าอากาศดี
+                    ช่วงบ่ายแช่น้ำร้อนธรรมชาติที่ San Kamphaeng Hot Springs ก่อนกลับที่พัก
+                  </p>
+                  <div class="stay">
+                    พัก: <a href="https://www.booking.com/hotel/th/baandindon-homestay.th.html">Baandindon Private Earthhouse Homestay</a>
+                  </div>
+                </div>
+
+                <div class="day">
+                  <div class="date">อา. 4 ต.ค. 2569</div>
+                  <h3>Jing Jai Market • เมืองเก่าเชียงใหม่ • ประตูท่าแพ • ดอยสุเทพ</h3>
+                  <p>
+                    เช้าเริ่มที่ Jing Jai Market แล้วค่อยเข้าเมืองเก่า เดินสบายๆ แถวประตูท่าแพ วัดสำคัญ
+                    และช่วงเย็นขึ้นดอยสุเทพเพื่อปิดวันด้วยวิวเมือง
+                  </p>
+                  <div class="stay">
+                    พัก: <a href="https://www.booking.com/hotel/th/baandindon-homestay.th.html">Baandindon Private Earthhouse Homestay</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="hd">
+              <h2>ที่พักหลักที่แนะนำ</h2>
+              <div class="chip">คัดตามงบ + ความสะอาด</div>
+            </div>
+            <div class="bd">
+              <div class="hotel-main">
+                <h3><a href="https://www.booking.com/hotel/th/baandindon-homestay.th.html">Baandindon Private Earthhouse Homestay</a></h3>
+                <p>
+                  แม่ริม • โฮมสเตย์แนวธรรมชาติ • รีวิวเฉลี่ย 9.6 • ความสะอาด 9.5 • อาหารเช้ารวม<br />
+                  ราคาอ้างอิงล่าสุด: US$44/คืน ก่อน VAT 7% + City Tax 1% สำหรับ 2 ผู้ใหญ่ + 1 เด็ก
+                  คิดเป็นประมาณ 1,510 บาท/คืน
+                </p>
+              </div>
+
+              <div class="hotel-list">
+                <div class="hotel">
+                  <div class="name"><a href="https://www.booking.com/hotel/th/lalas-house-mae-on-chiang-mai.th.html">lala's house@Mae On Chiang Mai</a></div>
+                  <div class="meta">Mae On • โฮมสเตย์ • โลเคชันคู่รัก 9.7 • วิวสวน/ภูเขา</div>
+                  <div class="desc">
+                    ราคาอ้างอิงล่าสุด: 1,111 บาท/คืน สำหรับห้อง Family Room with Garden View
+                    (อาหารเช้าเพิ่มได้ 100 บาท)
+                  </div>
+                </div>
+
+                <div class="hotel">
+                  <div class="name"><a href="https://www.booking.com/hotel/th/bantunglom-resort.th.html">Bantunglom Resort</a></div>
+                  <div class="meta">แม่ริม • ธรรมชาติ • คะแนนรวม 9.0 • ความสะอาด 9.2</div>
+                  <div class="desc">
+                    ราคาอ้างอิงล่าสุด: CNY 413.90/คืน รวมภาษีแล้ว สำหรับ 2 ผู้ใหญ่ + 1 เด็ก
+                    คิดเป็นประมาณ 1,900 บาท/คืน
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="page">
+        <article class="card">
+          <div class="hd">
+            <h2>เหตุผลที่เลือกโปรแกรมนี้</h2>
+            <div class="chip">โฟกัสความลงตัว</div>
+          </div>
+          <div class="bd">
+            <div class="bullets">
+              <div class="bullet">ใช้โรงแรมเดียวตลอดช่วงเชียงใหม่ ทำให้ไม่ต้องย้ายกระเป๋าและประหยัดเวลา</div>
+              <div class="bullet">เลือกฐานพักที่แม่ริม เพราะบาลานซ์ที่สุดระหว่างธรรมชาติ ความสะอาด คุณภาพ และงบที่คุณกำหนด</div>
+              <div class="bullet">ยังคงได้ทั้งสวนพฤกษศาสตร์ วิวเขา เมืองเก่า และวันแช่น้ำร้อนตามสิ่งที่คุณชอบก่อนหน้านี้</div>
+              <div class="bullet">ถ้าต้องการขับรถน้อยลงกว่าแผนนี้ ให้สลับไปพัก Mae On แทน จะเหมาะกับแม่กำปองและน้ำร้อนมากขึ้น แต่วันแม่ริมจะไกลขึ้น</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="hd">
+            <h2>หมายเหตุราคาโรงแรม</h2>
+            <div class="chip">เช็กเมื่อ 17 มี.ค. 2569</div>
+          </div>
+          <div class="bd">
+            <div class="note">
+              ราคาในไฟล์นี้เป็น “ราคาล่าสุดที่หน้าเว็บแสดงตอนเช็ก” และอาจเปลี่ยนตามวันเข้าพักจริง โปรโมชั่น และนโยบายคืนเงิน<br />
+              การแปลงค่าเงินอิงอัตราโดยประมาณจาก BSP ณ 9 มี.ค. 2026:
+              1 USD ≈ 31.77 บาท, 1 CNY ≈ 4.60 บาท<br />
+              หมายเหตุ: บางเรตอ้างอิงจากการค้นหาสำหรับ 2 ผู้ใหญ่ + 1 เด็ก ดังนั้นถ้าเข้าพัก 2 ผู้ใหญ่ล้วน ราคาจริงมักใกล้เคียงหรือต่ำกว่า
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

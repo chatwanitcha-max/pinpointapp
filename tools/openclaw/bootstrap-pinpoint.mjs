@@ -8,8 +8,7 @@ const openClawRoot = path.join(home, ".openclaw");
 const configPath = path.join(openClawRoot, "openclaw.json");
 const workspaceDir = path.join(openClawRoot, "workspace");
 const skillsDir = path.join(workspaceDir, "skills");
-const sourceSkillDir = path.join(repoRoot, "skills", "pinpoint-web-ops");
-const targetSkillDir = path.join(skillsDir, "pinpoint-web-ops");
+const sourceSkillsRoot = path.join(repoRoot, "skills");
 
 function ensureDir(dir) {
   fs.mkdirSync(dir, { recursive: true });
@@ -26,6 +25,14 @@ function copyDir(source, target) {
       fs.copyFileSync(sourcePath, targetPath);
     }
   }
+}
+
+function listSkillDirs(rootDir) {
+  if (!fs.existsSync(rootDir)) return [];
+  return fs
+    .readdirSync(rootDir, { withFileTypes: true })
+    .filter((entry) => entry.isDirectory() && fs.existsSync(path.join(rootDir, entry.name, "SKILL.md")))
+    .map((entry) => entry.name);
 }
 
 if (!fs.existsSync(configPath)) {
@@ -46,9 +53,14 @@ config.plugins.entries.line = {
 };
 
 ensureDir(skillsDir);
-copyDir(sourceSkillDir, targetSkillDir);
+const skillNames = listSkillDirs(sourceSkillsRoot);
+for (const skillName of skillNames) {
+  const sourceSkillDir = path.join(sourceSkillsRoot, skillName);
+  const targetSkillDir = path.join(skillsDir, skillName);
+  copyDir(sourceSkillDir, targetSkillDir);
+  console.log(`Skill synced to ${targetSkillDir}`);
+}
 fs.writeFileSync(configPath, JSON.stringify(config, null, 2), "utf8");
 
-console.log(`Skill synced to ${targetSkillDir}`);
 console.log(`OpenClaw config updated at ${configPath}`);
 console.log("LINE plugin left disabled by default until credentials are ready.");

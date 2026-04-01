@@ -1,0 +1,1532 @@
+﻿[
+    {
+        "slug":  "monthly-accounting-handover-checklist",
+        "date":  "2026-03-19",
+        "category_th":  "บัญชีและภาษี",
+        "category_en":  "Accounting \u0026 Tax",
+        "read_time_th":  "อ่าน 6 นาที",
+        "read_time_en":  "6 min read",
+        "title_th":  "เริ่มส่งงานบัญชีรายเดือนให้สำนักงานบัญชี ควรเตรียมอะไรบ้าง",
+        "title_en":  "What to Prepare Before Starting Monthly Accounting Service",
+        "description_th":  "แนวทางเตรียมเอกสารและคนประสานงานภายใน เพื่อให้เริ่มงานบัญชีรายเดือนกับสำนักงานบัญชีได้ราบรื่น",
+        "description_en":  "How to prepare documents and internal coordination before starting monthly accounting service.",
+        "summary_th":  [
+                           "รวมเอกสารขาย ซื้อ ธนาคาร และค่าใช้จ่ายให้อยู่ในระบบเดียวกัน",
+                           "ตั้งผู้ประสานงานหลักให้ชัด",
+                           "คุยรอบส่งงานและรูปแบบรายงานตั้งแต่ต้น"
+                       ],
+        "summary_en":  [
+                           "Keep sales, purchase, bank, and expense records in one system",
+                           "Assign one clear coordinator",
+                           "Agree on submission timing and reporting format early"
+                       ],
+        "sections":  [
+                         {
+                             "heading_th":  "1) เริ่มจากมองภาพงานให้ครบก่อน",
+                             "heading_en":  "1) Start by seeing the full workflow",
+                             "paragraphs_th":  [
+                                                   "เริ่มส่งงานบัญชีรายเดือนให้สำนักงานบัญชี ควรเตรียมอะไรบ้าง มักไม่ได้จบแค่การเตรียมเอกสาร แต่เกี่ยวข้องกับลำดับงาน คนในทีม และข้อมูลที่ต้องใช้ร่วมกัน ถ้าเริ่มจากการมองภาพรวมก่อน จะช่วยให้วางงานได้ง่ายขึ้นและไม่ต้องแก้หลายรอบ",
+                                                   "หลายเคสที่ล่าช้าไม่ได้เกิดจากขั้นตอนราชการอย่างเดียว แต่เกิดจากข้อมูลภายในยังไม่พร้อมหรือผู้เกี่ยวข้องเข้าใจไม่ตรงกัน การจัดข้อมูลให้ชัดตั้งแต่ต้นจึงช่วยลดภาระของเจ้าของธุรกิจได้มาก"
+                                               ],
+                             "paragraphs_en":  [
+                                                   "What to Prepare Before Starting Monthly Accounting Service is rarely about one document alone. It usually involves sequencing, internal coordination, and shared company information.",
+                                                   "Many delays come from incomplete preparation inside the company, so getting the internal picture clear early reduces rework later."
+                                               ],
+                             "checklist_th":  [
+                                                  "รวมเอกสารขาย ซื้อ ธนาคาร และค่าใช้จ่ายให้อยู่ในระบบเดียวกัน",
+                                                  "ตั้งผู้ประสานงานหลักให้ชัด",
+                                                  "คุยรอบส่งงานและรูปแบบรายงานตั้งแต่ต้น"
+                                              ],
+                             "checklist_en":  [
+                                                  "Keep sales, purchase, bank, and expense records in one system",
+                                                  "Assign one clear coordinator",
+                                                  "Agree on submission timing and reporting format early"
+                                              ]
+                         },
+                         {
+                             "heading_th":  "2) เตรียมเอกสารและผู้ประสานงานให้พร้อมในชุดเดียว",
+                             "heading_en":  "2) Prepare documents and coordination together",
+                             "paragraphs_th":  [
+                                                   "ถ้าเอกสารกระจายอยู่หลายที่หรือไม่มีคนรับผิดชอบหลัก งานจะสะดุดง่าย โดยเฉพาะเมื่อมีฝ่ายบัญชี ผู้บริหาร พนักงาน หรือคู่ค้าเข้ามาเกี่ยวข้องพร้อมกัน",
+                                                   "การมีผู้ประสานงานหลักหนึ่งคน และรวบรวมข้อมูลที่ต้องใช้ไว้ในจุดเดียว จะช่วยให้ทีมที่เข้ามาช่วยดูแลงานเดินเรื่องได้เร็วขึ้นมาก"
+                                               ],
+                             "paragraphs_en":  [
+                                                   "Work slows down quickly when documents are scattered and no one owns the coordination.",
+                                                   "One coordinator and one document source make outside support much more effective."
+                                               ],
+                             "checklist_th":  [
+                                                  "รวมเอกสารไว้ในจุดเดียว",
+                                                  "ตั้งผู้ประสานงานหลักของเคส",
+                                                  "เช็กข้อมูลสำคัญให้ตรงกันก่อนส่ง"
+                                              ],
+                             "checklist_en":  [
+                                                  "Keep documents in one place",
+                                                  "Assign one primary coordinator",
+                                                  "Check key information for consistency before submission"
+                                              ]
+                         },
+                         {
+                             "heading_th":  "3) หลังเริ่มงานแล้วควรมีจุดตรวจตามเป็นระยะ",
+                             "heading_en":  "3) Build review points after the work starts",
+                             "paragraphs_th":  [
+                                                   "แม้งานจะเริ่มเดินแล้ว ก็ควรมีจุดตรวจเป็นระยะว่ามีเอกสารขาดหรือข้อมูลใดต้องอัปเดตเพิ่มหรือไม่ เพื่อไม่ให้ปัญหาไปสะสมตอนใกล้เส้นตาย",
+                                                   "ถ้าธุรกิจต้องการให้เรื่องเหล่านี้เดินต่อเนื่อง การมีทีมช่วยสรุปสถานะ สิ่งที่ยังขาด และขั้นตอนถัดไปแบบสั้น ๆ จะช่วยให้ตัดสินใจได้ง่ายขึ้น"
+                                               ],
+                             "paragraphs_en":  [
+                                                   "Even after the process starts, regular review points help prevent missing items from piling up near a deadline.",
+                                                   "Short status summaries with open items and next steps make decision-making much easier for the business owner."
+                                               ],
+                             "checklist_th":  [
+                                                  "สรุปสถานะค้างเป็นช่วง",
+                                                  "ตามเอกสารหรือข้อมูลที่ยังขาด",
+                                                  "ยืนยันขั้นตอนถัดไปให้ชัดกับทีม"
+                                              ],
+                             "checklist_en":  [
+                                                  "Summarise open items regularly",
+                                                  "Follow up on missing data or documents",
+                                                  "Confirm next steps clearly with the team"
+                                              ]
+                         }
+                     ],
+        "sources":  [
+                        {
+                            "label_th":  "กรมสรรพากร",
+                            "label_en":  "Revenue Department",
+                            "url":  "https://www.rd.go.th"
+                        },
+                        {
+                            "label_th":  "ระบบ e-Filing กรมสรรพากร",
+                            "label_en":  "Revenue Department e-Filing",
+                            "url":  "https://efiling.rd.go.th"
+                        }
+                    ]
+    },
+    {
+        "slug":  "vat-readiness-before-expansion",
+        "date":  "2026-03-19",
+        "category_th":  "บัญชีและภาษี",
+        "category_en":  "Accounting \u0026 Tax",
+        "read_time_th":  "อ่าน 7 นาที",
+        "read_time_en":  "7 min read",
+        "title_th":  "ธุรกิจกำลังโต ควรเตรียมระบบเอกสาร VAT ล่วงหน้าอย่างไร",
+        "title_en":  "How to Prepare VAT Documents Before the Business Scales",
+        "description_th":  "บทความสำหรับธุรกิจที่ยอดขายกำลังเพิ่มขึ้นและต้องการจัดระบบ VAT ให้พร้อมก่อนงานเริ่มแน่น",
+        "description_en":  "A practical guide for growing businesses that want better VAT document control before volume increases.",
+        "summary_th":  [
+                           "อย่ารอให้เอกสารเยอะแล้วค่อยแก้ระบบ",
+                           "กำหนดเจ้าของงานเอกสารขายและซื้อให้ชัด",
+                           "ตรวจเงื่อนไขล่าสุดจากกรมสรรพากรทุกครั้ง"
+                       ],
+        "summary_en":  [
+                           "Do not wait until document volume is too high",
+                           "Assign ownership for sales and purchase documents",
+                           "Verify current requirements with the Revenue Department"
+                       ],
+        "sections":  [
+                         {
+                             "heading_th":  "1) เริ่มจากมองภาพงานให้ครบก่อน",
+                             "heading_en":  "1) Start by seeing the full workflow",
+                             "paragraphs_th":  [
+                                                   "ธุรกิจกำลังโต ควรเตรียมระบบเอกสาร VAT ล่วงหน้าอย่างไร มักไม่ได้จบแค่การเตรียมเอกสาร แต่เกี่ยวข้องกับลำดับงาน คนในทีม และข้อมูลที่ต้องใช้ร่วมกัน ถ้าเริ่มจากการมองภาพรวมก่อน จะช่วยให้วางงานได้ง่ายขึ้นและไม่ต้องแก้หลายรอบ",
+                                                   "หลายเคสที่ล่าช้าไม่ได้เกิดจากขั้นตอนราชการอย่างเดียว แต่เกิดจากข้อมูลภายในยังไม่พร้อมหรือผู้เกี่ยวข้องเข้าใจไม่ตรงกัน การจัดข้อมูลให้ชัดตั้งแต่ต้นจึงช่วยลดภาระของเจ้าของธุรกิจได้มาก"
+                                               ],
+                             "paragraphs_en":  [
+                                                   "How to Prepare VAT Documents Before the Business Scales is rarely about one document alone. It usually involves sequencing, internal coordination, and shared company information.",
+                                                   "Many delays come from incomplete preparation inside the company, so getting the internal picture clear early reduces rework later."
+                                               ],
+                             "checklist_th":  [
+                                                  "อย่ารอให้เอกสารเยอะแล้วค่อยแก้ระบบ",
+                                                  "กำหนดเจ้าของงานเอกสารขายและซื้อให้ชัด",
+                                                  "ตรวจเงื่อนไขล่าสุดจากกรมสรรพากรทุกครั้ง"
+                                              ],
+                             "checklist_en":  [
+                                                  "Do not wait until document volume is too high",
+                                                  "Assign ownership for sales and purchase documents",
+                                                  "Verify current requirements with the Revenue Department"
+                                              ]
+                         },
+                         {
+                             "heading_th":  "2) เตรียมเอกสารและผู้ประสานงานให้พร้อมในชุดเดียว",
+                             "heading_en":  "2) Prepare documents and coordination together",
+                             "paragraphs_th":  [
+                                                   "ถ้าเอกสารกระจายอยู่หลายที่หรือไม่มีคนรับผิดชอบหลัก งานจะสะดุดง่าย โดยเฉพาะเมื่อมีฝ่ายบัญชี ผู้บริหาร พนักงาน หรือคู่ค้าเข้ามาเกี่ยวข้องพร้อมกัน",
+                                                   "การมีผู้ประสานงานหลักหนึ่งคน และรวบรวมข้อมูลที่ต้องใช้ไว้ในจุดเดียว จะช่วยให้ทีมที่เข้ามาช่วยดูแลงานเดินเรื่องได้เร็วขึ้นมาก"
+                                               ],
+                             "paragraphs_en":  [
+                                                   "Work slows down quickly when documents are scattered and no one owns the coordination.",
+                                                   "One coordinator and one document source make outside support much more effective."
+                                               ],
+                             "checklist_th":  [
+                                                  "รวมเอกสารไว้ในจุดเดียว",
+                                                  "ตั้งผู้ประสานงานหลักของเคส",
+                                                  "เช็กข้อมูลสำคัญให้ตรงกันก่อนส่ง"
+                                              ],
+                             "checklist_en":  [
+                                                  "Keep documents in one place",
+                                                  "Assign one primary coordinator",
+                                                  "Check key information for consistency before submission"
+                                              ]
+                         },
+                         {
+                             "heading_th":  "3) หลังเริ่มงานแล้วควรมีจุดตรวจตามเป็นระยะ",
+                             "heading_en":  "3) Build review points after the work starts",
+                             "paragraphs_th":  [
+                                                   "แม้งานจะเริ่มเดินแล้ว ก็ควรมีจุดตรวจเป็นระยะว่ามีเอกสารขาดหรือข้อมูลใดต้องอัปเดตเพิ่มหรือไม่ เพื่อไม่ให้ปัญหาไปสะสมตอนใกล้เส้นตาย",
+                                                   "ถ้าธุรกิจต้องการให้เรื่องเหล่านี้เดินต่อเนื่อง การมีทีมช่วยสรุปสถานะ สิ่งที่ยังขาด และขั้นตอนถัดไปแบบสั้น ๆ จะช่วยให้ตัดสินใจได้ง่ายขึ้น"
+                                               ],
+                             "paragraphs_en":  [
+                                                   "Even after the process starts, regular review points help prevent missing items from piling up near a deadline.",
+                                                   "Short status summaries with open items and next steps make decision-making much easier for the business owner."
+                                               ],
+                             "checklist_th":  [
+                                                  "สรุปสถานะค้างเป็นช่วง",
+                                                  "ตามเอกสารหรือข้อมูลที่ยังขาด",
+                                                  "ยืนยันขั้นตอนถัดไปให้ชัดกับทีม"
+                                              ],
+                             "checklist_en":  [
+                                                  "Summarise open items regularly",
+                                                  "Follow up on missing data or documents",
+                                                  "Confirm next steps clearly with the team"
+                                              ]
+                         }
+                     ],
+        "sources":  [
+                        {
+                            "label_th":  "กรมสรรพากร",
+                            "label_en":  "Revenue Department",
+                            "url":  "https://www.rd.go.th"
+                        },
+                        {
+                            "label_th":  "ระบบ e-Filing กรมสรรพากร",
+                            "label_en":  "Revenue Department e-Filing",
+                            "url":  "https://efiling.rd.go.th"
+                        }
+                    ]
+    },
+    {
+        "slug":  "outsource-accounting-vs-inhouse-team",
+        "date":  "2026-03-19",
+        "category_th":  "บัญชีและภาษี",
+        "category_en":  "Accounting \u0026 Tax",
+        "read_time_th":  "อ่าน 6 นาที",
+        "read_time_en":  "6 min read",
+        "title_th":  "จ้างสำนักงานบัญชีกับทำบัญชีในบริษัท แบบไหนเหมาะกับธุรกิจมากกว่า",
+        "title_en":  "Accounting Firm vs In-House Team: Which Is a Better Fit?",
+        "description_th":  "เปรียบเทียบมุมตัดสินใจสำหรับเจ้าของธุรกิจที่กำลังเลือกระหว่างสำนักงานบัญชีกับทีมบัญชีภายใน",
+        "description_en":  "A practical comparison for business owners deciding between an accounting firm and an internal team.",
+        "summary_th":  [
+                           "ธุรกิจที่อยากเริ่มงานเร็วและคุมต้นทุนมักเริ่มจากสำนักงานบัญชี",
+                           "ทีมภายในเหมาะเมื่อปริมาณงานสูงและซับซ้อนขึ้น",
+                           "ไม่ว่าเลือกแบบไหนควรมีผู้ประสานงานภายใน"
+                       ],
+        "summary_en":  [
+                           "Businesses that want fast setup and predictable cost often start with an accounting firm",
+                           "An internal team fits better once workload becomes heavy and complex",
+                           "Either model still needs one internal coordinator"
+                       ],
+        "sections":  [
+                         {
+                             "heading_th":  "1) เริ่มจากมองภาพงานให้ครบก่อน",
+                             "heading_en":  "1) Start by seeing the full workflow",
+                             "paragraphs_th":  [
+                                                   "จ้างสำนักงานบัญชีกับทำบัญชีในบริษัท แบบไหนเหมาะกับธุรกิจมากกว่า มักไม่ได้จบแค่การเตรียมเอกสาร แต่เกี่ยวข้องกับลำดับงาน คนในทีม และข้อมูลที่ต้องใช้ร่วมกัน ถ้าเริ่มจากการมองภาพรวมก่อน จะช่วยให้วางงานได้ง่ายขึ้นและไม่ต้องแก้หลายรอบ",
+                                                   "หลายเคสที่ล่าช้าไม่ได้เกิดจากขั้นตอนราชการอย่างเดียว แต่เกิดจากข้อมูลภายในยังไม่พร้อมหรือผู้เกี่ยวข้องเข้าใจไม่ตรงกัน การจัดข้อมูลให้ชัดตั้งแต่ต้นจึงช่วยลดภาระของเจ้าของธุรกิจได้มาก"
+                                               ],
+                             "paragraphs_en":  [
+                                                   "Accounting Firm vs In-House Team: Which Is a Better Fit? is rarely about one document alone. It usually involves sequencing, internal coordination, and shared company information.",
+                                                   "Many delays come from incomplete preparation inside the company, so getting the internal picture clear early reduces rework later."
+                                               ],
+                             "checklist_th":  [
+                                                  "ธุรกิจที่อยากเริ่มงานเร็วและคุมต้นทุนมักเริ่มจากสำนักงานบัญชี",
+                                                  "ทีมภายในเหมาะเมื่อปริมาณงานสูงและซับซ้อนขึ้น",
+                                                  "ไม่ว่าเลือกแบบไหนควรมีผู้ประสานงานภายใน"
+                                              ],
+                             "checklist_en":  [
+                                                  "Businesses that want fast setup and predictable cost often start with an accounting firm",
+                                                  "An internal team fits better once workload becomes heavy and complex",
+                                                  "Either model still needs one internal coordinator"
+                                              ]
+                         },
+                         {
+                             "heading_th":  "2) เตรียมเอกสารและผู้ประสานงานให้พร้อมในชุดเดียว",
+                             "heading_en":  "2) Prepare documents and coordination together",
+                             "paragraphs_th":  [
+                                                   "ถ้าเอกสารกระจายอยู่หลายที่หรือไม่มีคนรับผิดชอบหลัก งานจะสะดุดง่าย โดยเฉพาะเมื่อมีฝ่ายบัญชี ผู้บริหาร พนักงาน หรือคู่ค้าเข้ามาเกี่ยวข้องพร้อมกัน",
+                                                   "การมีผู้ประสานงานหลักหนึ่งคน และรวบรวมข้อมูลที่ต้องใช้ไว้ในจุดเดียว จะช่วยให้ทีมที่เข้ามาช่วยดูแลงานเดินเรื่องได้เร็วขึ้นมาก"
+                                               ],
+                             "paragraphs_en":  [
+                                                   "Work slows down quickly when documents are scattered and no one owns the coordination.",
+                                                   "One coordinator and one document source make outside support much more effective."
+                                               ],
+                             "checklist_th":  [
+                                                  "รวมเอกสารไว้ในจุดเดียว",
+                                                  "ตั้งผู้ประสานงานหลักของเคส",
+                                                  "เช็กข้อมูลสำคัญให้ตรงกันก่อนส่ง"
+                                              ],
+                             "checklist_en":  [
+                                                  "Keep documents in one place",
+                                                  "Assign one primary coordinator",
+                                                  "Check key information for consistency before submission"
+                                              ]
+                         },
+                         {
+                             "heading_th":  "3) หลังเริ่มงานแล้วควรมีจุดตรวจตามเป็นระยะ",
+                             "heading_en":  "3) Build review points after the work starts",
+                             "paragraphs_th":  [
+                                                   "แม้งานจะเริ่มเดินแล้ว ก็ควรมีจุดตรวจเป็นระยะว่ามีเอกสารขาดหรือข้อมูลใดต้องอัปเดตเพิ่มหรือไม่ เพื่อไม่ให้ปัญหาไปสะสมตอนใกล้เส้นตาย",
+                                                   "ถ้าธุรกิจต้องการให้เรื่องเหล่านี้เดินต่อเนื่อง การมีทีมช่วยสรุปสถานะ สิ่งที่ยังขาด และขั้นตอนถัดไปแบบสั้น ๆ จะช่วยให้ตัดสินใจได้ง่ายขึ้น"
+                                               ],
+                             "paragraphs_en":  [
+                                                   "Even after the process starts, regular review points help prevent missing items from piling up near a deadline.",
+                                                   "Short status summaries with open items and next steps make decision-making much easier for the business owner."
+                                               ],
+                             "checklist_th":  [
+                                                  "สรุปสถานะค้างเป็นช่วง",
+                                                  "ตามเอกสารหรือข้อมูลที่ยังขาด",
+                                                  "ยืนยันขั้นตอนถัดไปให้ชัดกับทีม"
+                                              ],
+                             "checklist_en":  [
+                                                  "Summarise open items regularly",
+                                                  "Follow up on missing data or documents",
+                                                  "Confirm next steps clearly with the team"
+                                              ]
+                         }
+                     ],
+        "sources":  [
+                        {
+                            "label_th":  "กรมพัฒนาธุรกิจการค้า",
+                            "label_en":  "Department of Business Development",
+                            "url":  "https://www.dbd.go.th"
+                        },
+                        {
+                            "label_th":  "กรมสรรพากร",
+                            "label_en":  "Revenue Department",
+                            "url":  "https://www.rd.go.th"
+                        }
+                    ]
+    },
+    {
+        "slug":  "change-company-address-dbd-guide",
+        "date":  "2026-03-18",
+        "category_th":  "จดทะเบียนและเปลี่ยนแปลง DBD",
+        "category_en":  "DBD Amendments",
+        "read_time_th":  "อ่าน 5 นาที",
+        "read_time_en":  "5 min read",
+        "title_th":  "ย้ายที่ตั้งบริษัท ต้องเตรียมเอกสารอะไรเพื่อแจ้ง DBD",
+        "title_en":  "What to Prepare When Changing a Company Address with DBD",
+        "description_th":  "สรุปภาพรวมการเตรียมเอกสารและการจัดลำดับงานเมื่อต้องย้ายที่ตั้งบริษัทและแจ้งเปลี่ยนข้อมูลกับ DBD",
+        "description_en":  "A practical guide to the document set and workflow for changing a company address with DBD.",
+        "summary_th":  [
+                           "เช็กสิทธิใช้สถานที่ใหม่ให้พร้อม",
+                           "จัดมติและเอกสารสนับสนุนให้ครบในชุดเดียว",
+                           "หลังยื่นแล้วอย่าลืมอัปเดตข้อมูลในระบบอื่น"
+                       ],
+        "summary_en":  [
+                           "Confirm the right to use the new premises",
+                           "Prepare approvals and supporting documents in one pack",
+                           "Update related systems after the filing"
+                       ],
+        "sections":  [
+                         {
+                             "heading_th":  "1) เริ่มจากมองภาพงานให้ครบก่อน",
+                             "heading_en":  "1) Start by seeing the full workflow",
+                             "paragraphs_th":  [
+                                                   "ย้ายที่ตั้งบริษัท ต้องเตรียมเอกสารอะไรเพื่อแจ้ง DBD มักไม่ได้จบแค่การเตรียมเอกสาร แต่เกี่ยวข้องกับลำดับงาน คนในทีม และข้อมูลที่ต้องใช้ร่วมกัน ถ้าเริ่มจากการมองภาพรวมก่อน จะช่วยให้วางงานได้ง่ายขึ้นและไม่ต้องแก้หลายรอบ",
+                                                   "หลายเคสที่ล่าช้าไม่ได้เกิดจากขั้นตอนราชการอย่างเดียว แต่เกิดจากข้อมูลภายในยังไม่พร้อมหรือผู้เกี่ยวข้องเข้าใจไม่ตรงกัน การจัดข้อมูลให้ชัดตั้งแต่ต้นจึงช่วยลดภาระของเจ้าของธุรกิจได้มาก"
+                                               ],
+                             "paragraphs_en":  [
+                                                   "What to Prepare When Changing a Company Address with DBD is rarely about one document alone. It usually involves sequencing, internal coordination, and shared company information.",
+                                                   "Many delays come from incomplete preparation inside the company, so getting the internal picture clear early reduces rework later."
+                                               ],
+                             "checklist_th":  [
+                                                  "เช็กสิทธิใช้สถานที่ใหม่ให้พร้อม",
+                                                  "จัดมติและเอกสารสนับสนุนให้ครบในชุดเดียว",
+                                                  "หลังยื่นแล้วอย่าลืมอัปเดตข้อมูลในระบบอื่น"
+                                              ],
+                             "checklist_en":  [
+                                                  "Confirm the right to use the new premises",
+                                                  "Prepare approvals and supporting documents in one pack",
+                                                  "Update related systems after the filing"
+                                              ]
+                         },
+                         {
+                             "heading_th":  "2) เตรียมเอกสารและผู้ประสานงานให้พร้อมในชุดเดียว",
+                             "heading_en":  "2) Prepare documents and coordination together",
+                             "paragraphs_th":  [
+                                                   "ถ้าเอกสารกระจายอยู่หลายที่หรือไม่มีคนรับผิดชอบหลัก งานจะสะดุดง่าย โดยเฉพาะเมื่อมีฝ่ายบัญชี ผู้บริหาร พนักงาน หรือคู่ค้าเข้ามาเกี่ยวข้องพร้อมกัน",
+                                                   "การมีผู้ประสานงานหลักหนึ่งคน และรวบรวมข้อมูลที่ต้องใช้ไว้ในจุดเดียว จะช่วยให้ทีมที่เข้ามาช่วยดูแลงานเดินเรื่องได้เร็วขึ้นมาก"
+                                               ],
+                             "paragraphs_en":  [
+                                                   "Work slows down quickly when documents are scattered and no one owns the coordination.",
+                                                   "One coordinator and one document source make outside support much more effective."
+                                               ],
+                             "checklist_th":  [
+                                                  "รวมเอกสารไว้ในจุดเดียว",
+                                                  "ตั้งผู้ประสานงานหลักของเคส",
+                                                  "เช็กข้อมูลสำคัญให้ตรงกันก่อนส่ง"
+                                              ],
+                             "checklist_en":  [
+                                                  "Keep documents in one place",
+                                                  "Assign one primary coordinator",
+                                                  "Check key information for consistency before submission"
+                                              ]
+                         },
+                         {
+                             "heading_th":  "3) หลังเริ่มงานแล้วควรมีจุดตรวจตามเป็นระยะ",
+                             "heading_en":  "3) Build review points after the work starts",
+                             "paragraphs_th":  [
+                                                   "แม้งานจะเริ่มเดินแล้ว ก็ควรมีจุดตรวจเป็นระยะว่ามีเอกสารขาดหรือข้อมูลใดต้องอัปเดตเพิ่มหรือไม่ เพื่อไม่ให้ปัญหาไปสะสมตอนใกล้เส้นตาย",
+                                                   "ถ้าธุรกิจต้องการให้เรื่องเหล่านี้เดินต่อเนื่อง การมีทีมช่วยสรุปสถานะ สิ่งที่ยังขาด และขั้นตอนถัดไปแบบสั้น ๆ จะช่วยให้ตัดสินใจได้ง่ายขึ้น"
+                                               ],
+                             "paragraphs_en":  [
+                                                   "Even after the process starts, regular review points help prevent missing items from piling up near a deadline.",
+                                                   "Short status summaries with open items and next steps make decision-making much easier for the business owner."
+                                               ],
+                             "checklist_th":  [
+                                                  "สรุปสถานะค้างเป็นช่วง",
+                                                  "ตามเอกสารหรือข้อมูลที่ยังขาด",
+                                                  "ยืนยันขั้นตอนถัดไปให้ชัดกับทีม"
+                                              ],
+                             "checklist_en":  [
+                                                  "Summarise open items regularly",
+                                                  "Follow up on missing data or documents",
+                                                  "Confirm next steps clearly with the team"
+                                              ]
+                         }
+                     ],
+        "sources":  [
+                        {
+                            "label_th":  "กรมพัฒนาธุรกิจการค้า",
+                            "label_en":  "Department of Business Development",
+                            "url":  "https://www.dbd.go.th"
+                        },
+                        {
+                            "label_th":  "DBD e-Service",
+                            "label_en":  "DBD e-Service",
+                            "url":  "https://ebiz.dbd.go.th/eservice-web/"
+                        }
+                    ]
+    },
+    {
+        "slug":  "change-director-dbd-guide",
+        "date":  "2026-03-18",
+        "category_th":  "จดทะเบียนและเปลี่ยนแปลง DBD",
+        "category_en":  "DBD Amendments",
+        "read_time_th":  "อ่าน 6 นาที",
+        "read_time_en":  "6 min read",
+        "title_th":  "เปลี่ยนกรรมการบริษัท ต้องเตรียมอะไรและควรระวังเรื่องไหน",
+        "title_en":  "Changing Company Directors: What to Prepare and Watch For",
+        "description_th":  "แนวทางจัดการเอกสารและอำนาจลงนามเมื่อต้องเปลี่ยนกรรมการบริษัท",
+        "description_en":  "How to handle documents and signing authority when changing company directors.",
+        "summary_th":  [
+                           "แยกให้ชัดว่าเปลี่ยนเฉพาะตัวบุคคลหรือรวมอำนาจลงนาม",
+                           "ตรวจความครบถ้วนของเอกสารทั้งฝ่ายเดิมและฝ่ายใหม่",
+                           "วางเช็กลิสต์อัปเดตต่อหลังงานเสร็จ"
+                       ],
+        "summary_en":  [
+                           "Clarify whether you are changing only the person or also the signing authority",
+                           "Check document completeness for outgoing and incoming parties",
+                           "Prepare a follow-up update checklist after completion"
+                       ],
+        "sections":  [
+                         {
+                             "heading_th":  "1) เริ่มจากมองภาพงานให้ครบก่อน",
+                             "heading_en":  "1) Start by seeing the full workflow",
+                             "paragraphs_th":  [
+                                                   "เปลี่ยนกรรมการบริษัท ต้องเตรียมอะไรและควรระวังเรื่องไหน มักไม่ได้จบแค่การเตรียมเอกสาร แต่เกี่ยวข้องกับลำดับงาน คนในทีม และข้อมูลที่ต้องใช้ร่วมกัน ถ้าเริ่มจากการมองภาพรวมก่อน จะช่วยให้วางงานได้ง่ายขึ้นและไม่ต้องแก้หลายรอบ",
+                                                   "หลายเคสที่ล่าช้าไม่ได้เกิดจากขั้นตอนราชการอย่างเดียว แต่เกิดจากข้อมูลภายในยังไม่พร้อมหรือผู้เกี่ยวข้องเข้าใจไม่ตรงกัน การจัดข้อมูลให้ชัดตั้งแต่ต้นจึงช่วยลดภาระของเจ้าของธุรกิจได้มาก"
+                                               ],
+                             "paragraphs_en":  [
+                                                   "Changing Company Directors: What to Prepare and Watch For is rarely about one document alone. It usually involves sequencing, internal coordination, and shared company information.",
+                                                   "Many delays come from incomplete preparation inside the company, so getting the internal picture clear early reduces rework later."
+                                               ],
+                             "checklist_th":  [
+                                                  "แยกให้ชัดว่าเปลี่ยนเฉพาะตัวบุคคลหรือรวมอำนาจลงนาม",
+                                                  "ตรวจความครบถ้วนของเอกสารทั้งฝ่ายเดิมและฝ่ายใหม่",
+                                                  "วางเช็กลิสต์อัปเดตต่อหลังงานเสร็จ"
+                                              ],
+                             "checklist_en":  [
+                                                  "Clarify whether you are changing only the person or also the signing authority",
+                                                  "Check document completeness for outgoing and incoming parties",
+                                                  "Prepare a follow-up update checklist after completion"
+                                              ]
+                         },
+                         {
+                             "heading_th":  "2) เตรียมเอกสารและผู้ประสานงานให้พร้อมในชุดเดียว",
+                             "heading_en":  "2) Prepare documents and coordination together",
+                             "paragraphs_th":  [
+                                                   "ถ้าเอกสารกระจายอยู่หลายที่หรือไม่มีคนรับผิดชอบหลัก งานจะสะดุดง่าย โดยเฉพาะเมื่อมีฝ่ายบัญชี ผู้บริหาร พนักงาน หรือคู่ค้าเข้ามาเกี่ยวข้องพร้อมกัน",
+                                                   "การมีผู้ประสานงานหลักหนึ่งคน และรวบรวมข้อมูลที่ต้องใช้ไว้ในจุดเดียว จะช่วยให้ทีมที่เข้ามาช่วยดูแลงานเดินเรื่องได้เร็วขึ้นมาก"
+                                               ],
+                             "paragraphs_en":  [
+                                                   "Work slows down quickly when documents are scattered and no one owns the coordination.",
+                                                   "One coordinator and one document source make outside support much more effective."
+                                               ],
+                             "checklist_th":  [
+                                                  "รวมเอกสารไว้ในจุดเดียว",
+                                                  "ตั้งผู้ประสานงานหลักของเคส",
+                                                  "เช็กข้อมูลสำคัญให้ตรงกันก่อนส่ง"
+                                              ],
+                             "checklist_en":  [
+                                                  "Keep documents in one place",
+                                                  "Assign one primary coordinator",
+                                                  "Check key information for consistency before submission"
+                                              ]
+                         },
+                         {
+                             "heading_th":  "3) หลังเริ่มงานแล้วควรมีจุดตรวจตามเป็นระยะ",
+                             "heading_en":  "3) Build review points after the work starts",
+                             "paragraphs_th":  [
+                                                   "แม้งานจะเริ่มเดินแล้ว ก็ควรมีจุดตรวจเป็นระยะว่ามีเอกสารขาดหรือข้อมูลใดต้องอัปเดตเพิ่มหรือไม่ เพื่อไม่ให้ปัญหาไปสะสมตอนใกล้เส้นตาย",
+                                                   "ถ้าธุรกิจต้องการให้เรื่องเหล่านี้เดินต่อเนื่อง การมีทีมช่วยสรุปสถานะ สิ่งที่ยังขาด และขั้นตอนถัดไปแบบสั้น ๆ จะช่วยให้ตัดสินใจได้ง่ายขึ้น"
+                                               ],
+                             "paragraphs_en":  [
+                                                   "Even after the process starts, regular review points help prevent missing items from piling up near a deadline.",
+                                                   "Short status summaries with open items and next steps make decision-making much easier for the business owner."
+                                               ],
+                             "checklist_th":  [
+                                                  "สรุปสถานะค้างเป็นช่วง",
+                                                  "ตามเอกสารหรือข้อมูลที่ยังขาด",
+                                                  "ยืนยันขั้นตอนถัดไปให้ชัดกับทีม"
+                                              ],
+                             "checklist_en":  [
+                                                  "Summarise open items regularly",
+                                                  "Follow up on missing data or documents",
+                                                  "Confirm next steps clearly with the team"
+                                              ]
+                         }
+                     ],
+        "sources":  [
+                        {
+                            "label_th":  "กรมพัฒนาธุรกิจการค้า",
+                            "label_en":  "Department of Business Development",
+                            "url":  "https://www.dbd.go.th"
+                        },
+                        {
+                            "label_th":  "DBD e-Service",
+                            "label_en":  "DBD e-Service",
+                            "url":  "https://ebiz.dbd.go.th/eservice-web/"
+                        }
+                    ]
+    },
+    {
+        "slug":  "capital-increase-preparation-guide",
+        "date":  "2026-03-18",
+        "category_th":  "จดทะเบียนและเปลี่ยนแปลง DBD",
+        "category_en":  "DBD Amendments",
+        "read_time_th":  "อ่าน 6 นาที",
+        "read_time_en":  "6 min read",
+        "title_th":  "เพิ่มทุนบริษัท ควรเตรียมเอกสารและวางแผนอย่างไรให้ไม่สะดุด",
+        "title_en":  "How to Prepare for a Capital Increase Without Delays",
+        "description_th":  "บทความสำหรับธุรกิจที่กำลังวางแผนเพิ่มทุนและต้องการจัดการเอกสาร ผู้ถือหุ้น และลำดับงานให้ชัด",
+        "description_en":  "A practical guide to capital increase planning, document preparation, and shareholder coordination.",
+        "summary_th":  [
+                           "เริ่มจากเหตุผลและโครงสร้างทุนที่ต้องการ",
+                           "ประสานผู้ถือหุ้นล่วงหน้า",
+                           "เช็กงานที่ต้องตามต่อหลังเพิ่มทุน"
+                       ],
+        "summary_en":  [
+                           "Start with the business purpose and target capital structure",
+                           "Coordinate with shareholders early",
+                           "Review follow-up work after the capital increase"
+                       ],
+        "sections":  [
+                         {
+                             "heading_th":  "1) เริ่มจากมองภาพงานให้ครบก่อน",
+                             "heading_en":  "1) Start by seeing the full workflow",
+                             "paragraphs_th":  [
+                                                   "เพิ่มทุนบริษัท ควรเตรียมเอกสารและวางแผนอย่างไรให้ไม่สะดุด มักไม่ได้จบแค่การเตรียมเอกสาร แต่เกี่ยวข้องกับลำดับงาน คนในทีม และข้อมูลที่ต้องใช้ร่วมกัน ถ้าเริ่มจากการมองภาพรวมก่อน จะช่วยให้วางงานได้ง่ายขึ้นและไม่ต้องแก้หลายรอบ",
+                                                   "หลายเคสที่ล่าช้าไม่ได้เกิดจากขั้นตอนราชการอย่างเดียว แต่เกิดจากข้อมูลภายในยังไม่พร้อมหรือผู้เกี่ยวข้องเข้าใจไม่ตรงกัน การจัดข้อมูลให้ชัดตั้งแต่ต้นจึงช่วยลดภาระของเจ้าของธุรกิจได้มาก"
+                                               ],
+                             "paragraphs_en":  [
+                                                   "How to Prepare for a Capital Increase Without Delays is rarely about one document alone. It usually involves sequencing, internal coordination, and shared company information.",
+                                                   "Many delays come from incomplete preparation inside the company, so getting the internal picture clear early reduces rework later."
+                                               ],
+                             "checklist_th":  [
+                                                  "เริ่มจากเหตุผลและโครงสร้างทุนที่ต้องการ",
+                                                  "ประสานผู้ถือหุ้นล่วงหน้า",
+                                                  "เช็กงานที่ต้องตามต่อหลังเพิ่มทุน"
+                                              ],
+                             "checklist_en":  [
+                                                  "Start with the business purpose and target capital structure",
+                                                  "Coordinate with shareholders early",
+                                                  "Review follow-up work after the capital increase"
+                                              ]
+                         },
+                         {
+                             "heading_th":  "2) เตรียมเอกสารและผู้ประสานงานให้พร้อมในชุดเดียว",
+                             "heading_en":  "2) Prepare documents and coordination together",
+                             "paragraphs_th":  [
+                                                   "ถ้าเอกสารกระจายอยู่หลายที่หรือไม่มีคนรับผิดชอบหลัก งานจะสะดุดง่าย โดยเฉพาะเมื่อมีฝ่ายบัญชี ผู้บริหาร พนักงาน หรือคู่ค้าเข้ามาเกี่ยวข้องพร้อมกัน",
+                                                   "การมีผู้ประสานงานหลักหนึ่งคน และรวบรวมข้อมูลที่ต้องใช้ไว้ในจุดเดียว จะช่วยให้ทีมที่เข้ามาช่วยดูแลงานเดินเรื่องได้เร็วขึ้นมาก"
+                                               ],
+                             "paragraphs_en":  [
+                                                   "Work slows down quickly when documents are scattered and no one owns the coordination.",
+                                                   "One coordinator and one document source make outside support much more effective."
+                                               ],
+                             "checklist_th":  [
+                                                  "รวมเอกสารไว้ในจุดเดียว",
+                                                  "ตั้งผู้ประสานงานหลักของเคส",
+                                                  "เช็กข้อมูลสำคัญให้ตรงกันก่อนส่ง"
+                                              ],
+                             "checklist_en":  [
+                                                  "Keep documents in one place",
+                                                  "Assign one primary coordinator",
+                                                  "Check key information for consistency before submission"
+                                              ]
+                         },
+                         {
+                             "heading_th":  "3) หลังเริ่มงานแล้วควรมีจุดตรวจตามเป็นระยะ",
+                             "heading_en":  "3) Build review points after the work starts",
+                             "paragraphs_th":  [
+                                                   "แม้งานจะเริ่มเดินแล้ว ก็ควรมีจุดตรวจเป็นระยะว่ามีเอกสารขาดหรือข้อมูลใดต้องอัปเดตเพิ่มหรือไม่ เพื่อไม่ให้ปัญหาไปสะสมตอนใกล้เส้นตาย",
+                                                   "ถ้าธุรกิจต้องการให้เรื่องเหล่านี้เดินต่อเนื่อง การมีทีมช่วยสรุปสถานะ สิ่งที่ยังขาด และขั้นตอนถัดไปแบบสั้น ๆ จะช่วยให้ตัดสินใจได้ง่ายขึ้น"
+                                               ],
+                             "paragraphs_en":  [
+                                                   "Even after the process starts, regular review points help prevent missing items from piling up near a deadline.",
+                                                   "Short status summaries with open items and next steps make decision-making much easier for the business owner."
+                                               ],
+                             "checklist_th":  [
+                                                  "สรุปสถานะค้างเป็นช่วง",
+                                                  "ตามเอกสารหรือข้อมูลที่ยังขาด",
+                                                  "ยืนยันขั้นตอนถัดไปให้ชัดกับทีม"
+                                              ],
+                             "checklist_en":  [
+                                                  "Summarise open items regularly",
+                                                  "Follow up on missing data or documents",
+                                                  "Confirm next steps clearly with the team"
+                                              ]
+                         }
+                     ],
+        "sources":  [
+                        {
+                            "label_th":  "กรมพัฒนาธุรกิจการค้า",
+                            "label_en":  "Department of Business Development",
+                            "url":  "https://www.dbd.go.th"
+                        },
+                        {
+                            "label_th":  "DBD Biz Regist",
+                            "label_en":  "DBD Biz Regist",
+                            "url":  "https://edbr.dbd.go.th/"
+                        }
+                    ]
+    },
+    {
+        "slug":  "work-permit-renewal-business-checklist",
+        "date":  "2026-03-18",
+        "category_th":  "วีซ่าและใบอนุญาต",
+        "category_en":  "Visa \u0026 Permits",
+        "read_time_th":  "อ่าน 6 นาที",
+        "read_time_en":  "6 min read",
+        "title_th":  "ต่อ Work Permit ต้องเตรียมอะไรบ้างในมุมของบริษัท",
+        "title_en":  "What Companies Should Prepare for a Work Permit Renewal",
+        "description_th":  "เช็กลิสต์สำหรับบริษัทที่ต้องต่อ Work Permit ให้พนักงานต่างชาติ โดยเน้นการประสานงานให้ครบและทันเวลา",
+        "description_en":  "A company-side checklist for work permit renewal with a focus on document coordination and timing.",
+        "summary_th":  [
+                           "เริ่มเตรียมล่วงหน้า อย่ารอใกล้หมดอายุ",
+                           "แยกเอกสารฝั่งบริษัทและฝั่งพนักงาน",
+                           "เช็กข้อมูลล่าสุดจากช่องทางทางการก่อนยื่น"
+                       ],
+        "summary_en":  [
+                           "Prepare early instead of waiting near expiry",
+                           "Separate company-side and employee-side documents",
+                           "Check official channels for the latest requirements before filing"
+                       ],
+        "sections":  [
+                         {
+                             "heading_th":  "1) เริ่มจากมองภาพงานให้ครบก่อน",
+                             "heading_en":  "1) Start by seeing the full workflow",
+                             "paragraphs_th":  [
+                                                   "ต่อ Work Permit ต้องเตรียมอะไรบ้างในมุมของบริษัท มักไม่ได้จบแค่การเตรียมเอกสาร แต่เกี่ยวข้องกับลำดับงาน คนในทีม และข้อมูลที่ต้องใช้ร่วมกัน ถ้าเริ่มจากการมองภาพรวมก่อน จะช่วยให้วางงานได้ง่ายขึ้นและไม่ต้องแก้หลายรอบ",
+                                                   "หลายเคสที่ล่าช้าไม่ได้เกิดจากขั้นตอนราชการอย่างเดียว แต่เกิดจากข้อมูลภายในยังไม่พร้อมหรือผู้เกี่ยวข้องเข้าใจไม่ตรงกัน การจัดข้อมูลให้ชัดตั้งแต่ต้นจึงช่วยลดภาระของเจ้าของธุรกิจได้มาก"
+                                               ],
+                             "paragraphs_en":  [
+                                                   "What Companies Should Prepare for a Work Permit Renewal is rarely about one document alone. It usually involves sequencing, internal coordination, and shared company information.",
+                                                   "Many delays come from incomplete preparation inside the company, so getting the internal picture clear early reduces rework later."
+                                               ],
+                             "checklist_th":  [
+                                                  "เริ่มเตรียมล่วงหน้า อย่ารอใกล้หมดอายุ",
+                                                  "แยกเอกสารฝั่งบริษัทและฝั่งพนักงาน",
+                                                  "เช็กข้อมูลล่าสุดจากช่องทางทางการก่อนยื่น"
+                                              ],
+                             "checklist_en":  [
+                                                  "Prepare early instead of waiting near expiry",
+                                                  "Separate company-side and employee-side documents",
+                                                  "Check official channels for the latest requirements before filing"
+                                              ]
+                         },
+                         {
+                             "heading_th":  "2) เตรียมเอกสารและผู้ประสานงานให้พร้อมในชุดเดียว",
+                             "heading_en":  "2) Prepare documents and coordination together",
+                             "paragraphs_th":  [
+                                                   "ถ้าเอกสารกระจายอยู่หลายที่หรือไม่มีคนรับผิดชอบหลัก งานจะสะดุดง่าย โดยเฉพาะเมื่อมีฝ่ายบัญชี ผู้บริหาร พนักงาน หรือคู่ค้าเข้ามาเกี่ยวข้องพร้อมกัน",
+                                                   "การมีผู้ประสานงานหลักหนึ่งคน และรวบรวมข้อมูลที่ต้องใช้ไว้ในจุดเดียว จะช่วยให้ทีมที่เข้ามาช่วยดูแลงานเดินเรื่องได้เร็วขึ้นมาก"
+                                               ],
+                             "paragraphs_en":  [
+                                                   "Work slows down quickly when documents are scattered and no one owns the coordination.",
+                                                   "One coordinator and one document source make outside support much more effective."
+                                               ],
+                             "checklist_th":  [
+                                                  "รวมเอกสารไว้ในจุดเดียว",
+                                                  "ตั้งผู้ประสานงานหลักของเคส",
+                                                  "เช็กข้อมูลสำคัญให้ตรงกันก่อนส่ง"
+                                              ],
+                             "checklist_en":  [
+                                                  "Keep documents in one place",
+                                                  "Assign one primary coordinator",
+                                                  "Check key information for consistency before submission"
+                                              ]
+                         },
+                         {
+                             "heading_th":  "3) หลังเริ่มงานแล้วควรมีจุดตรวจตามเป็นระยะ",
+                             "heading_en":  "3) Build review points after the work starts",
+                             "paragraphs_th":  [
+                                                   "แม้งานจะเริ่มเดินแล้ว ก็ควรมีจุดตรวจเป็นระยะว่ามีเอกสารขาดหรือข้อมูลใดต้องอัปเดตเพิ่มหรือไม่ เพื่อไม่ให้ปัญหาไปสะสมตอนใกล้เส้นตาย",
+                                                   "ถ้าธุรกิจต้องการให้เรื่องเหล่านี้เดินต่อเนื่อง การมีทีมช่วยสรุปสถานะ สิ่งที่ยังขาด และขั้นตอนถัดไปแบบสั้น ๆ จะช่วยให้ตัดสินใจได้ง่ายขึ้น"
+                                               ],
+                             "paragraphs_en":  [
+                                                   "Even after the process starts, regular review points help prevent missing items from piling up near a deadline.",
+                                                   "Short status summaries with open items and next steps make decision-making much easier for the business owner."
+                                               ],
+                             "checklist_th":  [
+                                                  "สรุปสถานะค้างเป็นช่วง",
+                                                  "ตามเอกสารหรือข้อมูลที่ยังขาด",
+                                                  "ยืนยันขั้นตอนถัดไปให้ชัดกับทีม"
+                                              ],
+                             "checklist_en":  [
+                                                  "Summarise open items regularly",
+                                                  "Follow up on missing data or documents",
+                                                  "Confirm next steps clearly with the team"
+                                              ]
+                         }
+                     ],
+        "sources":  [
+                        {
+                            "label_th":  "กรมการจัดหางาน",
+                            "label_en":  "Department of Employment",
+                            "url":  "https://www.doe.go.th"
+                        },
+                        {
+                            "label_th":  "ระบบ e-Workpermit",
+                            "label_en":  "e-Workpermit",
+                            "url":  "https://eworkpermit.doe.go.th/"
+                        }
+                    ]
+    },
+    {
+        "slug":  "foreign-shareholder-document-preparation",
+        "date":  "2026-03-18",
+        "category_th":  "วีซ่าและใบอนุญาต",
+        "category_en":  "Visa \u0026 Permits",
+        "read_time_th":  "อ่าน 7 นาที",
+        "read_time_en":  "7 min read",
+        "title_th":  "บริษัทที่มีต่างชาติร่วมถือหุ้น ควรจัดเอกสารบริษัทอย่างไรให้ทำงานต่อได้ง่าย",
+        "title_en":  "How to Organize Company Documents When Foreign Shareholders Are Involved",
+        "description_th":  "แนวทางจัด master file และหมวดเอกสารสำหรับบริษัทที่มีผู้ถือหุ้นหรือผู้บริหารต่างชาติ",
+        "description_en":  "How to build a practical document system for companies with foreign shareholders or executives.",
+        "summary_th":  [
+                           "ทำ master file กลางของเอกสารบริษัท",
+                           "แยกเอกสารบริษัทกับเอกสารส่วนบุคคลให้ชัด",
+                           "ใช้รายการตรวจสอบเดียวกันทุกครั้งที่ยื่นเรื่อง"
+                       ],
+        "summary_en":  [
+                           "Maintain one master file of corporate documents",
+                           "Separate company documents from personal records",
+                           "Reuse the same checklist for every filing"
+                       ],
+        "sections":  [
+                         {
+                             "heading_th":  "1) เริ่มจากมองภาพงานให้ครบก่อน",
+                             "heading_en":  "1) Start by seeing the full workflow",
+                             "paragraphs_th":  [
+                                                   "บริษัทที่มีต่างชาติร่วมถือหุ้น ควรจัดเอกสารบริษัทอย่างไรให้ทำงานต่อได้ง่าย มักไม่ได้จบแค่การเตรียมเอกสาร แต่เกี่ยวข้องกับลำดับงาน คนในทีม และข้อมูลที่ต้องใช้ร่วมกัน ถ้าเริ่มจากการมองภาพรวมก่อน จะช่วยให้วางงานได้ง่ายขึ้นและไม่ต้องแก้หลายรอบ",
+                                                   "หลายเคสที่ล่าช้าไม่ได้เกิดจากขั้นตอนราชการอย่างเดียว แต่เกิดจากข้อมูลภายในยังไม่พร้อมหรือผู้เกี่ยวข้องเข้าใจไม่ตรงกัน การจัดข้อมูลให้ชัดตั้งแต่ต้นจึงช่วยลดภาระของเจ้าของธุรกิจได้มาก"
+                                               ],
+                             "paragraphs_en":  [
+                                                   "How to Organize Company Documents When Foreign Shareholders Are Involved is rarely about one document alone. It usually involves sequencing, internal coordination, and shared company information.",
+                                                   "Many delays come from incomplete preparation inside the company, so getting the internal picture clear early reduces rework later."
+                                               ],
+                             "checklist_th":  [
+                                                  "ทำ master file กลางของเอกสารบริษัท",
+                                                  "แยกเอกสารบริษัทกับเอกสารส่วนบุคคลให้ชัด",
+                                                  "ใช้รายการตรวจสอบเดียวกันทุกครั้งที่ยื่นเรื่อง"
+                                              ],
+                             "checklist_en":  [
+                                                  "Maintain one master file of corporate documents",
+                                                  "Separate company documents from personal records",
+                                                  "Reuse the same checklist for every filing"
+                                              ]
+                         },
+                         {
+                             "heading_th":  "2) เตรียมเอกสารและผู้ประสานงานให้พร้อมในชุดเดียว",
+                             "heading_en":  "2) Prepare documents and coordination together",
+                             "paragraphs_th":  [
+                                                   "ถ้าเอกสารกระจายอยู่หลายที่หรือไม่มีคนรับผิดชอบหลัก งานจะสะดุดง่าย โดยเฉพาะเมื่อมีฝ่ายบัญชี ผู้บริหาร พนักงาน หรือคู่ค้าเข้ามาเกี่ยวข้องพร้อมกัน",
+                                                   "การมีผู้ประสานงานหลักหนึ่งคน และรวบรวมข้อมูลที่ต้องใช้ไว้ในจุดเดียว จะช่วยให้ทีมที่เข้ามาช่วยดูแลงานเดินเรื่องได้เร็วขึ้นมาก"
+                                               ],
+                             "paragraphs_en":  [
+                                                   "Work slows down quickly when documents are scattered and no one owns the coordination.",
+                                                   "One coordinator and one document source make outside support much more effective."
+                                               ],
+                             "checklist_th":  [
+                                                  "รวมเอกสารไว้ในจุดเดียว",
+                                                  "ตั้งผู้ประสานงานหลักของเคส",
+                                                  "เช็กข้อมูลสำคัญให้ตรงกันก่อนส่ง"
+                                              ],
+                             "checklist_en":  [
+                                                  "Keep documents in one place",
+                                                  "Assign one primary coordinator",
+                                                  "Check key information for consistency before submission"
+                                              ]
+                         },
+                         {
+                             "heading_th":  "3) หลังเริ่มงานแล้วควรมีจุดตรวจตามเป็นระยะ",
+                             "heading_en":  "3) Build review points after the work starts",
+                             "paragraphs_th":  [
+                                                   "แม้งานจะเริ่มเดินแล้ว ก็ควรมีจุดตรวจเป็นระยะว่ามีเอกสารขาดหรือข้อมูลใดต้องอัปเดตเพิ่มหรือไม่ เพื่อไม่ให้ปัญหาไปสะสมตอนใกล้เส้นตาย",
+                                                   "ถ้าธุรกิจต้องการให้เรื่องเหล่านี้เดินต่อเนื่อง การมีทีมช่วยสรุปสถานะ สิ่งที่ยังขาด และขั้นตอนถัดไปแบบสั้น ๆ จะช่วยให้ตัดสินใจได้ง่ายขึ้น"
+                                               ],
+                             "paragraphs_en":  [
+                                                   "Even after the process starts, regular review points help prevent missing items from piling up near a deadline.",
+                                                   "Short status summaries with open items and next steps make decision-making much easier for the business owner."
+                                               ],
+                             "checklist_th":  [
+                                                  "สรุปสถานะค้างเป็นช่วง",
+                                                  "ตามเอกสารหรือข้อมูลที่ยังขาด",
+                                                  "ยืนยันขั้นตอนถัดไปให้ชัดกับทีม"
+                                              ],
+                             "checklist_en":  [
+                                                  "Summarise open items regularly",
+                                                  "Follow up on missing data or documents",
+                                                  "Confirm next steps clearly with the team"
+                                              ]
+                         }
+                     ],
+        "sources":  [
+                        {
+                            "label_th":  "กรมพัฒนาธุรกิจการค้า",
+                            "label_en":  "Department of Business Development",
+                            "url":  "https://www.dbd.go.th"
+                        },
+                        {
+                            "label_th":  "Biz Portal",
+                            "label_en":  "Biz Portal",
+                            "url":  "https://bizportal.go.th"
+                        }
+                    ]
+    },
+    {
+        "slug":  "business-license-readiness-checklist",
+        "date":  "2026-03-18",
+        "category_th":  "ใบอนุญาตธุรกิจ",
+        "category_en":  "Business Licenses",
+        "read_time_th":  "อ่าน 6 นาที",
+        "read_time_en":  "6 min read",
+        "title_th":  "ก่อนเปิดกิจการ ควรเช็กเรื่องใบอนุญาตธุรกิจอะไรบ้าง",
+        "title_en":  "Business License Checks to Make Before You Start Operating",
+        "description_th":  "แนวทางสำหรับผู้ประกอบการที่อยากเช็กเรื่องใบอนุญาตธุรกิจและเอกสารที่เกี่ยวข้องก่อนเริ่มเปิดกิจการ",
+        "description_en":  "How founders can review permit and licensing requirements before opening operations.",
+        "summary_th":  [
+                           "เริ่มจากขอบเขตกิจการที่ทำจริง",
+                           "อย่าดูแค่ใบอนุญาตหลักอย่างเดียว",
+                           "เตรียมเอกสารสถานที่และข้อมูลบริษัทตั้งแต่ต้น"
+                       ],
+        "summary_en":  [
+                           "Start from the actual scope of business activity",
+                           "Do not look only at the main permit",
+                           "Prepare premises and company records early"
+                       ],
+        "sections":  [
+                         {
+                             "heading_th":  "1) เริ่มจากมองภาพงานให้ครบก่อน",
+                             "heading_en":  "1) Start by seeing the full workflow",
+                             "paragraphs_th":  [
+                                                   "ก่อนเปิดกิจการ ควรเช็กเรื่องใบอนุญาตธุรกิจอะไรบ้าง มักไม่ได้จบแค่การเตรียมเอกสาร แต่เกี่ยวข้องกับลำดับงาน คนในทีม และข้อมูลที่ต้องใช้ร่วมกัน ถ้าเริ่มจากการมองภาพรวมก่อน จะช่วยให้วางงานได้ง่ายขึ้นและไม่ต้องแก้หลายรอบ",
+                                                   "หลายเคสที่ล่าช้าไม่ได้เกิดจากขั้นตอนราชการอย่างเดียว แต่เกิดจากข้อมูลภายในยังไม่พร้อมหรือผู้เกี่ยวข้องเข้าใจไม่ตรงกัน การจัดข้อมูลให้ชัดตั้งแต่ต้นจึงช่วยลดภาระของเจ้าของธุรกิจได้มาก"
+                                               ],
+                             "paragraphs_en":  [
+                                                   "Business License Checks to Make Before You Start Operating is rarely about one document alone. It usually involves sequencing, internal coordination, and shared company information.",
+                                                   "Many delays come from incomplete preparation inside the company, so getting the internal picture clear early reduces rework later."
+                                               ],
+                             "checklist_th":  [
+                                                  "เริ่มจากขอบเขตกิจการที่ทำจริง",
+                                                  "อย่าดูแค่ใบอนุญาตหลักอย่างเดียว",
+                                                  "เตรียมเอกสารสถานที่และข้อมูลบริษัทตั้งแต่ต้น"
+                                              ],
+                             "checklist_en":  [
+                                                  "Start from the actual scope of business activity",
+                                                  "Do not look only at the main permit",
+                                                  "Prepare premises and company records early"
+                                              ]
+                         },
+                         {
+                             "heading_th":  "2) เตรียมเอกสารและผู้ประสานงานให้พร้อมในชุดเดียว",
+                             "heading_en":  "2) Prepare documents and coordination together",
+                             "paragraphs_th":  [
+                                                   "ถ้าเอกสารกระจายอยู่หลายที่หรือไม่มีคนรับผิดชอบหลัก งานจะสะดุดง่าย โดยเฉพาะเมื่อมีฝ่ายบัญชี ผู้บริหาร พนักงาน หรือคู่ค้าเข้ามาเกี่ยวข้องพร้อมกัน",
+                                                   "การมีผู้ประสานงานหลักหนึ่งคน และรวบรวมข้อมูลที่ต้องใช้ไว้ในจุดเดียว จะช่วยให้ทีมที่เข้ามาช่วยดูแลงานเดินเรื่องได้เร็วขึ้นมาก"
+                                               ],
+                             "paragraphs_en":  [
+                                                   "Work slows down quickly when documents are scattered and no one owns the coordination.",
+                                                   "One coordinator and one document source make outside support much more effective."
+                                               ],
+                             "checklist_th":  [
+                                                  "รวมเอกสารไว้ในจุดเดียว",
+                                                  "ตั้งผู้ประสานงานหลักของเคส",
+                                                  "เช็กข้อมูลสำคัญให้ตรงกันก่อนส่ง"
+                                              ],
+                             "checklist_en":  [
+                                                  "Keep documents in one place",
+                                                  "Assign one primary coordinator",
+                                                  "Check key information for consistency before submission"
+                                              ]
+                         },
+                         {
+                             "heading_th":  "3) หลังเริ่มงานแล้วควรมีจุดตรวจตามเป็นระยะ",
+                             "heading_en":  "3) Build review points after the work starts",
+                             "paragraphs_th":  [
+                                                   "แม้งานจะเริ่มเดินแล้ว ก็ควรมีจุดตรวจเป็นระยะว่ามีเอกสารขาดหรือข้อมูลใดต้องอัปเดตเพิ่มหรือไม่ เพื่อไม่ให้ปัญหาไปสะสมตอนใกล้เส้นตาย",
+                                                   "ถ้าธุรกิจต้องการให้เรื่องเหล่านี้เดินต่อเนื่อง การมีทีมช่วยสรุปสถานะ สิ่งที่ยังขาด และขั้นตอนถัดไปแบบสั้น ๆ จะช่วยให้ตัดสินใจได้ง่ายขึ้น"
+                                               ],
+                             "paragraphs_en":  [
+                                                   "Even after the process starts, regular review points help prevent missing items from piling up near a deadline.",
+                                                   "Short status summaries with open items and next steps make decision-making much easier for the business owner."
+                                               ],
+                             "checklist_th":  [
+                                                  "สรุปสถานะค้างเป็นช่วง",
+                                                  "ตามเอกสารหรือข้อมูลที่ยังขาด",
+                                                  "ยืนยันขั้นตอนถัดไปให้ชัดกับทีม"
+                                              ],
+                             "checklist_en":  [
+                                                  "Summarise open items regularly",
+                                                  "Follow up on missing data or documents",
+                                                  "Confirm next steps clearly with the team"
+                                              ]
+                         }
+                     ],
+        "sources":  [
+                        {
+                            "label_th":  "Biz Portal",
+                            "label_en":  "Biz Portal",
+                            "url":  "https://bizportal.go.th"
+                        },
+                        {
+                            "label_th":  "กรมพัฒนาธุรกิจการค้า",
+                            "label_en":  "Department of Business Development",
+                            "url":  "https://www.dbd.go.th"
+                        }
+                    ]
+    },
+    {
+        "slug":  "company-dissolution-aftercare-checklist",
+        "date":  "2026-03-18",
+        "category_th":  "ปิดบริษัท",
+        "category_en":  "Company Dissolution",
+        "read_time_th":  "อ่าน 7 นาที",
+        "read_time_en":  "7 min read",
+        "title_th":  "เมื่อเริ่มปิดบริษัท ยังมีงานบัญชีและภาษีอะไรที่ต้องตามต่อ",
+        "title_en":  "After Starting a Company Dissolution, What Work Still Remains?",
+        "description_th":  "สรุปงานต่อเนื่องหลังเริ่มกระบวนการปิดบริษัท ทั้งในมุมบัญชี ภาษี และงานติดตามหลังบ้าน",
+        "description_en":  "A practical overview of the accounting, tax, and operational work that often continues after a dissolution starts.",
+        "summary_th":  [
+                           "งานปิดบริษัทไม่ได้จบที่ยื่นเรื่องครั้งเดียว",
+                           "แยกงานจดทะเบียน บัญชี และภาษีออกจากกัน",
+                           "ทำเช็กลิสต์หลังยื่นเพื่อไม่ให้มีรายการค้าง"
+                       ],
+        "summary_en":  [
+                           "Dissolution is not finished in one filing",
+                           "Separate registration accounting and tax workstreams",
+                           "Use a post-filing checklist so nothing is left hanging"
+                       ],
+        "sections":  [
+                         {
+                             "heading_th":  "1) เริ่มจากมองภาพงานให้ครบก่อน",
+                             "heading_en":  "1) Start by seeing the full workflow",
+                             "paragraphs_th":  [
+                                                   "เมื่อเริ่มปิดบริษัท ยังมีงานบัญชีและภาษีอะไรที่ต้องตามต่อ มักไม่ได้จบแค่การเตรียมเอกสาร แต่เกี่ยวข้องกับลำดับงาน คนในทีม และข้อมูลที่ต้องใช้ร่วมกัน ถ้าเริ่มจากการมองภาพรวมก่อน จะช่วยให้วางงานได้ง่ายขึ้นและไม่ต้องแก้หลายรอบ",
+                                                   "หลายเคสที่ล่าช้าไม่ได้เกิดจากขั้นตอนราชการอย่างเดียว แต่เกิดจากข้อมูลภายในยังไม่พร้อมหรือผู้เกี่ยวข้องเข้าใจไม่ตรงกัน การจัดข้อมูลให้ชัดตั้งแต่ต้นจึงช่วยลดภาระของเจ้าของธุรกิจได้มาก"
+                                               ],
+                             "paragraphs_en":  [
+                                                   "After Starting a Company Dissolution, What Work Still Remains? is rarely about one document alone. It usually involves sequencing, internal coordination, and shared company information.",
+                                                   "Many delays come from incomplete preparation inside the company, so getting the internal picture clear early reduces rework later."
+                                               ],
+                             "checklist_th":  [
+                                                  "งานปิดบริษัทไม่ได้จบที่ยื่นเรื่องครั้งเดียว",
+                                                  "แยกงานจดทะเบียน บัญชี และภาษีออกจากกัน",
+                                                  "ทำเช็กลิสต์หลังยื่นเพื่อไม่ให้มีรายการค้าง"
+                                              ],
+                             "checklist_en":  [
+                                                  "Dissolution is not finished in one filing",
+                                                  "Separate registration accounting and tax workstreams",
+                                                  "Use a post-filing checklist so nothing is left hanging"
+                                              ]
+                         },
+                         {
+                             "heading_th":  "2) เตรียมเอกสารและผู้ประสานงานให้พร้อมในชุดเดียว",
+                             "heading_en":  "2) Prepare documents and coordination together",
+                             "paragraphs_th":  [
+                                                   "ถ้าเอกสารกระจายอยู่หลายที่หรือไม่มีคนรับผิดชอบหลัก งานจะสะดุดง่าย โดยเฉพาะเมื่อมีฝ่ายบัญชี ผู้บริหาร พนักงาน หรือคู่ค้าเข้ามาเกี่ยวข้องพร้อมกัน",
+                                                   "การมีผู้ประสานงานหลักหนึ่งคน และรวบรวมข้อมูลที่ต้องใช้ไว้ในจุดเดียว จะช่วยให้ทีมที่เข้ามาช่วยดูแลงานเดินเรื่องได้เร็วขึ้นมาก"
+                                               ],
+                             "paragraphs_en":  [
+                                                   "Work slows down quickly when documents are scattered and no one owns the coordination.",
+                                                   "One coordinator and one document source make outside support much more effective."
+                                               ],
+                             "checklist_th":  [
+                                                  "รวมเอกสารไว้ในจุดเดียว",
+                                                  "ตั้งผู้ประสานงานหลักของเคส",
+                                                  "เช็กข้อมูลสำคัญให้ตรงกันก่อนส่ง"
+                                              ],
+                             "checklist_en":  [
+                                                  "Keep documents in one place",
+                                                  "Assign one primary coordinator",
+                                                  "Check key information for consistency before submission"
+                                              ]
+                         },
+                         {
+                             "heading_th":  "3) หลังเริ่มงานแล้วควรมีจุดตรวจตามเป็นระยะ",
+                             "heading_en":  "3) Build review points after the work starts",
+                             "paragraphs_th":  [
+                                                   "แม้งานจะเริ่มเดินแล้ว ก็ควรมีจุดตรวจเป็นระยะว่ามีเอกสารขาดหรือข้อมูลใดต้องอัปเดตเพิ่มหรือไม่ เพื่อไม่ให้ปัญหาไปสะสมตอนใกล้เส้นตาย",
+                                                   "ถ้าธุรกิจต้องการให้เรื่องเหล่านี้เดินต่อเนื่อง การมีทีมช่วยสรุปสถานะ สิ่งที่ยังขาด และขั้นตอนถัดไปแบบสั้น ๆ จะช่วยให้ตัดสินใจได้ง่ายขึ้น"
+                                               ],
+                             "paragraphs_en":  [
+                                                   "Even after the process starts, regular review points help prevent missing items from piling up near a deadline.",
+                                                   "Short status summaries with open items and next steps make decision-making much easier for the business owner."
+                                               ],
+                             "checklist_th":  [
+                                                  "สรุปสถานะค้างเป็นช่วง",
+                                                  "ตามเอกสารหรือข้อมูลที่ยังขาด",
+                                                  "ยืนยันขั้นตอนถัดไปให้ชัดกับทีม"
+                                              ],
+                             "checklist_en":  [
+                                                  "Summarise open items regularly",
+                                                  "Follow up on missing data or documents",
+                                                  "Confirm next steps clearly with the team"
+                                              ]
+                         }
+                     ],
+        "sources":  [
+                        {
+                            "label_th":  "กรมพัฒนาธุรกิจการค้า",
+                            "label_en":  "Department of Business Development",
+                            "url":  "https://www.dbd.go.th"
+                        },
+                        {
+                            "label_th":  "กรมสรรพากร",
+                            "label_en":  "Revenue Department",
+                            "url":  "https://www.rd.go.th"
+                        }
+                    ]
+    },
+    {
+        "slug":  "payroll-social-security-system-checklist",
+        "date":  "2026-03-19",
+        "category_th":  "บัญชีและภาษี",
+        "category_en":  "Accounting \u0026 Tax",
+        "read_time_th":  "อ่าน 6 นาที",
+        "read_time_en":  "6 min read",
+        "title_th":  "เริ่มมีพนักงานแล้ว ควรจัดระบบเงินเดือนและประกันสังคมอย่างไร",
+        "title_en":  "How to Set Up Payroll and Social Security When You Start Hiring",
+        "description_th":  "เช็กลิสต์สำหรับธุรกิจที่เริ่มมีพนักงานและอยากจัดระบบ payroll กับประกันสังคมให้เรียบร้อย",
+        "description_en":  "How to set up payroll and social security properly when a business starts hiring.",
+        "summary_th":  [
+                           "เก็บข้อมูลพนักงานให้ครบตั้งแต่วันแรก",
+                           "ตั้งคนรับผิดชอบงาน payroll ให้ชัด",
+                           "เช็กขั้นตอนกับประกันสังคมก่อนเริ่มจริง"
+                       ],
+        "summary_en":  [
+                           "Collect complete employee data from day one",
+                           "Assign clear payroll ownership",
+                           "Verify the social security process before starting"
+                       ],
+        "sections":  [
+                         {
+                             "heading_th":  "1) เริ่มจากมองภาพงานให้ครบก่อน",
+                             "heading_en":  "1) Start by seeing the full workflow",
+                             "paragraphs_th":  [
+                                                   "เริ่มมีพนักงานแล้ว ควรจัดระบบเงินเดือนและประกันสังคมอย่างไร มักไม่ได้จบแค่การเตรียมเอกสาร แต่เกี่ยวข้องกับลำดับงาน คนในทีม และข้อมูลที่ต้องใช้ร่วมกัน ถ้าเริ่มจากการมองภาพรวมก่อน จะช่วยให้วางงานได้ง่ายขึ้นและไม่ต้องแก้หลายรอบ",
+                                                   "หลายเคสที่ล่าช้าไม่ได้เกิดจากขั้นตอนราชการอย่างเดียว แต่เกิดจากข้อมูลภายในยังไม่พร้อมหรือผู้เกี่ยวข้องเข้าใจไม่ตรงกัน การจัดข้อมูลให้ชัดตั้งแต่ต้นจึงช่วยลดภาระของเจ้าของธุรกิจได้มาก"
+                                               ],
+                             "paragraphs_en":  [
+                                                   "How to Set Up Payroll and Social Security When You Start Hiring is rarely about one document alone. It usually involves sequencing, internal coordination, and shared company information.",
+                                                   "Many delays come from incomplete preparation inside the company, so getting the internal picture clear early reduces rework later."
+                                               ],
+                             "checklist_th":  [
+                                                  "เก็บข้อมูลพนักงานให้ครบตั้งแต่วันแรก",
+                                                  "ตั้งคนรับผิดชอบงาน payroll ให้ชัด",
+                                                  "เช็กขั้นตอนกับประกันสังคมก่อนเริ่มจริง"
+                                              ],
+                             "checklist_en":  [
+                                                  "Collect complete employee data from day one",
+                                                  "Assign clear payroll ownership",
+                                                  "Verify the social security process before starting"
+                                              ]
+                         },
+                         {
+                             "heading_th":  "2) เตรียมเอกสารและผู้ประสานงานให้พร้อมในชุดเดียว",
+                             "heading_en":  "2) Prepare documents and coordination together",
+                             "paragraphs_th":  [
+                                                   "ถ้าเอกสารกระจายอยู่หลายที่หรือไม่มีคนรับผิดชอบหลัก งานจะสะดุดง่าย โดยเฉพาะเมื่อมีฝ่ายบัญชี ผู้บริหาร พนักงาน หรือคู่ค้าเข้ามาเกี่ยวข้องพร้อมกัน",
+                                                   "การมีผู้ประสานงานหลักหนึ่งคน และรวบรวมข้อมูลที่ต้องใช้ไว้ในจุดเดียว จะช่วยให้ทีมที่เข้ามาช่วยดูแลงานเดินเรื่องได้เร็วขึ้นมาก"
+                                               ],
+                             "paragraphs_en":  [
+                                                   "Work slows down quickly when documents are scattered and no one owns the coordination.",
+                                                   "One coordinator and one document source make outside support much more effective."
+                                               ],
+                             "checklist_th":  [
+                                                  "รวมเอกสารไว้ในจุดเดียว",
+                                                  "ตั้งผู้ประสานงานหลักของเคส",
+                                                  "เช็กข้อมูลสำคัญให้ตรงกันก่อนส่ง"
+                                              ],
+                             "checklist_en":  [
+                                                  "Keep documents in one place",
+                                                  "Assign one primary coordinator",
+                                                  "Check key information for consistency before submission"
+                                              ]
+                         },
+                         {
+                             "heading_th":  "3) หลังเริ่มงานแล้วควรมีจุดตรวจตามเป็นระยะ",
+                             "heading_en":  "3) Build review points after the work starts",
+                             "paragraphs_th":  [
+                                                   "แม้งานจะเริ่มเดินแล้ว ก็ควรมีจุดตรวจเป็นระยะว่ามีเอกสารขาดหรือข้อมูลใดต้องอัปเดตเพิ่มหรือไม่ เพื่อไม่ให้ปัญหาไปสะสมตอนใกล้เส้นตาย",
+                                                   "ถ้าธุรกิจต้องการให้เรื่องเหล่านี้เดินต่อเนื่อง การมีทีมช่วยสรุปสถานะ สิ่งที่ยังขาด และขั้นตอนถัดไปแบบสั้น ๆ จะช่วยให้ตัดสินใจได้ง่ายขึ้น"
+                                               ],
+                             "paragraphs_en":  [
+                                                   "Even after the process starts, regular review points help prevent missing items from piling up near a deadline.",
+                                                   "Short status summaries with open items and next steps make decision-making much easier for the business owner."
+                                               ],
+                             "checklist_th":  [
+                                                  "สรุปสถานะค้างเป็นช่วง",
+                                                  "ตามเอกสารหรือข้อมูลที่ยังขาด",
+                                                  "ยืนยันขั้นตอนถัดไปให้ชัดกับทีม"
+                                              ],
+                             "checklist_en":  [
+                                                  "Summarise open items regularly",
+                                                  "Follow up on missing data or documents",
+                                                  "Confirm next steps clearly with the team"
+                                              ]
+                         }
+                     ],
+        "sources":  [
+                        {
+                            "label_th":  "สำนักงานประกันสังคม",
+                            "label_en":  "Social Security Office",
+                            "url":  "https://www.sso.go.th"
+                        },
+                        {
+                            "label_th":  "กรมสรรพากร",
+                            "label_en":  "Revenue Department",
+                            "url":  "https://www.rd.go.th"
+                        }
+                    ]
+    },
+    {
+        "slug":  "tax-audit-preparation-documents",
+        "date":  "2026-03-19",
+        "category_th":  "บัญชีและภาษี",
+        "category_en":  "Accounting \u0026 Tax",
+        "read_time_th":  "อ่าน 6 นาที",
+        "read_time_en":  "6 min read",
+        "title_th":  "ถ้าต้องเตรียมเอกสารรับการตรวจ ควรเริ่มจากตรงไหนก่อน",
+        "title_en":  "How to Prepare Documents When a Tax Review May Be Coming",
+        "description_th":  "แนวทางเตรียมเอกสารและลำดับงานสำหรับบริษัทที่ต้องการทำแฟ้มเอกสารให้ตรวจสอบได้ง่ายขึ้น",
+        "description_en":  "How to organise documents when a business wants to be better prepared for tax review or audit requests.",
+        "summary_th":  [
+                           "แยกเอกสารหลักที่ใช้บ่อยก่อน",
+                           "ทำรายการเอกสารที่ยังขาด",
+                           "อย่ารอให้ถูกขอเอกสารแล้วค่อยเริ่มจัด"
+                       ],
+        "summary_en":  [
+                           "Start with the core document groups first",
+                           "List what is still missing",
+                           "Do not wait until a request arrives before organising"
+                       ],
+        "sections":  [
+                         {
+                             "heading_th":  "1) เริ่มจากมองภาพงานให้ครบก่อน",
+                             "heading_en":  "1) Start by seeing the full workflow",
+                             "paragraphs_th":  [
+                                                   "ถ้าต้องเตรียมเอกสารรับการตรวจ ควรเริ่มจากตรงไหนก่อน มักไม่ได้จบแค่การเตรียมเอกสาร แต่เกี่ยวข้องกับลำดับงาน คนในทีม และข้อมูลที่ต้องใช้ร่วมกัน ถ้าเริ่มจากการมองภาพรวมก่อน จะช่วยให้วางงานได้ง่ายขึ้นและไม่ต้องแก้หลายรอบ",
+                                                   "หลายเคสที่ล่าช้าไม่ได้เกิดจากขั้นตอนราชการอย่างเดียว แต่เกิดจากข้อมูลภายในยังไม่พร้อมหรือผู้เกี่ยวข้องเข้าใจไม่ตรงกัน การจัดข้อมูลให้ชัดตั้งแต่ต้นจึงช่วยลดภาระของเจ้าของธุรกิจได้มาก"
+                                               ],
+                             "paragraphs_en":  [
+                                                   "How to Prepare Documents When a Tax Review May Be Coming is rarely about one document alone. It usually involves sequencing, internal coordination, and shared company information.",
+                                                   "Many delays come from incomplete preparation inside the company, so getting the internal picture clear early reduces rework later."
+                                               ],
+                             "checklist_th":  [
+                                                  "แยกเอกสารหลักที่ใช้บ่อยก่อน",
+                                                  "ทำรายการเอกสารที่ยังขาด",
+                                                  "อย่ารอให้ถูกขอเอกสารแล้วค่อยเริ่มจัด"
+                                              ],
+                             "checklist_en":  [
+                                                  "Start with the core document groups first",
+                                                  "List what is still missing",
+                                                  "Do not wait until a request arrives before organising"
+                                              ]
+                         },
+                         {
+                             "heading_th":  "2) เตรียมเอกสารและผู้ประสานงานให้พร้อมในชุดเดียว",
+                             "heading_en":  "2) Prepare documents and coordination together",
+                             "paragraphs_th":  [
+                                                   "ถ้าเอกสารกระจายอยู่หลายที่หรือไม่มีคนรับผิดชอบหลัก งานจะสะดุดง่าย โดยเฉพาะเมื่อมีฝ่ายบัญชี ผู้บริหาร พนักงาน หรือคู่ค้าเข้ามาเกี่ยวข้องพร้อมกัน",
+                                                   "การมีผู้ประสานงานหลักหนึ่งคน และรวบรวมข้อมูลที่ต้องใช้ไว้ในจุดเดียว จะช่วยให้ทีมที่เข้ามาช่วยดูแลงานเดินเรื่องได้เร็วขึ้นมาก"
+                                               ],
+                             "paragraphs_en":  [
+                                                   "Work slows down quickly when documents are scattered and no one owns the coordination.",
+                                                   "One coordinator and one document source make outside support much more effective."
+                                               ],
+                             "checklist_th":  [
+                                                  "รวมเอกสารไว้ในจุดเดียว",
+                                                  "ตั้งผู้ประสานงานหลักของเคส",
+                                                  "เช็กข้อมูลสำคัญให้ตรงกันก่อนส่ง"
+                                              ],
+                             "checklist_en":  [
+                                                  "Keep documents in one place",
+                                                  "Assign one primary coordinator",
+                                                  "Check key information for consistency before submission"
+                                              ]
+                         },
+                         {
+                             "heading_th":  "3) หลังเริ่มงานแล้วควรมีจุดตรวจตามเป็นระยะ",
+                             "heading_en":  "3) Build review points after the work starts",
+                             "paragraphs_th":  [
+                                                   "แม้งานจะเริ่มเดินแล้ว ก็ควรมีจุดตรวจเป็นระยะว่ามีเอกสารขาดหรือข้อมูลใดต้องอัปเดตเพิ่มหรือไม่ เพื่อไม่ให้ปัญหาไปสะสมตอนใกล้เส้นตาย",
+                                                   "ถ้าธุรกิจต้องการให้เรื่องเหล่านี้เดินต่อเนื่อง การมีทีมช่วยสรุปสถานะ สิ่งที่ยังขาด และขั้นตอนถัดไปแบบสั้น ๆ จะช่วยให้ตัดสินใจได้ง่ายขึ้น"
+                                               ],
+                             "paragraphs_en":  [
+                                                   "Even after the process starts, regular review points help prevent missing items from piling up near a deadline.",
+                                                   "Short status summaries with open items and next steps make decision-making much easier for the business owner."
+                                               ],
+                             "checklist_th":  [
+                                                  "สรุปสถานะค้างเป็นช่วง",
+                                                  "ตามเอกสารหรือข้อมูลที่ยังขาด",
+                                                  "ยืนยันขั้นตอนถัดไปให้ชัดกับทีม"
+                                              ],
+                             "checklist_en":  [
+                                                  "Summarise open items regularly",
+                                                  "Follow up on missing data or documents",
+                                                  "Confirm next steps clearly with the team"
+                                              ]
+                         }
+                     ],
+        "sources":  [
+                        {
+                            "label_th":  "กรมสรรพากร",
+                            "label_en":  "Revenue Department",
+                            "url":  "https://www.rd.go.th"
+                        },
+                        {
+                            "label_th":  "ระบบ e-Filing กรมสรรพากร",
+                            "label_en":  "Revenue Department e-Filing",
+                            "url":  "https://efiling.rd.go.th"
+                        }
+                    ]
+    },
+    {
+        "slug":  "year-end-document-close-checklist",
+        "date":  "2026-03-19",
+        "category_th":  "บัญชีและภาษี",
+        "category_en":  "Accounting \u0026 Tax",
+        "read_time_th":  "อ่าน 6 นาที",
+        "read_time_en":  "6 min read",
+        "title_th":  "ปลายปีควรปิดเอกสารอะไรให้เรียบร้อยก่อนส่งทีมบัญชี",
+        "title_en":  "What to Close Out Before Sending Year-End Documents to Your Accountant",
+        "description_th":  "เช็กลิสต์เอกสารปลายปีสำหรับธุรกิจที่ต้องการให้การปิดงานบัญชีและภาษีช่วงสิ้นปีเป็นระบบ",
+        "description_en":  "A year-end document checklist for businesses that want a cleaner accounting close.",
+        "summary_th":  [
+                           "เช็กเอกสารที่ยังขาดก่อนสิ้นรอบ",
+                           "สรุปรายการที่ต้องติดตามเพิ่ม",
+                           "จัดเก็บไฟล์ให้ค้นย้อนหลังได้ง่าย"
+                       ],
+        "summary_en":  [
+                           "Check missing items before the cut-off",
+                           "Summarise follow-up items early",
+                           "Store files in a way that is easy to review later"
+                       ],
+        "sections":  [
+                         {
+                             "heading_th":  "1) เริ่มจากมองภาพงานให้ครบก่อน",
+                             "heading_en":  "1) Start by seeing the full workflow",
+                             "paragraphs_th":  [
+                                                   "ปลายปีควรปิดเอกสารอะไรให้เรียบร้อยก่อนส่งทีมบัญชี มักไม่ได้จบแค่การเตรียมเอกสาร แต่เกี่ยวข้องกับลำดับงาน คนในทีม และข้อมูลที่ต้องใช้ร่วมกัน ถ้าเริ่มจากการมองภาพรวมก่อน จะช่วยให้วางงานได้ง่ายขึ้นและไม่ต้องแก้หลายรอบ",
+                                                   "หลายเคสที่ล่าช้าไม่ได้เกิดจากขั้นตอนราชการอย่างเดียว แต่เกิดจากข้อมูลภายในยังไม่พร้อมหรือผู้เกี่ยวข้องเข้าใจไม่ตรงกัน การจัดข้อมูลให้ชัดตั้งแต่ต้นจึงช่วยลดภาระของเจ้าของธุรกิจได้มาก"
+                                               ],
+                             "paragraphs_en":  [
+                                                   "What to Close Out Before Sending Year-End Documents to Your Accountant is rarely about one document alone. It usually involves sequencing, internal coordination, and shared company information.",
+                                                   "Many delays come from incomplete preparation inside the company, so getting the internal picture clear early reduces rework later."
+                                               ],
+                             "checklist_th":  [
+                                                  "เช็กเอกสารที่ยังขาดก่อนสิ้นรอบ",
+                                                  "สรุปรายการที่ต้องติดตามเพิ่ม",
+                                                  "จัดเก็บไฟล์ให้ค้นย้อนหลังได้ง่าย"
+                                              ],
+                             "checklist_en":  [
+                                                  "Check missing items before the cut-off",
+                                                  "Summarise follow-up items early",
+                                                  "Store files in a way that is easy to review later"
+                                              ]
+                         },
+                         {
+                             "heading_th":  "2) เตรียมเอกสารและผู้ประสานงานให้พร้อมในชุดเดียว",
+                             "heading_en":  "2) Prepare documents and coordination together",
+                             "paragraphs_th":  [
+                                                   "ถ้าเอกสารกระจายอยู่หลายที่หรือไม่มีคนรับผิดชอบหลัก งานจะสะดุดง่าย โดยเฉพาะเมื่อมีฝ่ายบัญชี ผู้บริหาร พนักงาน หรือคู่ค้าเข้ามาเกี่ยวข้องพร้อมกัน",
+                                                   "การมีผู้ประสานงานหลักหนึ่งคน และรวบรวมข้อมูลที่ต้องใช้ไว้ในจุดเดียว จะช่วยให้ทีมที่เข้ามาช่วยดูแลงานเดินเรื่องได้เร็วขึ้นมาก"
+                                               ],
+                             "paragraphs_en":  [
+                                                   "Work slows down quickly when documents are scattered and no one owns the coordination.",
+                                                   "One coordinator and one document source make outside support much more effective."
+                                               ],
+                             "checklist_th":  [
+                                                  "รวมเอกสารไว้ในจุดเดียว",
+                                                  "ตั้งผู้ประสานงานหลักของเคส",
+                                                  "เช็กข้อมูลสำคัญให้ตรงกันก่อนส่ง"
+                                              ],
+                             "checklist_en":  [
+                                                  "Keep documents in one place",
+                                                  "Assign one primary coordinator",
+                                                  "Check key information for consistency before submission"
+                                              ]
+                         },
+                         {
+                             "heading_th":  "3) หลังเริ่มงานแล้วควรมีจุดตรวจตามเป็นระยะ",
+                             "heading_en":  "3) Build review points after the work starts",
+                             "paragraphs_th":  [
+                                                   "แม้งานจะเริ่มเดินแล้ว ก็ควรมีจุดตรวจเป็นระยะว่ามีเอกสารขาดหรือข้อมูลใดต้องอัปเดตเพิ่มหรือไม่ เพื่อไม่ให้ปัญหาไปสะสมตอนใกล้เส้นตาย",
+                                                   "ถ้าธุรกิจต้องการให้เรื่องเหล่านี้เดินต่อเนื่อง การมีทีมช่วยสรุปสถานะ สิ่งที่ยังขาด และขั้นตอนถัดไปแบบสั้น ๆ จะช่วยให้ตัดสินใจได้ง่ายขึ้น"
+                                               ],
+                             "paragraphs_en":  [
+                                                   "Even after the process starts, regular review points help prevent missing items from piling up near a deadline.",
+                                                   "Short status summaries with open items and next steps make decision-making much easier for the business owner."
+                                               ],
+                             "checklist_th":  [
+                                                  "สรุปสถานะค้างเป็นช่วง",
+                                                  "ตามเอกสารหรือข้อมูลที่ยังขาด",
+                                                  "ยืนยันขั้นตอนถัดไปให้ชัดกับทีม"
+                                              ],
+                             "checklist_en":  [
+                                                  "Summarise open items regularly",
+                                                  "Follow up on missing data or documents",
+                                                  "Confirm next steps clearly with the team"
+                                              ]
+                         }
+                     ],
+        "sources":  [
+                        {
+                            "label_th":  "กรมสรรพากร",
+                            "label_en":  "Revenue Department",
+                            "url":  "https://www.rd.go.th"
+                        },
+                        {
+                            "label_th":  "กรมพัฒนาธุรกิจการค้า",
+                            "label_en":  "Department of Business Development",
+                            "url":  "https://www.dbd.go.th"
+                        }
+                    ]
+    },
+    {
+        "slug":  "foreign-director-document-flow",
+        "date":  "2026-03-19",
+        "category_th":  "วีซ่าและใบอนุญาต",
+        "category_en":  "Visa \u0026 Permits",
+        "read_time_th":  "อ่าน 6 นาที",
+        "read_time_en":  "6 min read",
+        "title_th":  "ถ้ามีกรรมการต่างชาติ ควรจัด flow เอกสารอย่างไรให้ทำงานต่อได้ง่าย",
+        "title_en":  "How to Organize Document Flow When the Company Has Foreign Directors",
+        "description_th":  "แนวทางจัด flow เอกสารสำหรับบริษัทที่มีกรรมการต่างชาติหรือผู้เกี่ยวข้องหลายประเทศ",
+        "description_en":  "How to organise document flow for companies with foreign directors or parties in multiple countries.",
+        "summary_th":  [
+                           "ทำ master file กลางของเอกสารบริษัท",
+                           "แยกเอกสารตัวบุคคลกับเอกสารบริษัท",
+                           "กำหนดคนประสานงานเรื่องเอกสารต่างประเทศ"
+                       ],
+        "summary_en":  [
+                           "Maintain one master file for company documents",
+                           "Separate personal and company records",
+                           "Assign one coordinator for cross-border document requests"
+                       ],
+        "sections":  [
+                         {
+                             "heading_th":  "1) เริ่มจากมองภาพงานให้ครบก่อน",
+                             "heading_en":  "1) Start by seeing the full workflow",
+                             "paragraphs_th":  [
+                                                   "ถ้ามีกรรมการต่างชาติ ควรจัด flow เอกสารอย่างไรให้ทำงานต่อได้ง่าย มักไม่ได้จบแค่การเตรียมเอกสาร แต่เกี่ยวข้องกับลำดับงาน คนในทีม และข้อมูลที่ต้องใช้ร่วมกัน ถ้าเริ่มจากการมองภาพรวมก่อน จะช่วยให้วางงานได้ง่ายขึ้นและไม่ต้องแก้หลายรอบ",
+                                                   "หลายเคสที่ล่าช้าไม่ได้เกิดจากขั้นตอนราชการอย่างเดียว แต่เกิดจากข้อมูลภายในยังไม่พร้อมหรือผู้เกี่ยวข้องเข้าใจไม่ตรงกัน การจัดข้อมูลให้ชัดตั้งแต่ต้นจึงช่วยลดภาระของเจ้าของธุรกิจได้มาก"
+                                               ],
+                             "paragraphs_en":  [
+                                                   "How to Organize Document Flow When the Company Has Foreign Directors is rarely about one document alone. It usually involves sequencing, internal coordination, and shared company information.",
+                                                   "Many delays come from incomplete preparation inside the company, so getting the internal picture clear early reduces rework later."
+                                               ],
+                             "checklist_th":  [
+                                                  "ทำ master file กลางของเอกสารบริษัท",
+                                                  "แยกเอกสารตัวบุคคลกับเอกสารบริษัท",
+                                                  "กำหนดคนประสานงานเรื่องเอกสารต่างประเทศ"
+                                              ],
+                             "checklist_en":  [
+                                                  "Maintain one master file for company documents",
+                                                  "Separate personal and company records",
+                                                  "Assign one coordinator for cross-border document requests"
+                                              ]
+                         },
+                         {
+                             "heading_th":  "2) เตรียมเอกสารและผู้ประสานงานให้พร้อมในชุดเดียว",
+                             "heading_en":  "2) Prepare documents and coordination together",
+                             "paragraphs_th":  [
+                                                   "ถ้าเอกสารกระจายอยู่หลายที่หรือไม่มีคนรับผิดชอบหลัก งานจะสะดุดง่าย โดยเฉพาะเมื่อมีฝ่ายบัญชี ผู้บริหาร พนักงาน หรือคู่ค้าเข้ามาเกี่ยวข้องพร้อมกัน",
+                                                   "การมีผู้ประสานงานหลักหนึ่งคน และรวบรวมข้อมูลที่ต้องใช้ไว้ในจุดเดียว จะช่วยให้ทีมที่เข้ามาช่วยดูแลงานเดินเรื่องได้เร็วขึ้นมาก"
+                                               ],
+                             "paragraphs_en":  [
+                                                   "Work slows down quickly when documents are scattered and no one owns the coordination.",
+                                                   "One coordinator and one document source make outside support much more effective."
+                                               ],
+                             "checklist_th":  [
+                                                  "รวมเอกสารไว้ในจุดเดียว",
+                                                  "ตั้งผู้ประสานงานหลักของเคส",
+                                                  "เช็กข้อมูลสำคัญให้ตรงกันก่อนส่ง"
+                                              ],
+                             "checklist_en":  [
+                                                  "Keep documents in one place",
+                                                  "Assign one primary coordinator",
+                                                  "Check key information for consistency before submission"
+                                              ]
+                         },
+                         {
+                             "heading_th":  "3) หลังเริ่มงานแล้วควรมีจุดตรวจตามเป็นระยะ",
+                             "heading_en":  "3) Build review points after the work starts",
+                             "paragraphs_th":  [
+                                                   "แม้งานจะเริ่มเดินแล้ว ก็ควรมีจุดตรวจเป็นระยะว่ามีเอกสารขาดหรือข้อมูลใดต้องอัปเดตเพิ่มหรือไม่ เพื่อไม่ให้ปัญหาไปสะสมตอนใกล้เส้นตาย",
+                                                   "ถ้าธุรกิจต้องการให้เรื่องเหล่านี้เดินต่อเนื่อง การมีทีมช่วยสรุปสถานะ สิ่งที่ยังขาด และขั้นตอนถัดไปแบบสั้น ๆ จะช่วยให้ตัดสินใจได้ง่ายขึ้น"
+                                               ],
+                             "paragraphs_en":  [
+                                                   "Even after the process starts, regular review points help prevent missing items from piling up near a deadline.",
+                                                   "Short status summaries with open items and next steps make decision-making much easier for the business owner."
+                                               ],
+                             "checklist_th":  [
+                                                  "สรุปสถานะค้างเป็นช่วง",
+                                                  "ตามเอกสารหรือข้อมูลที่ยังขาด",
+                                                  "ยืนยันขั้นตอนถัดไปให้ชัดกับทีม"
+                                              ],
+                             "checklist_en":  [
+                                                  "Summarise open items regularly",
+                                                  "Follow up on missing data or documents",
+                                                  "Confirm next steps clearly with the team"
+                                              ]
+                         }
+                     ],
+        "sources":  [
+                        {
+                            "label_th":  "กรมพัฒนาธุรกิจการค้า",
+                            "label_en":  "Department of Business Development",
+                            "url":  "https://www.dbd.go.th"
+                        },
+                        {
+                            "label_th":  "กรมการจัดหางาน",
+                            "label_en":  "Department of Employment",
+                            "url":  "https://www.doe.go.th"
+                        }
+                    ]
+    },
+    {
+        "slug":  "closing-bank-and-contracts-before-dissolution",
+        "date":  "2026-03-19",
+        "category_th":  "ปิดบริษัท",
+        "category_en":  "Company Dissolution",
+        "read_time_th":  "อ่าน 6 นาที",
+        "read_time_en":  "6 min read",
+        "title_th":  "ก่อนปิดบริษัท ควรไล่เช็กบัญชีธนาคารและสัญญาอะไรบ้าง",
+        "title_en":  "What to Review in Bank Accounts and Contracts Before Closing a Company",
+        "description_th":  "เช็กลิสต์หลังบ้านสำหรับธุรกิจที่กำลังเตรียมปิดบริษัท เพื่อไม่ให้มีรายการค้างในช่วงสุดท้าย",
+        "description_en":  "A practical close-out checklist for business owners preparing to shut down a company.",
+        "summary_th":  [
+                           "เช็กบัญชีธนาคารที่ยังใช้งานอยู่",
+                           "ดูสัญญาที่ต้องปิดหรือแจ้งคู่ค้า",
+                           "สรุปรายการหลังบ้านที่ต้องเคลียร์ก่อนจบงาน"
+                       ],
+        "summary_en":  [
+                           "Review active bank accounts",
+                           "Identify contracts that need closure or notice",
+                           "Summarise operational items to clear before completion"
+                       ],
+        "sections":  [
+                         {
+                             "heading_th":  "1) เริ่มจากมองภาพงานให้ครบก่อน",
+                             "heading_en":  "1) Start by seeing the full workflow",
+                             "paragraphs_th":  [
+                                                   "ก่อนปิดบริษัท ควรไล่เช็กบัญชีธนาคารและสัญญาอะไรบ้าง มักไม่ได้จบแค่การเตรียมเอกสาร แต่เกี่ยวข้องกับลำดับงาน คนในทีม และข้อมูลที่ต้องใช้ร่วมกัน ถ้าเริ่มจากการมองภาพรวมก่อน จะช่วยให้วางงานได้ง่ายขึ้นและไม่ต้องแก้หลายรอบ",
+                                                   "หลายเคสที่ล่าช้าไม่ได้เกิดจากขั้นตอนราชการอย่างเดียว แต่เกิดจากข้อมูลภายในยังไม่พร้อมหรือผู้เกี่ยวข้องเข้าใจไม่ตรงกัน การจัดข้อมูลให้ชัดตั้งแต่ต้นจึงช่วยลดภาระของเจ้าของธุรกิจได้มาก"
+                                               ],
+                             "paragraphs_en":  [
+                                                   "What to Review in Bank Accounts and Contracts Before Closing a Company is rarely about one document alone. It usually involves sequencing, internal coordination, and shared company information.",
+                                                   "Many delays come from incomplete preparation inside the company, so getting the internal picture clear early reduces rework later."
+                                               ],
+                             "checklist_th":  [
+                                                  "เช็กบัญชีธนาคารที่ยังใช้งานอยู่",
+                                                  "ดูสัญญาที่ต้องปิดหรือแจ้งคู่ค้า",
+                                                  "สรุปรายการหลังบ้านที่ต้องเคลียร์ก่อนจบงาน"
+                                              ],
+                             "checklist_en":  [
+                                                  "Review active bank accounts",
+                                                  "Identify contracts that need closure or notice",
+                                                  "Summarise operational items to clear before completion"
+                                              ]
+                         },
+                         {
+                             "heading_th":  "2) เตรียมเอกสารและผู้ประสานงานให้พร้อมในชุดเดียว",
+                             "heading_en":  "2) Prepare documents and coordination together",
+                             "paragraphs_th":  [
+                                                   "ถ้าเอกสารกระจายอยู่หลายที่หรือไม่มีคนรับผิดชอบหลัก งานจะสะดุดง่าย โดยเฉพาะเมื่อมีฝ่ายบัญชี ผู้บริหาร พนักงาน หรือคู่ค้าเข้ามาเกี่ยวข้องพร้อมกัน",
+                                                   "การมีผู้ประสานงานหลักหนึ่งคน และรวบรวมข้อมูลที่ต้องใช้ไว้ในจุดเดียว จะช่วยให้ทีมที่เข้ามาช่วยดูแลงานเดินเรื่องได้เร็วขึ้นมาก"
+                                               ],
+                             "paragraphs_en":  [
+                                                   "Work slows down quickly when documents are scattered and no one owns the coordination.",
+                                                   "One coordinator and one document source make outside support much more effective."
+                                               ],
+                             "checklist_th":  [
+                                                  "รวมเอกสารไว้ในจุดเดียว",
+                                                  "ตั้งผู้ประสานงานหลักของเคส",
+                                                  "เช็กข้อมูลสำคัญให้ตรงกันก่อนส่ง"
+                                              ],
+                             "checklist_en":  [
+                                                  "Keep documents in one place",
+                                                  "Assign one primary coordinator",
+                                                  "Check key information for consistency before submission"
+                                              ]
+                         },
+                         {
+                             "heading_th":  "3) หลังเริ่มงานแล้วควรมีจุดตรวจตามเป็นระยะ",
+                             "heading_en":  "3) Build review points after the work starts",
+                             "paragraphs_th":  [
+                                                   "แม้งานจะเริ่มเดินแล้ว ก็ควรมีจุดตรวจเป็นระยะว่ามีเอกสารขาดหรือข้อมูลใดต้องอัปเดตเพิ่มหรือไม่ เพื่อไม่ให้ปัญหาไปสะสมตอนใกล้เส้นตาย",
+                                                   "ถ้าธุรกิจต้องการให้เรื่องเหล่านี้เดินต่อเนื่อง การมีทีมช่วยสรุปสถานะ สิ่งที่ยังขาด และขั้นตอนถัดไปแบบสั้น ๆ จะช่วยให้ตัดสินใจได้ง่ายขึ้น"
+                                               ],
+                             "paragraphs_en":  [
+                                                   "Even after the process starts, regular review points help prevent missing items from piling up near a deadline.",
+                                                   "Short status summaries with open items and next steps make decision-making much easier for the business owner."
+                                               ],
+                             "checklist_th":  [
+                                                  "สรุปสถานะค้างเป็นช่วง",
+                                                  "ตามเอกสารหรือข้อมูลที่ยังขาด",
+                                                  "ยืนยันขั้นตอนถัดไปให้ชัดกับทีม"
+                                              ],
+                             "checklist_en":  [
+                                                  "Summarise open items regularly",
+                                                  "Follow up on missing data or documents",
+                                                  "Confirm next steps clearly with the team"
+                                              ]
+                         }
+                     ],
+        "sources":  [
+                        {
+                            "label_th":  "กรมพัฒนาธุรกิจการค้า",
+                            "label_en":  "Department of Business Development",
+                            "url":  "https://www.dbd.go.th"
+                        },
+                        {
+                            "label_th":  "กรมสรรพากร",
+                            "label_en":  "Revenue Department",
+                            "url":  "https://www.rd.go.th"
+                        }
+                    ]
+    }
+]

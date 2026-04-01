@@ -13,22 +13,24 @@ Set these in Vercel Project Settings > Environment Variables:
 
 - `GA4_MEASUREMENT_ID` = e.g. `G-XXXXXXXXXX`
 - `GA4_API_SECRET` = GA4 Measurement Protocol API secret
+- `GOOGLE_ADS_ID` = e.g. `AW-XXXXXXXXX`
+- `GOOGLE_ADS_LEAD_LABEL` = Google Ads conversion label for leads
 
 - `META_PIXEL_ID` = Meta Pixel ID
 - `META_ACCESS_TOKEN` = Meta Conversions API access token
 
 ## 2) Client-Side Tracking IDs
-Edit [index.html](d:\PINPOINT\WEBAPP\index.html) and set values in:
+Tracking IDs now load at runtime from `/api/public-config`, so you do not need to hardcode them into every static page anymore.
 
-```html
-window.PINPOINT_CONFIG = {
-  lineOaUrl: "https://line.me/R/ti/p/@pinpointaccounting",
-  ga4MeasurementId: "",
-  googleAdsId: "",
-  googleAdsLeadLabel: "",
-  metaPixelId: ""
-};
-```
+Public values exposed to the browser:
+- `GA4_MEASUREMENT_ID`
+- `GOOGLE_ADS_ID`
+- `GOOGLE_ADS_LEAD_LABEL`
+- `META_PIXEL_ID`
+
+Private values that stay server-side:
+- `GA4_API_SECRET`
+- `META_ACCESS_TOKEN`
 
 ## 3) Lead Form Data Flow
 1. User submits lead form on homepage.
@@ -51,4 +53,3 @@ Generated outputs:
 - `/blog/index.html`
 - `/blog/<slug>/index.html`
 - `/sitemap.xml`
-

@@ -73,6 +73,15 @@ const status = {
       (key) => !isSet(env[key])
     ),
   },
+  supabase: {
+    ready:
+      isSet(env.SUPABASE_URL) &&
+      isSet(env.SUPABASE_SERVICE_ROLE_KEY) &&
+      isSet(env.SUPABASE_TABLE_NAME),
+    missing: ["SUPABASE_URL", "SUPABASE_SERVICE_ROLE_KEY", "SUPABASE_TABLE_NAME"].filter(
+      (key) => !isSet(env[key])
+    ),
+  },
   analytics: {
     ready:
       isSet(env.GA4_MEASUREMENT_ID) &&

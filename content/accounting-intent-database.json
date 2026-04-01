@@ -1,0 +1,238 @@
+{
+  "version": "2026-03-25",
+  "entries": [
+    {
+      "id": "intent-vat-registration-threshold",
+      "subIntentKey": "vat-registration-threshold",
+      "intentKey": "accounting-tax",
+      "serviceBucket": "accounting-tax",
+      "aliases": [
+        "จด vat",
+        "จดภาษีมูลค่าเพิ่ม",
+        "รายได้เกิน 1.8 ล้าน",
+        "1.8 ล้านบาท",
+        "ภ.พ.01",
+        "ภพ 01",
+        "vat registration",
+        "register vat",
+        "1.8 million"
+      ],
+      "faqIds": [
+        "research-vat-registration-threshold",
+        "research-vat-registered-duties"
+      ],
+      "officialSourceUrls": [
+        "https://www.rd.go.th/7060.html",
+        "https://www.rd.go.th/fileadmin/user_upload/SMEs/infographic/SME_lv3_1.pdf"
+      ]
+    },
+    {
+      "id": "intent-vat-filing-deadline",
+      "subIntentKey": "vat-filing-deadline",
+      "intentKey": "accounting-tax",
+      "serviceBucket": "accounting-tax",
+      "aliases": [
+        "ภ.พ.30",
+        "ภพ 30",
+        "ยื่น vat",
+        "ยื่นภาษีมูลค่าเพิ่ม",
+        "15 ของเดือนถัดไป",
+        "pp30",
+        "vat filing deadline"
+      ],
+      "faqIds": [
+        "research-vat-monthly-filing-deadline",
+        "research-vat-registered-duties"
+      ],
+      "officialSourceUrls": [
+        "https://www.rd.go.th/fileadmin/user_upload/SMEs/infographic/SME_lv3_1.pdf",
+        "https://www.rd.go.th/62348/calendar/1/15.html?cHash=d3e557638c39b7d6c80855164f8b1cc3"
+      ]
+    },
+    {
+      "id": "intent-vat-obligations",
+      "subIntentKey": "vat-obligations",
+      "intentKey": "accounting-tax",
+      "serviceBucket": "accounting-tax",
+      "aliases": [
+        "หน้าที่หลังจด vat",
+        "ใบกำกับภาษี",
+        "รายงานภาษีขาย",
+        "รายงานภาษีซื้อ",
+        "tax invoice",
+        "vat obligation"
+      ],
+      "faqIds": [
+        "research-vat-registered-duties",
+        "research-vat-monthly-filing-deadline"
+      ],
+      "officialSourceUrls": [
+        "https://www.rd.go.th/fileadmin/user_upload/SMEs/infographic/SME_lv3_1.pdf"
+      ]
+    },
+    {
+      "id": "intent-withholding-tax-deadline",
+      "subIntentKey": "withholding-tax-deadline",
+      "intentKey": "accounting-tax",
+      "serviceBucket": "accounting-tax",
+      "aliases": [
+        "ภงด1",
+        "ภงด 1",
+        "ภงด3",
+        "ภงด 3",
+        "ภงด53",
+        "ภงด 53",
+        "หัก ณ ที่จ่าย",
+        "pnd1",
+        "pnd3",
+        "pnd53",
+        "withholding tax"
+      ],
+      "faqIds": [
+        "research-withholding-tax-deadline"
+      ],
+      "officialSourceUrls": [
+        "https://www.rd.go.th/fileadmin/user_upload/SMEs/infographic/4.jn_cit_4.pdf"
+      ]
+    },
+    {
+      "id": "intent-cit-half-year",
+      "subIntentKey": "cit-half-year",
+      "intentKey": "accounting-tax",
+      "serviceBucket": "accounting-tax",
+      "aliases": [
+        "ภงด51",
+        "ภงด 51",
+        "ภาษีครึ่งปี",
+        "ครึ่งปี",
+        "pnd51",
+        "half year corporate tax"
+      ],
+      "faqIds": [
+        "research-cit-half-year-pnd51"
+      ],
+      "officialSourceUrls": [
+        "https://www.rd.go.th/840.html"
+      ]
+    },
+    {
+      "id": "intent-cit-year-end",
+      "subIntentKey": "cit-year-end",
+      "intentKey": "accounting-tax",
+      "serviceBucket": "accounting-tax",
+      "aliases": [
+        "ภงด50",
+        "ภงด 50",
+        "150 วัน",
+        "สิ้นรอบบัญชี",
+        "pnd50",
+        "year end corporate tax"
+      ],
+      "faqIds": [
+        "research-cit-year-end-pnd50"
+      ],
+      "officialSourceUrls": [
+        "https://www.rd.go.th/840.html"
+      ]
+    },
+    {
+      "id": "intent-bookkeeping-retention",
+      "subIntentKey": "bookkeeping-retention",
+      "intentKey": "accounting-tax",
+      "serviceBucket": "accounting-tax",
+      "aliases": [
+        "เก็บเอกสารบัญชี",
+        "เก็บบัญชี 5 ปี",
+        "เอกสารประกอบการลงบัญชี",
+        "accounting records retention",
+        "5 years"
+      ],
+      "faqIds": [
+        "research-bookkeeping-retention"
+      ],
+      "officialSourceUrls": [
+        "https://www.dbd.go.th/data-storage/attachment/96c46e58eb6d8950f3743510f.pdf"
+      ]
+    },
+    {
+      "id": "intent-dbd-financial-statement-deadline",
+      "subIntentKey": "dbd-financial-statement-deadline",
+      "intentKey": "accounting-tax",
+      "serviceBucket": "accounting-tax",
+      "aliases": [
+        "ยื่นงบการเงิน",
+        "dbd e-filing",
+        "1 เดือนหลังประชุม",
+        "financial statement filing",
+        "auditor report"
+      ],
+      "faqIds": [
+        "research-dbd-financial-statement-deadline",
+        "research-boj5-deadline"
+      ],
+      "officialSourceUrls": [
+        "https://efiling.dbd.go.th/Covid/Meeting.pdf"
+      ]
+    },
+    {
+      "id": "intent-boj5-deadline",
+      "subIntentKey": "boj5-deadline",
+      "intentKey": "corporate-dbd",
+      "serviceBucket": "corporate-dbd",
+      "aliases": [
+        "บอจ5",
+        "บอจ 5",
+        "บัญชีรายชื่อผู้ถือหุ้น",
+        "14 วัน",
+        "boj5",
+        "boj 5",
+        "shareholder list"
+      ],
+      "faqIds": [
+        "research-boj5-deadline"
+      ],
+      "officialSourceUrls": [
+        "https://www.dbd.go.th/data-storage/attachment/65454da9611068f3c678e56ef.pdf"
+      ]
+    },
+    {
+      "id": "intent-social-security-wage-base",
+      "subIntentKey": "social-security-wage-base",
+      "intentKey": "accounting-tax",
+      "serviceBucket": "accounting-tax",
+      "aliases": [
+        "ประกันสังคม",
+        "สปส 1-10",
+        "1650",
+        "15000",
+        "social security",
+        "wage base"
+      ],
+      "faqIds": [
+        "research-social-security-wage-base"
+      ],
+      "officialSourceUrls": [
+        "https://www.sso.go.th/wpr/assets/upload/files_storage/sso_th/918a5ffc639945c7890f199112922f09.pdf"
+      ]
+    },
+    {
+      "id": "intent-eaccountant-notification",
+      "subIntentKey": "eaccountant-notification",
+      "intentKey": "accounting-tax",
+      "serviceBucket": "accounting-tax",
+      "aliases": [
+        "ผู้ทำบัญชี",
+        "e-accountant",
+        "ภายใน 30 วัน",
+        "รับทำบัญชี",
+        "accountant notification"
+      ],
+      "faqIds": [
+        "research-accountant-eaccountant-notification"
+      ],
+      "officialSourceUrls": [
+        "https://www.dbd.go.th/data-storage/attachment/2110f126dce55e4422771e617.pdf"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "version": "2026-03-25",
+  "entries": [
+    {
+      "id": "tax-notice-response",
+      "serviceBucket": "accounting-tax",
+      "responseModes": ["official-notice"],
+      "caseFlavors": ["tax-notice"],
+      "preferredKnowledgeIds": [
+        "accounting-tax-notice-response",
+        "accounting-back-tax-review"
+      ],
+      "guidance": {
+        "th": "กรณีหนังสือจากสรรพากรหรือการตรวจสอบภาษี ควรเริ่มจากแยกประเด็นที่ถูกถาม วันครบกำหนด และเอกสารที่มีอยู่ก่อน เพื่อให้ตอบกลับได้ตรงเรื่องและไม่พลาดรายละเอียดสำคัญ",
+        "en": "For a Revenue Department letter or tax-review case, start by separating the issue raised, the deadline, and the documents already available so the reply can stay accurate."
+      },
+      "clarify": {
+        "th": "รบกวนแจ้งเพิ่มได้ไหมคะว่าหนังสือถามเรื่องใด วันครบกำหนดเมื่อไร และตอนนี้มีเอกสารอะไรอยู่ในมือบ้าง เพื่อให้ทีมช่วยเรียงลำดับการตอบกลับได้ตรงที่สุด",
+        "en": "Could you tell us what the letter is about, when the deadline is, and what documents you already have, so the team can map the reply correctly?"
+      },
+      "followUp": {
+        "th": "หากสะดวก ส่งภาพหนังสือหรือสรุปใจความ พร้อมวันครบกำหนดและรายการเอกสารที่มีอยู่ตอนนี้มาได้เลยค่ะ",
+        "en": "If convenient, please send a photo or summary of the letter together with the deadline and the documents currently on hand."
+      }
+    },
+    {
+      "id": "vat-filing-deadline",
+      "serviceBucket": "accounting-tax",
+      "intentDetailIds": ["intent-vat-filing-deadline"],
+      "preferredKnowledgeIds": [
+        "research-vat-monthly-filing-deadline",
+        "research-vat-registered-duties"
+      ],
+      "guidance": {
+        "th": "กรณี ภ.พ.30 สิ่งสำคัญคือดูเดือนภาษีที่กำลังถามและสถานะการจด VAT ก่อน เพื่อยืนยันกำหนดยื่นและรอบเอกสารให้ตรง",
+        "en": "For PP.30 filing, the key is to confirm the tax month and VAT-registration status first so the deadline and document cycle are correct."
+      },
+      "clarify": {
+        "th": "เพื่อให้ตอบได้ตรงที่สุด รบกวนแจ้งเดือนภาษีที่กำลังถาม และตอนนี้จด VAT แล้วหรือยังคะ",
+        "en": "To answer accurately, please tell us which tax month you mean and whether VAT registration is already active."
+      },
+      "followUp": {
+        "th": "ถ้าต้องการให้ทีมช่วยจัดรอบ VAT ต่อ แจ้งเดือนภาษีและรูปแบบเอกสารขาย/ซื้อที่มีอยู่ตอนนี้ได้เลยค่ะ",
+        "en": "If you want the team to help organise the VAT cycle, please share the tax month and the current sales/purchase document setup."
+      }
+    },
+    {
+      "id": "withholding-deadline",
+      "serviceBucket": "accounting-tax",
+      "intentDetailIds": ["intent-withholding-tax-deadline"],
+      "preferredKnowledgeIds": ["research-withholding-tax-deadline"],
+      "guidance": {
+        "th": "กรณีภาษีหัก ณ ที่จ่าย ควรยืนยันก่อนว่าเป็นแบบใด เช่น ภ.ง.ด.1, 3 หรือ 53 และเป็นเงินจ่ายของเดือนใด",
+        "en": "For withholding tax, confirm first which form is involved, such as PND1, PND3, or PND53, and which payment month it relates to."
+      },
+      "clarify": {
+        "th": "รบกวนแจ้งได้ไหมคะว่าเป็นแบบ ภ.ง.ด.1, 3 หรือ 53 และเป็นเงินจ่ายของเดือนใด เพื่อให้ทีมเช็กกำหนดยื่นได้ตรงค่ะ",
+        "en": "Could you tell us whether this is PND1, PND3, or PND53, and which payment month it relates to, so we can confirm the deadline correctly?"
+      },
+      "followUp": {
+        "th": "หากสะดวก แจ้งเดือนไหนที่จ่ายเงินและยื่นออนไลน์หรือกระดาษ เพื่อให้ทีมช่วยนับ timeline ให้ตรงได้ค่ะ",
+        "en": "If convenient, tell us the payment month and whether filing is online or paper so we can count the timeline correctly."
+      }
+    },
+    {
+      "id": "corporate-director-change",
+      "serviceBucket": "corporate-dbd",
+      "caseFlavors": ["director-change"],
+      "preferredKnowledgeIds": ["corporate-director-address-doc-flow"],
+      "guidance": {
+        "th": "กรณีเปลี่ยนกรรมการ ควรแยกให้ชัดก่อนว่าเป็นการลาออก แต่งตั้งใหม่ หรือมีทั้งสองส่วน และอำนาจลงนามเปลี่ยนด้วยหรือไม่",
+        "en": "For a director-change case, first confirm whether it is a resignation, a new appointment, or both, and whether signing authority also changes."
+      },
+      "clarify": {
+        "th": "รบกวนแจ้งได้ไหมคะว่าเป็นการลาออก แต่งตั้งใหม่ หรือมีทั้งสองส่วน และอำนาจลงนามมีการเปลี่ยนด้วยหรือไม่คะ",
+        "en": "Could you confirm whether this is a resignation, a new appointment, or both, and whether signing authority also changes?"
+      },
+      "followUp": {
+        "th": "ถ้าสะดวก ส่งชื่อกรรมการเดิม กรรมการใหม่ และวันมีผลมาได้เลยค่ะ ทีมจะช่วยแยกเอกสารให้ตรงเคส",
+        "en": "If convenient, send the current director name, the new director name, and the effective date, and the team will separate the document flow for the case."
+      }
+    },
+    {
+      "id": "corporate-address-change",
+      "serviceBucket": "corporate-dbd",
+      "caseFlavors": ["address-change"],
+      "preferredKnowledgeIds": ["corporate-director-address-doc-flow"],
+      "guidance": {
+        "th": "กรณีเปลี่ยนที่อยู่บริษัท ควรยืนยันที่อยู่เดิม ที่อยู่ใหม่ และดูว่ามีทะเบียนหรือเอกสารอื่นที่ต้องอัปเดตคู่กันหรือไม่",
+        "en": "For a company address change, confirm the current address, the new address, and whether any linked registrations must be updated in parallel."
+      },
+      "clarify": {
+        "th": "รบกวนส่งที่อยู่เดิม ที่อยู่ใหม่ และแจ้งได้ไหมคะว่าบริษัทจดทะเบียนเรียบร้อยแล้วหรือยัง เพื่อให้ทีมช่วยวางลำดับงานให้ตรงค่ะ",
+        "en": "Could you share the current address, the new address, and whether the company is already registered, so the team can sequence the work correctly?"
+      },
+      "followUp": {
+        "th": "ถ้าสะดวก ส่งรายละเอียดที่อยู่ใหม่ตามเอกสารจริงมาได้เลยค่ะ ทีมจะช่วยเช็กว่ามีรายการใดต้องอัปเดตตามไปด้วย",
+        "en": "If convenient, send the new address exactly as shown on the documents and we will check what else must be updated."
+      }
+    },
+    {
+      "id": "visa-work-permit-renewal",
+      "serviceBucket": "visa-license",
+      "responseModes": ["renewal"],
+      "caseFlavors": ["renewal"],
+      "preferredKnowledgeIds": ["visa-work-permit-renewal"],
+      "guidance": {
+        "th": "กรณีต่ออายุ Visa หรือ Work Permit ควรเช็กวันหมดอายุ เอกสารเดิมที่ถืออยู่ และความพร้อมของเอกสารฝั่งบริษัทก่อน",
+        "en": "For a visa or work permit renewal, check the expiry date, the current document set, and the readiness of the company-side documents first."
+      },
+      "clarify": {
+        "th": "รบกวนแจ้งวันหมดอายุ สัญชาติ และว่าผู้ยื่นเป็นกรรมการหรือพนักงานได้ไหมคะ เพื่อให้ทีมช่วยเช็กขั้นตอนที่ตรงค่ะ",
+        "en": "Could you share the expiry date, nationality, and whether the applicant is a director or employee, so the team can confirm the right renewal steps?"
+      },
+      "followUp": {
+        "th": "หากสะดวก ส่งวันหมดอายุและรายการเอกสารที่มีอยู่ตอนนี้มาได้เลยค่ะ ทีมจะช่วยเช็กว่ามีส่วนใดต้องรีบเตรียมก่อน",
+        "en": "If convenient, send the expiry date and the documents you currently have so we can check what should be prepared first."
+      }
+    },
+    {
+      "id": "dissolution-review",
+      "serviceBucket": "company-dissolution",
+      "preferredKnowledgeIds": [
+        "dissolution-human-review",
+        "dissolution-backlog-sequence"
+      ],
+      "guidance": {
+        "th": "กรณีปิดบริษัทควรแยกก่อนว่ากิจการหยุดดำเนินงานแล้วหรือยัง และมีบัญชี ภาษี หรือสัญญาค้างอยู่ส่วนใดบ้าง",
+        "en": "For a dissolution case, separate first whether operations have already stopped and whether there are open accounting, tax, or contract items."
+      },
+      "clarify": {
+        "th": "รบกวนแจ้งได้ไหมคะว่าบริษัทหยุดดำเนินงานแล้วหรือยัง และตอนนี้มีบัญชี ภาษี หรือสัญญาค้างอยู่ส่วนใดบ้าง เพื่อให้ทีมช่วยวางลำดับงานได้ตรงค่ะ",
+        "en": "Could you tell us whether the company has already stopped operating and what accounting, tax, or contract items are still open, so the team can plan the sequence properly?"
+      },
+      "followUp": {
+        "th": "ถ้าสะดวก ส่งภาพรวมรายการค้างที่กังวลอยู่ตอนนี้มาได้เลยค่ะ ทีมจะช่วยแยกส่วนที่ต้องทำก่อนและหลังให้",
+        "en": "If convenient, send a quick summary of the open items you are concerned about and the team will separate what should be handled first and next."
+      }
+    }
+  ]
+}

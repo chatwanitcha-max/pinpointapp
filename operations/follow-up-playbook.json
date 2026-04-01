@@ -1,0 +1,30 @@
+{
+  "hotLeadThai": [
+    "สวัสดีค่ะ ขอบคุณที่ติดต่อ Pinpoint Accounting & Service นะคะ ทีมได้รับรายละเอียดเบื้องต้นแล้วค่ะ",
+    "หากสะดวก รบกวนแจ้งประเภทธุรกิจและเรื่องหลักที่ต้องการให้ช่วย เพื่อให้ทีมแยกขั้นตอนแรกให้ตรงกับเคสได้เร็วขึ้นค่ะ",
+    "หากเป็นเรื่องเร่งด่วน สามารถโทร 092-749-7442 หรือคุยผ่าน LINE OA ได้เลยค่ะ"
+  ],
+  "warmLeadThai": [
+    "ขอบคุณที่ติดต่อเข้ามาค่ะ หากแจ้งประเภทธุรกิจและบริการที่ต้องการเพิ่มเติม ทีมจะช่วยสรุปแนวทางเริ่มต้นให้ชัดเจนขึ้นได้ค่ะ",
+    "ถ้ามีเอกสารเบื้องต้นอยู่แล้ว สามารถส่งมาก่อนได้ ทีมจะช่วยดูขอบเขตงานให้ละเอียดขึ้นค่ะ",
+    "เราดูแลงานบัญชี ภาษี จดทะเบียนบริษัท วีซ่า Work Permit และงานใบอนุญาตธุรกิจที่เกี่ยวข้องค่ะ"
+  ],
+  "coldLeadThai": [
+    "หากตอนนี้กำลังเปรียบเทียบบริการอยู่ สามารถดูรายละเอียดบริการและบทความของเราก่อนได้ค่ะ",
+    "เมื่อพร้อมแล้ว ส่งรายละเอียดคร่าว ๆ หรือ checklist ที่ต้องการให้ทีมช่วยดูมาได้เลยค่ะ"
+  ],
+  "hotLeadEnglish": [
+    "Hello, thank you for contacting Pinpoint Accounting & Service. Our team has received your details and is reviewing them now.",
+    "To guide you properly, please share your business type and the main issue you need help with.",
+    "If you prefer a faster response, you can call us at 092-749-7442 or continue via LINE OA."
+  ],
+  "warmLeadEnglish": [
+    "Thank you for reaching out. If you share your business type and service need, our team can outline the next step clearly.",
+    "If you already have supporting documents, you may send them first so we can review the scope more accurately.",
+    "We support accounting, tax, company registration, visa/work permit, and related business-license matters."
+  ],
+  "coldLeadEnglish": [
+    "If you are still comparing options, you may review our service pages and articles first.",
+    "Whenever you are ready, send us your details and we will help you assess the next step."
+  ]
+}

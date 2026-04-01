@@ -1,0 +1,53 @@
+{
+  "pages": [
+    {
+      "title": "Monthly Accounting Service",
+      "goal": "high-intent conversion page for monthly accounting and tax leads",
+      "status": "queued"
+    },
+    {
+      "title": "Company Registration Service",
+      "goal": "turn DBD and setup searches into consultations",
+      "status": "queued"
+    },
+    {
+      "title": "Visa and Work Permit Service",
+      "goal": "capture foreign-owned business and director support leads",
+      "status": "queued"
+    }
+  ],
+  "blog": [
+    {
+      "title": "เปิดบริษัทแล้วต้องเริ่มส่งเอกสารบัญชีอะไรบ้างในเดือนแรก",
+      "supports": "/services",
+      "status": "queued"
+    },
+    {
+      "title": "ผู้ประกอบการต่างชาติต้องเตรียมอะไรบ้างก่อนทำ Work Permit",
+      "supports": "/services",
+      "status": "queued"
+    },
+    {
+      "title": "เปลี่ยนที่อยู่บริษัท เปลี่ยนกรรมการ หรือเพิ่มทุน ต้องแจ้งอะไรกับ DBD",
+      "supports": "/services",
+      "status": "queued"
+    }
+  ],
+  "automation": [
+    {
+      "title": "Lead follow-up digest",
+      "goal": "summarize hot and warm leads every day",
+      "status": "queued"
+    },
+    {
+      "title": "LINE OA response pack",
+      "goal": "prepare human-sounding reply drafts by service type",
+      "status": "queued"
+    },
+    {
+      "title": "Weekly SEO refresh report",
+      "goal": "surface stale pages, broken links, and schema gaps",
+      "status": "queued"
+    }
+  ]
+}

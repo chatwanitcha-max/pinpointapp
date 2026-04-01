@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chiang Mai to Pai Travel Guide | TH + EN</title>
+    <style>
+      :root {
+        --paper: #fffdf9;
+        --ink: #1a2520;
+        --muted: #5b675f;
+        --line: #d7dfd8;
+        --green: #3f6a56;
+        --green-soft: #edf5f0;
+        --sand: #f7eee0;
+        --accent: #c78c3b;
+      }
+
+      * { box-sizing: border-box; }
+      @page { size: A4; margin: 0; }
+      html, body { height: 100%; }
+      body {
+        margin: 0;
+        background: radial-gradient(circle at top left, rgba(199, 140, 59, 0.08), transparent 35%), var(--paper);
+        color: var(--ink);
+        font-family: Tahoma, "Segoe UI", sans-serif;
+      }
+
+      a { color: inherit; text-decoration: none; }
+      .doc { width: 210mm; margin: 0 auto; padding: 12mm; }
+      .page {
+        min-height: calc(297mm - 24mm);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        break-after: page;
+      }
+      .page:last-child { break-after: auto; }
+
+      .hero {
+        padding: 18px 20px;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        background: linear-gradient(180deg, #f8fbf9 0%, #fffdf9 100%);
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        padding: 6px 11px;
+        border-radius: 999px;
+        background: var(--green-soft);
+        color: var(--green);
+        font-size: 11px;
+        font-weight: 700;
+      }
+
+      h1 {
+        margin: 10px 0 6px;
+        font-size: 29px;
+        line-height: 1.15;
+      }
+
+      .sub {
+        margin: 0;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.65;
+      }
+
+      .facts {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 14px;
+      }
+
+      .fact {
+        padding: 11px 12px;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: #fff;
+      }
+
+      .fact .k {
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 700;
+      }
+
+      .fact .v {
+        margin-top: 4px;
+        font-size: 13px;
+        font-weight: 800;
+        line-height: 1.45;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .card {
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        overflow: hidden;
+        background: #fff;
+      }
+
+      .hd {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        padding: 11px 14px 10px;
+        border-bottom: 1px solid var(--line);
+        background: linear-gradient(180deg, rgba(199, 140, 59, 0.09), rgba(255,255,255,0.96));
+      }
+
+      .hd h2 {
+        margin: 0;
+        font-size: 15px;
+        line-height: 1.35;
+      }
+
+      .chip {
+        display: inline-flex;
+        padding: 5px 9px;
+        border-radius: 999px;
+        border: 1px solid #d5e1da;
+        background: var(--green-soft);
+        color: var(--green);
+        font-size: 10.5px;
+        font-weight: 700;
+      }
+
+      .bd { padding: 12px 14px 14px; }
+
+      .label {
+        display: inline-flex;
+        min-width: 34px;
+        padding: 3px 7px;
+        border-radius: 999px;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.02em;
+      }
+
+      .label.en { background: #eef3ff; color: #2e4e9c; }
+      .label.th { background: #eef8f2; color: #237147; }
+
+      .section {
+        display: grid;
+        gap: 8px;
+      }
+
+      .text {
+        color: var(--muted);
+        font-size: 11.5px;
+        line-height: 1.65;
+      }
+
+      .meta {
+        margin-top: 2px;
+        font-size: 11px;
+        color: #6a6458;
+        line-height: 1.55;
+      }
+
+      .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+        margin-top: 10px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 7px 10px;
+        border-radius: 999px;
+        border: 1px solid #d7dfd8;
+        background: #fff;
+        color: var(--green);
+        font-size: 10.5px;
+        font-weight: 800;
+      }
+
+      .btn.primary {
+        border-color: rgba(199, 140, 59, 0.28);
+        background: var(--sand);
+        color: #875a19;
+      }
+
+      .wide {
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: #fff;
+        overflow: hidden;
+      }
+
+      .summary {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .sum-box {
+        padding: 12px;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: #fff;
+      }
+
+      .sum-box .title {
+        margin-bottom: 5px;
+        color: var(--green);
+        font-size: 12px;
+        font-weight: 800;
+      }
+
+      .sum-box .copy {
+        color: var(--muted);
+        font-size: 11.5px;
+        line-height: 1.6;
+      }
+
+      .note {
+        padding: 11px 13px;
+        border: 1px dashed #d8c7a7;
+        border-radius: 14px;
+        background: #fffbf4;
+        color: #615a4f;
+        font-size: 11px;
+        line-height: 1.65;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="doc">
+      <section class="page">
+        <div class="hero">
+          <div class="eyebrow">Updated: 18 March 2026 | เช็กข้อมูลล่าสุดแล้ว</div>
+          <h1>Chiang Mai to Pai Travel Guide<br />คู่มือเดินทาง เชียงใหม่ ไป ปาย</h1>
+          <p class="sub">
+            Clean bilingual PDF with clickable booking links. No images, so it opens quickly.
+            รุ่นนี้ตั้งใจทำให้ฟอนต์ไทยอ่านได้ปกติ และกดลิงก์ไปจองหรือเช็กตารางได้เลยจากในไฟล์
+          </p>
+
+          <div class="facts">
+            <div class="fact">
+              <div class="k">Most practical</div>
+              <div class="v">Shared minivan<br />รถตู้ร่วม</div>
+            </div>
+            <div class="fact">
+              <div class="k">Road time</div>
+              <div class="v">ประมาณ 3-4.5 ชั่วโมง<br />ขึ้นอยู่กับโค้ง/จุดพัก</div>
+            </div>
+            <div class="fact">
+              <div class="k">Road</div>
+              <div class="v">Route 1095<br />โค้งเยอะมาก</div>
+            </div>
+            <div class="fact">
+              <div class="k">Best for</div>
+              <div class="v">Budget / Scenic drive / Door-to-door<br />แล้วแต่งบและสไตล์</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <div class="hd">
+              <h2>1. Public Minivan | รถตู้สาธารณะ</h2>
+              <div class="chip">Best value</div>
+            </div>
+            <div class="bd">
+              <div class="section">
+                <div class="label en">EN</div>
+                <div class="text">
+                  The most practical budget option. Current booking pages show public minivans from Chiang Mai to Pai from about
+                  THB 240-250, with departures starting around 6:30 AM and running roughly hourly. Most services use Arcade Bus Terminal 2.
+                </div>
+                <div class="meta">Source checked: 12Go route page and Prempracha info pages in March 2026.</div>
+                <div class="label th">TH</div>
+                <div class="text">
+                  เป็นทางเลือกที่คุ้มและใช้งานจริงที่สุดสำหรับคนทั่วไป ราคาในหน้าจองล่าสุดอยู่ราว
+                  240-250 บาท ออกรอบเช้าเริ่มประมาณ 06:30 และมีรอบค่อนข้างถี่ โดยส่วนมากขึ้นที่ Arcade Bus Terminal 2
+                </div>
+                <div class="links">
+                  <a class="btn primary" href="https://12go.asia/en/travel/chiang-mai/pai">Book via 12Go</a>
+                  <a class="btn" href="https://www.baolau.com/en/s/chiang-mai/pai/">Check on Baolau</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="hd">
+              <h2>2. AYA Shuttle Van | รถตู้เอกชน AYA</h2>
+              <div class="chip">Popular with tourists</div>
+            </div>
+            <div class="bd">
+              <div class="section">
+                <div class="label en">EN</div>
+                <div class="text">
+                  AYA Service is popular with travelers and also sells minivan seats, motorbike rentals, and private transfers.
+                  Current comparison pages show AYA van trips taking about 4 hours, with fares around the same range as other shared vans.
+                </div>
+                <div class="meta">Useful if you want one operator for Pai transport plus bike rental.</div>
+                <div class="label th">TH</div>
+                <div class="text">
+                  AYA เป็นตัวเลือกที่นักท่องเที่ยวใช้กันเยอะ เพราะมีทั้งรถตู้ไปปาย เช่ามอเตอร์ไซค์
+                  และรถรับส่งส่วนตัวในเจ้าเดียวกัน รอบรถใช้เวลาประมาณ 4 ชั่วโมง และราคามักใกล้กับรถตู้ร่วมทั่วไป
+                </div>
+                <div class="links">
+                  <a class="btn primary" href="https://www.ayaservice.com/">AYA Service</a>
+                  <a class="btn" href="https://12go.asia/en/operator/aya-service">AYA on 12Go</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="hd">
+              <h2>3. Self-drive | ขับรถเอง / มอเตอร์ไซค์</h2>
+              <div class="chip">Scenic but demanding</div>
+            </div>
+            <div class="bd">
+              <div class="section">
+                <div class="label en">EN</div>
+                <div class="text">
+                  Best if you want flexibility and viewpoint stops. The route is about 130-140 km via Route 1095 and usually takes
+                  3-4 hours without long stops. Motorbike is only for confident riders because of the curves; for most travelers a rental car is safer.
+                </div>
+                <div class="meta">Current car-rental pages in Chiang Mai advertise rates from about THB 990/day; motorbike options are also listed by AYA.</div>
+                <div class="label th">TH</div>
+                <div class="text">
+                  เหมาะกับคนที่อยากแวะจุดชมวิวหรือคาเฟ่ระหว่างทาง ระยะทางประมาณ 130-140 กม. ผ่าน Route 1095
+                  ใช้เวลาราว 3-4 ชั่วโมงถ้าไม่แวะนาน แต่มอเตอร์ไซค์เหมาะเฉพาะคนที่ขี่ทางเขาและรับโค้งต่อเนื่องได้จริง
+                  สำหรับคนส่วนใหญ่ เช่ารถยนต์จะปลอดภัยกว่า
+                </div>
+                <div class="links">
+                  <a class="btn primary" href="https://www.chiangmaiwheels.com/">Car Rental</a>
+                  <a class="btn" href="https://www.ayaservice.com/">Motorbike / AYA</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="hd">
+              <h2>4. Private Transfer | รถส่วนตัวพร้อมคนขับ</h2>
+              <div class="chip">Most convenient</div>
+            </div>
+            <div class="bd">
+              <div class="section">
+                <div class="label en">EN</div>
+                <div class="text">
+                  Best for door-to-door comfort, luggage, or small groups. Kiwitaxi currently shows fixed-fare private cars from Chiang Mai Airport to Pai
+                  from about US$105 (around THB 3,800), while Klook also lists private transfer products for this route.
+                </div>
+                <div class="meta">Road time is still about 3-4 hours, but you avoid transfers and terminal handling.</div>
+                <div class="label th">TH</div>
+                <div class="text">
+                  เหมาะที่สุดถ้าอยากนั่งสบาย มีสัมภาระเยอะ หรือเดินทางหลายคน Kiwitaxi แสดงราคาเหมาคงที่ล่าสุดจากสนามบินเชียงใหม่ไปปาย
+                  เริ่มประมาณ US$105 หรือราว 3,800 บาทต่อคัน และ Klook ก็มีสินค้าประเภทรถรับส่งส่วนตัวในเส้นทางนี้ด้วย
+                </div>
+                <div class="links">
+                  <a class="btn primary" href="https://kiwitaxi.com/en/thailand/chiang-mai-airport-pai">Book via Kiwitaxi</a>
+                  <a class="btn" href="https://www.klook.com/en-US/activity/15875-private-city-transfers-pai-chiang-mai/">Book via Klook</a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="page">
+        <article class="wide">
+          <div class="hd">
+            <h2>5. Flight | เครื่องบิน</h2>
+            <div class="chip">Limited / uncertain</div>
+          </div>
+          <div class="bd">
+            <div class="section">
+              <div class="label en">EN</div>
+              <div class="text">
+                Online flight information for Chiang Mai-Pai is inconsistent as of March 18, 2026. Some schedule sites still show availability,
+                but I did not find a dependable direct online booking source I would confidently recommend for planning.
+                If flying matters for your trip, verify directly at Chiang Mai airport counter level before you commit your itinerary.
+              </div>
+              <div class="label th">TH</div>
+              <div class="text">
+                ข้อมูลเที่ยวบินเชียงใหม่-ปายในออนไลน์ยังไม่สม่ำเสมอ ณ วันที่ 18 มี.ค. 2569
+                บางเว็บยังขึ้นตารางบิน แต่ผม/ฉันยังไม่พบลิงก์จองตรงที่น่าเชื่อถือพอจะให้วางแผนรอบทริปตามนั้นได้
+                ถ้าคุณอยากบินจริง แนะนำให้เช็กที่เคาน์เตอร์สนามบินเชียงใหม่โดยตรงก่อนตัดสินใจ
+              </div>
+              <div class="links">
+                <a class="btn" href="https://bw.wego.com/schedules/cnx/pyy/flight-schedules-from-chiang-mai-to-pai">Check schedules</a>
+                <a class="btn" href="https://www.cmhy.city/en/place/17863-Wisdom-Airways-Chiangmai-Airport">Airport-counter info</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="wide">
+          <div class="hd">
+            <h2>Summary | สรุปแบบเลือกง่าย</h2>
+            <div class="chip">Recommended choices</div>
+          </div>
+          <div class="bd">
+            <div class="summary">
+              <div class="sum-box">
+                <div class="title">Best budget</div>
+                <div class="copy">
+                  EN: Public minivan via Prem Pracha / 12Go.<br />
+                  TH: เลือกรถตู้สาธารณะ จองผ่าน 12Go หรือ Baolau จะคุ้มที่สุด
+                </div>
+              </div>
+              <div class="sum-box">
+                <div class="title">Best comfort</div>
+                <div class="copy">
+                  EN: Private transfer if you want direct hotel-to-hotel service.<br />
+                  TH: ถ้าต้องการสบายสุด ไม่เปลี่ยนรถ ให้จองรถส่วนตัวพร้อมคนขับ
+                </div>
+              </div>
+              <div class="sum-box">
+                <div class="title">Best freedom</div>
+                <div class="copy">
+                  EN: Self-drive car if you want scenic stops and flexibility.<br />
+                  TH: ถ้าอยากแวะวิว/คาเฟ่เองระหว่างทาง ให้เช่ารถยนต์ขับเอง
+                </div>
+              </div>
+            </div>
+
+            <div class="note" style="margin-top: 10px;">
+              Prices and schedules can change quickly. This PDF uses the latest pages I checked on <strong>18 March 2026</strong>.<br />
+              ราคาและรอบเดินทางเปลี่ยนได้เร็ว โดยเฉพาะช่วงไฮซีซัน ดังนั้นไฟล์นี้อิงจากหน้าจอง/หน้าข้อมูลที่เช็กได้ล่าสุดในวันที่
+              <strong>18 มี.ค. 2569</strong>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,328 @@
+[
+  {
+    "id": "research-vat-registration-threshold",
+    "type": "manual_faq",
+    "category": "tax",
+    "serviceBucket": "accounting-tax",
+    "priority": 112,
+    "question_th": "รายได้ถึงเท่าไรจึงควรจด VAT และต้องยื่นเมื่อไร",
+    "question_en": "At what revenue level should VAT registration start, and when must the application be filed?",
+    "answer_th": "ตามข้อมูลกรมสรรพากร ผู้ประกอบการที่มีรายรับจากการขายสินค้าหรือให้บริการเกิน 1.8 ล้านบาทต่อปี มีหน้าที่ยื่นคำขอจดทะเบียนภาษีมูลค่าเพิ่ม โดยหลักให้ยื่นก่อนวันเริ่มประกอบกิจการ หรือภายใน 30 วันนับแต่วันที่มีรายได้เกินเกณฑ์ดังกล่าว",
+    "answer_en": "According to the Revenue Department, a business with revenue from selling goods or providing services exceeding THB 1.8 million per year must register for VAT. In principle, the application should be filed before starting the business or within 30 days from the date the revenue exceeds that threshold.",
+    "follow_up_th": "ถ้าสะดวก แจ้งได้เลยค่ะว่ารายได้เริ่มเกินเกณฑ์ตั้งแต่ช่วงไหน และตอนนี้มีการออกใบกำกับภาษีหรือยัง",
+    "follow_up_en": "If convenient, tell us when revenue first exceeded the threshold and whether any tax invoices have already been issued.",
+    "source_url": "https://www.rd.go.th/fileadmin/user_upload/SMEs/infographic/SME_lv3_1.pdf",
+    "official_links": [
+      {
+        "label_th": "ผู้ประกอบการที่ไม่ต้องจดทะเบียนภาษีมูลค่าเพิ่ม",
+        "label_en": "Businesses not required to register for VAT",
+        "url": "https://www.rd.go.th/7060.html"
+      },
+      {
+        "label_th": "คู่มือภาษีมูลค่าเพิ่มสำหรับ SMEs",
+        "label_en": "VAT guide for SMEs",
+        "url": "https://www.rd.go.th/fileadmin/user_upload/SMEs/infographic/SME_lv3_1.pdf"
+      }
+    ],
+    "keywords": [
+      "จด vat",
+      "ภาษีมูลค่าเพิ่ม",
+      "1.8 ล้านบาท",
+      "ภ.พ.01",
+      "vat registration",
+      "1.8 million",
+      "register vat"
+    ]
+  },
+  {
+    "id": "research-vat-monthly-filing-deadline",
+    "type": "manual_faq",
+    "category": "tax",
+    "serviceBucket": "accounting-tax",
+    "priority": 110,
+    "question_th": "ภ.พ.30 ต้องยื่นเมื่อไร และถ้าเดือนนั้นไม่มีภาษีต้องยื่นไหม",
+    "question_en": "When is the P.P.30 VAT return due, and must it still be filed if there is no VAT payable in that month?",
+    "answer_th": "ตามคู่มือ VAT ของกรมสรรพากร ผู้ประกอบการจดทะเบียนต้องยื่นแบบ ภ.พ.30 เป็นรายเดือนภายในวันที่ 15 ของเดือนถัดไป ไม่ว่าจะมีภาษีต้องชำระหรือไม่ก็ตาม และการยื่นผ่านระบบอินเทอร์เน็ตตามสิทธิที่กรมสรรพากรกำหนดมักได้รับการขยายเวลาเพิ่มอีก 8 วัน จึงควรตรวจปฏิทินภาษีอากรล่าสุดทุกครั้ง",
+    "answer_en": "According to the Revenue Department VAT guide, a registered operator must file the P.P.30 return every month by the 15th of the following month, even if there is no VAT payable. Internet filing commonly receives an additional 8-day extension under the Revenue Department’s filing rules, so the latest tax calendar should be checked each time.",
+    "follow_up_th": "ถ้าต้องการให้ทีมช่วยจัดรอบส่งเอกสาร VAT แจ้งได้เลยค่ะว่าตอนนี้ส่งเอกสารทุกเดือนวันไหน และขายสินค้าหรือให้บริการเป็นหลัก",
+    "follow_up_en": "If you want help setting the VAT handover cycle, tell us when documents are currently handed over each month and whether the business mainly sells goods or services.",
+    "source_url": "https://www.rd.go.th/fileadmin/user_upload/SMEs/infographic/SME_lv3_1.pdf",
+    "official_links": [
+      {
+        "label_th": "คู่มือภาษีมูลค่าเพิ่มสำหรับ SMEs",
+        "label_en": "VAT guide for SMEs",
+        "url": "https://www.rd.go.th/fileadmin/user_upload/SMEs/infographic/SME_lv3_1.pdf"
+      },
+      {
+        "label_th": "ปฏิทินภาษีอากร กรมสรรพากร",
+        "label_en": "Revenue Department tax calendar",
+        "url": "https://www.rd.go.th/62348/calendar/1/15.html?cHash=d3e557638c39b7d6c80855164f8b1cc3"
+      }
+    ],
+    "keywords": [
+      "ภ.พ.30",
+      "ยื่น vat",
+      "ยื่นภาษีมูลค่าเพิ่ม",
+      "15 ของเดือนถัดไป",
+      "pp30",
+      "vat filing deadline"
+    ]
+  },
+  {
+    "id": "research-vat-registered-duties",
+    "type": "manual_faq",
+    "category": "tax",
+    "serviceBucket": "accounting-tax",
+    "priority": 106,
+    "question_th": "เมื่อจด VAT แล้วมีหน้าที่อะไรบ้าง",
+    "question_en": "What are the main obligations after VAT registration?",
+    "answer_th": "กรมสรรพากรระบุว่าหลังจด VAT แล้ว ผู้ประกอบการต้องจัดทำและออกใบกำกับภาษีให้ผู้ซื้อหรือผู้รับบริการทุกครั้ง จัดทำรายงานภาษีขาย รายงานภาษีซื้อ และรายงานสินค้าและวัตถุดิบตามหลักเกณฑ์ รวมทั้งเก็บรักษาสำเนาใบกำกับภาษีและรายงานไว้ตามกฎหมาย",
+    "answer_en": "The Revenue Department states that once VAT is registered, the business must issue tax invoices to customers, maintain the sales tax report, purchase tax report, and inventory/raw-material records as required, and keep the relevant invoice copies and reports according to the law.",
+    "follow_up_th": "ถ้าสะดวก แจ้งได้เลยค่ะว่าตอนนี้มีการออกใบกำกับภาษีเองอยู่แล้วหรือยัง และใช้โปรแกรมหรือวิธีใดในการเก็บรายงานภาษี",
+    "follow_up_en": "If convenient, tell us whether tax invoices are already being issued internally and what system is currently used for tax reports.",
+    "source_url": "https://www.rd.go.th/fileadmin/user_upload/SMEs/infographic/SME_lv3_1.pdf",
+    "official_links": [
+      {
+        "label_th": "คู่มือภาษีมูลค่าเพิ่มสำหรับ SMEs",
+        "label_en": "VAT guide for SMEs",
+        "url": "https://www.rd.go.th/fileadmin/user_upload/SMEs/infographic/SME_lv3_1.pdf"
+      }
+    ],
+    "keywords": [
+      "หน้าที่หลังจด vat",
+      "ใบกำกับภาษี",
+      "รายงานภาษีขาย",
+      "รายงานภาษีซื้อ",
+      "vat obligation",
+      "tax invoice"
+    ]
+  },
+  {
+    "id": "research-withholding-tax-deadline",
+    "type": "manual_faq",
+    "category": "tax",
+    "serviceBucket": "accounting-tax",
+    "priority": 108,
+    "question_th": "ภาษีหัก ณ ที่จ่าย ภ.ง.ด.1 ภ.ง.ด.3 และ ภ.ง.ด.53 ต้องยื่นเมื่อไร",
+    "question_en": "When are withholding tax forms P.N.D.1, P.N.D.3, and P.N.D.53 due?",
+    "answer_th": "ตามเอกสาร SME ของกรมสรรพากร แบบภาษีหัก ณ ที่จ่าย เช่น ภ.ง.ด.1 ภ.ง.ด.3 และ ภ.ง.ด.53 โดยหลักยื่นภายในวันที่ 7 ของเดือนถัดจากเดือนที่มีการจ่ายเงินได้ และหากยื่นผ่านอินเทอร์เน็ตจะได้รับการขยายเวลายื่นออกไปอีก 8 วัน คือภายในวันที่ 15 ของเดือนถัดไป",
+    "answer_en": "According to the Revenue Department SME filing guidance, withholding tax forms such as P.N.D.1, P.N.D.3, and P.N.D.53 are generally due by the 7th day of the following month after payment. If filed online, the due date is extended by 8 more days, making it the 15th of the following month.",
+    "follow_up_th": "ถ้าต้องการให้ทีมช่วยเช็กว่าเงินได้แต่ละประเภทควรใช้แบบไหน ส่งตัวอย่างการจ่ายเงินหรือรายการค่าใช้จ่ายมาได้เลยค่ะ",
+    "follow_up_en": "If you want the team to review which form applies to each payment type, send a sample payment or expense item and we can map it out.",
+    "source_url": "https://www.rd.go.th/fileadmin/user_upload/SMEs/infographic/4.jn_cit_4.pdf",
+    "official_links": [
+      {
+        "label_th": "ข้อมูลการยื่นแบบภาษี SME",
+        "label_en": "SME tax filing infographic",
+        "url": "https://www.rd.go.th/fileadmin/user_upload/SMEs/infographic/4.jn_cit_4.pdf"
+      }
+    ],
+    "keywords": [
+      "ภงด1",
+      "ภงด3",
+      "ภงด53",
+      "หัก ณ ที่จ่าย",
+      "withholding tax deadline",
+      "pnd1",
+      "pnd3",
+      "pnd53"
+    ]
+  },
+  {
+    "id": "research-cit-half-year-pnd51",
+    "type": "manual_faq",
+    "category": "tax",
+    "serviceBucket": "accounting-tax",
+    "priority": 104,
+    "question_th": "ภ.ง.ด.51 ต้องยื่นเมื่อไร",
+    "question_en": "When is the half-year corporate income tax return (P.N.D.51) due?",
+    "answer_th": "กรมสรรพากรระบุว่าบริษัทหรือห้างหุ้นส่วนนิติบุคคลที่เสียภาษีจากกำไรสุทธิต้องยื่นแบบ ภ.ง.ด.51 ภายใน 2 เดือนนับจากวันสุดท้ายของทุก 6 เดือนแรกของรอบระยะเวลาบัญชี",
+    "answer_en": "The Revenue Department states that a juristic company or partnership paying tax on net profit must file P.N.D.51 within 2 months from the last day of the first 6 months of its accounting period.",
+    "follow_up_th": "ถ้าต้องการให้ทีมช่วยนับ deadline ให้ตรงรอบบัญชี แจ้งวันสิ้นรอบบัญชีของบริษัทมาได้เลยค่ะ",
+    "follow_up_en": "If you want help counting the exact deadline, send us the company’s accounting period end date.",
+    "source_url": "https://www.rd.go.th/840.html",
+    "official_links": [
+      {
+        "label_th": "การยื่นแบบแสดงรายการและชำระภาษี",
+        "label_en": "Tax return filing and payment",
+        "url": "https://www.rd.go.th/840.html"
+      }
+    ],
+    "keywords": [
+      "ภงด51",
+      "ครึ่งปี",
+      "ภาษีเงินได้นิติบุคคลครึ่งปี",
+      "pnd51",
+      "half year corporate tax"
+    ]
+  },
+  {
+    "id": "research-cit-year-end-pnd50",
+    "type": "manual_faq",
+    "category": "tax",
+    "serviceBucket": "accounting-tax",
+    "priority": 104,
+    "question_th": "ภ.ง.ด.50 ต้องยื่นเมื่อไร",
+    "question_en": "When is the year-end corporate income tax return (P.N.D.50) due?",
+    "answer_th": "ตามข้อมูลกรมสรรพากร บริษัทหรือห้างหุ้นส่วนนิติบุคคลต้องยื่นแบบ ภ.ง.ด.50 ภายใน 150 วันนับแต่วันสุดท้ายของรอบระยะเวลาบัญชี",
+    "answer_en": "According to the Revenue Department, a company or juristic partnership must file P.N.D.50 within 150 days from the last day of its accounting period.",
+    "follow_up_th": "ถ้าสะดวก แจ้งวันสิ้นรอบบัญชีและสถานะปิดบัญชีล่าสุดมาได้เลยค่ะ ทีมจะช่วยไล่ลำดับเอกสารก่อนยื่น",
+    "follow_up_en": "If convenient, share the accounting period end date and current closing status, and the team will map the document sequence before filing.",
+    "source_url": "https://www.rd.go.th/840.html",
+    "official_links": [
+      {
+        "label_th": "การยื่นแบบแสดงรายการและชำระภาษี",
+        "label_en": "Tax return filing and payment",
+        "url": "https://www.rd.go.th/840.html"
+      }
+    ],
+    "keywords": [
+      "ภงด50",
+      "150 วัน",
+      "สิ้นรอบบัญชี",
+      "pnd50",
+      "year end corporate tax"
+    ]
+  },
+  {
+    "id": "research-bookkeeping-retention",
+    "type": "manual_faq",
+    "category": "accounting",
+    "serviceBucket": "accounting-tax",
+    "priority": 101,
+    "question_th": "บัญชีและเอกสารประกอบต้องเก็บไว้นานกี่ปี",
+    "question_en": "How many years must accounting books and supporting documents be kept?",
+    "answer_th": "ตามเอกสารแนะนำของกรมพัฒนาธุรกิจการค้า ผู้มีหน้าที่จัดทำบัญชีต้องเก็บรักษาบัญชีและเอกสารประกอบการลงบัญชีไว้ไม่น้อยกว่า 5 ปีนับแต่วันปิดบัญชี และในบางกรณีอธิบดีอาจกำหนดให้เก็บเกิน 5 ปีแต่ไม่เกิน 7 ปี",
+    "answer_en": "According to Department of Business Development guidance, the person responsible for bookkeeping must keep the accounting books and supporting documents for at least 5 years from the closing date, and in some cases the Director-General may require retention for more than 5 years but not more than 7 years.",
+    "follow_up_th": "ถ้าต้องการ ทีมช่วยแยกได้ค่ะว่าเอกสารใดควรเก็บต้นฉบับไว้ที่สำนักงาน และเอกสารใดควรจัดแฟ้มหรือสำรองไฟล์เพิ่ม",
+    "follow_up_en": "If helpful, the team can separate which documents should remain at the office in original form and which should be additionally archived or backed up.",
+    "source_url": "https://www.dbd.go.th/data-storage/attachment/96c46e58eb6d8950f3743510f.pdf",
+    "official_links": [
+      {
+        "label_th": "คำแนะนำการปฏิบัติให้ถูกต้องตามกฎหมายบัญชี",
+        "label_en": "DBD guidance on proper accounting-law compliance",
+        "url": "https://www.dbd.go.th/data-storage/attachment/96c46e58eb6d8950f3743510f.pdf"
+      }
+    ],
+    "keywords": [
+      "เก็บเอกสารบัญชี",
+      "เก็บบัญชี 5 ปี",
+      "เอกสารประกอบการลงบัญชี",
+      "accounting records retention",
+      "5 years"
+    ]
+  },
+  {
+    "id": "research-dbd-financial-statement-deadline",
+    "type": "manual_faq",
+    "category": "accounting",
+    "serviceBucket": "accounting-tax",
+    "priority": 103,
+    "question_th": "บริษัทจำกัดต้องยื่นงบการเงินกับ DBD ภายในกี่วันหลังประชุมผู้ถือหุ้น",
+    "question_en": "For a limited company, how soon must financial statements be filed with DBD after the shareholders’ meeting?",
+    "answer_th": "ตามแนวทาง DBD e-Filing สำหรับบริษัทจำกัด งบการเงินต้องยื่นภายใน 1 เดือนนับแต่วันประชุมผู้ถือหุ้น พร้อมรายงานผู้สอบบัญชีรับอนุญาตและหมายเหตุประกอบงบการเงิน",
+    "answer_en": "According to the DBD e-Filing guidance for a limited company, the financial statements must be filed within 1 month from the shareholders’ meeting together with the auditor’s report and notes to the financial statements.",
+    "follow_up_th": "ถ้าสะดวก แจ้งวันประชุมผู้ถือหุ้นและสถานะงบล่าสุดมาได้เลยค่ะ ทีมจะช่วยนับ deadline และเช็กชุดเอกสารก่อนยื่น",
+    "follow_up_en": "If convenient, share the shareholders’ meeting date and the current status of the financial statements, and the team will confirm the deadline and filing set.",
+    "source_url": "https://efiling.dbd.go.th/Covid/Meeting.pdf",
+    "official_links": [
+      {
+        "label_th": "แนวทาง DBD e-Filing เกี่ยวกับงบการเงินและเอกสารที่เกี่ยวข้อง",
+        "label_en": "DBD e-Filing guidance for financial statements and related documents",
+        "url": "https://efiling.dbd.go.th/Covid/Meeting.pdf"
+      }
+    ],
+    "keywords": [
+      "ยื่นงบการเงิน",
+      "dbd e-filing",
+      "1 เดือนหลังประชุม",
+      "financial statement filing",
+      "auditor report"
+    ]
+  },
+  {
+    "id": "research-boj5-deadline",
+    "type": "manual_faq",
+    "category": "accounting",
+    "serviceBucket": "corporate-dbd",
+    "priority": 102,
+    "question_th": "บอจ.5 ต้องยื่นเมื่อไร",
+    "question_en": "When must the shareholder list (BorOrJor.5) be filed?",
+    "answer_th": "ข้อมูลของกรมพัฒนาธุรกิจการค้าระบุว่า บริษัทจำกัดมีหน้าที่นำส่งสำเนาบัญชีรายชื่อผู้ถือหุ้น (บอจ.5) อย่างน้อยปีละ 1 ครั้ง ภายใน 14 วันหลังจากมีการประชุมใหญ่สามัญผู้ถือหุ้น",
+    "answer_en": "Department of Business Development guidance states that a limited company must submit a copy of the shareholder list (BorOrJor.5) at least once a year within 14 days after the annual general meeting of shareholders.",
+    "follow_up_th": "ถ้าต้องการให้ทีมช่วยนับกำหนดหรือเตรียมชุดยื่น แจ้งวันประชุมและสถานะสมุดทะเบียนผู้ถือหุ้นมาได้เลยค่ะ",
+    "follow_up_en": "If you want help calculating the deadline or preparing the filing set, send the meeting date and the current shareholder-register status.",
+    "source_url": "https://www.dbd.go.th/data-storage/attachment/65454da9611068f3c678e56ef.pdf",
+    "official_links": [
+      {
+        "label_th": "ข้อมูล บอจ.5 ของกรมพัฒนาธุรกิจการค้า",
+        "label_en": "DBD note on BorOrJor.5 shareholder list",
+        "url": "https://www.dbd.go.th/data-storage/attachment/65454da9611068f3c678e56ef.pdf"
+      }
+    ],
+    "keywords": [
+      "บอจ5",
+      "บัญชีรายชื่อผู้ถือหุ้น",
+      "14 วัน",
+      "boj5",
+      "shareholder list"
+    ]
+  },
+  {
+    "id": "research-social-security-wage-base",
+    "type": "manual_faq",
+    "category": "payroll",
+    "serviceBucket": "accounting-tax",
+    "priority": 98,
+    "question_th": "การคำนวณเงินสมทบประกันสังคมใช้ฐานค่าจ้างช่วงใด",
+    "question_en": "What wage range is used for social security contribution calculations?",
+    "answer_th": "จากแบบ สปส.1-10 ของสำนักงานประกันสังคม ฐานค่าจ้างที่ใช้คำนวณเงินสมทบของผู้ประกันตนมาตรา 33 ไม่น้อยกว่า 1,650 บาท และไม่เกิน 15,000 บาท และเงินสมทบส่วนของนายจ้างเท่ากับจำนวนเงินสมทบของผู้ประกันตนตามหลักเกณฑ์ในแบบดังกล่าว",
+    "answer_en": "According to the SSO 1-10 form, the wage base used to calculate section 33 social security contributions is not less than THB 1,650 and not more than THB 15,000, and the employer contribution is equal to the employee contribution under that form’s rules.",
+    "follow_up_th": "ถ้าสะดวก แจ้งจำนวนพนักงานและวิธีทำ payroll ปัจจุบันมาได้เลยค่ะ ทีมจะช่วยดูว่าควรจัด flow เอกสารอย่างไร",
+    "follow_up_en": "If convenient, share the employee count and the current payroll process, and the team will help structure the workflow.",
+    "source_url": "https://www.sso.go.th/wpr/assets/upload/files_storage/sso_th/918a5ffc639945c7890f199112922f09.pdf",
+    "official_links": [
+      {
+        "label_th": "แบบ สปส.1-10 ของสำนักงานประกันสังคม",
+        "label_en": "SSO 1-10 form",
+        "url": "https://www.sso.go.th/wpr/assets/upload/files_storage/sso_th/918a5ffc639945c7890f199112922f09.pdf"
+      }
+    ],
+    "keywords": [
+      "ประกันสังคม",
+      "สปส 1-10",
+      "1650",
+      "15000",
+      "social security",
+      "wage base"
+    ]
+  },
+  {
+    "id": "research-accountant-eaccountant-notification",
+    "type": "manual_faq",
+    "category": "accounting",
+    "serviceBucket": "accounting-tax",
+    "priority": 94,
+    "question_th": "ผู้ทำบัญชีต้องแจ้งรายละเอียดการรับทำบัญชีเมื่อไร",
+    "question_en": "When must an accountant notify DBD after starting bookkeeping work for a business?",
+    "answer_th": "ตามขั้นตอนการเป็นผู้ทำบัญชีของกรมพัฒนาธุรกิจการค้า ผู้ทำบัญชีต้องแจ้งรายละเอียดการทำบัญชีภายใน 30 วันนับแต่วันเริ่มทำบัญชีผ่านระบบผู้ทำบัญชี (e-Accountant)",
+    "answer_en": "According to the Department of Business Development’s accountant-process guidance, the accountant must notify the bookkeeping details within 30 days from the date bookkeeping starts through the e-Accountant system.",
+    "follow_up_th": "ถ้าต้องการให้ทีมช่วยเช็กสถานะผู้ทำบัญชีหรือเริ่มรับช่วงงานต่อ แจ้งวันเริ่มงานและสถานะ e-Accountant ปัจจุบันมาได้เลยค่ะ",
+    "follow_up_en": "If you want help checking the accountant status or taking over the case, tell us the start date and the current e-Accountant status.",
+    "source_url": "https://www.dbd.go.th/data-storage/attachment/2110f126dce55e4422771e617.pdf",
+    "official_links": [
+      {
+        "label_th": "ขั้นตอนการเป็นผู้ทำบัญชี",
+        "label_en": "DBD accountant process guidance",
+        "url": "https://www.dbd.go.th/data-storage/attachment/2110f126dce55e4422771e617.pdf"
+      }
+    ],
+    "keywords": [
+      "ผู้ทำบัญชี",
+      "e-accountant",
+      "ภายใน 30 วัน",
+      "รับทำบัญชี",
+      "accountant notification"
+    ]
+  }
+]

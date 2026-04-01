@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chiang Mai 4D3N Itinerary | 11-14 Oct 2026 | TH + EN</title>
+    <style>
+      :root {
+        --paper: #fffdf8;
+        --ink: #1f2b24;
+        --muted: #5d675f;
+        --line: #d7dfd7;
+        --green: #3e6450;
+        --green-soft: #edf4ef;
+        --sand: #fbf3e7;
+        --sand-line: #e7d4b6;
+      }
+
+      * { box-sizing: border-box; }
+      @page { size: A4; margin: 0; }
+      html, body { height: 100%; }
+      body {
+        margin: 0;
+        background:
+          radial-gradient(circle at top right, rgba(62, 100, 80, 0.06), transparent 28%),
+          var(--paper);
+        color: var(--ink);
+        font-family: Tahoma, "Segoe UI", sans-serif;
+      }
+
+      a { color: inherit; text-decoration: none; }
+
+      .doc {
+        width: 210mm;
+        margin: 0 auto;
+        padding: 12mm;
+      }
+
+      .page {
+        min-height: calc(297mm - 24mm);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        break-after: page;
+      }
+
+      .page:last-child { break-after: auto; }
+
+      .hero {
+        padding: 18px 20px;
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        background: linear-gradient(180deg, #f7fbf8 0%, #fffdf8 100%);
+      }
+
+      .tag {
+        display: inline-flex;
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: var(--green-soft);
+        color: var(--green);
+        font-size: 11px;
+        font-weight: 800;
+      }
+
+      h1 {
+        margin: 10px 0 6px;
+        font-size: 28px;
+        line-height: 1.16;
+      }
+
+      .sub {
+        margin: 0;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.65;
+      }
+
+      .facts {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 14px;
+      }
+
+      .fact {
+        padding: 11px 12px;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: #fff;
+      }
+
+      .fact .k {
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 700;
+      }
+
+      .fact .v {
+        margin-top: 4px;
+        font-size: 13px;
+        font-weight: 800;
+        line-height: 1.45;
+      }
+
+      .alert {
+        margin-top: 12px;
+        padding: 11px 13px;
+        border: 1px dashed var(--sand-line);
+        border-radius: 15px;
+        background: var(--sand);
+        color: #5f564a;
+        font-size: 11.5px;
+        line-height: 1.7;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: 1.45fr 1fr;
+        gap: 10px;
+      }
+
+      .card {
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        overflow: hidden;
+        background: #fff;
+      }
+
+      .hd {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        padding: 11px 14px 10px;
+        border-bottom: 1px solid var(--line);
+        background: linear-gradient(180deg, rgba(245, 234, 214, 0.55), rgba(255, 255, 255, 0.96));
+      }
+
+      .hd h2 {
+        margin: 0;
+        font-size: 16px;
+      }
+
+      .chip {
+        display: inline-flex;
+        padding: 5px 9px;
+        border-radius: 999px;
+        border: 1px solid #d6e3da;
+        background: var(--green-soft);
+        color: var(--green);
+        font-size: 11px;
+        font-weight: 800;
+      }
+
+      .bd { padding: 12px 14px 14px; }
+
+      .day-list {
+        display: grid;
+        gap: 10px;
+      }
+
+      .day {
+        padding: 12px 12px 11px;
+        border: 1px solid var(--line);
+        border-radius: 15px;
+        background: #fff;
+      }
+
+      .date {
+        color: var(--green);
+        font-size: 12px;
+        font-weight: 800;
+      }
+
+      .title-th {
+        margin: 3px 0 2px;
+        font-size: 15px;
+        font-weight: 800;
+        line-height: 1.4;
+      }
+
+      .title-en {
+        margin: 0;
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 1.55;
+      }
+
+      .stops {
+        display: grid;
+        gap: 6px;
+        margin-top: 9px;
+      }
+
+      .stop {
+        padding: 8px 10px;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: #fcfdfc;
+        font-size: 11.5px;
+        line-height: 1.55;
+      }
+
+      .stop b {
+        display: block;
+        margin-bottom: 2px;
+        font-size: 11.8px;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+        margin-top: 9px;
+      }
+
+      .btn {
+        display: inline-flex;
+        padding: 7px 10px;
+        border-radius: 999px;
+        border: 1px solid #d6e3da;
+        background: var(--green-soft);
+        color: var(--green);
+        font-size: 11px;
+        font-weight: 800;
+      }
+
+      .btn.alt {
+        background: #fff7eb;
+        border-color: #ead7bb;
+        color: #7a5a2d;
+      }
+
+      .stay {
+        margin-top: 9px;
+        padding-top: 9px;
+        border-top: 1px dashed var(--line);
+        color: var(--muted);
+        font-size: 11.5px;
+        line-height: 1.65;
+      }
+
+      .stack {
+        display: grid;
+        gap: 10px;
+      }
+
+      .mini-list {
+        display: grid;
+        gap: 10px;
+      }
+
+      .mini {
+        padding: 11px 12px;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: #fff;
+      }
+
+      .mini h4 {
+        margin: 0 0 5px;
+        font-size: 13px;
+      }
+
+      .mini p,
+      .mini div {
+        margin: 0;
+        color: var(--muted);
+        font-size: 11.5px;
+        line-height: 1.65;
+      }
+
+      .hotel-main {
+        padding: 12px;
+        border: 1px solid #d6e3da;
+        border-radius: 15px;
+        background: var(--green-soft);
+      }
+
+      .hotel-main h3 {
+        margin: 0 0 5px;
+        font-size: 15px;
+      }
+
+      .hotel-main p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.65;
+      }
+
+      .night-grid {
+        display: grid;
+        gap: 8px;
+      }
+
+      .night-row {
+        padding: 9px 10px;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: #fcfdfc;
+      }
+
+      .night-row b {
+        display: block;
+        margin-bottom: 2px;
+        font-size: 11.8px;
+      }
+
+      .note {
+        padding: 11px 12px;
+        border: 1px dashed var(--sand-line);
+        border-radius: 14px;
+        background: var(--sand);
+        color: #5f564a;
+        font-size: 11.5px;
+        line-height: 1.7;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="doc">
+      <section class="page">
+        <div class="hero">
+          <div class="tag">Bilingual PDF | TH + EN | Driving links included</div>
+          <h1>โปรแกรมเที่ยวเชียงใหม่ 4 วัน 3 คืน 11-14 ต.ค. 2026<br />Chiang Mai 4 Days 3 Nights Self-Drive Itinerary | 11-14 Oct 2026</h1>
+          <p class="sub">
+            สำหรับทริปขับรถเที่ยวเชียงใหม่ โดยพัก 2 ที่ตามแผนล่าสุด เพื่อบาลานซ์ระหว่างวันเที่ยวในเมืองและวันธรรมชาติฝั่งแม่ริม
+            <br />
+            Designed for a self-drive Chiang Mai trip using two stays, balancing the city day with the more nature-focused Mae Rim days.
+          </p>
+          <div class="facts">
+            <div class="fact">
+              <div class="k">ช่วงเดินทาง | Travel Dates</div>
+              <div class="v">Sun 11 Oct 2026<br />to<br />Wed 14 Oct 2026</div>
+            </div>
+            <div class="fact">
+              <div class="k">คืนที่พัก | Hotel Nights</div>
+              <div class="v">1 night River Bend<br />2 nights Lamtam<br />Maesa Resort</div>
+            </div>
+            <div class="fact">
+              <div class="k">แนวทริป | Style</div>
+              <div class="v">Nature stay<br />Self-drive<br />Easy pace</div>
+            </div>
+            <div class="fact">
+              <div class="k">โซนหลัก | Main Areas</div>
+              <div class="v">Old Town<br />Doi Suthep<br />Mae Rim / Mae Kampong</div>
+            </div>
+          </div>
+          <div class="alert">
+            ห้องพักอาจเต็มได้เร็วในช่วง 11-14 ต.ค. 2026 หากถูกใจที่พักใด แนะนำให้จองโดยเร็วหลังตรวจสอบเงื่อนไขการยกเลิกและราคาสุดท้ายอีกครั้ง
+            <br />
+            Hotel availability may change quickly for 11-14 October 2026. If either property fits your plan, early booking is recommended after reconfirming the final rate and cancellation terms.
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="card">
+            <div class="hd">
+              <h2>แผนรายวัน | Daily Plan</h2>
+              <div class="chip">Days 1-2</div>
+            </div>
+            <div class="bd">
+              <div class="day-list">
+                <div class="day">
+                  <div class="date">Day 1 | Sun 11 Oct 2026</div>
+                  <div class="title-th">เช็กอิน River Bend Villas แล้วขับเข้าเมืองเก่า + Tha Phae + Sunday Walking Street</div>
+                  <p class="title-en">Check in at River Bend Villas, then drive into the Old Town, Tha Phae area, and Sunday Walking Street.</p>
+                  <div class="stops">
+                    <div class="stop">
+                      <b><a href="https://7greens.tourismthailand.org/en/2020/08/21/%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88%E0%B9%82%E0%B8%9A%E0%B8%A3%E0%B8%B2%E0%B8%93/">Chiang Mai Old Town</a></b>
+                      เมืองเก่าเหมาะกับการเดินเล่นเบาๆ ในวันแรก | Best for a relaxed first afternoon.
+                    </div>
+                    <div class="stop">
+                      <b><a href="https://www.google.com/maps/search/?api=1&amp;query=Tha+Phae+Gate+Chiang+Mai">Tha Phae Gate</a></b>
+                      จุดถ่ายรูปและแลนด์มาร์กหลักของโซนเมืองเก่า | The main landmark around the Old Town area.
+                    </div>
+                    <div class="stop">
+                      <b><a href="https://www.google.com/maps/search/?api=1&amp;query=Chiang+Mai+Sunday+Walking+Street">Sunday Walking Street</a></b>
+                      เหมาะสำหรับอาหารเย็นและเดินเล่นช่วงค่ำ | Ideal for dinner and an easy evening walk.
+                    </div>
+                  </div>
+                  <div class="actions">
+                    <a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;origin=River+Bend+villas+1+Mae+Rim&amp;destination=River+Bend+villas+1+Mae+Rim&amp;travelmode=driving&amp;waypoints=Wat+Chedi+Luang%7CTha+Phae+Gate+Chiang+Mai%7CChiang+Mai+Sunday+Walking+Street">Route Map Day 1</a>
+                    <a class="btn alt" href="https://www.booking.com/hotel/th/river-bend-villas-rim-nuea.html">Hotel Booking</a>
+                  </div>
+                  <div class="stay">
+                    คืนที่ 1: <a href="https://www.booking.com/hotel/th/river-bend-villas-rim-nuea.html">River Bend villas 1</a>
+                    <br />
+                    Night 1: River Bend villas 1
+                  </div>
+                </div>
+
+                <div class="day">
+                  <div class="date">Day 2 | Mon 12 Oct 2026</div>
+                  <div class="title-th">เช็กเอาต์ River Bend + ดอยสุเทพ + Queen Sirikit Botanic Garden + เช็กอิน Lamtam Maesa</div>
+                  <p class="title-en">Check out from River Bend, visit Doi Suthep and Queen Sirikit Botanic Garden, then check in at Lamtam Maesa Resort.</p>
+                  <div class="stops">
+                    <div class="stop">
+                      <b><a href="https://tourismproduct.tourismthailand.org/en/2025/02/24/%E0%B8%AD%E0%B8%B8%E0%B8%97%E0%B8%A2%E0%B8%B2%E0%B8%99%E0%B9%81%E0%B8%AB%E0%B9%88%E0%B8%87%E0%B8%8A%E0%B8%B2%E0%B8%95%E0%B8%B4%E0%B8%94%E0%B8%AD%E0%B8%A2%E0%B8%AA%E0%B8%B8%E0%B9%80%E0%B8%97%E0%B8%9E-%E0%B8%9B%E0%B8%B8%E0%B8%A2/">Wat Phra That Doi Suthep</a></b>
+                      ไฮไลต์หลักของเชียงใหม่และวิวเมืองมุมสูง | One of Chiang Mai's key highlights with a city view.
+                    </div>
+                    <div class="stop">
+                      <b><a href="https://botanic.qsbg.org/">Queen Sirikit Botanic Garden</a></b>
+                      วันธรรมชาติที่เดินได้สบายกว่าและเหมาะกับโซนแม่ริม | A relaxed nature stop that works well with Mae Rim.
+                    </div>
+                    <div class="stop">
+                      <b><a href="https://www.booking.com/hotel/th/lamtam-maesa-resort.th.html">Lamtam Maesa Resort</a></b>
+                      ย้ายไปพักฝั่งแม่ริมเพื่อให้วันธรรมชาติวางตัวง่ายขึ้น | Move to the Mae Rim side for the nature-focused days.
+                    </div>
+                  </div>
+                  <div class="actions">
+                    <a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;origin=River+Bend+villas+1+Mae+Rim&amp;destination=Lamtam+Maesa+Resort+Mae+Rim&amp;travelmode=driving&amp;waypoints=Wat+Phra+That+Doi+Suthep%7CQueen+Sirikit+Botanic+Garden">Route Map Day 2</a>
+                    <a class="btn alt" href="https://www.booking.com/hotel/th/lamtam-maesa-resort.th.html">Hotel Booking</a>
+                  </div>
+                  <div class="stay">
+                    คืนที่ 2: <a href="https://www.booking.com/hotel/th/lamtam-maesa-resort.th.html">Lamtam Maesa Resort</a>
+                    <br />
+                    Night 2: Lamtam Maesa Resort
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="stack">
+            <div class="card">
+              <div class="hd">
+                <h2>โรงแรมตามคืน | Hotel by Night</h2>
+                <div class="chip">11-14 Oct</div>
+              </div>
+              <div class="bd">
+                <div class="night-grid">
+                  <div class="night-row">
+                    <b>11 Oct 2026 | Night 1</b>
+                    <a href="https://www.booking.com/hotel/th/river-bend-villas-rim-nuea.html">River Bend villas 1</a>
+                  </div>
+                  <div class="night-row">
+                    <b>12 Oct 2026 | Night 2</b>
+                    <a href="https://www.booking.com/hotel/th/lamtam-maesa-resort.th.html">Lamtam Maesa Resort</a>
+                  </div>
+                  <div class="night-row">
+                    <b>13 Oct 2026 | Night 3</b>
+                    <a href="https://www.booking.com/hotel/th/lamtam-maesa-resort.th.html">Lamtam Maesa Resort</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="hd">
+                <h2>สรุปโรงแรม | Stay Summary</h2>
+                <div class="chip">2 properties</div>
+              </div>
+              <div class="bd">
+                <div class="hotel-main">
+                  <h3><a href="https://www.booking.com/hotel/th/river-bend-villas-rim-nuea.html">River Bend villas 1</a></h3>
+                  <p>
+                    คืนแรกเหมาะกับวันเข้าเมืองเก่าและ Sunday Walking Street มากกว่า
+                    <br />
+                    Better suited to the Old Town and Sunday Walking Street day.
+                  </p>
+                  <div class="actions">
+                    <a class="btn alt" href="https://www.booking.com/hotel/th/river-bend-villas-rim-nuea.html">Booking Link</a>
+                    <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=River+Bend+villas+1+Mae+Rim">Google Map</a>
+                  </div>
+                </div>
+
+                <div class="mini-list" style="margin-top:10px">
+                  <div class="mini">
+                    <h4><a href="https://www.booking.com/hotel/th/lamtam-maesa-resort.th.html">Lamtam Maesa Resort</a></h4>
+                    <p>
+                      คืนที่ 2-3 เหมาะกับวันฝั่งแม่ริม โดยเฉพาะสวนพฤกษศาสตร์
+                      <br />
+                      Better for the Mae Rim side, especially the Botanic Garden day.
+                    </p>
+                    <div class="actions" style="margin-top:8px">
+                      <a class="btn alt" href="https://www.booking.com/hotel/th/lamtam-maesa-resort.th.html">Booking Link</a>
+                      <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Lamtam+Maesa+Resort+Mae+Rim">Google Map</a>
+                    </div>
+                  </div>
+
+                  <div class="note">
+                    ถ้าต้องการลดการย้ายโรงแรม สามารถเลือกพักที่เดียวตลอดได้ แต่เวอร์ชันนี้จัดให้ตามความต้องการล่าสุดที่อยากลองพักทั้ง 2 ที่
+                    <br />
+                    If you prefer less movement, one hotel can cover the whole stay. This version follows your latest preference to try both properties.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="page">
+        <div class="grid">
+          <div class="card">
+            <div class="hd">
+              <h2>แผนรายวัน | Daily Plan</h2>
+              <div class="chip">Days 3-4</div>
+            </div>
+            <div class="bd">
+              <div class="day-list">
+                <div class="day">
+                  <div class="date">Day 3 | Tue 13 Oct 2026</div>
+                  <div class="title-th">Mae Kampong + San Kamphaeng Hot Springs แล้วกลับไปพัก Lamtam</div>
+                  <p class="title-en">Visit Mae Kampong and San Kamphaeng Hot Springs, then return to Lamtam Maesa Resort.</p>
+                  <div class="stops">
+                    <div class="stop">
+                      <b><a href="https://tourismproduct.tourismthailand.org/2025/06/24/%E0%B8%AB%E0%B8%A1%E0%B8%B9%E0%B9%88%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%81%E0%B8%B3%E0%B8%9B%E0%B8%AD%E0%B8%87/">Mae Kampong Village</a></b>
+                      หมู่บ้านยอดนิยมของสายธรรมชาติและ slow travel | One of the most popular slow-travel nature villages near Chiang Mai.
+                    </div>
+                    <div class="stop">
+                      <b><a href="https://www.skphotsprings.com/public/change-lang/en">San Kamphaeng Hot Springs</a></b>
+                      เหมาะปิดวันด้วยน้ำร้อนธรรมชาติ | A good final stop for a hot spring soak.
+                    </div>
+                  </div>
+                  <div class="actions">
+                    <a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;origin=Lamtam+Maesa+Resort+Mae+Rim&amp;destination=Lamtam+Maesa+Resort+Mae+Rim&amp;travelmode=driving&amp;waypoints=Mae+Kampong+Village%7CSan+Kamphaeng+Hot+Springs">Route Map Day 3</a>
+                    <a class="btn alt" href="https://www.google.com/maps/search/?api=1&amp;query=Lamtam+Maesa+Resort+Mae+Rim">Hotel Map</a>
+                  </div>
+                  <div class="stay">
+                    คืนที่ 3: <a href="https://www.booking.com/hotel/th/lamtam-maesa-resort.th.html">Lamtam Maesa Resort</a>
+                    <br />
+                    Night 3: Lamtam Maesa Resort
+                  </div>
+                </div>
+
+                <div class="day">
+                  <div class="date">Day 4 | Wed 14 Oct 2026</div>
+                  <div class="title-th">เช็กเอาต์ แล้วเดินทางออกจากเชียงใหม่</div>
+                  <p class="title-en">Check out and continue your onward journey from Chiang Mai.</p>
+                  <div class="stops">
+                    <div class="stop">
+                      <b><a href="https://www.google.com/maps/search/?api=1&amp;query=Lamtam+Maesa+Resort+Mae+Rim">Hotel check-out</a></b>
+                      แนะนำให้ออกช่วงสายเพื่อขับรถสบายขึ้น | A mid-morning departure is usually more relaxed.
+                    </div>
+                    <div class="stop">
+                      <b><a href="https://www.google.com/maps/search/?api=1&amp;query=Chiang+Mai+International+Airport">Chiang Mai International Airport</a></b>
+                      ถ้าปลายทางของคุณไม่ใช่สนามบิน สามารถเปลี่ยนปลายทางใน Google Maps ได้เลย | If your next stop is not the airport, you can change the destination directly in Google Maps.
+                    </div>
+                  </div>
+                  <div class="actions">
+                    <a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;origin=Lamtam+Maesa+Resort+Mae+Rim&amp;destination=Chiang+Mai+International+Airport&amp;travelmode=driving">Route Map Day 4</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="stack">
+            <div class="card">
+              <div class="hd">
+                <h2>ลิงก์หลัก | Quick Links</h2>
+                <div class="chip">Tap to open</div>
+              </div>
+              <div class="bd">
+                <div class="mini-list">
+                  <div class="mini">
+                    <h4>Hotel booking</h4>
+                    <p><a href="https://www.booking.com/hotel/th/river-bend-villas-rim-nuea.html">River Bend villas 1</a></p>
+                    <p><a href="https://www.booking.com/hotel/th/lamtam-maesa-resort.th.html">Lamtam Maesa Resort</a></p>
+                    <p><a href="https://www.booking.com/hotel/th/the-signature-thapae.html">The Signature Hotel @ Thapae</a> (17 Oct transit night)</p>
+                  </div>
+
+                  <div class="mini">
+                    <h4>Day route maps</h4>
+                    <p><a href="https://www.google.com/maps/dir/?api=1&amp;origin=River+Bend+villas+1+Mae+Rim&amp;destination=River+Bend+villas+1+Mae+Rim&amp;travelmode=driving&amp;waypoints=Wat+Chedi+Luang%7CTha+Phae+Gate+Chiang+Mai%7CChiang+Mai+Sunday+Walking+Street">Day 1 map</a></p>
+                    <p><a href="https://www.google.com/maps/dir/?api=1&amp;origin=River+Bend+villas+1+Mae+Rim&amp;destination=Lamtam+Maesa+Resort+Mae+Rim&amp;travelmode=driving&amp;waypoints=Wat+Phra+That+Doi+Suthep%7CQueen+Sirikit+Botanic+Garden">Day 2 map</a></p>
+                    <p><a href="https://www.google.com/maps/dir/?api=1&amp;origin=Lamtam+Maesa+Resort+Mae+Rim&amp;destination=Lamtam+Maesa+Resort+Mae+Rim&amp;travelmode=driving&amp;waypoints=Mae+Kampong+Village%7CSan+Kamphaeng+Hot+Springs">Day 3 map</a></p>
+                    <p><a href="https://www.google.com/maps/dir/?api=1&amp;origin=Lamtam+Maesa+Resort+Mae+Rim&amp;destination=Chiang+Mai+International+Airport&amp;travelmode=driving">Day 4 map</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="hd">
+                <h2>สถานที่หลัก | Main Stops</h2>
+                <div class="chip">Driving plan</div>
+              </div>
+              <div class="bd">
+                <div class="mini-list">
+                  <div class="mini">
+                    <h4>Main attractions</h4>
+                    <p><a href="https://7greens.tourismthailand.org/en/2020/08/21/%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88%E0%B9%82%E0%B8%9A%E0%B8%A3%E0%B8%B2%E0%B8%93/">Chiang Mai Old Town</a></p>
+                    <p><a href="https://www.google.com/maps/search/?api=1&amp;query=Tha+Phae+Gate+Chiang+Mai">Tha Phae Gate</a></p>
+                    <p><a href="https://www.google.com/maps/search/?api=1&amp;query=Chiang+Mai+Sunday+Walking+Street">Sunday Walking Street</a></p>
+                    <p><a href="https://tourismproduct.tourismthailand.org/en/2025/02/24/%E0%B8%AD%E0%B8%B8%E0%B8%97%E0%B8%A2%E0%B8%B2%E0%B8%99%E0%B9%81%E0%B8%AB%E0%B9%88%E0%B8%87%E0%B8%8A%E0%B8%B2%E0%B8%95%E0%B8%B4%E0%B8%94%E0%B8%AD%E0%B8%A2%E0%B8%AA%E0%B8%B8%E0%B9%80%E0%B8%97%E0%B8%9E-%E0%B8%9B%E0%B8%B8%E0%B8%A2/">Doi Suthep</a></p>
+                    <p><a href="https://botanic.qsbg.org/">Queen Sirikit Botanic Garden</a></p>
+                    <p><a href="https://tourismproduct.tourismthailand.org/2025/06/24/%E0%B8%AB%E0%B8%A1%E0%B8%B9%E0%B9%88%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%81%E0%B8%B3%E0%B8%9B%E0%B8%AD%E0%B8%87/">Mae Kampong Village</a></p>
+                    <p><a href="https://www.skphotsprings.com/public/change-lang/en">San Kamphaeng Hot Springs</a></p>
+                  </div>
+
+                  <div class="mini">
+                    <h4>17 Oct transit stay after Pai</h4>
+                    <p>
+                      แนะนำ <a href="https://www.booking.com/hotel/th/the-signature-thapae.html">The Signature Hotel @ Thapae</a> สำหรับพักคืนวันที่ 17 ต.ค. หลังขับกลับจากปาย
+                      เพราะอยู่ใกล้ Tha Phae เดินทางเข้าเมืองง่าย ขับไปสนามบินเชียงใหม่สะดวก และมีที่จอดรถ
+                      <br />
+                      Recommended for the night of 17 Oct after driving back from Pai. It works well for a final evening in the Old Town area and for an easy drive to Chiang Mai Airport on 18 Oct.
+                    </p>
+                    <div class="actions" style="margin-top:8px">
+                      <a class="btn alt" href="https://www.booking.com/hotel/th/the-signature-thapae.html">Booking Link</a>
+                      <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=The+Signature+Hotel+Thapae+Chiang+Mai">Google Map</a>
+                    </div>
+                  </div>
+
+                  <div class="note">
+                    ราคาและห้องว่างของโรงแรมเปลี่ยนได้ตามวันเข้าพัก โปรโมชัน และประเภทห้อง กรุณาตรวจสอบหน้าจองอีกครั้งก่อนชำระเงิน
+                    <br />
+                    Hotel prices and availability can change according to stay dates, promotions, and room type. Please recheck the booking page before payment.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -6,7 +6,10 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const projectRoot = path.resolve(__dirname, "..");
 const blogDir = path.join(projectRoot, "blog");
-const contentPath = path.join(projectRoot, "content", "blog-posts.json");
+const contentPaths = [
+  path.join(projectRoot, "content", "blog-posts.json"),
+  path.join(projectRoot, "content", "blog-cluster-expansion.json")
+];
 const sitemapPath = path.join(projectRoot, "sitemap.xml");
 const feedPath = path.join(projectRoot, "feed.xml");
 const baseUrl = (process.env.PINPOINT_BASE_URL || "https://pinpointaccountingservice.com").replace(/\/+$/, "");
@@ -38,6 +41,26 @@ function renderJsonLd(data) {
 function asArray(value) {
   if (value == null) return [];
   return Array.isArray(value) ? value : [value];
+}
+
+function loadPosts() {
+  const existingFiles = contentPaths.filter((filePath) => fs.existsSync(filePath));
+  if (!existingFiles.length) {
+    throw new Error(`Missing blog content files: ${contentPaths.join(", ")}`);
+  }
+
+  const allPosts = existingFiles
+    .flatMap((filePath) => JSON.parse(fs.readFileSync(filePath, "utf8").replace(/^\uFEFF/, "")))
+    .sort((a, b) => new Date(b.date) - new Date(a.date));
+
+  const uniquePosts = new Map();
+  for (const post of allPosts) {
+    if (!uniquePosts.has(post.slug)) {
+      uniquePosts.set(post.slug, post);
+    }
+  }
+
+  return [...uniquePosts.values()];
 }
 
 function sectionParagraphs(list) {
@@ -288,20 +311,44 @@ function renderFooter(descriptionTh, descriptionEn) {
   <div class="footer-grid">
     <section>
       <h3>Pinpoint Accounting &amp; Service, Ltd.</h3>
-      <p data-th="${htmlEscape(descriptionTh)}" data-en="${htmlEscape(descriptionEn)}">${htmlEscape(descriptionTh)}</p>
+      <p
+        data-th="ทีมงานบัญชี ภาษี และเอกสารธุรกิจที่เน้นความถูกต้อง ตรงเวลา และการดูแลอย่างมืออาชีพ เพื่อให้ธุรกิจของคุณเดินหน้าได้อย่างมั่นใจ"
+        data-en="Trusted accounting, tax, and business-compliance support focused on accuracy, timeliness, and professional follow-through."
+      >
+        ทีมงานบัญชี ภาษี และเอกสารธุรกิจที่เน้นความถูกต้อง ตรงเวลา และการดูแลอย่างมืออาชีพ เพื่อให้ธุรกิจของคุณเดินหน้าได้อย่างมั่นใจ
+      </p>
     </section>
     <section class="footer-links">
-      <h3>Pages</h3>
-      <a href="/">Home</a>
+      <h3 data-th="บริการและข้อมูล" data-en="Services &amp; Info">บริการและข้อมูล</h3>
+      <a href="/bangkok-accounting" data-th="สำนักงานบัญชีกรุงเทพ" data-en="Bangkok Accounting">สำนักงานบัญชีกรุงเทพ</a>
       <a href="/services">Services</a>
       <a href="/about">About</a>
       <a href="/resources">Resources</a>
+      <a href="/faq">FAQ</a>
       <a href="/blog">Blog</a>
+      <a href="/privacy">Privacy</a>
     </section>
     <section class="footer-meta">
-      <h3>Contact</h3>
+      <h3 data-th="ติดต่อ" data-en="Contact">ติดต่อ</h3>
       <p>Mobile: 092-749-7442</p>
       <p>Website: pinpointaccountingservice.com</p>
+      <p
+        class="footer-address"
+        data-th="ที่ตั้งบริษัท: 294 ซอยอยู่เจริญ29 ถนนรัชดาภิเษก18 แขวงสามเสนนอก เขตห้วยขวาง กรุงเทพฯ 10310"
+        data-en="Office: 294 Soi Yoo Charoen 29, Ratchadaphisek 18 Rd., Sam Sen Nok, Huai Khwang, Bangkok 10310"
+      >
+        ที่ตั้งบริษัท: 294 ซอยอยู่เจริญ29 ถนนรัชดาภิเษก18 แขวงสามเสนนอก เขตห้วยขวาง กรุงเทพฯ 10310
+      </p>
+      <a
+        class="map-pin-link"
+        href="https://maps.app.goo.gl/ZgQJbSdcryvowz1K6"
+        target="_blank"
+        rel="noreferrer"
+        data-th="Open Google Maps"
+        data-en="Open Google Maps"
+        >Open Google Maps</a
+      >
+      <p data-th="รองรับภาษาไทยและอังกฤษ" data-en="Thai and English support available">รองรับภาษาไทยและอังกฤษ</p>
     </section>
   </div>
   <p class="copyright">© <span data-current-year>2026</span> Pinpoint Accounting &amp; Service, Ltd.</p>
@@ -311,7 +358,7 @@ function renderFooter(descriptionTh, descriptionEn) {
 function renderBlogIndex(posts) {
   const blogUrl = `${baseUrl}/blog`;
   const blogDescriptionTh = "คลังบทความด้านบัญชี ภาษี จดทะเบียนบริษัท DBD วีซ่า Work Permit และใบอนุญาตธุรกิจ สำหรับผู้ประกอบการในประเทศไทย";
-  const blogDescriptionEn = "A practical article hub covering accounting, tax, DBD, visa/work permit, and business licensing topics for Thailand-based businesses.";
+  const blogDescriptionEn = "Accounting, tax, DBD, visa/work permit, and business-compliance articles for business owners operating in Thailand.";
   const blogSchema = renderJsonLd(buildBlogSchema(posts));
   const cards = posts
     .map((post) => {
@@ -341,7 +388,7 @@ function renderBlogIndex(posts) {
       name="description"
       content="ศูนย์รวมบทความด้านบัญชี ภาษี จดทะเบียนบริษัท DBD วีซ่า Work Permit และใบอนุญาตธุรกิจ สำหรับผู้ประกอบการในประเทศไทย"
       data-th="ศูนย์รวมบทความด้านบัญชี ภาษี จดทะเบียนบริษัท DBD วีซ่า Work Permit และใบอนุญาตธุรกิจ สำหรับผู้ประกอบการในประเทศไทย"
-      data-en="A practical article hub covering accounting, tax, DBD, visa/work permit, and business licensing topics for Thailand-based businesses."
+      data-en="Accounting, tax, DBD, visa/work permit, and business-compliance articles for business owners operating in Thailand."
     />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="${siteName}" />
@@ -386,26 +433,26 @@ ${blogSchema}
     data-title-en="Pinpoint Blog | Accounting, Tax, and Corporate Compliance Articles"
   >
     ${renderHeader(
-      "คลังบทความเชิงปฏิบัติสำหรับเจ้าของธุรกิจและผู้บริหาร",
-      "Practical article hub for business owners and operations leaders"
+      "บทความสำหรับเจ้าของธุรกิจที่ต้องการข้อมูลก่อนเริ่มใช้บริการ",
+      "Articles for business owners preparing to use accounting and compliance services"
     )}
 
     <main class="page-wrap">
       <section class="section page-hero">
         <div class="hero-grid">
           <div class="hero-copy">
-            <p class="eyebrow" data-th="PINPOINT KNOWLEDGE HUB" data-en="PINPOINT KNOWLEDGE HUB">PINPOINT KNOWLEDGE HUB</p>
+            <p class="eyebrow" data-th="PINPOINT BUSINESS ARTICLES" data-en="PINPOINT BUSINESS ARTICLES">PINPOINT BUSINESS ARTICLES</p>
             <h1
-              data-th="บทความบัญชี ภาษี และงานกำกับดูแลธุรกิจที่นำไปใช้ได้จริง"
-              data-en="Practical accounting, tax, and business-compliance articles"
+              data-th="บทความบัญชี ภาษี และเอกสารธุรกิจที่อ่านแล้วเอาไปใช้ต่อได้"
+              data-en="Accounting, tax, and business-document articles you can use right away"
             >
-              บทความบัญชี ภาษี และงานกำกับดูแลธุรกิจที่นำไปใช้ได้จริง
+              บทความบัญชี ภาษี และเอกสารธุรกิจที่อ่านแล้วเอาไปใช้ต่อได้
             </h1>
             <p
-              data-th="เราจัดเนื้อหาแบบมืออาชีพ: มีบทสรุปผู้บริหาร ขั้นตอนปฏิบัติจริง เช็กลิสต์ และลิงก์อ้างอิงจากหน่วยงานทางการ เพื่อให้คุณใช้ตัดสินใจก่อนเริ่มเคสจริงได้อย่างมั่นใจ"
-              data-en="Each article is structured with an executive summary, practical steps, checklists, and official-source links so you can make confident decisions before starting a real case."
+              data-th="เราเขียนจากคำถามที่ลูกค้าถามจริงในการทำบัญชี ภาษี จดทะเบียนบริษัท วีซ่า และใบอนุญาต เพื่อให้คุณอ่านแล้วเห็นภาพก่อนเริ่มงาน"
+              data-en="These articles are based on the real questions clients ask about accounting, tax, company registration, visa, and licensing before starting work with us."
             >
-              เราจัดเนื้อหาแบบมืออาชีพ: มีบทสรุปผู้บริหาร ขั้นตอนปฏิบัติจริง เช็กลิสต์ และลิงก์อ้างอิงจากหน่วยงานทางการ เพื่อให้คุณใช้ตัดสินใจก่อนเริ่มเคสจริงได้อย่างมั่นใจ
+              เราเขียนจากคำถามที่ลูกค้าถามจริงในการทำบัญชี ภาษี จดทะเบียนบริษัท วีซ่า และใบอนุญาต เพื่อให้คุณอ่านแล้วเห็นภาพก่อนเริ่มงาน
             </p>
             <div class="hero-actions">
               <a class="btn btn-primary" href="/#lead-form" data-th="ให้ทีมประเมินเคสของคุณ" data-en="Get your case assessed">ให้ทีมประเมินเคสของคุณ</a>
@@ -413,7 +460,7 @@ ${blogSchema}
             </div>
           </div>
           <aside class="hero-aside">
-            <h3 data-th="มาตรฐานบทความของเรา" data-en="Editorial standard">มาตรฐานบทความของเรา</h3>
+            <h3 data-th="สิ่งที่คุณจะได้จากบทความ" data-en="What you will get from these articles">สิ่งที่คุณจะได้จากบทความ</h3>
             <ul class="checklist">
               <li data-th="อธิบายตามสถานการณ์จริงของผู้ประกอบการ ไม่ใช่ข้อความโฆษณาทั่วไป" data-en="Built for real business situations, not generic ad copy">อธิบายตามสถานการณ์จริงของผู้ประกอบการ ไม่ใช่ข้อความโฆษณาทั่วไป</li>
               <li data-th="เชื่อมโยงเอกสารอ้างอิงทางการ เช่น DBD กรมสรรพากร และหน่วยงานที่เกี่ยวข้อง" data-en="Linked to official references such as DBD, Revenue Department, and related authorities">เชื่อมโยงเอกสารอ้างอิงทางการ เช่น DBD กรมสรรพากร และหน่วยงานที่เกี่ยวข้อง</li>
@@ -437,8 +484,8 @@ ${cards}
     </main>
 
     ${renderFooter(
-      "คลังความรู้ที่ช่วยให้เจ้าของธุรกิจเตรียมเอกสารและวางลำดับงานได้อย่างเป็นระบบ ก่อนเริ่มงานจริง",
-      "A knowledge hub that helps business owners prepare documents and workflow systematically before starting real execution."
+      "บทความที่ช่วยให้เจ้าของธุรกิจเข้าใจขั้นตอน เตรียมเอกสาร และคุยกับทีมงานได้ง่ายขึ้นก่อนเริ่มงาน",
+      "Articles that help business owners understand the process, prepare documents, and speak with the team more easily before starting."
     )}
 
     <script src="/tracking.js"></script>
@@ -520,14 +567,14 @@ ${breadcrumbSchema}
     data-title-en="${titleEn} | Pinpoint Blog"
   >
     ${renderHeader(
-      "บทความความรู้ด้านบัญชี ภาษี และการกำกับดูแลธุรกิจ",
-      "Knowledge articles for accounting, tax, and corporate compliance"
+      "บทความสำหรับเจ้าของธุรกิจที่ต้องการข้อมูลก่อนเริ่มใช้บริการ",
+      "Articles for business owners preparing to use accounting and compliance services"
     )}
 
     <main class="page-wrap">
       <section class="section article-shell">
         <div class="article-head">
-          <p class="kicker" data-th="PINPOINT KNOWLEDGE ARTICLE" data-en="PINPOINT KNOWLEDGE ARTICLE">PINPOINT KNOWLEDGE ARTICLE</p>
+          <p class="kicker" data-th="PINPOINT BUSINESS ARTICLE" data-en="PINPOINT BUSINESS ARTICLE">PINPOINT BUSINESS ARTICLE</p>
           <div class="service-meta">
             <span class="chip" data-th="${categoryTh}" data-en="${categoryEn}">${categoryTh}</span>
             <span class="chip gold" data-th="${readTh}" data-en="${readEn}">${readTh}</span>
@@ -562,7 +609,7 @@ ${renderSections(post.sections, "en")}
 
           <aside class="article-sidebar">
             <section class="note-box">
-              <h3 data-th="Executive Summary" data-en="Executive Summary">Executive Summary</h3>
+              <h3 data-th="สรุปประเด็นสำคัญ" data-en="Key takeaways">สรุปประเด็นสำคัญ</h3>
               <div class="lang-panel is-active" data-lang-panel="th">
 ${renderSummary(post.summary_th)}
               </div>
@@ -593,8 +640,8 @@ ${renderSources(post.sources, "en")}
         ${renderArticleRecommendations(post, posts)}
 
         <div class="article-nav">
-          <a class="btn btn-primary" href="/#lead-form" data-th="ส่งข้อมูลให้ทีมประเมินเคสของคุณ" data-en="Submit your case for assessment">ส่งข้อมูลให้ทีมประเมินเคสของคุณ</a>
-          <a class="btn btn-secondary" href="/blog" data-th="กลับหน้ารวมบทความ" data-en="Back to blog index">กลับหน้ารวมบทความ</a>
+          <a class="btn btn-primary" href="/#lead-form" data-th="ขอให้ทีมช่วยดูเคสนี้" data-en="Ask the team to review this case">ขอให้ทีมช่วยดูเคสนี้</a>
+          <a class="btn btn-secondary" href="/blog" data-th="กลับไปดูบทความทั้งหมด" data-en="Back to all articles">กลับไปดูบทความทั้งหมด</a>
           <a class="btn btn-soft line-chat" href="#" target="_blank" rel="noreferrer" data-th="คุยผ่าน LINE OA" data-en="Chat via LINE OA">คุยผ่าน LINE OA</a>
         </div>
       </section>
@@ -616,11 +663,22 @@ function renderSitemap(posts) {
   const staticPaths = [
     { path: "/", lastmod: today },
     { path: "/bangkok-accounting", lastmod: today },
+    { path: "/monthly-accounting", lastmod: today },
+    { path: "/company-registration", lastmod: today },
+    { path: "/dbd-amendments", lastmod: today },
+    { path: "/visa-work-permit", lastmod: today },
+    { path: "/business-licenses", lastmod: today },
+    { path: "/payroll-social-security", lastmod: today },
+    { path: "/corporate-tax-planning", lastmod: today },
+    { path: "/audit-preparation", lastmod: today },
+    { path: "/foreign-business-support", lastmod: today },
+    { path: "/company-dissolution", lastmod: today },
     { path: "/services", lastmod: today },
     { path: "/about", lastmod: today },
     { path: "/resources", lastmod: today },
     { path: "/faq", lastmod: today },
     { path: "/privacy", lastmod: today },
+    { path: "/terms", lastmod: today },
     { path: "/blog", lastmod: today },
     { path: "/thank-you", lastmod: today }
   ];
@@ -630,7 +688,9 @@ function renderSitemap(posts) {
     lastmod: post.date || today
   }));
 
-  const all = [...staticPaths, ...blogPaths];
+  const all = [...staticPaths, ...blogPaths].filter((item, index, array) => {
+    return array.findIndex((candidate) => candidate.path === item.path) === index;
+  });
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${all
@@ -645,13 +705,7 @@ ${all
 `;
 }
 
-if (!fs.existsSync(contentPath)) {
-  throw new Error(`Missing blog content file: ${contentPath}`);
-}
-
-const posts = JSON.parse(fs.readFileSync(contentPath, "utf8")).sort(
-  (a, b) => new Date(b.date) - new Date(a.date)
-);
+const posts = loadPosts();
 
 fs.mkdirSync(blogDir, { recursive: true });
 for (const entry of fs.readdirSync(blogDir, { withFileTypes: true })) {

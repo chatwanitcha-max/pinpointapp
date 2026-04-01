@@ -1,0 +1,792 @@
+﻿[
+    {
+        "slug":  "monthly-accounting",
+        "subtitle_th":  "บริการบัญชีรายเดือนสำหรับธุรกิจที่ต้องการระบบหลังบ้านชัดเจน",
+        "subtitle_en":  "Monthly accounting support for businesses that need a clear back-office system",
+        "meta_title_th":  "รับทำบัญชีรายเดือน | Pinpoint Accounting \u0026 Service, Ltd.",
+        "meta_title_en":  "Monthly Accounting Service | Pinpoint Accounting \u0026 Service, Ltd.",
+        "meta_description_th":  "บริการรับทำบัญชีรายเดือน ภาษีซื้อขาย ภาษีหัก ณ ที่จ่าย และปิดงบ สำหรับ SME และบริษัทที่ต้องการทีมงานดูแลต่อเนื่อง",
+        "meta_description_en":  "Monthly accounting, VAT, withholding tax, and closing support for SMEs and companies that need an ongoing finance back-office team.",
+        "eyebrow_th":  "MONTHLY ACCOUNTING",
+        "eyebrow_en":  "MONTHLY ACCOUNTING",
+        "hero_title_th":  "รับทำบัญชีรายเดือนและภาษีสำหรับธุรกิจที่ต้องการทีมดูแลต่อเนื่อง",
+        "hero_title_en":  "Monthly accounting and tax support for businesses that need an ongoing team",
+        "hero_description_th":  "เหมาะกับบริษัทที่ต้องการให้เอกสารบัญชีและภาษีเดินต่อได้ทุกเดือนอย่างเป็นระบบ ลดงานค้าง ลดความเสี่ยง และมีคนคอยตามเรื่องให้ครบ",
+        "hero_description_en":  "Built for companies that want a stable monthly accounting and tax process with less backlog, lower risk, and clear follow-through.",
+        "highlights_th":  [
+                              "บันทึกรายการประจำเดือนอย่างเป็นระบบ",
+                              "ดูแล VAT และภาษีหัก ณ ที่จ่าย",
+                              "สรุปข้อมูลเพื่อให้ผู้บริหารติดตามงานได้ง่าย"
+                          ],
+        "highlights_en":  [
+                              "Structured monthly bookkeeping",
+                              "VAT and withholding tax support",
+                              "Management-friendly summaries"
+                          ],
+        "deliverables_title_th":  "สิ่งที่ลูกค้ามักให้เราช่วยดูแล",
+        "deliverables_title_en":  "What clients usually ask us to handle",
+        "deliverables_th":  [
+                                "รับเอกสารและจัดรอบงานประจำเดือน",
+                                "บันทึกบัญชีและกระทบยอดรายการหลัก",
+                                "เตรียมข้อมูลภาษีซื้อ-ขาย และภาษีหัก ณ ที่จ่าย",
+                                "เตรียมข้อมูลปิดงบและตอบคำถามจากฝ่ายบริหาร"
+                            ],
+        "deliverables_en":  [
+                                "Monthly document intake and work cycle management",
+                                "Bookkeeping and key reconciliations",
+                                "VAT and withholding tax preparation",
+                                "Closing support and management coordination"
+                            ],
+        "process_title_th":  "แนวทางทำงานโดยทั่วไป",
+        "process_title_en":  "Typical working process",
+        "process":  [
+                        {
+                            "title_th":  "1. ดูรอบเอกสารและปัญหาค้างก่อนเริ่ม",
+                            "title_en":  "1. Review document cycle and current backlog",
+                            "body_th":  "เริ่มจากดูว่าเอกสารมาจากช่องทางไหน ใครเป็นผู้ส่ง และมีจุดค้างตรงไหนบ้างก่อนวางรอบงาน",
+                            "body_en":  "We first review document flow, ownership, and any backlog before setting the work cycle."
+                        },
+                        {
+                            "title_th":  "2. วางรูปแบบรับส่งข้อมูลที่ทีมใช้งานได้จริง",
+                            "title_en":  "2. Set a practical document-handling workflow",
+                            "body_th":  "จัดวิธีรับส่งเอกสารที่ทำได้จริงกับทีมของลูกค้า เพื่อให้ส่งงานต่อเนื่องได้ทุกเดือน",
+                            "body_en":  "We set a practical handoff method so your team can keep documents moving every month."
+                        },
+                        {
+                            "title_th":  "3. ติดตามภาษีและรายการที่ต้องใช้ตามรอบ",
+                            "title_en":  "3. Track tax filings and recurring items",
+                            "body_th":  "ทีมช่วยตามรายการที่เกี่ยวกับ VAT ภาษีหัก ณ ที่จ่าย และงานปิดงบตามความพร้อมของกิจการ",
+                            "body_en":  "The team follows VAT, withholding tax, and closing requirements based on your operating cycle."
+                        }
+                    ],
+        "ideal_title_th":  "บริการนี้เหมาะกับใคร",
+        "ideal_title_en":  "Who this service fits best",
+        "ideal_for_th":  [
+                             "SME ที่เอกสารเริ่มมากขึ้นและต้องการคนช่วยจัดระบบ",
+                             "บริษัทที่มีงานบัญชีค้างหรือภาษีตามไม่ทัน",
+                             "ธุรกิจที่ต้องการทีมดูแลต่อเนื่องมากกว่าการแก้ปัญหาเป็นครั้งๆ"
+                         ],
+        "ideal_for_en":  [
+                             "SMEs with growing document volume",
+                             "Companies with accounting backlog or tax follow-up issues",
+                             "Businesses that need continuity rather than one-off fixes"
+                         ],
+        "related_posts":  [
+                              "vat-readiness-thailand",
+                              "sme-year-end-closing",
+                              "payroll-social-security-guide"
+                          ],
+        "cta_title_th":  "หากต้องการเริ่มจัดระบบบัญชีรายเดือนให้เดินต่อได้ทุกเดือน ส่งเคสให้ทีมดูได้ทันที",
+        "cta_title_en":  "If you want a monthly accounting system that keeps moving, send the case to the team now"
+    },
+    {
+        "slug":  "company-registration",
+        "subtitle_th":  "บริการจดทะเบียนจัดตั้งบริษัทสำหรับผู้เริ่มธุรกิจในไทย",
+        "subtitle_en":  "Company registration support for founders starting in Thailand",
+        "meta_title_th":  "รับจดทะเบียนบริษัท | Pinpoint Accounting \u0026 Service, Ltd.",
+        "meta_title_en":  "Company Registration Service | Pinpoint Accounting \u0026 Service, Ltd.",
+        "meta_description_th":  "บริการรับจดทะเบียนจัดตั้งบริษัท วางโครงสร้างเอกสาร และช่วยเตรียมข้อมูลก่อนยื่น DBD สำหรับผู้ประกอบการไทยและต่างชาติ",
+        "meta_description_en":  "Company registration support, document preparation, and DBD filing coordination for Thai and international business owners.",
+        "eyebrow_th":  "COMPANY REGISTRATION",
+        "eyebrow_en":  "COMPANY REGISTRATION",
+        "hero_title_th":  "รับจดทะเบียนบริษัทและช่วยเตรียมโครงสร้างเอกสารก่อนเริ่มธุรกิจ",
+        "hero_title_en":  "Company registration and document-structure support before you start operating",
+        "hero_description_th":  "เหมาะกับผู้ประกอบการที่ต้องการเริ่มธุรกิจให้ถูกต้องตั้งแต่ต้น ทั้งเรื่องชื่อบริษัท ผู้ถือหุ้น วัตถุประสงค์ และเอกสารที่ต้องใช้กับ DBD",
+        "hero_description_en":  "Ideal for founders who want to start correctly from day one, from company name and shareholding to DBD document readiness.",
+        "highlights_th":  [
+                              "ช่วยแยกข้อมูลสำคัญก่อนเริ่มยื่น",
+                              "ช่วยดูความครบถ้วนของเอกสารแต่ละฝ่าย",
+                              "ช่วยลดการแก้เอกสารซ้ำระหว่างทาง"
+                          ],
+        "highlights_en":  [
+                              "Clarify the core setup information early",
+                              "Review document completeness by party",
+                              "Reduce correction cycles during filing"
+                          ],
+        "deliverables_title_th":  "สิ่งที่ทีมช่วยเตรียมร่วมกับลูกค้า",
+        "deliverables_title_en":  "What the team prepares with the client",
+        "deliverables_th":  [
+                                "แยกข้อมูลชื่อบริษัท วัตถุประสงค์ และผู้ถือหุ้น",
+                                "ช่วยดูรายการเอกสารของกรรมการ ผู้ถือหุ้น และสถานที่ตั้ง",
+                                "ช่วยวางลำดับงานก่อนยื่น DBD และงานต่อเนื่องหลังจด",
+                                "ช่วยประสานงานเรื่อง VAT และงานหลังเริ่มธุรกิจ"
+                            ],
+        "deliverables_en":  [
+                                "Company name, objectives, and shareholding preparation",
+                                "Director, shareholder, and office-document checklist review",
+                                "DBD filing sequence and post-registration planning",
+                                "VAT and post-setup coordination"
+                            ],
+        "process_title_th":  "แนวทางเริ่มต้นเคสจดทะเบียน",
+        "process_title_en":  "How registration cases usually start",
+        "process":  [
+                        {
+                            "title_th":  "1. เก็บข้อมูลโครงสร้างธุรกิจก่อน",
+                            "title_en":  "1. Collect the business structure first",
+                            "body_th":  "ทีมช่วยแยกข้อมูลหลัก เช่น ใครเป็นผู้ถือหุ้น กรรมการ และวัตถุประสงค์ทางธุรกิจ เพื่อให้เลือกแนวทางเอกสารได้ถูก",
+                            "body_en":  "We clarify the basic structure first so the filing path and documents are chosen correctly."
+                        },
+                        {
+                            "title_th":  "2. เช็กเอกสารให้พร้อมก่อนยื่น",
+                            "title_en":  "2. Prepare the documents before filing",
+                            "body_th":  "ดูว่าฝั่งลูกค้า ฝั่งผู้ถือหุ้น และสถานที่ตั้งมีเอกสารครบหรือยัง เพื่อลดการยื่นไม่ผ่านเพราะรายละเอียดขาด",
+                            "body_en":  "We check whether shareholder, director, and office documents are ready before filing."
+                        },
+                        {
+                            "title_th":  "3. วางงานต่อเนื่องหลังจดบริษัท",
+                            "title_en":  "3. Plan post-registration work",
+                            "body_th":  "เมื่อจดเสร็จ ทีมช่วยต่อเรื่องบัญชี ภาษี และการเริ่มงานหลังบ้านให้ไปต่อได้ทันที",
+                            "body_en":  "After registration, we help connect the next steps for accounting, tax, and business operations."
+                        }
+                    ],
+        "ideal_title_th":  "เหมาะกับเคสแบบไหน",
+        "ideal_title_en":  "Best-fit cases",
+        "ideal_for_th":  [
+                             "ผู้เริ่มธุรกิจที่ต้องการคนช่วยวางลำดับเอกสาร",
+                             "ผู้ประกอบการต่างชาติที่ต้องการทีมสื่อสารไทย/อังกฤษ",
+                             "กิจการที่อยากให้การจดบริษัทเชื่อมต่อไปถึงงานบัญชีและภาษี"
+                         ],
+        "ideal_for_en":  [
+                             "New founders who need document structure support",
+                             "Foreign business owners who need Thai-English communication",
+                             "Businesses that want registration linked to accounting and tax setup"
+                         ],
+        "related_posts":  [
+                              "company-registration-thailand-checklist",
+                              "dbd-amendment-checklist",
+                              "vat-readiness-thailand"
+                          ],
+        "cta_title_th":  "หากต้องการเริ่มจดบริษัทและให้ทีมช่วยดูโครงสร้างเอกสารตั้งแต่ต้น คุยกับเราได้ทันที",
+        "cta_title_en":  "If you want help structuring the registration case from the start, talk to the team now"
+    },
+    {
+        "slug":  "dbd-amendments",
+        "subtitle_th":  "บริการเปลี่ยนแปลงข้อมูลบริษัทกับ DBD",
+        "subtitle_en":  "DBD amendment support for company changes",
+        "meta_title_th":  "เปลี่ยนแปลงข้อมูลบริษัท DBD | Pinpoint Accounting \u0026 Service, Ltd.",
+        "meta_title_en":  "DBD Amendment Service | Pinpoint Accounting \u0026 Service, Ltd.",
+        "meta_description_th":  "บริการช่วยเตรียมเอกสารและลำดับงานสำหรับเปลี่ยนกรรมการ เปลี่ยนที่อยู่ เพิ่มทุน แก้ไขวัตถุประสงค์ และงานเปลี่ยนแปลงข้อมูลบริษัทกับ DBD",
+        "meta_description_en":  "Support for DBD amendments including director changes, office relocation, capital changes, and corporate record updates.",
+        "eyebrow_th":  "DBD AMENDMENTS",
+        "eyebrow_en":  "DBD AMENDMENTS",
+        "hero_title_th":  "บริการเปลี่ยนแปลงข้อมูลบริษัทกับ DBD แบบเป็นขั้นตอนและตรวจสอบได้",
+        "hero_title_en":  "Structured DBD amendment support with clear and traceable steps",
+        "hero_description_th":  "สำหรับบริษัทที่ต้องเปลี่ยนกรรมการ ที่อยู่ เพิ่มทุน แก้ไขวัตถุประสงค์ หรือปรับข้อมูลนิติบุคคล และต้องการทีมช่วยแยกเอกสารกับลำดับงานให้ชัด",
+        "hero_description_en":  "For companies changing directors, address, capital, objectives, or other corporate records and needing a team to organize the filing path clearly.",
+        "highlights_th":  [
+                              "ช่วยแยกประเภทงานเปลี่ยนแปลงให้ชัด",
+                              "ช่วยเช็กเอกสารประกอบก่อนยื่น",
+                              "ช่วยดูงานต่อเนื่องหลังเปลี่ยนแปลงเสร็จ"
+                          ],
+        "highlights_en":  [
+                              "Classify the amendment scope clearly",
+                              "Check supporting documents before filing",
+                              "Review follow-up items after the change is complete"
+                          ],
+        "deliverables_title_th":  "งานที่ลูกค้ามักให้เราช่วยในกลุ่มนี้",
+        "deliverables_title_en":  "Typical requests in this service lane",
+        "deliverables_th":  [
+                                "เปลี่ยนกรรมการหรือผู้มีอำนาจลงนาม",
+                                "เปลี่ยนที่อยู่บริษัทหรือข้อมูลสำนักงาน",
+                                "เพิ่มทุน ลดทุน หรือแก้ไขวัตถุประสงค์",
+                                "เชื่อมงาน DBD กับข้อมูลบัญชีและเอกสารภายใน"
+                            ],
+        "deliverables_en":  [
+                                "Director and signing-authority changes",
+                                "Registered office and company-record updates",
+                                "Capital or objective amendments",
+                                "Post-amendment coordination with internal records"
+                            ],
+        "process_title_th":  "ลำดับการทำงานโดยทั่วไป",
+        "process_title_en":  "Typical amendment flow",
+        "process":  [
+                        {
+                            "title_th":  "1. แยกว่าต้องเปลี่ยนอะไรบ้าง",
+                            "title_en":  "1. Define exactly what needs to change",
+                            "body_th":  "ดูให้ชัดว่ากรณีเป็นเรื่องกรรมการ ที่อยู่ ทุน หรือข้อมูลอื่น เพราะแต่ละงานใช้เอกสารและจังหวะต่างกัน",
+                            "body_en":  "We define the exact amendment scope first because each type uses a different filing path and document set."
+                        },
+                        {
+                            "title_th":  "2. เตรียมมติและเอกสารประกอบ",
+                            "title_en":  "2. Prepare resolutions and supporting documents",
+                            "body_th":  "ช่วยดูว่ามติ เอกสารประกอบ และข้อมูลที่เกี่ยวข้องสอดคล้องกันก่อนเริ่มยื่น",
+                            "body_en":  "We review resolutions and supporting documents for consistency before filing."
+                        },
+                        {
+                            "title_th":  "3. ตรวจผลกระทบกับงานอื่นหลังยื่น",
+                            "title_en":  "3. Check downstream effects after filing",
+                            "body_th":  "หลังเปลี่ยนแปลงข้อมูลแล้ว ยังมีงานต่อเนื่องกับบัญชี ภาษี หรือเอกสารภายในที่ต้องอัปเดตให้ตรงกัน",
+                            "body_en":  "After the amendment, accounting, tax, and internal records may also need to be updated."
+                        }
+                    ],
+        "ideal_title_th":  "บริการนี้เหมาะกับใคร",
+        "ideal_title_en":  "Who usually needs this",
+        "ideal_for_th":  [
+                             "บริษัทที่กำลังปรับโครงสร้างหรือเปลี่ยนข้อมูลสำคัญ",
+                             "กิจการที่ต้องการคนช่วยดูรายละเอียดเอกสารก่อนยื่น",
+                             "ทีมที่ต้องการให้ข้อมูลหลังยื่นเชื่อมกับงานภายในต่อเนื่อง"
+                         ],
+        "ideal_for_en":  [
+                             "Companies going through structural or record changes",
+                             "Businesses that want document review before filing",
+                             "Teams that need internal records aligned after the update"
+                         ],
+        "related_posts":  [
+                              "dbd-amendment-checklist",
+                              "company-dissolution-process-thailand",
+                              "corporate-tax-planning-thailand"
+                          ],
+        "cta_title_th":  "หากบริษัทกำลังเปลี่ยนแปลงข้อมูลและอยากให้ทีมช่วยวางลำดับเอกสารกับขั้นตอน ส่งเคสให้เราดูก่อนได้",
+        "cta_title_en":  "If your company is changing corporate records and needs a clear filing path, send us the case details"
+    },
+    {
+        "slug":  "visa-work-permit",
+        "subtitle_th":  "บริการวีซ่าและ Work Permit สำหรับผู้บริหารและพนักงานต่างชาติ",
+        "subtitle_en":  "Visa and work permit support for foreign directors and staff",
+        "meta_title_th":  "วีซ่าและ Work Permit | Pinpoint Accounting \u0026 Service, Ltd.",
+        "meta_title_en":  "Visa and Work Permit Service | Pinpoint Accounting \u0026 Service, Ltd.",
+        "meta_description_th":  "บริการช่วยเตรียมเอกสารวีซ่าและ Work Permit ทั้งฝั่งบริษัทและผู้ยื่น สำหรับผู้บริหารและพนักงานต่างชาติที่ทำงานในไทย",
+        "meta_description_en":  "Visa and work permit preparation for foreign directors and staff, including company-side and applicant-side document coordination.",
+        "eyebrow_th":  "VISA + WORK PERMIT",
+        "eyebrow_en":  "VISA + WORK PERMIT",
+        "hero_title_th":  "บริการวีซ่าและ Work Permit สำหรับเคสธุรกิจที่ต้องการคนดูแลเอกสารอย่างเป็นระบบ",
+        "hero_title_en":  "Visa and work permit support for business cases that need structured document handling",
+        "hero_description_th":  "เหมาะกับบริษัทที่มีผู้บริหารหรือพนักงานต่างชาติ และต้องการทีมช่วยแยกเอกสารฝั่งบริษัท ฝั่งผู้ยื่น และงานต่อเนื่องที่เกี่ยวข้องกับใบอนุญาต",
+        "hero_description_en":  "Ideal for companies with foreign directors or staff that need document coordination on both the company side and applicant side.",
+        "highlights_th":  [
+                              "ช่วยแยกเอกสารฝั่งบริษัทและผู้ยื่น",
+                              "ช่วยวางลำดับงานก่อนยื่นและก่อนต่ออายุ",
+                              "ช่วยประสานเรื่องเอกสารที่เกี่ยวกับธุรกิจต่อเนื่อง"
+                          ],
+        "highlights_en":  [
+                              "Separate company and applicant document packs",
+                              "Plan both new filing and renewal timelines",
+                              "Coordinate related business-support documents"
+                          ],
+        "deliverables_title_th":  "สิ่งที่ลูกค้ามักให้ทีมช่วยดู",
+        "deliverables_title_en":  "What clients usually ask us to support",
+        "deliverables_th":  [
+                                "เช็กเอกสารฝั่งบริษัทก่อนเริ่มเคส",
+                                "เช็กเอกสารของผู้ยื่นและจุดที่มักขาด",
+                                "วางรอบงานต่ออายุเพื่อไม่ให้ใบอนุญาตขาดช่วง",
+                                "ประสานงานกับเอกสารบริษัทที่เกี่ยวข้อง"
+                            ],
+        "deliverables_en":  [
+                                "Company-side document review before filing",
+                                "Applicant document review and missing-item check",
+                                "Renewal timeline planning",
+                                "Coordination with related company records"
+                            ],
+        "process_title_th":  "แนวทางทำงานสำหรับเคสประเภทนี้",
+        "process_title_en":  "Typical workflow for this case type",
+        "process":  [
+                        {
+                            "title_th":  "1. แยกบทบาทและสถานะของผู้ยื่นให้ชัด",
+                            "title_en":  "1. Clarify the applicant role and case status",
+                            "body_th":  "ทีมเริ่มจากดูว่าผู้ยื่นเป็นผู้บริหารหรือพนักงาน และเคสเป็นการเริ่มใหม่ ต่ออายุ หรือแก้ไขข้อมูล",
+                            "body_en":  "We start by clarifying whether the applicant is a director or staff member and whether the case is new, renewal, or amendment."
+                        },
+                        {
+                            "title_th":  "2. เช็กเอกสารฝั่งบริษัทกับฝั่งผู้ยื่นแยกกัน",
+                            "title_en":  "2. Review company and applicant documents separately",
+                            "body_th":  "ช่วยให้มองเห็นจุดขาดและลดการสับสนระหว่างเอกสารของกิจการกับเอกสารส่วนบุคคล",
+                            "body_en":  "This helps surface missing items and avoids confusion between company and personal documents."
+                        },
+                        {
+                            "title_th":  "3. วางงานต่ออายุและงานประกอบอื่นล่วงหน้า",
+                            "title_en":  "3. Plan renewals and related tasks in advance",
+                            "body_th":  "เมื่อเคสเริ่มเดินแล้ว ทีมช่วยเตือนเรื่องต่ออายุและเอกสารที่เกี่ยวข้องกับการดำเนินธุรกิจต่อเนื่อง",
+                            "body_en":  "Once the case is active, we help track renewal timing and related business-support items."
+                        }
+                    ],
+        "ideal_title_th":  "เหมาะกับเคสแบบไหน",
+        "ideal_title_en":  "Best-fit cases",
+        "ideal_for_th":  [
+                             "บริษัทที่มีผู้บริหารหรือพนักงานต่างชาติ",
+                             "กิจการที่ต้องการทีมช่วยจัดเอกสารสองภาษา",
+                             "เคสที่ต้องการคนช่วยวางจังหวะต่ออายุและติดตามเอกสาร"
+                         ],
+        "ideal_for_en":  [
+                             "Companies with foreign directors or employees",
+                             "Businesses needing bilingual document support",
+                             "Cases that need renewal and document follow-through"
+                         ],
+        "related_posts":  [
+                              "visa-work-permit-business-guide",
+                              "business-license-readiness-checklist",
+                              "company-registration-thailand-checklist"
+                          ],
+        "cta_title_th":  "หากคุณมีเคสวีซ่าหรือ Work Permit และอยากให้ทีมช่วยแยกเอกสารกับขั้นตอนตั้งแต่ต้น ติดต่อเราได้ทันที",
+        "cta_title_en":  "If you have a visa or work permit case and want help structuring the process from the start, contact us now"
+    },
+    {
+        "slug":  "business-licenses",
+        "subtitle_th":  "บริการเตรียมเอกสารและประสานงานใบอนุญาตธุรกิจ",
+        "subtitle_en":  "Business-license preparation and coordination support",
+        "meta_title_th":  "บริการขอใบอนุญาตธุรกิจ | Pinpoint Accounting \u0026 Service, Ltd.",
+        "meta_title_en":  "Business License Service | Pinpoint Accounting \u0026 Service, Ltd.",
+        "meta_description_th":  "บริการช่วยเตรียมเอกสารและลำดับงานสำหรับใบอนุญาตที่เกี่ยวข้องกับธุรกิจ พร้อมช่วยเชื่อมข้อมูลกับงานบัญชี ภาษี และเอกสารบริษัท",
+        "meta_description_en":  "Business-license preparation and coordination with related company, accounting, and compliance documents.",
+        "eyebrow_th":  "BUSINESS LICENSES",
+        "eyebrow_en":  "BUSINESS LICENSES",
+        "hero_title_th":  "บริการช่วยเตรียมเอกสารขอใบอนุญาตที่เกี่ยวข้องกับธุรกิจอย่างเป็นระบบ",
+        "hero_title_en":  "Structured support for business-license preparation and coordination",
+        "hero_description_th":  "เหมาะกับกิจการที่ต้องขอใบอนุญาตเพิ่มก่อนเริ่มดำเนินงานหรือระหว่างขยายธุรกิจ และต้องการคนช่วยดูว่าต้องเตรียมข้อมูลอะไรบ้าง",
+        "hero_description_en":  "Built for businesses that need additional licenses before launch or during expansion and want help structuring the required documentation.",
+        "highlights_th":  [
+                              "ช่วยแยกว่าต้องใช้เอกสารชุดไหน",
+                              "ช่วยเชื่อมข้อมูลบริษัทกับงานใบอนุญาต",
+                              "ช่วยลดความสับสนก่อนเริ่มประสานหลายหน่วยงาน"
+                          ],
+        "highlights_en":  [
+                              "Identify the required document set",
+                              "Connect company records with licensing work",
+                              "Reduce confusion before dealing with multiple authorities"
+                          ],
+        "deliverables_title_th":  "งานที่ลูกค้ามักขอให้ช่วยในกลุ่มนี้",
+        "deliverables_title_en":  "Common support requests in this lane",
+        "deliverables_th":  [
+                                "เช็กข้อมูลบริษัทที่ต้องใช้ประกอบคำขอ",
+                                "ช่วยเตรียมรายการเอกสารก่อนเริ่มประสานงาน",
+                                "ช่วยดูว่ามีงาน DBD บัญชี หรือภาษีที่ต้องจัดให้พร้อมควบคู่กันหรือไม่",
+                                "ช่วยวางลำดับงานเมื่อต้องประสานหลายเรื่องพร้อมกัน"
+                            ],
+        "deliverables_en":  [
+                                "Review company records needed for the application",
+                                "Prepare the document checklist before coordination starts",
+                                "Check whether DBD, accounting, or tax work must be aligned first",
+                                "Plan the sequence when several workstreams overlap"
+                            ],
+        "process_title_th":  "แนวทางเริ่มงานขอใบอนุญาต",
+        "process_title_en":  "How license-related cases usually begin",
+        "process":  [
+                        {
+                            "title_th":  "1. ดูว่าธุรกิจอยู่ในช่วงไหน",
+                            "title_en":  "1. Review the business stage first",
+                            "body_th":  "ทีมจะดูว่ากิจการอยู่ช่วงเริ่มต้น กำลังเปิดสาขา หรือกำลังขยายบริการ เพราะแต่ละช่วงมีข้อมูลที่ต้องเตรียมต่างกัน",
+                            "body_en":  "We review whether the business is launching, opening a branch, or expanding because each stage changes the document priorities."
+                        },
+                        {
+                            "title_th":  "2. แยกเอกสารหลักออกจากเอกสารประกอบ",
+                            "title_en":  "2. Separate core records from supporting documents",
+                            "body_th":  "ช่วยให้ลูกค้ามองเห็นว่าข้อมูลบริษัทอะไรต้องพร้อมก่อน และอะไรเป็นเอกสารประกอบเพิ่มเติม",
+                            "body_en":  "We help separate must-have company records from secondary supporting documents."
+                        },
+                        {
+                            "title_th":  "3. เชื่อมกับงานบริษัทที่เกี่ยวข้อง",
+                            "title_en":  "3. Link licensing work to related company tasks",
+                            "body_th":  "บางเคสต้องดู DBD ภาษี หรือโครงสร้างบริษัทควบคู่กัน ทีมจึงช่วยวางลำดับให้ไม่ชนกัน",
+                            "body_en":  "Some license cases depend on DBD, tax, or company-record readiness, so we sequence the work to avoid conflicts."
+                        }
+                    ],
+        "ideal_title_th":  "เหมาะกับใคร",
+        "ideal_title_en":  "Who this helps most",
+        "ideal_for_th":  [
+                             "ธุรกิจที่ต้องขอใบอนุญาตก่อนเริ่มหรือก่อนขยายงาน",
+                             "บริษัทที่มีหลายเรื่องต้องเตรียมพร้อมกัน",
+                             "ลูกค้าที่ต้องการทีมช่วยดูงานเอกสารแบบเชื่อมกันทั้งระบบ"
+                         ],
+        "ideal_for_en":  [
+                             "Businesses needing licenses before launch or expansion",
+                             "Companies managing several readiness tasks at once",
+                             "Clients who want one team to connect the paperwork end-to-end"
+                         ],
+        "related_posts":  [
+                              "business-license-readiness-checklist",
+                              "dbd-amendment-checklist",
+                              "visa-work-permit-business-guide"
+                          ],
+        "cta_title_th":  "หากธุรกิจของคุณต้องเตรียมใบอนุญาตและอยากให้ทีมช่วยแยกลำดับเอกสารก่อนเริ่ม ติดต่อเราได้เลย",
+        "cta_title_en":  "If your business needs licensing support and a clearer document sequence, contact the team now"
+    },
+    {
+        "slug":  "payroll-social-security",
+        "subtitle_th":  "บริการเงินเดือนและประกันสังคมสำหรับธุรกิจที่เริ่มมีทีม",
+        "subtitle_en":  "Payroll and social security support for growing teams",
+        "meta_title_th":  "บริการเงินเดือนและประกันสังคม | Pinpoint Accounting \u0026 Service, Ltd.",
+        "meta_title_en":  "Payroll and Social Security Service | Pinpoint Accounting \u0026 Service, Ltd.",
+        "meta_description_th":  "ช่วยวางระบบเงินเดือน ประกันสังคม และการส่งข้อมูลพนักงานให้เป็นระเบียบสำหรับธุรกิจที่เริ่มมีทีมงาน",
+        "meta_description_en":  "Payroll, social security, and employee-admin support for businesses building a cleaner people-operations process.",
+        "eyebrow_th":  "PAYROLL \u0026 SOCIAL SECURITY",
+        "eyebrow_en":  "PAYROLL \u0026 SOCIAL SECURITY",
+        "hero_title_th":  "บริการเงินเดือนและประกันสังคมสำหรับธุรกิจที่ต้องการระบบคนและเอกสารที่ชัดเจน",
+        "hero_title_en":  "Payroll and social security support for businesses that want a clearer people-admin process",
+        "hero_description_th":  "เหมาะกับธุรกิจที่เริ่มมีพนักงานและต้องการให้ข้อมูล payroll ประกันสังคม และเอกสารที่เกี่ยวข้องเดินเป็นระบบมากขึ้น",
+        "hero_description_en":  "Built for companies that are starting to hire and want payroll, social security, and employee records to move in a more structured way.",
+        "highlights_th":  [
+                              "เริ่มมีพนักงานแต่ยังไม่มีระบบ payroll ที่นิ่ง",
+                              "ข้อมูลพนักงานและเอกสารยังอยู่หลายที่",
+                              "ต้องการคนช่วยไล่งานประกันสังคมให้ต่อเนื่อง"
+                          ],
+        "highlights_en":  [
+                              "The company has started hiring but payroll is not yet stable",
+                              "Employee data and support documents are spread across places",
+                              "The business wants help following through on social security administration"
+                          ],
+        "deliverables_title_th":  "สิ่งที่ทีมช่วยดูแลได้",
+        "deliverables_title_en":  "What the team can help manage",
+        "deliverables_th":  [
+                                "ช่วยจัด checklist ข้อมูลพนักงาน",
+                                "ช่วยดู flow งาน payroll และประกันสังคม",
+                                "ช่วยเชื่อมงานคนกับบัญชีรายเดือน"
+                            ],
+        "deliverables_en":  [
+                                "Set up an employee data checklist",
+                                "Review payroll and social security workflow",
+                                "Connect people admin with monthly accounting"
+                            ],
+        "process_title_th":  "แนวทางทำงานที่ลูกค้าจะเห็นภาพได้ง่าย",
+        "process_title_en":  "A clear working process clients can follow",
+        "process":  [
+                        {
+                            "title_th":  "1. ดูขอบเขตงานและปัญหาหลักก่อนเริ่ม",
+                            "title_en":  "1. Review scope and main pain points first",
+                            "body_th":  "เริ่มจากดูสถานะปัจจุบันของธุรกิจ เอกสารที่มี และสิ่งที่ต้องเร่งก่อน เพื่อให้วางลำดับงานได้ถูก",
+                            "body_en":  "We begin by reviewing the current business situation, available documents, and what needs to move first."
+                        },
+                        {
+                            "title_th":  "2. แยก checklist และผู้ประสานงาน",
+                            "title_en":  "2. Define the checklist and coordinators",
+                            "body_th":  "ทีมช่วยสรุปว่าต้องใช้อะไรบ้าง ใครควรส่งข้อมูลส่วนไหน และอะไรทำคู่ขนานกันได้",
+                            "body_en":  "We map the checklist, identify owners, and separate what can run in parallel."
+                        },
+                        {
+                            "title_th":  "3. เดินงานและติดตามจนปิดรายการ",
+                            "title_en":  "3. Execute and follow through",
+                            "body_th":  "เมื่อเริ่มงานแล้ว ทีมจะช่วยไล่สถานะ เอกสารค้าง และขั้นตอนถัดไปให้เห็นภาพต่อเนื่อง",
+                            "body_en":  "Once the work starts, we keep the case moving with clear status tracking and follow-through."
+                        }
+                    ],
+        "ideal_title_th":  "เหมาะกับใคร",
+        "ideal_title_en":  "Best fit for",
+        "ideal_for_th":  [
+                             "ธุรกิจที่เริ่มมีพนักงานชุดแรก",
+                             "ธุรกิจที่ payroll ยังตามกันหลายคน",
+                             "ธุรกิจที่อยากให้คนและบัญชีคุยข้อมูลกันง่ายขึ้น"
+                         ],
+        "ideal_for_en":  [
+                             "Businesses hiring their first team",
+                             "Businesses where payroll is being chased across several people",
+                             "Businesses that want better coordination between people admin and accounting"
+                         ],
+        "related_posts":  [
+                              "payroll-social-security-system-checklist",
+                              "monthly-accounting-handover-checklist",
+                              "year-end-document-close-checklist"
+                          ],
+        "cta_title_th":  "หากอยากให้ทีมช่วยแยกงาน payroll กับเอกสารพนักงาน เริ่มจากส่งรายละเอียดเคสได้เลย",
+        "cta_title_en":  "If you want the team to map payroll and employee-admin work clearly, send the case details to us"
+    },
+    {
+        "slug":  "corporate-tax-planning",
+        "subtitle_th":  "บริการวางแผนภาษีและเตรียมข้อมูลสำหรับผู้บริหาร",
+        "subtitle_en":  "Tax planning support for business owners and management",
+        "meta_title_th":  "บริการวางแผนภาษีธุรกิจ | Pinpoint Accounting \u0026 Service, Ltd.",
+        "meta_title_en":  "Corporate Tax Planning Service | Pinpoint Accounting \u0026 Service, Ltd.",
+        "meta_description_th":  "ช่วยแยกประเด็นภาษีที่เจ้าของธุรกิจควรดูเป็นระยะ พร้อมเชื่อมข้อมูลกับเอกสารและรายงานที่ใช้ตัดสินใจ",
+        "meta_description_en":  "Tax-planning support that connects recurring tax issues with the reports and documents owners need to review.",
+        "eyebrow_th":  "TAX PLANNING",
+        "eyebrow_en":  "TAX PLANNING",
+        "hero_title_th":  "บริการวางแผนภาษีธุรกิจสำหรับเจ้าของกิจการที่อยากมองภาพภาษีให้ชัดขึ้น",
+        "hero_title_en":  "Tax planning support for business owners who want a clearer view of ongoing tax issues",
+        "hero_description_th":  "เหมาะกับธุรกิจที่อยากคุยประเด็นภาษีแบบเป็นระบบ ลดความไม่แน่ใจ และเชื่อมข้อมูลให้ใช้ตัดสินใจได้ง่ายขึ้น",
+        "hero_description_en":  "Built for businesses that want more structured tax conversations, lower uncertainty, and reporting that supports better decisions.",
+        "highlights_th":  [
+                              "อยากดูภาพภาษีแบบต่อเนื่อง ไม่ใช่แก้เฉพาะหน้า",
+                              "ต้องการรู้ว่าควรขอรายงานอะไรจากทีมบัญชี",
+                              "อยากแยกจุดเสี่ยงที่ควรติดตามล่วงหน้า"
+                          ],
+        "highlights_en":  [
+                              "The owner wants a more structured tax view instead of reacting case by case",
+                              "The business wants to know what reports to ask from the accounting team",
+                              "The owner wants early visibility into recurring risk points"
+                          ],
+        "deliverables_title_th":  "สิ่งที่ช่วยต่อยอดได้",
+        "deliverables_title_en":  "What this service helps connect",
+        "deliverables_th":  [
+                                "ช่วยจัดหัวข้อภาษีที่ควรคุยเป็นประจำ",
+                                "ช่วยเชื่อมรายงานกับประเด็นภาษีที่ต้องติดตาม",
+                                "ช่วยสรุป next step ที่ควรทำก่อนปัญหาสะสม"
+                            ],
+        "deliverables_en":  [
+                                "Map regular tax topics worth reviewing",
+                                "Connect management reports with tax follow-up points",
+                                "Summarise next steps before issues accumulate"
+                            ],
+        "process_title_th":  "แนวทางทำงานที่ลูกค้าจะเห็นภาพได้ง่าย",
+        "process_title_en":  "A clear working process clients can follow",
+        "process":  [
+                        {
+                            "title_th":  "1. ดูขอบเขตงานและปัญหาหลักก่อนเริ่ม",
+                            "title_en":  "1. Review scope and main pain points first",
+                            "body_th":  "เริ่มจากดูสถานะปัจจุบันของธุรกิจ เอกสารที่มี และสิ่งที่ต้องเร่งก่อน เพื่อให้วางลำดับงานได้ถูก",
+                            "body_en":  "We begin by reviewing the current business situation, available documents, and what needs to move first."
+                        },
+                        {
+                            "title_th":  "2. แยก checklist และผู้ประสานงาน",
+                            "title_en":  "2. Define the checklist and coordinators",
+                            "body_th":  "ทีมช่วยสรุปว่าต้องใช้อะไรบ้าง ใครควรส่งข้อมูลส่วนไหน และอะไรทำคู่ขนานกันได้",
+                            "body_en":  "We map the checklist, identify owners, and separate what can run in parallel."
+                        },
+                        {
+                            "title_th":  "3. เดินงานและติดตามจนปิดรายการ",
+                            "title_en":  "3. Execute and follow through",
+                            "body_th":  "เมื่อเริ่มงานแล้ว ทีมจะช่วยไล่สถานะ เอกสารค้าง และขั้นตอนถัดไปให้เห็นภาพต่อเนื่อง",
+                            "body_en":  "Once the work starts, we keep the case moving with clear status tracking and follow-through."
+                        }
+                    ],
+        "ideal_title_th":  "เหมาะกับใคร",
+        "ideal_title_en":  "Best fit for",
+        "ideal_for_th":  [
+                             "เจ้าของธุรกิจที่เอกสารเริ่มเยอะ",
+                             "ผู้บริหารที่อยากใช้ข้อมูลบัญชีให้ตัดสินใจได้ดีขึ้น",
+                             "ธุรกิจที่ต้องการมองเรื่องภาษีแบบมีแผน"
+                         ],
+        "ideal_for_en":  [
+                             "Owners dealing with increasing document volume",
+                             "Managers who want accounting data to be more decision-ready",
+                             "Businesses that want a more planned tax approach"
+                         ],
+        "related_posts":  [
+                              "tax-audit-preparation-documents",
+                              "year-end-document-close-checklist",
+                              "outsource-accounting-vs-inhouse-team"
+                          ],
+        "cta_title_th":  "หากต้องการให้ทีมช่วยแยกประเด็นภาษีที่ควรดูเป็นระยะ ส่งรายละเอียดธุรกิจมาได้เลย",
+        "cta_title_en":  "If you want the team to map which tax topics deserve regular review, send us your business details"
+    },
+    {
+        "slug":  "audit-preparation",
+        "subtitle_th":  "บริการเตรียมเอกสารและโครงสร้างไฟล์ให้ตรวจย้อนหลังได้ง่าย",
+        "subtitle_en":  "Document-preparation support for cleaner review readiness",
+        "meta_title_th":  "บริการเตรียมเอกสารตรวจสอบย้อนหลัง | Pinpoint Accounting \u0026 Service, Ltd.",
+        "meta_title_en":  "Audit Preparation Service | Pinpoint Accounting \u0026 Service, Ltd.",
+        "meta_description_th":  "ช่วยจัด document room แยกเอกสารหลัก และสรุปรายการค้างให้ทีมงานตรวจย้อนหลังหรือเตรียมแฟ้มงานได้ง่ายขึ้น",
+        "meta_description_en":  "Support for building a cleaner document room and review-ready file structure for accounting and audit preparation.",
+        "eyebrow_th":  "AUDIT PREPARATION",
+        "eyebrow_en":  "AUDIT PREPARATION",
+        "hero_title_th":  "บริการเตรียมเอกสารเพื่อให้ตรวจย้อนหลังและตามข้อมูลได้ง่ายขึ้น",
+        "hero_title_en":  "Document-preparation support for businesses that want cleaner review readiness",
+        "hero_description_th":  "เหมาะกับธุรกิจที่เอกสารอยู่หลายที่ อยากจัดแฟ้มงานให้ค้นหาได้ง่าย และลดเวลาตามเอกสารเมื่อต้องมีการตรวจย้อนหลัง",
+        "hero_description_en":  "Built for businesses with documents scattered across folders and channels that want a cleaner file structure before a review request arrives.",
+        "highlights_th":  [
+                              "เอกสารอยู่หลายโฟลเดอร์หรือหลายช่องทาง",
+                              "เวลามีคนขอข้อมูลต้องตามหลายรอบ",
+                              "อยากมี document room ที่ทีมใช้ร่วมกันได้"
+                          ],
+        "highlights_en":  [
+                              "Documents are spread across many folders and channels",
+                              "Requests for information trigger repeated follow-up",
+                              "The business wants a shared document room the team can rely on"
+                          ],
+        "deliverables_title_th":  "ทีมช่วยจัดโครงสร้างอะไรได้บ้าง",
+        "deliverables_title_en":  "What the team can help structure",
+        "deliverables_th":  [
+                                "ช่วยแยกหมวดเอกสารหลัก",
+                                "ช่วยกำหนดชื่อไฟล์และจุดเก็บข้อมูล",
+                                "ช่วยสรุปรายการที่ยังขาดเพื่อไล่ตามต่อ"
+                            ],
+        "deliverables_en":  [
+                                "Separate core document categories",
+                                "Set naming and storage structure",
+                                "Summarise missing items for follow-up"
+                            ],
+        "process_title_th":  "แนวทางทำงานที่ลูกค้าจะเห็นภาพได้ง่าย",
+        "process_title_en":  "A clear working process clients can follow",
+        "process":  [
+                        {
+                            "title_th":  "1. ดูขอบเขตงานและปัญหาหลักก่อนเริ่ม",
+                            "title_en":  "1. Review scope and main pain points first",
+                            "body_th":  "เริ่มจากดูสถานะปัจจุบันของธุรกิจ เอกสารที่มี และสิ่งที่ต้องเร่งก่อน เพื่อให้วางลำดับงานได้ถูก",
+                            "body_en":  "We begin by reviewing the current business situation, available documents, and what needs to move first."
+                        },
+                        {
+                            "title_th":  "2. แยก checklist และผู้ประสานงาน",
+                            "title_en":  "2. Define the checklist and coordinators",
+                            "body_th":  "ทีมช่วยสรุปว่าต้องใช้อะไรบ้าง ใครควรส่งข้อมูลส่วนไหน และอะไรทำคู่ขนานกันได้",
+                            "body_en":  "We map the checklist, identify owners, and separate what can run in parallel."
+                        },
+                        {
+                            "title_th":  "3. เดินงานและติดตามจนปิดรายการ",
+                            "title_en":  "3. Execute and follow through",
+                            "body_th":  "เมื่อเริ่มงานแล้ว ทีมจะช่วยไล่สถานะ เอกสารค้าง และขั้นตอนถัดไปให้เห็นภาพต่อเนื่อง",
+                            "body_en":  "Once the work starts, we keep the case moving with clear status tracking and follow-through."
+                        }
+                    ],
+        "ideal_title_th":  "เหมาะกับใคร",
+        "ideal_title_en":  "Best fit for",
+        "ideal_for_th":  [
+                             "ธุรกิจที่มีเอกสารกระจายหลายที่",
+                             "ธุรกิจที่อยากลดเวลาตามไฟล์ย้อนหลัง",
+                             "ทีมที่ต้องการแฟ้มงานที่ตรวจสอบได้ง่ายขึ้น"
+                         ],
+        "ideal_for_en":  [
+                             "Businesses with scattered documents",
+                             "Businesses that want to reduce time spent chasing old files",
+                             "Teams that want a cleaner review-ready file room"
+                         ],
+        "related_posts":  [
+                              "tax-audit-preparation-documents",
+                              "year-end-document-close-checklist",
+                              "monthly-accounting-handover-checklist"
+                          ],
+        "cta_title_th":  "หากอยากให้ทีมช่วยไล่หมวดเอกสารและจัดรายการที่ยังขาด เริ่มส่งรายละเอียดเคสได้เลย",
+        "cta_title_en":  "If you want help mapping document categories and missing items, send the case details to us"
+    },
+    {
+        "slug":  "foreign-business-support",
+        "subtitle_th":  "บริการดูแลงานเอกสารธุรกิจสำหรับเจ้าของต่างชาติและทีมที่ทำงานสองภาษา",
+        "subtitle_en":  "Bilingual business-support service for foreign founders and cross-border teams",
+        "meta_title_th":  "บริการดูแลงานธุรกิจสำหรับผู้ประกอบการต่างชาติ | Pinpoint Accounting \u0026 Service, Ltd.",
+        "meta_title_en":  "Foreign Business Support Service | Pinpoint Accounting \u0026 Service, Ltd.",
+        "meta_description_th":  "ช่วยจัด flow เอกสาร บริษัท วีซ่า และงานประสานข้อมูลสำหรับทีมที่มีผู้ถือหุ้นหรือผู้บริหารต่างชาติ",
+        "meta_description_en":  "Bilingual coordination support for document flow, company records, and permit-related cases involving foreign founders or executives.",
+        "eyebrow_th":  "FOREIGN BUSINESS SUPPORT",
+        "eyebrow_en":  "FOREIGN BUSINESS SUPPORT",
+        "hero_title_th":  "บริการดูแลงานธุรกิจสำหรับผู้ประกอบการต่างชาติที่ต้องการทีมคุยงานรู้เรื่องและตามงานต่อเนื่อง",
+        "hero_title_en":  "Bilingual business support for foreign founders who need clear communication and steady follow-through",
+        "hero_description_th":  "เหมาะกับบริษัทที่ต้องประสานเอกสารหลายฝ่าย มีผู้เกี่ยวข้องต่างชาติ หรืออยากให้ทีมช่วยคุยงานไทยและอังกฤษได้ต่อเนื่อง",
+        "hero_description_en":  "Built for companies coordinating with foreign shareholders, directors, or staff and needing smoother Thai-English communication around documents and compliance.",
+        "highlights_th":  [
+                              "มีผู้ถือหุ้นหรือกรรมการต่างชาติ",
+                              "เอกสารมาจากหลายประเทศหรือหลายฝ่าย",
+                              "ต้องการทีมช่วยคุยงานไทยและอังกฤษให้ไหลลื่น"
+                          ],
+        "highlights_en":  [
+                              "The company has foreign shareholders or directors",
+                              "Documents come from several countries or teams",
+                              "The business wants smoother Thai-English coordination"
+                          ],
+        "deliverables_title_th":  "สิ่งที่ทีมช่วยประสานได้",
+        "deliverables_title_en":  "What the team can help coordinate",
+        "deliverables_th":  [
+                                "ช่วยจัด master file กลางของเอกสารบริษัท",
+                                "ช่วยแยกเอกสารบริษัทกับเอกสารตัวบุคคล",
+                                "ช่วยไล่ checklist สำหรับงานที่เกี่ยวกับต่างชาติ"
+                            ],
+        "deliverables_en":  [
+                                "Create a central company document file",
+                                "Separate company records from personal records",
+                                "Map checklists for foreign-related business work"
+                            ],
+        "process_title_th":  "แนวทางทำงานที่ลูกค้าจะเห็นภาพได้ง่าย",
+        "process_title_en":  "A clear working process clients can follow",
+        "process":  [
+                        {
+                            "title_th":  "1. ดูขอบเขตงานและปัญหาหลักก่อนเริ่ม",
+                            "title_en":  "1. Review scope and main pain points first",
+                            "body_th":  "เริ่มจากดูสถานะปัจจุบันของธุรกิจ เอกสารที่มี และสิ่งที่ต้องเร่งก่อน เพื่อให้วางลำดับงานได้ถูก",
+                            "body_en":  "We begin by reviewing the current business situation, available documents, and what needs to move first."
+                        },
+                        {
+                            "title_th":  "2. แยก checklist และผู้ประสานงาน",
+                            "title_en":  "2. Define the checklist and coordinators",
+                            "body_th":  "ทีมช่วยสรุปว่าต้องใช้อะไรบ้าง ใครควรส่งข้อมูลส่วนไหน และอะไรทำคู่ขนานกันได้",
+                            "body_en":  "We map the checklist, identify owners, and separate what can run in parallel."
+                        },
+                        {
+                            "title_th":  "3. เดินงานและติดตามจนปิดรายการ",
+                            "title_en":  "3. Execute and follow through",
+                            "body_th":  "เมื่อเริ่มงานแล้ว ทีมจะช่วยไล่สถานะ เอกสารค้าง และขั้นตอนถัดไปให้เห็นภาพต่อเนื่อง",
+                            "body_en":  "Once the work starts, we keep the case moving with clear status tracking and follow-through."
+                        }
+                    ],
+        "ideal_title_th":  "เหมาะกับใคร",
+        "ideal_title_en":  "Best fit for",
+        "ideal_for_th":  [
+                             "ผู้ประกอบการต่างชาติในไทย",
+                             "บริษัทที่มีทีมสองภาษา",
+                             "บริษัทที่เอกสารต่างประเทศทำให้การประสานงานช้า"
+                         ],
+        "ideal_for_en":  [
+                             "Foreign founders in Thailand",
+                             "Bilingual teams",
+                             "Companies slowed down by cross-border document coordination"
+                         ],
+        "related_posts":  [
+                              "foreign-shareholder-document-preparation",
+                              "foreign-director-document-flow",
+                              "work-permit-renewal-business-checklist"
+                          ],
+        "cta_title_th":  "หากต้องการทีมช่วยแยกงานเอกสารและการประสานงานสำหรับเคสต่างชาติ ส่งรายละเอียดมาได้เลย",
+        "cta_title_en":  "If you want the team to map documents and coordination for a foreign-related case, send the details to us"
+    },
+    {
+        "slug":  "company-dissolution",
+        "subtitle_th":  "บริการวางแผนงานปิดบริษัทให้เห็นทั้งจดทะเบียน บัญชี และภาษี",
+        "subtitle_en":  "Company dissolution support that connects registration, accounting, and tax work",
+        "meta_title_th":  "บริการปิดบริษัท | Pinpoint Accounting \u0026 Service, Ltd.",
+        "meta_title_en":  "Company Dissolution Service | Pinpoint Accounting \u0026 Service, Ltd.",
+        "meta_description_th":  "ช่วยแยกงานปิดบริษัทให้เห็นภาพครบ ทั้งงานจดทะเบียน เอกสารหลังบ้าน บัญชี และภาษีที่ต้องตามต่อ",
+        "meta_description_en":  "Company dissolution support that helps business owners see the full picture across registration, accounting, tax, and close-out tasks.",
+        "eyebrow_th":  "COMPANY DISSOLUTION",
+        "eyebrow_en":  "COMPANY DISSOLUTION",
+        "hero_title_th":  "บริการปิดบริษัทสำหรับธุรกิจที่อยากวางลำดับงานให้ครบและไม่ทิ้งรายการค้าง",
+        "hero_title_en":  "Company dissolution support for businesses that want a clearer shutdown workplan",
+        "hero_description_th":  "เหมาะกับบริษัทที่ต้องการเริ่มกระบวนการปิดกิจการอย่างเป็นระบบ และอยากรู้ว่าควรเริ่มจากงานไหนก่อนระหว่างเอกสาร บัญชี และภาษี",
+        "hero_description_en":  "Built for companies that want a structured shutdown process and need clarity on how registration, accounting, tax, and operational close-out fit together.",
+        "highlights_th":  [
+                              "อยากปิดบริษัทแต่ยังไม่ชัดว่าต้องเริ่มจากอะไร",
+                              "มีงานบัญชีหรือภาษีค้างบางส่วน",
+                              "ต้องการลำดับงานที่ทำให้ติดตามต่อได้จริง"
+                          ],
+        "highlights_en":  [
+                              "The business wants to close the company but is unsure where to begin",
+                              "Some accounting or tax items are still open",
+                              "The owner wants a workplan that can actually be followed through"
+                          ],
+        "deliverables_title_th":  "ทีมช่วยแยกงานปิดบริษัทได้อย่างไร",
+        "deliverables_title_en":  "How the team can support dissolution planning",
+        "deliverables_th":  [
+                                "ช่วยแยกงานจดทะเบียน บัญชี และภาษีออกเป็นส่วน",
+                                "ช่วยสรุปรายการค้างที่ควรเคลียร์ก่อน",
+                                "ช่วยวางลำดับงานหลังบ้านจนงานปิดจบ"
+                            ],
+        "deliverables_en":  [
+                                "Separate registration, accounting, and tax workstreams",
+                                "Summarise items that should be cleared first",
+                                "Map the operational close-out sequence through completion"
+                            ],
+        "process_title_th":  "แนวทางทำงานที่ลูกค้าจะเห็นภาพได้ง่าย",
+        "process_title_en":  "A clear working process clients can follow",
+        "process":  [
+                        {
+                            "title_th":  "1. ดูขอบเขตงานและปัญหาหลักก่อนเริ่ม",
+                            "title_en":  "1. Review scope and main pain points first",
+                            "body_th":  "เริ่มจากดูสถานะปัจจุบันของธุรกิจ เอกสารที่มี และสิ่งที่ต้องเร่งก่อน เพื่อให้วางลำดับงานได้ถูก",
+                            "body_en":  "We begin by reviewing the current business situation, available documents, and what needs to move first."
+                        },
+                        {
+                            "title_th":  "2. แยก checklist และผู้ประสานงาน",
+                            "title_en":  "2. Define the checklist and coordinators",
+                            "body_th":  "ทีมช่วยสรุปว่าต้องใช้อะไรบ้าง ใครควรส่งข้อมูลส่วนไหน และอะไรทำคู่ขนานกันได้",
+                            "body_en":  "We map the checklist, identify owners, and separate what can run in parallel."
+                        },
+                        {
+                            "title_th":  "3. เดินงานและติดตามจนปิดรายการ",
+                            "title_en":  "3. Execute and follow through",
+                            "body_th":  "เมื่อเริ่มงานแล้ว ทีมจะช่วยไล่สถานะ เอกสารค้าง และขั้นตอนถัดไปให้เห็นภาพต่อเนื่อง",
+                            "body_en":  "Once the work starts, we keep the case moving with clear status tracking and follow-through."
+                        }
+                    ],
+        "ideal_title_th":  "เหมาะกับใคร",
+        "ideal_title_en":  "Best fit for",
+        "ideal_for_th":  [
+                             "เจ้าของธุรกิจที่กำลังหยุดกิจการ",
+                             "บริษัทที่มีงานค้างอยู่หลายส่วน",
+                             "ทีมที่อยากได้ลำดับงานปิดกิจการแบบเข้าใจง่าย"
+                         ],
+        "ideal_for_en":  [
+                             "Owners preparing to shut down a business",
+                             "Companies with several open workstreams",
+                             "Teams that want a clearer shutdown sequence"
+                         ],
+        "related_posts":  [
+                              "company-dissolution-aftercare-checklist",
+                              "closing-bank-and-contracts-before-dissolution",
+                              "company-dissolution-process-thailand"
+                          ],
+        "cta_title_th":  "หากต้องการให้ทีมช่วยไล่ลำดับงานปิดบริษัทและสิ่งที่ต้องเคลียร์ก่อน เริ่มจากส่งรายละเอียดมาได้เลย",
+        "cta_title_en":  "If you want the team to map the shutdown sequence and open items first, send the case details to us"
+    }
+]

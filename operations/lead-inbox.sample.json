@@ -1,0 +1,34 @@
+{
+  "leads": [
+    {
+      "leadId": "sample_hot_001",
+      "fullName": "Somchai Trading Co., Ltd.",
+      "serviceNeed": "monthly accounting and tax",
+      "priority": "hot",
+      "language": "th",
+      "nextAction": "โทรกลับเพื่อขอเอกสารบัญชีเบื้องต้น",
+      "primaryAgent": "salesFollowUp",
+      "humanApprovalRequired": false
+    },
+    {
+      "leadId": "sample_warm_002",
+      "fullName": "Global Setup Thailand",
+      "serviceNeed": "company registration and DBD amendments",
+      "priority": "warm",
+      "language": "en",
+      "nextAction": "Ask for the planned company structure and registration timeline",
+      "primaryAgent": "leadIntake",
+      "humanApprovalRequired": false
+    },
+    {
+      "leadId": "sample_hot_003",
+      "fullName": "Foreign Director Case",
+      "serviceNeed": "visa and work permit",
+      "priority": "hot",
+      "language": "th",
+      "nextAction": "ส่งต่อทีมงานตรวจข้อเท็จจริงก่อนตอบรายละเอียด",
+      "primaryAgent": "complianceReviewer",
+      "humanApprovalRequired": true
+    }
+  ]
+}

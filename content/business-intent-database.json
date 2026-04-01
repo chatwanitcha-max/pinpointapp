@@ -1,0 +1,248 @@
+{
+  "version": "2026-03-29",
+  "entries": [
+    {
+      "id": "intent-vat36-foreign-service",
+      "subIntentKey": "vat36-foreign-service",
+      "intentKey": "accounting-tax",
+      "serviceBucket": "accounting-tax",
+      "aliases": [
+        "ภ.พ.36",
+        "pp36",
+        "vat36",
+        "บริการจากต่างประเทศ",
+        "royalty vat",
+        "imported service vat"
+      ],
+      "faqIds": [
+        "research-vat36-foreign-service"
+      ],
+      "officialSourceUrls": [
+        "https://www.rd.go.th/33475.html",
+        "https://www.rd.go.th/fileadmin/tax_pdf/vat/2568/pp36_010968.pdf"
+      ]
+    },
+    {
+      "id": "intent-vat-branch-separate-filing",
+      "subIntentKey": "vat-branch-separate-filing",
+      "intentKey": "accounting-tax",
+      "serviceBucket": "accounting-tax",
+      "aliases": [
+        "vat หลายสาขา",
+        "vat สาขา",
+        "ยื่น vat แยกสาขา",
+        "branch vat filing"
+      ],
+      "faqIds": [
+        "research-vat-branch-separate-filing"
+      ],
+      "officialSourceUrls": [
+        "https://www.rd.go.th/24903.html"
+      ]
+    },
+    {
+      "id": "intent-dbd-eservice-certificate-copy",
+      "subIntentKey": "dbd-eservice-certificate-copy",
+      "intentKey": "corporate-dbd",
+      "serviceBucket": "corporate-dbd",
+      "aliases": [
+        "หนังสือรับรองบริษัท",
+        "คัดสำเนาเอกสารบริษัท",
+        "dbd e-service",
+        "company certificate online",
+        "ขอหนังสือรับรองออนไลน์"
+      ],
+      "faqIds": [
+        "research-dbd-eservice-certificate-copy"
+      ],
+      "officialSourceUrls": [
+        "https://ebiz.dbd.go.th/eservice-web/index.xhtml"
+      ]
+    },
+    {
+      "id": "intent-dbd-efiling-approved-copy",
+      "subIntentKey": "dbd-efiling-approved-copy",
+      "intentKey": "corporate-dbd",
+      "serviceBucket": "corporate-dbd",
+      "aliases": [
+        "dbd e-filing",
+        "สำเนาที่อนุมัติ",
+        "approved copy",
+        "dbd status"
+      ],
+      "faqIds": [
+        "research-dbd-efiling-approved-copy"
+      ],
+      "officialSourceUrls": [
+        "https://efiling.dbd.go.th/efiling-documents/fnq.pdf"
+      ]
+    },
+    {
+      "id": "intent-dbd-english-certificate-verification",
+      "subIntentKey": "dbd-english-certificate-verification",
+      "intentKey": "corporate-dbd",
+      "serviceBucket": "corporate-dbd",
+      "aliases": [
+        "encert",
+        "หนังสือรับรองภาษาอังกฤษ",
+        "verify english certificate",
+        "dbd english certificate"
+      ],
+      "faqIds": [
+        "research-dbd-english-certificate-verification"
+      ],
+      "officialSourceUrls": [
+        "https://encert.dbd.go.th/encert-inter/public/th/index"
+      ]
+    },
+    {
+      "id": "intent-social-security-insured-registration",
+      "subIntentKey": "social-security-insured-registration",
+      "intentKey": "accounting-tax",
+      "serviceBucket": "accounting-tax",
+      "aliases": [
+        "ขึ้นทะเบียนผู้ประกันตน",
+        "พนักงานใหม่ ประกันสังคม",
+        "social security employee registration",
+        "ประกันสังคม พนักงานใหม่",
+        "ขึ้นทะเบียนประกันสังคมภายในกี่วัน",
+        "รับพนักงานใหม่แล้ว ต้องขึ้นทะเบียนประกันสังคมภายในกี่วัน"
+      ],
+      "faqIds": [
+        "research-social-security-insured-registration"
+      ],
+      "officialSourceUrls": [
+        "https://www.sso.go.th"
+      ]
+    },
+    {
+      "id": "intent-social-security-status-change",
+      "subIntentKey": "social-security-status-change",
+      "intentKey": "accounting-tax",
+      "serviceBucket": "accounting-tax",
+      "aliases": [
+        "แจ้งเข้าออกประกันสังคม",
+        "พนักงานลาออก ประกันสังคม",
+        "social security change employee",
+        "แจ้งประกันสังคมเมื่อไร",
+        "พนักงานเข้าออกงาน ต้องแจ้งประกันสังคมเมื่อไร"
+      ],
+      "faqIds": [
+        "research-social-security-status-change"
+      ],
+      "officialSourceUrls": [
+        "https://www.sso.go.th"
+      ]
+    },
+    {
+      "id": "intent-eworkpermit-first-registration",
+      "subIntentKey": "eworkpermit-first-registration",
+      "intentKey": "visa-license",
+      "serviceBucket": "visa-license",
+      "aliases": [
+        "e-workpermit สมัครครั้งแรก",
+        "ลงทะเบียน work permit online",
+        "authorized person e-workpermit",
+        "register e-workpermit for the first time",
+        "how do i register e-workpermit for the first time"
+      ],
+      "faqIds": [
+        "research-eworkpermit-first-registration"
+      ],
+      "officialSourceUrls": [
+        "https://eworkpermit.doe.go.th/login/register"
+      ]
+    },
+    {
+      "id": "intent-eworkpermit-identity-methods",
+      "subIntentKey": "eworkpermit-identity-methods",
+      "intentKey": "visa-license",
+      "serviceBucket": "visa-license",
+      "aliases": [
+        "e-workpermit identity",
+        "thaid work permit",
+        "dga work permit"
+      ],
+      "faqIds": [
+        "research-eworkpermit-identity-methods"
+      ],
+      "officialSourceUrls": [
+        "https://eworkpermit.doe.go.th/login/register"
+      ]
+    },
+    {
+      "id": "intent-bizportal-multi-agency-license",
+      "subIntentKey": "bizportal-multi-agency-license",
+      "intentKey": "visa-license",
+      "serviceBucket": "visa-license",
+      "aliases": [
+        "biz portal",
+        "ใบอนุญาตธุรกิจออนไลน์",
+        "business license portal"
+      ],
+      "faqIds": [
+        "research-bizportal-multi-agency-license"
+      ],
+      "officialSourceUrls": [
+        "https://bizportal.go.th"
+      ]
+    },
+    {
+      "id": "intent-dbd-company-status-search",
+      "subIntentKey": "dbd-company-status-search",
+      "intentKey": "corporate-dbd",
+      "serviceBucket": "corporate-dbd",
+      "aliases": [
+        "ค้นหานิติบุคคล",
+        "สถานะบริษัท",
+        "dbd company status",
+        "juristic search"
+      ],
+      "faqIds": [
+        "research-dbd-company-status-search"
+      ],
+      "officialSourceUrls": [
+        "https://datawarehouse.dbd.go.th/searchJuristicInfo"
+      ]
+    },
+    {
+      "id": "intent-dbd-online-registration-channel",
+      "subIntentKey": "dbd-online-registration-channel",
+      "intentKey": "corporate-dbd",
+      "serviceBucket": "corporate-dbd",
+      "aliases": [
+        "จดทะเบียนออนไลน์ dbd",
+        "biz regist",
+        "digital juristic registration",
+        "edbr"
+      ],
+      "faqIds": [
+        "research-dbd-online-registration-channel"
+      ],
+      "officialSourceUrls": [
+        "https://edbr.dbd.go.th/"
+      ]
+    },
+    {
+      "id": "intent-restaurant-license-scope",
+      "subIntentKey": "restaurant-license-scope",
+      "intentKey": "visa-license",
+      "serviceBucket": "visa-license",
+      "aliases": [
+        "ใบอนุญาตร้านอาหาร",
+        "ขอใบอนุญาตร้านอาหาร",
+        "ใบอนุญาตประกอบกิจการร้านอาหาร",
+        "ร้านอาหารและเครื่องดื่ม",
+        "restaurant license",
+        "food business license",
+        "cafe license"
+      ],
+      "faqIds": [
+        "research-restaurant-license-scope"
+      ],
+      "officialSourceUrls": [
+        "https://bizportal.go.th"
+      ]
+    }
+  ]
+}

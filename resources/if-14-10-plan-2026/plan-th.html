@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>แผน IF 14/10 ลดน้ำหนัก | เวอร์ชันภาษาไทย</title>
+    <style>
+      :root {
+        --paper: #fffdf8;
+        --ink: #203128;
+        --muted: #5d6b61;
+        --line: #d9e2d9;
+        --green: #3e6450;
+        --green-soft: #eef5f0;
+        --sand: #f8efe3;
+        --sand-line: #e7d8bf;
+      }
+
+      * { box-sizing: border-box; }
+      @page { size: A4; margin: 0; }
+      html, body { height: 100%; }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: Tahoma, "Segoe UI", sans-serif;
+      }
+
+      .doc {
+        width: 210mm;
+        margin: 0 auto;
+        padding: 12mm;
+      }
+
+      .page {
+        min-height: calc(297mm - 24mm);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        break-after: page;
+      }
+
+      .page:last-child { break-after: auto; }
+
+      .hero,
+      .card {
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: #fff;
+        overflow: hidden;
+      }
+
+      .hero {
+        padding: 18px 20px;
+        background: linear-gradient(180deg, #f7fbf8 0%, #fffdf8 100%);
+      }
+
+      .tag {
+        display: inline-flex;
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: var(--green-soft);
+        color: var(--green);
+        font-size: 11px;
+        font-weight: 800;
+      }
+
+      h1 {
+        margin: 10px 0 6px;
+        font-size: 29px;
+        line-height: 1.15;
+      }
+
+      .sub {
+        margin: 0;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.7;
+      }
+
+      .facts {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 14px;
+      }
+
+      .fact {
+        padding: 11px 12px;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: #fff;
+      }
+
+      .fact .k {
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 700;
+      }
+
+      .fact .v {
+        margin-top: 5px;
+        font-size: 13px;
+        font-weight: 800;
+        line-height: 1.45;
+      }
+
+      .notice {
+        padding: 11px 12px;
+        border: 1px dashed var(--sand-line);
+        border-radius: 14px;
+        background: #fffbf2;
+        color: #5f594d;
+        font-size: 11.5px;
+        line-height: 1.7;
+      }
+
+      .hd {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        padding: 11px 14px 10px;
+        border-bottom: 1px solid var(--line);
+        background: linear-gradient(180deg, rgba(248, 239, 227, 0.9), #fff 100%);
+      }
+
+      .hd h2 {
+        margin: 0;
+        font-size: 16px;
+      }
+
+      .chip {
+        display: inline-flex;
+        padding: 5px 9px;
+        border-radius: 999px;
+        border: 1px solid #d7e5dc;
+        background: var(--green-soft);
+        color: var(--green);
+        font-size: 11px;
+        font-weight: 800;
+      }
+
+      .bd { padding: 12px 14px 14px; }
+
+      .grid-2 {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 10px;
+      }
+
+      .stack {
+        display: grid;
+        gap: 10px;
+      }
+
+      .list {
+        display: grid;
+        gap: 9px;
+      }
+
+      .item,
+      .day {
+        padding: 11px 12px;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: #fff;
+      }
+
+      .item b,
+      .day b {
+        display: block;
+        margin-bottom: 3px;
+        font-size: 12.4px;
+      }
+
+      .item p,
+      .day p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 11.6px;
+        line-height: 1.65;
+      }
+
+      .rule-list {
+        display: grid;
+        gap: 8px;
+      }
+
+      .rule {
+        padding: 10px 11px;
+        border: 1px solid var(--line);
+        border-radius: 13px;
+        background: #fcfdfc;
+        font-size: 11.8px;
+        line-height: 1.65;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th, td {
+        padding: 10px 11px;
+        border-bottom: 1px solid var(--line);
+        vertical-align: top;
+        font-size: 11.5px;
+        line-height: 1.65;
+      }
+
+      th {
+        text-align: left;
+        font-size: 11.4px;
+        color: var(--muted);
+        font-weight: 800;
+        background: #fafcfb;
+      }
+
+      tr:last-child td { border-bottom: 0; }
+
+      .day-col {
+        width: 14%;
+        font-weight: 800;
+        color: var(--green);
+      }
+
+      .foot {
+        padding: 10px 12px;
+        border: 1px dashed var(--sand-line);
+        border-radius: 14px;
+        background: #fffbf2;
+        color: #5f594d;
+        font-size: 11.4px;
+        line-height: 1.65;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="doc">
+      <section class="page">
+        <div class="hero">
+          <div class="tag">IF 14/10 | แผนลดน้ำหนักแบบเริ่มได้จริง</div>
+          <h1>แผนอาหารและออกกำลังกาย<br />สำหรับ IF 14/10</h1>
+          <p class="sub">
+            จัดตามรูปแบบที่คุณทำได้จริง: เริ่มกินเวลา 10:00 น., หยุดกินหลัง 16:00 น., ไม่ดื่มน้ำหวานและไม่กินขนม,
+            ชอบข้าวกับน้ำพริก ผักสด และผักนึ่ง เป้าหมายคือน้ำหนักประมาณ 56-57 กก. จากปัจจุบัน 61-62 กก.
+          </p>
+          <div class="facts">
+            <div class="fact">
+              <div class="k">ช่วงกิน</div>
+              <div class="v">10:00-16:00 น.<br />กิน 2 มื้อหลัก<br />+ 1 มื้อปิดท้าย</div>
+            </div>
+            <div class="fact">
+              <div class="k">ช่วงงด</div>
+              <div class="v">16:00-10:00 น.<br />ดื่มน้ำเปล่า<br />ชาไม่หวาน กาแฟดำ</div>
+            </div>
+            <div class="fact">
+              <div class="k">เป้าหมาย</div>
+              <div class="v">จาก 61-62 กก.<br />ไป 56-57 กก.<br />ลดแบบค่อยเป็นค่อยไป</div>
+            </div>
+            <div class="fact">
+              <div class="k">ออกกำลังกาย</div>
+              <div class="v">หลัง 16:00 น.<br />เบา-ปานกลาง<br />ทำได้ในบ้าน</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="stack">
+            <article class="card">
+              <div class="hd">
+                <h2>โครงเวลาที่ใช้ทุกวัน</h2>
+                <div class="chip">Daily Rhythm</div>
+              </div>
+              <div class="bd">
+                <div class="list">
+                  <div class="item">
+                    <b>10:00 น. | มื้อแรก</b>
+                    <p>เริ่มมื้อแรกด้วยข้าว + โปรตีน + ผัก เช่น ข้าวกับปลาทอด/ปลาย่าง + น้ำพริก + ผักสดหรือผักนึ่ง</p>
+                  </div>
+                  <div class="item">
+                    <b>13:00 น. | มื้อหลักที่ 2</b>
+                    <p>มีโปรตีนชัดเจน เช่น ไก่ ปลา ไข่ เต้าหู้ พร้อมผัก และข้าวครึ่งถึง 1 ทัพพี</p>
+                  </div>
+                  <div class="item">
+                    <b>15:30 น. | มื้อปิดท้าย</b>
+                    <p>เลือกของเบาแต่ช่วยให้อิ่ม เช่น ไข่ต้ม โยเกิร์ตไม่หวาน กล้วย นมโปรตีนสูง หรือถั่วกำมือเล็ก</p>
+                  </div>
+                  <div class="item">
+                    <b>หลัง 16:00 น. | ช่วงงดอาหาร</b>
+                    <p>ดื่มได้เฉพาะน้ำเปล่า ชาไม่หวาน หรือกาแฟดำไม่ใส่น้ำตาลและครีม</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="hd">
+                <h2>หลักที่ควรยึด</h2>
+                <div class="chip">Simple Rules</div>
+              </div>
+              <div class="bd">
+                <div class="rule-list">
+                  <div class="rule">ทุกมื้อควรมี <b>โปรตีน</b> เพื่อให้อิ่มนานและช่วยรักษามวลกล้ามเนื้อ</div>
+                  <div class="rule">คุณกินข้าวได้ตามปกติ แต่ควรเป็น <b>ปริมาณพอดี</b> ไม่เน้นข้าวมากเกินไป</div>
+                  <div class="rule">น้ำพริก + ผักสด/ผักนึ่งเป็นแนวทางที่ดีมาก ให้ใช้เป็นฐานของหลายมื้อได้เลย</div>
+                  <div class="rule">ของทอดกินได้ แต่ควร <b>สลับกับปลาย่าง ไก่ย่าง ไข่ต้ม หรือเต้าหู้</b> บ้าง</div>
+                  <div class="rule">ถ้าช่วงเย็นหิวมาก แปลว่ามื้อ 13:00 หรือ 15:30 อาจน้อยไป ให้เพิ่มโปรตีนก่อน ไม่ต้องฝืนจนเครียด</div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="stack">
+            <article class="card">
+              <div class="hd">
+                <h2>แนวทางมื้อแรกของคุณ</h2>
+                <div class="chip">Favorite Meal</div>
+              </div>
+              <div class="bd">
+                <div class="day">
+                  <b>มื้อแรกที่เหมาะกับคุณ</b>
+                  <p>
+                    ข้าว 1 ทัพพี + ปลาทอด 1 ชิ้น + น้ำพริก + ผักสดหรือผักนึ่ง
+                    เป็นมื้อที่ใช้ได้ดีมาก เพราะมีทั้งคาร์บ โปรตีน และผัก
+                  </p>
+                </div>
+                <div class="day" style="margin-top:10px">
+                  <b>ถ้าอยากให้อิ่มนานขึ้น</b>
+                  <p>
+                    สลับปลาทอดเป็นปลาย่างหรือไข่ต้มในบางวัน และเพิ่มผักให้เยอะขึ้น
+                    จะช่วยคุมหิวช่วงบ่ายได้ดีขึ้น
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <div class="notice">
+              ถ้ามีอาการเวียนหัว ใจสั่น อ่อนแรงผิดปกติ หรือหิวจนใช้ชีวิตลำบาก ให้ขยับเวลาการกินให้กว้างขึ้น
+              หรือปรึกษาแพทย์ก่อนฝืนทำต่อ โดยเฉพาะถ้ามีโรคประจำตัว ใช้ยาลดน้ำตาล ตั้งครรภ์ หรือให้นมบุตร
+            </div>
+
+            <div class="foot">
+              เป้าหมายที่ปลอดภัยโดยทั่วไปคือการลดแบบค่อยเป็นค่อยไปและทำได้ต่อเนื่องมากกว่าการลดเร็วเกินไป
+              แผนนี้จึงเน้น “สม่ำเสมอ” มากกว่า “เคร่งจัด”
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="page">
+        <article class="card">
+          <div class="hd">
+            <h2>แผนอาหาร 7 วัน</h2>
+            <div class="chip">10:00 | 13:00 | 15:30</div>
+          </div>
+          <div class="bd">
+            <table>
+              <thead>
+                <tr>
+                  <th class="day-col">วัน</th>
+                  <th>10:00 น. มื้อแรก</th>
+                  <th>13:00 น. มื้อหลัก</th>
+                  <th>15:30 น. มื้อปิดท้าย</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="day-col">Day 1</td>
+                  <td>ข้าว + ปลาทอด + น้ำพริก + ผักนึ่ง</td>
+                  <td>ต้มจืดเต้าหู้หมูสับ + ข้าวครึ่งทัพพี</td>
+                  <td>ไข่ต้ม 2 ฟอง</td>
+                </tr>
+                <tr>
+                  <td class="day-col">Day 2</td>
+                  <td>ข้าว + น้ำพริกปลาทู + ผักสด + ไข่ต้ม</td>
+                  <td>ไก่ย่าง + ผักลวก + ข้าวครึ่งถึง 1 ทัพพี</td>
+                  <td>โยเกิร์ตไม่หวาน 1 ถ้วย</td>
+                </tr>
+                <tr>
+                  <td class="day-col">Day 3</td>
+                  <td>ข้าว + ปลาย่าง + น้ำพริก + ผักนึ่ง</td>
+                  <td>แกงเลียง + ไข่เจียวน้ำมันน้อย + ข้าวครึ่งทัพพี</td>
+                  <td>กล้วย 1 ลูก</td>
+                </tr>
+                <tr>
+                  <td class="day-col">Day 4</td>
+                  <td>ข้าว + น้ำพริกกะปิ + ปลาทู + ผักต้ม</td>
+                  <td>สุกี้น้ำใส่ไก่หรือเต้าหู้</td>
+                  <td>นมโปรตีนสูงไม่หวาน 1 ขวด หรือไข่ต้ม 2 ฟอง</td>
+                </tr>
+                <tr>
+                  <td class="day-col">Day 5</td>
+                  <td>ข้าว + ไก่ย่าง + น้ำพริก + ผักสด</td>
+                  <td>ผัดผักรวม + เต้าหู้หรือหมูไม่ติดมัน + ข้าวครึ่งทัพพี</td>
+                  <td>ฝรั่งหรือแอปเปิล 1 ผลเล็ก</td>
+                </tr>
+                <tr>
+                  <td class="day-col">Day 6</td>
+                  <td>ข้าว + ปลาทอด + น้ำพริก + ผักนึ่ง</td>
+                  <td>ต้มยำปลา + ข้าวครึ่งทัพพี</td>
+                  <td>โยเกิร์ตไม่หวาน หรือไข่ต้ม 1-2 ฟอง</td>
+                </tr>
+                <tr>
+                  <td class="day-col">Day 7</td>
+                  <td>ข้าว + น้ำพริก + ผักต้ม + ไข่ต้ม + ปลาย่าง</td>
+                  <td>ลาบไก่หรือลาบปลา + ผักสด + ข้าวครึ่งทัพพี</td>
+                  <td>ถั่วกำมือเล็ก หรือกล้วย 1 ลูก</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <div class="notice">
+          ถ้าวันไหนหิวช่วงเย็นมาก ให้เพิ่มโปรตีนในมื้อ 13:00 หรือ 15:30 ก่อน เช่น ไข่ต้มเพิ่ม 1 ฟอง หรือโยเกิร์ตไม่หวาน
+          ไม่จำเป็นต้องลดข้าวจนต่ำเกินไป เพราะจะทำให้หิวสะสมและหลุดง่าย
+        </div>
+      </section>
+
+      <section class="page">
+        <article class="card">
+          <div class="hd">
+            <h2>โปรแกรมออกกำลังกายหลัง 16:00 น.</h2>
+            <div class="chip">20-30 นาที / วัน</div>
+          </div>
+          <div class="bd">
+            <table>
+              <thead>
+                <tr>
+                  <th class="day-col">วัน</th>
+                  <th>โปรแกรม</th>
+                  <th>หมายเหตุ</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="day-col">Day 1</td>
+                  <td>เดินในบ้านหรือรอบบ้าน 25 นาที + ยืดเหยียด 5 นาที</td>
+                  <td>เริ่มเบาๆ ให้ร่างกายชินก่อน</td>
+                </tr>
+                <tr>
+                  <td class="day-col">Day 2</td>
+                  <td>Squat 12 ครั้ง x 2 รอบ + Wall Push-up 12 ครั้ง x 2 รอบ + เขย่งปลายเท้า 15 ครั้ง x 2 รอบ + เดิน 10 นาที</td>
+                  <td>เป็นวันฝึกกล้ามเนื้อแบบเบา</td>
+                </tr>
+                <tr>
+                  <td class="day-col">Day 3</td>
+                  <td>เดินช้า-ปานกลาง 20 นาที + โยคะหรือยืดเหยียด 10 นาที</td>
+                  <td>ช่วยฟื้นตัวและยังได้ขยับร่างกาย</td>
+                </tr>
+                <tr>
+                  <td class="day-col">Day 4</td>
+                  <td>ลุกนั่งเก้าอี้ 12 ครั้ง x 2 รอบ + ยกเข่าสลับ 20 ครั้ง x 2 รอบ + เกร็งหน้าท้อง 10 วินาที x 5 รอบ + เดิน 10 นาที</td>
+                  <td>โฟกัสขา แกนกลาง และการทรงตัว</td>
+                </tr>
+                <tr>
+                  <td class="day-col">Day 5</td>
+                  <td>เดินเร็วเบาๆ 30 นาที</td>
+                  <td>ถ้ารู้สึกล้า ลดเหลือ 20 นาทีได้</td>
+                </tr>
+                <tr>
+                  <td class="day-col">Day 6</td>
+                  <td>Squat 10 ครั้ง + Wall Push-up 10 ครั้ง + ลุกนั่งเก้าอี้ 10 ครั้ง + เขย่งปลายเท้า 15 ครั้ง ทำ 2 รอบ + ยืดเหยียด 5 นาที</td>
+                  <td>เป็นวันรวมท่าทั้งตัว</td>
+                </tr>
+                <tr>
+                  <td class="day-col">Day 7</td>
+                  <td>เดินสบาย 15-20 นาที + ยืดทั้งตัว 10 นาที</td>
+                  <td>วันฟื้นตัว ทำเบาๆ ก็พอ</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <div class="grid-2">
+          <div class="notice">
+            ถ้าออกกำลังกายหลัง 16:00 แล้วมีอาการเวียนหัว ใจสั่น หรืออ่อนแรง ให้หยุดทันที และลดความหนักลงในวันถัดไป
+            ช่วงนี้ควรเน้นระดับเบา-ปานกลางก่อน
+          </div>
+          <div class="foot">
+            ถ้าทำต่อเนื่องได้ ให้ตั้งเป้ารวมอย่างน้อยประมาณ 150 นาทีต่อสัปดาห์ และมีวันฝึกกล้ามเนื้อ 2 วันต่อสัปดาห์
+            จะช่วยเรื่องการลดไขมันและกระชับรูปร่างได้ดีขึ้น
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

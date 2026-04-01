@@ -1,10 +1,11 @@
 (function () {
-  const cfg = window.PINPOINT_CONFIG || {};
+  const baseConfig = window.PINPOINT_CONFIG || {};
   const state = {
-    ga4MeasurementId: cfg.ga4MeasurementId || "",
-    googleAdsId: cfg.googleAdsId || "",
-    googleAdsLeadLabel: cfg.googleAdsLeadLabel || "",
-    metaPixelId: cfg.metaPixelId || ""
+    ga4MeasurementId: baseConfig.ga4MeasurementId || "",
+    googleAdsId: baseConfig.googleAdsId || "",
+    googleAdsLeadLabel: baseConfig.googleAdsLeadLabel || "",
+    metaPixelId: baseConfig.metaPixelId || "",
+    initialized: false
   };
 
   function getCookie(name) {
@@ -46,6 +47,29 @@
     script.async = true;
     script.src = src;
     document.head.appendChild(script);
+  }
+
+  async function loadRemoteConfig() {
+    try {
+      const response = await fetch("/api/public-config", {
+        method: "GET",
+        headers: { Accept: "application/json" }
+      });
+
+      if (!response.ok) return;
+      const payload = await response.json();
+      const remote = payload && payload.config ? payload.config : {};
+      state.ga4MeasurementId = remote.ga4MeasurementId || state.ga4MeasurementId;
+      state.googleAdsId = remote.googleAdsId || state.googleAdsId;
+      state.googleAdsLeadLabel = remote.googleAdsLeadLabel || state.googleAdsLeadLabel;
+      state.metaPixelId = remote.metaPixelId || state.metaPixelId;
+      window.PINPOINT_CONFIG = {
+        ...baseConfig,
+        ...remote
+      };
+    } catch {
+      // keep existing static config when runtime config is unavailable
+    }
   }
 
   function setupGtag() {
@@ -160,14 +184,22 @@
     });
   }
 
-  setupGtag();
-  setupMetaPixel();
-  bindClickTracking();
+  async function initTracking() {
+    if (state.initialized) return;
+    await loadRemoteConfig();
+    setupGtag();
+    setupMetaPixel();
+    bindClickTracking();
+    state.initialized = true;
+  }
+
+  initTracking();
 
   window.PinpointTracking = {
     collectTrackingPayload,
     track,
     trackLeadSubmission,
-    trackClick
+    trackClick,
+    initTracking
   };
 })();

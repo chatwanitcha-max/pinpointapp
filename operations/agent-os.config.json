@@ -1,0 +1,63 @@
+{
+  "operatingMode": {
+    "execution": "autonomy-first",
+    "codexRole": "primary operator",
+    "mission": "Codex should do as much of the website, automation, SEO, lead-routing, reporting, and business-system work as possible without bouncing routine steps back to the user.",
+    "onlyPauseWhen": [
+      "third-party login or session interaction is required",
+      "a new credential does not exist yet",
+      "payment or billing confirmation is required",
+      "an irreversible business decision carries material risk"
+    ],
+    "userActionPolicy": "Reduce any required user action to the smallest possible next click or credential, then continue immediately.",
+    "qualityPolicy": [
+      "sound human and trustworthy, never robotic",
+      "avoid fake claims, fake urgency, and fake metrics",
+      "keep regulated judgment under human control"
+    ]
+  },
+  "company": {
+    "name": "Pinpoint Accounting & Service Co., Ltd.",
+    "thaiName": "บริษัท พินพอยต์ แอคเคาน์ติ้ง แอนด์ เซอร์วิส จำกัด",
+    "domain": "https://pinpointaccountingservice.com",
+    "phone": "092-749-7442",
+    "linePrimary": "LINE OA",
+    "address": "294 Soi Yoo Charoen 29, Ratchadaphisek 18 Rd., Sam Sen Nok, Huai Khwang, Bangkok 10310, Thailand"
+  },
+  "markets": {
+    "primary": "Bangkok and greater Bangkok",
+    "secondary": "foreign-owned businesses operating in Thailand"
+  },
+  "services": {
+    "priority": [
+      "monthly accounting and tax",
+      "company registration and DBD amendments",
+      "visa and work permit support",
+      "business licenses",
+      "company dissolution"
+    ]
+  },
+  "icp": {
+    "primary": [
+      "Thai SME owners",
+      "new company founders",
+      "foreign directors and shareholders",
+      "businesses that need reliable back-office support"
+    ]
+  },
+  "positioning": {
+    "mainPromise": "clear, human, trustworthy accounting and business-support service for Thai and international operators"
+  },
+  "responseTargets": {
+    "hotLeadMinutes": 15,
+    "warmLeadHours": 4
+  },
+  "agents": [
+    "growthStrategist",
+    "leadIntake",
+    "salesFollowUp",
+    "clientSuccess",
+    "complianceReviewer",
+    "releaseOperator"
+  ]
+}

@@ -19,5 +19,15 @@
         }
       ]
     }
+  ],
+  "crons": [
+    {
+      "path": "/api/daily-ops",
+      "schedule": "15 2 * * *"
+    },
+    {
+      "path": "/api/research-digest",
+      "schedule": "45 2 * * *"
+    }
   ]
 }
