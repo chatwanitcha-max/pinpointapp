@@ -6,6 +6,7 @@ Set these in Vercel Project Settings > Environment Variables:
 - `RESEND_API_KEY` = Resend API key
 - `LEAD_FROM_EMAIL` = sender email (e.g. `lead@yourdomain.com`)
 - `LEAD_TO_EMAIL` = receiver email for lead notifications
+- `EMAIL_DELIVERY_ENABLED` = `false` to hard-stop all outbound email, `true` to allow
 
 - `LINE_CHANNEL_ACCESS_TOKEN` = LINE Messaging API channel token
 - `LINE_TARGET_ID` = target user/group id for push message
@@ -18,6 +19,12 @@ Set these in Vercel Project Settings > Environment Variables:
 
 - `META_PIXEL_ID` = Meta Pixel ID
 - `META_ACCESS_TOKEN` = Meta Conversions API access token
+
+- `SUPABASE_URL` = Supabase project URL
+- `SUPABASE_SERVICE_ROLE_KEY` = Supabase service role key
+- `SUPABASE_SCHEMA` = default `public`
+- `VISITOR_COUNTER_TABLE` = default `visitor_stats`
+- `VISITOR_COUNTER_SESSIONS_TABLE` = default `visitor_sessions`
 
 ## 2) Client-Side Tracking IDs
 Tracking IDs now load at runtime from `/api/public-config`, so you do not need to hardcode them into every static page anymore.
@@ -42,7 +49,18 @@ Private values that stay server-side:
 - Meta CAPI event (`Lead`)
 4. User redirected to `thank-you.html` and browser tracking fires conversion events.
 
-## 4) Automatic Blog Generation
+## 4) Visitor Counter (Real-Time)
+1. Run SQL once in Supabase SQL Editor:
+`D:\PINPOINT\WEBAPP\operations\supabase-visitor-counter-schema.sql`
+2. Ensure envs are set:
+- `SUPABASE_URL`
+- `SUPABASE_SERVICE_ROLE_KEY`
+- `SUPABASE_SCHEMA`
+- `VISITOR_COUNTER_TABLE`
+- `VISITOR_COUNTER_SESSIONS_TABLE`
+3. Frontend automatically posts page visits to `/api/visitor-counter` and displays total/unique counters in the footer.
+
+## 5) Automatic Blog Generation
 Update posts in [content/blog-posts.json](d:\PINPOINT\WEBAPP\content\blog-posts.json), then run:
 
 ```powershell

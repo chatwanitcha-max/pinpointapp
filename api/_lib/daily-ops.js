@@ -1,7 +1,7 @@
 const fs = require("node:fs");
 const path = require("node:path");
 
-const { sendEmailViaResend, sendLinePushText } = require("./outbound");
+const { isEmailDeliveryEnabled, sendEmailViaResend, sendLinePushText } = require("./outbound");
 const { sendCrmWebhook, sendOpenClawWebhook } = require("./lead-routing");
 
 const repoRoot = path.resolve(process.cwd());
@@ -18,7 +18,11 @@ function isSet(value) {
 
 function buildReadiness() {
   return {
-    email: isSet(process.env.RESEND_API_KEY) && isSet(process.env.LEAD_FROM_EMAIL) && isSet(process.env.LEAD_TO_EMAIL),
+    email:
+      isEmailDeliveryEnabled() &&
+      isSet(process.env.RESEND_API_KEY) &&
+      isSet(process.env.LEAD_FROM_EMAIL) &&
+      isSet(process.env.LEAD_TO_EMAIL),
     lineOa: isSet(process.env.LINE_CHANNEL_ACCESS_TOKEN) && isSet(process.env.LINE_CHANNEL_SECRET),
     crmWebhook: isSet(process.env.CRM_WEBHOOK_URL),
     openClaw: isSet(process.env.OPENCLAW_WEBHOOK_URL),
@@ -78,6 +82,17 @@ function buildTextDigest(report) {
 }
 
 async function notifyDailyOpsReport(report) {
+  const dailyOpsEnabled = String(process.env.DAILY_OPS_ENABLED || "").trim().toLowerCase();
+  const allowDeliveries = ["1", "true", "yes", "on", "enabled"].includes(dailyOpsEnabled);
+  if (!allowDeliveries) {
+    return {
+      email: { sent: false, reason: "daily_ops_disabled" },
+      line: { sent: false, reason: "daily_ops_disabled" },
+      crm: { sent: false, reason: "daily_ops_disabled" },
+      openclaw: { sent: false, reason: "daily_ops_disabled" },
+    };
+  }
+
   const textDigest = buildTextDigest(report);
   const htmlDigest = `<pre>${textDigest}</pre>`;
 

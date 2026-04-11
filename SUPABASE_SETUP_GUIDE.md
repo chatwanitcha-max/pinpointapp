@@ -16,6 +16,8 @@ Paste these into `D:\PINPOINT\WEBAPP\.env.local.txt`:
 - `SUPABASE_SERVICE_ROLE_KEY`
 - `SUPABASE_TABLE_NAME=leads`
 - `SUPABASE_SCHEMA=public`
+- `VISITOR_COUNTER_TABLE=visitor_stats`
+- `VISITOR_COUNTER_SESSIONS_TABLE=visitor_sessions`
 
 ## Fast setup
 
@@ -23,11 +25,13 @@ Paste these into `D:\PINPOINT\WEBAPP\.env.local.txt`:
 2. Open `SQL Editor`.
 3. Run the SQL from:
    `D:\PINPOINT\WEBAPP\operations\supabase-leads-schema.sql`
-4. Go to `Project Settings -> API`.
-5. Copy:
+4. Run the SQL from:
+   `D:\PINPOINT\WEBAPP\operations\supabase-visitor-counter-schema.sql`
+5. Go to `Project Settings -> API`.
+6. Copy:
    - Project URL -> `SUPABASE_URL`
    - service_role secret key -> `SUPABASE_SERVICE_ROLE_KEY`
-6. Save the values into:
+7. Save the values into:
    `D:\PINPOINT\WEBAPP\.env.local.txt`
 
 ## Important

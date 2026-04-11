@@ -1,6 +1,30 @@
 ﻿User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /thank-you
+
+User-agent: GPTBot
+Allow: /
+Disallow: /api/
+Disallow: /thank-you
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /api/
+Disallow: /thank-you
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /api/
+Disallow: /thank-you
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /api/
+Disallow: /thank-you
 
 Host: pinpointaccountingservice.com
 Sitemap: https://pinpointaccountingservice.com/sitemap.xml
-# Feed: https://pinpointaccountingservice.com/feed.xml
+Sitemap: https://pinpointaccountingservice.com/feed.xml
+# LLM summary: https://pinpointaccountingservice.com/llms.txt
+# AI summary: https://pinpointaccountingservice.com/ai.txt

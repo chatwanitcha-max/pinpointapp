@@ -110,6 +110,210 @@ function renderSources(sources, lang) {
     .join("\n");
 }
 
+const servicePages = {
+  "/services": {
+    label_th: "หน้าบริการทั้งหมด",
+    label_en: "All services",
+    desc_th: "ดูภาพรวมบริการทั้งหมดของทีมก่อนเริ่มเคส",
+    desc_en: "Review the full service scope before starting your case."
+  },
+  "/faq": {
+    label_th: "คำถามที่พบบ่อย",
+    label_en: "Frequently asked questions",
+    desc_th: "รวมคำถามก่อนเริ่มงานและขั้นตอนที่ลูกค้ามักถาม",
+    desc_en: "Common pre-engagement questions and process clarifications."
+  },
+  "/resources": {
+    label_th: "แหล่งข้อมูลทางการ",
+    label_en: "Official resources",
+    desc_th: "ลิงก์อ้างอิงหน่วยงานทางการสำหรับตรวจสอบข้อมูล",
+    desc_en: "Official authority references for verification."
+  },
+  "/monthly-accounting": {
+    label_th: "บัญชีรายเดือน",
+    label_en: "Monthly accounting service",
+    desc_th: "บริการบัญชีและภาษีรายเดือนสำหรับธุรกิจที่ดำเนินงานแล้ว",
+    desc_en: "Monthly bookkeeping and tax compliance support."
+  },
+  "/corporate-tax-planning": {
+    label_th: "วางแผนภาษีนิติบุคคล",
+    label_en: "Corporate tax planning",
+    desc_th: "วางแผนภาษีและรอบยื่นแบบให้สอดคล้องกับธุรกิจ",
+    desc_en: "Plan filings and tax structure for sustainable compliance."
+  },
+  "/company-registration": {
+    label_th: "จดทะเบียนบริษัท",
+    label_en: "Company registration",
+    desc_th: "งานจัดตั้งบริษัทและเตรียมเอกสารกับ DBD",
+    desc_en: "Incorporation and DBD filing support."
+  },
+  "/dbd-amendments": {
+    label_th: "เปลี่ยนแปลงข้อมูล DBD",
+    label_en: "DBD amendments",
+    desc_th: "แก้ไขข้อมูลนิติบุคคล เพิ่มทุน เปลี่ยนกรรมการ และข้อมูลสำคัญ",
+    desc_en: "Director, capital, and corporate record amendment support."
+  },
+  "/payroll-social-security": {
+    label_th: "เงินเดือนและประกันสังคม",
+    label_en: "Payroll and social security",
+    desc_th: "จัดการเงินเดือน ภาษีหัก ณ ที่จ่าย และประกันสังคม",
+    desc_en: "Payroll, withholding tax, and social security operations."
+  },
+  "/visa-work-permit": {
+    label_th: "วีซ่าและใบอนุญาตทำงาน",
+    label_en: "Visa and work permit",
+    desc_th: "ดูขอบเขตงานขอวีซ่าและใบอนุญาตทำงาน",
+    desc_en: "Visa and work permit support for business operations."
+  },
+  "/business-licenses": {
+    label_th: "ใบอนุญาตธุรกิจ",
+    label_en: "Business licenses",
+    desc_th: "บริการขอและต่ออายุใบอนุญาตที่เกี่ยวข้องกับกิจการ",
+    desc_en: "Business permit and license support."
+  },
+  "/company-dissolution": {
+    label_th: "ปิดบริษัทและเลิกกิจการ",
+    label_en: "Company dissolution",
+    desc_th: "ขั้นตอนปิดบริษัท ชำระบัญชี และยื่นเอกสารที่เกี่ยวข้อง",
+    desc_en: "Closure, liquidation, and dissolution process support."
+  },
+  "/audit-preparation": {
+    label_th: "เตรียมงานตรวจสอบบัญชี",
+    label_en: "Audit preparation",
+    desc_th: "เตรียมข้อมูลและเอกสารก่อนปิดงบและตรวจสอบบัญชี",
+    desc_en: "Pre-audit preparation and year-end documentation support."
+  },
+  "/foreign-business-support": {
+    label_th: "สนับสนุนธุรกิจต่างชาติ",
+    label_en: "Foreign business support",
+    desc_th: "บริการสำหรับผู้ถือหุ้นหรือผู้บริหารต่างชาติในไทย",
+    desc_en: "Compliance and setup support for foreign stakeholders."
+  },
+  "/bangkok-accounting": {
+    label_th: "สำนักงานบัญชีกรุงเทพ",
+    label_en: "Bangkok accounting office",
+    desc_th: "ภาพรวมบริการสำหรับธุรกิจในกรุงเทพและปริมณฑล",
+    desc_en: "Overview of local support for Bangkok-based businesses."
+  }
+};
+
+const categoryServiceMap = {
+  "Accounting & Tax": ["/monthly-accounting", "/corporate-tax-planning"],
+  "VAT": ["/monthly-accounting", "/corporate-tax-planning"],
+  "Tax Planning": ["/corporate-tax-planning", "/monthly-accounting"],
+  "Year-End Closing": ["/audit-preparation", "/monthly-accounting"],
+  "Payroll and Social Security": ["/payroll-social-security", "/monthly-accounting"],
+  "Company Registration": ["/company-registration", "/dbd-amendments"],
+  "DBD Amendments": ["/dbd-amendments", "/company-registration"],
+  "Company Dissolution": ["/company-dissolution", "/dbd-amendments"],
+  "Visa and Work Permit": ["/visa-work-permit", "/foreign-business-support"],
+  "Visa & Permits": ["/visa-work-permit", "/foreign-business-support"],
+  "Business Licensing": ["/business-licenses", "/foreign-business-support"],
+  "Business Licenses": ["/business-licenses", "/foreign-business-support"]
+};
+
+const keywordServiceRules = [
+  { pattern: /\b(vat|pp30|pp36|pnd|withholding)\b/i, links: ["/monthly-accounting", "/corporate-tax-planning"] },
+  { pattern: /\b(payroll|social security|sso)\b/i, links: ["/payroll-social-security", "/monthly-accounting"] },
+  { pattern: /\b(company registration|incorporation|dbd)\b/i, links: ["/company-registration", "/dbd-amendments"] },
+  { pattern: /\b(visa|work permit)\b/i, links: ["/visa-work-permit", "/foreign-business-support"] },
+  { pattern: /\b(license|permit)\b/i, links: ["/business-licenses", "/foreign-business-support"] },
+  { pattern: /\b(dissolution|liquidation|close company)\b/i, links: ["/company-dissolution", "/dbd-amendments"] },
+  { pattern: /\b(audit|year[- ]end|financial statement)\b/i, links: ["/audit-preparation", "/monthly-accounting"] }
+];
+
+function pickInternalServiceLinks(post, limit = 5) {
+  const selected = [];
+  const pushLink = (url) => {
+    if (!servicePages[url]) return;
+    if (!selected.includes(url)) selected.push(url);
+  };
+
+  pushLink("/services");
+
+  for (const url of categoryServiceMap[post.category_en] || []) {
+    pushLink(url);
+  }
+
+  const keywordSource = `${post.title_en || ""} ${post.description_en || ""}`;
+  for (const rule of keywordServiceRules) {
+    if (rule.pattern.test(keywordSource)) {
+      for (const url of rule.links) pushLink(url);
+    }
+  }
+
+  pushLink("/faq");
+  pushLink("/resources");
+
+  return selected.slice(0, limit);
+}
+
+function renderInternalLinks(post, posts) {
+  const serviceLinks = pickInternalServiceLinks(post);
+  const relatedPosts = pickRelatedPosts(posts, post, 2);
+
+  const serviceTh = serviceLinks
+    .map((url) => {
+      const item = servicePages[url];
+      return `<article class="source-item">
+  <a href="${url}">${htmlEscape(item.label_th)}</a>
+  <p>${htmlEscape(item.desc_th)}</p>
+</article>`;
+    })
+    .join("\n");
+
+  const serviceEn = serviceLinks
+    .map((url) => {
+      const item = servicePages[url];
+      return `<article class="source-item">
+  <a href="${url}">${htmlEscape(item.label_en)}</a>
+  <p>${htmlEscape(item.desc_en)}</p>
+</article>`;
+    })
+    .join("\n");
+
+  const relatedTh = relatedPosts
+    .map(
+      (item) => `<article class="source-item">
+  <a href="/blog/${htmlEscape(item.slug)}">${htmlEscape(item.title_th)}</a>
+  <p>${htmlEscape(item.description_th)}</p>
+</article>`
+    )
+    .join("\n");
+
+  const relatedEn = relatedPosts
+    .map(
+      (item) => `<article class="source-item">
+  <a href="/blog/${htmlEscape(item.slug)}">${htmlEscape(item.title_en)}</a>
+  <p>${htmlEscape(item.description_en)}</p>
+</article>`
+    )
+    .join("\n");
+
+  return `<section class="note-box">
+  <h3 data-th="ลิงก์ภายในที่เกี่ยวข้อง" data-en="Related internal links">ลิงก์ภายในที่เกี่ยวข้อง</h3>
+  <p
+    class="micro-copy"
+    data-th="ลิงก์ชุดนี้ถูกจัดให้อัตโนมัติตามหมวดบทความและคีย์เวิร์ด เพื่อช่วยให้ผู้อ่านไปยังหน้าบริการและบทความที่เกี่ยวข้องได้ต่อเนื่อง"
+    data-en="This link set is automatically generated from article category and keywords to improve discovery across related services and guides."
+  >
+    ลิงก์ชุดนี้ถูกจัดให้อัตโนมัติตามหมวดบทความและคีย์เวิร์ด เพื่อช่วยให้ผู้อ่านไปยังหน้าบริการและบทความที่เกี่ยวข้องได้ต่อเนื่อง
+  </p>
+  <div class="lang-panel is-active" data-lang-panel="th">
+    <div class="source-list">
+${serviceTh}
+${relatedTh}
+    </div>
+  </div>
+  <div class="lang-panel" data-lang-panel="en">
+    <div class="source-list">
+${serviceEn}
+${relatedEn}
+    </div>
+  </div>
+</section>`;
+}
+
 function buildBlogSchema(posts) {
   return {
     "@context": "https://schema.org",
@@ -634,6 +838,8 @@ ${renderSources(post.sources, "th")}
 ${renderSources(post.sources, "en")}
               </div>
             </section>
+
+            ${renderInternalLinks(post, posts)}
           </aside>
         </div>
 

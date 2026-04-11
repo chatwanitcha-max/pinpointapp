@@ -1,10 +1,10 @@
 (function () {
   const baseConfig = window.PINPOINT_CONFIG || {};
   const state = {
-    ga4MeasurementId: baseConfig.ga4MeasurementId || "",
-    googleAdsId: baseConfig.googleAdsId || "",
-    googleAdsLeadLabel: baseConfig.googleAdsLeadLabel || "",
-    metaPixelId: baseConfig.metaPixelId || "",
+    ga4MeasurementId: String(baseConfig.ga4MeasurementId || "").trim(),
+    googleAdsId: String(baseConfig.googleAdsId || "").trim(),
+    googleAdsLeadLabel: String(baseConfig.googleAdsLeadLabel || "").trim(),
+    metaPixelId: String(baseConfig.metaPixelId || "").trim(),
     initialized: false
   };
 
@@ -59,10 +59,10 @@
       if (!response.ok) return;
       const payload = await response.json();
       const remote = payload && payload.config ? payload.config : {};
-      state.ga4MeasurementId = remote.ga4MeasurementId || state.ga4MeasurementId;
-      state.googleAdsId = remote.googleAdsId || state.googleAdsId;
-      state.googleAdsLeadLabel = remote.googleAdsLeadLabel || state.googleAdsLeadLabel;
-      state.metaPixelId = remote.metaPixelId || state.metaPixelId;
+      state.ga4MeasurementId = String(remote.ga4MeasurementId || state.ga4MeasurementId).trim();
+      state.googleAdsId = String(remote.googleAdsId || state.googleAdsId).trim();
+      state.googleAdsLeadLabel = String(remote.googleAdsLeadLabel || state.googleAdsLeadLabel).trim();
+      state.metaPixelId = String(remote.metaPixelId || state.metaPixelId).trim();
       window.PINPOINT_CONFIG = {
         ...baseConfig,
         ...remote

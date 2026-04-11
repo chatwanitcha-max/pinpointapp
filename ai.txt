@@ -1,0 +1,7 @@
+Pinpoint Accounting & Service, Ltd.
+Primary domain: https://pinpointaccountingservice.com/
+Topics: accounting, tax compliance, DBD amendments, company registration, visa/work permit, business licensing, dissolution support in Thailand.
+Language: Thai, English.
+Canonical summary: https://pinpointaccountingservice.com/llms.txt
+Sitemap: https://pinpointaccountingservice.com/sitemap.xml
+Feed: https://pinpointaccountingservice.com/feed.xml

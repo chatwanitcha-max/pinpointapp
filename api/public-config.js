@@ -1,4 +1,5 @@
 const { json } = require("./_lib/analytics");
+const { isEmailDeliveryEnabled } = require("./_lib/outbound");
 
 module.exports = async (req, res) => {
   if (req.method !== "GET") {
@@ -9,11 +10,16 @@ module.exports = async (req, res) => {
     ok: true,
     config: {
       lineOaUrl: "https://lin.ee/58aU8oE",
-      ga4MeasurementId: process.env.GA4_MEASUREMENT_ID || "",
-      googleAdsId: process.env.GOOGLE_ADS_ID || "",
-      googleAdsLeadLabel: process.env.GOOGLE_ADS_LEAD_LABEL || "",
-      metaPixelId: process.env.META_PIXEL_ID || "",
-      emailLeadEnabled: Boolean(process.env.RESEND_API_KEY && process.env.LEAD_FROM_EMAIL && process.env.LEAD_TO_EMAIL),
+      ga4MeasurementId: String(process.env.GA4_MEASUREMENT_ID || "").trim(),
+      googleAdsId: String(process.env.GOOGLE_ADS_ID || "").trim(),
+      googleAdsLeadLabel: String(process.env.GOOGLE_ADS_LEAD_LABEL || "").trim(),
+      metaPixelId: String(process.env.META_PIXEL_ID || "").trim(),
+      emailLeadEnabled: Boolean(
+        isEmailDeliveryEnabled() &&
+          process.env.RESEND_API_KEY &&
+          process.env.LEAD_FROM_EMAIL &&
+          process.env.LEAD_TO_EMAIL
+      ),
     },
   });
 };

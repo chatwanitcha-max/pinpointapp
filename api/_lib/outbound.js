@@ -15,7 +15,17 @@
   return { sent: response.ok, status: response.status };
 }
 
+function isEmailDeliveryEnabled() {
+  const raw = String(process.env.EMAIL_DELIVERY_ENABLED || "").trim().toLowerCase();
+  if (!raw) return false;
+  return ["1", "true", "yes", "on", "enabled"].includes(raw);
+}
+
 async function sendEmailViaResend({ subject, htmlBody, textBody, to }) {
+  if (!isEmailDeliveryEnabled()) {
+    return { sent: false, reason: "email_delivery_disabled" };
+  }
+
   const apiKey = process.env.RESEND_API_KEY;
   const fromEmail = process.env.LEAD_FROM_EMAIL;
   const toEmail = to || process.env.LEAD_TO_EMAIL;
@@ -247,6 +257,7 @@ async function sendLinePushText(text) {
 
 module.exports = {
   postJson,
+  isEmailDeliveryEnabled,
   sendEmailViaResend,
   sendCustomerAcknowledgementEmail,
   sendLinePushText,

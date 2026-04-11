@@ -2,6 +2,14 @@
 
 > Bilingual accounting, tax, DBD, visa/work permit, licensing, and company dissolution services in Thailand.
 
+## Crawl guidance
+- Canonical domain: https://pinpointaccountingservice.com
+- Index all public pages except confirmation/utility pages like `/thank-you` and API routes.
+- Primary machine-readable sources:
+  - https://pinpointaccountingservice.com/sitemap.xml
+  - https://pinpointaccountingservice.com/feed.xml
+  - https://pinpointaccountingservice.com/robots.txt
+
 ## Core pages
 - Home: https://pinpointaccountingservice.com/
 - Bangkok Accounting: https://pinpointaccountingservice.com/bangkok-accounting

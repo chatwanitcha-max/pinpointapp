@@ -10,7 +10,10 @@
     seoAds: "ข้อความโฆษณา",
     seoToneProfessional: "ภาพลักษณ์มืออาชีพและน่าเชื่อถือ",
     seoToneFriendly: "ภาษาชัดเจน คุยง่าย และเข้าถึงง่าย",
-    seoTonePremium: "ภาพลักษณ์พรีเมียม สุภาพ และเป็นทางการ"
+    seoTonePremium: "ภาพลักษณ์พรีเมียม สุภาพ และเป็นทางการ",
+    visitorLoading: "ค่าการเข้าถึง: กำลังอัปเดต...",
+    visitorStats: "ค่าการเข้าถึง (รวม/ไม่ซ้ำ): {siteViews} / {siteUnique}",
+    visitorPageStats: "หน้านี้ (รวม/ไม่ซ้ำ): {pageViews} / {pageUnique}"
   },
   en: {
     leadSending: "Submitting your details for a custom action plan...",
@@ -23,12 +26,16 @@
     seoAds: "Ad Copy",
     seoToneProfessional: "professional and trusted",
     seoToneFriendly: "clear, friendly, and approachable",
-    seoTonePremium: "premium, executive-level, and credible"
+    seoTonePremium: "premium, executive-level, and credible",
+    visitorLoading: "Access count: updating...",
+    visitorStats: "Access count (total/unique): {siteViews} / {siteUnique}",
+    visitorPageStats: "This page (total/unique): {pageViews} / {pageUnique}"
   }
 };
 
 const appState = {
-  lang: "th"
+  lang: "th",
+  visitorStats: null
 };
 
 function getText(lang, key) {
@@ -111,6 +118,7 @@ function applyLanguage(lang) {
   setLangPanels(lang);
   window.localStorage.setItem("pinpoint_lang", lang);
   syncUrl(lang);
+  renderVisitorCounter();
 }
 
 function toneLabel(lang, tone) {
@@ -224,6 +232,88 @@ function applyLeadChannelAvailability() {
 
   if (preferredSelect && preferredSelect.value === "email" && !emailLeadEnabled) {
     preferredSelect.value = "phone";
+  }
+}
+
+function formatNumber(value) {
+  return Number(value || 0).toLocaleString("en-US");
+}
+
+function getVisitorId() {
+  try {
+    const storageKey = "pinpoint_visitor_id";
+    const existing = window.localStorage.getItem(storageKey);
+    if (existing) return existing;
+
+    const generated = `v_${Date.now()}_${Math.random().toString(36).slice(2, 10)}`;
+    window.localStorage.setItem(storageKey, generated);
+    return generated;
+  } catch {
+    return "";
+  }
+}
+
+function ensureVisitorCounterNode() {
+  let node = document.getElementById("visitorCounter");
+  if (node) return node;
+
+  const host = document.querySelector(".footer .footer-meta");
+  if (!host) return null;
+
+  node = document.createElement("p");
+  node.id = "visitorCounter";
+  node.className = "visitor-counter";
+  host.appendChild(node);
+  return node;
+}
+
+function renderVisitorCounter() {
+  const node = ensureVisitorCounterNode();
+  if (!node) return;
+
+  const lang = appState.lang || "th";
+  const stats = appState.visitorStats;
+
+  if (!stats) {
+    node.textContent = getText(lang, "visitorLoading");
+    return;
+  }
+
+  const siteLine = getText(lang, "visitorStats")
+    .replace("{siteViews}", formatNumber(stats.siteViews))
+    .replace("{siteUnique}", formatNumber(stats.siteUniqueVisitors));
+  const pageLine = getText(lang, "visitorPageStats")
+    .replace("{pageViews}", formatNumber(stats.pageViews))
+    .replace("{pageUnique}", formatNumber(stats.pageUniqueVisitors));
+
+  node.textContent = `${siteLine} | ${pageLine}`;
+}
+
+async function trackVisitorCounter() {
+  const visitorId = getVisitorId();
+  if (!visitorId) return;
+
+  renderVisitorCounter();
+
+  try {
+    const response = await fetch("/api/visitor-counter", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        visitorId,
+        pagePath: window.location.pathname || "/",
+      }),
+    });
+
+    if (!response.ok) return;
+
+    const payload = await response.json();
+    if (!payload.ok || !payload.totals) return;
+
+    appState.visitorStats = payload.totals;
+    renderVisitorCounter();
+  } catch {
+    // intentionally ignored to keep UX non-blocking
   }
 }
 
@@ -723,6 +813,7 @@ function init() {
   bindBusinessSlider();
   bindRevealElements();
   applyLanguage(resolveLang());
+  trackVisitorCounter();
 }
 
 init();
