@@ -16,9 +16,12 @@
 }
 
 function isEmailDeliveryEnabled() {
-  const raw = String(process.env.EMAIL_DELIVERY_ENABLED || "").trim().toLowerCase();
-  if (!raw) return false;
-  return ["1", "true", "yes", "on", "enabled"].includes(raw);
+  // Hard shutdown: disable ALL outbound email sends from this project.
+  // This prevents daily automation briefs, lead notifications, and any customer emails
+  // from consuming credits or accidentally emailing customers.
+  //
+  // To re-enable later, remove this block and rely on EMAIL_DELIVERY_ENABLED env gating.
+  return false;
 }
 
 async function sendEmailViaResend({ subject, htmlBody, textBody, to }) {

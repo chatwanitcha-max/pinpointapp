@@ -1,4 +1,13 @@
 .vercel
+
+# Vercel local backups / exports (should never be committed)
+.vercel.bak_*/
+
+# Local media/automation scratch (not part of the website)
+assets/tiktok_work/
+tools/ffmpeg/
+OPEN_TikTok_*.cmd
+tools/itinerary/render-tiktok-*
 .env.local
 .env.local.txt
 node_modules/
