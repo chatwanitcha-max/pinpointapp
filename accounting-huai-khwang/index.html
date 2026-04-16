@@ -34,11 +34,20 @@
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "AccountingService",
+  "@type": [
+    "LocalBusiness",
+    "AccountingService"
+  ],
   "name": "Pinpoint Accounting & Service, Ltd.",
   "url": "https://pinpointaccountingservice.com",
   "telephone": "+66-92-749-7442",
   "image": "https://pinpointaccountingservice.com/assets/logo-original-large.jpg",
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=294%20Soi%20Yoo%20Charoen%2029%2C%20Ratchadaphisek%2018%20Rd.%2C%20Sam%20Sen%20Nok%2C%20Huai%20Khwang%2C%20Bangkok%2010310",
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 13.791616,
+    "longitude": 100.574558
+  },
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "294 Soi Yoo Charoen 29, Ratchadaphisek 18 Rd., Sam Sen Nok, Huai Khwang",
@@ -56,6 +65,15 @@
       "name": "Huai Khwang"
     }
   ],
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": 13.791616,
+      "longitude": 100.574558
+    },
+    "geoRadius": 25000
+  },
   "sameAs": [
     "https://lin.ee/58aU8oE"
   ]

@@ -9,6 +9,13 @@ const projectRoot = path.resolve(__dirname, "..");
 const baseUrl = "https://pinpointaccountingservice.com";
 const todayIso = new Date().toISOString().slice(0, 10);
 
+// Office coordinates (Huai Khwang, Bangkok). Keep stable for GEO signals.
+// If the exact pin changes, update these values.
+const OFFICE_GEO = { lat: 13.791616, lng: 100.574558 };
+const OFFICE_HAS_MAP = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+  "294 Soi Yoo Charoen 29, Ratchadaphisek 18 Rd., Sam Sen Nok, Huai Khwang, Bangkok 10310"
+)}`;
+
 const LOCATIONS = [
   { slug: "accounting-huai-khwang", areaTh: "ห้วยขวาง", areaEn: "Huai Khwang" },
   { slug: "accounting-ratchada", areaTh: "รัชดา", areaEn: "Ratchada" },
@@ -58,11 +65,13 @@ function renderLocationPage(loc) {
 
   const localBusiness = {
     "@context": "https://schema.org",
-    "@type": "AccountingService",
+    "@type": ["LocalBusiness", "AccountingService"],
     name: "Pinpoint Accounting & Service, Ltd.",
     url: baseUrl,
     telephone: "+66-92-749-7442",
     image: `${baseUrl}/assets/logo-original-large.jpg`,
+    hasMap: OFFICE_HAS_MAP,
+    geo: { "@type": "GeoCoordinates", latitude: OFFICE_GEO.lat, longitude: OFFICE_GEO.lng },
     address: {
       "@type": "PostalAddress",
       streetAddress: "294 Soi Yoo Charoen 29, Ratchadaphisek 18 Rd., Sam Sen Nok, Huai Khwang",
@@ -74,6 +83,12 @@ function renderLocationPage(loc) {
       { "@type": "City", name: "Bangkok" },
       { "@type": "AdministrativeArea", name: loc.areaEn },
     ],
+    serviceArea: {
+      "@type": "GeoCircle",
+      geoMidpoint: { "@type": "GeoCoordinates", latitude: OFFICE_GEO.lat, longitude: OFFICE_GEO.lng },
+      // Approx radius to cover Bangkok intent.
+      geoRadius: 25000,
+    },
     sameAs: ["https://lin.ee/58aU8oE"],
   };
 
@@ -245,4 +260,3 @@ function main() {
 }
 
 main();
-
