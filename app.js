@@ -237,6 +237,13 @@ function applyLeadChannelAvailability() {
   }
 }
 
+function bindRuntimeConfigSync() {
+  window.addEventListener("pinpoint:config-updated", () => {
+    applyLineLinks();
+    applyLeadChannelAvailability();
+  });
+}
+
 function formatNumber(value) {
   return Number(value || 0).toLocaleString("en-US");
 }
@@ -815,6 +822,7 @@ function initYear() {
 function init() {
   initYear();
   populateUtmFields();
+  bindRuntimeConfigSync();
   applyLineLinks();
   applyLeadChannelAvailability();
   initMobileTopbar();

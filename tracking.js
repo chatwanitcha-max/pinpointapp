@@ -67,6 +67,11 @@
         ...baseConfig,
         ...remote
       };
+      window.dispatchEvent(
+        new CustomEvent("pinpoint:config-updated", {
+          detail: window.PINPOINT_CONFIG
+        })
+      );
     } catch {
       // keep existing static config when runtime config is unavailable
     }
