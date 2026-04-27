@@ -16,12 +16,13 @@
 }
 
 function isEmailDeliveryEnabled() {
-  // Hard shutdown: disable ALL outbound email sends from this project.
-  // This prevents daily automation briefs, lead notifications, and any customer emails
-  // from consuming credits or accidentally emailing customers.
-  //
-  // To re-enable later, remove this block and rely on EMAIL_DELIVERY_ENABLED env gating.
-  return false;
+  const value = String(process.env.EMAIL_DELIVERY_ENABLED || "").trim().toLowerCase();
+  return ["1", "true", "yes", "on", "enabled"].includes(value);
+}
+
+function isCustomerAutoReplyEmailEnabled() {
+  const value = String(process.env.CUSTOMER_AUTO_REPLY_EMAIL_ENABLED || "").trim().toLowerCase();
+  return ["1", "true", "yes", "on", "enabled"].includes(value);
 }
 
 async function sendEmailViaResend({ subject, htmlBody, textBody, to }) {
@@ -162,6 +163,10 @@ function buildCustomerEmailLayout({
 }
 
 async function sendCustomerAcknowledgementEmail({ lead, routing }) {
+  if (!isCustomerAutoReplyEmailEnabled()) {
+    return { sent: false, reason: "customer_auto_reply_disabled" };
+  }
+
   const customerEmail = lead?.email;
   if (!customerEmail) {
     return { sent: false, reason: "missing_customer_email" };
@@ -261,6 +266,7 @@ async function sendLinePushText(text) {
 module.exports = {
   postJson,
   isEmailDeliveryEnabled,
+  isCustomerAutoReplyEmailEnabled,
   sendEmailViaResend,
   sendCustomerAcknowledgementEmail,
   sendLinePushText,

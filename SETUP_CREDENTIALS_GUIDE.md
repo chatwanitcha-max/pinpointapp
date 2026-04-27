@@ -22,10 +22,14 @@ Fill:
 - `RESEND_API_KEY`
 - `LEAD_FROM_EMAIL`
 - `LEAD_TO_EMAIL`
+- `EMAIL_DELIVERY_ENABLED`
+- `CUSTOMER_AUTO_REPLY_EMAIL_ENABLED`
 
 Notes:
 - `LEAD_FROM_EMAIL` must use a verified sending domain in Resend.
 - `LEAD_TO_EMAIL` is the inbox that should receive leads.
+- Set `EMAIL_DELIVERY_ENABLED=true` to receive lead notifications.
+- Set `CUSTOMER_AUTO_REPLY_EMAIL_ENABLED=false` to keep customer auto-reply emails off.
 
 ## 2. LINE OA
 

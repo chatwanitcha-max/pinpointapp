@@ -6,7 +6,8 @@ Set these in Vercel Project Settings > Environment Variables:
 - `RESEND_API_KEY` = Resend API key
 - `LEAD_FROM_EMAIL` = sender email (e.g. `lead@yourdomain.com`)
 - `LEAD_TO_EMAIL` = receiver email for lead notifications
-- `EMAIL_DELIVERY_ENABLED` = `false` to hard-stop all outbound email, `true` to allow
+- `EMAIL_DELIVERY_ENABLED` = `false` to stop outbound email, `true` to allow lead notification email
+- `CUSTOMER_AUTO_REPLY_EMAIL_ENABLED` = `false` to disable automatic email replies to customers, `true` to enable
 
 - `LINE_CHANNEL_ACCESS_TOKEN` = LINE Messaging API channel token
 - `LINE_TARGET_ID` = target user/group id for push message
