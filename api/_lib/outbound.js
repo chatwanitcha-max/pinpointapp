@@ -20,16 +20,19 @@ function isEmailDeliveryEnabled() {
   return ["1", "true", "yes", "on", "enabled"].includes(value);
 }
 
+function isLeadNotificationEmailEnabled() {
+  const raw = String(process.env.LEAD_NOTIFICATION_EMAIL_ENABLED || "").trim().toLowerCase();
+  if (!raw) return true;
+  if (["0", "false", "no", "off", "disabled"].includes(raw)) return false;
+  return ["1", "true", "yes", "on", "enabled"].includes(raw);
+}
+
 function isCustomerAutoReplyEmailEnabled() {
   const value = String(process.env.CUSTOMER_AUTO_REPLY_EMAIL_ENABLED || "").trim().toLowerCase();
   return ["1", "true", "yes", "on", "enabled"].includes(value);
 }
 
-async function sendEmailViaResend({ subject, htmlBody, textBody, to }) {
-  if (!isEmailDeliveryEnabled()) {
-    return { sent: false, reason: "email_delivery_disabled" };
-  }
-
+async function sendViaResend({ subject, htmlBody, textBody, to }) {
   const apiKey = process.env.RESEND_API_KEY;
   const fromEmail = process.env.LEAD_FROM_EMAIL;
   const toEmail = to || process.env.LEAD_TO_EMAIL;
@@ -54,6 +57,20 @@ async function sendEmailViaResend({ subject, htmlBody, textBody, to }) {
   });
 
   return { sent: response.ok, status: response.status };
+}
+
+async function sendEmailViaResend({ subject, htmlBody, textBody, to }) {
+  if (!isEmailDeliveryEnabled()) {
+    return { sent: false, reason: "email_delivery_disabled" };
+  }
+  return sendViaResend({ subject, htmlBody, textBody, to });
+}
+
+async function sendLeadNotificationEmailViaResend({ subject, htmlBody, textBody, to }) {
+  if (!isLeadNotificationEmailEnabled()) {
+    return { sent: false, reason: "lead_notification_email_disabled" };
+  }
+  return sendViaResend({ subject, htmlBody, textBody, to });
 }
 
 function escapeHtml(value) {
@@ -266,8 +283,10 @@ async function sendLinePushText(text) {
 module.exports = {
   postJson,
   isEmailDeliveryEnabled,
+  isLeadNotificationEmailEnabled,
   isCustomerAutoReplyEmailEnabled,
   sendEmailViaResend,
+  sendLeadNotificationEmailViaResend,
   sendCustomerAcknowledgementEmail,
   sendLinePushText,
 };

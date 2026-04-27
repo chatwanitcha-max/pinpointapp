@@ -7,6 +7,7 @@ Set these in Vercel Project Settings > Environment Variables:
 - `LEAD_FROM_EMAIL` = sender email (e.g. `lead@yourdomain.com`)
 - `LEAD_TO_EMAIL` = receiver email for lead notifications
 - `EMAIL_DELIVERY_ENABLED` = `false` to stop outbound email, `true` to allow lead notification email
+- `LEAD_NOTIFICATION_EMAIL_ENABLED` = `true` to send lead notification to your team inbox (recommended)
 - `CUSTOMER_AUTO_REPLY_EMAIL_ENABLED` = `false` to disable automatic email replies to customers, `true` to enable
 
 - `LINE_CHANNEL_ACCESS_TOKEN` = LINE Messaging API channel token

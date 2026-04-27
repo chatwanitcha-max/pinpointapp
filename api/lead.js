@@ -15,7 +15,7 @@ const {
   sendSupabaseLead,
 } = require('./_lib/lead-routing');
 const {
-  sendEmailViaResend,
+  sendLeadNotificationEmailViaResend,
   sendCustomerAcknowledgementEmail,
   sendLinePushText,
 } = require('./_lib/outbound');
@@ -358,7 +358,7 @@ module.exports = async (req, res) => {
     routing,
   });
 
-  const emailResult = await sendEmailViaResend({
+  const emailResult = await sendLeadNotificationEmailViaResend({
     subject: `[Pinpoint Lead | ${formatLeadLanguage(routing.language)}] ${lead.fullName} | ${localizeServiceNeed(lead.serviceNeed, routing.language)} | ${lead.phone}`,
     textBody: leadMessage,
     htmlBody: buildLeadEmailHtml(lead, routing)
