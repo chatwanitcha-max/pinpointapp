@@ -3,6 +3,7 @@
     leadSending: "กำลังส่งข้อมูลเพื่อรับแผนงานจากทีม...",
     leadSuccess: "ได้รับข้อมูลแล้ว ทีมงานจะติดต่อกลับภายใน 1 วันทำการตามช่องทางที่คุณเลือก",
     leadError: "ส่งข้อมูลไม่สำเร็จ กรุณาลองใหม่อีกครั้ง หรือโทร 092-749-7442",
+    leadBlocked: "ระบบตรวจพบการกรอกอัตโนมัติบางช่อง ฟอร์มจึงยังไม่ถูกส่ง กรุณากรอกใหม่แล้วลองอีกครั้ง",
     scoreLabel: "คะแนนความพร้อมใช้งาน",
     seoTitle: "หัวข้อ SEO",
     seoMeta: "คำอธิบาย Meta",
@@ -19,6 +20,7 @@
     leadSending: "Submitting your details for a custom action plan...",
     leadSuccess: "Your details have been received. Our team will contact you within 1 business day via your preferred channel.",
     leadError: "Submission failed. Please try again or call 092-749-7442.",
+    leadBlocked: "We detected automated autofill in a protected field, so the form was not sent. Please try again.",
     scoreLabel: "readiness score",
     seoTitle: "SEO Title",
     seoMeta: "Meta Description",
@@ -365,6 +367,10 @@ async function handleLeadSubmit(event) {
     }
 
     const result = await response.json();
+    if (result.ignored) {
+      throw new Error("lead_honeypot_triggered");
+    }
+
     const leadId = result.leadId || `lead_${Date.now()}`;
 
     if (window.PinpointTracking && window.PinpointTracking.trackLeadSubmission) {
@@ -380,7 +386,11 @@ async function handleLeadSubmit(event) {
     statusNode.textContent = getText(lang, "leadSuccess");
     window.location.href = `/thank-you?leadId=${encodeURIComponent(leadId)}&lang=${encodeURIComponent(lang)}`;
   } catch (error) {
-    statusNode.textContent = getText(lang, "leadError");
+    if (error?.message === "lead_honeypot_triggered") {
+      statusNode.textContent = getText(lang, "leadBlocked");
+    } else {
+      statusNode.textContent = getText(lang, "leadError");
+    }
     statusNode.classList.add("error");
   } finally {
     submitButton.disabled = false;
