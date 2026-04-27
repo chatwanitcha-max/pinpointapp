@@ -1,5 +1,5 @@
 const { json } = require("./_lib/analytics");
-const { isEmailDeliveryEnabled } = require("./_lib/outbound");
+const { isLeadNotificationEmailEnabled } = require("./_lib/outbound");
 
 module.exports = async (req, res) => {
   if (req.method !== "GET") {
@@ -15,7 +15,7 @@ module.exports = async (req, res) => {
       googleAdsLeadLabel: String(process.env.GOOGLE_ADS_LEAD_LABEL || "").trim(),
       metaPixelId: String(process.env.META_PIXEL_ID || "").trim(),
       emailLeadEnabled: Boolean(
-        isEmailDeliveryEnabled() &&
+        isLeadNotificationEmailEnabled() &&
           process.env.RESEND_API_KEY &&
           process.env.LEAD_FROM_EMAIL &&
           process.env.LEAD_TO_EMAIL
