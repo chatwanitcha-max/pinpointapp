@@ -142,6 +142,8 @@ function renderPage(page, postsBySlug) {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <title>${htmlEscape(page.meta_title_th)}</title>
     <meta name="description" content="${htmlEscape(page.meta_description_th)}" data-th="${htmlEscape(page.meta_description_th)}" data-en="${htmlEscape(page.meta_description_en)}" />
     <meta property="og:type" content="website" />
@@ -155,6 +157,8 @@ function renderPage(page, postsBySlug) {
     <meta name="twitter:description" content="${htmlEscape(page.meta_description_en)}" />
     <meta name="twitter:image" content="${ogImage}" />
     <link rel="canonical" href="${canonicalUrl}" />
+    <link rel="alternate" type="text/plain" title="LLM Summary" href="${baseUrl}/llms.txt" />
+    <link rel="alternate" type="text/plain" title="AI Summary" href="${baseUrl}/ai.txt" />
     <link rel="alternate" hreflang="th" href="${canonicalUrl}?lang=th" />
     <link rel="alternate" hreflang="en" href="${canonicalUrl}?lang=en" />
     <link rel="alternate" hreflang="x-default" href="${canonicalUrl}" />
@@ -172,6 +176,47 @@ function renderPage(page, postsBySlug) {
         googleAdsLeadLabel: "",
         metaPixelId: ""
       };
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "${baseUrl}/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": ${JSON.stringify(page.meta_title_en)},
+            "item": ${JSON.stringify(canonicalUrl)}
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": "${baseUrl}/#organization",
+        "name": "Pinpoint Accounting & Service, Ltd.",
+        "url": "${baseUrl}",
+        "logo": "${baseUrl}/assets/logo-original-large.jpg",
+        "telephone": "+66-92-749-7442",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "294 Soi Yoo Charoen 29, Ratchadaphisek 18 Rd., Sam Sen Nok, Huai Khwang",
+          "addressLocality": "Bangkok",
+          "postalCode": "10310",
+          "addressCountry": "TH"
+        },
+        "sameAs": [
+          "https://lin.ee/58aU8oE"
+        ]
+      }
     </script>
     <script type="application/ld+json">
       {

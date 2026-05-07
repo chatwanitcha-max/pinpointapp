@@ -120,6 +120,7 @@ function applyLanguage(lang) {
   setLangPanels(lang);
   window.localStorage.setItem("pinpoint_lang", lang);
   syncUrl(lang);
+  updateAiChatLanguage(lang);
   renderVisitorCounter();
 }
 
@@ -237,10 +238,334 @@ function applyLeadChannelAvailability() {
   }
 }
 
+const AI_CHAT_HISTORY_KEY = "pinpoint_ai_chat_history";
+const AI_CHAT_SESSION_KEY = "pinpoint_ai_chat_session";
+const AI_CHAT_VISITOR_KEY = "pinpoint_ai_chat_visitor";
+
+function getAiChatCopy(lang) {
+  if (lang === "en") {
+    return {
+      title: "Pinpoint AI assistant",
+      subtitle: "Ask about accounting, tax, DBD, visa, or Work Permit.",
+      toggle: "Ask AI",
+      close: "Close",
+      welcome:
+        "Hello. I can help clarify the first steps and tell you what details the team needs next.",
+      placeholder: "Type your question or case details...",
+      send: "Send",
+      typing: "Checking the Pinpoint knowledge base...",
+      error: "The chat could not reply right now. Please call 092-749-7442 or continue via LINE OA.",
+      phone: "Call",
+      line: "LINE OA",
+      form: "Open form",
+      note: "AI can prepare the first triage. A human team member reviews case-specific details.",
+      suggestions: [
+        {
+          label: "Work Permit steps",
+          prompt: "What should I prepare for a Thai work permit case?"
+        },
+        {
+          label: "Monthly accounting",
+          prompt: "What information do you need to estimate monthly accounting service?"
+        },
+        {
+          label: "Company setup",
+          prompt: "I want to register a company in Thailand. What is the first step?"
+        }
+      ]
+    };
+  }
+
+  return {
+    title: "ผู้ช่วย AI ของ Pinpoint",
+    subtitle: "ถามเรื่องบัญชี ภาษี DBD วีซ่า หรือ Work Permit ได้เลย",
+    toggle: "ถาม AI",
+    close: "ปิด",
+    welcome:
+      "สวัสดีค่ะ ฉันช่วยคัดกรองเบื้องต้นและบอกข้อมูลที่ทีมต้องใช้ต่อได้ค่ะ",
+    placeholder: "พิมพ์คำถามหรือรายละเอียดเคสของคุณ...",
+    send: "ส่ง",
+    typing: "กำลังเช็กฐานความรู้ของ Pinpoint...",
+    error: "แชตตอบกลับไม่สำเร็จชั่วคราว กรุณาโทร 092-749-7442 หรือทัก LINE OA ได้เลยค่ะ",
+    phone: "โทร",
+    line: "LINE OA",
+    form: "เปิดฟอร์ม",
+    note: "AI ช่วยคัดกรองเบื้องต้น ทีมงานจะตรวจรายละเอียดเฉพาะเคสก่อนให้คำตอบสุดท้าย",
+    suggestions: [
+      {
+        label: "Work Permit",
+        prompt: "ต้องการทำ Work Permit ต้องเตรียมอะไรบ้าง"
+      },
+      {
+        label: "บัญชีรายเดือน",
+        prompt: "อยากประเมินค่าบริการบัญชีรายเดือน ต้องส่งข้อมูลอะไรให้ทีมบ้าง"
+      },
+      {
+        label: "จดบริษัท",
+        prompt: "อยากจดบริษัทในไทย ต้องเริ่มจากขั้นตอนไหน"
+      }
+    ]
+  };
+}
+
+function getAiChatLineUrl() {
+  return (
+    (window.PINPOINT_CONFIG && window.PINPOINT_CONFIG.lineOaUrl) ||
+    "https://lin.ee/58aU8oE"
+  );
+}
+
+function getAiChatVisitorId() {
+  try {
+    const existing = window.localStorage.getItem(AI_CHAT_VISITOR_KEY);
+    if (existing) return existing;
+    const next = `visitor_${Math.random().toString(36).slice(2)}_${Date.now()}`;
+    window.localStorage.setItem(AI_CHAT_VISITOR_KEY, next);
+    return next;
+  } catch {
+    return `visitor_${Date.now()}`;
+  }
+}
+
+function getAiChatSessionId() {
+  try {
+    const existing = window.localStorage.getItem(AI_CHAT_SESSION_KEY);
+    if (existing) return existing;
+    const next = `chat_${Math.random().toString(36).slice(2)}_${Date.now()}`;
+    window.localStorage.setItem(AI_CHAT_SESSION_KEY, next);
+    return next;
+  } catch {
+    return `chat_${Date.now()}`;
+  }
+}
+
+function saveAiChatSessionId(sessionId) {
+  if (!sessionId) return;
+  try {
+    window.localStorage.setItem(AI_CHAT_SESSION_KEY, sessionId);
+  } catch {
+    // Browser storage can be unavailable in private mode.
+  }
+}
+
+function readAiChatHistory() {
+  try {
+    const raw = window.localStorage.getItem(AI_CHAT_HISTORY_KEY);
+    const parsed = raw ? JSON.parse(raw) : [];
+    return Array.isArray(parsed)
+      ? parsed
+          .filter((item) => item && typeof item.text === "string")
+          .map((item) => ({
+            role: item.role === "assistant" ? "assistant" : "user",
+            text: item.text.slice(0, 700)
+          }))
+          .slice(-8)
+      : [];
+  } catch {
+    return [];
+  }
+}
+
+function writeAiChatHistory(history) {
+  try {
+    window.localStorage.setItem(AI_CHAT_HISTORY_KEY, JSON.stringify(history.slice(-8)));
+  } catch {
+    // Non-critical: the chat still works without local history.
+  }
+}
+
+function rememberAiChatMessage(role, text) {
+  const value = String(text || "").trim();
+  if (!value) return;
+  const history = readAiChatHistory();
+  history.push({ role: role === "assistant" ? "assistant" : "user", text: value });
+  writeAiChatHistory(history);
+}
+
+function addAiChatMessage(root, role, text) {
+  const list = root.querySelector("[data-ai-messages]");
+  if (!list) return null;
+  const item = document.createElement("div");
+  item.className = `ai-chat-message ai-chat-message--${role === "user" ? "user" : "assistant"}`;
+  const bubble = document.createElement("p");
+  bubble.textContent = text;
+  item.appendChild(bubble);
+  list.appendChild(item);
+  list.scrollTop = list.scrollHeight;
+  return item;
+}
+
+function setAiChatBusy(root, busy) {
+  root.classList.toggle("is-busy", busy);
+  root.querySelectorAll("button, textarea").forEach((node) => {
+    if (node.dataset.aiClose !== "true" && node.dataset.aiToggle !== "true") {
+      node.disabled = busy;
+    }
+  });
+}
+
+function setAiChatOpen(root, open) {
+  root.classList.toggle("is-open", open);
+  const toggle = root.querySelector("[data-ai-toggle]");
+  if (toggle) toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  if (open) {
+    const input = root.querySelector("[data-ai-input]");
+    window.setTimeout(() => input?.focus(), 80);
+  }
+}
+
+function updateAiChatLanguage(lang) {
+  const root = document.getElementById("pinpointAiChat");
+  if (!root) return;
+  const copy = getAiChatCopy(lang);
+  const setters = {
+    "[data-ai-title]": copy.title,
+    "[data-ai-subtitle]": copy.subtitle,
+    "[data-ai-toggle-label]": copy.toggle,
+    "[data-ai-note]": copy.note,
+    "[data-ai-send]": copy.send,
+    "[data-ai-phone]": copy.phone,
+    "[data-ai-line]": copy.line,
+    "[data-ai-form]": copy.form,
+  };
+  Object.entries(setters).forEach(([selector, value]) => {
+    const node = root.querySelector(selector);
+    if (node) node.textContent = value;
+  });
+  const close = root.querySelector("[data-ai-close]");
+  if (close) close.setAttribute("aria-label", copy.close);
+  const input = root.querySelector("[data-ai-input]");
+  if (input) input.setAttribute("placeholder", copy.placeholder);
+  root.querySelectorAll("[data-ai-prompt-index]").forEach((node) => {
+    const prompt = copy.suggestions[Number(node.dataset.aiPromptIndex)] || copy.suggestions[0];
+    node.textContent = prompt.label;
+    node.dataset.prompt = prompt.prompt;
+  });
+}
+
+async function sendAiChatMessage(root, text) {
+  const message = String(text || "").trim();
+  if (!message) return;
+
+  const input = root.querySelector("[data-ai-input]");
+  const historyBeforeSend = readAiChatHistory();
+  addAiChatMessage(root, "user", message);
+  rememberAiChatMessage("user", message);
+  if (input) input.value = "";
+
+  const copy = getAiChatCopy(appState.lang || resolveLang());
+  setAiChatBusy(root, true);
+  const typing = addAiChatMessage(root, "assistant", copy.typing);
+
+  try {
+    const response = await fetch("/api/ai-chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        sessionId: getAiChatSessionId(),
+        visitorId: getAiChatVisitorId(),
+        language: appState.lang || resolveLang(),
+        message,
+        history: historyBeforeSend,
+        pageUrl: window.location.href,
+        userAgent: navigator.userAgent
+      })
+    });
+    const data = await response.json().catch(() => ({}));
+    typing?.remove();
+    if (!response.ok || !data.replyText) {
+      throw new Error(data.error || `chat_${response.status}`);
+    }
+    saveAiChatSessionId(data.sessionId);
+    addAiChatMessage(root, "assistant", data.replyText);
+    rememberAiChatMessage("assistant", data.replyText);
+  } catch {
+    typing?.remove();
+    addAiChatMessage(root, "assistant", copy.error);
+  } finally {
+    setAiChatBusy(root, false);
+    input?.focus();
+  }
+}
+
+function initAiChat() {
+  if (document.getElementById("pinpointAiChat")) return;
+
+  const root = document.createElement("section");
+  root.id = "pinpointAiChat";
+  root.className = "ai-chat-widget";
+  root.innerHTML = `
+    <button class="ai-chat-toggle" type="button" data-ai-toggle="true" aria-expanded="false">
+      <span class="ai-chat-toggle__dot" aria-hidden="true"></span>
+      <span data-ai-toggle-label></span>
+    </button>
+    <div class="ai-chat-panel" role="dialog" aria-label="Pinpoint AI chat">
+      <div class="ai-chat-head">
+        <div>
+          <strong data-ai-title></strong>
+          <span data-ai-subtitle></span>
+        </div>
+        <button class="ai-chat-close" type="button" data-ai-close="true">x</button>
+      </div>
+      <div class="ai-chat-messages" data-ai-messages></div>
+      <div class="ai-chat-prompts">
+        <button type="button" data-ai-prompt-index="0"></button>
+        <button type="button" data-ai-prompt-index="1"></button>
+        <button type="button" data-ai-prompt-index="2"></button>
+      </div>
+      <form class="ai-chat-form" data-ai-form-shell>
+        <textarea data-ai-input rows="2"></textarea>
+        <button type="submit" data-ai-send></button>
+      </form>
+      <div class="ai-chat-actions">
+        <a href="tel:0927497442" data-ai-phone></a>
+        <a class="line-chat" href="${getAiChatLineUrl()}" target="_blank" rel="noreferrer" data-ai-line></a>
+        <a href="/#lead-form" data-ai-form></a>
+      </div>
+      <p class="ai-chat-note" data-ai-note></p>
+    </div>
+  `;
+
+  document.body.appendChild(root);
+  updateAiChatLanguage(appState.lang || resolveLang());
+
+  const messages = root.querySelector("[data-ai-messages]");
+  const history = readAiChatHistory();
+  if (history.length) {
+    history.forEach((item) => addAiChatMessage(root, item.role, item.text));
+  } else {
+    addAiChatMessage(root, "assistant", getAiChatCopy(appState.lang || resolveLang()).welcome);
+  }
+  if (messages) messages.scrollTop = messages.scrollHeight;
+
+  root.querySelector("[data-ai-toggle]")?.addEventListener("click", () => {
+    setAiChatOpen(root, !root.classList.contains("is-open"));
+  });
+  root.querySelector("[data-ai-close]")?.addEventListener("click", () => {
+    setAiChatOpen(root, false);
+  });
+  root.querySelector("[data-ai-form-shell]")?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    sendAiChatMessage(root, root.querySelector("[data-ai-input]")?.value || "");
+  });
+  root.querySelector("[data-ai-input]")?.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" && !event.shiftKey) {
+      event.preventDefault();
+      sendAiChatMessage(root, event.currentTarget.value);
+    }
+  });
+  root.querySelectorAll("[data-ai-prompt-index]").forEach((node) => {
+    node.addEventListener("click", () => {
+      sendAiChatMessage(root, node.dataset.prompt || node.textContent);
+    });
+  });
+}
+
 function bindRuntimeConfigSync() {
   window.addEventListener("pinpoint:config-updated", () => {
     applyLineLinks();
     applyLeadChannelAvailability();
+    updateAiChatLanguage(appState.lang || resolveLang());
   });
 }
 
@@ -831,6 +1156,7 @@ function init() {
   bindBusinessSlider();
   bindRevealElements();
   applyLanguage(resolveLang());
+  initAiChat();
   trackVisitorCounter();
 }
 
