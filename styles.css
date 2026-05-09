@@ -1902,9 +1902,11 @@ tbody tr:last-child td {
 
 .ai-chat-widget.is-centered .ai-chat-panel {
   z-index: 1;
-  width: min(860px, calc(100vw - 24px));
-  height: min(780px, calc(100vh - 24px));
-  max-height: calc(100vh - 24px);
+  justify-self: center;
+  align-self: center;
+  width: min(620px, calc(100vw - 120px));
+  height: min(780px, calc(100vh - 40px));
+  max-height: calc(100vh - 40px);
   transform-origin: center;
 }
 
