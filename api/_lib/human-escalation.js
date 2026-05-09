@@ -123,14 +123,14 @@ function evaluateAiHumanEscalation({
 function buildHumanEscalationReply(language = "th") {
   if (language === "en") {
     return [
-      "Thank you. This question needs a human team member to review the details before answering accurately.",
-      "I have sent the case to the team. If convenient, please leave your phone, LINE ID, or email here so the team can follow up faster.",
+      "Thanks. This one is better reviewed by a human team member so we can answer it accurately.",
+      "I’ve sent the case to the team already. If it’s convenient, please leave your phone, LINE ID, or email here so they can follow up faster.",
     ].join("\n\n");
   }
 
   return [
-    "ขอบคุณค่ะ คำถามนี้ควรให้ทีมงานตรวจรายละเอียดก่อนตอบ เพื่อให้คำตอบแม่นและไม่พลาดข้อมูลสำคัญ",
-    "ระบบส่งเรื่องให้ทีมงานแล้วค่ะ ถ้าสะดวก รบกวนฝากเบอร์โทร LINE ID หรืออีเมลไว้ในช่องนี้ ทีมจะติดต่อกลับได้เร็วขึ้นค่ะ",
+    "ขอบคุณค่ะ เรื่องนี้ขอให้ทีมช่วยตรวจรายละเอียดก่อนนะคะ จะได้ตอบได้แม่นและไม่พลาดข้อมูลสำคัญ",
+    "ส่งเรื่องให้ทีมแล้วค่ะ ถ้าสะดวก ฝากเบอร์โทร LINE ID หรืออีเมลไว้ในช่องนี้ได้เลย ทีมจะติดต่อกลับได้เร็วขึ้นค่ะ",
   ].join("\n\n");
 }
 

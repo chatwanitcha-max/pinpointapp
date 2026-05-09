@@ -1884,7 +1884,12 @@ tbody tr:last-child td {
 }
 
 .ai-chat-widget.is-centered {
-  padding: clamp(10px, 2vw, 24px);
+  inset: 0;
+  right: auto;
+  bottom: auto;
+  display: block;
+  padding: clamp(14px, 2.6vw, 34px);
+  pointer-events: auto;
 }
 
 .ai-chat-widget.is-centered .ai-chat-backdrop {
@@ -1902,21 +1907,28 @@ tbody tr:last-child td {
 
 .ai-chat-widget.is-centered .ai-chat-panel {
   z-index: 1;
-  position: relative;
+  position: fixed;
+  left: 50%;
+  top: 50%;
   right: auto;
   bottom: auto;
-  left: auto;
-  top: auto;
-  justify-self: center;
-  align-self: center;
-  width: min(460px, calc(100vw - 300px));
-  height: min(780px, calc(100vh - 40px));
-  max-height: calc(100vh - 40px);
+  justify-self: unset;
+  align-self: unset;
+  width: clamp(360px, 30vw, 430px);
+  height: min(780px, calc(100vh - 56px));
+  max-height: calc(100vh - 56px);
+  transform: translate(-50%, -50%) scale(0.98);
   transform-origin: center;
 }
 
 .ai-chat-widget.is-centered .ai-chat-toggle {
   display: none;
+}
+
+.ai-chat-widget.is-centered.is-open .ai-chat-panel {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .ai-chat-head strong {

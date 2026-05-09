@@ -449,33 +449,33 @@ function buildOfficialReferenceReply(language, text, serviceBucket, knowledgeCon
 function buildClarifyQuestion(language, serviceBucket) {
   if (language === "en") {
     if (serviceBucket === "accounting-tax") {
-      return "Let us confirm the scope first. Do you want help with tax planning, VAT document flow, monthly accounting, or a filing deadline?";
+      return "If we continue from this case, would you like help with tax planning, VAT documents, monthly accounting, or a filing deadline?";
     }
     if (serviceBucket === "corporate-dbd") {
-      return "Let us confirm the scope first. Is this about a new company registration, a DBD amendment, or company documents?";
+      return "If we continue from this case, is it about a new company registration, a DBD amendment, or company documents?";
     }
     if (serviceBucket === "visa-license") {
-      return "Let us confirm the scope first. Is this about a visa, work permit, renewal, or a business license?";
+      return "If we continue from this case, is it about a visa, work permit, renewal, or a business license?";
     }
     if (serviceBucket === "company-dissolution") {
-      return "Let us confirm the scope first. Is this about closure planning, tax cleanup, or the dissolution filing?";
+      return "If we continue from this case, is it about closure planning, tax cleanup, or the dissolution filing?";
     }
-    return "Let us confirm the scope first. What would you like the team to help with most right now?";
+    return "If we continue from this case, what would you like the team to help with most right now?";
   }
 
   if (serviceBucket === "accounting-tax") {
-    return "ขอเช็กให้ตรงก่อนนะคะ ตอนนี้ต้องการให้ทีมช่วยวางแผนภาษี จัดรอบเอกสาร VAT บัญชีรายเดือน หรือเช็กกำหนดยื่นเรื่องใดเป็นหลักคะ";
+    return "ถ้าต่อจากเคสนี้ ขอเช็กนิดนึงนะคะ ตอนนี้อยากให้ทีมช่วยวางแผนภาษี จัดรอบเอกสาร VAT บัญชีรายเดือน หรือเช็กกำหนดยื่นเรื่องใดเป็นหลักคะ";
   }
   if (serviceBucket === "corporate-dbd") {
-    return "ขอเช็กให้ตรงก่อนนะคะ ตอนนี้ต้องการให้ทีมช่วยจดบริษัทใหม่ เปลี่ยนแปลงข้อมูลบริษัท หรือขอเอกสารบริษัทเรื่องใดคะ";
+    return "ถ้าต่อจากเคสนี้ ขอเช็กนิดนึงนะคะ ตอนนี้อยากให้ทีมช่วยจดบริษัทใหม่ เปลี่ยนแปลงข้อมูลบริษัท หรือขอเอกสารบริษัทเรื่องใดคะ";
   }
   if (serviceBucket === "visa-license") {
-    return "ขอเช็กให้ตรงก่อนนะคะ ตอนนี้ต้องการให้ทีมช่วยเรื่องวีซ่า Work Permit การต่ออายุ หรือใบอนุญาตธุรกิจเรื่องใดคะ";
+    return "ถ้าต่อจากเคสนี้ ขอเช็กนิดนึงนะคะ ตอนนี้อยากให้ทีมช่วยเรื่องวีซ่า Work Permit การต่ออายุ หรือใบอนุญาตธุรกิจเรื่องใดคะ";
   }
   if (serviceBucket === "company-dissolution") {
-    return "ขอเช็กให้ตรงก่อนนะคะ ตอนนี้ต้องการให้ทีมช่วยวางแผนปิดบริษัท เคลียร์ภาษีค้าง หรือยื่นเลิกบริษัทเรื่องใดคะ";
+    return "ถ้าต่อจากเคสนี้ ขอเช็กนิดนึงนะคะ ตอนนี้อยากให้ทีมช่วยวางแผนปิดบริษัท เคลียร์ภาษีค้าง หรือยื่นเลิกบริษัทเรื่องใดคะ";
   }
-  return "ขอเช็กให้ตรงก่อนนะคะ ตอนนี้ต้องการให้ทีมช่วยเรื่องใดเป็นหลักคะ";
+  return "ถ้าต่อจากเคสนี้ ตอนนี้อยากให้ทีมช่วยเรื่องใดเป็นหลักคะ";
 }
 
 function buildPricingReply(language, text, serviceBucket, memorySummary) {
@@ -527,6 +527,18 @@ function pickVariant(seed, variants = []) {
   return toText(variants[hashText(seed) % variants.length]);
 }
 
+function joinReadableList(language, items) {
+  const parts = Array.isArray(items) ? items.map(toText).filter(Boolean) : [];
+  if (!parts.length) return "";
+  if (parts.length === 1) return parts[0];
+  if (parts.length === 2) {
+    return language === "en" ? `${parts[0]} and ${parts[1]}` : `${parts[0]} และ${parts[1]}`;
+  }
+  const last = parts[parts.length - 1];
+  const head = parts.slice(0, -1).join(", ");
+  return language === "en" ? `${head}, and ${last}` : `${head} และ${last}`;
+}
+
 function buildConversationLead(language, memorySummary, serviceBucket, intentKey, eventText) {
   const turns = Number(memorySummary?.turns || 0);
   const facts = memorySummary?.knownFacts || {};
@@ -535,10 +547,10 @@ function buildConversationLead(language, memorySummary, serviceBucket, intentKey
 
   const seed = `${memorySummary?.summaryText || ""}|${serviceBucket}|${intentKey}|${eventText}`;
   const thOpeners = [
-    "จากบริบทก่อนหน้า",
-    "อิงจากที่คุยกันไว้",
+    "จากที่คุยกันก่อนหน้า",
+    "ถ้าอิงจากที่คุยกันไว้",
     "ถ้าต่อจากเรื่องเดิม",
-    "ดูจากข้อมูลที่ให้มาก่อนหน้า",
+    "จากรายละเอียดที่ส่งมาก่อนหน้า",
   ];
   const enOpeners = [
     "From the earlier context",
@@ -576,8 +588,8 @@ function buildConversationLead(language, memorySummary, serviceBucket, intentKey
   }
 
   return language === "en"
-    ? `${opener}, ${fragments.join(", ")}.`
-    : `${opener} ${fragments.join(" และ ")}ค่ะ`;
+    ? `${opener}, ${joinReadableList(language, fragments)}.`
+    : `${opener} ตอนนี้เข้าใจว่า${joinReadableList(language, fragments)}ค่ะ`;
 }
 
 function appendMemoryLead(language, memorySummary, serviceBucket, intentKey, eventText, reply) {
@@ -590,10 +602,10 @@ function buildAccountingReply(language, text, caseFlavor, detail) {
   const asksDocuments = /เอกสาร|documents?|checklist|paperwork/i.test(normaliseText(text));
   if (language === "en") {
     if (caseFlavor === "tax-notice") {
-      return "Please share the issue stated in the letter, the deadline, and the documents already on hand so we can map the reply properly.";
+      return "If this is a tax notice, please share the main issue in the letter, the deadline, and any documents you already have so we can map the reply properly.";
     }
     if (asksDocuments) {
-      return "If you mean the documents to prepare, please tell us whether this is for monthly accounting, VAT filing, payroll, or a tax notice so we can list the right set.";
+      return "If you mean the documents to prepare, please tell us whether this is for monthly accounting, VAT filing, payroll, or a tax notice, and we’ll list the right set.";
     }
     if (detail?.id === "pp30") {
       return "PP.30 is normally filed by the 15th of the following month. To confirm the deadline correctly, please tell us which tax month you are referring to and whether VAT is already registered.";
@@ -607,23 +619,23 @@ function buildAccountingReply(language, text, caseFlavor, detail) {
     if (detail?.id === "payroll-social-security") {
       return "Please tell us whether you need help with payroll setup, filing, or Social Security reporting, and how many employees are involved.";
     }
-    return "Please tell us whether you want help with monthly accounting, VAT, tax planning, or a filing deadline so we can guide the next step clearly.";
+    return "Please tell us whether you want help with monthly accounting, VAT, tax planning, or a filing deadline, and we’ll guide the next step clearly.";
   }
 
   if (caseFlavor === "tax-notice") {
-    return "รบกวนส่งสาระสำคัญในหนังสือ วันครบกำหนด และเอกสารที่มีอยู่ตอนนี้มาได้เลยค่ะ ทีมจะช่วยจัดลำดับการตอบกลับให้ตรงประเด็น";
+    return "ถ้าเป็นหนังสือแจ้งจากสรรพากร รบกวนส่งสาระสำคัญ วันครบกำหนด และเอกสารที่มีอยู่ตอนนี้มาได้เลยค่ะ เดี๋ยวช่วยจัดลำดับการตอบกลับให้ตรงประเด็น";
   }
   if (asksDocuments) {
-    return "ถ้าหมายถึงเอกสารที่ต้องเตรียม รบกวนบอกได้เลยค่ะว่าเป็นงานบัญชี ภาษี เงินเดือน หรือหนังสือแจ้งจากหน่วยงาน ทีมจะช่วยลิสต์ชุดเอกสารให้ตรงเคส";
+    return "ถ้าหมายถึงเอกสารที่ต้องเตรียม เดี๋ยวช่วยแยกให้ตามเคสได้เลยค่ะ ว่าเป็นงานบัญชี ภาษี เงินเดือน หรือหนังสือแจ้งจากหน่วยงาน";
   }
   if (detail?.id === "pp30") {
-    return "ภ.พ.30 ต้องยื่นภายในวันที่ 15 ของเดือนถัดไปค่ะ หากต้องการให้ทีมช่วยเช็กให้ตรง รบกวนแจ้งเดือนภาษีที่ถามและตอนนี้จด VAT แล้วหรือยังคะ";
+    return "ภ.พ.30 ต้องยื่นภายในวันที่ 15 ของเดือนถัดไปค่ะ ถ้าต้องการให้ช่วยเช็กให้ตรง รบกวนแจ้งเดือนภาษีที่ถาม และตอนนี้จด VAT แล้วหรือยังคะ";
   }
   if (detail?.id === "withholding-tax") {
-    return "รบกวนแจ้งเดือนที่จ่ายเงิน และจะยื่นผ่านออนไลน์หรือกระดาษด้วยค่ะ ทีมจะช่วยเช็กกำหนดยื่นให้ตรง";
+    return "รบกวนแจ้งเดือนที่จ่ายเงิน และจะยื่นผ่านออนไลน์หรือกระดาษด้วยค่ะ เดี๋ยวช่วยเช็กกำหนดยื่นให้ตรง";
   }
   if (detail?.id === "annual-income-tax") {
-    return "รบกวนแจ้งวันสิ้นรอบบัญชีของบริษัทด้วยค่ะ ทีมจะช่วยเช็กกำหนดยื่นให้ตรง";
+    return "รบกวนแจ้งวันสิ้นรอบบัญชีของบริษัทด้วยค่ะ เดี๋ยวช่วยเช็กกำหนดยื่นให้ตรง";
   }
   if (detail?.id === "payroll-social-security") {
     return "รบกวนแจ้งได้เลยค่ะว่าต้องการให้ทีมช่วยวางระบบเงินเดือน ยื่นประกันสังคม หรือจัดทำ payroll สำหรับพนักงานกี่คน";
@@ -650,10 +662,10 @@ function buildCorporateReply(language, text, caseFlavor) {
   }
 
   if (caseFlavor === "new-registration") {
-    return "หากต้องการจดทะเบียนบริษัทใหม่ รบกวนแจ้งก่อนนะคะว่าต้องการจดทะเบียนบริษัทเพื่อประกอบกิจการเกี่ยวกับอะไรบ้าง เอกสารเบื้องต้นที่ใช้คือ 1. สำเนาบัตรประชาชนและสำเนาทะเบียนบ้านของหุ้นส่วนตั้งแต่ 2 คนขึ้นไป 2. สำเนาทะเบียนบ้านที่ตั้งของบริษัท เมื่อเตรียมเอกสารเรียบร้อยแล้ว ทางเจ้าหน้าที่ของเราจะติดต่อกลับหาคุณทันทีค่ะ รบกวนขอเบอร์โทรติดต่อไว้ได้เลยนะคะ";
+    return "ถ้าต้องการจดทะเบียนบริษัทใหม่ รบกวนบอกเพิ่มนิดนะคะว่าบริษัทจะทำกิจการเกี่ยวกับอะไรบ้าง เอกสารเบื้องต้นที่ใช้คือ 1. สำเนาบัตรประชาชนและสำเนาทะเบียนบ้านของหุ้นส่วนตั้งแต่ 2 คนขึ้นไป 2. สำเนาทะเบียนบ้านที่ตั้งของบริษัท พอเอกสารพร้อมแล้ว ทางเจ้าหน้าที่จะติดต่อกลับให้ค่ะ ถ้าสะดวก ฝากเบอร์โทรไว้ได้เลยนะคะ";
   }
   if (asksDocuments) {
-    return "ถ้าหมายถึงเอกสารของงานจดบริษัทหรือแก้ไขข้อมูลบริษัท รบกวนบอกได้เลยค่ะว่าเป็นเคสจดใหม่ เปลี่ยนกรรมการ หรือเปลี่ยนที่อยู่ ทีมจะช่วยไล่ชุดเอกสารให้ตรง";
+    return "ถ้าหมายถึงเอกสารของงานจดบริษัทหรือแก้ไขข้อมูลบริษัท เดี๋ยวช่วยไล่ให้ตรงเลยค่ะ ว่าเป็นเคสจดใหม่ เปลี่ยนกรรมการ หรือเปลี่ยนที่อยู่";
   }
   if (caseFlavor === "director-change") {
     return "รบกวนแจ้งได้ไหมคะว่าเป็นการลาออก แต่งตั้งใหม่ หรือมีทั้งสองส่วน และอำนาจลงนามมีการเปลี่ยนด้วยหรือไม่คะ";
@@ -691,13 +703,13 @@ function buildVisaReply(language, text, caseFlavor, memorySummary) {
   }
 
   if (asksDocuments) {
-    return "ถ้าหมายถึงเอกสารที่ต้องเตรียม รบกวนบอกได้เลยค่ะว่าเป็นวีซ่า Work Permit ต่ออายุ หรือใบอนุญาตธุรกิจ ทีมจะช่วยลิสต์ชุดเอกสารให้ตรง";
+    return "ถ้าหมายถึงเอกสารที่ต้องเตรียม เดี๋ยวช่วยแยกให้ตรงเคสได้เลยค่ะ ว่าเป็นวีซ่า Work Permit ต่ออายุ หรือใบอนุญาตธุรกิจ";
   }
   if (caseFlavor === "restaurant-license") {
-    return "ได้เลยค่ะ หากต้องการขอใบอนุญาตประกอบกิจการประเภทร้านอาหาร รบกวนแจ้งก่อนนะคะว่า 1. ตอนนี้บริษัทหรือกิจการจดทะเบียนเรียบร้อยแล้วหรือยัง 2. ร้านตั้งอยู่เขตหรือจังหวัดใด 3. เป็นร้านอาหารทั่วไป คาเฟ่ หรือมีการจำหน่ายแอลกอฮอล์ด้วยหรือไม่ เมื่อทราบรายละเอียดเบื้องต้นแล้ว ทีมจะช่วยเช็กใบอนุญาตที่เกี่ยวข้องและเอกสารที่ต้องใช้ให้ค่ะ";
+    return "ได้เลยค่ะ ถ้าต้องการขอใบอนุญาตประกอบกิจการประเภทร้านอาหาร รบกวนบอกก่อนนะคะว่า 1. ตอนนี้บริษัทหรือกิจการจดทะเบียนเรียบร้อยแล้วหรือยัง 2. ร้านตั้งอยู่เขตหรือจังหวัดใด 3. เป็นร้านอาหารทั่วไป คาเฟ่ หรือมีการจำหน่ายแอลกอฮอล์ด้วยหรือไม่ พอมีข้อมูลครบ ทีมจะช่วยเช็กใบอนุญาตและเอกสารที่ต้องใช้ให้ค่ะ";
   }
   if (caseFlavor === "renewal") {
-    return "รบกวนแจ้งวันหมดอายุ สัญชาติ และว่าผู้ยื่นเป็นกรรมการหรือพนักงานได้เลยค่ะ ทีมจะช่วยดูขอบเขตการต่ออายุให้ตรง";
+    return "รบกวนแจ้งวันหมดอายุ สัญชาติ และว่าผู้ยื่นเป็นกรรมการหรือพนักงานได้เลยค่ะ เดี๋ยวช่วยดูขอบเขตการต่ออายุให้ตรง";
   }
   if (caseFlavor === "business-license") {
     return "รบกวนแจ้งประเภทใบอนุญาตที่ต้องการ และตอนนี้บริษัทจดทะเบียนเรียบร้อยแล้วหรือยังคะ";
@@ -721,9 +733,61 @@ function buildServiceAreaReply(language) {
 
 function buildGeneralReply(language) {
   if (language === "en") {
-    return "Tell us a little more about what you need, and we will help you narrow it down quickly.";
+    return "Tell us a little more about what you need, and we’ll help you narrow it down in a way that fits the case.";
   }
-  return "เล่าเพิ่มอีกนิดได้เลยค่ะ เดี๋ยวช่วยจับประเด็นและต่อเรื่องให้ตรงเคสมากที่สุด";
+  return "เล่าเพิ่มอีกนิดได้เลยค่ะ เดี๋ยวช่วยจับประเด็นและต่อเรื่องให้ตรงเคสที่สุด";
+}
+
+function isDocsOrNextStepQuestion(text) {
+  const value = normaliseText(text);
+  return /เอกสาร|documents?|checklist|paperwork|ต้องเตรียม|เตรียมอะไร|อะไรบ้าง|ขั้นตอน|ต่อยังไง|ทำอะไรต่อ|what should i do|what do i need|next step|how do i proceed/i.test(value);
+}
+
+function buildContextualFollowUpReply(language, text, serviceBucket, memorySummary, detail, caseFlavor) {
+  const hasConversation = Number(memorySummary?.turns || 0) > 0;
+  if (!hasConversation || !isDocsOrNextStepQuestion(text)) return "";
+
+  const facts = memorySummary?.knownFacts || {};
+  const businessType = describeBusinessType(language, facts.businessType);
+
+  if (serviceBucket === "corporate-dbd") {
+    if (facts.companyStatus === "new" || caseFlavor === "new-registration") {
+      return language === "en"
+        ? "If you mean the documents for a new company registration, the main items are shareholder ID cards, house registrations, and the company address. If you want, we can now turn that into a short checklist."
+        : "ถ้าหมายถึงเอกสารสำหรับจดบริษัทใหม่ เดี๋ยวช่วยสรุปเป็นเช็กลิสต์สั้น ๆ ให้ได้เลยค่ะ";
+    }
+    return language === "en"
+      ? "If you mean the documents for the company case we discussed, please tell us whether it is a new registration, director change, or address change, and we’ll line up the exact set."
+      : "ถ้าหมายถึงเอกสารของเคสบริษัทที่คุยกันไว้ บอกได้เลยค่ะว่าเป็นจดใหม่ เปลี่ยนกรรมการ หรือเปลี่ยนที่อยู่ เดี๋ยวช่วยไล่ชุดเอกสารให้ตรง";
+  }
+
+  if (serviceBucket === "accounting-tax") {
+    return language === "en"
+      ? "If you mean the documents for this accounting or tax case, we can split them by monthly accounting, VAT, payroll, or a tax notice depending on what you need."
+      : "ถ้าหมายถึงเอกสารของงานบัญชีหรือภาษี เดี๋ยวช่วยแยกให้ตามเรื่องที่กำลังคุยกันอยู่ เช่น บัญชีรายเดือน VAT เงินเดือน หรือหนังสือแจ้งจากหน่วยงานค่ะ";
+  }
+
+  if (serviceBucket === "visa-license") {
+    const extra =
+      businessType
+        ? language === "en"
+          ? ` The business type currently sounds like ${businessType}.`
+          : ` ตอนนี้เข้าใจเบื้องต้นว่าเป็นธุรกิจ${businessType}ค่ะ`
+        : "";
+    return language === "en"
+      ? `If you mean the documents for the visa or work-permit case we discussed, we can list them in the right order once we know whether this is a new case, renewal, or amendment.${extra}`
+      : `ถ้าหมายถึงเอกสารของวีซ่า Work Permit หรือใบอนุญาตธุรกิจ เดี๋ยวช่วยเรียงให้ตามเคสที่คุยกันไว้ได้เลยค่ะ${extra}`;
+  }
+
+  if (serviceBucket === "company-dissolution") {
+    return language === "en"
+      ? "If you mean the documents for closing the company, we can line them up step by step depending on whether the company has already stopped operating and whether any tax items are still open."
+      : "ถ้าหมายถึงเอกสารสำหรับปิดบริษัท เดี๋ยวช่วยไล่เป็นขั้นตอนตามสถานะจริงของบริษัทให้ค่ะ ว่าหยุดดำเนินการแล้วหรือยัง และยังมีภาษีค้างอยู่ไหม";
+  }
+
+  return language === "en"
+    ? "If you mean the documents for the case we discussed, tell us which part you want to move ahead with and we’ll list them in order."
+    : "ถ้าหมายถึงเอกสารของเคสนี้ เดี๋ยวช่วยต่อให้เป็นข้อ ๆ ตามเรื่องที่คุยไว้ก่อนหน้าได้เลยค่ะ";
 }
 
 function entryText(entry, language, field) {
@@ -758,8 +822,30 @@ function buildLineReply({
   const text = toText(eventText);
   const detail = detectAccountingIntentDetail(text, serviceBucket, toText(intent?.key) || "general");
   const caseFlavor = detectCaseFlavor(text, serviceBucket);
+  const hasConversation = Number(memorySummary?.turns || 0) > 0;
 
   if (isAmbiguousFollowUp(text)) {
+    const contextualFollowUpReply = buildContextualFollowUpReply(
+      language,
+      text,
+      serviceBucket,
+      memorySummary,
+      detail,
+      caseFlavor
+    );
+    if (contextualFollowUpReply) {
+      return appendMemoryLead(
+        language,
+        memorySummary,
+        serviceBucket,
+        toText(intent?.key),
+        text,
+        contextualFollowUpReply
+      );
+    }
+  }
+
+  if (isAmbiguousFollowUp(text) && !hasConversation) {
     return buildClarifyQuestion(language, serviceBucket);
   }
 
