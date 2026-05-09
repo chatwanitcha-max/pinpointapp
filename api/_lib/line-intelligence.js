@@ -563,9 +563,13 @@ function appendMemoryLead(language, memorySummary, serviceBucket, intentKey, eve
 }
 
 function buildAccountingReply(language, text, caseFlavor, detail) {
+  const asksDocuments = /เอกสาร|documents?|checklist|paperwork/i.test(normaliseText(text));
   if (language === "en") {
     if (caseFlavor === "tax-notice") {
       return "Please share the issue stated in the letter, the deadline, and the documents already on hand so we can map the reply properly.";
+    }
+    if (asksDocuments) {
+      return "If you mean the documents to prepare, please tell us whether this is for monthly accounting, VAT filing, payroll, or a tax notice so we can list the right set.";
     }
     if (detail?.id === "pp30") {
       return "PP.30 is normally filed by the 15th of the following month. To confirm the deadline correctly, please tell us which tax month you are referring to and whether VAT is already registered.";
@@ -585,6 +589,9 @@ function buildAccountingReply(language, text, caseFlavor, detail) {
   if (caseFlavor === "tax-notice") {
     return "รบกวนส่งสาระสำคัญในหนังสือ วันครบกำหนด และเอกสารที่มีอยู่ตอนนี้มาได้เลยค่ะ ทีมจะช่วยจัดลำดับการตอบกลับให้ตรงประเด็น";
   }
+  if (asksDocuments) {
+    return "ถ้าหมายถึงเอกสารที่ต้องเตรียม รบกวนบอกได้เลยค่ะว่าเป็นงานบัญชี ภาษี เงินเดือน หรือหนังสือแจ้งจากหน่วยงาน ทีมจะช่วยลิสต์ชุดเอกสารให้ตรงเคส";
+  }
   if (detail?.id === "pp30") {
     return "ภ.พ.30 ต้องยื่นภายในวันที่ 15 ของเดือนถัดไปค่ะ หากต้องการให้ทีมช่วยเช็กให้ตรง รบกวนแจ้งเดือนภาษีที่ถามและตอนนี้จด VAT แล้วหรือยังคะ";
   }
@@ -601,9 +608,13 @@ function buildAccountingReply(language, text, caseFlavor, detail) {
 }
 
 function buildCorporateReply(language, text, caseFlavor) {
+  const asksDocuments = /เอกสาร|documents?|checklist|paperwork/i.test(normaliseText(text));
   if (language === "en") {
     if (caseFlavor === "new-registration") {
       return "If you would like to register a new company, please tell us what business activity the company will operate in. The initial documents are: 1) copies of the ID card and house registration of at least two shareholders, and 2) a copy of the house registration of the company address. Once the documents are ready, our staff will contact you right away. Please share your phone number as well.";
+    }
+    if (asksDocuments) {
+      return "If you mean the documents for company registration or amendments, please tell us whether this is for a new company, a director change, or an address change, and we will list the exact set.";
     }
     if (caseFlavor === "director-change") {
       return "Please tell us whether this is a resignation, a new appointment, or both, and whether the signing authority also changes.";
@@ -617,6 +628,9 @@ function buildCorporateReply(language, text, caseFlavor) {
   if (caseFlavor === "new-registration") {
     return "หากต้องการจดทะเบียนบริษัทใหม่ รบกวนแจ้งก่อนนะคะว่าต้องการจดทะเบียนบริษัทเพื่อประกอบกิจการเกี่ยวกับอะไรบ้าง เอกสารเบื้องต้นที่ใช้คือ 1. สำเนาบัตรประชาชนและสำเนาทะเบียนบ้านของหุ้นส่วนตั้งแต่ 2 คนขึ้นไป 2. สำเนาทะเบียนบ้านที่ตั้งของบริษัท เมื่อเตรียมเอกสารเรียบร้อยแล้ว ทางเจ้าหน้าที่ของเราจะติดต่อกลับหาคุณทันทีค่ะ รบกวนขอเบอร์โทรติดต่อไว้ได้เลยนะคะ";
   }
+  if (asksDocuments) {
+    return "ถ้าหมายถึงเอกสารของงานจดบริษัทหรือแก้ไขข้อมูลบริษัท รบกวนบอกได้เลยค่ะว่าเป็นเคสจดใหม่ เปลี่ยนกรรมการ หรือเปลี่ยนที่อยู่ ทีมจะช่วยไล่ชุดเอกสารให้ตรง";
+  }
   if (caseFlavor === "director-change") {
     return "รบกวนแจ้งได้ไหมคะว่าเป็นการลาออก แต่งตั้งใหม่ หรือมีทั้งสองส่วน และอำนาจลงนามมีการเปลี่ยนด้วยหรือไม่คะ";
   }
@@ -628,6 +642,7 @@ function buildCorporateReply(language, text, caseFlavor) {
 
 function buildVisaReply(language, text, caseFlavor, memorySummary) {
   const unsupported = detectUnsupportedNationality(text, memorySummary);
+  const asksDocuments = /เอกสาร|documents?|checklist|paperwork/i.test(normaliseText(text));
   if (unsupported) {
     if (language === "en") {
       return `We should let you know clearly that the team does not currently take visa or work-permit cases for ${unsupported.labelEn}. If this is a separate accounting, tax, company-registration, or DBD matter, we can still help review that scope.`;
@@ -636,6 +651,9 @@ function buildVisaReply(language, text, caseFlavor, memorySummary) {
   }
 
   if (language === "en") {
+    if (asksDocuments) {
+      return "If you mean the documents to prepare, please tell us whether this is a visa, work permit, renewal, or business-license case so we can list the correct set.";
+    }
     if (caseFlavor === "restaurant-license") {
       return "We can help review a restaurant-license case. Please tell us whether the company is already registered, where the shop is located, what type of restaurant or cafe it is, and whether alcohol will be served. Once we have those details, the team can confirm which licenses and documents are required.";
     }
@@ -648,6 +666,9 @@ function buildVisaReply(language, text, caseFlavor, memorySummary) {
     return "Please tell us the nationality involved, whether the applicant is a director or employee, and whether this is a new case, a renewal, or an amendment.";
   }
 
+  if (asksDocuments) {
+    return "ถ้าหมายถึงเอกสารที่ต้องเตรียม รบกวนบอกได้เลยค่ะว่าเป็นวีซ่า Work Permit ต่ออายุ หรือใบอนุญาตธุรกิจ ทีมจะช่วยลิสต์ชุดเอกสารให้ตรง";
+  }
   if (caseFlavor === "restaurant-license") {
     return "ได้เลยค่ะ หากต้องการขอใบอนุญาตประกอบกิจการประเภทร้านอาหาร รบกวนแจ้งก่อนนะคะว่า 1. ตอนนี้บริษัทหรือกิจการจดทะเบียนเรียบร้อยแล้วหรือยัง 2. ร้านตั้งอยู่เขตหรือจังหวัดใด 3. เป็นร้านอาหารทั่วไป คาเฟ่ หรือมีการจำหน่ายแอลกอฮอล์ด้วยหรือไม่ เมื่อทราบรายละเอียดเบื้องต้นแล้ว ทีมจะช่วยเช็กใบอนุญาตที่เกี่ยวข้องและเอกสารที่ต้องใช้ให้ค่ะ";
   }

@@ -377,6 +377,7 @@ module.exports = async (req, res) => {
     handoff,
     answerAudit,
     knowledgeContext,
+    memorySummary: activeMemorySummary,
     baseReply,
     openClawReply,
     resetOnly,

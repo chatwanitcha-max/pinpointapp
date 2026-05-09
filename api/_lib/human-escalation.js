@@ -38,6 +38,7 @@ function evaluateAiHumanEscalation({
   handoff,
   answerAudit,
   knowledgeContext,
+  memorySummary,
   baseReply,
   openClawReply,
   resetOnly = false,
@@ -56,6 +57,7 @@ function evaluateAiHumanEscalation({
   const intentKey = toText(detectedIntent?.key);
   const top = topMatch(knowledgeContext);
   const topScore = Number(answerAudit?.topScore || top?.score || 0);
+  const hasConversation = Number(memorySummary?.turns || 0) > 0;
   const smartLowConfidence =
     toText(openClawReply?.confidence).toLowerCase() === "low" ||
     Boolean(openClawReply?.shouldClarify);
@@ -87,7 +89,7 @@ function evaluateAiHumanEscalation({
     };
   }
 
-  if (shouldClarify || genericReply || (weakKnowledge && intentKey !== "service-area")) {
+  if (shouldClarify || genericReply || (weakKnowledge && intentKey !== "service-area" && !hasConversation)) {
     return {
       required: true,
       replaceReply: true,

@@ -27,6 +27,7 @@ function buildAnswerAudit({
   const knowledgeBacked = Boolean(topMatch && (topMatch.type === "manual_faq" || topMatch.type === "official_reference"));
   const vagueFollowUp = VAGUE_FOLLOW_UP_RE.test(lowerText);
   const shortMessage = lowerText.length <= 70;
+  const contextualFollowUp = vagueFollowUp && shortMessage && hasConversation;
   const lowConfidence = topScore < 68 || (topScore > 0 && scoreGap < 12);
   const responseMode = toText(brain?.responseMode);
   const asksDeadline = Boolean(brain?.signals?.asksDueDate);
@@ -48,10 +49,10 @@ function buildAnswerAudit({
 
   const shouldClarify =
     (asksReference && !hasOfficialReference) ||
-    (!playbookBacked && !knowledgeBacked) ||
+    (!playbookBacked && !knowledgeBacked && !contextualFollowUp && !hasConversation) ||
     (hasOfficialNotice && !playbookBacked && !knowledgeBacked) ||
-    (vagueFollowUp && shortMessage) ||
-    ((vagueFollowUp || shortMessage) && hasConversation && lowConfidence) ||
+    (vagueFollowUp && shortMessage && !hasConversation) ||
+    (vagueFollowUp && shortMessage && hasConversation && lowConfidence && !contextualFollowUp) ||
     ((asksPricing || asksDeadline) && !playbookBacked && lowConfidence);
 
   const confidence = shouldClarify
