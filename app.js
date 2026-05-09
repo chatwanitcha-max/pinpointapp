@@ -245,23 +245,23 @@ const AI_CHAT_VISITOR_KEY = "pinpoint_ai_chat_visitor";
 function getAiChatCopy(lang) {
   if (lang === "en") {
     return {
-      title: "Pinpoint AI assistant",
-      subtitle: "Ask about accounting, tax, DBD, visa, or Work Permit.",
+      title: "I’m Pinpoint AI. How can I help today?",
+      subtitle: "",
       toggle: "Ask AI",
       close: "Close",
       welcome:
-        "Hello. I can help clarify the first steps and tell you what details the team needs next.",
+        "Hello, I am Pinpoint AI. Tell me what you need help with today, and I will guide the next step.",
       placeholder: "Type your question or case details...",
       send: "Send",
       typing: "Checking the Pinpoint knowledge base...",
       error: "The chat could not reply right now. Please call 092-749-7442 or continue via LINE OA.",
       phone: "Call",
-      line: "LINE OA",
-      form: "Open form",
-      note: "AI can prepare the first triage. A human team member reviews case-specific details.",
+      line: "LINE",
+      form: "Form",
+      note: "",
       suggestions: [
         {
-          label: "Work Permit steps",
+          label: "Work Permit",
           prompt: "What should I prepare for a Thai work permit case?"
         },
         {
@@ -277,20 +277,20 @@ function getAiChatCopy(lang) {
   }
 
   return {
-    title: "ผู้ช่วย AI ของ Pinpoint",
-    subtitle: "ถามเรื่องบัญชี ภาษี DBD วีซ่า หรือ Work Permit ได้เลย",
+    title: "น้องคือ Pinpoint Ai วันนี้ให้น้องพิณช่วยอะไรดีคะ",
+    subtitle: "",
     toggle: "ถาม AI",
     close: "ปิด",
     welcome:
-      "สวัสดีค่ะ ฉันช่วยคัดกรองเบื้องต้นและบอกข้อมูลที่ทีมต้องใช้ต่อได้ค่ะ",
+      "สวัสดีค่ะ ฉันคือผู้ช่วย AI ของ Pinpoint เล่าเรื่องที่ต้องการได้เลยค่ะ",
     placeholder: "พิมพ์คำถามหรือรายละเอียดเคสของคุณ...",
     send: "ส่ง",
     typing: "กำลังเช็กฐานความรู้ของ Pinpoint...",
     error: "แชตตอบกลับไม่สำเร็จชั่วคราว กรุณาโทร 092-749-7442 หรือทัก LINE OA ได้เลยค่ะ",
     phone: "โทร",
-    line: "LINE OA",
-    form: "เปิดฟอร์ม",
-    note: "AI ช่วยคัดกรองเบื้องต้น ทีมงานจะตรวจรายละเอียดเฉพาะเคสก่อนให้คำตอบสุดท้าย",
+    line: "LINE",
+    form: "ฟอร์ม",
+    note: "",
     suggestions: [
       {
         label: "Work Permit",
@@ -406,6 +406,7 @@ function setAiChatBusy(root, busy) {
 
 function setAiChatOpen(root, open) {
   root.classList.toggle("is-open", open);
+  if (!open) root.classList.remove("is-centered");
   const toggle = root.querySelector("[data-ai-toggle]");
   if (toggle) toggle.setAttribute("aria-expanded", open ? "true" : "false");
   if (open) {
@@ -493,13 +494,14 @@ function initAiChat() {
 
   const root = document.createElement("section");
   root.id = "pinpointAiChat";
-  root.className = "ai-chat-widget";
+  root.className = "ai-chat-widget is-open is-centered";
   root.innerHTML = `
-    <button class="ai-chat-toggle" type="button" data-ai-toggle="true" aria-expanded="false">
+    <button class="ai-chat-toggle" type="button" data-ai-toggle="true" aria-expanded="true">
       <span class="ai-chat-toggle__dot" aria-hidden="true"></span>
       <span data-ai-toggle-label></span>
     </button>
-    <div class="ai-chat-panel" role="dialog" aria-label="Pinpoint AI chat">
+    <button class="ai-chat-backdrop" type="button" data-ai-backdrop="true" aria-label="Close AI chat"></button>
+    <div class="ai-chat-panel" role="dialog" aria-label="Pinpoint AI chat" data-ai-panel="true">
       <div class="ai-chat-head">
         <div>
           <strong data-ai-title></strong>
@@ -507,12 +509,12 @@ function initAiChat() {
         </div>
         <button class="ai-chat-close" type="button" data-ai-close="true">x</button>
       </div>
-      <div class="ai-chat-messages" data-ai-messages></div>
       <div class="ai-chat-prompts">
         <button type="button" data-ai-prompt-index="0"></button>
         <button type="button" data-ai-prompt-index="1"></button>
         <button type="button" data-ai-prompt-index="2"></button>
       </div>
+      <div class="ai-chat-messages" data-ai-messages></div>
       <form class="ai-chat-form" data-ai-form-shell>
         <textarea data-ai-input rows="2"></textarea>
         <button type="submit" data-ai-send></button>
@@ -522,7 +524,6 @@ function initAiChat() {
         <a class="line-chat" href="${getAiChatLineUrl()}" target="_blank" rel="noreferrer" data-ai-line></a>
         <a href="/#lead-form" data-ai-form></a>
       </div>
-      <p class="ai-chat-note" data-ai-note></p>
     </div>
   `;
 
@@ -539,7 +540,11 @@ function initAiChat() {
   if (messages) messages.scrollTop = messages.scrollHeight;
 
   root.querySelector("[data-ai-toggle]")?.addEventListener("click", () => {
+    root.classList.remove("is-centered");
     setAiChatOpen(root, !root.classList.contains("is-open"));
+  });
+  root.querySelector("[data-ai-backdrop]")?.addEventListener("click", () => {
+    setAiChatOpen(root, false);
   });
   root.querySelector("[data-ai-close]")?.addEventListener("click", () => {
     setAiChatOpen(root, false);

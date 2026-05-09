@@ -7,3 +7,5 @@ OPEN_*.cmd
 START_Website_Preview.cmd
 utf8-*.txt
 RESEARCH.md
+.env*
+SECURITY_SECRETS_SUMMARY.*

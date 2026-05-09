@@ -265,6 +265,7 @@ const manualEntries = [
   ...readJsonIfExists("content/smart-faq-advanced.json"),
   ...readJsonIfExists("content/accounting-faq-research.json"),
   ...readJsonIfExists("content/business-faq-research.json"),
+  ...readJsonIfExists("content/official-faq-expansion.json"),
 ];
 const faqEntries = extractFaqEntries();
 const serviceEntries = buildServiceEntries();

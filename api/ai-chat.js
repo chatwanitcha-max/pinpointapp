@@ -30,6 +30,11 @@ const {
   mergeRoutingWithHandoff,
   buildHandoffReplyLine,
 } = require("./_lib/handoff-rules");
+const {
+  evaluateAiHumanEscalation,
+  buildHumanEscalationReply,
+  sendHumanEscalationLineAlert,
+} = require("./_lib/human-escalation");
 
 function randomId(prefix) {
   return `${prefix}_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
@@ -273,7 +278,19 @@ module.exports = async (req, res) => {
   const baseReply = isUsableReplyText(openClawReply?.replyText)
     ? openClawReply.replyText
     : localReply;
-  const replyText = composeReply(language, baseReply, handoff, knowledgeContext.websiteReference);
+  const humanEscalation = evaluateAiHumanEscalation({
+    text: message,
+    detectedIntent,
+    handoff,
+    answerAudit,
+    knowledgeContext,
+    baseReply,
+    openClawReply,
+    resetOnly,
+  });
+  const replyText = humanEscalation.replaceReply
+    ? buildHumanEscalationReply(language)
+    : composeReply(language, baseReply, handoff, knowledgeContext.websiteReference);
 
   const contact = extractContact(message);
   const pageUrl = toText(body.pageUrl) || "https://pinpointaccountingservice.com";
@@ -317,6 +334,7 @@ module.exports = async (req, res) => {
     },
     replyText,
     handoff,
+    humanEscalation,
     answerAudit,
     knowledgeMatchIds: (knowledgeContext.matches || []).map((entry) => entry.id),
   };
@@ -327,8 +345,25 @@ module.exports = async (req, res) => {
         safeChannel("crm_webhook", sendCrmWebhook(intakePayload)),
         safeChannel("supabase", sendSupabaseLead(intakePayload)),
         safeChannel("airtable", sendAirtableLead(intakePayload)),
+        safeChannel(
+          "human_escalation_line",
+          sendHumanEscalationLineAlert({
+            source: "website_ai_chat",
+            lead,
+            routing,
+            escalation: humanEscalation,
+            answerAudit,
+            knowledgeContext,
+            message,
+            replyText,
+            sessionId,
+            visitorId,
+            clientMeta,
+          })
+        ),
       ])
     : [
+        { sent: false, reason: "chat_lead_capture_disabled" },
         { sent: false, reason: "chat_lead_capture_disabled" },
         { sent: false, reason: "chat_lead_capture_disabled" },
         { sent: false, reason: "chat_lead_capture_disabled" },
@@ -342,6 +377,7 @@ module.exports = async (req, res) => {
     intentKey: detectedIntent.key,
     serviceBucket,
     handoff,
+    humanEscalation,
     lead: {
       leadId: lead.leadId,
       captured: channels.some((channel) => channel.sent),
@@ -350,6 +386,7 @@ module.exports = async (req, res) => {
       crmWebhook: channels[0],
       supabase: channels[1],
       airtable: channels[2],
+      humanEscalationLine: channels[3],
       smartReply: openClawReply,
     },
     knowledgeMatchIds: intakePayload.websiteChat.knowledgeMatchIds,

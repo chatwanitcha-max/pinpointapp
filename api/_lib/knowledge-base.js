@@ -74,7 +74,10 @@ function detectQuerySignals(text) {
     pricing: /\u0e23\u0e32\u0e04\u0e32|\u0e04\u0e48\u0e32\u0e1a\u0e23\u0e34\u0e01\u0e32\u0e23|\u0e41\u0e1e\u0e47\u0e01\u0e40\u0e01\u0e08|quote|quotation|price|pricing|fee|cost/i.test(value),
     reference: /\u0e2d\u0e49\u0e32\u0e07\u0e2d\u0e34\u0e07|\u0e25\u0e34\u0e07\u0e01\u0e4c|link|official|government|source|\u0e40\u0e27\u0e47\u0e1a\u0e44\u0e0b\u0e15\u0e4c\u0e17\u0e32\u0e07\u0e01\u0e32\u0e23/i.test(value),
     renewal: /\u0e15\u0e48\u0e2d\u0e2d\u0e32\u0e22\u0e38|renew|renewal|expires|expiry|\u0e2b\u0e21\u0e14\u0e2d\u0e32\u0e22\u0e38/i.test(value),
-    taxNotice: /\u0e2a\u0e23\u0e23\u0e1e\u0e32\u0e01\u0e23|\u0e15\u0e23\u0e27\u0e08\u0e2a\u0e2d\u0e1a\u0e20\u0e32\u0e29\u0e35|\u0e2b\u0e19\u0e31\u0e07\u0e2a\u0e37\u0e2d|tax audit|revenue department|back tax|penalt|fine/i.test(value),
+    taxNotice: /\u0e2a\u0e23\u0e23\u0e1e\u0e32\u0e01\u0e23|\u0e2b\u0e19\u0e31\u0e07\u0e2a\u0e37\u0e2d\u0e08\u0e32\u0e01\u0e2a\u0e23\u0e23\u0e1e\u0e32\u0e01\u0e23|\u0e2b\u0e19\u0e31\u0e07\u0e2a\u0e37\u0e2d\u0e20\u0e32\u0e29\u0e35|\u0e15\u0e23\u0e27\u0e08\u0e2a\u0e2d\u0e1a\u0e20\u0e32\u0e29\u0e35|\u0e20\u0e32\u0e29\u0e35\u0e22\u0e49\u0e2d\u0e19\u0e2b\u0e25\u0e31\u0e07|tax audit|revenue department|official notice|back tax|penalt|fine/i.test(value),
+    restaurantLicense: /\u0e23\u0e49\u0e32\u0e19\u0e2d\u0e32\u0e2b\u0e32\u0e23|\u0e04\u0e32\u0e40\u0e1f\u0e48|\u0e2d\u0e32\u0e2b\u0e32\u0e23\u0e41\u0e25\u0e30\u0e40\u0e04\u0e23\u0e37\u0e48\u0e2d\u0e07\u0e14\u0e37\u0e48\u0e21|restaurant|cafe|caf\u00e9|food business/i.test(value),
+    socialSecurity: /\u0e1b\u0e23\u0e30\u0e01\u0e31\u0e19\u0e2a\u0e31\u0e07\u0e04\u0e21|\u0e2a\u0e1b\u0e2a\.?|social security|sso/i.test(value),
+    englishCertificate: /\u0e2b\u0e19\u0e31\u0e07\u0e2a\u0e37\u0e2d\u0e23\u0e31\u0e1a\u0e23\u0e2d\u0e07.*\u0e20\u0e32\u0e29\u0e32\u0e2d\u0e31\u0e07\u0e01\u0e24\u0e29|\u0e20\u0e32\u0e29\u0e32\u0e2d\u0e31\u0e07\u0e01\u0e24\u0e29.*\u0e2b\u0e19\u0e31\u0e07\u0e2a\u0e37\u0e2d\u0e23\u0e31\u0e1a\u0e23\u0e2d\u0e07|english certificate|english company name|encert/i.test(value),
     directorChange: /\u0e01\u0e23\u0e23\u0e21\u0e01\u0e32\u0e23|change director/i.test(value),
     addressChange: /\u0e17\u0e35\u0e48\u0e2d\u0e22\u0e39\u0e48|address/i.test(value),
     deadline: /\u0e40\u0e21\u0e37\u0e48\u0e2d\u0e44\u0e23|\u0e01\u0e33\u0e2b\u0e19\u0e14|\u0e20\u0e32\u0e22\u0e43\u0e19\u0e27\u0e31\u0e19\u0e17\u0e35\u0e48|deadline|due date|when/i.test(value),
@@ -202,7 +205,7 @@ function scoreEntry(entry, context) {
   }
 
   if (querySignals.taxNotice) {
-    if (/\u0e2a\u0e23\u0e23\u0e1e\u0e32\u0e01\u0e23|\u0e15\u0e23\u0e27\u0e08\u0e2a\u0e2d\u0e1a\u0e20\u0e32\u0e29\u0e35|\u0e2b\u0e19\u0e31\u0e07\u0e2a\u0e37\u0e2d|tax audit|revenue department|back tax|penalt|fine/i.test(rawSearchText)) {
+    if (/\u0e2a\u0e23\u0e23\u0e1e\u0e32\u0e01\u0e23|\u0e2b\u0e19\u0e31\u0e07\u0e2a\u0e37\u0e2d\u0e08\u0e32\u0e01\u0e2a\u0e23\u0e23\u0e1e\u0e32\u0e01\u0e23|\u0e2b\u0e19\u0e31\u0e07\u0e2a\u0e37\u0e2d\u0e20\u0e32\u0e29\u0e35|\u0e15\u0e23\u0e27\u0e08\u0e2a\u0e2d\u0e1a\u0e20\u0e32\u0e29\u0e35|\u0e20\u0e32\u0e29\u0e35\u0e22\u0e49\u0e2d\u0e19\u0e2b\u0e25\u0e31\u0e07|tax audit|revenue department|official notice|back tax|penalt|fine/i.test(rawSearchText)) {
       score += 52;
     } else {
       score -= 34;
@@ -239,6 +242,30 @@ function scoreEntry(entry, context) {
 
   if (querySignals.addressChange && /\u0e17\u0e35\u0e48\u0e2d\u0e22\u0e39\u0e48|address/i.test(rawSearchText)) {
     score += 38;
+  }
+
+  if (querySignals.socialSecurity) {
+    if (/\u0e1b\u0e23\u0e30\u0e01\u0e31\u0e19\u0e2a\u0e31\u0e07\u0e04\u0e21|\u0e2a\u0e1b\u0e2a\.?|social security|sso|payroll/i.test(rawSearchText)) {
+      score += 80;
+    } else if (entry.serviceBucket === "accounting-tax") {
+      score -= 35;
+    }
+  }
+
+  if (querySignals.restaurantLicense) {
+    if (/\u0e23\u0e49\u0e32\u0e19\u0e2d\u0e32\u0e2b\u0e32\u0e23|\u0e04\u0e32\u0e40\u0e1f\u0e48|\u0e2d\u0e32\u0e2b\u0e32\u0e23\u0e41\u0e25\u0e30\u0e40\u0e04\u0e23\u0e37\u0e48\u0e2d\u0e07\u0e14\u0e37\u0e48\u0e21|restaurant|cafe|caf\u00e9|food business/i.test(rawSearchText)) {
+      score += 85;
+    } else if (/work permit|e-workpermit|\u0e43\u0e1a\u0e2d\u0e19\u0e38\u0e0d\u0e32\u0e15\u0e17\u0e33\u0e07\u0e32\u0e19/i.test(rawSearchText)) {
+      score -= 60;
+    }
+  }
+
+  if (querySignals.englishCertificate) {
+    if (/\u0e2b\u0e19\u0e31\u0e07\u0e2a\u0e37\u0e2d\u0e23\u0e31\u0e1a\u0e23\u0e2d\u0e07.*\u0e20\u0e32\u0e29\u0e32\u0e2d\u0e31\u0e07\u0e01\u0e24\u0e29|\u0e20\u0e32\u0e29\u0e32\u0e2d\u0e31\u0e07\u0e01\u0e24\u0e29.*\u0e2b\u0e19\u0e31\u0e07\u0e2a\u0e37\u0e2d\u0e23\u0e31\u0e1a\u0e23\u0e2d\u0e07|english certificate|english juristic|english company name|encert/i.test(rawSearchText)) {
+      score += 95;
+    } else if (entry.serviceBucket === "corporate-dbd") {
+      score -= 35;
+    }
   }
 
   return score;

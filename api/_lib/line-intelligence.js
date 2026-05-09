@@ -82,6 +82,9 @@ const INTENTS = [
       /tax/i,
       /payroll/i,
       /social security/i,
+      /ประกันสังคม/u,
+      /เงินเดือน/u,
+      /สปส\.?/u,
       /สรรพากร/u,
       /ตรวจสอบภาษี/u,
       /ภาษีย้อนหลัง/u,
@@ -247,7 +250,7 @@ function detectAccountingIntentDetail(text, serviceBucket = "general", intentKey
   }
 
   if (serviceBucket === "accounting-tax") {
-    if (/สรรพากร|หนังสือ|ตรวจสอบภาษี|ภาษีย้อนหลัง|tax audit|revenue department|official notice|back tax|penalt|fine/i.test(value)) {
+    if (/สรรพากร|หนังสือจากสรรพากร|หนังสือภาษี|ตรวจสอบภาษี|ภาษีย้อนหลัง|tax audit|revenue department|official notice|back tax|penalt|fine/i.test(value)) {
       return {
         id: "tax-notice",
         subIntentKey: "tax-notice",
@@ -339,7 +342,7 @@ function detectCaseFlavor(text, serviceBucket) {
   const value = normaliseText(text);
 
   if (serviceBucket === "accounting-tax") {
-    if (/สรรพากร|หนังสือ|ตรวจสอบภาษี|ภาษีย้อนหลัง|tax audit|revenue department|official notice|back tax|penalt|fine/i.test(value)) return "tax-notice";
+    if (/สรรพากร|หนังสือจากสรรพากร|หนังสือภาษี|ตรวจสอบภาษี|ภาษีย้อนหลัง|tax audit|revenue department|official notice|back tax|penalt|fine/i.test(value)) return "tax-notice";
     if (/ภ\.\s?พ\.\s?30|pp\.?30|vat return|vat/i.test(value)) return "vat";
     if (/ภ\.\s?ง\.\s?ด\.?1|pnd\.?1|ภ\.\s?ง\.\s?ด\.?3|pnd\.?3|ภ\.\s?ง\.\s?ด\.?53|pnd\.?53/i.test(value)) return "withholding-tax";
     if (/เงินเดือน|payroll|ประกันสังคม|social security/i.test(value)) return "payroll";
@@ -605,6 +608,27 @@ function buildGeneralReply(language) {
   return "ทีมงานของเราจะติดต่อกลับหาคุณโดยเร็วที่สุดค่ะ ขอบคุณค่ะ";
 }
 
+function entryText(entry, language, field) {
+  if (!entry) return "";
+  if (language === "en") {
+    return toText(entry[`${field}_en`]) || toText(entry[`${field}_th`]);
+  }
+  return toText(entry[`${field}_th`]) || toText(entry[`${field}_en`]);
+}
+
+function buildKnowledgeBackedReply(language, knowledgeContext, intentKey, eventText, memorySummary, serviceBucket) {
+  const top = Array.isArray(knowledgeContext?.matches) ? knowledgeContext.matches[0] : null;
+  if (!top || Number(top.score || 0) < 190) return "";
+  if (["pricing", "official-reference"].includes(toText(intentKey))) return "";
+  if (serviceBucket === "visa-license" && detectUnsupportedNationality(eventText, memorySummary)) return "";
+  if (top.type !== "manual_faq" && top.type !== "faq_page") return "";
+  if (!String(top.id || "").startsWith("official-faq-") && Number(top.score || 0) < 260) return "";
+
+  const answer = entryText(top, language, "answer");
+  const followUp = entryText(top, language, "follow_up");
+  return [answer, followUp].filter(Boolean).join("\n\n");
+}
+
 function buildLineReply({
   language = "th",
   intent,
@@ -632,6 +656,16 @@ function buildLineReply({
   if (toText(intent?.key) === "pricing") {
     return buildPricingReply(language, text, serviceBucket, memorySummary);
   }
+
+  const knowledgeBackedReply = buildKnowledgeBackedReply(
+    language,
+    knowledgeContext,
+    toText(intent?.key),
+    text,
+    memorySummary,
+    serviceBucket
+  );
+  if (knowledgeBackedReply) return knowledgeBackedReply;
 
   if (serviceBucket === "corporate-dbd") {
     return buildCorporateReply(language, text, caseFlavor);

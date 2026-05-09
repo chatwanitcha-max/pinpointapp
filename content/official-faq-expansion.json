@@ -1,0 +1,883 @@
+[
+  {
+    "id": "official-faq-cit-pnd50-pnd51-deadlines",
+    "type": "manual_faq",
+    "category": "tax",
+    "serviceBucket": "accounting-tax",
+    "priority": 124,
+    "question_th": "ภ.ง.ด.50 และ ภ.ง.ด.51 ต้องยื่นเมื่อไร",
+    "question_en": "When are P.N.D.50 and P.N.D.51 due?",
+    "answer_th": "ภ.ง.ด.51 เป็นแบบครึ่งปีของนิติบุคคล ส่วน ภ.ง.ด.50 เป็นแบบภาษีเงินได้นิติบุคคลประจำปีหลังปิดรอบบัญชี ควรตรวจวันสิ้นรอบบัญชี วันที่เริ่มกิจการ และสถานะยื่นออนไลน์ก่อนสรุปกำหนดวันจริง",
+    "answer_en": "P.N.D.51 is the half-year corporate income tax filing, while P.N.D.50 is the annual corporate income tax filing after the accounting period closes. The accounting period end date, business start date, and e-filing status should be checked before confirming the exact deadline.",
+    "follow_up_th": "แจ้งวันสิ้นรอบบัญชีและวันที่เริ่มกิจการมาได้เลยค่ะ ทีมจะช่วยเช็กกำหนดยื่นให้ตรงเคส",
+    "follow_up_en": "Please send the accounting period end date and business start date so the team can check the correct deadline.",
+    "source_url": "https://www.rd.go.th/840.html",
+    "official_links": [
+      {
+        "label_th": "กรมสรรพากร: การยื่นแบบและชำระภาษี",
+        "label_en": "Revenue Department: filing and payment",
+        "url": "https://www.rd.go.th/840.html"
+      },
+      {
+        "label_th": "ปฏิทินภาษีกรมสรรพากร",
+        "label_en": "Revenue Department tax calendar",
+        "url": "https://www.rd.go.th/62348/calendar/1/15.html"
+      }
+    ],
+    "keywords": [
+      "ภ.ง.ด.50",
+      "ภ.ง.ด.51",
+      "pnd50",
+      "pnd51",
+      "ภาษีนิติบุคคล",
+      "corporate income tax"
+    ]
+  },
+  {
+    "id": "official-faq-cit-year-end-accounting-package",
+    "type": "manual_faq",
+    "category": "tax",
+    "serviceBucket": "accounting-tax",
+    "priority": 116,
+    "question_th": "ปิดงบบริษัทต้องเกี่ยวกับ DBD และสรรพากรอย่างไร",
+    "question_en": "How do year-end accounts relate to DBD and the Revenue Department?",
+    "answer_th": "งานปิดงบบริษัทมักมีทั้งส่วนงบการเงินและเอกสารนิติบุคคลที่เกี่ยวกับ DBD รวมถึงแบบภาษีเงินได้นิติบุคคลที่เกี่ยวกับกรมสรรพากร จึงควรดูบัญชีรายเดือน เอกสารขาย-ซื้อ ธนาคาร เงินเดือน VAT และภาษีหัก ณ ที่จ่ายร่วมกัน",
+    "answer_en": "Company year-end closing usually involves DBD-related financial-statement work and Revenue Department corporate tax filing. Monthly bookkeeping, sales and purchase documents, bank records, payroll, VAT, and withholding tax should be reviewed together.",
+    "follow_up_th": "ส่งรอบบัญชีล่าสุดและสถานะเอกสารรายเดือนมาได้เลยค่ะ ทีมจะช่วยประเมินว่าขาดอะไรบ้างก่อนปิดงบ",
+    "follow_up_en": "Send the latest accounting period and monthly document status, and the team can assess what is missing before closing.",
+    "source_url": "https://www.rd.go.th/840.html",
+    "official_links": [
+      {
+        "label_th": "บริการออนไลน์ DBD สำหรับนิติบุคคล",
+        "label_en": "DBD online services for juristic persons",
+        "url": "https://ereg.dbd.go.th/RegistMemberWeb/index.html"
+      },
+      {
+        "label_th": "กรมสรรพากร: การยื่นแบบและชำระภาษี",
+        "label_en": "Revenue Department: filing and payment",
+        "url": "https://www.rd.go.th/840.html"
+      }
+    ],
+    "keywords": [
+      "ปิดงบ",
+      "ยื่นงบ",
+      "dbd e-filing",
+      "ภาษีนิติบุคคล",
+      "annual filing"
+    ]
+  },
+  {
+    "id": "official-faq-wht-forms-pnd1-pnd3-pnd53",
+    "type": "manual_faq",
+    "category": "tax",
+    "serviceBucket": "accounting-tax",
+    "priority": 121,
+    "question_th": "ภ.ง.ด.1 ภ.ง.ด.3 และ ภ.ง.ด.53 ต่างกันอย่างไร",
+    "question_en": "What is the difference between P.N.D.1, P.N.D.3, and P.N.D.53?",
+    "answer_th": "แบบหัก ณ ที่จ่ายต้องเลือกตามประเภทผู้รับเงินและลักษณะเงินได้ โดยทั่วไป ภ.ง.ด.1 เกี่ยวกับเงินเดือน/ค่าจ้างพนักงาน ส่วน ภ.ง.ด.3 และ ภ.ง.ด.53 ใช้กับการจ่ายให้บุคคลธรรมดาหรือนิติบุคคลตามเงื่อนไขของรายการจ่าย",
+    "answer_en": "Withholding tax forms depend on the payee type and payment nature. P.N.D.1 generally relates to employee salary or wages, while P.N.D.3 and P.N.D.53 are used for payments to individuals or juristic persons depending on the transaction.",
+    "follow_up_th": "แจ้งประเภทค่าใช้จ่าย ผู้รับเงินเป็นบุคคลหรือนิติบุคคล และเดือนที่จ่ายมาได้เลยค่ะ ทีมจะช่วยแยกแบบให้",
+    "follow_up_en": "Please send the expense type, whether the payee is an individual or company, and the payment month so the team can map the correct form.",
+    "source_url": "https://efiling.rd.go.th/rd-cms/askresult?iDisplay=15&question=53",
+    "official_links": [
+      {
+        "label_th": "FAQ e-Filing ภ.ง.ด.1/3/53",
+        "label_en": "e-Filing FAQ for P.N.D.1/3/53",
+        "url": "https://efiling.rd.go.th/rd-cms/askresult?iDisplay=15&question=53"
+      },
+      {
+        "label_th": "การยื่นแบบ ภ.ง.ด.1/3/53 ผ่านอินเทอร์เน็ต",
+        "label_en": "Online filing for P.N.D.1/3/53",
+        "url": "https://www.rd.go.th/39808.html"
+      }
+    ],
+    "keywords": [
+      "ภ.ง.ด.1",
+      "ภ.ง.ด.3",
+      "ภ.ง.ด.53",
+      "withholding tax",
+      "หัก ณ ที่จ่าย",
+      "เงินเดือน"
+    ]
+  },
+  {
+    "id": "official-faq-wht-large-attachment-rd-prep",
+    "type": "manual_faq",
+    "category": "tax",
+    "serviceBucket": "accounting-tax",
+    "priority": 103,
+    "question_th": "ถ้าใบแนบหัก ณ ที่จ่ายมีหลายรายการ ต้องใช้ RD Prep ไหม",
+    "question_en": "If withholding-tax attachments have many rows, is RD Prep required?",
+    "answer_th": "ระบบ e-Filing สามารถบันทึกข้อมูลออนไลน์ได้ แต่ถ้ามีจำนวนรายการมาก กรมสรรพากรระบุว่า RD Prep เหมาะสำหรับการเตรียมไฟล์ข้อมูลเพื่อนำเข้า ทีมจึงควรถามจำนวนรายการก่อนเลือกวิธียื่น",
+    "answer_en": "The e-Filing system can handle online entry, but the Revenue Department indicates RD Prep is useful when there are many attachment rows. The number of rows should be checked before choosing the filing workflow.",
+    "follow_up_th": "แจ้งจำนวนรายการหัก ณ ที่จ่ายในเดือนนั้น และมีไฟล์ Excel จาก payroll/accounting หรือไม่ค่ะ",
+    "follow_up_en": "Please share the number of withholding-tax rows for that month and whether an Excel file is available.",
+    "source_url": "https://efiling.rd.go.th/rd-cms/askresult?iDisplay=15&question=53",
+    "official_links": [
+      {
+        "label_th": "FAQ e-Filing กรมสรรพากร",
+        "label_en": "Revenue Department e-Filing FAQ",
+        "url": "https://efiling.rd.go.th/rd-cms/askresult?iDisplay=15&question=53"
+      }
+    ],
+    "keywords": [
+      "rd prep",
+      "ใบแนบ",
+      "หัก ณ ที่จ่าย",
+      "pnd53",
+      "pnd1",
+      "rdx"
+    ]
+  },
+  {
+    "id": "official-faq-rd-online-payment-status",
+    "type": "manual_faq",
+    "category": "tax",
+    "serviceBucket": "accounting-tax",
+    "priority": 101,
+    "question_th": "ยื่นภาษีออนไลน์แล้วสถานะชำระเงินยังไม่อัปเดต ต้องทำอย่างไร",
+    "question_en": "What should be done if an online tax payment status is not updated yet?",
+    "answer_th": "สถานะชำระเงินออนไลน์อาจใช้เวลาตามรอบส่งข้อมูลของช่องทางชำระเงิน ควรเก็บหลักฐานการชำระ เช่น ใบเสร็จหรือ statement และตรวจผลการยื่นแบบ/ใบเสร็จภายหลัง หากยังผิดปกติค่อยติดต่อช่องทางช่วยเหลือของกรมสรรพากร",
+    "answer_en": "Online tax-payment status may update according to the payment channel’s reporting cycle. Payment proof such as receipts or bank statements should be kept, and filing/payment results should be checked again later before contacting Revenue Department support if still abnormal.",
+    "follow_up_th": "ส่งประเภทแบบ เดือนภาษี วันที่ชำระ และหน้าจอสถานะล่าสุดมาได้เลยค่ะ ทีมจะช่วยดูว่าควรรอหรือควรติดต่อหน่วยงาน",
+    "follow_up_en": "Send the form type, tax month, payment date, and latest status screenshot so the team can check whether to wait or contact the authority.",
+    "source_url": "https://www.rd.go.th/39808.html",
+    "official_links": [
+      {
+        "label_th": "การยื่นแบบและชำระภาษีผ่านอินเทอร์เน็ต",
+        "label_en": "Online filing and payment guidance",
+        "url": "https://www.rd.go.th/39808.html"
+      }
+    ],
+    "keywords": [
+      "สถานะชำระภาษี",
+      "e-filing payment",
+      "ใบเสร็จสรรพากร",
+      "ค้างชำระ"
+    ]
+  },
+  {
+    "id": "official-faq-vat-monthly-documents",
+    "type": "manual_faq",
+    "category": "tax",
+    "serviceBucket": "accounting-tax",
+    "priority": 114,
+    "question_th": "ทำ VAT รายเดือนต้องเตรียมเอกสารอะไร",
+    "question_en": "What documents are needed for monthly VAT filing?",
+    "answer_th": "งาน VAT รายเดือนควรเตรียมใบกำกับภาษีขาย ใบกำกับภาษีซื้อ รายงานขาย รายงานซื้อ เอกสารรับ-จ่าย และข้อมูลสาขา/สำนักงานใหญ่ที่เกี่ยวข้อง เพื่อให้ตรวจเครดิตภาษีและยอดยื่นได้ถูกต้อง",
+    "answer_en": "Monthly VAT work should include output tax invoices, input tax invoices, sales and purchase reports, receipt/payment documents, and relevant branch or head-office information so tax credits and filing amounts can be checked correctly.",
+    "follow_up_th": "แจ้งเดือนภาษี สถานะ VAT และมีสาขาหรือไม่มาได้เลยค่ะ ทีมจะช่วยจัด checklist เอกสารให้",
+    "follow_up_en": "Please send the tax month, VAT status, and whether there are branches, and the team can prepare a document checklist.",
+    "source_url": "https://www.rd.go.th/24903.html",
+    "official_links": [
+      {
+        "label_th": "ข้อมูล VAT จากกรมสรรพากร",
+        "label_en": "Revenue Department VAT information",
+        "url": "https://www.rd.go.th/24903.html"
+      },
+      {
+        "label_th": "การยื่นแบบ ภ.พ.30 ผ่านอินเทอร์เน็ต",
+        "label_en": "Online P.P.30 filing guidance",
+        "url": "https://www.rd.go.th/39808.html"
+      }
+    ],
+    "keywords": [
+      "vat",
+      "ภ.พ.30",
+      "ใบกำกับภาษี",
+      "รายงานซื้อ",
+      "รายงานขาย"
+    ]
+  },
+  {
+    "id": "official-faq-tax-calendar-current-check",
+    "type": "manual_faq",
+    "category": "tax",
+    "serviceBucket": "accounting-tax",
+    "priority": 109,
+    "question_th": "กำหนดยื่นภาษีแต่ละเดือนควรเช็กจากที่ไหน",
+    "question_en": "Where should monthly tax due dates be checked?",
+    "answer_th": "ควรเช็กจากปฏิทินภาษีและประกาศของกรมสรรพากรทุกครั้ง เพราะวันหยุด การยื่นออนไลน์ และประกาศขยายเวลาบางช่วงอาจทำให้วันสุดท้ายเปลี่ยนได้ ไม่ควรจำจากเดือนก่อนอย่างเดียว",
+    "answer_en": "Monthly tax due dates should be checked from the Revenue Department tax calendar and announcements each time because holidays, e-filing rules, or temporary extensions may change the final due date.",
+    "follow_up_th": "บอกประเภทแบบและเดือนภาษีมาได้เลยค่ะ ทีมจะช่วยเช็กกำหนดล่าสุดให้ก่อนลงมือยื่น",
+    "follow_up_en": "Share the form type and tax month, and the team can check the latest applicable due date before filing.",
+    "source_url": "https://www.rd.go.th/62348/calendar/1/15.html",
+    "official_links": [
+      {
+        "label_th": "ปฏิทินภาษีกรมสรรพากร",
+        "label_en": "Revenue Department tax calendar",
+        "url": "https://www.rd.go.th/62348/calendar/1/15.html"
+      },
+      {
+        "label_th": "กำหนดยื่นแบบทางอินเทอร์เน็ต",
+        "label_en": "Internet filing due-date guidance",
+        "url": "https://www.rd.go.th/26/5011.html"
+      }
+    ],
+    "keywords": [
+      "ปฏิทินภาษี",
+      "กำหนดยื่นภาษี",
+      "tax calendar",
+      "deadline",
+      "e-filing due date"
+    ]
+  },
+  {
+    "id": "official-faq-dbd-online-service-map",
+    "type": "manual_faq",
+    "category": "corporate",
+    "serviceBucket": "corporate-dbd",
+    "priority": 120,
+    "question_th": "ระบบออนไลน์ DBD มีอะไรบ้างที่ใช้กับบริษัท",
+    "question_en": "Which DBD online systems are relevant for companies?",
+    "answer_th": "DBD มีหลายช่องทางออนไลน์สำหรับนิติบุคคล เช่น e-Registration สำหรับจดทะเบียน, e-Filing สำหรับนำส่งงบการเงิน, e-Permit สำหรับงานอนุญาตบางประเภท และ DataWarehouse สำหรับค้นหาข้อมูลนิติบุคคล จึงควรถามก่อนว่าลูกค้าต้องการจดใหม่ แก้ไข ยื่นงบ หรือขอเอกสาร",
+    "answer_en": "DBD provides several online channels for juristic persons, such as e-Registration for registration, e-Filing for financial-statement submission, e-Permit for some permit work, and DataWarehouse for company information search. The customer goal should be identified first.",
+    "follow_up_th": "แจ้งเป้าหมายงาน DBD ที่ต้องการ เช่น จดบริษัท แก้ไขกรรมการ ย้ายที่อยู่ หรือคัดเอกสาร ทีมจะชี้ช่องทางให้ถูกค่ะ",
+    "follow_up_en": "Tell us the DBD goal, such as company setup, director change, address change, or document request, and the team will point to the correct channel.",
+    "source_url": "https://ereg.dbd.go.th/RegistMemberWeb/index.html",
+    "official_links": [
+      {
+        "label_th": "บริการออนไลน์สำหรับนิติบุคคล DBD",
+        "label_en": "DBD online services for juristic persons",
+        "url": "https://ereg.dbd.go.th/RegistMemberWeb/index.html"
+      },
+      {
+        "label_th": "DBD DataWarehouse",
+        "label_en": "DBD DataWarehouse",
+        "url": "https://datawarehouse.dbd.go.th/searchJuristicInfo"
+      }
+    ],
+    "keywords": [
+      "DBD online services",
+      "e-registration",
+      "e-filing",
+      "e-permit",
+      "datawarehouse"
+    ]
+  },
+  {
+    "id": "official-faq-dbd-biz-regist-before-submit",
+    "type": "manual_faq",
+    "category": "corporate",
+    "serviceBucket": "corporate-dbd",
+    "priority": 118,
+    "question_th": "ก่อนจดทะเบียนบริษัทออนไลน์ต้องเตรียมข้อมูลอะไร",
+    "question_en": "What information should be prepared before online company registration?",
+    "answer_th": "ก่อนเริ่มจดทะเบียนบริษัท ควรเตรียมชื่อบริษัท วัตถุประสงค์ ทุนจดทะเบียน รายชื่อผู้ถือหุ้น กรรมการ อำนาจลงนาม ที่ตั้งสำนักงานใหญ่ และเอกสารยินยอมใช้สถานที่ ถ้าข้อมูลพื้นฐานไม่ครบ งานออนไลน์จะติดระหว่างทางได้ง่าย",
+    "answer_en": "Before company registration, prepare the company name, objectives, registered capital, shareholder list, directors, signing authority, head-office address, and address-consent documents where required. Missing basics can delay the online workflow.",
+    "follow_up_th": "ถ้าจะให้ทีมประเมินเริ่มจดบริษัท ส่งชื่อที่ต้องการ ประเภทธุรกิจ ที่อยู่ และรายชื่อผู้ถือหุ้นเบื้องต้นมาได้เลยค่ะ",
+    "follow_up_en": "If you want the team to assess company setup, send the proposed names, business activity, address, and initial shareholder list.",
+    "source_url": "https://ereg.dbd.go.th/RegistMemberWeb/index.html",
+    "official_links": [
+      {
+        "label_th": "DBD e-Registration",
+        "label_en": "DBD e-Registration",
+        "url": "https://ereg.dbd.go.th/RegistMemberWeb/index.html"
+      },
+      {
+        "label_th": "DBD Biz Regist",
+        "label_en": "DBD Biz Regist",
+        "url": "https://edbr.dbd.go.th/"
+      }
+    ],
+    "keywords": [
+      "จดบริษัท",
+      "จดทะเบียนบริษัทออนไลน์",
+      "DBD Biz Regist",
+      "ผู้ถือหุ้น",
+      "กรรมการ"
+    ]
+  },
+  {
+    "id": "official-faq-dbd-english-certificate-name-not-found",
+    "type": "manual_faq",
+    "category": "corporate",
+    "serviceBucket": "corporate-dbd",
+    "priority": 112,
+    "question_th": "ขอหนังสือรับรองภาษาอังกฤษแล้วไม่พบชื่อบริษัทภาษาอังกฤษ ต้องทำอย่างไร",
+    "question_en": "What if the English company name is not found when requesting an English certificate?",
+    "answer_th": "DBD e-Certificate FAQ ระบุกรณีไม่พบชื่อภาษาอังกฤษว่าให้ดำเนินการแก้ไขหรือจองชื่อภาษาอังกฤษผ่านระบบที่ DBD กำหนด ก่อนขอเอกสารภาษาอังกฤษใหม่ ทีมควรตรวจชื่อภาษาอังกฤษในข้อมูลนิติบุคคลก่อนเสมอ",
+    "answer_en": "DBD e-Certificate FAQ indicates that if the English juristic name cannot be found, the English name correction or reservation process in the DBD-designated system should be handled before requesting the English certificate again.",
+    "follow_up_th": "ส่งชื่อบริษัท เลขนิติบุคคล และหน้าจอที่ระบบแจ้งมาได้เลยค่ะ ทีมจะช่วยดูว่าควรแก้ชื่อหรือขอเอกสารแบบอื่นก่อน",
+    "follow_up_en": "Send the company name, juristic ID, and system message screenshot so the team can check whether name correction or another document type is needed first.",
+    "source_url": "https://encert.dbd.go.th/encert-inter/public/en/faq",
+    "official_links": [
+      {
+        "label_th": "DBD e-Certificate FAQ",
+        "label_en": "DBD e-Certificate FAQ",
+        "url": "https://encert.dbd.go.th/encert-inter/public/en/faq"
+      }
+    ],
+    "keywords": [
+      "หนังสือรับรองภาษาอังกฤษ",
+      "english certificate",
+      "juristic name english",
+      "DBD e-Certificate",
+      "encert"
+    ]
+  },
+  {
+    "id": "official-faq-dbd-certificate-copy-channel",
+    "type": "manual_faq",
+    "category": "corporate",
+    "serviceBucket": "corporate-dbd",
+    "priority": 110,
+    "question_th": "ขอหนังสือรับรองหรือคัดสำเนาเอกสารบริษัทออนไลน์ได้ไหม",
+    "question_en": "Can company certificates or certified copies be requested online?",
+    "answer_th": "ขอได้ผ่านช่องทางออนไลน์ของ DBD ในหลายกรณี แต่ควรระบุเอกสารให้ชัด เช่น หนังสือรับรอง รายชื่อผู้ถือหุ้น งบการเงิน หรือสำเนาคำขอจดทะเบียน เพราะค่าธรรมเนียม รูปแบบไฟล์ และช่องทางรับเอกสารอาจต่างกัน",
+    "answer_en": "In many cases, company certificates and certified copies can be requested through DBD online channels. The exact document should be specified because fees, file format, and delivery channel can differ.",
+    "follow_up_th": "แจ้งชื่อเอกสารที่ต้องการและจะนำไปใช้ทำอะไร ทีมจะช่วยแนะนำช่องทางที่เหมาะค่ะ",
+    "follow_up_en": "Tell us which document you need and what it will be used for, and the team can recommend the right channel.",
+    "source_url": "https://ebiz.dbd.go.th/eservice-web/index.xhtml",
+    "official_links": [
+      {
+        "label_th": "DBD e-Service",
+        "label_en": "DBD e-Service",
+        "url": "https://ebiz.dbd.go.th/eservice-web/index.xhtml"
+      },
+      {
+        "label_th": "DBD e-Certificate",
+        "label_en": "DBD e-Certificate",
+        "url": "https://encert.dbd.go.th/encert-inter/public/en/faq"
+      }
+    ],
+    "keywords": [
+      "คัดสำเนา",
+      "หนังสือรับรอง",
+      "DBD e-Service",
+      "company certificate",
+      "certified copy"
+    ]
+  },
+  {
+    "id": "official-faq-dbd-commercial-registration-scope",
+    "type": "manual_faq",
+    "category": "corporate",
+    "serviceBucket": "corporate-dbd",
+    "priority": 104,
+    "question_th": "ทะเบียนพาณิชย์ต่างจากจดบริษัทอย่างไร",
+    "question_en": "How is commercial registration different from company registration?",
+    "answer_th": "ทะเบียนพาณิชย์เป็นงานจดทะเบียนกิจการบางประเภทตามกฎหมายทะเบียนพาณิชย์ ส่วนจดบริษัทเป็นการจัดตั้งนิติบุคคลคนละเรื่องกัน ลูกค้าจึงควรบอกก่อนว่าเป็นบุคคลธรรมดา ร้านค้าออนไลน์ หรือนิติบุคคล และทำกิจกรรมอะไร",
+    "answer_en": "Commercial registration applies to certain commercial activities, while company registration creates a juristic person. The customer should clarify whether the business is an individual shop, online shop, or company and what activity is being carried out.",
+    "follow_up_th": "แจ้งรูปแบบธุรกิจและช่องทางขาย เช่น หน้าร้าน ออนไลน์ หรือบริการ ทีมจะช่วยแยกว่าเข้าทะเบียนพาณิชย์หรือจดบริษัทค่ะ",
+    "follow_up_en": "Share the business format and sales channel, such as storefront, online, or service, and the team can distinguish commercial registration from company setup.",
+    "source_url": "https://dbdregcom.dbd.go.th/mainsite/index.php?id=23",
+    "official_links": [
+      {
+        "label_th": "คู่มือการจดทะเบียนพาณิชย์ DBD",
+        "label_en": "DBD commercial-registration manuals",
+        "url": "https://dbdregcom.dbd.go.th/mainsite/index.php?id=23"
+      }
+    ],
+    "keywords": [
+      "ทะเบียนพาณิชย์",
+      "จดทะเบียนพาณิชย์",
+      "จดบริษัท",
+      "ร้านค้าออนไลน์",
+      "commercial registration"
+    ]
+  },
+  {
+    "id": "official-faq-dbd-director-address-change-aftercare",
+    "type": "manual_faq",
+    "category": "corporate",
+    "serviceBucket": "corporate-dbd",
+    "priority": 106,
+    "question_th": "เปลี่ยนกรรมการหรือที่อยู่บริษัทแล้วต้องดูเรื่องอะไรต่อ",
+    "question_en": "After changing directors or company address, what else should be checked?",
+    "answer_th": "หลังแก้ไขข้อมูลบริษัทกับ DBD ควรตรวจผลกระทบต่ออำนาจลงนาม บัญชีธนาคาร ภาษี VAT สาขา ประกันสังคม ใบอนุญาต และสัญญาที่ใช้อยู่ เพราะเอกสารราชการเปลี่ยนแล้วอาจต้องอัปเดตหลายจุด",
+    "answer_en": "After DBD amendments, signing authority, bank records, VAT branches, Social Security, licenses, and active contracts should be checked because a change in official company records may require updates across several systems.",
+    "follow_up_th": "แจ้งว่าจะแก้ไขกรรมการ ที่อยู่ หรืออำนาจลงนาม และมี VAT/ประกันสังคมหรือไม่ ทีมจะช่วยทำ checklist ต่อเนื่องให้",
+    "follow_up_en": "Tell us whether the change concerns directors, address, or signing authority, and whether VAT/Social Security exists, and the team can prepare the aftercare checklist.",
+    "source_url": "https://ereg.dbd.go.th/RegistMemberWeb/index.html",
+    "official_links": [
+      {
+        "label_th": "บริการออนไลน์ DBD สำหรับนิติบุคคล",
+        "label_en": "DBD online services for juristic persons",
+        "url": "https://ereg.dbd.go.th/RegistMemberWeb/index.html"
+      }
+    ],
+    "keywords": [
+      "เปลี่ยนกรรมการ",
+      "เปลี่ยนที่อยู่บริษัท",
+      "อำนาจลงนาม",
+      "DBD amendment",
+      "company address change"
+    ]
+  },
+  {
+    "id": "official-faq-sso-employer-registration-sps101",
+    "type": "manual_faq",
+    "category": "social-security",
+    "serviceBucket": "accounting-tax",
+    "priority": 119,
+    "question_th": "ขึ้นทะเบียนนายจ้างประกันสังคมต้องใช้แบบอะไร",
+    "question_en": "Which form is used for Social Security employer registration?",
+    "answer_th": "ข้อมูลของสำนักงานประกันสังคมระบุแบบคำขอขึ้นทะเบียนนายจ้าง สปส.1-01 ซึ่งรวมข้อมูลสถานประกอบการ ผู้มีอำนาจ จำนวนลูกจ้าง ประเภทกิจการ และค่าจ้าง ทีมควรเช็กก่อนว่าบริษัทมีลูกจ้างแล้วหรือยังและเคยขึ้นทะเบียนนายจ้างหรือไม่",
+    "answer_en": "The Social Security Office dataset identifies employer registration form SPS 1-01, covering establishment data, authorized persons, number of employees, business type, and wages. The team should check whether the company already has employees and whether it has been registered before.",
+    "follow_up_th": "แจ้งจำนวนพนักงาน วันเริ่มจ้าง และสถานะขึ้นทะเบียนนายจ้างเดิมมาได้เลยค่ะ ทีมจะช่วยดูขั้นตอนให้",
+    "follow_up_en": "Please share the employee count, hiring start date, and current employer-registration status, and the team can guide the next step.",
+    "source_url": "https://catalog.sso.go.th/dataset/dataset-11_01",
+    "official_links": [
+      {
+        "label_th": "แบบคำขอขึ้นทะเบียนนายจ้าง สปส.1-01",
+        "label_en": "Employer registration form SPS 1-01",
+        "url": "https://catalog.sso.go.th/dataset/dataset-11_01"
+      },
+      {
+        "label_th": "สำนักงานประกันสังคม",
+        "label_en": "Social Security Office",
+        "url": "https://www.sso.go.th/wpr/main"
+      }
+    ],
+    "keywords": [
+      "สปส.1-01",
+      "ขึ้นทะเบียนนายจ้าง",
+      "ประกันสังคม",
+      "employer registration",
+      "sso"
+    ]
+  },
+  {
+    "id": "official-faq-sso-new-employee-registration-sps103",
+    "type": "manual_faq",
+    "category": "social-security",
+    "serviceBucket": "accounting-tax",
+    "priority": 115,
+    "question_th": "รับพนักงานใหม่ต้องแจ้งประกันสังคมภายในกี่วัน",
+    "question_en": "After hiring a new employee, when should Social Security registration be filed?",
+    "answer_th": "เอกสารสำนักงานประกันสังคมระบุการขึ้นทะเบียนผู้ประกันตนแบบ สปส.1-03 และให้แจ้งภายในกรอบเวลาที่กำหนดหลังลูกจ้างเป็นผู้ประกันตน ในงานจริงควรเก็บวันเริ่มงาน เลขบัตรประชาชน ค่าจ้าง และสถานพยาบาลที่เลือกให้ครบ",
+    "answer_en": "Social Security documents identify insured-person registration form SPS 1-03 and require filing within the applicable time frame after the employee becomes insured. In practice, start date, ID number, wage, and hospital selection should be collected clearly.",
+    "follow_up_th": "ส่งชื่อพนักงาน วันเริ่มงาน เงินเดือน และสถานะเคยมีประกันสังคมหรือไม่มาได้เลยค่ะ",
+    "follow_up_en": "Please send the employee name, start date, salary, and whether they have prior Social Security coverage.",
+    "source_url": "https://catalog.sso.go.th/dataset/c72fd51f-8e63-4565-8b6a-120fe5a95e60/resource/bd8da94a-a375-482b-a233-b9069c390f03/download/.pdf",
+    "official_links": [
+      {
+        "label_th": "แบบขึ้นทะเบียนผู้ประกันตน สปส.1-03",
+        "label_en": "Insured-person registration form SPS 1-03",
+        "url": "https://catalog.sso.go.th/dataset/c72fd51f-8e63-4565-8b6a-120fe5a95e60/resource/bd8da94a-a375-482b-a233-b9069c390f03/download/.pdf"
+      }
+    ],
+    "keywords": [
+      "สปส.1-03",
+      "พนักงานใหม่",
+      "ขึ้นทะเบียนผู้ประกันตน",
+      "ประกันสังคม 30 วัน",
+      "new employee sso"
+    ]
+  },
+  {
+    "id": "official-faq-sso-contribution-sps110",
+    "type": "manual_faq",
+    "category": "social-security",
+    "serviceBucket": "accounting-tax",
+    "priority": 111,
+    "question_th": "ส่งเงินสมทบประกันสังคมใช้แบบอะไร",
+    "question_en": "Which form is used for Social Security contribution remittance?",
+    "answer_th": "ข้อมูลสำนักงานประกันสังคมระบุแบบ สปส.1-10 สำหรับรายละเอียดการนำส่งเงินสมทบ โดยต้องดูค่าจ้างจริง เดือนค่าจ้าง รายชื่อผู้ประกันตน และส่วนเงินสมทบของนายจ้าง/ลูกจ้างให้ตรงรอบ",
+    "answer_en": "The Social Security Office identifies SPS 1-10 for contribution remittance details. Actual wages, wage month, insured-person list, and employer/employee contribution portions should align with the correct cycle.",
+    "follow_up_th": "ส่งเดือนเงินเดือน จำนวนพนักงาน และไฟล์ payroll มาได้เลยค่ะ ทีมจะช่วยตรวจยอดส่งเงินสมทบ",
+    "follow_up_en": "Send the payroll month, employee count, and payroll file, and the team can check contribution amounts.",
+    "source_url": "https://catalog.sso.go.th/en/dataset/dataset-33_01",
+    "official_links": [
+      {
+        "label_th": "แบบแสดงการนำส่งเงินสมทบ สปส.1-10",
+        "label_en": "Contribution remittance form SPS 1-10",
+        "url": "https://catalog.sso.go.th/en/dataset/dataset-33_01"
+      },
+      {
+        "label_th": "รายละเอียดการนำส่งเงินสมทบ สปส.1-10 ส่วนที่ 2",
+        "label_en": "SPS 1-10 contribution details part 2",
+        "url": "https://catalog.sso.go.th/en/dataset/dataset-31_01"
+      }
+    ],
+    "keywords": [
+      "สปส.1-10",
+      "ส่งเงินสมทบ",
+      "เงินสมทบประกันสังคม",
+      "payroll",
+      "social security contribution"
+    ]
+  },
+  {
+    "id": "official-faq-sso-payroll-monthly-checklist",
+    "type": "manual_faq",
+    "category": "social-security",
+    "serviceBucket": "accounting-tax",
+    "priority": 107,
+    "question_th": "ทำ payroll รายเดือนต้องเช็กอะไรบ้าง",
+    "question_en": "What should be checked for monthly payroll?",
+    "answer_th": "งาน payroll รายเดือนควรเช็กเงินเดือน ค่าจ้าง OT โบนัส หัก ณ ที่จ่าย ประกันสังคม วันเข้าออกงาน การลา และข้อมูลบัญชีธนาคารพนักงาน เพื่อให้ payslip ภาษี และเงินสมทบสอดคล้องกัน",
+    "answer_en": "Monthly payroll should check salary, wages, overtime, bonus, withholding tax, Social Security, join/leave dates, leave records, and employee bank details so payslips, tax, and contributions are consistent.",
+    "follow_up_th": "รบกวนส่งไฟล์เงินเดือนรอบล่าสุดและแจ้งว่ามีพนักงานเข้าออกในเดือนนั้นหรือไม่ค่ะ",
+    "follow_up_en": "Please send the latest payroll file and tell us whether any employees joined or left during that month.",
+    "source_url": "https://catalog.sso.go.th/en/dataset/dataset-33_01",
+    "official_links": [
+      {
+        "label_th": "ข้อมูลแบบนำส่งเงินสมทบ สปส.1-10",
+        "label_en": "SPS 1-10 contribution data",
+        "url": "https://catalog.sso.go.th/en/dataset/dataset-33_01"
+      },
+      {
+        "label_th": "FAQ e-Filing ภ.ง.ด.1",
+        "label_en": "e-Filing FAQ for P.N.D.1",
+        "url": "https://efiling.rd.go.th/rd-cms/askresult?iDisplay=15&question=53"
+      }
+    ],
+    "keywords": [
+      "payroll",
+      "เงินเดือน",
+      "payslip",
+      "ประกันสังคม",
+      "ภ.ง.ด.1"
+    ]
+  },
+  {
+    "id": "official-faq-eworkpermit-first-check",
+    "type": "manual_faq",
+    "category": "immigration",
+    "serviceBucket": "visa-license",
+    "priority": 122,
+    "question_th": "ก่อนทำ Work Permit ต้องเช็กข้อมูลอะไรบ้าง",
+    "question_en": "What should be checked before starting a Work Permit case?",
+    "answer_th": "ก่อนเริ่ม Work Permit ควรเช็กสัญชาติ หนังสือเดินทาง วีซ่าปัจจุบัน ตำแหน่งงาน ลักษณะงาน นายจ้าง/นิติบุคคล สถานประกอบการ และประเภทกิจการ เพราะระบบ e-Workpermit ใช้ข้อมูลทั้งฝั่งนายจ้างและคนต่างด้าวในการยื่นคำขอ",
+    "answer_en": "Before starting a Work Permit case, check nationality, passport, current visa, job title, job description, employer/company, workplace, and business activity because the e-Workpermit system uses both employer and foreign-worker data.",
+    "follow_up_th": "ส่งสัญชาติ ประเภทวีซ่า วันหมดอายุ passport/visa และข้อมูลบริษัทมาได้เลยค่ะ ทีมจะประเมินขั้นแรกให้",
+    "follow_up_en": "Please send nationality, visa type, passport/visa expiry dates, and company details so the team can assess the first step.",
+    "source_url": "https://eworkpermit.doe.go.th/Register/Employer",
+    "official_links": [
+      {
+        "label_th": "ระบบ e-Workpermit กรมการจัดหางาน",
+        "label_en": "Department of Employment e-Workpermit system",
+        "url": "https://eworkpermit.doe.go.th"
+      },
+      {
+        "label_th": "ลงทะเบียนนายจ้าง e-Workpermit",
+        "label_en": "e-Workpermit employer registration",
+        "url": "https://eworkpermit.doe.go.th/Register/Employer"
+      }
+    ],
+    "keywords": [
+      "work permit",
+      "e-workpermit",
+      "ใบอนุญาตทำงาน",
+      "วีซ่า",
+      "นายจ้าง"
+    ]
+  },
+  {
+    "id": "official-faq-eworkpermit-employer-registration-data",
+    "type": "manual_faq",
+    "category": "immigration",
+    "serviceBucket": "visa-license",
+    "priority": 108,
+    "question_th": "ลงทะเบียนนายจ้างใน e-Workpermit ต้องใช้ข้อมูลอะไร",
+    "question_en": "What employer data is needed for e-Workpermit registration?",
+    "answer_th": "หน้าลงทะเบียน e-Workpermit ขอข้อมูลนายจ้าง/นิติบุคคล ผู้มีอำนาจ สถานประกอบการ อีเมล ที่อยู่ และประเภทกิจการ จึงควรเตรียมข้อมูล DBD และข้อมูลติดต่อของผู้ยื่นให้ตรงกับเอกสารจริง",
+    "answer_en": "The e-Workpermit employer registration flow asks for employer/company data, authorized-person details, workplace, email, address, and business activity. DBD records and applicant contact details should match supporting documents.",
+    "follow_up_th": "แจ้งเลขนิติบุคคล ชื่อผู้ยื่น และประเภทกิจการ ทีมจะช่วยดูว่าข้อมูลพร้อมสมัครหรือยังค่ะ",
+    "follow_up_en": "Share the juristic ID, applicant name, and business activity, and the team can check whether the registration data is ready.",
+    "source_url": "https://eworkpermit.doe.go.th/Register/Employer",
+    "official_links": [
+      {
+        "label_th": "ลงทะเบียนนายจ้าง e-Workpermit",
+        "label_en": "e-Workpermit employer registration",
+        "url": "https://eworkpermit.doe.go.th/Register/Employer"
+      }
+    ],
+    "keywords": [
+      "ลงทะเบียน e-workpermit",
+      "นายจ้าง work permit",
+      "ประเภทกิจการ",
+      "สถานประกอบการ",
+      "juristic ID"
+    ]
+  },
+  {
+    "id": "official-faq-eworkpermit-representative-authority",
+    "type": "manual_faq",
+    "category": "immigration",
+    "serviceBucket": "visa-license",
+    "priority": 106,
+    "question_th": "ผู้รับมอบอำนาจยื่น e-Workpermit แทนได้ไหม",
+    "question_en": "Can an authorized representative handle e-Workpermit submission?",
+    "answer_th": "ระบบ e-Workpermit มีส่วนข้อมูลผู้ดำเนินการแทน/ผู้กระทำการแทน แต่ต้องตรวจเงื่อนไขการยืนยันตัวตนและสิทธิของผู้ยื่นตามระบบล่าสุด รวมถึงเอกสารมอบอำนาจและข้อมูลนายจ้างให้ตรงกัน",
+    "answer_en": "The e-Workpermit system includes representative/applicant sections, but the latest identity-verification and authority requirements must be checked. Power of attorney and employer data should match the system records.",
+    "follow_up_th": "ส่งชื่อผู้ยื่น ความสัมพันธ์กับบริษัท และมีเอกสารมอบอำนาจหรือไม่ ทีมจะช่วยดูความพร้อมค่ะ",
+    "follow_up_en": "Send the applicant name, relationship to the company, and whether a power of attorney exists, and the team can check readiness.",
+    "source_url": "https://eworkpermit.doe.go.th/Register/Employer",
+    "official_links": [
+      {
+        "label_th": "ลงทะเบียนนายจ้าง e-Workpermit",
+        "label_en": "e-Workpermit employer registration",
+        "url": "https://eworkpermit.doe.go.th/Register/Employer"
+      }
+    ],
+    "keywords": [
+      "ผู้รับมอบอำนาจ",
+      "e-workpermit representative",
+      "power of attorney",
+      "ยื่นแทน",
+      "work permit"
+    ]
+  },
+  {
+    "id": "official-faq-eworkpermit-doc-upload-limits",
+    "type": "manual_faq",
+    "category": "immigration",
+    "serviceBucket": "visa-license",
+    "priority": 97,
+    "question_th": "ยื่น e-Workpermit ต้องอัปโหลดเอกสารอย่างไร",
+    "question_en": "How are documents uploaded for e-Workpermit?",
+    "answer_th": "ระบบ e-Workpermit มีขั้นตอนแนบเอกสารประกอบคำขอ และหน้าลงทะเบียนแสดงข้อจำกัดไฟล์บางจุด เช่น PDF และขนาดไฟล์ จึงควรเตรียมไฟล์เอกสารชัดเจน แยกชื่อไฟล์ และตรวจขนาดก่อนอัปโหลด",
+    "answer_en": "The e-Workpermit workflow includes supporting-document uploads, and parts of the system show file restrictions such as PDF format and file size. Documents should be clear, named by type, and checked for size before upload.",
+    "follow_up_th": "ถ้าต้องการให้ทีมช่วยจัดชุดไฟล์ ส่งรายการเอกสารที่มีและวันหมดอายุ passport/visa มาได้เลยค่ะ",
+    "follow_up_en": "If you want help organizing the file set, send the available documents and passport/visa expiry dates.",
+    "source_url": "https://eworkpermit.doe.go.th/Register/Employer",
+    "official_links": [
+      {
+        "label_th": "ลงทะเบียนนายจ้าง e-Workpermit",
+        "label_en": "e-Workpermit employer registration",
+        "url": "https://eworkpermit.doe.go.th/Register/Employer"
+      }
+    ],
+    "keywords": [
+      "อัปโหลดเอกสาร",
+      "pdf work permit",
+      "e-workpermit documents",
+      "แนบเอกสาร",
+      "ขนาดไฟล์"
+    ]
+  },
+  {
+    "id": "official-faq-workpermit-renewal-early-check",
+    "type": "manual_faq",
+    "category": "immigration",
+    "serviceBucket": "visa-license",
+    "priority": 113,
+    "question_th": "ต่ออายุ Work Permit ควรเริ่มเตรียมเมื่อไร",
+    "question_en": "When should Work Permit renewal preparation start?",
+    "answer_th": "ควรเริ่มเช็กก่อนวันหมดอายุพอสมควร เพราะต้องดูวันหมดอายุ Work Permit, Visa, Passport, สถานะนายจ้าง และเอกสารบริษัท หากปล่อยใกล้หมดอายุเกินไปอาจมีความเสี่ยงเรื่องนัดหมาย เอกสาร หรือสิทธิทำงาน",
+    "answer_en": "Renewal preparation should start well before expiry because Work Permit, visa, passport, employer status, and company documents must be checked. Waiting too close to expiry increases appointment, document, and work-authorization risks.",
+    "follow_up_th": "ส่งวันหมดอายุ Work Permit, Visa และ Passport มาได้เลยค่ะ ทีมจะช่วยดูความเร่งด่วนให้",
+    "follow_up_en": "Send the Work Permit, visa, and passport expiry dates, and the team can assess urgency.",
+    "source_url": "https://eworkpermit.doe.go.th",
+    "official_links": [
+      {
+        "label_th": "ระบบ e-Workpermit",
+        "label_en": "e-Workpermit system",
+        "url": "https://eworkpermit.doe.go.th"
+      }
+    ],
+    "keywords": [
+      "ต่อ work permit",
+      "renew work permit",
+      "วันหมดอายุ",
+      "visa expiry",
+      "passport expiry"
+    ]
+  },
+  {
+    "id": "official-faq-bizportal-business-license-first-check",
+    "type": "manual_faq",
+    "category": "license",
+    "serviceBucket": "visa-license",
+    "priority": 117,
+    "question_th": "ก่อนขอใบอนุญาตธุรกิจควรเริ่มจากอะไร",
+    "question_en": "Where should a business-license case start?",
+    "answer_th": "ควรเริ่มจากประเภทธุรกิจ กิจกรรมจริง สถานที่ตั้ง เขต/จังหวัด รูปแบบผู้ประกอบการ และมีนิติบุคคลหรือยัง เพราะ Biz Portal และหน่วยงานรัฐจะแยกใบอนุญาตตามกิจกรรมและพื้นที่ให้บริการ",
+    "answer_en": "Start with the business type, actual activity, location, district/province, business structure, and whether a company already exists because Biz Portal and agencies map licenses by activity and location.",
+    "follow_up_th": "ส่งประเภทธุรกิจ ที่ตั้ง และกิจกรรมที่ทำจริงมาได้เลยค่ะ ทีมจะช่วยคัดว่าเข้าข่ายใบอนุญาตใด",
+    "follow_up_en": "Please send the business type, location, and actual activity, and the team can identify likely license requirements.",
+    "source_url": "https://bizportal.go.th/Home/Index",
+    "official_links": [
+      {
+        "label_th": "Biz Portal: ศูนย์กลางบริการภาครัฐเพื่อธุรกิจ",
+        "label_en": "Biz Portal: government service hub for business",
+        "url": "https://bizportal.go.th/Home/Index"
+      },
+      {
+        "label_th": "ขอใบอนุญาตออนไลน์ Biz Portal",
+        "label_en": "Biz Portal online license applications",
+        "url": "https://bizportal.go.th/Business/Index"
+      }
+    ],
+    "keywords": [
+      "ใบอนุญาตธุรกิจ",
+      "Biz Portal",
+      "ขออนุญาตออนไลน์",
+      "business license",
+      "permit"
+    ]
+  },
+  {
+    "id": "official-faq-bizportal-restaurant-cafe-license",
+    "type": "manual_faq",
+    "category": "license",
+    "serviceBucket": "visa-license",
+    "priority": 109,
+    "question_th": "ร้านอาหารหรือคาเฟ่ต้องขอใบอนุญาตอะไรบ้าง",
+    "question_en": "What licenses may a restaurant or cafe need?",
+    "answer_th": "ร้านอาหารหรือคาเฟ่อาจเกี่ยวข้องกับใบอนุญาตตามพื้นที่และลักษณะกิจการ เช่น อาหาร เครื่องดื่ม สถานที่จำหน่าย หรือกิจการที่เป็นอันตรายต่อสุขภาพในบางกรณี ต้องดูพื้นที่ตั้ง ขนาดร้าน และมีแอลกอฮอล์หรือไม่ก่อนสรุป",
+    "answer_en": "A restaurant or cafe may involve licenses depending on location and activity, such as food, beverage, sales premises, or health-hazard business categories in some cases. Location, shop size, and alcohol service should be checked before confirming scope.",
+    "follow_up_th": "แจ้งที่ตั้งร้าน ขนาดพื้นที่ ประเภทอาหาร/เครื่องดื่ม และมีแอลกอฮอล์หรือไม่ ทีมจะช่วยเช็กใบอนุญาตที่เกี่ยวข้องค่ะ",
+    "follow_up_en": "Share the shop location, area size, food/beverage type, and whether alcohol is served, and the team can check relevant licenses.",
+    "source_url": "https://bizportal.go.th/Business/Index",
+    "official_links": [
+      {
+        "label_th": "Biz Portal หมวดธุรกิจร้านอาหารและเครื่องดื่ม",
+        "label_en": "Biz Portal restaurant and beverage category",
+        "url": "https://bizportal.go.th/Business/Index"
+      }
+    ],
+    "keywords": [
+      "ใบอนุญาตร้านอาหาร",
+      "คาเฟ่",
+      "restaurant license",
+      "food business",
+      "health hazard license"
+    ]
+  },
+  {
+    "id": "official-faq-bizportal-status-and-license-receipt",
+    "type": "manual_faq",
+    "category": "license",
+    "serviceBucket": "visa-license",
+    "priority": 94,
+    "question_th": "ยื่นใบอนุญาตผ่าน Biz Portal แล้วติดตามสถานะได้ไหม",
+    "question_en": "Can Biz Portal application status be tracked after submission?",
+    "answer_th": "Biz Portal มีบริการค้นหาข้อมูล ขออนุญาตออนไลน์ ตรวจสอบสถานะ และรับใบอนุญาตในระบบ แต่การใช้ได้จริงขึ้นกับประเภทคำขอและหน่วยงานที่รับผิดชอบ ควรเก็บเลขคำขอและหน้าจอสถานะไว้ทุกครั้ง",
+    "answer_en": "Biz Portal provides information search, online application, status tracking, and license receipt services. Actual availability depends on the application type and responsible authority, so request numbers and status screenshots should be kept.",
+    "follow_up_th": "ส่งเลขคำขอหรือหน้าจอสถานะล่าสุดมาได้เลยค่ะ ทีมจะช่วยดูว่าขั้นตอนต่อไปควรรอหรือแก้เอกสาร",
+    "follow_up_en": "Send the request number or latest status screenshot, and the team can check whether to wait or revise documents.",
+    "source_url": "https://bizportal.go.th/Home/Index",
+    "official_links": [
+      {
+        "label_th": "Biz Portal",
+        "label_en": "Biz Portal",
+        "url": "https://bizportal.go.th/Home/Index"
+      },
+      {
+        "label_th": "รายการใบอนุญาต/ใบรับรอง Biz Portal",
+        "label_en": "Biz Portal license/certificate list",
+        "url": "https://bizportal.go.th/Tracking/LicenseList"
+      }
+    ],
+    "keywords": [
+      "ติดตามสถานะใบอนุญาต",
+      "Biz Portal tracking",
+      "รับใบอนุญาต",
+      "license status"
+    ]
+  },
+  {
+    "id": "official-faq-company-dissolution-before-close",
+    "type": "manual_faq",
+    "category": "dissolution",
+    "serviceBucket": "company-dissolution",
+    "priority": 113,
+    "question_th": "ก่อนปิดบริษัทต้องเช็กเรื่องอะไรบ้าง",
+    "question_en": "What should be checked before closing a company?",
+    "answer_th": "ก่อนปิดบริษัทควรเช็กหนี้สิน สัญญาค้าง ลูกหนี้เจ้าหนี้ VAT ประกันสังคม เงินเดือน ภาษีหัก ณ ที่จ่าย งบการเงิน และสถานะ DBD/RD เดิม เพราะการปิดบริษัทไม่ใช่แค่ยื่น DBD แต่ต้องเคลียร์ภาษีและบัญชีให้สอดคล้อง",
+    "answer_en": "Before company closure, liabilities, contracts, receivables/payables, VAT, Social Security, payroll, withholding tax, financial statements, and prior DBD/RD filing status should be checked. Closure is not only a DBD filing; tax and accounting matters must align.",
+    "follow_up_th": "ส่งสถานะบริษัทล่าสุด มี VAT/พนักงาน/หนี้สินหรือไม่ และปีงบล่าสุดที่ยื่นแล้วมาได้เลยค่ะ ทีมจะช่วยประเมินขั้นตอนปิด",
+    "follow_up_en": "Please send the latest company status, whether VAT/employees/liabilities exist, and the latest filed financial year, and the team can assess closure steps.",
+    "source_url": "https://ereg.dbd.go.th/RegistMemberWeb/index.html",
+    "official_links": [
+      {
+        "label_th": "บริการออนไลน์ DBD สำหรับนิติบุคคล",
+        "label_en": "DBD online services for juristic persons",
+        "url": "https://ereg.dbd.go.th/RegistMemberWeb/index.html"
+      },
+      {
+        "label_th": "กรมสรรพากร",
+        "label_en": "Revenue Department",
+        "url": "https://www.rd.go.th"
+      },
+      {
+        "label_th": "สำนักงานประกันสังคม",
+        "label_en": "Social Security Office",
+        "url": "https://www.sso.go.th/wpr/main"
+      }
+    ],
+    "keywords": [
+      "ปิดบริษัท",
+      "เลิกบริษัท",
+      "dissolution",
+      "liquidation",
+      "ปิด VAT",
+      "ปิดประกันสังคม"
+    ]
+  },
+  {
+    "id": "official-faq-company-dissolution-aftercare",
+    "type": "manual_faq",
+    "category": "dissolution",
+    "serviceBucket": "company-dissolution",
+    "priority": 102,
+    "question_th": "หลังยื่นเลิกบริษัทแล้วต้องทำอะไรต่อ",
+    "question_en": "What should be done after filing company dissolution?",
+    "answer_th": "หลังเริ่มกระบวนการเลิกบริษัท ยังต้องดูงานชำระบัญชี เอกสารบัญชี ภาษีงวดสุดท้าย การปิด VAT/ประกันสังคม บัญชีธนาคาร และใบอนุญาตที่เกี่ยวข้อง เพื่อให้ไม่มีภาระค้างหลังปิดนิติบุคคล",
+    "answer_en": "After starting dissolution, liquidation, accounting records, final tax filings, VAT/Social Security closure, bank accounts, and related licenses still need to be handled so no obligations remain after company closure.",
+    "follow_up_th": "แจ้งวันที่เริ่มเลิกบริษัทและรายการภาระค้าง เช่น VAT พนักงาน ใบอนุญาต หรือบัญชีธนาคาร ทีมจะช่วยวางลำดับให้ค่ะ",
+    "follow_up_en": "Share the dissolution start date and outstanding items such as VAT, employees, licenses, or bank accounts, and the team can sequence the work.",
+    "source_url": "https://ereg.dbd.go.th/RegistMemberWeb/index.html",
+    "official_links": [
+      {
+        "label_th": "บริการออนไลน์ DBD สำหรับนิติบุคคล",
+        "label_en": "DBD online services for juristic persons",
+        "url": "https://ereg.dbd.go.th/RegistMemberWeb/index.html"
+      }
+    ],
+    "keywords": [
+      "ชำระบัญชี",
+      "เลิกบริษัท",
+      "dissolution aftercare",
+      "final tax",
+      "ปิดบัญชีธนาคาร"
+    ]
+  },
+  {
+    "id": "official-faq-ai-triage-not-final-advice",
+    "type": "manual_faq",
+    "category": "general",
+    "serviceBucket": "general",
+    "priority": 99,
+    "question_th": "AI ตอบคำถามบัญชี ภาษี DBD หรือ Work Permit ได้ถึงระดับไหน",
+    "question_en": "How far can the AI answer accounting, tax, DBD, or Work Permit questions?",
+    "answer_th": "AI ใช้ช่วยคัดกรองคำถาม ให้ checklist เบื้องต้น และชี้ว่าควรถามข้อมูลอะไรต่อ แต่คำตอบสุดท้ายของเคสจริงควรให้ทีมตรวจเอกสาร วันที่ และสถานะจากหน่วยงานทางการก่อนเสมอ โดยเฉพาะเรื่องภาษี ใบอนุญาต และ Work Permit",
+    "answer_en": "AI can triage questions, provide preliminary checklists, and identify follow-up information needed. Final case-specific answers should be reviewed by the human team against documents, dates, and official-agency status, especially for tax, licenses, and Work Permit matters.",
+    "follow_up_th": "ถ้าคำถามเกี่ยวกับเคสจริง ส่งเอกสารหรือข้อมูลเบื้องต้นมาได้เลยค่ะ ทีมจะตรวจรายละเอียดก่อนสรุปให้",
+    "follow_up_en": "If this is a real case, send the basic documents or details and the team will review them before giving a final answer.",
+    "source_url": "/faq",
+    "official_links": [
+      {
+        "label_th": "กรมสรรพากร",
+        "label_en": "Revenue Department",
+        "url": "https://www.rd.go.th"
+      },
+      {
+        "label_th": "กรมพัฒนาธุรกิจการค้า",
+        "label_en": "Department of Business Development",
+        "url": "https://www.dbd.go.th"
+      },
+      {
+        "label_th": "สำนักงานประกันสังคม",
+        "label_en": "Social Security Office",
+        "url": "https://www.sso.go.th/wpr/main"
+      },
+      {
+        "label_th": "ระบบ e-Workpermit",
+        "label_en": "e-Workpermit system",
+        "url": "https://eworkpermit.doe.go.th"
+      }
+    ],
+    "keywords": [
+      "AI chat",
+      "คำปรึกษาเบื้องต้น",
+      "not legal advice",
+      "human review",
+      "case-specific"
+    ]
+  }
+]
