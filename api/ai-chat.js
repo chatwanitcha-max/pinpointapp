@@ -92,11 +92,25 @@ function collectKnownFacts(history, language, serviceBucket) {
 
 function buildWebsiteSummaryText(facts, history, language) {
   const parts = [];
+  const businessTypeLabel = (() => {
+    const value = String(facts.businessType || "");
+    if (!value) return "";
+    if (language === "en") return value;
+    return (
+      {
+        restaurant: "ร้านอาหาร",
+        clinic: "คลินิก",
+        "e-commerce": "ขายออนไลน์",
+        manufacturing: "โรงงาน/การผลิต",
+        "service business": "ธุรกิจบริการ",
+      }[value] || value
+    );
+  })();
   if (facts.businessType) {
     parts.push(
       language === "en"
-        ? `Earlier context suggests the business type is ${facts.businessType}`
-        : `บริบทก่อนหน้าดูเป็นประเภทธุรกิจ ${facts.businessType}`
+        ? `Earlier context suggests the business type is ${businessTypeLabel}`
+        : `บริบทก่อนหน้าดูเป็นประเภทธุรกิจ ${businessTypeLabel}`
     );
   }
   if (facts.companyStatus === "new") {

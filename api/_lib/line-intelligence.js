@@ -480,13 +480,37 @@ function buildClarifyQuestion(language, serviceBucket) {
 
 function buildPricingReply(language, text, serviceBucket, memorySummary) {
   const businessType = toText(memorySummary?.knownFacts?.businessType);
+  const businessTypeLabel =
+    language === "en"
+      ? businessType
+      : ({
+          restaurant: "ร้านอาหาร",
+          clinic: "คลินิก",
+          "e-commerce": "ขายออนไลน์",
+          manufacturing: "โรงงาน/การผลิต",
+          "service business": "ธุรกิจบริการ",
+        }[businessType] || businessType);
   if (language === "en") {
-    const memoryHint = businessType ? ` We currently understand the business as ${businessType}.` : "";
+    const memoryHint = businessTypeLabel ? ` We currently understand the business as ${businessTypeLabel}.` : "";
     return `We can estimate the scope properly once we know the business type, whether VAT is active, and the approximate monthly document volume.${memoryHint}`.trim();
   }
 
-  const memoryHint = businessType ? ` ตอนนี้เข้าใจเบื้องต้นว่าเป็นธุรกิจ${businessType}` : "";
+  const memoryHint = businessTypeLabel ? ` ตอนนี้เข้าใจเบื้องต้นว่าเป็นธุรกิจ${businessTypeLabel}` : "";
   return `ทีมช่วยประเมินค่าบริการให้ตรงได้เมื่อทราบประเภทธุรกิจ มี VAT แล้วหรือยัง และปริมาณเอกสารต่อเดือนคร่าว ๆ ค่ะ${memoryHint}`.trim();
+}
+
+function describeBusinessType(language, businessType) {
+  const value = toText(businessType);
+  if (!value) return "";
+  if (language === "en") return value;
+  const labels = {
+    restaurant: "ร้านอาหาร",
+    clinic: "คลินิก",
+    "e-commerce": "ขายออนไลน์",
+    manufacturing: "โรงงาน/การผลิต",
+    "service business": "ธุรกิจบริการ",
+  };
+  return labels[value] || value;
 }
 
 function hashText(value) {
@@ -527,8 +551,8 @@ function buildConversationLead(language, memorySummary, serviceBucket, intentKey
   if (facts.businessType) {
     fragments.push(
       language === "en"
-        ? `the business seems to be ${facts.businessType}`
-        : `ประเภทธุรกิจดูเป็น ${facts.businessType}`
+        ? `the business seems to be ${describeBusinessType(language, facts.businessType)}`
+        : `ประเภทธุรกิจดูเป็น ${describeBusinessType(language, facts.businessType)}`
     );
   }
   if (facts.companyStatus === "new") {

@@ -1634,7 +1634,7 @@ tbody tr:last-child td {
   display: grid;
   place-items: center;
   padding: clamp(18px, 4vw, 44px);
-  pointer-events: none;
+  pointer-events: auto;
 }
 
 .ai-chat-widget.is-centered::before {
@@ -1902,9 +1902,14 @@ tbody tr:last-child td {
 
 .ai-chat-widget.is-centered .ai-chat-panel {
   z-index: 1;
+  position: relative;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  top: auto;
   justify-self: center;
   align-self: center;
-  width: min(620px, calc(100vw - 120px));
+  width: min(460px, calc(100vw - 300px));
   height: min(780px, calc(100vh - 40px));
   max-height: calc(100vh - 40px);
   transform-origin: center;
