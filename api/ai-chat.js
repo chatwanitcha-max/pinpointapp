@@ -1,4 +1,5 @@
 const { toText, toJsonBody, json, buildClientMeta } = require("./_lib/analytics");
+const { extractContextSlots } = require("./_lib/context-slots");
 const {
   detectLineLanguage,
   detectLineIntent,
@@ -48,24 +49,116 @@ function normaliseHistory(history) {
       text: toText(item?.text).slice(0, 420),
     }))
     .filter((item) => item.text)
-    .slice(-8);
+    .slice(-16);
+}
+
+function collectKnownFacts(history, language, serviceBucket) {
+  const facts = {
+    companyStatus: "",
+    nationality: "",
+    unsupportedNationality: "",
+    businessType: "",
+    foreignShareholder: false,
+    mentionsVat: false,
+    mentionsPayroll: false,
+    mentionsUrgent: false,
+  };
+
+  history
+    .filter((item) => item.role === "user")
+    .forEach((item) => {
+      const slots = extractContextSlots({
+        text: item.text,
+        memorySummary: { knownFacts: facts },
+        serviceBucket,
+        intentKey: "general",
+      });
+
+      if (!facts.companyStatus && slots.companyStatus) facts.companyStatus = slots.companyStatus;
+      if (!facts.nationality && slots.nationality) facts.nationality = slots.nationality;
+      if (!facts.unsupportedNationality && slots.unsupportedNationality) {
+        facts.unsupportedNationality = slots.unsupportedNationality;
+      }
+      if (!facts.businessType && slots.businessType) facts.businessType = slots.businessType;
+
+      facts.foreignShareholder = facts.foreignShareholder || Boolean(slots.foreignShareholder);
+      facts.mentionsVat = facts.mentionsVat || Boolean(slots.mentionsVat);
+      facts.mentionsPayroll = facts.mentionsPayroll || Boolean(slots.mentionsPayroll);
+      facts.mentionsUrgent = facts.mentionsUrgent || /ด่วน|urgent|asap|today|tomorrow|deadline|expire|expires/i.test(item.text);
+    });
+
+  return facts;
+}
+
+function buildWebsiteSummaryText(facts, history, language) {
+  const parts = [];
+  if (facts.businessType) {
+    parts.push(
+      language === "en"
+        ? `Earlier context suggests the business type is ${facts.businessType}`
+        : `บริบทก่อนหน้าดูเป็นประเภทธุรกิจ ${facts.businessType}`
+    );
+  }
+  if (facts.companyStatus === "new") {
+    parts.push(language === "en" ? "It looks like a new or not-yet-registered company" : "ดูเป็นเคสบริษัทใหม่หรือยังไม่ได้จดทะเบียน");
+  }
+  if (facts.companyStatus === "existing") {
+    parts.push(language === "en" ? "It looks like an already registered company" : "ดูเป็นเคสของบริษัทที่จดทะเบียนแล้ว");
+  }
+  if (facts.nationality) {
+    parts.push(language === "en" ? `Nationality mentioned earlier: ${facts.nationality}` : `มีการพูดถึงสัญชาติ ${facts.nationality}`);
+  }
+  if (facts.unsupportedNationality) {
+    parts.push(
+      language === "en"
+        ? "Earlier context mentions a visa/work-permit nationality outside the team's scope"
+        : "บริบทก่อนหน้ามีสัญชาติที่อยู่นอกขอบเขตงานวีซ่าและ Work Permit ของทีม"
+    );
+  }
+  if (facts.foreignShareholder) {
+    parts.push(language === "en" ? "Foreign shareholders are involved" : "มีผู้ถือหุ้นต่างชาติเกี่ยวข้อง");
+  }
+  if (facts.mentionsVat) {
+    parts.push(language === "en" ? "VAT is part of the conversation" : "มีประเด็น VAT อยู่ในบทสนทนา");
+  }
+  if (facts.mentionsPayroll) {
+    parts.push(language === "en" ? "Payroll or social security is involved too" : "มีประเด็นเงินเดือนหรือประกันสังคมอยู่ด้วย");
+  }
+  if (facts.mentionsUrgent) {
+    parts.push(language === "en" ? "The case seems time-sensitive" : "เคสดูมีความเร่งด่วนด้านเวลา");
+  }
+
+  const recent = history
+    .filter((item) => item.role === "user")
+    .slice(-4)
+    .map((item) => item.text)
+    .filter(Boolean);
+
+  if (!parts.length && !recent.length) return "";
+
+  const recentText = recent.length
+    ? language === "en"
+      ? `Recent questions: ${recent.join(" | ")}`
+      : `คำถามล่าสุด: ${recent.join(" | ")}`
+    : "";
+
+  return [parts.join(language === "en" ? ". " : " "), recentText].filter(Boolean).join(language === "en" ? ". " : "\n");
 }
 
 function buildWebsiteMemory(history, language, serviceBucket) {
   const summary = buildEmptyConversationSummary(language, serviceBucket);
-  summary.turns = history.filter((item) => item.role === "user").length;
-  summary.recentUserMessages = history
+  const userHistory = history.filter((item) => item.role === "user");
+  summary.turns = userHistory.length;
+  summary.recentUserMessages = userHistory
     .filter((item) => item.role === "user")
     .map((item) => item.text)
-    .slice(-4);
+    .slice(-6);
   summary.recentAssistantReplies = history
     .filter((item) => item.role === "assistant")
     .map((item) => item.text)
-    .slice(-4);
-  summary.summaryText = history
-    .map((item) => `${item.role}: ${item.text}`)
-    .slice(-6)
-    .join("\n");
+    .slice(-6);
+  summary.knownFacts = collectKnownFacts(history, language, serviceBucket);
+  summary.summaryText = buildWebsiteSummaryText(summary.knownFacts, history, language);
   return summary;
 }
 

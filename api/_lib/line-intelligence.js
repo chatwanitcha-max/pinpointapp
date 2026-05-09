@@ -489,6 +489,79 @@ function buildPricingReply(language, text, serviceBucket, memorySummary) {
   return `ทีมช่วยประเมินค่าบริการให้ตรงได้เมื่อทราบประเภทธุรกิจ มี VAT แล้วหรือยัง และปริมาณเอกสารต่อเดือนคร่าว ๆ ค่ะ${memoryHint}`.trim();
 }
 
+function hashText(value) {
+  const text = toText(value);
+  let hash = 0;
+  for (let i = 0; i < text.length; i += 1) {
+    hash = (hash * 31 + text.charCodeAt(i)) >>> 0;
+  }
+  return hash;
+}
+
+function pickVariant(seed, variants = []) {
+  if (!Array.isArray(variants) || !variants.length) return "";
+  return toText(variants[hashText(seed) % variants.length]);
+}
+
+function buildConversationLead(language, memorySummary, serviceBucket, intentKey, eventText) {
+  const turns = Number(memorySummary?.turns || 0);
+  const facts = memorySummary?.knownFacts || {};
+  const shouldUseLead = turns > 1 || toText(eventText).length > 60;
+  if (!shouldUseLead) return "";
+
+  const seed = `${memorySummary?.summaryText || ""}|${serviceBucket}|${intentKey}|${eventText}`;
+  const thOpeners = [
+    "จากบริบทก่อนหน้า",
+    "อิงจากที่คุยกันไว้",
+    "ถ้าต่อจากเรื่องเดิม",
+    "ดูจากข้อมูลที่ให้มาก่อนหน้า",
+  ];
+  const enOpeners = [
+    "From the earlier context",
+    "Based on what you shared earlier",
+    "If we continue from the same case",
+    "Looking at the details you already shared",
+  ];
+
+  const fragments = [];
+  if (facts.businessType) {
+    fragments.push(
+      language === "en"
+        ? `the business seems to be ${facts.businessType}`
+        : `ประเภทธุรกิจดูเป็น ${facts.businessType}`
+    );
+  }
+  if (facts.companyStatus === "new") {
+    fragments.push(language === "en" ? "it still looks like a new or not-yet-registered company" : "ยังดูเป็นเคสบริษัทใหม่หรือยังไม่ได้จดทะเบียน");
+  } else if (facts.companyStatus === "existing") {
+    fragments.push(language === "en" ? "it looks like an already registered company" : "ดูเป็นบริษัทที่จดทะเบียนแล้ว");
+  }
+  if (facts.nationality) {
+    fragments.push(language === "en" ? `the nationality mentioned earlier is ${facts.nationality}` : `มีการพูดถึงสัญชาติ ${facts.nationality}`);
+  }
+  if (facts.mentionsVat) {
+    fragments.push(language === "en" ? "VAT is already part of the case" : "มีประเด็น VAT อยู่ในเคสนี้");
+  }
+  if (facts.mentionsPayroll) {
+    fragments.push(language === "en" ? "payroll or social security is also in scope" : "มีเรื่องเงินเดือนหรือประกันสังคมอยู่ด้วย");
+  }
+
+  const opener = language === "en" ? pickVariant(seed, enOpeners) : pickVariant(seed, thOpeners);
+  if (!fragments.length) {
+    return language === "en" ? `${opener}.` : `${opener}ค่ะ`;
+  }
+
+  return language === "en"
+    ? `${opener}, ${fragments.join(", ")}.`
+    : `${opener} ${fragments.join(" และ ")}ค่ะ`;
+}
+
+function appendMemoryLead(language, memorySummary, serviceBucket, intentKey, eventText, reply) {
+  const lead = buildConversationLead(language, memorySummary, serviceBucket, intentKey, eventText);
+  if (!lead) return reply;
+  return `${lead}\n\n${reply}`;
+}
+
 function buildAccountingReply(language, text, caseFlavor, detail) {
   if (language === "en") {
     if (caseFlavor === "tax-notice") {
@@ -524,7 +597,7 @@ function buildAccountingReply(language, text, caseFlavor, detail) {
   if (detail?.id === "payroll-social-security") {
     return "รบกวนแจ้งได้เลยค่ะว่าต้องการให้ทีมช่วยวางระบบเงินเดือน ยื่นประกันสังคม หรือจัดทำ payroll สำหรับพนักงานกี่คน";
   }
-  return "รบกวนแจ้งได้เลยค่ะว่าตอนนี้ต้องการให้ทีมช่วยเรื่องบัญชีรายเดือน ภาษี หรือการวางแผนภาษีส่วนไหนเป็นหลักคะ";
+  return "ถ้าเรื่องนี้อยู่ฝั่งบัญชีหรือภาษี ส่งเดือนที่เกี่ยวข้องและเอกสารที่มีอยู่ตอนนี้มาได้เลยค่ะ เดี๋ยวช่วยไล่ต่อให้ตรงเคส";
 }
 
 function buildCorporateReply(language, text, caseFlavor) {
@@ -550,7 +623,7 @@ function buildCorporateReply(language, text, caseFlavor) {
   if (caseFlavor === "address-change") {
     return "รบกวนส่งที่อยู่เดิม ที่อยู่ใหม่ และแจ้งได้เลยค่ะว่าบริษัทจดทะเบียนเรียบร้อยแล้วหรือยัง";
   }
-  return "รบกวนแจ้งได้เลยค่ะว่าตอนนี้ต้องการให้ทีมช่วยจดบริษัทใหม่ เปลี่ยนแปลงข้อมูลบริษัท หรือขอเอกสารบริษัทเรื่องใดคะ";
+  return "ถ้าเป็นเรื่องจดบริษัทหรือแก้ไขข้อมูลบริษัท บอกสิ่งที่อยากเปลี่ยนและสถานะบริษัทตอนนี้มาได้เลยค่ะ เดี๋ยวช่วยจัดขั้นตอนให้";
 }
 
 function buildVisaReply(language, text, caseFlavor, memorySummary) {
@@ -584,14 +657,14 @@ function buildVisaReply(language, text, caseFlavor, memorySummary) {
   if (caseFlavor === "business-license") {
     return "รบกวนแจ้งประเภทใบอนุญาตที่ต้องการ และตอนนี้บริษัทจดทะเบียนเรียบร้อยแล้วหรือยังคะ";
   }
-  return "รบกวนแจ้งสัญชาติ ผู้ยื่นเป็นกรรมการหรือพนักงาน และเป็นเคสใหม่ ต่ออายุ หรือแก้ไขข้อมูลได้เลยค่ะ";
+  return "รบกวนแจ้งสัญชาติ ผู้ยื่นเป็นกรรมการหรือพนักงาน และเป็นเคสใหม่ ต่ออายุ หรือแก้ไขข้อมูลได้เลยค่ะ เดี๋ยวช่วยไล่ขอบเขตให้ตรง";
 }
 
 function buildDissolutionReply(language) {
   if (language === "en") {
     return "Please tell us whether the company has already stopped operating and whether there are any open accounting or tax items. We will then map the next step clearly.";
   }
-  return "รบกวนแจ้งได้เลยค่ะว่าบริษัทหยุดดำเนินการแล้วหรือยัง และตอนนี้มีบัญชีหรือภาษีค้างส่วนใดอยู่บ้าง ทีมจะช่วยแยกขั้นตอนให้ชัดเจน";
+  return "รบกวนแจ้งได้เลยค่ะว่าบริษัทหยุดดำเนินการแล้วหรือยัง และตอนนี้มีบัญชีหรือภาษีค้างส่วนใดอยู่บ้าง เดี๋ยวช่วยแยกขั้นตอนให้ชัดเจน";
 }
 
 function buildServiceAreaReply(language) {
@@ -603,9 +676,9 @@ function buildServiceAreaReply(language) {
 
 function buildGeneralReply(language) {
   if (language === "en") {
-    return "Our team will get back to you as soon as possible. Thank you.";
+    return "Tell us a little more about what you need, and we will help you narrow it down quickly.";
   }
-  return "ทีมงานของเราจะติดต่อกลับหาคุณโดยเร็วที่สุดค่ะ ขอบคุณค่ะ";
+  return "เล่าเพิ่มอีกนิดได้เลยค่ะ เดี๋ยวช่วยจับประเด็นและต่อเรื่องให้ตรงเคสมากที่สุด";
 }
 
 function entryText(entry, language, field) {
@@ -665,25 +738,24 @@ function buildLineReply({
     memorySummary,
     serviceBucket
   );
-  if (knowledgeBackedReply) return knowledgeBackedReply;
+  if (knowledgeBackedReply) {
+    return appendMemoryLead(language, memorySummary, serviceBucket, toText(intent?.key), text, knowledgeBackedReply);
+  }
 
+  let baseReply = "";
   if (serviceBucket === "corporate-dbd") {
-    return buildCorporateReply(language, text, caseFlavor);
+    baseReply = buildCorporateReply(language, text, caseFlavor);
+  } else if (serviceBucket === "accounting-tax") {
+    baseReply = buildAccountingReply(language, text, caseFlavor, detail);
+  } else if (serviceBucket === "visa-license") {
+    baseReply = buildVisaReply(language, text, caseFlavor, memorySummary);
+  } else if (serviceBucket === "company-dissolution") {
+    baseReply = buildDissolutionReply(language);
+  } else {
+    baseReply = buildGeneralReply(language);
   }
 
-  if (serviceBucket === "accounting-tax") {
-    return buildAccountingReply(language, text, caseFlavor, detail);
-  }
-
-  if (serviceBucket === "visa-license") {
-    return buildVisaReply(language, text, caseFlavor, memorySummary);
-  }
-
-  if (serviceBucket === "company-dissolution") {
-    return buildDissolutionReply(language);
-  }
-
-  return buildGeneralReply(language);
+  return appendMemoryLead(language, memorySummary, serviceBucket, toText(intent?.key), text, baseReply);
 }
 
 async function requestOpenClawLineReply(payload) {

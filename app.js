@@ -357,9 +357,9 @@ function readAiChatHistory() {
           .filter((item) => item && typeof item.text === "string")
           .map((item) => ({
             role: item.role === "assistant" ? "assistant" : "user",
-            text: item.text.slice(0, 700)
+            text: item.text.slice(0, 900)
           }))
-          .slice(-8)
+          .slice(-16)
       : [];
   } catch {
     return [];
@@ -368,7 +368,7 @@ function readAiChatHistory() {
 
 function writeAiChatHistory(history) {
   try {
-    window.localStorage.setItem(AI_CHAT_HISTORY_KEY, JSON.stringify(history.slice(-8)));
+    window.localStorage.setItem(AI_CHAT_HISTORY_KEY, JSON.stringify(history.slice(-16)));
   } catch {
     // Non-critical: the chat still works without local history.
   }
