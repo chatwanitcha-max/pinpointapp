@@ -28,11 +28,5 @@
         }
       ]
     }
-  ],
-  "crons": [
-    {
-      "path": "/api/research-digest",
-      "schedule": "45 2 * * *"
-    }
   ]
 }
