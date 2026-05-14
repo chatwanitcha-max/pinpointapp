@@ -2522,3 +2522,6 @@ tbody tr:last-child td {
     font-size: clamp(1.65rem, 7.8vw, 2.35rem);
   }
 }
+
+/* premium refresh */
+body{background:radial-gradient(80rem 44rem at 100% -10%,rgba(20,58,112,.16),transparent),radial-gradient(60rem 36rem at -10% 100%,rgba(200,160,90,.14),transparent),linear-gradient(180deg,#f6f8fb 0%,#eef3f9 60%,#e9eef6 100%);} .section,.card{background:linear-gradient(170deg,rgba(255,255,255,.93),rgba(248,251,255,.9));border-color:rgba(16,36,72,.11);box-shadow:0 18px 54px rgba(13,35,72,.1);} .topbar{background:rgba(255,255,255,.72);border-color:rgba(18,47,91,.13);box-shadow:0 14px 40px rgba(16,36,72,.14);} .home-page .topbar{background:linear-gradient(120deg,#0d2d5b 0%,#163a70 55%,#204f8f 100%);} .footer{background:linear-gradient(180deg,#0f274a,#0b1f3d);color:#e9f0fb;}
