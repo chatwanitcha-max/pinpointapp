@@ -1273,6 +1273,15 @@ function initYear() {
   });
 }
 
+function runWhenBrowserIsIdle(callback, timeout = 1200) {
+  if (typeof window.requestIdleCallback === "function") {
+    window.requestIdleCallback(callback, { timeout });
+    return;
+  }
+
+  window.setTimeout(callback, Math.min(timeout, 300));
+}
+
 function init() {
   initYear();
   populateUtmFields();
@@ -1280,14 +1289,17 @@ function init() {
   applyLineLinks();
   applyLeadChannelAvailability();
   initMobileTopbar();
-  bindMobileTopbarAutoHide();
+  // initMobileTopbar already handles mobile scroll visibility; avoid a second scroll listener.
   bindEvents();
   bindBusinessSlider();
   bindServiceSlider();
   bindRevealElements();
   applyLanguage(resolveLang());
-  initAiChat();
-  trackVisitorCounter();
+
+  runWhenBrowserIsIdle(() => {
+    initAiChat();
+    trackVisitorCounter();
+  });
 }
 
 init();

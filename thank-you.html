@@ -56,8 +56,8 @@
     </main>
 
     <!-- tracking.js is required on /thank-you so Google Ads can observe page_view + conversions -->
-    <script src="/tracking.js"></script>
-    <script src="/app.js"></script>
+    <script src="/tracking.js" defer></script>
+    <script src="/app.js" defer></script>
     <script>
       const params = new URLSearchParams(window.location.search);
       const leadId = params.get("leadId");

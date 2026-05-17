@@ -298,6 +298,25 @@ function buildLeadEmailHtml(lead, routing) {
   `;
 }
 
+function withTimeout(promise, label, timeoutMs = 3500) {
+  let timeoutId;
+  const timeout = new Promise((resolve) => {
+    timeoutId = setTimeout(
+      () => resolve({ sent: false, reason: `${label}_timeout`, timeoutMs }),
+      timeoutMs
+    );
+  });
+
+  return Promise.race([
+    Promise.resolve(promise).catch((error) => ({
+      sent: false,
+      reason: `${label}_error`,
+      error: error?.message || String(error),
+    })),
+    timeout,
+  ]).finally(() => clearTimeout(timeoutId));
+}
+
 async function sendLineWebhook(payload) {
   const webhookUrl = process.env.LINE_OA_WEBHOOK_URL;
   if (!webhookUrl) return { sent: false, reason: 'missing_line_webhook' };
@@ -358,55 +377,66 @@ module.exports = async (req, res) => {
     routing,
   });
 
-  const emailResult = await sendLeadNotificationEmailViaResend({
-    subject: `[Pinpoint Lead | ${formatLeadLanguage(routing.language)}] ${lead.fullName} | ${localizeServiceNeed(lead.serviceNeed, routing.language)} | ${lead.phone}`,
-    textBody: leadMessage,
-    htmlBody: buildLeadEmailHtml(lead, routing)
-  });
-  const customerEmailResult = await sendCustomerAcknowledgementEmail({ lead, routing });
+  const notificationSubject = `[Pinpoint Lead | ${formatLeadLanguage(routing.language)}] ${lead.fullName} | ${localizeServiceNeed(lead.serviceNeed, routing.language)} | ${lead.phone}`;
+  const linePayload = {
+    type: 'new_lead',
+    lead,
+    routing,
+    operations: intakePayload.operations,
+    clientMeta,
+    summary: leadMessage,
+  };
 
   const [
+    emailResult,
+    customerEmailResult,
     lineWebhookResult,
     linePushResult,
     crmResult,
     supabaseResult,
     airtableResult,
     openClawResult,
+    ga4Result,
+    metaResult,
   ] = await Promise.all([
-    sendLineWebhook({ type: 'new_lead', lead }),
-    sendLinePushText(leadMessage.slice(0, 4500)),
-    sendCrmWebhook(intakePayload),
-    sendSupabaseLead(intakePayload),
-    sendAirtableLead(intakePayload),
-    sendOpenClawWebhook(intakePayload),
+    withTimeout(sendLeadNotificationEmailViaResend({
+      subject: notificationSubject,
+      textBody: leadMessage,
+      htmlBody: buildLeadEmailHtml(lead, routing)
+    }), 'lead_email', 3500),
+    withTimeout(sendCustomerAcknowledgementEmail({ lead, routing }), 'customer_email', 2500),
+    withTimeout(sendLineWebhook(linePayload), 'line_webhook', 2500),
+    withTimeout(sendLinePushText(leadMessage.slice(0, 4500)), 'line_push', 2500),
+    withTimeout(sendCrmWebhook(intakePayload), 'crm_webhook', 2500),
+    withTimeout(sendSupabaseLead(intakePayload), 'supabase', 2500),
+    withTimeout(sendAirtableLead(intakePayload), 'airtable', 2500),
+    withTimeout(sendOpenClawWebhook(intakePayload), 'openclaw', 2500),
+    withTimeout(sendGa4Event({
+      name: 'generate_lead',
+      clientId: clientMeta.clientId,
+      params: {
+        lead_id: leadId,
+        contact_method: lead.preferredContact || 'unknown',
+        service_need: lead.serviceNeed || 'not_set',
+        currency: 'THB',
+        value: 1
+      }
+    }), 'ga4', 1200),
+    withTimeout(sendMetaEvent({
+      eventName: 'Lead',
+      eventId: leadId,
+      pageUrl: clientMeta.pageUrl,
+      userAgent: clientMeta.userAgent,
+      ip: clientMeta.ip,
+      fbp: clientMeta.fbp,
+      fbc: clientMeta.fbc,
+      email: lead.email,
+      phone: lead.phone,
+      customData: {
+        service_need: lead.serviceNeed || undefined
+      }
+    }), 'meta', 1200),
   ]);
-
-  const ga4Result = await sendGa4Event({
-    name: 'generate_lead',
-    clientId: clientMeta.clientId,
-    params: {
-      lead_id: leadId,
-      contact_method: lead.preferredContact || 'unknown',
-      service_need: lead.serviceNeed || 'not_set',
-      currency: 'THB',
-      value: 1
-    }
-  });
-
-  const metaResult = await sendMetaEvent({
-    eventName: 'Lead',
-    eventId: leadId,
-    pageUrl: clientMeta.pageUrl,
-    userAgent: clientMeta.userAgent,
-    ip: clientMeta.ip,
-    fbp: clientMeta.fbp,
-    fbc: clientMeta.fbc,
-    email: lead.email,
-    phone: lead.phone,
-    customData: {
-      service_need: lead.serviceNeed || undefined
-    }
-  });
 
   return json(res, 200, {
     ok: true,
