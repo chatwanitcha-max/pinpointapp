@@ -1458,7 +1458,7 @@ tbody tr:last-child td {
 .source-item a,
 .related-item a,
 .resource-item a {
-  color: var(--brand-strong);
+  color: var(--gold);
   text-decoration: none;
   font-weight: 800;
 }
