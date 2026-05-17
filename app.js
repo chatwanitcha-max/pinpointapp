@@ -395,6 +395,21 @@ function addAiChatMessage(root, role, text) {
   return item;
 }
 
+function addTypingIndicator(root) {
+  const list = root.querySelector("[data-ai-messages]");
+  if (!list) return null;
+  const item = document.createElement("div");
+  item.className = "ai-chat-message ai-chat-message--assistant";
+  item.dataset.aiTyping = "true";
+  const indicator = document.createElement("div");
+  indicator.className = "ai-typing-indicator";
+  indicator.innerHTML = "<span></span><span></span><span></span>";
+  item.appendChild(indicator);
+  list.appendChild(item);
+  list.scrollTop = list.scrollHeight;
+  return item;
+}
+
 function setAiChatBusy(root, busy) {
   root.classList.toggle("is-busy", busy);
   root.querySelectorAll("button, textarea").forEach((node) => {
@@ -456,7 +471,7 @@ async function sendAiChatMessage(root, text) {
 
   const copy = getAiChatCopy(appState.lang || resolveLang());
   setAiChatBusy(root, true);
-  const typing = addAiChatMessage(root, "assistant", copy.typing);
+  const typing = addTypingIndicator(root);
 
   try {
     const response = await fetch("/api/ai-chat", {
