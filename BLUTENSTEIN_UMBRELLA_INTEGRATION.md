@@ -83,4 +83,4 @@ The GitHub clone attempt from https://github.com/chatwanitcha-max/pinpointapp.gi
 
 ## Premium Growth OS upgrade
 
-Blutenstein now treats Pinpoint and SuccessCasting as part of a single premium growth umbrella. The operating model includes buyer-intent scanning, top-3 competitor/leader benchmarking, premium automation ideas, trusted SME profiles, LINE OA sales-copilot workflow, AI-search/SEO readiness, and CRM outcome feedback. Public page: `/blutenstein-growth-os/`. Blueprint: `/BLUTENSTEIN_PREMIUM_GROWTH_OS.md`. Service catalog: `/blutenstein-growth-os/service-catalog.json`.
+Blutenstein now treats Pinpoint and SuccessCasting as part of a single premium growth umbrella. The operating model includes buyer-intent scanning, top-3 competitor/leader benchmarking, premium automation ideas, trusted SME profiles, LINE OA sales-copilot workflow, AI-search/SEO readiness, and CRM outcome feedback. Customer websites should not expose unfinished Growth OS detail pages or navigation labels. They should show only subtle footer/badge-style trust markers such as “Trusted SME verified — by Blutenstein”, linking to the separate Blutenstein website for full explanation.

@@ -1,32 +1,14 @@
 {
-  "cleanUrls": true,
-  "trailingSlash": false,
-  "headers": [
+  "redirects": [
     {
-      "source": "/api/(.*)",
-      "headers": [
-        {
-          "key": "X-Robots-Tag",
-          "value": "noindex, nofollow"
-        }
-      ]
+      "source": "/blutenstein-growth-os/:path*",
+      "destination": "https://blutenstein.com/",
+      "permanent": false
     },
     {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
-        },
-        {
-          "key": "Referrer-Policy",
-          "value": "strict-origin-when-cross-origin"
-        },
-        {
-          "key": "X-Frame-Options",
-          "value": "SAMEORIGIN"
-        }
-      ]
+      "source": "/growth-os-dashboard/:path*",
+      "destination": "https://blutenstein.com/",
+      "permanent": false
     }
   ]
 }

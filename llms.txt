@@ -1,4 +1,4 @@
-﻿# Pinpoint Accounting & Service, Ltd.
+# Pinpoint Accounting & Service, Ltd.
 
 > Bilingual accounting, tax, DBD, visa/work permit, licensing, and company dissolution services in Thailand.
 
@@ -39,10 +39,7 @@
 - Address: 294 Soi Yoo Charoen 29, Ratchadaphisek 18 Rd., Sam Sen Nok, Huai Khwang, Bangkok 10310, Thailand
 
 
-## Blutenstein Growth OS
-- Public Growth OS page: https://pinpointaccountingservice.com/blutenstein-growth-os/
-- Service catalog JSON: https://pinpointaccountingservice.com/blutenstein-growth-os/service-catalog.json
-- Mission: premium trusted growth automation for SMEs and all Blutenstein-owned websites.
-- Capabilities: buyer-intent lead radar, top-3 competitor benchmarking, trusted SME profiles, AI-search/SEO visibility, LINE OA sales copilot, CRM feedback loop.
-- Current umbrella units: Pinpoint Accounting & Service and SuccessCasting / Blutenstein Trusted SME Network.
-- Public positioning: Trusted SME verified — by Blutenstein.
+## Blutenstein trust marker
+- Pinpoint may show a subtle footer trust marker: “Trusted SME verified — by Blutenstein”.
+- Detailed Blutenstein Growth OS / Trusted SME information belongs on the separate Blutenstein website, not on this customer-facing Pinpoint site.
+- Public positioning on Pinpoint must stay focused on accounting, tax, DBD, visa/work permit, and business-compliance services.
