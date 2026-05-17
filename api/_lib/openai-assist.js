@@ -1,10 +1,19 @@
 const { toText } = require("./analytics");
 
 function getOpenAIConfig() {
+  // Support Kimi (Moonshot AI) as an alternative to OpenAI
+  const kimiKey = process.env.KIMI_API_KEY;
+  const openAIKey = process.env.OPENAI_API_KEY;
+  const isKimi = Boolean(kimiKey);
+
   return {
-    apiKey: process.env.OPENAI_API_KEY,
-    model: process.env.OPENAI_MODEL || "gpt-4o-mini",
-    baseUrl: process.env.OPENAI_BASE_URL || "https://api.openai.com/v1",
+    apiKey: kimiKey || openAIKey,
+    model: isKimi
+      ? (process.env.KIMI_MODEL || "moonshot-v1-8k")
+      : (process.env.OPENAI_MODEL || "gpt-4o-mini"),
+    baseUrl: isKimi
+      ? (process.env.KIMI_BASE_URL || "https://api.moonshot.cn/v1")
+      : (process.env.OPENAI_BASE_URL || "https://api.openai.com/v1"),
     maxTokens: Math.min(parseInt(process.env.OPENAI_MAX_TOKENS || "800", 10), 2000),
     temperature: Math.min(Math.max(parseFloat(process.env.OPENAI_TEMPERATURE || "0.7"), 0), 1),
   };
