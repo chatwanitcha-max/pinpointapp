@@ -1,4 +1,4 @@
-# Pinpoint x Blutenstein Umbrella Integration
+﻿# Pinpoint x Blutenstein Umbrella Integration
 
 Customer website:
 - Customer: Pinpoint Accounting & Service, Ltd.
@@ -79,3 +79,8 @@ Data/analytics:
 ## Deployment note
 
 The GitHub clone attempt from https://github.com/chatwanitcha-max/pinpointapp.git was blocked by authentication in this CLI session, so the implemented changes are in the local deploy snapshot path above. Push/deploy should use the credentials from /mnt/d/Pinpoint/.env.local.txt or an authenticated GitHub/Vercel session, without printing token values.
+
+
+## Premium Growth OS upgrade
+
+Blutenstein now treats Pinpoint and SuccessCasting as part of a single premium growth umbrella. The operating model includes buyer-intent scanning, top-3 competitor/leader benchmarking, premium automation ideas, trusted SME profiles, LINE OA sales-copilot workflow, AI-search/SEO readiness, and CRM outcome feedback. Public page: `/blutenstein-growth-os/`. Blueprint: `/BLUTENSTEIN_PREMIUM_GROWTH_OS.md`. Service catalog: `/blutenstein-growth-os/service-catalog.json`.

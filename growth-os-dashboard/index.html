@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Blutenstein Growth OS Dashboard Blueprint</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .ops-kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}.ops-kpi strong{display:block;font-size:2rem}.status-pill{display:inline-flex;padding:6px 10px;border-radius:999px;background:#e8f1ff;color:#0f2d63;font-weight:700}.ops-table{width:100%;border-collapse:collapse;background:#fff;border-radius:18px;overflow:hidden}.ops-table th,.ops-table td{padding:14px;border-bottom:1px solid #e5e7eb;text-align:left;vertical-align:top}.ops-table th{background:#f8fafc;color:#475569}.muted{color:#64748b}
+    </style>
+  </head>
+  <body class="home-page">
+    <header class="topbar">
+      <a class="brand" href="/blutenstein-growth-os/"><div class="brand-copy"><span class="brand-status">Internal blueprint</span><strong>Blutenstein Growth OS Dashboard</strong><span>Backstage operating model — no secrets</span></div></a>
+      <nav class="nav"><a href="/blutenstein-growth-os/">Public Growth OS</a><a href="/BLUTENSTEIN_PREMIUM_GROWTH_OS.md">Blueprint</a><a href="/blutenstein-growth-os/service-catalog.json">Catalog JSON</a></nav>
+    </header>
+    <main class="page-wrap">
+      <section class="section page-hero"><div class="section-heading"><span class="eyebrow">Backstage System</span><h1>Dashboard blueprint ที่ต้องสร้างเป็น product ต่อไป</h1><p>หน้านี้เป็น blueprint สำหรับทีม ไม่ใช่ฐานข้อมูลจริง yet. ใช้กำหนดหน้าจอ, fields, workflow และ service scope ก่อนต่อ backend/CRM.</p></div></section>
+      <section class="section ops-kpi">
+        <article class="service-card"><span class="status-pill">Daily</span><strong>07:30</strong><p>Premium scan to LINE OA</p></article>
+        <article class="service-card"><span class="status-pill">Max</span><strong>8</strong><p>quality opportunities/day</p></article>
+        <article class="service-card"><span class="status-pill">Loop</span><strong>9</strong><p>lead statuses from new to won/lost</p></article>
+        <article class="service-card"><span class="status-pill">Benchmark</span><strong>Top 3</strong><p>leaders per business unit</p></article>
+      </section>
+      <section class="section"><h2>Pipeline fields</h2><table class="ops-table"><thead><tr><th>Field</th><th>Purpose</th><th>Required?</th></tr></thead><tbody><tr><td>business_unit</td><td>Pinpoint / SuccessCasting / future Blutenstein site</td><td>Yes</td></tr><tr><td>source_url</td><td>Evidence and compliance trail</td><td>Yes</td></tr><tr><td>evidence_excerpt</td><td>ข้อความที่ลูกค้าประกาศหา หรือ signal ที่ใช้ประเมิน</td><td>Yes</td></tr><tr><td>score</td><td>HOT/WARM/CANDIDATE priority</td><td>Yes</td></tr><tr><td>status</td><td>new, contacted, interested, proposal_sent, won, lost...</td><td>Yes</td></tr><tr><td>competitor_mentioned</td><td>คู่แข่งที่ลูกค้าใช้อยู่/พูดถึง</td><td>Optional but valuable</td></tr><tr><td>trust_gap</td><td>สิ่งที่เราขาดเมื่อเทียบ leader</td><td>Optional but strategic</td></tr></tbody></table></section>
+      <section class="section"><h2>LINE OA quick actions ที่ควรทำต่อ</h2><div class="card-grid three-col"><article class="service-card"><h3>Mark contacted</h3><p>บันทึกว่าทีมติดต่อแล้ว พร้อม timestamp.</p></article><article class="service-card"><h3>Draft reply</h3><p>ให้ AI สร้าง opening/qualification/proposal จาก service match.</p></article><article class="service-card"><h3>Won/Lost feedback</h3><p>เก็บ outcome เพื่อ train scoring และ offer strategy.</p></article></div></section>
+          <section class="section"><h2>Feedback API now available</h2><div class="hero-panel"><p><strong>POST /api/growth-feedback</strong> captures outcome feedback and routes it back to LINE webhook. Configure <code>GROWTH_FEEDBACK_TOKEN</code> before exposing quick-action buttons publicly.</p></div></section>
+    </main>
+  </body>
+</html>
