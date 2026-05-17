@@ -277,7 +277,7 @@ function getAiChatCopy(lang) {
   }
 
   return {
-    title: "น้องคือ Pinpoint Ai วันนี้ให้น้องพิณช่วยอะไรดีคะ",
+    title: "น้องพิณคือ Pinpoint Ai วันนี้ให้น้องพิณช่วยอะไรดีคะ",
     subtitle: "",
     toggle: "คุยกับน้องพิณ AI",
     close: "ปิด",
