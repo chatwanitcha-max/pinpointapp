@@ -37,6 +37,7 @@ const {
   sendHumanEscalationLineAlert,
 } = require("./_lib/human-escalation");
 const { requestOpenAIReply } = require("./_lib/openai-assist");
+const { sendLinePushText } = require("./_lib/outbound");
 
 function randomId(prefix) {
   return `${prefix}_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
@@ -223,7 +224,10 @@ function extractContact(text) {
   const phoneRaw = raw.match(/0[689]\d[\d\s-]{6,12}/)?.[0] || "";
   const phone = phoneRaw.replace(/[^\d]/g, "");
   const lineId = raw.match(/(?:line|ไลน์)\s*[:=]?\s*@?([A-Za-z0-9._-]{3,40})/i)?.[1] || "";
-  const name = raw.match(/(?:ชื่อ|name)\s*[:=]?\s*([^\n,|]{2,60})/i)?.[1] || "";
+  const nameMatch = raw.match(/(?:ชื่อ|name)\s*[:=]?\s*([^\n,|]{2,60})/i)?.[1] || "";
+  const name = nameMatch
+    .replace(/\s*(?:เบอร์|โทร|มือถือ|phone|tel|line|ไลน์|email|อีเมล).*$/i, "")
+    .trim();
   return {
     name: name.trim(),
     phone,
@@ -348,6 +352,57 @@ async function safeChannel(name, promise) {
   } catch (error) {
     return { sent: false, reason: `${name}_failed`, message: toText(error?.message) };
   }
+}
+
+function truncateLineText(text, limit = 900) {
+  const value = toText(text).replace(/\s+$/g, "");
+  if (value.length <= limit) return value;
+  return `${value.slice(0, Math.max(0, limit - 1))}…`;
+}
+
+function hasDirectContact(contact) {
+  return Boolean(contact?.phone || contact?.email || contact?.lineId);
+}
+
+function buildWebsiteChatContactLineText({ lead, contact, routing, message, replyText, sessionId, visitorId, clientMeta }) {
+  const contactLines = [
+    contact?.name || lead?.fullName ? `ชื่อ: ${toText(contact?.name || lead?.fullName)}` : "ชื่อ: -",
+    contact?.phone ? `เบอร์: ${contact.phone}` : "เบอร์: -",
+    contact?.lineId ? `LINE ID: ${contact.lineId}` : "LINE ID: -",
+    contact?.email ? `Email: ${contact.email}` : "Email: -",
+  ];
+
+  return [
+    "[WEBSITE AI CHAT LEAD] ลูกค้าฝากช่องทางติดต่อในแชต",
+    `เวลา: ${new Date().toLocaleString("th-TH", { timeZone: "Asia/Bangkok" })}`,
+    "",
+    `Lead ID: ${toText(lead?.leadId) || "-"}`,
+    `Session: ${toText(sessionId) || "-"}`,
+    `Visitor: ${toText(visitorId) || "-"}`,
+    `บริการ: ${toText(lead?.serviceNeed) || "-"}`,
+    `Priority: ${toText(routing?.priority) || "-"}`,
+    `Preferred contact: ${toText(lead?.preferredContact) || "-"}`,
+    ...contactLines,
+    `Page: ${toText(lead?.pageUrl || clientMeta?.pageUrl) || "-"}`,
+    "",
+    "ข้อความลูกค้า:",
+    truncateLineText(message || lead?.notes, 1000),
+    "",
+    "AI reply ล่าสุด:",
+    truncateLineText(replyText, 900),
+    "",
+    "CTA สำหรับทีม:",
+    contact?.phone ? `- โทรกลับ: tel:${contact.phone}` : "- โทรกลับ: ยังไม่มีเบอร์",
+    contact?.lineId ? `- ทัก LINE ID: ${contact.lineId}` : "- ทัก LINE: ใช้ LINE OA/รอลูกค้าทักเพิ่มหากยังไม่มี ID",
+    `- เปิดฟอร์ม/หน้าเว็บ: ${toText(lead?.pageUrl || clientMeta?.pageUrl) || "https://pinpointaccountingservice.com/#lead-form"}`,
+  ].join("\n").slice(0, 4500);
+}
+
+async function sendWebsiteChatContactLineAlert(payload) {
+  if (!hasDirectContact(payload?.contact)) {
+    return { sent: false, reason: "contact_not_provided" };
+  }
+  return sendLinePushText(buildWebsiteChatContactLineText(payload));
 }
 
 module.exports = async (req, res) => {
@@ -561,6 +616,7 @@ module.exports = async (req, res) => {
     businessName: "",
     phone: contact.phone,
     email: contact.email,
+    lineId: contact.lineId,
     serviceNeed: serviceNeedFromBucket(serviceBucket, detectedIntent.key, language),
     revenueRange: "",
     preferredContact: contact.lineId ? "line" : contact.email ? "email" : contact.phone ? "phone" : "line",
@@ -606,6 +662,16 @@ module.exports = async (req, res) => {
         safeChannel("crm_webhook", sendCrmWebhook(intakePayload)),
         safeChannel("supabase", sendSupabaseLead(intakePayload)),
         safeChannel("airtable", sendAirtableLead(intakePayload)),
+        safeChannel("website_chat_contact_line", sendWebsiteChatContactLineAlert({
+          lead,
+          contact,
+          routing,
+          message,
+          replyText,
+          sessionId,
+          visitorId,
+          clientMeta,
+        })),
         safeChannel(
           "human_escalation_line",
           sendHumanEscalationLineAlert({
@@ -624,6 +690,7 @@ module.exports = async (req, res) => {
         ),
       ])
     : [
+        { sent: false, reason: "chat_lead_capture_disabled" },
         { sent: false, reason: "chat_lead_capture_disabled" },
         { sent: false, reason: "chat_lead_capture_disabled" },
         { sent: false, reason: "chat_lead_capture_disabled" },
@@ -647,7 +714,8 @@ module.exports = async (req, res) => {
       crmWebhook: channels[0],
       supabase: channels[1],
       airtable: channels[2],
-      humanEscalationLine: channels[3],
+      websiteChatContactLine: channels[3],
+      humanEscalationLine: channels[4],
       smartReply: smartReply,
     },
     knowledgeMatchIds: intakePayload.websiteChat.knowledgeMatchIds,
