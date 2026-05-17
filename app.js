@@ -246,14 +246,18 @@ function getAiChatCopy(lang) {
   if (lang === "en") {
     return {
       title: "I’m Pinpoint AI. How can I help today?",
-      subtitle: "",
+      subtitle: "I can search the website, suggest next steps, and share useful links.",
       toggle: "Chat with Nong Pin AI",
       close: "Close",
+      reset: "Clear chat",
+      resetConfirm: "Clear all messages in this chat?",
+      resetYes: "Yes, clear",
+      resetNo: "Cancel",
       welcome:
-        "Hello, I am Pinpoint AI. Tell me what you need help with today, and I will guide the next step.",
-      placeholder: "Type your question or case details...",
+        "Hello! I’m Pinpoint AI. I can search our website, explain services, and guide your next step. What do you need help with?",
+      placeholder: "Ask anything or describe your case...",
       send: "Send",
-      typing: "Checking the Pinpoint knowledge base...",
+      typing: "Searching the Pinpoint knowledge base...",
       error: "The chat could not reply right now. Please call 092-749-7442 or continue via LINE OA.",
       phone: "Call",
       line: "LINE",
@@ -261,12 +265,12 @@ function getAiChatCopy(lang) {
       note: "",
       suggestions: [
         {
-          label: "Work Permit",
-          prompt: "What should I prepare for a Thai work permit case?"
+          label: "Search website",
+          prompt: "What services does Pinpoint offer for foreign directors?"
         },
         {
-          label: "Monthly accounting",
-          prompt: "What information do you need to estimate monthly accounting service?"
+          label: "Work Permit",
+          prompt: "What should I prepare for a Thai work permit case?"
         },
         {
           label: "Company setup",
@@ -278,14 +282,18 @@ function getAiChatCopy(lang) {
 
   return {
     title: "น้องพิณคือ Pinpoint Ai วันนี้ให้น้องพิณช่วยอะไรดีคะ",
-    subtitle: "",
+    subtitle: "น้องพิณสามารถค้นหาในเว็บไซต์ แนะนำขั้นตอน และส่งลิงก์ที่เป็นประโยชน์ได้ค่ะ",
     toggle: "คุยกับน้องพิณ AI",
     close: "ปิด",
+    reset: "ล้างแชต",
+    resetConfirm: "จะล้างข้อความที่คุยมาทั้งหมดใช่ไหมคะ?",
+    resetYes: "ใช่ ล้างเลย",
+    resetNo: "ยกเลิก",
     welcome:
-      "สวัสดีค่ะ ฉันคือผู้ช่วย AI ของ Pinpoint เล่าเรื่องที่ต้องการได้เลยค่ะ",
-    placeholder: "พิมพ์คำถามหรือรายละเอียดเคสของคุณ...",
+      "สวัสดีค่ะ น้องพิณคือผู้ช่วย AI ของ Pinpoint ค่ะ น้องพิณสามารถค้นหาข้อมูลในเว็บไซต์ อธิบายบริการ และแนะนำขั้นตอนถัดไปได้ เล่าเรื่องที่ต้องการได้เลยค่ะ",
+    placeholder: "ถามอะไรก็ได้ หรือเล่าเคสของคุณ...",
     send: "ส่ง",
-    typing: "กำลังเช็กฐานความรู้ของ Pinpoint...",
+    typing: "กำลังค้นหาฐานความรู้ของ Pinpoint...",
     error: "แชตตอบกลับไม่สำเร็จชั่วคราว กรุณาโทร 092-749-7442 หรือทัก LINE OA ได้เลยค่ะ",
     phone: "โทร",
     line: "LINE",
@@ -293,12 +301,12 @@ function getAiChatCopy(lang) {
     note: "",
     suggestions: [
       {
-        label: "Work Permit",
-        prompt: "ต้องการทำ Work Permit ต้องเตรียมอะไรบ้าง"
+        label: "ค้นหาในเว็บ",
+        prompt: "Pinpoint มีบริการอะไรบ้างสำหรับกรรมการต่างชาติ"
       },
       {
-        label: "บัญชีรายเดือน",
-        prompt: "อยากประเมินค่าบริการบัญชีรายเดือน ต้องส่งข้อมูลอะไรให้ทีมบ้าง"
+        label: "Work Permit",
+        prompt: "ต้องการทำ Work Permit ต้องเตรียมอะไรบ้าง"
       },
       {
         label: "จดบริษัท",
@@ -382,6 +390,15 @@ function rememberAiChatMessage(role, text) {
   writeAiChatHistory(history);
 }
 
+function clearAiChatHistory() {
+  try {
+    window.localStorage.removeItem(AI_CHAT_HISTORY_KEY);
+    window.localStorage.removeItem(AI_CHAT_SESSION_KEY);
+  } catch {
+    // Ignore storage errors
+  }
+}
+
 function addAiChatMessage(root, role, text) {
   const list = root.querySelector("[data-ai-messages]");
   if (!list) return null;
@@ -450,6 +467,8 @@ function updateAiChatLanguage(lang) {
   });
   const close = root.querySelector("[data-ai-close]");
   if (close) close.setAttribute("aria-label", copy.close);
+  const reset = root.querySelector("[data-ai-reset]");
+  if (reset) reset.setAttribute("aria-label", copy.reset);
   const input = root.querySelector("[data-ai-input]");
   if (input) input.setAttribute("placeholder", copy.placeholder);
   root.querySelectorAll("[data-ai-prompt-index]").forEach((node) => {
@@ -522,7 +541,12 @@ function initAiChat() {
           <strong data-ai-title></strong>
           <span data-ai-subtitle></span>
         </div>
-        <button class="ai-chat-close" type="button" data-ai-close="true">x</button>
+        <div class="ai-chat-head__actions">
+          <button class="ai-chat-reset" type="button" data-ai-reset="true" title="">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+          </button>
+          <button class="ai-chat-close" type="button" data-ai-close="true">x</button>
+        </div>
       </div>
       <div class="ai-chat-prompts">
         <button type="button" data-ai-prompt-index="0"></button>
@@ -563,6 +587,16 @@ function initAiChat() {
   });
   root.querySelector("[data-ai-close]")?.addEventListener("click", () => {
     setAiChatOpen(root, false);
+  });
+  root.querySelector("[data-ai-reset]")?.addEventListener("click", () => {
+    const copy = getAiChatCopy(appState.lang || resolveLang());
+    const confirmed = window.confirm(copy.resetConfirm);
+    if (confirmed) {
+      clearAiChatHistory();
+      const messages = root.querySelector("[data-ai-messages]");
+      if (messages) messages.innerHTML = "";
+      addAiChatMessage(root, "assistant", copy.welcome);
+    }
   });
   root.querySelector("[data-ai-form-shell]")?.addEventListener("submit", (event) => {
     event.preventDefault();
