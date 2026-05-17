@@ -2526,7 +2526,7 @@ tbody tr:last-child td {
 /* ===== DARK FINTECH GLASSMORPHISM ENHANCEMENTS ===== */
 
 /* Glass surface enhancement */
-.section, .card, .service-card, .article-card, .stat-card, 
+.section, .card, .service-column, .article-card, .stat-card, 
 .authority-card, .resource-card, .trusted-card, .faq-card,
 .panel, .note-box, .step, .biz-slide, .quote-card, .faq-item,
 .table-wrap, .service-panel, .hero-aside {
@@ -2534,8 +2534,14 @@ tbody tr:last-child td {
   -webkit-backdrop-filter: blur(16px) saturate(1.2);
 }
 
+/* Semi-transparent backgrounds for true glassmorphism */
+.hero-aside, .panel, .authority-card, .article-card, .resource-card,
+.stat-card, .step, .trusted-card, .faq-card, .note-box, .service-panel {
+  background: rgba(8, 14, 26, 0.72) !important;
+}
+
 /* Enhanced hover glow */
-.card:hover, .service-card:hover, .article-card:hover, 
+.card:hover, .service-column:hover, .article-card:hover, 
 .stat-card:hover, .authority-card:hover, .resource-card:hover,
 .trusted-card:hover, .faq-card:hover, .panel:hover, .step:hover {
   border-color: rgba(212, 168, 83, 0.35);
@@ -2562,8 +2568,8 @@ tbody tr:last-child td {
   gap: 16px;
 }
 
-.bento-services .service-card:nth-child(1),
-.bento-services .service-card:nth-child(2) {
+.bento-services .service-column:nth-child(1),
+.bento-services .service-column:nth-child(2) {
   grid-column: span 2;
 }
 
@@ -2619,6 +2625,39 @@ tbody tr:last-child td {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* AI Chat ambient glow when open */
+.ai-chat-widget.is-open::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(circle at calc(100% - 50px) calc(100% - 50px), rgba(212, 168, 83, 0.12), transparent 50%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.ai-chat-widget.is-open::before {
+  opacity: 1;
+}
+
+/* Premium orb — hide text label, glow dot only */
+.ai-chat-toggle [data-ai-toggle-label] {
+  display: none;
+}
+
+.ai-chat-toggle__dot {
+  width: 14px;
+  height: 14px;
+  box-shadow: 0 0 0 8px rgba(213, 168, 92, 0.18), 0 0 20px rgba(212, 168, 83, 0.6);
+}
+
+/* Smooth float entrance */
+.ai-chat-widget.is-open .ai-chat-panel {
+  transform: translateY(0) scale(1);
+  transition: opacity 0.35s cubic-bezier(0.22, 1, 0.36, 1), transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
 /* Gradient text for hero */
 .home-page .hero-copy h1,
 .page-hero .hero-copy h1 {
@@ -2664,6 +2703,6 @@ tbody tr:last-child td {
   .bento-hero { grid-template-columns: 1fr; }
   .bento-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .bento-services { grid-template-columns: 1fr; }
-  .bento-services .service-card:nth-child(1),
-  .bento-services .service-card:nth-child(2) { grid-column: auto; }
+  .bento-services .service-column:nth-child(1),
+  .bento-services .service-column:nth-child(2) { grid-column: auto; }
 }

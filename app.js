@@ -494,7 +494,7 @@ function initAiChat() {
 
   const root = document.createElement("section");
   root.id = "pinpointAiChat";
-  root.className = "ai-chat-widget is-open is-centered";
+  root.className = "ai-chat-widget";
   root.innerHTML = `
     <button class="ai-chat-toggle" type="button" data-ai-toggle="true" aria-expanded="true">
       <span class="ai-chat-toggle__dot" aria-hidden="true"></span>
