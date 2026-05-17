@@ -247,7 +247,7 @@ function getAiChatCopy(lang) {
     return {
       title: "I’m Pinpoint AI. How can I help today?",
       subtitle: "",
-      toggle: "Ask AI",
+      toggle: "Chat with Nong Pin AI",
       close: "Close",
       welcome:
         "Hello, I am Pinpoint AI. Tell me what you need help with today, and I will guide the next step.",
@@ -279,7 +279,7 @@ function getAiChatCopy(lang) {
   return {
     title: "น้องคือ Pinpoint Ai วันนี้ให้น้องพิณช่วยอะไรดีคะ",
     subtitle: "",
-    toggle: "ถาม AI",
+    toggle: "คุยกับน้องพิณ AI",
     close: "ปิด",
     welcome:
       "สวัสดีค่ะ ฉันคือผู้ช่วย AI ของ Pinpoint เล่าเรื่องที่ต้องการได้เลยค่ะ",
@@ -577,6 +577,14 @@ function initAiChat() {
   root.querySelectorAll("[data-ai-prompt-index]").forEach((node) => {
     node.addEventListener("click", () => {
       sendAiChatMessage(root, node.dataset.prompt || node.textContent);
+    });
+  });
+
+  // Bind static page buttons (e.g. AI showcase section) to open the chat widget
+  document.querySelectorAll(".btn-emphasis.ai-chat-toggle, .ai-showcase-card .ai-chat-toggle").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      root.classList.remove("is-centered");
+      setAiChatOpen(root, true);
     });
   });
 }

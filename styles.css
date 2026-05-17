@@ -2661,9 +2661,9 @@ tbody tr:last-child td {
 /* AI Chat Glass Orb */
 .ai-chat-toggle {
   position: relative;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
+  min-width: 140px;
+  height: 48px;
+  border-radius: 24px;
   background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.15), rgba(13, 27, 46, 0.9));
   border: 1px solid rgba(212, 168, 83, 0.5);
   backdrop-filter: blur(12px);
@@ -2671,6 +2671,11 @@ tbody tr:last-child td {
   animation: aiGoldPulse 2.4s infinite;
   transition: all .3s ease;
   overflow: visible;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 16px;
 }
 
 /* Waveform ripple rings */
@@ -2679,7 +2684,7 @@ tbody tr:last-child td {
   content: "";
   position: absolute;
   inset: -1px;
-  border-radius: 50%;
+  border-radius: 24px;
   border: 1px solid rgba(212, 168, 83, 0.35);
   animation: aiWaveform 2.4s ease-out infinite;
   pointer-events: none;
@@ -2776,9 +2781,14 @@ tbody tr:last-child td {
   40% { transform: scale(1); opacity: 1; }
 }
 
-/* Premium orb — hide text label, glow dot only */
+/* Premium orb — show text label */
 .ai-chat-toggle [data-ai-toggle-label] {
-  display: none;
+  display: inline;
+  font-size: 12px;
+  font-weight: 700;
+  color: #f3d08d;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
 }
 
 .ai-chat-toggle__dot {
@@ -3584,13 +3594,14 @@ body::before {
 }
 
 .stat-card strong {
-  font-size: clamp(2rem, 4vw, 2.8rem) !important;
+  font-size: clamp(1.5rem, 2.8vw, 2.2rem) !important;
   font-weight: 800 !important;
   background: linear-gradient(135deg, #ffffff 0%, rgba(255,255,255,0.85) 100%) !important;
   -webkit-background-clip: text !important;
   background-clip: text !important;
   color: transparent !important;
-  letter-spacing: -0.04em !important;
+  letter-spacing: -0.01em !important;
+  white-space: nowrap !important;
 }
 
 .stat-card p {
