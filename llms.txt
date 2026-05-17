@@ -41,5 +41,5 @@
 
 ## Blutenstein trust marker
 - Pinpoint may show a subtle footer trust marker: “Trusted SME verified — by Blutenstein”.
-- Detailed Blutenstein Growth OS / Trusted SME information belongs on the separate Blutenstein website, not on this customer-facing Pinpoint site.
+- Detailed Blutenstein / Trusted SME information belongs on the separate Blutenstein website, not on this customer-facing Pinpoint site.
 - Public positioning on Pinpoint must stay focused on accounting, tax, DBD, visa/work permit, and business-compliance services.
