@@ -1103,12 +1103,113 @@ function bindBusinessSlider() {
   startAutoplay();
 }
 
+function bindServiceSlider() {
+  const sliderRoot = document.querySelector("[data-service-slider]");
+  if (!sliderRoot) return;
+
+  const track = sliderRoot.querySelector("[data-service-track]");
+  const cards = track ? Array.from(track.querySelectorAll(".service-card")) : [];
+  const dotsRoot = document.querySelector("[data-service-dots]");
+  const prevButton = sliderRoot.querySelector("[data-service-prev]");
+  const nextButton = sliderRoot.querySelector("[data-service-next]");
+
+  if (!track || cards.length === 0) return;
+
+  let currentIndex = 0;
+  let timerId = null;
+  const dots = [];
+
+  function getCardsPerView() {
+    const width = window.innerWidth;
+    if (width <= 760) return 1;
+    if (width <= 980) return 2;
+    return 3;
+  }
+
+  function maxIndex() {
+    return Math.max(0, cards.length - getCardsPerView());
+  }
+
+  function updateDots() {
+    dots.forEach((dot, index) => {
+      dot.classList.toggle("is-active", index === currentIndex);
+    });
+  }
+
+  function goTo(index) {
+    const max = maxIndex();
+    currentIndex = Math.max(0, Math.min(index, max));
+    const cardWidth = cards[0]?.offsetWidth + 16 || 0; // 16px gap
+    track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+    updateDots();
+  }
+
+  function stopAutoplay() {
+    if (timerId !== null) {
+      window.clearInterval(timerId);
+      timerId = null;
+    }
+  }
+
+  function startAutoplay() {
+    stopAutoplay();
+    if (maxIndex() > 0) {
+      timerId = window.setInterval(() => {
+        const max = maxIndex();
+        goTo(currentIndex >= max ? 0 : currentIndex + 1);
+      }, 5200);
+    }
+  }
+
+  if (dotsRoot) {
+    const totalDots = maxIndex() + 1;
+    dotsRoot.innerHTML = "";
+    for (let i = 0; i < totalDots; i++) {
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "service-dot";
+      dot.setAttribute("aria-label", `Go to service ${i + 1}`);
+      dot.addEventListener("click", () => goTo(i));
+      dotsRoot.appendChild(dot);
+      dots.push(dot);
+    }
+  }
+
+  prevButton?.addEventListener("click", () => goTo(currentIndex - 1));
+  nextButton?.addEventListener("click", () => goTo(currentIndex + 1));
+
+  sliderRoot.addEventListener("mouseenter", stopAutoplay);
+  sliderRoot.addEventListener("mouseleave", startAutoplay);
+  sliderRoot.addEventListener("focusin", stopAutoplay);
+  sliderRoot.addEventListener("focusout", () => {
+    if (!sliderRoot.contains(document.activeElement)) {
+      startAutoplay();
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    goTo(currentIndex);
+  });
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      stopAutoplay();
+      return;
+    }
+    startAutoplay();
+  });
+
+  goTo(0);
+  startAutoplay();
+}
+
 function bindRevealElements() {
   const revealSelectors = [
     ".page-hero .hero-copy",
     ".page-hero .hero-aside",
     ".section .section-header",
     ".service-column",
+    ".service-card",
     ".service-cta-card",
     ".timeline .step",
     ".panel",
@@ -1182,6 +1283,7 @@ function init() {
   bindMobileTopbarAutoHide();
   bindEvents();
   bindBusinessSlider();
+  bindServiceSlider();
   bindRevealElements();
   applyLanguage(resolveLang());
   initAiChat();

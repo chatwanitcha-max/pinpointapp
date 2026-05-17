@@ -3892,3 +3892,201 @@ body::before {
     padding: 20px !important;
   }
 }
+
+/* ============================================================
+   SERVICE CARD SLIDER — Premium Horizontal Scroll
+   ============================================================ */
+
+.service-slider {
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr) 46px;
+  gap: 12px;
+  align-items: center;
+}
+
+.service-viewport {
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.service-track {
+  display: flex;
+  gap: 16px;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.service-card {
+  flex: 0 0 calc((100% - 32px) / 3);
+  min-width: 280px;
+  background: linear-gradient(180deg, rgba(13, 27, 46, 0.95), rgba(8, 14, 26, 0.98));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  display: grid;
+  grid-template-rows: 200px 1fr;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 56px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  border-color: rgba(212, 168, 83, 0.25);
+}
+
+.service-card-img {
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.85) contrast(1.05) sepia(0.05);
+  transition: transform 0.6s ease, filter 0.35s ease;
+}
+
+.service-card:hover .service-card-img img {
+  transform: scale(1.05);
+  filter: saturate(0.95) contrast(1.08) sepia(0.03);
+}
+
+.service-card-body {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.service-card-body .chip {
+  width: fit-content;
+  background: rgba(212, 168, 83, 0.12);
+  color: #f3d08d;
+  border: 1px solid rgba(212, 168, 83, 0.25);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+}
+
+.service-card-body h3 {
+  color: #f0f4f8;
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 1.32rem;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.service-card-body p {
+  font-size: 0.92rem;
+  color: rgba(240, 244, 248, 0.7);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.service-card-body .checklist {
+  margin-top: 4px;
+}
+
+.service-card-body .checklist li {
+  font-size: 0.88rem;
+  color: rgba(240, 244, 248, 0.65);
+}
+
+.service-card-body .checklist li::before {
+  background: linear-gradient(135deg, #d4a853, #f4d9a2);
+}
+
+/* Navigation buttons */
+.service-nav {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(13, 27, 46, 0.8);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.service-nav:hover {
+  background: rgba(212, 168, 83, 0.15);
+  border-color: rgba(212, 168, 83, 0.4);
+  color: #f3d08d;
+  transform: scale(1.08);
+}
+
+.service-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.service-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  padding: 0;
+}
+
+.service-dot.is-active {
+  background: #d4a853;
+  width: 24px;
+  border-radius: 4px;
+}
+
+/* ---- Responsive service slider ---- */
+@media (max-width: 980px) {
+  .service-card {
+    flex: 0 0 calc((100% - 16px) / 2);
+    min-width: 260px;
+    grid-template-rows: 180px 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .service-slider {
+    grid-template-columns: 40px minmax(0, 1fr) 40px;
+    gap: 8px;
+  }
+  
+  .service-card {
+    flex: 0 0 100%;
+    min-width: 260px;
+    grid-template-rows: 160px 1fr;
+  }
+  
+  .service-card-body {
+    padding: 18px;
+  }
+  
+  .service-card-body h3 {
+    font-size: 1.2rem;
+  }
+  
+  .service-nav {
+    width: 36px;
+    height: 36px;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-card {
+    min-width: 240px;
+  }
+}
