@@ -36,6 +36,7 @@ const {
   buildHumanEscalationReply,
   sendHumanEscalationLineAlert,
 } = require("./_lib/human-escalation");
+const { requestOpenAIReply } = require("./_lib/openai-assist");
 
 function randomId(prefix) {
   return `${prefix}_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
@@ -358,32 +359,57 @@ module.exports = async (req, res) => {
       });
 
   const replyMode = toText(process.env.PINPOINT_CHAT_REPLY_MODE).toLowerCase();
-  let openClawReply = { sent: false, reason: "local_reply_mode" };
+  let smartReply = { sent: false, reason: "local_reply_mode" };
+
   if (replyMode === "smart") {
+    // Try OpenAI first if API key is available
     try {
-      openClawReply = await requestOpenClawLineReply({
-        source: "website_ai_chat",
-        sessionId,
-        visitorId,
+      const openAIReply = await requestOpenAIReply({
         message,
+        history: historyBeforeSend,
         language,
-        effectiveServiceBucket: serviceBucket,
-        conversationSummary: activeMemorySummary,
-        handoff,
-        replyAnalysis: answerAudit,
+        serviceBucket,
+        memorySummary: activeMemorySummary,
         knowledgeMatches: knowledgeContext.matches || [],
-        replyDraftText: localReply,
       });
+      if (openAIReply.sent) {
+        smartReply = openAIReply;
+      }
     } catch (error) {
-      openClawReply = {
+      smartReply = {
         sent: false,
-        reason: "smart_reply_failed",
+        reason: "openai_reply_failed",
         message: toText(error?.message),
       };
     }
+
+    // Fall back to OpenClaw webhook if OpenAI is not available
+    if (!smartReply.sent) {
+      try {
+        smartReply = await requestOpenClawLineReply({
+          source: "website_ai_chat",
+          sessionId,
+          visitorId,
+          message,
+          language,
+          effectiveServiceBucket: serviceBucket,
+          conversationSummary: activeMemorySummary,
+          handoff,
+          replyAnalysis: answerAudit,
+          knowledgeMatches: knowledgeContext.matches || [],
+          replyDraftText: localReply,
+        });
+      } catch (error) {
+        smartReply = {
+          sent: false,
+          reason: "smart_reply_failed",
+          message: toText(error?.message),
+        };
+      }
+    }
   }
-  const baseReply = isUsableReplyText(openClawReply?.replyText)
-    ? openClawReply.replyText
+  const baseReply = isUsableReplyText(smartReply?.replyText)
+    ? smartReply.replyText
     : localReply;
   const humanEscalation = evaluateAiHumanEscalation({
     text: message,
@@ -393,7 +419,7 @@ module.exports = async (req, res) => {
     knowledgeContext,
     memorySummary: activeMemorySummary,
     baseReply,
-    openClawReply,
+    openClawReply: smartReply,
     resetOnly,
   });
   const replyText = humanEscalation.replaceReply
@@ -495,7 +521,7 @@ module.exports = async (req, res) => {
       supabase: channels[1],
       airtable: channels[2],
       humanEscalationLine: channels[3],
-      smartReply: openClawReply,
+      smartReply: smartReply,
     },
     knowledgeMatchIds: intakePayload.websiteChat.knowledgeMatchIds,
   });
