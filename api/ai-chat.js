@@ -160,8 +160,23 @@ function buildWebsiteSummaryText(facts, history, language) {
   return [parts.join(language === "en" ? ". " : " "), recentText].filter(Boolean).join(language === "en" ? ". " : "\n");
 }
 
+function inferHistoryServiceBucket(history) {
+  const userMessages = history.filter((item) => item.role === "user").map((item) => item.text).reverse();
+  for (const text of userMessages) {
+    const explicit = detectSpecificServiceBucket(text);
+    if (explicit) return explicit;
+    const intent = detectLineIntent(text);
+    const bucket = toText(intent?.serviceBucket);
+    if (bucket && bucket !== "general" && bucket !== "pricing") return bucket;
+  }
+  return "";
+}
+
 function buildWebsiteMemory(history, language, serviceBucket) {
-  const summary = buildEmptyConversationSummary(language, serviceBucket);
+  const effectiveServiceBucket = serviceBucket && serviceBucket !== "general"
+    ? serviceBucket
+    : inferHistoryServiceBucket(history) || serviceBucket;
+  const summary = buildEmptyConversationSummary(language, effectiveServiceBucket);
   const userHistory = history.filter((item) => item.role === "user");
   summary.turns = userHistory.length;
   summary.recentUserMessages = userHistory
@@ -229,6 +244,102 @@ function composeReply(language, baseReply, handoff, websiteReference) {
     parts.push(language === "en" ? `Read more: ${url}` : `อ่านรายละเอียดเพิ่ม: ${url}`);
   }
   return [...new Set(parts.map(toText).filter(Boolean))].join("\n\n");
+}
+
+
+const PINPOINT_CONTACT = {
+  phoneDisplay: "092-749-7442",
+  phoneHref: "tel:0927497442",
+  lineUrl: "https://lin.ee/58aU8oE",
+  formUrl: "https://pinpointaccountingservice.com/#lead-form",
+};
+
+function servicePageUrl(serviceBucket) {
+  const map = {
+    "accounting-tax": "https://pinpointaccountingservice.com/monthly-accounting",
+    "corporate-dbd": "https://pinpointaccountingservice.com/company-registration",
+    "visa-license": "https://pinpointaccountingservice.com/visa-work-permit",
+    "company-dissolution": "https://pinpointaccountingservice.com/company-dissolution",
+  };
+  return map[serviceBucket] || "https://pinpointaccountingservice.com/services";
+}
+
+function buildDocumentNudge(language, serviceBucket) {
+  const th = {
+    "accounting-tax": "เอกสารที่ช่วยให้ประเมินเร็ว: ประเภทธุรกิจ, รายได้/จำนวนรายการต่อเดือน, มี VAT/เงินเดือนหรือไม่ และปัญหาที่ต้องแก้ด่วน",
+    "corporate-dbd": "เอกสาร/ข้อมูลที่ช่วยให้เริ่มได้เร็ว: ชื่อบริษัทที่ต้องการ, ผู้ถือหุ้น/กรรมการ, ที่อยู่บริษัท และวัตถุประสงค์ธุรกิจ",
+    "visa-license": "เอกสารที่ควรเล่าให้ทีมทราบก่อน: สัญชาติ, ประเภทวีซ่าปัจจุบัน, ตำแหน่งงาน, บริษัทจดแล้วหรือยัง และวันหมดอายุถ้ามี",
+    "company-dissolution": "ข้อมูลที่ช่วยให้ประเมินเร็ว: บริษัทมีภาษี/ประกันสังคม/หนี้ค้างไหม, งบล่าสุดถึงปีไหน และมีบัญชีธนาคาร/สัญญาที่ยังเปิดอยู่หรือไม่",
+  };
+  const en = {
+    "accounting-tax": "Useful details for assessment: business type, monthly transaction volume/revenue, VAT/payroll status, and any urgent tax issue.",
+    "corporate-dbd": "Useful details to start: preferred company name, shareholders/directors, registered address, and business objective.",
+    "visa-license": "Useful details for the team: nationality, current visa type, job position, whether the company is registered, and expiry date if any.",
+    "company-dissolution": "Useful details for assessment: pending tax/social security/debts, latest closed accounts, and any open bank accounts or contracts.",
+  };
+  const table = language === "en" ? en : th;
+  return table[serviceBucket] || (language === "en"
+    ? "Useful details: business type, what you need done, timeline, and the documents you already have."
+    : "ข้อมูลที่ช่วยให้ทีมประเมินเร็ว: ประเภทธุรกิจ สิ่งที่ต้องการทำ ระยะเวลาที่ต้องการ และเอกสารที่มีอยู่แล้ว");
+}
+
+function buildSalesCloser({ language, serviceBucket, detectedIntent, contact, pageUrl }) {
+  const hasContact = Boolean(contact?.phone || contact?.email || contact?.lineId);
+  const serviceUrl = servicePageUrl(serviceBucket);
+  const wantsPriceOrDocs = ["pricing", "documents"].includes(toText(detectedIntent?.key));
+  if (language === "en") {
+    const lines = [
+      "Next step:",
+      `- Fastest contact: LINE OA ${PINPOINT_CONTACT.lineUrl} or call ${PINPOINT_CONTACT.phoneDisplay}`,
+      `- Send your case here: ${PINPOINT_CONTACT.formUrl}`,
+      `- Service details: ${serviceUrl}`,
+    ];
+    if (!wantsPriceOrDocs && !hasContact) lines.push(`- To assess quickly: ${buildDocumentNudge(language, serviceBucket)}`);
+    if (!hasContact) lines.push("If you share your phone or LINE ID here, the team can follow up with the right checklist.");
+    return lines.join("\n");
+  }
+  const lines = [
+    "ขั้นตอนถัดไปที่น้องพิณแนะนำ:",
+    `- ถ้าต้องการให้ทีมตอบเร็วที่สุด ทัก LINE OA: ${PINPOINT_CONTACT.lineUrl} หรือโทร ${PINPOINT_CONTACT.phoneDisplay}`,
+    `- ส่งรายละเอียดเคสผ่านฟอร์ม: ${PINPOINT_CONTACT.formUrl}`,
+    `- อ่านหน้าบริการที่เกี่ยวข้อง: ${serviceUrl}`,
+  ];
+  if (!wantsPriceOrDocs && !hasContact) lines.push(`- เพื่อให้ทีมประเมินได้เร็ว: ${buildDocumentNudge(language, serviceBucket)}`);
+  if (!hasContact) lines.push("ถ้าสะดวก ฝากเบอร์หรือ LINE ID ไว้ในแชตนี้ได้เลยค่ะ ทีมจะติดต่อกลับพร้อมเช็กลิสต์ที่ตรงเคส");
+  return lines.join("\n");
+}
+
+function hasSalesContactPath(text) {
+  const value = toText(text);
+  return /https:\/\/lin\.ee\/58aU8oE|092-?749-?7442|#lead-form|pinpointaccountingservice\.com\/#lead-form|tel:0927497442/i.test(value);
+}
+
+function composeSalesReply({ language, baseReply, handoff, websiteReference, serviceBucket, detectedIntent, contact, pageUrl, resetOnly }) {
+  const reply = composeReply(language, baseReply, handoff, websiteReference);
+  if (resetOnly) return reply;
+  const closer = buildSalesCloser({ language, serviceBucket, detectedIntent, contact, pageUrl });
+  if (hasSalesContactPath(reply)) return reply;
+  return [reply, closer].map(toText).filter(Boolean).join("\n\n");
+}
+
+function shouldUseSalesFallback(message, detectedIntent) {
+  const value = toText(message);
+  return ["pricing", "documents"].includes(toText(detectedIntent?.key)) || /ติดต่อ|ส่ง.*ทีม|ประเมิน|ขอใบเสนอ|ช่องทาง|เอกสาร|line|ไลน์|โทร|form|ฟอร์ม|quote|quotation|contact|document|checklist/i.test(value);
+}
+
+function buildSalesFallbackReply({ language, message, serviceBucket, detectedIntent, memorySummary }) {
+  if (!shouldUseSalesFallback(message, detectedIntent)) return "";
+  const docs = buildDocumentNudge(language, serviceBucket);
+  if (language === "en") {
+    if (toText(detectedIntent?.key) === "pricing") {
+      return `A price estimate depends on scope, document volume, VAT/payroll status, and urgency. For a fast assessment, send: ${docs}\n\nOne helpful detail: when do you need the work to start?`;
+    }
+    return `For the team to assess your case quickly, send these details first: ${docs}\n\nOne helpful detail: is the company already registered, or are you starting a new one?`;
+  }
+  if (toText(detectedIntent?.key) === "pricing") {
+    return `ประเมินราคาได้ค่ะ แต่ราคาจะขึ้นกับขอบเขตงาน จำนวนเอกสารต่อเดือน สถานะ VAT/เงินเดือน และความเร่งด่วนของเคส เบื้องต้นให้ส่งข้อมูลนี้มาก่อน: ${docs}\n\nถามเพิ่ม 1 ข้อค่ะ ต้องการให้เริ่มดูแลตั้งแต่เดือนไหนคะ`;
+  }
+  return `ส่งให้ทีมประเมินได้เลยค่ะ เพื่อให้ตอบเร็วและตรงเคส ให้ส่งข้อมูลนี้มาก่อน: ${docs}\n\nถามเพิ่ม 1 ข้อค่ะ บริษัทจดทะเบียนแล้ว หรือกำลังจะเริ่มจดใหม่คะ`;
 }
 
 async function safeChannel(name, promise) {
@@ -345,11 +456,18 @@ module.exports = async (req, res) => {
   });
 
   const resetOnly = isResetOnlyMessage(message, explicitServiceBucket || "general");
+  const salesFallbackReply = buildSalesFallbackReply({
+    language,
+    message,
+    serviceBucket,
+    detectedIntent,
+    memorySummary: activeMemorySummary,
+  });
   const localReply = resetOnly
     ? language === "en"
       ? "Sure, we can start fresh. What would you like the team to help with first?"
       : "ได้เลยค่ะ เริ่มเคสใหม่ให้แล้ว ตอนนี้อยากให้ทีมช่วยเรื่องไหนเป็นหลักคะ"
-    : buildLineReply({
+    : salesFallbackReply || buildLineReply({
         language,
         intent: detectedIntent,
         knowledgeContext,
@@ -358,15 +476,15 @@ module.exports = async (req, res) => {
         serviceBucket,
       });
 
-  const replyMode = toText(process.env.PINPOINT_CHAT_REPLY_MODE).toLowerCase();
+  const replyMode = toText(process.env.PINPOINT_CHAT_REPLY_MODE || "smart").toLowerCase();
   let smartReply = { sent: false, reason: "local_reply_mode" };
 
-  if (replyMode === "smart") {
+  if (replyMode !== "local") {
     // Try OpenAI first if API key is available
     try {
       const openAIReply = await requestOpenAIReply({
         message,
-        history: historyBeforeSend,
+        history,
         language,
         serviceBucket,
         memorySummary: activeMemorySummary,
@@ -408,6 +526,8 @@ module.exports = async (req, res) => {
       }
     }
   }
+  const contact = extractContact(message);
+  const pageUrl = toText(body.pageUrl) || "https://pinpointaccountingservice.com";
   const baseReply = isUsableReplyText(smartReply?.replyText)
     ? smartReply.replyText
     : localReply;
@@ -424,10 +544,17 @@ module.exports = async (req, res) => {
   });
   const replyText = humanEscalation.replaceReply
     ? buildHumanEscalationReply(language)
-    : composeReply(language, baseReply, handoff, knowledgeContext.websiteReference);
-
-  const contact = extractContact(message);
-  const pageUrl = toText(body.pageUrl) || "https://pinpointaccountingservice.com";
+    : composeSalesReply({
+        language,
+        baseReply,
+        handoff,
+        websiteReference: knowledgeContext.websiteReference,
+        serviceBucket,
+        detectedIntent,
+        contact,
+        pageUrl,
+        resetOnly,
+      });
   const lead = {
     leadId: randomId("chatlead"),
     fullName: contact.name || `Website chat ${visitorId}`,

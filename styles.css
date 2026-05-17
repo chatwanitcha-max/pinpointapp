@@ -1847,6 +1847,7 @@ tbody tr:last-child td {
 
 .ai-chat-message {
   display: flex;
+  flex-direction: column;
 }
 
 .ai-chat-message p {
@@ -1860,7 +1861,7 @@ tbody tr:last-child td {
 }
 
 .ai-chat-message--assistant {
-  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .ai-chat-message--assistant p {
@@ -1869,8 +1870,39 @@ tbody tr:last-child td {
   color: var(--ink);
 }
 
+.ai-chat-message--assistant p a {
+  color: #f4c96c;
+  font-weight: 850;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.ai-chat-inline-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  max-width: 84%;
+  margin-top: 6px;
+}
+
+.ai-chat-inline-actions a {
+  border: 1px solid rgba(212, 168, 83, 0.28);
+  border-radius: 999px;
+  background: rgba(212, 168, 83, 0.11);
+  color: #f4c96c;
+  font-size: 0.72rem;
+  font-weight: 850;
+  padding: 5px 9px;
+  text-decoration: none;
+}
+
+.ai-chat-inline-actions a:hover {
+  background: rgba(212, 168, 83, 0.2);
+  border-color: rgba(212, 168, 83, 0.5);
+}
+
 .ai-chat-message--user {
-  justify-content: flex-end;
+  align-items: flex-end;
 }
 
 .ai-chat-message--user p {

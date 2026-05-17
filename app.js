@@ -1,4 +1,4 @@
-﻿const TEXT = {
+const TEXT = {
   th: {
     leadSending: "กำลังส่งข้อมูลเพื่อรับแผนงานจากทีม...",
     leadSuccess: "ได้รับข้อมูลแล้ว ทีมงานจะติดต่อกลับภายใน 1 วันทำการตามช่องทางที่คุณเลือก",
@@ -245,8 +245,8 @@ const AI_CHAT_VISITOR_KEY = "pinpoint_ai_chat_visitor";
 function getAiChatCopy(lang) {
   if (lang === "en") {
     return {
-      title: "I’m Pinpoint AI. How can I help today?",
-      subtitle: "I can search the website, suggest next steps, and share useful links.",
+      title: "Nong Pin AI — sales & document assistant",
+      subtitle: "I can explain services, qualify your case, and send LINE / phone / form links.",
       toggle: "Chat with Nong Pin AI",
       close: "Close",
       reset: "Clear chat",
@@ -254,10 +254,10 @@ function getAiChatCopy(lang) {
       resetYes: "Yes, clear",
       resetNo: "Cancel",
       welcome:
-        "Hello! I’m Pinpoint AI. I can search our website, explain services, and guide your next step. What do you need help with?",
-      placeholder: "Ask anything or describe your case...",
+        "Hello! I’m Nong Pin. Tell me what you need — I’ll explain the right service, what to prepare, and the fastest way to contact the team.",
+      placeholder: "Describe your case, deadline, or ask what documents to prepare...",
       send: "Send",
-      typing: "Searching the Pinpoint knowledge base...",
+      typing: "Checking the best service path and next step...",
       error: "The chat could not reply right now. Please call 092-749-7442 or continue via LINE OA.",
       phone: "Call",
       line: "LINE",
@@ -265,24 +265,24 @@ function getAiChatCopy(lang) {
       note: "",
       suggestions: [
         {
-          label: "Search website",
-          prompt: "What services does Pinpoint offer for foreign directors?"
+          label: "Send my case",
+          prompt: "I want the team to assess my case. What details should I send and where?"
         },
         {
           label: "Work Permit",
           prompt: "What should I prepare for a Thai work permit case?"
         },
         {
-          label: "Company setup",
-          prompt: "I want to register a company in Thailand. What is the first step?"
+          label: "Price estimate",
+          prompt: "How can I get a price estimate for monthly accounting and tax filing?"
         }
       ]
     };
   }
 
   return {
-    title: "น้องพิณคือ Pinpoint Ai วันนี้ให้น้องพิณช่วยอะไรดีคะ",
-    subtitle: "น้องพิณสามารถค้นหาในเว็บไซต์ แนะนำขั้นตอน และส่งลิงก์ที่เป็นประโยชน์ได้ค่ะ",
+    title: "น้องพิณ AI ผู้ช่วยปิดเคสบัญชีและเอกสาร",
+    subtitle: "ช่วยตอบบริการ คัดกรองเคส ส่งลิงก์ LINE/โทร/ฟอร์ม และบอกเอกสารที่ควรเตรียมค่ะ",
     toggle: "คุยกับน้องพิณ AI",
     close: "ปิด",
     reset: "ล้างแชต",
@@ -290,10 +290,10 @@ function getAiChatCopy(lang) {
     resetYes: "ใช่ ล้างเลย",
     resetNo: "ยกเลิก",
     welcome:
-      "สวัสดีค่ะ น้องพิณคือผู้ช่วย AI ของ Pinpoint ค่ะ น้องพิณสามารถค้นหาข้อมูลในเว็บไซต์ อธิบายบริการ และแนะนำขั้นตอนถัดไปได้ เล่าเรื่องที่ต้องการได้เลยค่ะ",
-    placeholder: "ถามอะไรก็ได้ หรือเล่าเคสของคุณ...",
+      "สวัสดีค่ะ น้องพิณช่วยดูเคสเบื้องต้นให้ได้ค่ะ เล่าว่าต้องการทำบัญชี ภาษี จดบริษัท วีซ่า/Work Permit หรือปิดบริษัท — น้องพิณจะสรุปขั้นตอน เอกสารที่ควรเตรียม และส่งช่องทางติดต่อที่เร็วที่สุดให้ค่ะ",
+    placeholder: "เล่าเคส / deadline / เอกสารที่มี หรือถามค่าบริการได้เลย...",
     send: "ส่ง",
-    typing: "กำลังค้นหาฐานความรู้ของ Pinpoint...",
+    typing: "กำลังดูบริการที่เหมาะ เอกสารที่ต้องใช้ และขั้นตอนถัดไป...",
     error: "แชตตอบกลับไม่สำเร็จชั่วคราว กรุณาโทร 092-749-7442 หรือทัก LINE OA ได้เลยค่ะ",
     phone: "โทร",
     line: "LINE",
@@ -301,16 +301,16 @@ function getAiChatCopy(lang) {
     note: "",
     suggestions: [
       {
-        label: "ค้นหาในเว็บ",
-        prompt: "Pinpoint มีบริการอะไรบ้างสำหรับกรรมการต่างชาติ"
+        label: "ส่งเคสให้ทีม",
+        prompt: "อยากให้ทีมประเมินเคส ต้องส่งรายละเอียดอะไร และส่งช่องทางไหนเร็วที่สุด"
       },
       {
         label: "Work Permit",
         prompt: "ต้องการทำ Work Permit ต้องเตรียมอะไรบ้าง"
       },
       {
-        label: "จดบริษัท",
-        prompt: "อยากจดบริษัทในไทย ต้องเริ่มจากขั้นตอนไหน"
+        label: "ประเมินราคา",
+        prompt: "อยากประเมินราคาบัญชีรายเดือนและภาษี ต้องส่งข้อมูลอะไรบ้าง"
       }
     ]
   };
@@ -399,14 +399,59 @@ function clearAiChatHistory() {
   }
 }
 
+function appendAiChatLinkedText(container, text) {
+  const value = String(text || "");
+  const urlRe = /(https?:\/\/[^\s)]+|tel:\d+)/g;
+  let cursor = 0;
+  value.replace(urlRe, (match, _unused, offset) => {
+    if (offset > cursor) container.appendChild(document.createTextNode(value.slice(cursor, offset)));
+    const link = document.createElement("a");
+    link.href = match;
+    link.textContent = match;
+    if (/^https?:\/\//i.test(match)) {
+      link.target = "_blank";
+      link.rel = "noreferrer";
+    }
+    container.appendChild(link);
+    cursor = offset + match.length;
+    return match;
+  });
+  if (cursor < value.length) container.appendChild(document.createTextNode(value.slice(cursor)));
+}
+
+function addAiChatQuickActions(item) {
+  const actions = document.createElement("div");
+  actions.className = "ai-chat-inline-actions";
+  [
+    ["โทร 092-749-7442", "tel:0927497442"],
+    ["LINE OA", getAiChatLineUrl()],
+    ["ส่งฟอร์มให้ทีม", "/#lead-form"],
+  ].forEach(([label, href]) => {
+    const link = document.createElement("a");
+    link.href = href;
+    link.textContent = label;
+    if (/^https?:\/\//i.test(href)) {
+      link.target = "_blank";
+      link.rel = "noreferrer";
+    }
+    actions.appendChild(link);
+  });
+  item.appendChild(actions);
+}
+
 function addAiChatMessage(root, role, text) {
   const list = root.querySelector("[data-ai-messages]");
   if (!list) return null;
   const item = document.createElement("div");
   item.className = `ai-chat-message ai-chat-message--${role === "user" ? "user" : "assistant"}`;
   const bubble = document.createElement("p");
-  bubble.textContent = text;
+  if (role === "assistant") {
+    appendAiChatLinkedText(bubble, text);
+  } else {
+    bubble.textContent = text;
+  }
   item.appendChild(bubble);
+  if (role === "assistant") addAiChatQuickActions(item);
   list.appendChild(item);
   list.scrollTop = list.scrollHeight;
   return item;

@@ -36,7 +36,8 @@ Static website + Vercel serverless API:
      - GA4 and Meta conversion events
 
 3. Advanced AI assistance
-   - Website AI chat uses conversation memory, case playbooks, context slots, knowledge base search, answer audit, handoff rules, and optional OpenClaw reply assist.
+   - Website AI chat uses conversation memory, case playbooks, context slots, knowledge base search, answer audit, handoff rules, and optional OpenClaw/OpenAI/Kimi reply assist.
+   - น้องพิณ is positioned as a sales-capable advisor: answer first, qualify the case, then always provide practical next steps with LINE OA, phone, lead form, relevant service page, and document/intake checklist guidance.
    - LINE OA endpoint supports auto-reply/handoff modes and human escalation alerts.
 
 4. LINE OA full detail handoff improvement
