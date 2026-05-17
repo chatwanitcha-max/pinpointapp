@@ -236,9 +236,23 @@ function extractContact(text) {
   };
 }
 
-function isUsableReplyText(text) {
+function isUsableReplyText(text, latestMessage = "") {
   const value = toText(text);
-  return Boolean(value) && value.length <= 1200 && !value.includes("\uFFFD");
+  if (!value || value.length > 1200 || value.includes("\uFFFD")) return false;
+
+  const normalized = value.replace(/\s+/g, " ").trim();
+  const callbackOnly = /^(สวัสดีค่ะ ขอบคุณที่ติดต่อ Pinpoint นะคะ\s*)?(ทีมงานของเราจะติดต่อกลับคุณลูกค้าโดยด่วนที่สุดค่ะ ขอบคุณค่ะ)$/i.test(normalized)
+    || /^(Hello, thank you for contacting Pinpoint\.\s*)?(Our team will contact you as soon as possible\. Thank you\.)$/i.test(normalized);
+  if (callbackOnly) return false;
+
+  const latest = toText(latestMessage);
+  if (/ทำบัญชี|บริษัท.*บัญชี|ประเมิน|ส่ง.*รายละเอียด|ช่องทางไหน/i.test(latest)
+    && /ทีมงานของเราจะติดต่อกลับคุณลูกค้าโดยด่วนที่สุดค่ะ ขอบคุณค่ะ/i.test(normalized)
+    && normalized.length < 180) {
+    return false;
+  }
+
+  return true;
 }
 
 function composeReply(language, baseReply, handoff, websiteReference) {
@@ -293,23 +307,21 @@ function buildSalesCloser({ language, serviceBucket, detectedIntent, contact, pa
   const wantsPriceOrDocs = ["pricing", "documents"].includes(toText(detectedIntent?.key));
   if (language === "en") {
     const lines = [
-      "Next step:",
-      `- Fastest contact: LINE OA ${PINPOINT_CONTACT.lineUrl} or call ${PINPOINT_CONTACT.phoneDisplay}`,
-      `- Send your case here: ${PINPOINT_CONTACT.formUrl}`,
-      `- Service details: ${serviceUrl}`,
+      "Fastest next step:",
+      `- Send the case via LINE ${PINPOINT_CONTACT.lineUrl}, form ${PINPOINT_CONTACT.formUrl}, or call ${PINPOINT_CONTACT.phoneDisplay}`,
     ];
-    if (!wantsPriceOrDocs && !hasContact) lines.push(`- To assess quickly: ${buildDocumentNudge(language, serviceBucket)}`);
-    if (!hasContact) lines.push("If you share your phone or LINE ID here, the team can follow up with the right checklist.");
+    if (!wantsPriceOrDocs && !hasContact) lines.push(`- Include: ${buildDocumentNudge(language, serviceBucket)}`);
+    if (serviceBucket !== "general") lines.push(`- Related page: ${serviceUrl}`);
+    if (!hasContact) lines.push("If you leave a phone or LINE ID here, the team will see it immediately.");
     return lines.join("\n");
   }
   const lines = [
-    "ขั้นตอนถัดไปที่น้องพิณแนะนำ:",
-    `- ถ้าต้องการให้ทีมตอบเร็วที่สุด ทัก LINE OA: ${PINPOINT_CONTACT.lineUrl} หรือโทร ${PINPOINT_CONTACT.phoneDisplay}`,
-    `- ส่งรายละเอียดเคสผ่านฟอร์ม: ${PINPOINT_CONTACT.formUrl}`,
-    `- อ่านหน้าบริการที่เกี่ยวข้อง: ${serviceUrl}`,
+    "ขั้นตอนเร็วสุด:",
+    `- ส่งเคสทาง LINE ${PINPOINT_CONTACT.lineUrl}, ฟอร์ม ${PINPOINT_CONTACT.formUrl} หรือโทร ${PINPOINT_CONTACT.phoneDisplay}`,
   ];
-  if (!wantsPriceOrDocs && !hasContact) lines.push(`- เพื่อให้ทีมประเมินได้เร็ว: ${buildDocumentNudge(language, serviceBucket)}`);
-  if (!hasContact) lines.push("ถ้าสะดวก ฝากเบอร์หรือ LINE ID ไว้ในแชตนี้ได้เลยค่ะ ทีมจะติดต่อกลับพร้อมเช็กลิสต์ที่ตรงเคส");
+  if (!wantsPriceOrDocs && !hasContact) lines.push(`- แนบข้อมูลหลัก: ${buildDocumentNudge(language, serviceBucket)}`);
+  if (serviceBucket !== "general") lines.push(`- หน้าที่เกี่ยวข้อง: ${serviceUrl}`);
+  if (!hasContact) lines.push("ถ้าฝากเบอร์หรือ LINE ID ในแชตนี้ ทีมจะเห็นทันทีและติดต่อกลับได้ค่ะ");
   return lines.join("\n");
 }
 
@@ -318,12 +330,64 @@ function hasSalesContactPath(text) {
   return /https:\/\/lin\.ee\/58aU8oE|092-?749-?7442|#lead-form|pinpointaccountingservice\.com\/#lead-form|tel:0927497442/i.test(value);
 }
 
+function alreadyGivesNextStep(text) {
+  return /ช่องทางเร็วสุด|Fastest route|ส่งข้อมูล 6 อย่าง|ทีมควรรู้ก่อนว่า|For monthly accounting, the team usually needs/i.test(toText(text));
+}
+
 function composeSalesReply({ language, baseReply, handoff, websiteReference, serviceBucket, detectedIntent, contact, pageUrl, resetOnly }) {
   const reply = composeReply(language, baseReply, handoff, websiteReference);
   if (resetOnly) return reply;
+  if (hasSalesContactPath(reply) || alreadyGivesNextStep(reply)) return reply;
   const closer = buildSalesCloser({ language, serviceBucket, detectedIntent, contact, pageUrl });
-  if (hasSalesContactPath(reply)) return reply;
   return [reply, closer].map(toText).filter(Boolean).join("\n\n");
+}
+
+function isAssessmentRoutingQuestion(message) {
+  const value = toText(message);
+  return /ประเมิน|ส่ง.*รายละเอียด|รายละเอียด.*ส่ง|ช่องทางไหน|เร็วที่สุด|ส่ง.*ช่องทาง|ทีม.*ประเมิน|quote|quotation|assess|assessment|fastest channel/i.test(value);
+}
+
+function isAccountingCompanyQuestion(message, serviceBucket) {
+  const value = toText(message);
+  return serviceBucket === "accounting-tax" && /ทำบัญชี|บริษัท.*บัญชี|บัญชีรายเดือน|สำนักงานบัญชี|ต้องการบริษัท|จ้าง.*บัญชี|bookkeeping|accounting firm/i.test(value);
+}
+
+function buildConsultantFirstReply({ language, message, serviceBucket, detectedIntent }) {
+  const pricing = toText(detectedIntent?.key) === "pricing";
+  const assessment = isAssessmentRoutingQuestion(message);
+  const accountingCompany = isAccountingCompanyQuestion(message, serviceBucket);
+
+  if (!pricing && !assessment && !accountingCompany) return "";
+
+  if (language === "en") {
+    if (accountingCompany) {
+      return [
+        "If you need a company to handle monthly accounting, Nong Pin can help screen the case first — not just pass you to sales.",
+        "For monthly accounting, the team usually needs: business type, whether the company is already registered, VAT status, payroll/social security status, monthly document or transaction volume, current accounting backlog, and when you want service to start.",
+        "Pinpoint can help with monthly bookkeeping, tax filing coordination, VAT/withholding-tax document flow, payroll-related checks, and cleanup of accounting/tax issues before handing the exact scope to the team.",
+        "One key question: is the company already registered and operating, or are you about to register it?",
+      ].join("\n\n");
+    }
+    if (pricing) {
+      return "A useful estimate needs scope, monthly document volume, VAT/payroll status, backlog, and urgency. Send those details first; the team can then judge whether this is simple monthly accounting, cleanup, or a tax-risk case. One key question: when do you need service to start?";
+    }
+    return "For fast assessment, send: business type, what service you need, whether the company already exists, VAT/payroll status if relevant, document volume or urgency, and any deadline/problem. Fastest route is LINE or the form because the team receives structured details. One key question: is this for an existing company or a new registration?";
+  }
+
+  if (accountingCompany) {
+    return [
+      "ถ้าต้องการบริษัทมาทำบัญชี น้องพิณช่วยคัดกรองเคสเบื้องต้นให้ได้ค่ะ ไม่ใช่แค่ส่งต่อทีมขายเฉย ๆ",
+      "สำหรับบัญชีรายเดือน ทีมควรรู้ก่อนว่า: ธุรกิจทำอะไร, บริษัทจดแล้วหรือยัง, จด VAT ไหม, มีเงินเดือน/ประกันสังคมหรือไม่, เอกสารหรือรายการต่อเดือนประมาณกี่ชุด, มีบัญชีย้อนหลัง/ภาษีค้างไหม และอยากให้เริ่มเดือนไหน",
+      "Pinpoint ช่วยดูได้ทั้งบัญชีรายเดือน, ภาษีรายเดือน/รายปี, VAT/หัก ณ ที่จ่าย, เอกสารเงินเดือน และเคลียร์งานบัญชี/ภาษีที่ค้างก่อนรับดูแลต่อเนื่อง",
+      "ถามเพิ่ม 1 ข้อค่ะ: บริษัทจดทะเบียนและเปิดดำเนินการแล้ว หรือกำลังจะจดใหม่คะ",
+    ].join("\n\n");
+  }
+
+  if (pricing) {
+    return "ประเมินราคาได้ค่ะ แต่ต้องดูขอบเขตงานก่อน: ประเภทธุรกิจ, จำนวนเอกสาร/รายการต่อเดือน, มี VAT ไหม, มีเงินเดือน/ประกันสังคมไหม, มีงานย้อนหลังหรือภาษีค้างหรือไม่ และความเร่งด่วนของเคส\n\nถามเพิ่ม 1 ข้อค่ะ: ต้องการให้เริ่มดูแลตั้งแต่เดือนไหนคะ";
+  }
+
+  return "ถ้าต้องการให้ทีมประเมินเร็ว ให้ส่งข้อมูล 6 อย่างนี้ค่ะ: 1) ประเภทธุรกิจ 2) ต้องการบริการอะไร 3) บริษัทจดแล้วหรือยัง 4) มี VAT/เงินเดือน/ประกันสังคมหรือไม่ 5) จำนวนเอกสารหรือปัญหาที่ค้างอยู่ 6) deadline หรือเดือนที่อยากเริ่ม\n\nช่องทางเร็วสุดคือ LINE หรือฟอร์ม เพราะทีมจะเห็นรายละเอียดเป็นชุดเดียวและประเมินต่อได้ทันที\n\nถามเพิ่ม 1 ข้อค่ะ: เคสนี้เป็นบริษัทที่เปิดดำเนินการแล้ว หรือกำลังจะเริ่มจดใหม่คะ";
 }
 
 function shouldUseSalesFallback(message, detectedIntent) {
@@ -333,17 +397,13 @@ function shouldUseSalesFallback(message, detectedIntent) {
 
 function buildSalesFallbackReply({ language, message, serviceBucket, detectedIntent, memorySummary }) {
   if (!shouldUseSalesFallback(message, detectedIntent)) return "";
+  const consultantReply = buildConsultantFirstReply({ language, message, serviceBucket, detectedIntent });
+  if (consultantReply) return consultantReply;
   const docs = buildDocumentNudge(language, serviceBucket);
   if (language === "en") {
-    if (toText(detectedIntent?.key) === "pricing") {
-      return `A price estimate depends on scope, document volume, VAT/payroll status, and urgency. For a fast assessment, send: ${docs}\n\nOne helpful detail: when do you need the work to start?`;
-    }
-    return `For the team to assess your case quickly, send these details first: ${docs}\n\nOne helpful detail: is the company already registered, or are you starting a new one?`;
+    return `I can help narrow the case first. Send: ${docs}\n\nOne useful detail: what result do you need from the team first — estimate, document checklist, or urgent filing help?`;
   }
-  if (toText(detectedIntent?.key) === "pricing") {
-    return `ประเมินราคาได้ค่ะ แต่ราคาจะขึ้นกับขอบเขตงาน จำนวนเอกสารต่อเดือน สถานะ VAT/เงินเดือน และความเร่งด่วนของเคส เบื้องต้นให้ส่งข้อมูลนี้มาก่อน: ${docs}\n\nถามเพิ่ม 1 ข้อค่ะ ต้องการให้เริ่มดูแลตั้งแต่เดือนไหนคะ`;
-  }
-  return `ส่งให้ทีมประเมินได้เลยค่ะ เพื่อให้ตอบเร็วและตรงเคส ให้ส่งข้อมูลนี้มาก่อน: ${docs}\n\nถามเพิ่ม 1 ข้อค่ะ บริษัทจดทะเบียนแล้ว หรือกำลังจะเริ่มจดใหม่คะ`;
+  return `น้องพิณช่วยคัดกรองเคสให้ก่อนค่ะ เบื้องต้นส่งข้อมูลนี้มาก่อน: ${docs}\n\nถามเพิ่ม 1 ข้อค่ะ ต้องการให้ทีมช่วยเรื่องแรกคือประเมินราคา เช็กลิสต์เอกสาร หรือแก้เคสด่วนคะ`;
 }
 
 async function safeChannel(name, promise) {
@@ -532,7 +592,13 @@ module.exports = async (req, res) => {
   });
 
   const resetOnly = isResetOnlyMessage(message, explicitServiceBucket || "general");
-  const salesFallbackReply = buildSalesFallbackReply({
+  const consultantFirstReply = buildConsultantFirstReply({
+    language,
+    message,
+    serviceBucket,
+    detectedIntent,
+  });
+  const salesFallbackReply = consultantFirstReply || buildSalesFallbackReply({
     language,
     message,
     serviceBucket,
@@ -604,7 +670,7 @@ module.exports = async (req, res) => {
   }
   const contact = extractContact(message);
   const pageUrl = toText(body.pageUrl) || "https://pinpointaccountingservice.com";
-  const baseReply = isUsableReplyText(smartReply?.replyText)
+  const baseReply = isUsableReplyText(smartReply?.replyText, message)
     ? smartReply.replyText
     : localReply;
   const humanEscalation = evaluateAiHumanEscalation({

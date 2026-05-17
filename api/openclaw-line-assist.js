@@ -104,6 +104,12 @@ function buildReferenceLine(language, payload) {
 }
 
 function shouldUseCallbackOnlyReply(payload) {
+  const draft = toText(payload?.replyDraftText);
+  const source = toText(payload?.source);
+  if (source === "website_ai_chat" && draft.length > 40) {
+    return false;
+  }
+
   const detailId = toText(payload?.intentDetail?.id);
   const subIntentKey = toText(payload?.intentDetail?.subIntentKey);
   const caseFlavor = toText(payload?.replyAnalysis?.caseFlavor);
@@ -113,11 +119,15 @@ function shouldUseCallbackOnlyReply(payload) {
     return false;
   }
 
-  if (serviceBucket === "corporate-dbd" && /new-registration/i.test(toText(payload?.replyDraftText))) {
+  if (["accounting-tax", "corporate-dbd", "visa-license", "company-dissolution"].includes(serviceBucket) && draft.length > 40) {
     return false;
   }
 
-  return true;
+  if (serviceBucket === "corporate-dbd" && /new-registration/i.test(draft)) {
+    return false;
+  }
+
+  return !draft;
 }
 
 function buildCallbackOnlyReply(language, opener) {
