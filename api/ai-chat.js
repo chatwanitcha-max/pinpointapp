@@ -37,7 +37,7 @@ const {
   sendHumanEscalationLineAlert,
 } = require("./_lib/human-escalation");
 const { requestOpenAIReply } = require("./_lib/openai-assist");
-const { sendLinePushText } = require("./_lib/outbound");
+const { postJson, sendLinePushText } = require("./_lib/outbound");
 
 function randomId(prefix) {
   return `${prefix}_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
@@ -402,7 +402,28 @@ async function sendWebsiteChatContactLineAlert(payload) {
   if (!hasDirectContact(payload?.contact)) {
     return { sent: false, reason: "contact_not_provided" };
   }
-  return sendLinePushText(buildWebsiteChatContactLineText(payload));
+  const text = buildWebsiteChatContactLineText(payload);
+  const webhookPayload = {
+    type: "website_ai_chat_contact",
+    lead: payload.lead,
+    contact: payload.contact,
+    routing: payload.routing,
+    message: payload.message,
+    replyText: payload.replyText,
+    sessionId: payload.sessionId,
+    visitorId: payload.visitorId,
+    clientMeta: payload.clientMeta,
+    text,
+  };
+  const [webhook, push] = await Promise.all([
+    postJson(process.env.LINE_OA_WEBHOOK_URL, webhookPayload),
+    sendLinePushText(text),
+  ]);
+  return {
+    sent: Boolean(webhook?.sent || push?.sent),
+    webhook,
+    push,
+  };
 }
 
 module.exports = async (req, res) => {

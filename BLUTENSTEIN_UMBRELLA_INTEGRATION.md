@@ -43,7 +43,7 @@ Static website + Vercel serverless API:
 4. LINE OA full detail handoff improvement
    - /api/lead now sends LINE webhook payload with lead, routing, operations, clientMeta, and text summary instead of only { type, lead }.
    - LINE push text still sends the concise human-readable full lead summary.
-   - /api/ai-chat now pushes an immediate LINE notification when a website chat visitor provides phone, LINE ID, or email. The alert includes Lead ID, name, phone, LINE ID, service need, customer message, page URL, latest AI reply, and team CTA details. Human escalation remains a separate alert path for urgent/high-risk conversations.
+   - /api/ai-chat now pushes an immediate LINE notification when a website chat visitor provides phone, LINE ID, or email. The alert includes Lead ID, name, phone, LINE ID, service need, customer message, page URL, latest AI reply, and team CTA details. Human escalation remains a separate alert path for urgent/high-risk conversations. It sends to `LINE_OA_WEBHOOK_URL` and also uses LINE Push when `LINE_TARGET_ID` is configured.
 
 ## Performance hardening completed
 
