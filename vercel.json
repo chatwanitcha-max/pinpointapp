@@ -1,7 +1,17 @@
 {
   "redirects": [
     {
+      "source": "/blutenstein-growth-os",
+      "destination": "https://blutenstein.com/",
+      "permanent": false
+    },
+    {
       "source": "/blutenstein-growth-os/:path*",
+      "destination": "https://blutenstein.com/",
+      "permanent": false
+    },
+    {
+      "source": "/growth-os-dashboard",
       "destination": "https://blutenstein.com/",
       "permanent": false
     },
