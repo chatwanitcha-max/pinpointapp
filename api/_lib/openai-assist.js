@@ -1,21 +1,38 @@
 const { toText } = require("./analytics");
 
 function getOpenAIConfig() {
-  // Support Kimi (Moonshot AI) as an alternative to OpenAI
-  const kimiKey = process.env.KIMI_API_KEY;
-  const openAIKey = process.env.OPENAI_API_KEY;
-  const isKimi = Boolean(kimiKey);
+  // Provider order is configurable, with Groq supported as a fast free-tier
+  // OpenAI-compatible option when GROQ_API_KEY is configured in Vercel.
+  const providerPreference = toText(process.env.PINPOINT_AI_PROVIDER).toLowerCase();
+  const providers = {
+    groq: {
+      apiKey: process.env.GROQ_API_KEY,
+      model: process.env.GROQ_MODEL || "llama-3.1-8b-instant",
+      baseUrl: process.env.GROQ_BASE_URL || "https://api.groq.com/openai/v1",
+      provider: "groq",
+    },
+    kimi: {
+      apiKey: process.env.KIMI_API_KEY,
+      model: process.env.KIMI_MODEL || "moonshot-v1-8k",
+      baseUrl: process.env.KIMI_BASE_URL || "https://api.moonshot.cn/v1",
+      provider: "kimi",
+    },
+    openai: {
+      apiKey: process.env.OPENAI_API_KEY,
+      model: process.env.OPENAI_MODEL || "gpt-4o-mini",
+      baseUrl: process.env.OPENAI_BASE_URL || "https://api.openai.com/v1",
+      provider: "openai",
+    },
+  };
+  const order = providerPreference && providers[providerPreference]
+    ? [providerPreference, "groq", "kimi", "openai"]
+    : ["groq", "kimi", "openai"];
+  const selected = order.map((key) => providers[key]).find((entry) => entry.apiKey) || providers.openai;
 
   return {
-    apiKey: kimiKey || openAIKey,
-    model: isKimi
-      ? (process.env.KIMI_MODEL || "moonshot-v1-8k")
-      : (process.env.OPENAI_MODEL || "gpt-4o-mini"),
-    baseUrl: isKimi
-      ? (process.env.KIMI_BASE_URL || "https://api.moonshot.cn/v1")
-      : (process.env.OPENAI_BASE_URL || "https://api.openai.com/v1"),
+    ...selected,
     maxTokens: Math.min(parseInt(process.env.OPENAI_MAX_TOKENS || "800", 10), 2000),
-    temperature: Math.min(Math.max(parseFloat(process.env.OPENAI_TEMPERATURE || "0.7"), 0), 1),
+    temperature: Math.min(Math.max(parseFloat(process.env.OPENAI_TEMPERATURE || "0.55"), 0), 1),
   };
 }
 
@@ -188,6 +205,7 @@ async function requestOpenAIReply({
       sent: true,
       replyText,
       model: data.model,
+      provider: config.provider,
       usage: data.usage,
     };
   } catch (error) {

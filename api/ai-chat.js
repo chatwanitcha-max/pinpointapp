@@ -236,18 +236,45 @@ function extractContact(text) {
   };
 }
 
+function stripReplyFiller(text) {
+  let value = toText(text).trim();
+  if (!value) return "";
+
+  const fillerPatterns = [
+    /^สวัสดีค่ะ\s*ขอบคุณที่ติดต่อ\s*Pinpoint\s*นะคะ\s*/i,
+    /^สวัสดีค่ะ\s*/i,
+    /^Hello,?\s*thank you for contacting Pinpoint\.?\s*/i,
+    /^Hello!?\s*/i,
+  ];
+  fillerPatterns.forEach((pattern) => {
+    value = value.replace(pattern, "").trim();
+  });
+
+  const callbackFillers = [
+    /\n{0,2}\s*ทีมงานของเราจะติดต่อกลับคุณลูกค้าโดยด่วนที่สุดค่ะ\s*ขอบคุณค่ะ\s*$/i,
+    /\n{0,2}\s*ทีมงานจะติดต่อกลับ(?:โดยเร็ว|ภายใน 1 วันทำการ)?[^\n]*$/i,
+    /\n{0,2}\s*Our team will contact you as soon as possible\.?(?:\s*Thank you\.)?\s*$/i,
+  ];
+  callbackFillers.forEach((pattern) => {
+    value = value.replace(pattern, "").trim();
+  });
+
+  return value;
+}
+
 function isUsableReplyText(text, latestMessage = "") {
   const value = toText(text);
   if (!value || value.length > 1200 || value.includes("\uFFFD")) return false;
 
-  const normalized = value.replace(/\s+/g, " ").trim();
-  const callbackOnly = /^(สวัสดีค่ะ ขอบคุณที่ติดต่อ Pinpoint นะคะ\s*)?(ทีมงานของเราจะติดต่อกลับคุณลูกค้าโดยด่วนที่สุดค่ะ ขอบคุณค่ะ)$/i.test(normalized)
-    || /^(Hello, thank you for contacting Pinpoint\.\s*)?(Our team will contact you as soon as possible\. Thank you\.)$/i.test(normalized);
+  const normalized = stripReplyFiller(value).replace(/\s+/g, " ").trim();
+  if (!normalized) return false;
+  const callbackOnly = /^(ทีมงานของเราจะติดต่อกลับคุณลูกค้าโดยด่วนที่สุดค่ะ ขอบคุณค่ะ)$/i.test(normalized)
+    || /^(Our team will contact you as soon as possible\. Thank you\.)$/i.test(normalized);
   if (callbackOnly) return false;
 
   const latest = toText(latestMessage);
   if (/ทำบัญชี|บริษัท.*บัญชี|ประเมิน|ส่ง.*รายละเอียด|ช่องทางไหน/i.test(latest)
-    && /ทีมงานของเราจะติดต่อกลับคุณลูกค้าโดยด่วนที่สุดค่ะ ขอบคุณค่ะ/i.test(normalized)
+    && /ทีมงานของเราจะติดต่อกลับคุณลูกค้าโดยด่วนที่สุดค่ะ ขอบคุณค่ะ/i.test(value.replace(/\s+/g, " "))
     && normalized.length < 180) {
     return false;
   }
@@ -671,7 +698,7 @@ module.exports = async (req, res) => {
   const contact = extractContact(message);
   const pageUrl = toText(body.pageUrl) || "https://pinpointaccountingservice.com";
   const baseReply = isUsableReplyText(smartReply?.replyText, message)
-    ? smartReply.replyText
+    ? stripReplyFiller(smartReply.replyText) || localReply
     : localReply;
   const humanEscalation = evaluateAiHumanEscalation({
     text: message,

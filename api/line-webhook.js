@@ -78,12 +78,34 @@ function getConfiguredLineAutoReply() {
   return "";
 }
 
+function stripReplyFiller(text) {
+  let value = toText(text).trim();
+  if (!value) return "";
+  [
+    /^สวัสดีค่ะ\s*ขอบคุณที่ติดต่อ\s*Pinpoint\s*นะคะ\s*/i,
+    /^สวัสดีค่ะ\s*/i,
+    /^Hello,?\s*thank you for contacting Pinpoint\.?\s*/i,
+    /^Hello!?\s*/i,
+  ].forEach((pattern) => {
+    value = value.replace(pattern, "").trim();
+  });
+  [
+    /\n{0,2}\s*ทีมงานของเราจะติดต่อกลับคุณลูกค้าโดยด่วนที่สุดค่ะ\s*ขอบคุณค่ะ\s*$/i,
+    /\n{0,2}\s*ทีมงานจะติดต่อกลับ(?:โดยเร็ว|ภายใน 1 วันทำการ)?[^\n]*$/i,
+    /\n{0,2}\s*Our team will contact you as soon as possible\.?(?:\s*Thank you\.)?\s*$/i,
+  ].forEach((pattern) => {
+    value = value.replace(pattern, "").trim();
+  });
+  return value;
+}
+
 function isUsableReplyText(text) {
   const value = toText(text).trim();
   if (!value) return false;
   if (value.includes("\uFFFD")) return false;
   if ((value.match(/\?/g) || []).length >= 5) return false;
   if (value.length > 1200) return false;
+  if (!stripReplyFiller(value)) return false;
   return true;
 }
 
@@ -378,7 +400,7 @@ module.exports = async (req, res) => {
       : { sent: false, reason: "reply_mode_greeter_only" };
 
   const smartReplyText = isUsableReplyText(openclawReply?.replyText)
-    ? toText(openclawReply?.replyText)
+    ? stripReplyFiller(openclawReply.replyText) || localReplyText
     : localReplyText || getConfiguredLineAutoReply();
   const replyText =
     replyMode === "greeter_only"
