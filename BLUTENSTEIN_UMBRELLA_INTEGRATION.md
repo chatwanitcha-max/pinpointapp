@@ -26,7 +26,7 @@ Static website + Vercel serverless API:
    - Website form posts to /api/lead.
    - /api/lead sends structured payloads to:
      - LINE webhook
-     - LINE push to LINE_TARGET_ID
+     - LINE push to LINE_TARGET_ID / LINE_TARGET_IDS
      - CRM webhook
      - Supabase
      - Airtable
@@ -42,9 +42,9 @@ Static website + Vercel serverless API:
 
 4. LINE OA full detail handoff improvement
    - /api/lead now sends LINE webhook payload with lead, routing, operations, clientMeta, and text summary instead of only { type, lead }.
-   - LINE push text still sends the concise human-readable full lead summary.
-   - /api/ai-chat now pushes an immediate LINE notification when a website chat visitor provides phone, LINE ID, or email. The alert includes Lead ID, name, phone, LINE ID, service need, customer message, page URL, latest AI reply, and team CTA details. Human escalation remains a separate alert path for urgent/high-risk conversations. It sends to `LINE_OA_WEBHOOK_URL` and also uses LINE Push when `LINE_TARGET_ID` is configured.
-   - `/api/line-webhook` supports temporary `LINE_TARGET_DISCOVERY_ENABLED=true`. After a real signed LINE event arrives, Vercel logs contain `LINE_TARGET_DISCOVERY` with the exact `userId`, `groupId`, or `roomId`; copy the desired value into `LINE_TARGET_ID`, redeploy, then disable discovery.
+   - LINE push text still sends the concise human-readable full lead summary. It now supports multiple operator targets via `LINE_TARGET_IDS` while preserving `LINE_TARGET_ID` for the primary owner.
+   - /api/ai-chat now pushes an immediate LINE notification when a website chat visitor provides phone, LINE ID, or email. The alert includes Lead ID, name, phone, LINE ID, service need, customer message, page URL, latest AI reply, and team CTA details. Human escalation remains a separate alert path for urgent/high-risk conversations. It sends to `LINE_OA_WEBHOOK_URL` and also uses LINE Push when `LINE_TARGET_ID` or `LINE_TARGET_IDS` is configured.
+   - `/api/line-webhook` supports temporary `LINE_TARGET_DISCOVERY_ENABLED=true`. After a real signed LINE event arrives, Vercel logs contain `LINE_TARGET_DISCOVERY` with the exact `userId`, `groupId`, or `roomId`; copy the desired value into `LINE_TARGET_ID` or `LINE_TARGET_IDS`, redeploy, then disable discovery.
 
 5. High-quality Blutenstein lead scan
    - Daily local cron script `/root/.hermes/scripts/blutenstein_pinpoint_daily_lead_scan.py` now prefers real search APIs before zero-key fallback: `SERPAPI_API_KEY` / `SERP_API_KEY`, `BRAVE_SEARCH_API_KEY`, `TAVILY_API_KEY`, or `GOOGLE_CSE_API_KEY` + `GOOGLE_CSE_ID`.
@@ -60,6 +60,8 @@ Root cause found:
 
 Changes made:
 - api/lead.js: all outbound channels now run in parallel with bounded timeouts. Slow external channels no longer hang the whole lead response indefinitely.
+- api/_lib/outbound.js and api/_lib/lead-routing.js: outbound fetches now use AbortController timeouts; LINE push supports fan-out to multiple owner/operator targets.
+- api/line-webhook.js: OpenClaw smart reply, CRM, Supabase, Airtable, OpenClaw webhook, and LINE reply are bounded so slow integrations cannot stall LINE webhook responses.
 - api/lead.js: LINE webhook gets complete Blutenstein-style operational details.
 - app.js: AI chat and visitor counter initialize during browser idle time, not on the critical initial render path.
 - app.js: removed duplicate mobile topbar auto-hide listener from init path.
@@ -74,7 +76,7 @@ GitHub/Vercel:
 
 Lead/LINE/CRM/AI:
 - RESEND_API_KEY, LEAD_FROM_EMAIL, LEAD_TO_EMAIL
-- LINE_OA_WEBHOOK_URL, LINE_CHANNEL_ACCESS_TOKEN, LINE_CHANNEL_SECRET, LINE_CHANNEL_ID, LINE_TARGET_ID, LINE_TARGET_DISCOVERY_ENABLED, LINE_AUTO_REPLY_TEXT, LINE_REPLY_MODE
+- LINE_OA_WEBHOOK_URL, LINE_CHANNEL_ACCESS_TOKEN, LINE_CHANNEL_SECRET, LINE_CHANNEL_ID, LINE_TARGET_ID, LINE_TARGET_IDS, LINE_TARGET_DISCOVERY_ENABLED, LINE_AUTO_REPLY_TEXT, LINE_REPLY_MODE
 - CRM_WEBHOOK_URL, CRM_WEBHOOK_TOKEN
 - OPENCLAW_WEBHOOK_URL, OPENCLAW_WEBHOOK_TOKEN, OPENCLAW_ENABLE_LINE, OPENCLAW_LINE_ALLOW_FROM, OPENCLAW_LINE_DM_POLICY, OPENCLAW_LINE_GROUP_POLICY, OPENCLAW_LINE_TEXT_CHUNK_LIMIT
 

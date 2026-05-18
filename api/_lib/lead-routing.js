@@ -1,5 +1,5 @@
 const { toText } = require("./analytics");
-const { postJson } = require("./outbound");
+const { postJson, fetchWithTimeout } = require("./outbound");
 
 const THAI_RE = /[\u0E00-\u0E7F]/u;
 const URGENT_PATTERNS = [
@@ -262,7 +262,7 @@ async function sendAirtableLead(payload) {
 
   const lead = payload.lead || {};
   const routing = payload.routing || {};
-  const response = await fetch(
+  const response = await fetchWithTimeout(
     `https://api.airtable.com/v0/${encodeURIComponent(baseId)}/${encodeURIComponent(table)}`,
     {
       method: "POST",
@@ -293,7 +293,8 @@ async function sendAirtableLead(payload) {
           },
         ],
       }),
-    }
+    },
+    2500
   );
 
   return { sent: response.ok, status: response.status };
@@ -335,7 +336,7 @@ async function sendSupabaseLead(payload) {
     raw_payload: payload,
   };
 
-  const response = await fetch(endpoint, {
+  const response = await fetchWithTimeout(endpoint, {
     method: "POST",
     headers: {
       apikey: serviceRoleKey,
@@ -345,7 +346,7 @@ async function sendSupabaseLead(payload) {
       "Content-Profile": schema,
     },
     body: JSON.stringify(record),
-  });
+  }, 2500);
 
   return { sent: response.ok, status: response.status };
 }

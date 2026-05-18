@@ -124,6 +124,25 @@ function isEnabled(value) {
   return ["1", "true", "yes", "on"].includes(toText(value).toLowerCase());
 }
 
+function withTimeout(promise, label, timeoutMs = 2500) {
+  let timeoutId;
+  const timeout = new Promise((resolve) => {
+    timeoutId = setTimeout(
+      () => resolve({ sent: false, reason: `${label}_timeout`, timeoutMs }),
+      timeoutMs
+    );
+  });
+
+  return Promise.race([
+    Promise.resolve(promise).catch((error) => ({
+      sent: false,
+      reason: `${label}_error`,
+      error: error?.message || String(error),
+    })),
+    timeout,
+  ]).finally(() => clearTimeout(timeoutId));
+}
+
 function getLineTargetIdFromEvent(event = {}) {
   if (event.sourceType === "group") return event.groupId;
   if (event.sourceType === "room") return event.roomId;
@@ -425,7 +444,7 @@ module.exports = async (req, res) => {
 
   const openclawReply =
     replyMode === "smart"
-      ? await requestOpenClawLineReply(intakePayload)
+      ? await withTimeout(requestOpenClawLineReply(intakePayload), "openclaw_reply", 2500)
       : { sent: false, reason: "reply_mode_greeter_only" };
 
   const smartReplyText = isUsableReplyText(openclawReply?.replyText)
@@ -442,13 +461,13 @@ module.exports = async (req, res) => {
   intakePayload.lineReplyText = replyText;
 
   const [crmResult, supabaseResult, airtableResult, openClawResult] = await Promise.all([
-    sendCrmWebhook(intakePayload),
-    sendSupabaseLead(intakePayload),
-    sendAirtableLead(intakePayload),
-    sendOpenClawWebhook(intakePayload),
+    withTimeout(sendCrmWebhook(intakePayload), "crm_webhook", 2500),
+    withTimeout(sendSupabaseLead(intakePayload), "supabase", 2500),
+    withTimeout(sendAirtableLead(intakePayload), "airtable", 2500),
+    withTimeout(sendOpenClawWebhook(intakePayload), "openclaw", 2500),
   ]);
   const autoReplyResult = replyText
-    ? await sendLineReply(primaryEvent.replyToken, replyText)
+    ? await withTimeout(sendLineReply(primaryEvent.replyToken, replyText), "line_reply", 2500)
     : { sent: false, reason: "reply_suppressed" };
 
   return json(res, 200, {

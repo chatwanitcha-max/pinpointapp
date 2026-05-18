@@ -1,16 +1,38 @@
-﻿async function postJson(url, payload, headers = {}) {
+function getOutboundTimeoutMs(defaultMs = 2500) {
+  const value = Number(process.env.OUTBOUND_TIMEOUT_MS || 0);
+  if (!Number.isFinite(value) || value <= 0) return defaultMs;
+  return Math.max(500, Math.min(value, 8000));
+}
+
+async function fetchWithTimeout(url, options = {}, timeoutMs = getOutboundTimeoutMs()) {
+  const controller = typeof AbortController !== "undefined" ? new AbortController() : null;
+  const timeoutId = controller
+    ? setTimeout(() => controller.abort(), timeoutMs)
+    : null;
+
+  try {
+    return await fetch(url, {
+      ...options,
+      signal: controller ? controller.signal : options.signal,
+    });
+  } finally {
+    if (timeoutId) clearTimeout(timeoutId);
+  }
+}
+
+async function postJson(url, payload, headers = {}, timeoutMs = getOutboundTimeoutMs()) {
   if (!url) {
     return { sent: false, reason: "missing_url" };
   }
 
-  const response = await fetch(url, {
+  const response = await fetchWithTimeout(url, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
       ...headers,
     },
     body: JSON.stringify(payload),
-  });
+  }, timeoutMs);
 
   return { sent: response.ok, status: response.status };
 }
@@ -41,7 +63,7 @@ async function sendViaResend({ subject, htmlBody, textBody, to }) {
     return { sent: false, reason: "missing_email_env" };
   }
 
-  const response = await fetch("https://api.resend.com/emails", {
+  const response = await fetchWithTimeout("https://api.resend.com/emails", {
     method: "POST",
     headers: {
       Authorization: `Bearer ${apiKey}`,
@@ -54,7 +76,7 @@ async function sendViaResend({ subject, htmlBody, textBody, to }) {
       html: htmlBody,
       text: textBody,
     }),
-  });
+  }, getOutboundTimeoutMs(2500));
 
   return { sent: response.ok, status: response.status };
 }
@@ -257,31 +279,58 @@ async function sendCustomerAcknowledgementEmail({ lead, routing }) {
   });
 }
 
+function getLineTargetIds() {
+  const raw = [process.env.LINE_TARGET_IDS, process.env.LINE_TARGET_ID]
+    .map((value) => String(value || "").trim())
+    .filter(Boolean)
+    .join(",");
+
+  return [...new Set(raw
+    .split(/[\s,;]+/)
+    .map((value) => value.trim())
+    .filter(Boolean))];
+}
+
 async function sendLinePushText(text) {
   const token = process.env.LINE_CHANNEL_ACCESS_TOKEN;
-  const targetId = process.env.LINE_TARGET_ID;
+  const targetIds = getLineTargetIds();
 
-  if (!token || !targetId) {
+  if (!token || targetIds.length === 0) {
     return { sent: false, reason: "missing_line_push_env" };
   }
 
-  const response = await fetch("https://api.line.me/v2/bot/message/push", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${token}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      to: targetId,
-      messages: [{ type: "text", text }],
-    }),
-  });
+  const results = await Promise.allSettled(targetIds.map(async (targetId) => {
+    const response = await fetchWithTimeout("https://api.line.me/v2/bot/message/push", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        to: targetId,
+        messages: [{ type: "text", text }],
+      }),
+    }, getOutboundTimeoutMs(2500));
 
-  return { sent: response.ok, status: response.status };
+    return { sent: response.ok, status: response.status };
+  }));
+
+  const deliveries = results.map((result) => (
+    result.status === "fulfilled"
+      ? result.value
+      : { sent: false, reason: "line_push_error", error: result.reason?.message || String(result.reason) }
+  ));
+
+  return {
+    sent: deliveries.some((entry) => entry.sent),
+    targetCount: targetIds.length,
+    deliveries,
+  };
 }
 
 module.exports = {
   postJson,
+  fetchWithTimeout,
   isEmailDeliveryEnabled,
   isLeadNotificationEmailEnabled,
   isCustomerAutoReplyEmailEnabled,
