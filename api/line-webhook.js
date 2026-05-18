@@ -150,15 +150,17 @@ function getLineTargetIdFromEvent(event = {}) {
 }
 
 function logLineTargetDiscovery(event = {}, signatureVerified = false) {
-  if (!signatureVerified || !isEnabled(process.env.LINE_TARGET_DISCOVERY_ENABLED)) {
+  if (!isEnabled(process.env.LINE_TARGET_DISCOVERY_ENABLED)) {
     return;
   }
   const targetId = getLineTargetIdFromEvent(event);
   if (!targetId) return;
-  // Intentionally only emitted in server logs after LINE signature verification and explicit env opt-in.
-  // Use this to copy the exact value into Vercel LINE_TARGET_ID, then turn discovery off.
+  // Temporary explicit opt-in discovery mode. Signature status is included so operators
+  // can distinguish fully verified LINE events from deployments where raw body parsing
+  // prevents signature verification.
   console.info("LINE_TARGET_DISCOVERY", JSON.stringify({
     sourceType: event.sourceType,
+    signatureVerified: Boolean(signatureVerified),
     lineTargetId: targetId,
     userId: event.userId || "",
     groupId: event.groupId || "",
