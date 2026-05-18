@@ -44,6 +44,12 @@ Static website + Vercel serverless API:
    - /api/lead now sends LINE webhook payload with lead, routing, operations, clientMeta, and text summary instead of only { type, lead }.
    - LINE push text still sends the concise human-readable full lead summary.
    - /api/ai-chat now pushes an immediate LINE notification when a website chat visitor provides phone, LINE ID, or email. The alert includes Lead ID, name, phone, LINE ID, service need, customer message, page URL, latest AI reply, and team CTA details. Human escalation remains a separate alert path for urgent/high-risk conversations. It sends to `LINE_OA_WEBHOOK_URL` and also uses LINE Push when `LINE_TARGET_ID` is configured.
+   - `/api/line-webhook` supports temporary `LINE_TARGET_DISCOVERY_ENABLED=true`. After a real signed LINE event arrives, Vercel logs contain `LINE_TARGET_DISCOVERY` with the exact `userId`, `groupId`, or `roomId`; copy the desired value into `LINE_TARGET_ID`, redeploy, then disable discovery.
+
+5. High-quality Blutenstein lead scan
+   - Daily local cron script `/root/.hermes/scripts/blutenstein_pinpoint_daily_lead_scan.py` now prefers real search APIs before zero-key fallback: `SERPAPI_API_KEY` / `SERP_API_KEY`, `BRAVE_SEARCH_API_KEY`, `TAVILY_API_KEY`, or `GOOGLE_CSE_API_KEY` + `GOOGLE_CSE_ID`.
+   - Script loads optional secrets from `/root/.hermes/blutenstein_lead_scan.env` first and `/mnt/d/Pinpoint/.env.local.txt` second without printing values.
+   - Delivered notes include provider, score, query, source title, excerpt, recommended action, and public-source compliance. If no trustworthy candidate is found, it sends a scan-status lead instead of inventing data.
 
 ## Performance hardening completed
 
@@ -68,7 +74,7 @@ GitHub/Vercel:
 
 Lead/LINE/CRM/AI:
 - RESEND_API_KEY, LEAD_FROM_EMAIL, LEAD_TO_EMAIL
-- LINE_OA_WEBHOOK_URL, LINE_CHANNEL_ACCESS_TOKEN, LINE_CHANNEL_SECRET, LINE_CHANNEL_ID, LINE_TARGET_ID, LINE_AUTO_REPLY_TEXT, LINE_REPLY_MODE
+- LINE_OA_WEBHOOK_URL, LINE_CHANNEL_ACCESS_TOKEN, LINE_CHANNEL_SECRET, LINE_CHANNEL_ID, LINE_TARGET_ID, LINE_TARGET_DISCOVERY_ENABLED, LINE_AUTO_REPLY_TEXT, LINE_REPLY_MODE
 - CRM_WEBHOOK_URL, CRM_WEBHOOK_TOKEN
 - OPENCLAW_WEBHOOK_URL, OPENCLAW_WEBHOOK_TOKEN, OPENCLAW_ENABLE_LINE, OPENCLAW_LINE_ALLOW_FROM, OPENCLAW_LINE_DM_POLICY, OPENCLAW_LINE_GROUP_POLICY, OPENCLAW_LINE_TEXT_CHUNK_LIMIT
 
