@@ -58,6 +58,7 @@ function auditHtmlPage(payload) {
     /"@type":\s*"ProfessionalService"/i.test(html) ||
     /"@type":\s*"AboutPage"/i.test(html) ||
     /"@type":\s*"CollectionPage"/i.test(html) ||
+    /"@type":\s*"ItemList"/i.test(html) ||
     /"@type":\s*"WebPage"/i.test(html);
 
   return {
