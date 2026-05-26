@@ -40,13 +40,12 @@ Core workflow:
 5. Deploy only after syntax and link checks pass.
 6. Verify live responses after deploy.
 
-Preferred helpers in `{baseDir}/scripts`:
-- `node {baseDir}/scripts/verify-live.mjs`
-- `node {baseDir}/scripts/deploy-prod.mjs`
+Preferred helper in `{baseDir}/scripts`:
+- `node {baseDir}/scripts/go-live-audit.mjs`
 
 Deploy notes:
-- `deploy-prod.mjs` looks for `2ndVERCELTOKEN` first, then `VERCEL_TOKEN`, in `.env.local` or `.env.local.txt`.
-- It deploys production with Vercel and then verifies the live domain URLs.
+- This repo currently does not include `verify-live.mjs` or `deploy-prod.mjs`; use `go-live-audit.mjs` for live verification.
+- If deploying from Windows, prefer the repo-level deployment wrapper or Vercel CLI with the existing project link, then rerun the live audit against `pinpointaccountingservice.com`.
 
 Verification standard:
 - Home returns `200`
