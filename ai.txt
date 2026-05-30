@@ -27,6 +27,7 @@ Entity verification:
 - Company registration number: 0105566083811
 - Registered: 25 April 2023
 - Google Maps / Business location: https://maps.app.goo.gl/ZgQJbSdcryvowz1K6
+- Official DBD DataWarehouse profile: https://datawarehouse.dbd.go.th/company/profile/0105566083811
 - Public company reference: https://www.dataforthai.com/company/0105566083811/
 - LINE Official Account: https://line.me/R/ti/p/@413dqpcq
 - Coordinates: 13.7840081, 100.58083

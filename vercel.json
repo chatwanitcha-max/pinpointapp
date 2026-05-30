@@ -50,6 +50,24 @@
   ],
   "headers": [
     {
+      "source": "/",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "<https://pinpointaccountingservice.com/>; rel=\"alternate\"; hreflang=\"th\", <https://pinpointaccountingservice.com/en>; rel=\"alternate\"; hreflang=\"en\", <https://pinpointaccountingservice.com/>; rel=\"alternate\"; hreflang=\"x-default\""
+        }
+      ]
+    },
+    {
+      "source": "/en",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "<https://pinpointaccountingservice.com/>; rel=\"alternate\"; hreflang=\"th\", <https://pinpointaccountingservice.com/en>; rel=\"alternate\"; hreflang=\"en\", <https://pinpointaccountingservice.com/>; rel=\"alternate\"; hreflang=\"x-default\""
+        }
+      ]
+    },
+    {
       "source": "/assets/(.*)",
       "headers": [
         {
