@@ -12,6 +12,7 @@
 
 ## Core pages
 - Home: https://pinpointaccountingservice.com/
+- English overview: https://pinpointaccountingservice.com/en
 - Bangkok Accounting: https://pinpointaccountingservice.com/bangkok-accounting
 - Services: https://pinpointaccountingservice.com/services
 - About: https://pinpointaccountingservice.com/about

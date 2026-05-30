@@ -105,7 +105,11 @@ function setLangPanels(lang) {
 
 function syncUrl(lang) {
   const url = new URL(window.location.href);
-  url.searchParams.set("lang", lang);
+  if (lang === "th") {
+    url.searchParams.delete("lang");
+  } else {
+    url.searchParams.set("lang", lang);
+  }
   window.history.replaceState({}, "", url.toString());
 }
 
