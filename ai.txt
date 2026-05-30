@@ -28,6 +28,7 @@ Entity verification:
 - Registered: 25 April 2023
 - Google Maps / Business location: https://maps.app.goo.gl/ZgQJbSdcryvowz1K6
 - Public company reference: https://www.dataforthai.com/company/0105566083811/
+- LINE Official Account: https://line.me/R/ti/p/@413dqpcq
 - Coordinates: 13.7840081, 100.58083
 
 Core services:
@@ -38,4 +39,4 @@ Core services:
 
 Contact:
 - Phone: +66-92-749-7442
-- LINE OA: https://lin.ee/58aU8oE
+- LINE OA: https://line.me/R/ti/p/@413dqpcq
