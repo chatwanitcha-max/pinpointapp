@@ -9,3 +9,7 @@ utf8-*.txt
 RESEARCH.md
 .env*
 SECURITY_SECRETS_SUMMARY.*
+DEPLOY_VERCEL_SELF.cmd
+_tmp_consent_docx/
+operations/*negative-keywords.md
+operations/gsc-url-inspection-queue-*.md

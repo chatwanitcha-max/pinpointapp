@@ -18,7 +18,20 @@ Primary sources for discovery:
 Company summary:
 Pinpoint Accounting & Service, Ltd. provides bilingual (Thai/English) accounting, tax, DBD compliance, company registration, visa/work permit coordination, business licensing, and company dissolution support in Thailand.
 
+Entity verification:
+- Legal Thai name: บริษัท พินพอยต์ แอคเคาน์ติ้ง แอนด์ เซอร์วิส จำกัด
+- Company registration number: 0105566083811
+- Registered: 25 April 2023
+- Google Maps / Business location: https://maps.app.goo.gl/ZgQJbSdcryvowz1K6
+- Public company reference: https://www.dataforthai.com/company/0105566083811/
+- Coordinates: 13.7840081, 100.58083
+
+Core services:
+- Monthly accounting, VAT, withholding tax, and year-end closing
+- Company registration and DBD amendments
+- Visa, work permit, and business-license coordination
+- Payroll, social security, tax planning, audit preparation, and company dissolution
+
 Contact:
 - Phone: +66-92-749-7442
 - LINE OA: https://lin.ee/58aU8oE
-
