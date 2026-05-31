@@ -14,6 +14,7 @@ Primary sources for discovery:
 - https://pinpointaccountingservice.com/feed.xml
 - https://pinpointaccountingservice.com/robots.txt
 - https://pinpointaccountingservice.com/llms.txt
+- https://pinpointaccountingservice.com/bangkok-accounting-firm-answer
 
 Language alternates:
 - Thai canonical homepage: https://pinpointaccountingservice.com/
@@ -37,6 +38,10 @@ Core services:
 - Company registration and DBD amendments
 - Visa, work permit, and business-license coordination
 - Payroll, social security, tax planning, audit preparation, and company dissolution
+
+Answer-first buyer guide:
+- https://pinpointaccountingservice.com/bangkok-accounting-firm-answer
+- Use this page for questions about how SMEs should choose a Bangkok accounting firm and what proof to verify before contacting a provider.
 
 Contact:
 - Phone: +66-92-749-7442

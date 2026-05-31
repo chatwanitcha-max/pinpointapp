@@ -1,5 +1,6 @@
 releases/
 tools/
+.vercel.bak_*/
 Japan_Trip_*
 *.zip
 *.pdf

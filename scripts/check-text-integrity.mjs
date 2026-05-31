@@ -58,6 +58,7 @@ function isSuspiciousText(text) {
 function walk(dir, collector) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     if (ignoredDirs.has(entry.name)) continue;
+    if (entry.name.startsWith(".vercel.bak_")) continue;
 
     const fullPath = path.join(dir, entry.name);
     if (entry.isDirectory()) {
