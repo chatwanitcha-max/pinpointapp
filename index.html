@@ -93,16 +93,40 @@
     <link rel="alternate" type="text/plain" title="LLM Summary" href="https://pinpointaccountingservice.com/llms.txt" />
     <link rel="alternate" type="text/plain" title="AI Summary" href="https://pinpointaccountingservice.com/ai.txt" />
     <link rel="alternate" type="application/rss+xml" title="Pinpoint Blog Feed" href="https://pinpointaccountingservice.com/feed.xml" />
-    <link rel="icon" type="image/jpeg" href="/assets/logo-original-large.jpg" />
-    <link rel="preload" as="image" href="/assets/logo-original-large.jpg" />
-    <link rel="preload" as="image" href="/assets/images/hero-workspace.jpg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sarabun:wght@300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="icon" type="image/jpeg" href="/assets/logo-original.jpg" />
+    <link rel="preload" as="image" href="/assets/logo-original-96.webp" type="image/webp" />
+    <style>
+      :root{--pf-bg:#050508;--pf-surface:rgba(255,255,255,.04);--pf-border:rgba(255,255,255,.12);--pf-ink:#f7f7f5;--pf-ink-secondary:rgba(255,255,255,.72);--pf-accent:#d4a853}
+      *{box-sizing:border-box}
+      html,body{margin:0;min-height:100%}
+      body{background:#050508;color:var(--pf-ink);font-family:"Segoe UI",Tahoma,Arial,sans-serif;line-height:1.6}
+      img{display:block;max-width:100%}
+      .topbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 24px;background:rgba(5,5,8,.72);border-bottom:1px solid var(--pf-border);backdrop-filter:blur(14px)}
+      .brand,.nav,.nav-actions,.hero-actions{display:flex;align-items:center;gap:14px}
+      .brand{color:inherit;text-decoration:none}
+      .brand-logo{width:48px;height:48px;border-radius:12px;object-fit:cover}
+      .brand-copy{display:grid;line-height:1.25}
+      .brand-status,.eyebrow,.kicker{color:var(--pf-accent);font-size:.76rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+      .brand-copy strong{font-size:.95rem}
+      .brand-copy span:last-child,.nav a{color:var(--pf-ink-secondary);font-size:.9rem;text-decoration:none}
+      .page-wrap{overflow:hidden}
+      .section{width:min(1180px,calc(100vw - 40px));margin:0 auto;padding:64px 0}
+      .page-hero{min-height:calc(100svh - 72px);padding-top:clamp(28px,4vw,40px)}
+      .hero-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(320px,.9fr);gap:18px;align-items:stretch}
+      .hero-copy{display:grid;gap:16px}
+      .brand-badge{display:inline-flex;width:fit-content;border:1px solid rgba(184,142,73,.34);border-radius:999px;padding:8px 12px;background:rgba(184,142,73,.12);color:#fff;font-size:.86rem;font-weight:800}
+      h1,h2,h3{margin:0;line-height:1.16}
+      .page-hero h1{font-size:clamp(2rem,10vw,3.1rem);line-height:1.08}
+      .hero-copy p{max-width:68ch;margin:0;color:var(--pf-ink-secondary);font-size:1rem;line-height:1.72}
+      .btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;border-radius:999px;padding:11px 16px;text-decoration:none;font-weight:800}
+      .btn-primary,.btn-emphasis{background:var(--pf-accent);color:#050508}
+      .btn-secondary{border:1px solid var(--pf-border);color:var(--pf-ink)}
+      .hero-aside{display:grid;gap:16px;align-content:start;padding:18px;border:1px solid var(--pf-border);border-radius:20px;background:var(--pf-surface)}
+      .hero-image img{width:100%;height:auto;border-radius:16px}
+      @media (max-width:760px){.topbar{padding:12px 18px}.nav,.nav-actions{display:none}.section{width:min(100% - 22px,1180px);padding:44px 0}.hero-grid{grid-template-columns:1fr}.hero-copy{gap:14px}.page-hero h1{font-size:clamp(2rem,11vw,3rem)}.hero-actions{align-items:stretch;flex-direction:column}.brand-copy span:last-child{display:none}}
+    </style>
+    <link rel="preload" href="/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="/styles.min.css" /></noscript>
     <script>
       window.PINPOINT_CONFIG = {
         lineOaUrl: "https://line.me/R/ti/p/@413dqpcq",
@@ -539,7 +563,10 @@
     <a class="skip-link" href="#main-content" data-th="ข้ามไปยังเนื้อหาหลัก" data-en="Skip to main content">ข้ามไปยังเนื้อหาหลัก</a>
     <header class="topbar">
       <a class="brand" href="/">
-        <img class="brand-logo" src="/assets/logo-original-large.jpg" alt="Pinpoint logo" decoding="async" width="980" height="980" fetchpriority="high" />
+        <picture>
+          <source type="image/webp" srcset="/assets/logo-original-96.webp" />
+          <img class="brand-logo" src="/assets/logo-original.jpg" alt="Pinpoint logo" decoding="async" width="96" height="96" fetchpriority="high" />
+        </picture>
         <div class="brand-copy">
           <span class="brand-status" data-th="สำนักงานบัญชีและภาษี" data-en="Accounting and tax support">สำนักงานบัญชีและภาษี</span>
           <strong>Pinpoint Accounting &amp; Service, Ltd.</strong>
@@ -620,9 +647,16 @@
           </div>
           <aside class="hero-aside">
             <div class="hero-image">
-              <img src="/assets/images/hero-workspace.jpg" alt="Pinpoint professional workspace" width="1800" height="2699" decoding="async" loading="eager" fetchpriority="high">
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="/assets/images/hero-workspace-480.webp 480w, /assets/images/hero-workspace-720.webp 720w, /assets/images/hero-workspace-960.webp 960w"
+                  sizes="(max-width: 760px) 92vw, 360px"
+                />
+                <img src="/assets/images/hero-workspace.jpg" alt="Pinpoint professional workspace" width="1800" height="2699" decoding="async" loading="lazy" fetchpriority="low">
+              </picture>
             </div>
-            <h3 data-th="เหตุผลที่ลูกค้าเลือกใช้บริการของเรา" data-en="Why clients choose our team">เหตุผลที่ลูกค้าเลือกใช้บริการของเรา</h3>
+            <h2 class="hero-aside-title" data-th="เหตุผลที่ลูกค้าเลือกใช้บริการของเรา" data-en="Why clients choose our team">เหตุผลที่ลูกค้าเลือกใช้บริการของเรา</h2>
             <ul class="checklist">
               <li data-th="ขอบเขตงานชัดเจน พร้อมเอกสารตัวอย่าง" data-en="Clear scope with practical document examples">ขอบเขตงานชัดเจน พร้อมเอกสารตัวอย่าง</li>
               <li data-th="ประเมินงานเร็วตามสถานการณ์จริง" data-en="Fast assessment based on real business scenarios">ประเมินงานเร็วตามสถานการณ์จริง</li>
@@ -652,7 +686,10 @@
             <div class="biz-track" data-biz-track>
               <article class="biz-slide">
                 <div class="biz-visual">
-                  <img src="/assets/images/biz/construction.jpg" alt="ธุรกิจรับเหมาก่อสร้าง" loading="lazy" decoding="async" width="800" height="600">
+                  <picture>
+                    <source type="image/webp" srcset="/assets/images/biz/construction-360.webp 360w, /assets/images/biz/construction-640.webp 640w" sizes="(max-width: 760px) 85vw, 360px" />
+                    <img src="/assets/images/biz/construction.jpg" alt="ธุรกิจรับเหมาก่อสร้าง" loading="lazy" decoding="async" width="800" height="600">
+                  </picture>
                 </div>
                 <div class="biz-copy">
                   <h3 data-th="ธุรกิจรับเหมาก่อสร้าง" data-en="Construction contractors and project-based businesses">ธุรกิจรับเหมาก่อสร้าง</h3>
@@ -664,7 +701,10 @@
 
               <article class="biz-slide">
                 <div class="biz-visual">
-                  <img src="/assets/images/biz/restaurant.jpg" alt="ร้านอาหาร คาเฟ่ และธุรกิจบริการ" loading="lazy" decoding="async" width="800" height="600">
+                  <picture>
+                    <source type="image/webp" srcset="/assets/images/biz/restaurant-360.webp 360w, /assets/images/biz/restaurant-640.webp 640w" sizes="(max-width: 760px) 85vw, 360px" />
+                    <img src="/assets/images/biz/restaurant.jpg" alt="ร้านอาหาร คาเฟ่ และธุรกิจบริการ" loading="lazy" decoding="async" width="800" height="600">
+                  </picture>
                 </div>
                 <div class="biz-copy">
                   <h3 data-th="ร้านอาหาร คาเฟ่ และธุรกิจบริการ" data-en="Restaurants, cafes, and service businesses">ร้านอาหาร คาเฟ่ และธุรกิจบริการ</h3>
@@ -676,7 +716,10 @@
 
               <article class="biz-slide">
                 <div class="biz-visual">
-                  <img src="/assets/images/biz/ecommerce.jpg" alt="E-commerce และร้านค้าออนไลน์" loading="lazy" decoding="async" width="800" height="600">
+                  <picture>
+                    <source type="image/webp" srcset="/assets/images/biz/ecommerce-360.webp 360w, /assets/images/biz/ecommerce-640.webp 640w" sizes="(max-width: 760px) 85vw, 360px" />
+                    <img src="/assets/images/biz/ecommerce.jpg" alt="E-commerce และร้านค้าออนไลน์" loading="lazy" decoding="async" width="800" height="600">
+                  </picture>
                 </div>
                 <div class="biz-copy">
                   <h3 data-th="E-commerce และร้านค้าออนไลน์" data-en="E-commerce and online stores">E-commerce และร้านค้าออนไลน์</h3>
@@ -688,7 +731,10 @@
 
               <article class="biz-slide">
                 <div class="biz-visual">
-                  <img src="/assets/images/biz/import-export.jpg" alt="นำเข้า-ส่งออก และบริษัทเทรดดิ้ง" loading="lazy" decoding="async" width="800" height="600">
+                  <picture>
+                    <source type="image/webp" srcset="/assets/images/biz/import-export-360.webp 360w, /assets/images/biz/import-export-640.webp 640w" sizes="(max-width: 760px) 85vw, 360px" />
+                    <img src="/assets/images/biz/import-export.jpg" alt="นำเข้า-ส่งออก และบริษัทเทรดดิ้ง" loading="lazy" decoding="async" width="800" height="600">
+                  </picture>
                 </div>
                 <div class="biz-copy">
                   <h3 data-th="นำเข้า-ส่งออก และบริษัทเทรดดิ้ง" data-en="Import-export and trading companies">นำเข้า-ส่งออก และบริษัทเทรดดิ้ง</h3>
@@ -700,7 +746,10 @@
 
               <article class="biz-slide">
                 <div class="biz-visual">
-                  <img src="/assets/images/biz/startup.jpg" alt="Startup และบริษัทเทคโนโลยี" loading="lazy" decoding="async" width="800" height="600">
+                  <picture>
+                    <source type="image/webp" srcset="/assets/images/biz/startup-360.webp 360w, /assets/images/biz/startup-640.webp 640w" sizes="(max-width: 760px) 85vw, 360px" />
+                    <img src="/assets/images/biz/startup.jpg" alt="Startup และบริษัทเทคโนโลยี" loading="lazy" decoding="async" width="800" height="600">
+                  </picture>
                 </div>
                 <div class="biz-copy">
                   <h3 data-th="Startup และบริษัทเทคโนโลยี" data-en="Startups and technology companies">Startup และบริษัทเทคโนโลยี</h3>
@@ -712,7 +761,10 @@
 
               <article class="biz-slide">
                 <div class="biz-visual">
-                  <img src="/assets/images/biz/consulting.jpg" alt="ที่ปรึกษา เอเจนซี และวิชาชีพอิสระ" loading="lazy" decoding="async" width="800" height="600">
+                  <picture>
+                    <source type="image/webp" srcset="/assets/images/biz/consulting-360.webp 360w, /assets/images/biz/consulting-640.webp 640w" sizes="(max-width: 760px) 85vw, 360px" />
+                    <img src="/assets/images/biz/consulting.jpg" alt="ที่ปรึกษา เอเจนซี และวิชาชีพอิสระ" loading="lazy" decoding="async" width="800" height="600">
+                  </picture>
                 </div>
                 <div class="biz-copy">
                   <h3 data-th="ที่ปรึกษา เอเจนซี และวิชาชีพอิสระ" data-en="Consulting firms, agencies, and professional practices">ที่ปรึกษา เอเจนซี และวิชาชีพอิสระ</h3>
@@ -748,7 +800,10 @@
             <div class="service-track" data-service-track>
               <article class="service-card">
                 <div class="service-card-img">
-                  <img src="/assets/images/services/accounting.jpg" alt="บัญชีและภาษี" loading="lazy" decoding="async" width="800" height="500">
+                  <picture>
+                    <source type="image/webp" srcset="/assets/images/services/accounting-320.webp 320w, /assets/images/services/accounting-512.webp 512w" sizes="(max-width: 760px) 78vw, 256px" />
+                    <img src="/assets/images/services/accounting.jpg" alt="บัญชีและภาษี" loading="lazy" decoding="async" width="800" height="500">
+                  </picture>
                 </div>
                 <div class="service-card-body">
                   <span class="chip" data-th="บัญชี + ภาษี" data-en="Accounting + Tax">บัญชี + ภาษี</span>
@@ -764,7 +819,10 @@
 
               <article class="service-card">
                 <div class="service-card-img">
-                  <img src="/assets/images/services/registration.jpg" alt="จดทะเบียนบริษัทและ DBD" loading="lazy" decoding="async" width="800" height="500">
+                  <picture>
+                    <source type="image/webp" srcset="/assets/images/services/registration-320.webp 320w, /assets/images/services/registration-512.webp 512w" sizes="(max-width: 760px) 78vw, 256px" />
+                    <img src="/assets/images/services/registration.jpg" alt="จดทะเบียนบริษัทและ DBD" loading="lazy" decoding="async" width="800" height="500">
+                  </picture>
                 </div>
                 <div class="service-card-body">
                   <span class="chip" data-th="จดทะเบียน + DBD" data-en="Corporate + DBD">จดทะเบียน + DBD</span>
@@ -780,7 +838,10 @@
 
               <article class="service-card">
                 <div class="service-card-img">
-                  <img src="/assets/images/services/visa.jpg" alt="วีซ่าและใบอนุญาต" loading="lazy" decoding="async" width="800" height="500">
+                  <picture>
+                    <source type="image/webp" srcset="/assets/images/services/visa-320.webp 320w, /assets/images/services/visa-512.webp 512w" sizes="(max-width: 760px) 78vw, 256px" />
+                    <img src="/assets/images/services/visa.jpg" alt="วีซ่าและใบอนุญาต" loading="lazy" decoding="async" width="800" height="500">
+                  </picture>
                 </div>
                 <div class="service-card-body">
                   <span class="chip" data-th="วีซ่า + ใบอนุญาต" data-en="Visa + License">วีซ่า + ใบอนุญาต</span>
@@ -1379,8 +1440,8 @@
       <p class="copyright">© <span data-current-year>2026</span> Pinpoint Accounting &amp; Service, Ltd.</p>
     </footer>
 
-    <script src="/tracking.js" defer></script>
-    <script src="/app.js" defer></script>
+    <script src="/tracking.min.js" defer></script>
+    <script src="/app.min.js" defer></script>
   </body>
 </html>
 

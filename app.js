@@ -918,7 +918,7 @@ function initMobileTopbar() {
   toggle.className = "mobile-nav-toggle";
   toggle.setAttribute("aria-controls", navId);
   toggle.setAttribute("aria-expanded", "false");
-  toggle.setAttribute("aria-label", "Toggle navigation");
+  toggle.setAttribute("aria-label", "เมนู / Menu");
   toggle.innerHTML = [
     '<span class="mobile-nav-toggle__label" data-th="เมนู" data-en="Menu">เมนู</span>',
     '<span class="mobile-nav-toggle__icon" aria-hidden="true"><span></span><span></span><span></span></span>'
@@ -1374,15 +1374,18 @@ function init() {
   initMobileTopbar();
   // initMobileTopbar already handles mobile scroll visibility; avoid a second scroll listener.
   bindEvents();
-  bindBusinessSlider();
-  bindServiceSlider();
-  bindRevealElements();
   applyLanguage(resolveLang());
+
+  runWhenBrowserIsIdle(() => {
+    bindBusinessSlider();
+    bindServiceSlider();
+    bindRevealElements();
+  }, 1800);
 
   runWhenBrowserIsIdle(() => {
     initAiChat();
     trackVisitorCounter();
-  });
+  }, 4200);
 }
 
 init();

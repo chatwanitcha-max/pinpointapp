@@ -5,7 +5,8 @@
     googleAdsId: String(baseConfig.googleAdsId || "").trim(),
     googleAdsLeadLabel: String(baseConfig.googleAdsLeadLabel || "").trim(),
     metaPixelId: String(baseConfig.metaPixelId || "").trim(),
-    initialized: false
+    initialized: false,
+    scheduled: false
   };
 
   function getCookie(name) {
@@ -198,7 +199,52 @@
     state.initialized = true;
   }
 
-  initTracking();
+  function runWhenIdle(callback, timeout = 2000) {
+    if (typeof window.requestIdleCallback === "function") {
+      window.requestIdleCallback(callback, { timeout });
+      return;
+    }
+
+    window.setTimeout(callback, Math.min(timeout, 500));
+  }
+
+  function scheduleTracking() {
+    if (state.scheduled) return;
+    state.scheduled = true;
+
+    const interactionEvents = ["pointerdown", "keydown", "scroll", "touchstart"];
+
+    function cleanup() {
+      interactionEvents.forEach((eventName) => {
+        window.removeEventListener(eventName, startFromInteraction);
+      });
+    }
+
+    function startTracking() {
+      cleanup();
+      runWhenIdle(initTracking, 2000);
+    }
+
+    function startFromInteraction() {
+      startTracking();
+    }
+
+    interactionEvents.forEach((eventName) => {
+      window.addEventListener(eventName, startFromInteraction, { once: true, passive: true });
+    });
+
+    const startAfterLoad = () => {
+      window.setTimeout(startTracking, 6500);
+    };
+
+    if (document.readyState === "complete") {
+      startAfterLoad();
+    } else {
+      window.addEventListener("load", startAfterLoad, { once: true });
+    }
+  }
+
+  scheduleTracking();
 
   window.PinpointTracking = {
     collectTrackingPayload,
