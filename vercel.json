@@ -3,6 +3,17 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.pinpointaccountingservice.com"
+        }
+      ],
+      "destination": "https://pinpointaccountingservice.com/:path*",
+      "permanent": true
+    },
+    {
       "source": "/blutenstein-growth-os",
       "destination": "https://blutenstein.com/",
       "permanent": false
