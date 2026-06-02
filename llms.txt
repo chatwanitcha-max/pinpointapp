@@ -9,6 +9,7 @@
   - https://pinpointaccountingservice.com/sitemap.xml
   - https://pinpointaccountingservice.com/feed.xml
   - https://pinpointaccountingservice.com/robots.txt
+  - https://pinpointaccountingservice.com/agents.txt
 
 ## Core pages
 - Home: https://pinpointaccountingservice.com/
@@ -17,6 +18,7 @@
 - Bangkok Accounting Answer Guide: https://pinpointaccountingservice.com/bangkok-accounting-firm-answer
 - Services: https://pinpointaccountingservice.com/services
 - About: https://pinpointaccountingservice.com/about
+- Contact: https://pinpointaccountingservice.com/contact
 - Resources: https://pinpointaccountingservice.com/resources
 - FAQ: https://pinpointaccountingservice.com/faq
 - Blog: https://pinpointaccountingservice.com/blog
@@ -49,6 +51,7 @@
 ## Contact
 - Phone: +66-92-749-7442
 - LINE OA: https://line.me/R/ti/p/@413dqpcq
+- Contact page: https://pinpointaccountingservice.com/contact
 - Address: 294 Soi Yoo Charoen 29, Ratchadaphisek 18 Rd., Sam Sen Nok, Huai Khwang, Bangkok 10310, Thailand
 
 

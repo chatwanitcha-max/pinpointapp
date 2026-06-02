@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Pinpoint Accounting">
+  <rect width="64" height="64" rx="14" fill="#050508"/>
+  <circle cx="32" cy="32" r="25" fill="none" stroke="#d4a853" stroke-width="4"/>
+  <path d="M24 44V18h13c6 0 10 4 10 9.5S43 37 37 37h-6v7h-7zm7-14h5.5c2.3 0 3.7-1 3.7-2.9 0-1.8-1.4-2.8-3.7-2.8H31V30z" fill="#f7f7f5"/>
+</svg>

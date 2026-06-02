@@ -33,6 +33,21 @@ Allow: /
 Disallow: /api/
 Disallow: /thank-you
 
+User-agent: Applebot
+Allow: /
+Disallow: /api/
+Disallow: /thank-you
+
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /api/
+Disallow: /thank-you
+
+User-agent: Perplexity-User
+Allow: /
+Disallow: /api/
+Disallow: /thank-you
+
 User-agent: Bingbot
 Allow: /
 Disallow: /api/
@@ -43,3 +58,4 @@ Sitemap: https://pinpointaccountingservice.com/sitemap.xml
 Sitemap: https://pinpointaccountingservice.com/feed.xml
 # LLM summary: https://pinpointaccountingservice.com/llms.txt
 # AI summary: https://pinpointaccountingservice.com/ai.txt
+# AI agent policy: https://pinpointaccountingservice.com/agents.txt

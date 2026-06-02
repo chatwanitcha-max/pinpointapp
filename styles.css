@@ -555,6 +555,12 @@ p {
   line-height: 1.72;
 }
 
+.hero-copy .byline {
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
 .page-hero .hero-copy h1 {
   font-size: clamp(1.75rem, 3vw + 0.95rem, 2.9rem);
   line-height: 1.08;
@@ -1606,6 +1612,17 @@ tbody tr:last-child td {
 .footer-address {
   font-size: 0.9rem;
   line-height: 1.5;
+}
+
+.footer-profile-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+}
+
+.footer-profile-links a {
+  color: var(--pf-accent, var(--gold));
+  font-weight: 700;
 }
 
 .map-pin-link {

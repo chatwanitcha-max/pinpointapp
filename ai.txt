@@ -14,11 +14,13 @@ Primary sources for discovery:
 - https://pinpointaccountingservice.com/feed.xml
 - https://pinpointaccountingservice.com/robots.txt
 - https://pinpointaccountingservice.com/llms.txt
+- https://pinpointaccountingservice.com/agents.txt
 - https://pinpointaccountingservice.com/bangkok-accounting-firm-answer
 
 Language alternates:
 - Thai canonical homepage: https://pinpointaccountingservice.com/
 - English overview page: https://pinpointaccountingservice.com/en
+- Contact page: https://pinpointaccountingservice.com/contact
 
 Company summary:
 Pinpoint Accounting & Service, Ltd. provides bilingual (Thai/English) accounting, tax, DBD compliance, company registration, visa/work permit coordination, business licensing, and company dissolution support in Thailand.
@@ -46,3 +48,4 @@ Answer-first buyer guide:
 Contact:
 - Phone: +66-92-749-7442
 - LINE OA: https://line.me/R/ti/p/@413dqpcq
+- Contact page: https://pinpointaccountingservice.com/contact
