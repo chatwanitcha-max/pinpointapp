@@ -30,6 +30,311 @@ AI Mark should:
 
 The owner should not need to know terminal commands, runner paths, model names, or bridge internals.
 
+## Simpler AI-Native Direction
+
+The simplest path is not to make AI Mark tightly control one local runner.
+
+AI Mark should become an **Agent Hub**:
+
+- AI Mark web app owns the user experience, approvals, job state, progress, and proof.
+- AI Mark exposes one standard tool contract.
+- GPT, Claude, Codex, and future models connect through adapters.
+- Local connector is optional and only needed when the task requires local files, local browser control, or a private machine.
+
+In other words:
+
+> AI Mark should not ask "How do I run this exact CLI?"
+>
+> AI Mark should ask "Which capable agent can handle this signed job with these tools and this scope?"
+
+### Cloud-First, Local-When-Needed
+
+Most AI Mark work can be cloud-first:
+
+- scan public websites
+- inspect sitemap/robots/llms.txt/schema
+- generate reports
+- create GitHub issues or PRs
+- deploy through Vercel/GitHub integrations
+- capture public browser snapshots
+- rerun scans after deploy
+
+Local connector should be reserved for:
+
+- private local workspaces
+- local-only credentials
+- owner-controlled browser sessions
+- direct Codex/Claude Code work on a local repo
+
+This makes AI Mark usable from any browser immediately, while still allowing deep local work when a paired connector is available.
+
+## Recommended Agent Hub Architecture
+
+```mermaid
+flowchart TB
+  UI["AI Mark Web App"]
+  Hub["AI Mark Agent Hub API"]
+  State["Job State / Progress / Proof Store"]
+  Tools["AI Mark Tool Contract"]
+  OpenAI["OpenAI Adapter"]
+  Claude["Claude Adapter"]
+  Other["Other Model Adapter"]
+  Local["Optional Local Connector"]
+  GitHub["GitHub / Repo"]
+  Vercel["Vercel / Deploy"]
+  Browser["Public Browser Snapshot"]
+
+  UI <--> Hub
+  Hub <--> State
+  Hub <--> Tools
+  Tools <--> OpenAI
+  Tools <--> Claude
+  Tools <--> Other
+  Tools <--> Local
+  Tools <--> GitHub
+  Tools <--> Vercel
+  Tools <--> Browser
+```
+
+### One Tool Contract For Every Model
+
+AI Mark should define tools once:
+
+```json
+[
+  {
+    "name": "scan_site",
+    "description": "Scan approved public website signals and return structured issues."
+  },
+  {
+    "name": "browser_snapshot",
+    "description": "Fetch or render approved public URL and extract title, headings, links, forms, CTAs, and proof."
+  },
+  {
+    "name": "create_patch",
+    "description": "Create a proposed code/content patch for the approved repo scope."
+  },
+  {
+    "name": "apply_patch",
+    "description": "Apply an approved patch in a connected workspace or via GitHub."
+  },
+  {
+    "name": "deploy_preview",
+    "description": "Create a preview deployment and return proof."
+  },
+  {
+    "name": "deploy_production",
+    "description": "Deploy approved changes to production."
+  },
+  {
+    "name": "report_progress",
+    "description": "Stream owner-friendly progress back to AI Mark."
+  },
+  {
+    "name": "request_approval",
+    "description": "Pause for owner approval before high-impact actions."
+  }
+]
+```
+
+Then each model adapter maps that contract to its native format:
+
+- OpenAI: Responses API tools / ChatGPT Apps SDK / MCP.
+- Claude: MCP connector / tool use.
+- Other models: JSON-schema function calling or a thin HTTP adapter.
+
+### Do Not Let Models Free-Chat Without A Contract
+
+AI-to-AI conversation should be structured, not random.
+
+Use typed messages:
+
+```json
+{
+  "session_id": "sess_123",
+  "job_id": "job_123",
+  "sender": "claude",
+  "recipient": "aimark",
+  "type": "tool_request",
+  "tool": "browser_snapshot",
+  "arguments": {
+    "url": "https://pinpointaccountingservice.com/"
+  }
+}
+```
+
+Recommended message types:
+
+- `observation`
+- `plan_proposal`
+- `tool_request`
+- `tool_result`
+- `approval_request`
+- `progress_update`
+- `handoff_request`
+- `final_report`
+
+This prevents model loops and makes progress visible in the web app.
+
+## Interactive Web App Pattern
+
+AI Mark can keep the browser as the main interface and still make GPT/Claude interactive:
+
+1. User types a request in AI Mark.
+2. AI Mark creates a job and starts an agent session.
+3. AI Mark chooses an adapter:
+   - OpenAI for GPT/Codex style work.
+   - Claude for Claude/MCP style work.
+   - Local connector if local repo/browser is required.
+4. The selected agent calls AI Mark tools.
+5. AI Mark streams every tool call and result back to the browser.
+6. The user can approve, stop, redirect, or invite another model.
+7. AI Mark stores final proof.
+
+The browser does not need to run the model. It only needs to show the live session and approvals.
+
+## Multi-Agent Collaboration
+
+AI Mark can support more than one model without making the workflow complex:
+
+- **Primary agent**: owns the task and final answer.
+- **Reviewer agent**: checks risk, missing evidence, hallucinations, and deploy readiness.
+- **Specialist agent**: handles SEO, code, analytics, design, or ads.
+
+Example:
+
+```mermaid
+sequenceDiagram
+  participant Owner
+  participant Aimark
+  participant GPT
+  participant Claude
+  participant Tools
+
+  Owner->>Aimark: "แก้เว็บให้ CTR ดีขึ้น"
+  Aimark->>GPT: Assign primary task
+  GPT->>Tools: scan_site + browser_snapshot
+  Tools-->>GPT: Evidence
+  GPT->>Aimark: Proposed changes
+  Aimark->>Claude: Review proposal
+  Claude-->>Aimark: Risks and improvements
+  Aimark->>Owner: Approval request
+  Owner-->>Aimark: Approve
+  Aimark->>Tools: apply_patch + deploy
+  Tools-->>Aimark: Commit/deploy/proof
+  Aimark-->>Owner: Final report
+```
+
+Keep the owner experience simple:
+
+- "AI Mark กำลังให้ GPT แก้ และให้ Claude ตรวจทาน"
+- "รออนุมัติ deploy"
+- "เสร็จแล้ว พร้อมหลักฐาน"
+
+## Adapter Strategy
+
+### OpenAI Adapter
+
+Use for:
+
+- GPT reasoning
+- function/tool calling
+- ChatGPT App experience
+- Codex-style code work when available
+
+Adapter responsibilities:
+
+- convert AI Mark tools to OpenAI tool schemas
+- stream tool calls/results into AI Mark progress
+- handle model fallback
+- avoid hardcoding model names
+
+### Claude Adapter
+
+Use for:
+
+- Claude tool use
+- Claude MCP connector
+- Claude Code/local workflows when available
+
+Adapter responsibilities:
+
+- expose AI Mark tools as MCP tools
+- enforce approvals and host scope
+- map Claude tool results back into AI Mark job progress
+
+### Generic Model Adapter
+
+Use for:
+
+- Gemini, local LLMs, open-source models, or future providers
+
+Adapter responsibilities:
+
+- support JSON-schema tool calls where possible
+- otherwise use a constrained "plan then tool" loop
+- require strict output validation
+
+## Trigger UX From AI Mark Browser
+
+AI Mark should offer three buttons:
+
+1. **Ask AI**
+   - Cloud-only.
+   - Fastest.
+   - No local connector needed.
+
+2. **Invite Codex / Claude**
+   - Uses paired local connector if local workspace is needed.
+   - If connector is offline, shows "Start connector".
+
+3. **Run With Multiple AIs**
+   - Primary + reviewer flow.
+   - Useful for high-impact deploys.
+
+Recommended UI copy:
+
+- "ทำงานบน Cloud ได้เลย"
+- "ต้องใช้เครื่องนี้เพื่อแก้ไฟล์ local"
+- "เชื่อมต่อ Codex แล้ว"
+- "ให้ Claude ตรวจทานก่อน deploy"
+
+## Practical Implementation Path
+
+### Phase 1: Agent Hub
+
+- Create `POST /api/agent-sessions`.
+- Create `POST /api/agent-sessions/:id/events`.
+- Create `GET /api/agent-sessions/:id/stream` using SSE or WebSocket.
+- Store job state, events, tool calls, results, proof links.
+
+### Phase 2: Tool Contract
+
+- Define AI Mark tools once.
+- Add validation for tool arguments.
+- Add approval gates for risky tools.
+- Add host/workspace scope enforcement.
+
+### Phase 3: Model Adapters
+
+- Add OpenAI adapter.
+- Add Claude adapter.
+- Add generic adapter.
+- Each adapter receives the same job and same tool contract.
+
+### Phase 4: Local Connector As Worker
+
+- Local connector becomes just another worker.
+- It claims jobs only when local capability is needed.
+- It reports capabilities and health.
+- It no longer needs to be the center of every workflow.
+
+### Phase 5: Multi-Agent Review
+
+- Add optional reviewer model.
+- Add stop conditions and budget limits.
+- Add final proof bundle.
+
 ## Problems Found During The Test
 
 ### 1. Path With Spaces Broke Bridge Startup
