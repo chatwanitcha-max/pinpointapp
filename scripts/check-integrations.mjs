@@ -60,10 +60,6 @@ const status = {
     ready: isSet(env.CRM_WEBHOOK_URL),
     missing: ["CRM_WEBHOOK_URL"].filter((key) => !isSet(env[key])),
   },
-  openClaw: {
-    ready: isSet(env.OPENCLAW_WEBHOOK_URL),
-    missing: ["OPENCLAW_WEBHOOK_URL"].filter((key) => !isSet(env[key])),
-  },
   airtable: {
     ready:
       isSet(env.AIRTABLE_API_KEY) &&
