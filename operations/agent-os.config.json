@@ -3,6 +3,19 @@
     "execution": "autonomy-first",
     "codexRole": "primary operator",
     "mission": "Codex should do as much of the website, automation, SEO, lead-routing, reporting, and business-system work as possible without bouncing routine steps back to the user.",
+    "ownerOperatorMode": {
+      "enabled": true,
+      "config": "operations/aimark-owner-operator.config.json",
+      "brief": "operations/aimark-owner-operator-mode.md",
+      "workstreams": [
+        "website_ai_visibility",
+        "lead_follow_up",
+        "inbox_triage",
+        "content_calendar"
+      ],
+      "defaultMode": "assist",
+      "promise": "Keep the website, lead follow-up, inbox triage, and content calendar moving while the owner only approves high-risk decisions."
+    },
     "onlyPauseWhen": [
       "third-party login or session interaction is required",
       "a new credential does not exist yet",

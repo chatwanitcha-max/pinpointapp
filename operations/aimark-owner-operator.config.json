@@ -1,0 +1,281 @@
+{
+  "version": "2026-06-03",
+  "productMode": "owner_operator",
+  "displayName": "AI Mark Owner Operator Mode",
+  "promise": {
+    "th": "AI Mark ช่วยให้เจ้าของพักได้ โดยเว็บ ลีด follow-up inbox และ content ยังเดินต่อ พร้อมหลักฐานและจุดที่ต้องอนุมัติ",
+    "en": "AI Mark lets owners step away while website growth, lead follow-up, inbox triage, and content operations keep moving with proof and owner control."
+  },
+  "defaultMode": "assist",
+  "modes": {
+    "observe": {
+      "canAct": false,
+      "canDraft": true,
+      "requiresApprovalForAllExternalMessages": true
+    },
+    "assist": {
+      "canAct": false,
+      "canDraft": true,
+      "requiresApprovalForAllExternalMessages": true
+    },
+    "operator": {
+      "canAct": true,
+      "canDraft": true,
+      "allowedAutonomousActions": [
+        "public_scan",
+        "internal_alert",
+        "lead_classification",
+        "reply_draft",
+        "follow_up_queue_update",
+        "content_brief",
+        "daily_owner_brief"
+      ],
+      "requiresApprovalForAllExternalMessages": true
+    },
+    "owner_away": {
+      "canAct": true,
+      "canDraft": true,
+      "allowedAutonomousActions": [
+        "public_scan",
+        "internal_alert",
+        "lead_classification",
+        "reply_draft",
+        "safe_acknowledgement_if_prior_relationship",
+        "follow_up_queue_update",
+        "content_brief",
+        "daily_owner_brief"
+      ],
+      "requiresApprovalForSensitiveActions": true
+    }
+  },
+  "approvalGates": [
+    "legal_or_tax_judgment",
+    "pricing_or_discount_commitment",
+    "payment_or_billing_action",
+    "contract_or_signature",
+    "dns_secret_bank_or_credential_change",
+    "production_deploy_above_low_risk",
+    "customer_complaint_or_sensitive_case",
+    "outbound_message_without_prior_relationship"
+  ],
+  "workstreams": [
+    {
+      "id": "website_ai_visibility",
+      "name": "Website + SEO + AI Visibility",
+      "ownerVisibleGoal": "เว็บต้องเปิดได้ อ่านง่ายสำหรับ Google/AI และมี conversion path ไม่เสีย",
+      "cadence": {
+        "daily": [
+          "homepage_status",
+          "priority_pages_status",
+          "robots_sitemap_llms_status",
+          "title_meta_h1_schema_check",
+          "cta_link_check"
+        ],
+        "weekly": [
+          "broken_internal_link_scan",
+          "stale_page_scan",
+          "faq_aeo_gap",
+          "ai_answer_gap",
+          "competitor_entity_notes"
+        ]
+      },
+      "autonomousActions": [
+        "create_scan_summary",
+        "create_issue_list",
+        "patch_obvious_broken_cta_if_repo_access",
+        "prepare_faq_schema_suggestions",
+        "prepare_internal_link_suggestions"
+      ],
+      "proofRequired": [
+        "public_url",
+        "status_code",
+        "snapshot_or_fetch",
+        "changed_files_if_any",
+        "before_after_note"
+      ],
+      "kpis": [
+        "public_scan_score",
+        "broken_cta_count",
+        "broken_link_count",
+        "ai_readable_pages",
+        "answer_first_pages"
+      ]
+    },
+    {
+      "id": "lead_follow_up",
+      "name": "Lead Capture + Follow-Up",
+      "ownerVisibleGoal": "ลีดไม่ตกหล่นและมี next step ภายใน SLA",
+      "leadStates": [
+        "new",
+        "hot",
+        "warm",
+        "cold",
+        "waiting_for_customer",
+        "waiting_for_owner",
+        "booked",
+        "won",
+        "lost",
+        "no_response"
+      ],
+      "sla": {
+        "hotLeadMinutes": 15,
+        "warmLeadHours": 4,
+        "staleLeadFollowUpHours": 24
+      },
+      "classificationSignals": {
+        "hot": [
+          "phone_present",
+          "deadline_present",
+          "urgent_language",
+          "visa_or_work_permit",
+          "tax_deadline",
+          "company_registration_soon"
+        ],
+        "warm": [
+          "service_interest",
+          "missing_phone",
+          "missing_deadline",
+          "missing_documents"
+        ],
+        "cold": [
+          "vague_request",
+          "no_contact_details",
+          "comparison_or_research_only"
+        ]
+      },
+      "autonomousActions": [
+        "deduplicate_lead",
+        "classify_urgency",
+        "route_by_service_type",
+        "draft_first_reply",
+        "create_follow_up_schedule",
+        "summarize_missing_information",
+        "internal_line_or_email_alert"
+      ],
+      "kpis": [
+        "first_response_time",
+        "hot_lead_sla_met",
+        "follow_up_completion_rate",
+        "booked_calls",
+        "stale_leads"
+      ]
+    },
+    {
+      "id": "inbox_triage",
+      "name": "LINE/Email/Customer Inbox",
+      "ownerVisibleGoal": "Inbox ไม่กองค้าง AI Mark triage และ draft ให้ เหลือเฉพาะเรื่องที่ต้องใช้เจ้าของ",
+      "messageClasses": [
+        "new_lead",
+        "active_customer",
+        "document_request",
+        "deadline_risk",
+        "pricing_question",
+        "complaint",
+        "spam",
+        "partner_vendor",
+        "unknown"
+      ],
+      "autonomousActions": [
+        "classify_message",
+        "draft_reply",
+        "extract_contact_details",
+        "detect_missing_documents",
+        "create_task",
+        "summarize_thread",
+        "update_lead_or_customer_status"
+      ],
+      "humanReviewRequired": [
+        "accounting_tax_legal_final_answer",
+        "complaint",
+        "price_negotiation",
+        "deadline_interpretation",
+        "sensitive_documents"
+      ],
+      "kpis": [
+        "untriaged_messages",
+        "average_inbox_age",
+        "draft_acceptance_rate",
+        "escalation_count",
+        "customer_response_sla"
+      ]
+    },
+    {
+      "id": "content_calendar",
+      "name": "Content Calendar",
+      "ownerVisibleGoal": "เปลี่ยนคำถามลูกค้าและ AI answer gaps เป็น content ที่ช่วยปิดการขาย",
+      "inputs": [
+        "google_paa_questions",
+        "ai_answer_gaps",
+        "lead_questions",
+        "line_email_repeated_questions",
+        "search_console_queries",
+        "service_priorities",
+        "seasonal_deadlines",
+        "competitor_entity_gaps"
+      ],
+      "contentStates": [
+        "idea",
+        "brief_ready",
+        "draft_ready",
+        "review_required",
+        "approved",
+        "published",
+        "refresh_needed"
+      ],
+      "autonomousActions": [
+        "cluster_questions",
+        "prepare_brief",
+        "generate_draft",
+        "map_cta",
+        "suggest_internal_links",
+        "prepare_faq_schema",
+        "schedule_refresh"
+      ],
+      "approvalRequired": [
+        "regulatory_claims",
+        "pricing_pages",
+        "brand_positioning_changes",
+        "case_specific_advice"
+      ],
+      "kpis": [
+        "briefs_ready",
+        "articles_published",
+        "pages_refreshed",
+        "internal_links_added",
+        "leads_attributed_to_content",
+        "ai_answer_gap_pages_created"
+      ]
+    }
+  ],
+  "dailyOwnerBrief": {
+    "deliveryTime": "09:00",
+    "timezone": "Asia/Bangkok",
+    "sections": [
+      "website",
+      "leads",
+      "inbox",
+      "content",
+      "needs_owner"
+    ],
+    "maxOwnerActions": 3,
+    "tone": "concise_thai_owner_friendly"
+  },
+  "jobTemplate": {
+    "kind": "owner_operator_daily_loop",
+    "client_url": "https://pinpointaccountingservice.com/",
+    "workstreams": [
+      "website_ai_visibility",
+      "lead_follow_up",
+      "inbox_triage",
+      "content_calendar"
+    ],
+    "mode": "assist",
+    "approval_required": true,
+    "expectedOutputs": [
+      "owner_brief_markdown",
+      "action_queue_json",
+      "approval_queue_json",
+      "proof_bundle_json"
+    ]
+  }
+}
