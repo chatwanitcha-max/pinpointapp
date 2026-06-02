@@ -1,0 +1,1421 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Mark Digital Marketing Agency | ทีม AI บริหารเว็บ ลีด และคอนเทนต์</title>
+  <meta
+    name="description"
+    content="AI Mark Digital Marketing Agency คือห้องทำงาน AI ใน browser สำหรับเจ้าของธุรกิจ ให้ทีม AI ช่วยดูเว็บ SEO AI visibility lead follow-up inbox และ content พร้อม proof และ approval"
+  />
+  <link rel="canonical" href="https://pinpointaccountingservice.com/ai-digital-marketing-agency" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="AI Mark Digital Marketing Agency" />
+  <meta
+    property="og:description"
+    content="เรียกทีม AI มาช่วยบริหารเว็บ ลีด inbox และ content calendar พร้อมหลักฐานและ owner approval"
+  />
+  <meta property="og:url" content="https://pinpointaccountingservice.com/ai-digital-marketing-agency" />
+  <meta property="og:image" content="https://pinpointaccountingservice.com/icon-512.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#111310" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <style>
+    :root {
+      --ink: #171813;
+      --paper: #f7f8f1;
+      --panel: #ffffff;
+      --muted: #62675d;
+      --line: #dce2d2;
+      --teal: #00a88f;
+      --coral: #e85d4f;
+      --amber: #f0aa2f;
+      --green: #74b84f;
+      --violet: #6f63d8;
+      --blue: #2e8fd7;
+      --dark: #111310;
+      --soft: #eef2e7;
+      --radius: 8px;
+      --shadow: 0 18px 50px rgba(20, 25, 16, 0.16);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Inter, "Noto Sans Thai", "Segoe UI", Arial, sans-serif;
+      letter-spacing: 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img,
+    canvas {
+      display: block;
+      max-width: 100%;
+    }
+
+    .site-shell {
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .topbar {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 30;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 18px 28px;
+      color: #f8faef;
+      background: rgba(17, 19, 16, 0.72);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(16px);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      flex: 0 1 auto;
+      min-width: 0;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .brand-mark {
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, rgba(0, 168, 143, 0.98), rgba(116, 184, 79, 0.92) 48%, rgba(240, 170, 47, 0.96));
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.22), 0 10px 24px rgba(0, 0, 0, 0.28);
+    }
+
+    .brand span {
+      white-space: nowrap;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      color: rgba(248, 250, 239, 0.82);
+      font-size: 0.95rem;
+    }
+
+    .nav a {
+      padding: 8px 0;
+    }
+
+    .nav a:hover {
+      color: #fff;
+    }
+
+    .top-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+      min-height: 42px;
+      padding: 0 16px;
+      border-radius: 8px;
+      background: #f3c64d;
+      color: #1b1505;
+      font-weight: 800;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.24);
+    }
+
+    .hero {
+      position: relative;
+      min-height: 88vh;
+      color: #f8faef;
+      isolation: isolate;
+      overflow: hidden;
+      background: #111310;
+    }
+
+    .office-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.95;
+    }
+
+    .hero-shade {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(90deg, rgba(17, 19, 16, 0.9) 0%, rgba(17, 19, 16, 0.58) 44%, rgba(17, 19, 16, 0.18) 100%),
+        linear-gradient(180deg, rgba(17, 19, 16, 0.1) 0%, rgba(17, 19, 16, 0.74) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: min(1180px, calc(100% - 40px));
+      min-height: 88vh;
+      margin: 0 auto;
+      display: grid;
+      align-content: center;
+      padding: 126px 0 92px;
+    }
+
+    .hero-copy {
+      width: min(720px, 100%);
+      overflow-wrap: break-word;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 18px;
+      color: #f7d977;
+      font-size: 0.98rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .pulse-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--teal);
+      box-shadow: 0 0 0 6px rgba(0, 168, 143, 0.16);
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 880px;
+      color: #fffdf4;
+      font-size: 4.25rem;
+      line-height: 1.02;
+      letter-spacing: 0;
+    }
+
+    .hero-subtitle {
+      max-width: 660px;
+      margin: 24px 0 0;
+      color: rgba(248, 250, 239, 0.84);
+      font-size: 1.24rem;
+      line-height: 1.72;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      font-weight: 850;
+      line-height: 1.2;
+    }
+
+    .btn-primary {
+      background: #f3c64d;
+      color: #1d1705;
+      box-shadow: 0 18px 36px rgba(0, 0, 0, 0.26);
+    }
+
+    .btn-secondary {
+      color: #f8faef;
+      border-color: rgba(255, 255, 255, 0.3);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .live-strip {
+      position: absolute;
+      z-index: 3;
+      right: max(24px, calc((100vw - 1180px) / 2));
+      bottom: 26px;
+      width: min(460px, calc(100% - 48px));
+      display: grid;
+      gap: 8px;
+    }
+
+    .live-pill {
+      display: grid;
+      grid-template-columns: 10px 1fr auto;
+      gap: 10px;
+      align-items: center;
+      padding: 10px 12px;
+      border-radius: 8px;
+      color: #f8faef;
+      background: rgba(17, 19, 16, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 12px 34px rgba(0, 0, 0, 0.24);
+    }
+
+    .live-pill i {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--teal);
+    }
+
+    .live-pill:nth-child(2) i {
+      background: var(--amber);
+    }
+
+    .live-pill:nth-child(3) i {
+      background: var(--coral);
+    }
+
+    .live-pill strong {
+      display: block;
+      font-size: 0.93rem;
+      line-height: 1.25;
+    }
+
+    .live-pill span {
+      color: rgba(248, 250, 239, 0.66);
+      font-size: 0.8rem;
+      white-space: nowrap;
+    }
+
+    .section {
+      padding: 84px 0;
+      background: var(--paper);
+    }
+
+    .section.alt {
+      background: #ffffff;
+    }
+
+    .section.dark {
+      color: #f8faef;
+      background: #181814;
+    }
+
+    .wrap {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 1fr minmax(260px, 420px);
+      gap: 36px;
+      align-items: end;
+      margin-bottom: 34px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 2.55rem;
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+
+    .section-head p,
+    .lead {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+
+    .dark .section-head p,
+    .dark .lead {
+      color: rgba(248, 250, 239, 0.72);
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .work-card {
+      min-height: 250px;
+      padding: 20px;
+      border-radius: var(--radius);
+      background: var(--panel);
+      border: 1px solid var(--line);
+      box-shadow: 0 12px 28px rgba(36, 41, 28, 0.08);
+    }
+
+    .work-card b {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      margin-bottom: 24px;
+      border-radius: 8px;
+      color: #fff;
+      background: var(--teal);
+      font-size: 1.05rem;
+    }
+
+    .work-card:nth-child(2) b {
+      background: var(--coral);
+    }
+
+    .work-card:nth-child(3) b {
+      background: var(--amber);
+      color: #191206;
+    }
+
+    .work-card:nth-child(4) b {
+      background: var(--violet);
+    }
+
+    .work-card h3 {
+      margin: 0 0 12px;
+      font-size: 1.25rem;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    .work-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .floor-section {
+      padding: 0;
+      background: #f0f4e9;
+    }
+
+    .floor-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      min-height: 720px;
+    }
+
+    .floor-copy {
+      display: grid;
+      align-content: center;
+      padding: 86px max(40px, calc((100vw - 1180px) / 2)) 86px 40px;
+    }
+
+    .floor-copy-inner {
+      width: min(560px, 100%);
+      margin-left: auto;
+    }
+
+    .floor-copy h2 {
+      margin-bottom: 20px;
+    }
+
+    .floor-copy p {
+      color: var(--muted);
+      line-height: 1.78;
+      font-size: 1.05rem;
+    }
+
+    .floor-canvas-wrap {
+      position: relative;
+      min-height: 720px;
+      background: #111310;
+      overflow: hidden;
+    }
+
+    .mini-office {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .agent-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .agent-row {
+      display: grid;
+      grid-template-columns: 14px 1fr auto;
+      gap: 12px;
+      align-items: center;
+      min-height: 54px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .agent-row i {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--teal);
+    }
+
+    .agent-row:nth-child(2) i {
+      background: var(--coral);
+    }
+
+    .agent-row:nth-child(3) i {
+      background: var(--amber);
+    }
+
+    .agent-row:nth-child(4) i {
+      background: var(--violet);
+    }
+
+    .agent-row strong {
+      display: block;
+      font-size: 1rem;
+    }
+
+    .agent-row small {
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .agent-row span {
+      color: var(--green);
+      font-size: 0.86rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .loop {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .loop-step {
+      min-height: 210px;
+      padding: 22px;
+      border-right: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .loop-step:last-child {
+      border-right: 0;
+    }
+
+    .loop-step span {
+      display: block;
+      color: #f3c64d;
+      font-weight: 900;
+      margin-bottom: 26px;
+    }
+
+    .loop-step h3 {
+      margin: 0 0 10px;
+      color: #fff;
+      font-size: 1.15rem;
+      line-height: 1.25;
+    }
+
+    .loop-step p {
+      margin: 0;
+      color: rgba(248, 250, 239, 0.68);
+      line-height: 1.6;
+    }
+
+    .proof-layout {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .proof-panel {
+      padding: 22px;
+      border-radius: var(--radius);
+      background: #ffffff;
+      border: 1px solid var(--line);
+      box-shadow: 0 12px 28px rgba(36, 41, 28, 0.08);
+    }
+
+    .proof-panel h3 {
+      margin: 0 0 14px;
+      font-size: 1.4rem;
+    }
+
+    .proof-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .proof-list li {
+      display: grid;
+      grid-template-columns: 86px 1fr;
+      gap: 14px;
+      padding: 12px 0;
+      border-top: 1px solid var(--line);
+      line-height: 1.55;
+    }
+
+    .proof-list b {
+      color: var(--teal);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+    }
+
+    .mission-board {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: #161813;
+      color: #f8faef;
+      box-shadow: var(--shadow);
+    }
+
+    .mission-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 18px 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .mission-head strong {
+      font-size: 1.05rem;
+    }
+
+    .mission-head span {
+      color: #f3c64d;
+      font-size: 0.92rem;
+      font-weight: 800;
+    }
+
+    .mission-row {
+      display: grid;
+      grid-template-columns: 110px 1fr 104px;
+      gap: 14px;
+      padding: 16px 20px;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .mission-row:last-child {
+      border-bottom: 0;
+    }
+
+    .mission-row b {
+      color: rgba(248, 250, 239, 0.72);
+      font-size: 0.86rem;
+    }
+
+    .mission-row p {
+      margin: 0;
+      line-height: 1.45;
+    }
+
+    .status {
+      min-height: 30px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      padding: 0 10px;
+      background: rgba(0, 168, 143, 0.18);
+      color: #8ff2d8;
+      font-size: 0.78rem;
+      font-weight: 900;
+      text-align: center;
+    }
+
+    .status.wait {
+      background: rgba(240, 170, 47, 0.17);
+      color: #ffd77a;
+    }
+
+    .status.done {
+      background: rgba(116, 184, 79, 0.18);
+      color: #b8ed91;
+    }
+
+    .plans {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .plan {
+      min-height: 300px;
+      padding: 24px;
+      border-radius: var(--radius);
+      background: #ffffff;
+      border: 1px solid var(--line);
+      box-shadow: 0 12px 28px rgba(36, 41, 28, 0.08);
+    }
+
+    .plan h3 {
+      margin: 0 0 10px;
+      font-size: 1.28rem;
+    }
+
+    .plan p {
+      margin: 0 0 20px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .plan ul {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .plan li {
+      padding-left: 20px;
+      position: relative;
+      line-height: 1.55;
+    }
+
+    .plan li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.7em;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--teal);
+    }
+
+    .final-cta {
+      position: relative;
+      overflow: hidden;
+      padding: 86px 0;
+      color: #f8faef;
+      background: #111310;
+    }
+
+    .final-cta .wrap {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .final-cta h2 {
+      color: #fff;
+      max-width: 820px;
+    }
+
+    .final-cta p {
+      margin: 18px 0 0;
+      max-width: 760px;
+      color: rgba(248, 250, 239, 0.72);
+      line-height: 1.75;
+    }
+
+    .footer {
+      padding: 30px 0;
+      color: #61665d;
+      background: #f7f8f1;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer .wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 980px) {
+      .nav {
+        display: none;
+      }
+
+      h1 {
+        font-size: 3.1rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.08rem;
+      }
+
+      .section-head,
+      .floor-layout,
+      .proof-layout,
+      .final-cta .wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .work-grid,
+      .plans {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .loop {
+        grid-template-columns: 1fr;
+      }
+
+      .loop-step {
+        min-height: 0;
+        border-right: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+      }
+
+      .loop-step:last-child {
+        border-bottom: 0;
+      }
+
+      .floor-copy {
+        padding: 72px 20px;
+      }
+
+      .floor-copy-inner {
+        margin-left: 0;
+      }
+
+      .floor-canvas-wrap {
+        min-height: 520px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .topbar {
+        padding: 14px 16px;
+        gap: 8px;
+      }
+
+      .brand span {
+        max-width: 172px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .top-cta {
+        display: none;
+      }
+
+      .hero,
+      .hero-content {
+        min-height: 86vh;
+      }
+
+      .hero-content {
+        width: min(calc(100% - 28px), 1180px);
+        padding-top: 104px;
+        padding-bottom: 150px;
+      }
+
+      h1 {
+        font-size: 2.35rem;
+        max-width: calc(100vw - 28px);
+        overflow-wrap: anywhere;
+      }
+
+      h2 {
+        font-size: 2rem;
+      }
+
+      .hero-subtitle,
+      .section-head p,
+      .lead {
+        font-size: 1rem;
+        max-width: calc(100vw - 28px);
+        overflow-wrap: anywhere;
+      }
+
+      .live-strip {
+        right: 14px;
+        bottom: 16px;
+        width: calc(100% - 28px);
+      }
+
+      .live-pill {
+        grid-template-columns: 10px 1fr;
+      }
+
+      .live-pill span {
+        display: none;
+      }
+
+      .section {
+        padding: 64px 0;
+      }
+
+      .wrap {
+        width: min(calc(100% - 28px), 1180px);
+      }
+
+      .work-grid,
+      .plans {
+        grid-template-columns: 1fr;
+      }
+
+      .mission-row,
+      .proof-list li {
+        grid-template-columns: 1fr;
+      }
+
+      .mission-row {
+        gap: 8px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "AI Mark Digital Marketing Agency",
+      "url": "https://pinpointaccountingservice.com/ai-digital-marketing-agency",
+      "description": "AI digital marketing agency and operator workspace for website visibility, leads, inbox follow-up, and content operations.",
+      "areaServed": "Thailand",
+      "serviceType": [
+        "AI digital marketing operations",
+        "AI visibility optimization",
+        "Lead follow-up automation",
+        "Content calendar operations"
+      ],
+      "sameAs": [
+        "https://aimark.pages.dev/"
+      ]
+    }
+  </script>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar" aria-label="AI Mark landing navigation">
+      <a class="brand" href="/ai-digital-marketing-agency" aria-label="AI Mark Digital Marketing Agency">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>AI Mark Agency</span>
+      </a>
+      <nav class="nav" aria-label="Sections">
+        <a href="#workstreams">งานที่ดูแล</a>
+        <a href="#living-office">Living Office</a>
+        <a href="#proof">Proof</a>
+        <a href="#plans">แพ็กเกจ</a>
+      </nav>
+      <a class="top-cta" href="https://lin.ee/58aU8oE" target="_blank" rel="noreferrer">คุย LINE</a>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <canvas class="office-canvas" data-office-canvas aria-hidden="true"></canvas>
+        <div class="hero-shade" aria-hidden="true"></div>
+        <div class="hero-content">
+          <div class="hero-copy">
+            <p class="eyebrow"><span class="pulse-dot" aria-hidden="true"></span> AI Digital Marketing Agency</p>
+            <h1 id="hero-title">เปิด browser แล้วเรียกทีม AI มาบริหารการเติบโตให้บริษัท</h1>
+            <p class="hero-subtitle">
+              AI Mark Agency รวมทีม AI สำหรับเว็บ SEO, AI visibility, lead follow-up, inbox และ content calendar
+              ให้ทำงานเป็นระบบ มีเจ้าของอนุมัติเรื่องสำคัญ และมี proof ทุกครั้งที่งานเดินหน้า
+            </p>
+            <div class="hero-actions" aria-label="Primary actions">
+              <a class="btn btn-primary" href="https://lin.ee/58aU8oE" target="_blank" rel="noreferrer">เริ่ม Owner Operator Session</a>
+              <a class="btn btn-secondary" href="#living-office">ดูทีม AI ทำงาน</a>
+            </div>
+          </div>
+        </div>
+        <div class="live-strip" aria-label="Live agent activity">
+          <div class="live-pill">
+            <i aria-hidden="true"></i>
+            <strong>Codex กำลังแก้ conversion path</strong>
+            <span>Build</span>
+          </div>
+          <div class="live-pill">
+            <i aria-hidden="true"></i>
+            <strong>Growth AI พบ idea สำหรับ Work Permit</strong>
+            <span>Idea</span>
+          </div>
+          <div class="live-pill">
+            <i aria-hidden="true"></i>
+            <strong>Owner รออนุมัติข้อความตอบ hot lead</strong>
+            <span>Approval</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="workstreams" class="section alt">
+        <div class="wrap">
+          <div class="section-head">
+            <h2>เอเจนซี่ที่ไม่ได้ส่งแค่ report แต่เดินงานแทนเจ้าของ</h2>
+            <p>
+              เริ่มจาก 4 งานที่เจ้าของธุรกิจหยุดไม่ได้: เว็บต้องไม่พัง ลีดต้องไม่ตกหล่น inbox ต้องไม่กอง
+              และ content ต้องเดินต่อเพื่อให้ Google กับ AI เห็นแบรนด์ชัดขึ้น
+            </p>
+          </div>
+          <div class="work-grid">
+            <article class="work-card">
+              <b>01</b>
+              <h3>Website + AI Visibility</h3>
+              <p>เช็กเว็บจริง CTA, schema, sitemap, llms.txt, answer-first content และ AI crawler signals แล้วเปิดงานแก้เมื่อพบช่องว่าง</p>
+            </article>
+            <article class="work-card">
+              <b>02</b>
+              <h3>Lead Follow-Up</h3>
+              <p>จัด hot/warm/cold lead, ร่างข้อความตอบ, วาง follow-up queue และแจ้ง owner เฉพาะเคสที่ควรรีบปิด</p>
+            </article>
+            <article class="work-card">
+              <b>03</b>
+              <h3>LINE + Email Inbox</h3>
+              <p>triage ข้อความลูกค้า แยก document request, pricing, deadline risk, complaint และเตรียม draft แบบคนจริง</p>
+            </article>
+            <article class="work-card">
+              <b>04</b>
+              <h3>Content Calendar</h3>
+              <p>เปลี่ยนคำถามลูกค้า, AI answer gaps และ search intent เป็น brief, draft, FAQ schema และ internal link plan</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="living-office" class="floor-section" aria-labelledby="office-title">
+        <div class="floor-layout">
+          <div class="floor-copy">
+            <div class="floor-copy-inner">
+              <h2 id="office-title">Living Company View</h2>
+              <p>
+                หน้าเว็บไม่ควรรู้สึกเหมือน analytics dashboard อีกอัน แต่ควรเหมือนห้องทำงานโล่ง ๆ
+                ที่เห็นทีม AI กำลังรับผิดชอบงาน มี idea เกิดขึ้นบนหัว มี proof สว่างขึ้น และมี approval gate ให้เจ้าของคุมจุดเสี่ยง
+              </p>
+              <div class="agent-list" aria-label="AI agent roles">
+                <div class="agent-row">
+                  <i aria-hidden="true"></i>
+                  <div><strong>Codex</strong><small>Build, patch, deploy proof</small></div>
+                  <span>active</span>
+                </div>
+                <div class="agent-row">
+                  <i aria-hidden="true"></i>
+                  <div><strong>Growth AI</strong><small>SEO, AEO, content ideas</small></div>
+                  <span>thinking</span>
+                </div>
+                <div class="agent-row">
+                  <i aria-hidden="true"></i>
+                  <div><strong>Inbox AI</strong><small>LINE/email triage and drafts</small></div>
+                  <span>drafting</span>
+                </div>
+                <div class="agent-row">
+                  <i aria-hidden="true"></i>
+                  <div><strong>Reviewer AI</strong><small>risk, approval, quality</small></div>
+                  <span>reviewing</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="floor-canvas-wrap">
+            <canvas class="mini-office" data-mini-office aria-label="Animated AI office map"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <section class="section dark">
+        <div class="wrap">
+          <div class="section-head">
+            <h2>AI Mark runs the business loop</h2>
+            <p>
+              Hermes เก่งเรื่องรัน agent แต่ AI Mark Agency ต้องคุมวงจรธุรกิจ:
+              เห็นปัญหา จัดลำดับ ลงมือ พิสูจน์ และส่งเรื่องเสี่ยงกลับให้เจ้าของตัดสินใจ
+            </p>
+          </div>
+          <div class="loop" aria-label="Business operating loop">
+            <div class="loop-step">
+              <span>01</span>
+              <h3>Observe</h3>
+              <p>ดูเว็บ ลีด inbox content และ AI visibility signals จากข้อมูลจริง</p>
+            </div>
+            <div class="loop-step">
+              <span>02</span>
+              <h3>Decide</h3>
+              <p>แยกงานที่ทำได้ทันที งานที่ต้อง draft และงานที่ต้อง owner approval</p>
+            </div>
+            <div class="loop-step">
+              <span>03</span>
+              <h3>Act</h3>
+              <p>ให้ agent ที่เหมาะรับงาน เช่น Codex แก้เว็บ, Inbox AI ร่างตอบ, Growth AI ทำ brief</p>
+            </div>
+            <div class="loop-step">
+              <span>04</span>
+              <h3>Prove</h3>
+              <p>เก็บ proof เป็น URL, snapshot, commit, deploy, before/after และ message log</p>
+            </div>
+            <div class="loop-step">
+              <span>05</span>
+              <h3>Learn</h3>
+              <p>สรุปผลเป็น next experiment เพื่อให้บริษัทเดินดีขึ้นทุกสัปดาห์</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="proof" class="section">
+        <div class="wrap">
+          <div class="section-head">
+            <h2>Proof-first agency</h2>
+            <p>
+              เจ้าของไม่ควรต้องเชื่อคำว่า "เสร็จแล้ว" เฉย ๆ งานทุกชิ้นต้องมีหลักฐานว่าเกิดอะไรขึ้น
+              ใครทำ เพื่ออะไร และผลสดบนเว็บเป็นอย่างไร
+            </p>
+          </div>
+          <div class="proof-layout">
+            <div class="proof-panel">
+              <h3>สิ่งที่เจ้าของได้รับทุกวัน</h3>
+              <ul class="proof-list">
+                <li><b>Brief</b><span>วันนี้ AI ทำอะไรแล้ว และมีอะไรต้องให้เจ้าของอนุมัติ</span></li>
+                <li><b>Queue</b><span>ลีดที่ต้อง follow-up, draft ที่รอ approve, content ที่พร้อมทำต่อ</span></li>
+                <li><b>Proof</b><span>snapshot, live URL, commit, deploy, scan result และ before/after note</span></li>
+                <li><b>Next</b><span>experiment ถัดไปที่น่าทำเพื่อเพิ่ม lead, CTR หรือ AI visibility</span></li>
+              </ul>
+            </div>
+            <div class="mission-board" aria-label="Example mission timeline">
+              <div class="mission-head">
+                <strong>Mission: Owner Away Mode</strong>
+                <span>Live board</span>
+              </div>
+              <div class="mission-row">
+                <b>Website</b>
+                <p>ตรวจ CTA และ AI-readable signals บนหน้า priority</p>
+                <span class="status done">proved</span>
+              </div>
+              <div class="mission-row">
+                <b>Lead</b>
+                <p>ร่างข้อความตอบ hot lead พร้อม missing-information checklist</p>
+                <span class="status wait">approval</span>
+              </div>
+              <div class="mission-row">
+                <b>Inbox</b>
+                <p>แยก 6 ข้อความ LINE/email และ flag deadline-risk case</p>
+                <span class="status">triaged</span>
+              </div>
+              <div class="mission-row">
+                <b>Content</b>
+                <p>สร้าง brief จากคำถามลูกค้าและ AI answer gap</p>
+                <span class="status done">ready</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="plans" class="section alt">
+        <div class="wrap">
+          <div class="section-head">
+            <h2>ขายเป็น agency ก่อน แล้วค่อยโตเป็น OS</h2>
+            <p>
+              เริ่มแบบ service-led ให้เห็นผลเร็ว: ทีม AI ทำงานให้จริง มี owner approval และ proof.
+              เมื่อ workflow ซ้ำจนชัด ค่อย productize เป็น AI Mark OS
+            </p>
+          </div>
+          <div class="plans">
+            <article class="plan">
+              <h3>AI Visibility Sprint</h3>
+              <p>สำหรับธุรกิจที่อยากให้เว็บและแบรนด์อ่านง่ายขึ้นสำหรับ Google และ AI answer engines</p>
+              <ul>
+                <li>public scan + bot access check</li>
+                <li>answer-first page recommendations</li>
+                <li>schema, sitemap, llms.txt review</li>
+                <li>proof report with next fixes</li>
+              </ul>
+            </article>
+            <article class="plan">
+              <h3>Owner Operator</h3>
+              <p>สำหรับเจ้าของที่อยากให้ lead, inbox และ content เดินต่อโดยไม่ต้องตามเองทุกวัน</p>
+              <ul>
+                <li>daily owner brief</li>
+                <li>lead classification + follow-up drafts</li>
+                <li>LINE/email triage</li>
+                <li>content calendar from real questions</li>
+              </ul>
+            </article>
+            <article class="plan">
+              <h3>Living Office Build</h3>
+              <p>สำหรับทีมที่อยากมี AI company room ของตัวเอง พร้อม agent roles, proof log และ approval gates</p>
+              <ul>
+                <li>agent session board</li>
+                <li>Codex/GPT/Claude adapter plan</li>
+                <li>proof ledger and workflow policy</li>
+                <li>prototype to production roadmap</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="final-cta">
+        <div class="wrap">
+          <div>
+            <h2>ให้ AI Mark Agency เริ่มจากงานที่หยุดไม่ได้ก่อน</h2>
+            <p>
+              เว็บต้องไม่เสีย ลีดต้องไม่ตกหล่น inbox ต้องถูกตอบ และ content ต้องเดินต่อ.
+              เริ่มจาก owner operator session หนึ่งรอบ แล้วให้ proof เป็นตัวตัดสิน
+            </p>
+          </div>
+          <a class="btn btn-primary" href="https://lin.ee/58aU8oE" target="_blank" rel="noreferrer">คุยเรื่อง AI Agency</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <span>AI Mark Agency concept by Pinpoint operator experiments</span>
+        <span><a href="/">Pinpoint Accounting & Service</a> · <a href="https://aimark.pages.dev/" target="_blank" rel="noreferrer">AI Mark</a></span>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const palette = {
+      teal: "#00a88f",
+      coral: "#e85d4f",
+      amber: "#f0aa2f",
+      green: "#74b84f",
+      violet: "#6f63d8",
+      blue: "#2e8fd7",
+      paper: "#f8faef"
+    };
+
+    function setupCanvas(canvas, renderer) {
+      const ctx = canvas.getContext("2d");
+      let width = 0;
+      let height = 0;
+      let ratio = 1;
+      let frame = 0;
+
+      function resize() {
+        const rect = canvas.getBoundingClientRect();
+        ratio = Math.min(window.devicePixelRatio || 1, 2);
+        width = Math.max(1, Math.floor(rect.width));
+        height = Math.max(1, Math.floor(rect.height));
+        canvas.width = Math.floor(width * ratio);
+        canvas.height = Math.floor(height * ratio);
+        ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+      }
+
+      function tick(time) {
+        frame += 1;
+        renderer(ctx, width, height, time || 0, frame);
+        window.requestAnimationFrame(tick);
+      }
+
+      resize();
+      window.addEventListener("resize", resize, { passive: true });
+      window.requestAnimationFrame(tick);
+    }
+
+    function drawGrid(ctx, width, height, alpha) {
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      ctx.strokeStyle = "#ffffff";
+      ctx.lineWidth = 1;
+      const gap = Math.max(42, Math.floor(width / 22));
+      for (let x = -gap; x < width + gap; x += gap) {
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x + height * 0.38, height);
+        ctx.stroke();
+      }
+      for (let y = height * 0.18; y < height + gap; y += gap) {
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(width, y - width * 0.18);
+        ctx.stroke();
+      }
+      ctx.restore();
+    }
+
+    function roundRect(ctx, x, y, w, h, r) {
+      const radius = Math.min(r, w / 2, h / 2);
+      ctx.beginPath();
+      ctx.moveTo(x + radius, y);
+      ctx.arcTo(x + w, y, x + w, y + h, radius);
+      ctx.arcTo(x + w, y + h, x, y + h, radius);
+      ctx.arcTo(x, y + h, x, y, radius);
+      ctx.arcTo(x, y, x + w, y, radius);
+      ctx.closePath();
+    }
+
+    function drawAgent(ctx, x, y, color, label, focus, phase) {
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.shadowColor = color;
+      ctx.shadowBlur = 22;
+      ctx.fillStyle = color;
+      ctx.beginPath();
+      ctx.arc(0, 0, 13, 0, Math.PI * 2);
+      ctx.fill();
+
+      ctx.shadowBlur = 0;
+      ctx.strokeStyle = "rgba(255,255,255,0.92)";
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.arc(0, 0, 18 + Math.sin(phase) * 2, 0, Math.PI * 2);
+      ctx.stroke();
+
+      const bubbleW = Math.max(150, Math.min(210, label.length * 9 + 34));
+      roundRect(ctx, -bubbleW / 2, -70, bubbleW, 44, 8);
+      ctx.fillStyle = "rgba(17,19,16,0.82)";
+      ctx.fill();
+      ctx.strokeStyle = "rgba(255,255,255,0.16)";
+      ctx.stroke();
+      ctx.fillStyle = "#fffdf4";
+      ctx.font = "800 12px Inter, Arial";
+      ctx.textAlign = "center";
+      ctx.fillText(label, 0, -52);
+      ctx.fillStyle = "rgba(248,250,239,0.66)";
+      ctx.font = "11px Inter, Arial";
+      ctx.fillText(focus, 0, -36);
+      ctx.restore();
+    }
+
+    function heroRenderer(ctx, width, height, time) {
+      const t = time * 0.001;
+      ctx.clearRect(0, 0, width, height);
+      ctx.fillStyle = "#111310";
+      ctx.fillRect(0, 0, width, height);
+      drawGrid(ctx, width, height, 0.055);
+
+      const stations = [
+        { x: width * 0.68, y: height * 0.27, w: 170, h: 82, c: palette.teal, text: "Website" },
+        { x: width * 0.78, y: height * 0.49, w: 190, h: 92, c: palette.coral, text: "Leads" },
+        { x: width * 0.58, y: height * 0.62, w: 180, h: 86, c: palette.amber, text: "Inbox" },
+        { x: width * 0.84, y: height * 0.72, w: 160, h: 82, c: palette.violet, text: "Proof" }
+      ];
+
+      stations.forEach((s, index) => {
+        ctx.save();
+        ctx.globalAlpha = 0.92;
+        roundRect(ctx, s.x - s.w / 2, s.y - s.h / 2, s.w, s.h, 8);
+        ctx.fillStyle = "rgba(255,255,255,0.07)";
+        ctx.fill();
+        ctx.strokeStyle = s.c;
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+        ctx.fillStyle = "rgba(248,250,239,0.78)";
+        ctx.font = "800 13px Inter, Arial";
+        ctx.textAlign = "center";
+        ctx.fillText(s.text, s.x, s.y + 4);
+        ctx.globalAlpha = 0.28 + Math.sin(t * 2 + index) * 0.08;
+        ctx.fillStyle = s.c;
+        ctx.fillRect(s.x - s.w / 2 + 12, s.y + s.h / 2 - 16, s.w - 24, 4);
+        ctx.restore();
+      });
+
+      const agents = [
+        { color: palette.teal, label: "Codex", focus: "Fix CTA", ox: 0.62, oy: 0.38, rx: 70, ry: 45, speed: 0.9 },
+        { color: palette.coral, label: "Inbox AI", focus: "Draft reply", ox: 0.78, oy: 0.35, rx: 60, ry: 52, speed: 1.05 },
+        { color: palette.amber, label: "Growth AI", focus: "New idea", ox: 0.72, oy: 0.65, rx: 78, ry: 50, speed: 0.72 },
+        { color: palette.violet, label: "Reviewer", focus: "Approval", ox: 0.86, oy: 0.56, rx: 54, ry: 62, speed: 0.84 }
+      ];
+
+      agents.forEach((a, index) => {
+        const phase = t * a.speed + index * 1.8;
+        const x = width * a.ox + Math.cos(phase) * a.rx;
+        const y = height * a.oy + Math.sin(phase * 1.15) * a.ry;
+        drawAgent(ctx, x, y, a.color, a.label, a.focus, phase);
+      });
+
+      for (let i = 0; i < 24; i += 1) {
+        const x = width * (0.52 + ((i * 73) % 45) / 100);
+        const y = height * (0.18 + ((i * 41) % 64) / 100);
+        const a = 0.25 + Math.sin(t * 2.2 + i) * 0.2;
+        ctx.save();
+        ctx.globalAlpha = Math.max(0.04, a);
+        ctx.fillStyle = [palette.teal, palette.amber, palette.coral, palette.green][i % 4];
+        ctx.beginPath();
+        ctx.arc(x + Math.sin(t + i) * 12, y + Math.cos(t * 0.8 + i) * 10, 2.8, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      }
+    }
+
+    function miniOfficeRenderer(ctx, width, height, time) {
+      const t = time * 0.001;
+      ctx.clearRect(0, 0, width, height);
+      ctx.fillStyle = "#111310";
+      ctx.fillRect(0, 0, width, height);
+      drawGrid(ctx, width, height, 0.08);
+
+      const cx = width * 0.5;
+      const cy = height * 0.52;
+      ctx.save();
+      ctx.strokeStyle = "rgba(255,255,255,0.16)";
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.ellipse(cx, cy, width * 0.34, height * 0.26, -0.18, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.restore();
+
+      const tasks = [
+        { x: 0.28, y: 0.28, c: palette.teal, label: "scan" },
+        { x: 0.72, y: 0.30, c: palette.coral, label: "lead" },
+        { x: 0.34, y: 0.72, c: palette.amber, label: "idea" },
+        { x: 0.72, y: 0.70, c: palette.violet, label: "proof" },
+        { x: 0.50, y: 0.50, c: palette.green, label: "owner" }
+      ];
+
+      tasks.forEach((task, index) => {
+        const x = width * task.x;
+        const y = height * task.y;
+        roundRect(ctx, x - 54, y - 30, 108, 60, 8);
+        ctx.fillStyle = "rgba(255,255,255,0.08)";
+        ctx.fill();
+        ctx.strokeStyle = task.c;
+        ctx.stroke();
+        ctx.fillStyle = "#fffdf4";
+        ctx.font = "800 12px Inter, Arial";
+        ctx.textAlign = "center";
+        ctx.fillText(task.label, x, y + 4);
+        ctx.globalAlpha = 0.2 + Math.sin(t * 2 + index) * 0.08;
+        ctx.fillStyle = task.c;
+        ctx.beginPath();
+        ctx.arc(x + 40, y - 22, 4, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.globalAlpha = 1;
+      });
+
+      const agents = [
+        { color: palette.teal, label: "Codex", focus: "patch", ox: 0.5, oy: 0.5, rx: 160, ry: 120, speed: 0.82 },
+        { color: palette.coral, label: "Inbox", focus: "triage", ox: 0.5, oy: 0.5, rx: 130, ry: 98, speed: 1.05 },
+        { color: palette.amber, label: "Growth", focus: "brief", ox: 0.5, oy: 0.5, rx: 104, ry: 144, speed: 0.7 },
+        { color: palette.violet, label: "Review", focus: "risk", ox: 0.5, oy: 0.5, rx: 184, ry: 88, speed: 0.6 }
+      ];
+
+      agents.forEach((a, index) => {
+        const phase = t * a.speed + index * 1.45;
+        const x = width * a.ox + Math.cos(phase) * Math.min(a.rx, width * 0.32);
+        const y = height * a.oy + Math.sin(phase) * Math.min(a.ry, height * 0.22);
+        drawAgent(ctx, x, y, a.color, a.label, a.focus, phase);
+      });
+    }
+
+    document.querySelectorAll("[data-office-canvas]").forEach((canvas) => {
+      setupCanvas(canvas, heroRenderer);
+    });
+    document.querySelectorAll("[data-mini-office]").forEach((canvas) => {
+      setupCanvas(canvas, miniOfficeRenderer);
+    });
+  </script>
+</body>
+</html>
