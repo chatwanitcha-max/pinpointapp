@@ -241,16 +241,6 @@ async function sendCrmWebhook(payload) {
   );
 }
 
-async function sendOpenClawWebhook(payload) {
-  const url = process.env.OPENCLAW_WEBHOOK_URL;
-  const token = process.env.OPENCLAW_WEBHOOK_TOKEN;
-  return postJson(
-    url,
-    payload,
-    token ? { "X-OpenClaw-Token": token } : {}
-  );
-}
-
 async function sendAirtableLead(payload) {
   const apiKey = process.env.AIRTABLE_API_KEY;
   const baseId = process.env.AIRTABLE_BASE_ID;
@@ -357,7 +347,6 @@ module.exports = {
   buildRouting,
   buildLeadPayload,
   sendCrmWebhook,
-  sendOpenClawWebhook,
   sendAirtableLead,
   sendSupabaseLead,
 };

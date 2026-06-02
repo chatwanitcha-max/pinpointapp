@@ -10,7 +10,6 @@ const {
   buildRouting,
   buildLeadPayload,
   sendCrmWebhook,
-  sendOpenClawWebhook,
   sendAirtableLead,
   sendSupabaseLead,
 } = require('./_lib/lead-routing');
@@ -395,7 +394,6 @@ module.exports = async (req, res) => {
     crmResult,
     supabaseResult,
     airtableResult,
-    openClawResult,
     ga4Result,
     metaResult,
   ] = await Promise.all([
@@ -410,7 +408,6 @@ module.exports = async (req, res) => {
     withTimeout(sendCrmWebhook(intakePayload), 'crm_webhook', 2500),
     withTimeout(sendSupabaseLead(intakePayload), 'supabase', 2500),
     withTimeout(sendAirtableLead(intakePayload), 'airtable', 2500),
-    withTimeout(sendOpenClawWebhook(intakePayload), 'openclaw', 2500),
     withTimeout(sendGa4Event({
       name: 'generate_lead',
       clientId: clientMeta.clientId,
@@ -449,7 +446,6 @@ module.exports = async (req, res) => {
       crmWebhook: crmResult,
       supabase: supabaseResult,
       airtable: airtableResult,
-      openclaw: openClawResult,
     },
     conversions: {
       ga4: ga4Result,

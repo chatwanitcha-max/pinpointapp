@@ -889,50 +889,12 @@ function buildLineReply({
   return appendMemoryLead(language, memorySummary, serviceBucket, toText(intent?.key), text, baseReply);
 }
 
-async function requestOpenClawLineReply(payload) {
-  const url = process.env.OPENCLAW_WEBHOOK_URL;
-  const token = process.env.OPENCLAW_WEBHOOK_TOKEN;
-
-  if (!url) {
-    return { sent: false, reason: "missing_openclaw_url" };
-  }
-
-  const response = await fetch(url, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      ...(token ? { "X-OpenClaw-Token": token } : {}),
-    },
-    body: JSON.stringify({
-      mode: "line_auto_reply",
-      payload,
-    }),
-  });
-
-  let body = null;
-  try {
-    body = await response.json();
-  } catch {
-    body = null;
-  }
-
-  return {
-    sent: response.ok,
-    status: response.status,
-    replyText: toText(body?.replyText),
-    confidence: toText(body?.confidence),
-    shouldClarify: Boolean(body?.shouldClarify),
-    evidenceUsed: Array.isArray(body?.evidenceUsed) ? body.evidenceUsed : [],
-  };
-}
-
 module.exports = {
   detectLineLanguage,
   detectLineIntent,
   detectAccountingIntentDetail,
   resolveServiceBucket,
   buildLineReply,
-  requestOpenClawLineReply,
   detectSpecificServiceBucket,
   detectCaseFlavor,
 };

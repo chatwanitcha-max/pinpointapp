@@ -9,7 +9,6 @@ const {
   detectSpecificServiceBucket,
   detectCaseFlavor,
   buildLineReply,
-  requestOpenClawLineReply,
 } = require("./_lib/line-intelligence");
 const { searchKnowledgeBase } = require("./_lib/knowledge-base");
 const { getLineConversationMemory } = require("./_lib/conversation-memory");
@@ -31,7 +30,6 @@ const {
   buildRouting,
   buildLeadPayload,
   sendCrmWebhook,
-  sendOpenClawWebhook,
   sendAirtableLead,
   sendSupabaseLead,
 } = require("./_lib/lead-routing");
@@ -444,14 +442,7 @@ module.exports = async (req, res) => {
   const replyMode = getLineReplyMode();
   intakePayload.lineReplyMode = replyMode;
 
-  const openclawReply =
-    replyMode === "smart"
-      ? await withTimeout(requestOpenClawLineReply(intakePayload), "openclaw_reply", 2500)
-      : { sent: false, reason: "reply_mode_greeter_only" };
-
-  const smartReplyText = isUsableReplyText(openclawReply?.replyText)
-    ? stripReplyFiller(openclawReply.replyText) || localReplyText
-    : localReplyText || getConfiguredLineAutoReply();
+  const smartReplyText = localReplyText || getConfiguredLineAutoReply();
   const replyText =
     replyMode === "greeter_only"
       ? shouldSendGreeterReply({
@@ -462,11 +453,10 @@ module.exports = async (req, res) => {
       : smartReplyText;
   intakePayload.lineReplyText = replyText;
 
-  const [crmResult, supabaseResult, airtableResult, openClawResult] = await Promise.all([
+  const [crmResult, supabaseResult, airtableResult] = await Promise.all([
     withTimeout(sendCrmWebhook(intakePayload), "crm_webhook", 2500),
     withTimeout(sendSupabaseLead(intakePayload), "supabase", 2500),
     withTimeout(sendAirtableLead(intakePayload), "airtable", 2500),
-    withTimeout(sendOpenClawWebhook(intakePayload), "openclaw", 2500),
   ]);
   const autoReplyResult = replyText
     ? await withTimeout(sendLineReply(primaryEvent.replyToken, replyText), "line_reply", 2500)
@@ -486,8 +476,6 @@ module.exports = async (req, res) => {
       crmWebhook: crmResult,
       supabase: supabaseResult,
       airtable: airtableResult,
-      openclaw: openClawResult,
-      openclawReply,
       lineReply: autoReplyResult,
     },
     replyPreview: replyText,

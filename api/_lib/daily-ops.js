@@ -2,7 +2,7 @@ const fs = require("node:fs");
 const path = require("node:path");
 
 const { isEmailDeliveryEnabled, sendEmailViaResend, sendLinePushText } = require("./outbound");
-const { sendCrmWebhook, sendOpenClawWebhook } = require("./lead-routing");
+const { sendCrmWebhook } = require("./lead-routing");
 
 const repoRoot = path.resolve(process.cwd());
 const configPath = path.join(repoRoot, "operations", "agent-os.config.json");
@@ -25,7 +25,6 @@ function buildReadiness() {
       isSet(process.env.LEAD_TO_EMAIL),
     lineOa: isSet(process.env.LINE_CHANNEL_ACCESS_TOKEN) && isSet(process.env.LINE_CHANNEL_SECRET),
     crmWebhook: isSet(process.env.CRM_WEBHOOK_URL),
-    openClaw: isSet(process.env.OPENCLAW_WEBHOOK_URL),
     airtable:
       isSet(process.env.AIRTABLE_API_KEY) &&
       isSet(process.env.AIRTABLE_BASE_ID) &&
@@ -74,7 +73,7 @@ function buildTextDigest(report) {
     `Time: ${report.generatedAt}`,
     `Market: ${report.focus.market}`,
     `Top services: ${report.focus.services.join(", ")}`,
-    `Readiness: email=${report.readiness.email ? "yes" : "no"}, line=${report.readiness.lineOa ? "yes" : "no"}, crm=${report.readiness.crmWebhook ? "yes" : "no"}, openclaw=${report.readiness.openClaw ? "yes" : "no"}, analytics=${report.readiness.analytics ? "yes" : "no"}`,
+    `Readiness: email=${report.readiness.email ? "yes" : "no"}, line=${report.readiness.lineOa ? "yes" : "no"}, crm=${report.readiness.crmWebhook ? "yes" : "no"}, analytics=${report.readiness.analytics ? "yes" : "no"}`,
     `Next pages: ${report.queue.pages.map((item) => item.title).join(" | ") || "-"}`,
     `Next articles: ${report.queue.blog.map((item) => item.title).join(" | ") || "-"}`,
     `Next automations: ${report.queue.automation.map((item) => item.title).join(" | ") || "-"}`,
@@ -89,14 +88,13 @@ async function notifyDailyOpsReport(report) {
       email: { sent: false, reason: "daily_ops_disabled" },
       line: { sent: false, reason: "daily_ops_disabled" },
       crm: { sent: false, reason: "daily_ops_disabled" },
-      openclaw: { sent: false, reason: "daily_ops_disabled" },
     };
   }
 
   const textDigest = buildTextDigest(report);
   const htmlDigest = `<pre>${textDigest}</pre>`;
 
-  const [email, line, crm, openclaw] = await Promise.all([
+  const [email, line, crm] = await Promise.all([
     sendEmailViaResend({
       subject: "[Pinpoint Daily Ops] Daily automation brief",
       textBody: textDigest,
@@ -104,14 +102,12 @@ async function notifyDailyOpsReport(report) {
     }),
     sendLinePushText(textDigest.slice(0, 4500)),
     sendCrmWebhook(report),
-    sendOpenClawWebhook(report),
   ]);
 
   return {
     email,
     line,
     crm,
-    openclaw,
   };
 }
 

@@ -8,7 +8,6 @@ const {
   detectSpecificServiceBucket,
   detectCaseFlavor,
   buildLineReply,
-  requestOpenClawLineReply,
 } = require("./_lib/line-intelligence");
 const { searchKnowledgeBase } = require("./_lib/knowledge-base");
 const { buildNeuralBrain } = require("./_lib/neural-brain");
@@ -669,31 +668,6 @@ module.exports = async (req, res) => {
         message: toText(error?.message),
       };
     }
-
-    // Fall back to OpenClaw webhook if OpenAI is not available
-    if (!smartReply.sent) {
-      try {
-        smartReply = await requestOpenClawLineReply({
-          source: "website_ai_chat",
-          sessionId,
-          visitorId,
-          message,
-          language,
-          effectiveServiceBucket: serviceBucket,
-          conversationSummary: activeMemorySummary,
-          handoff,
-          replyAnalysis: answerAudit,
-          knowledgeMatches: knowledgeContext.matches || [],
-          replyDraftText: localReply,
-        });
-      } catch (error) {
-        smartReply = {
-          sent: false,
-          reason: "smart_reply_failed",
-          message: toText(error?.message),
-        };
-      }
-    }
   }
   const contact = extractContact(message);
   const pageUrl = toText(body.pageUrl) || "https://pinpointaccountingservice.com";
@@ -708,7 +682,7 @@ module.exports = async (req, res) => {
     knowledgeContext,
     memorySummary: activeMemorySummary,
     baseReply,
-    openClawReply: smartReply,
+    smartReply,
     resetOnly,
   });
   const replyText = humanEscalation.replaceReply

@@ -40,7 +40,7 @@ function evaluateAiHumanEscalation({
   knowledgeContext,
   memorySummary,
   baseReply,
-  openClawReply,
+  smartReply,
   resetOnly = false,
 }) {
   if (resetOnly || isLowValueMessage(text)) {
@@ -59,8 +59,8 @@ function evaluateAiHumanEscalation({
   const topScore = Number(answerAudit?.topScore || top?.score || 0);
   const hasConversation = Number(memorySummary?.turns || 0) > 0;
   const smartLowConfidence =
-    toText(openClawReply?.confidence).toLowerCase() === "low" ||
-    Boolean(openClawReply?.shouldClarify);
+    toText(smartReply?.confidence).toLowerCase() === "low" ||
+    Boolean(smartReply?.shouldClarify);
   const genericReply = GENERIC_REPLY_RE.test(toText(baseReply));
   const weakKnowledge = !hasStrongKnowledge(answerAudit, knowledgeContext);
   const shouldClarify = Boolean(answerAudit?.shouldClarify);

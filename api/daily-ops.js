@@ -40,7 +40,6 @@ module.exports = async (req, res) => {
         email: { sent: false, reason: "daily_ops_disabled" },
         line: { sent: false, reason: "daily_ops_disabled" },
         crm: { sent: false, reason: "daily_ops_disabled" },
-        openclaw: { sent: false, reason: "daily_ops_disabled" },
       },
     });
   }
