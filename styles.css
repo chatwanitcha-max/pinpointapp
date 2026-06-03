@@ -3713,6 +3713,7 @@ body::before {
 /* ---- Premium stat cards with inner glow ---- */
 .bento-stats {
   gap: 12px !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
 }
 
 .stat-card {
@@ -3720,6 +3721,8 @@ body::before {
   overflow: hidden !important;
   background: linear-gradient(145deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01)) !important;
   border: 1px solid rgba(255,255,255,0.06) !important;
+  min-width: 0 !important;
+  text-align: center !important;
 }
 
 .stat-card::before {
@@ -3750,10 +3753,13 @@ body::before {
 .stat-card p {
   font-size: 0.75rem !important;
   color: rgba(255, 255, 255, 0.4) !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.08em !important;
+  text-transform: none !important;
+  letter-spacing: 0.02em !important;
   font-weight: 600 !important;
   margin-top: 4px !important;
+  line-height: 1.35 !important;
+  overflow-wrap: anywhere !important;
+  text-wrap: balance !important;
 }
 
 /* ---- Hero image refinement ---- */
