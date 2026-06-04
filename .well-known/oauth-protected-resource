@@ -1,0 +1,16 @@
+{
+  "resource": "https://pinpointaccountingservice.com",
+  "resource_name": "Pinpoint Accounting & Service public website",
+  "resource_documentation": "https://pinpointaccountingservice.com/.well-known/api-docs.md",
+  "resource_policy_uri": "https://pinpointaccountingservice.com/agents.txt",
+  "resource_tos_uri": "https://pinpointaccountingservice.com/terms",
+  "bearer_methods_supported": [],
+  "oauth_required": false,
+  "public_endpoints": [
+    "https://pinpointaccountingservice.com/api/status",
+    "https://pinpointaccountingservice.com/api/public-config",
+    "https://pinpointaccountingservice.com/api/lead",
+    "https://pinpointaccountingservice.com/api/ai-chat"
+  ],
+  "note": "The advertised public endpoints do not require OAuth. Private operational APIs are not available for public agent registration."
+}

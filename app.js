@@ -1365,6 +1365,197 @@ function runWhenBrowserIsIdle(callback, timeout = 1200) {
   window.setTimeout(callback, Math.min(timeout, 300));
 }
 
+async function fetchJsonEndpoint(url, options = {}) {
+  const response = await fetch(url, options);
+  let data = null;
+  try {
+    data = await response.json();
+  } catch {
+    data = { text: await response.text().catch(() => "") };
+  }
+
+  return {
+    ok: response.ok,
+    status: response.status,
+    data
+  };
+}
+
+function initWebMcpTools() {
+  const modelContext = document.modelContext || navigator.modelContext;
+  if (!modelContext) return;
+
+  const tools = [
+    {
+      name: "pinpoint.get_public_config",
+      title: "Get Pinpoint Public Config",
+      description: "Read public Pinpoint website configuration and contact availability.",
+      inputSchema: {
+        type: "object",
+        properties: {},
+        additionalProperties: false
+      },
+      annotations: {
+        readOnlyHint: true
+      },
+      execute: async () => fetchJsonEndpoint("/api/public-config", {
+        method: "GET",
+        headers: { Accept: "application/json" }
+      })
+    },
+    {
+      name: "pinpoint.ask_assistant",
+      title: "Ask Pinpoint Assistant",
+      description: "Ask the Pinpoint website assistant about accounting, tax, DBD, company registration, visa/work permit, payroll, or business compliance services in Thailand.",
+      inputSchema: {
+        type: "object",
+        additionalProperties: false,
+        required: ["message"],
+        properties: {
+          message: {
+            type: "string",
+            minLength: 1,
+            maxLength: 1200
+          },
+          language: {
+            type: "string",
+            enum: ["th", "en"]
+          },
+          pageUrl: {
+            type: "string",
+            format: "uri"
+          }
+        }
+      },
+      execute: async (input = {}) => {
+        const message = String(input.message || "").trim().slice(0, 1200);
+        if (!message) return { ok: false, error: "message_required" };
+
+        return fetchJsonEndpoint("/api/ai-chat", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+          },
+          body: JSON.stringify({
+            message,
+            language: input.language === "en" ? "en" : input.language === "th" ? "th" : resolveLang(),
+            pageUrl: input.pageUrl || window.location.href,
+            sessionId: `webmcp_${Date.now()}`,
+            visitorId: "webmcp"
+          })
+        });
+      }
+    },
+    {
+      name: "pinpoint.submit_lead",
+      title: "Submit Pinpoint Lead",
+      description: "Submit a public lead/contact request to Pinpoint when the user explicitly asks for human follow-up.",
+      inputSchema: {
+        type: "object",
+        additionalProperties: false,
+        required: ["fullName", "phone"],
+        properties: {
+          fullName: {
+            type: "string",
+            minLength: 1,
+            maxLength: 120
+          },
+          phone: {
+            type: "string",
+            minLength: 1,
+            maxLength: 40
+          },
+          email: {
+            type: "string",
+            maxLength: 160
+          },
+          businessName: {
+            type: "string",
+            maxLength: 160
+          },
+          serviceNeed: {
+            type: "string",
+            maxLength: 80
+          },
+          preferredContact: {
+            type: "string",
+            enum: ["phone", "email", "line", ""]
+          },
+          notes: {
+            type: "string",
+            maxLength: 2000
+          },
+          pageUrl: {
+            type: "string",
+            format: "uri"
+          }
+        }
+      },
+      execute: async (input = {}) => {
+        const fullName = String(input.fullName || "").trim().slice(0, 120);
+        const phone = String(input.phone || "").trim().slice(0, 40);
+        if (!fullName || !phone) {
+          return { ok: false, error: "fullName_and_phone_required" };
+        }
+
+        return fetchJsonEndpoint("/api/lead", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+          },
+          body: JSON.stringify({
+            fullName,
+            phone,
+            email: String(input.email || "").trim().slice(0, 160),
+            businessName: String(input.businessName || "").trim().slice(0, 160),
+            serviceNeed: String(input.serviceNeed || "").trim().slice(0, 80),
+            preferredContact: String(input.preferredContact || "").trim().slice(0, 20),
+            notes: String(input.notes || "").trim().slice(0, 2000),
+            pageUrl: input.pageUrl || window.location.href
+          })
+        });
+      }
+    },
+    {
+      name: "pinpoint.get_api_catalog",
+      title: "Get Pinpoint API Catalog",
+      description: "Read Pinpoint's RFC 9727 API catalog and related discovery metadata.",
+      inputSchema: {
+        type: "object",
+        properties: {},
+        additionalProperties: false
+      },
+      annotations: {
+        readOnlyHint: true
+      },
+      execute: async () => fetchJsonEndpoint("/.well-known/api-catalog", {
+        method: "GET",
+        headers: { Accept: "application/linkset+json, application/json" }
+      })
+    }
+  ];
+
+  try {
+    if (typeof modelContext.registerTool === "function") {
+      tools.forEach((tool) => modelContext.registerTool(tool));
+    } else if (typeof modelContext.provideContext === "function") {
+      modelContext.provideContext({ tools });
+    }
+
+    window.PinpointWebMCP = {
+      registered: true,
+      tools: tools.map((tool) => tool.name)
+    };
+  } catch (error) {
+    window.PinpointWebMCP = {
+      registered: false,
+      error: error?.message || String(error)
+    };
+  }
+}
+
 function init() {
   initYear();
   populateUtmFields();
@@ -1386,6 +1577,10 @@ function init() {
     initAiChat();
     trackVisitorCounter();
   }, 4200);
+
+  runWhenBrowserIsIdle(() => {
+    initWebMcpTools();
+  }, 1800);
 }
 
 init();

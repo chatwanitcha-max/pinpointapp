@@ -1,0 +1,32 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/v1/server-card.schema.json",
+  "name": "com.pinpointaccountingservice/public-site",
+  "version": "2026.06.04",
+  "title": "Pinpoint Accounting & Service Public Site",
+  "description": "Discovery card for Pinpoint Accounting & Service public website metadata, lead intake, and website assistant surfaces. No standalone remote MCP transport is currently exposed.",
+  "websiteUrl": "https://pinpointaccountingservice.com",
+  "remotes": [],
+  "capabilities": {
+    "tools": {
+      "dynamic": false,
+      "note": "Use WebMCP browser tools on supported page loads, or the OpenAPI-described public endpoints. This card does not advertise a live MCP transport."
+    },
+    "resources": {
+      "public": [
+        "https://pinpointaccountingservice.com/agents.txt",
+        "https://pinpointaccountingservice.com/llms.txt",
+        "https://pinpointaccountingservice.com/ai.txt",
+        "https://pinpointaccountingservice.com/.well-known/api-catalog"
+      ]
+    }
+  },
+  "_meta": {
+    "canonicalDomain": "https://pinpointaccountingservice.com",
+    "webmcp": "Tools are registered from app.js when document.modelContext or navigator.modelContext is available.",
+    "contact": {
+      "phone": "+66-92-749-7442",
+      "line": "https://line.me/R/ti/p/@413dqpcq",
+      "contactPage": "https://pinpointaccountingservice.com/contact"
+    }
+  }
+}

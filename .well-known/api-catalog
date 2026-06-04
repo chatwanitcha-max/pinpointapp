@@ -1,0 +1,35 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://pinpointaccountingservice.com/api",
+      "service-desc": [
+        {
+          "href": "https://pinpointaccountingservice.com/.well-known/openapi.json",
+          "type": "application/vnd.oai.openapi+json;version=3.1"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://pinpointaccountingservice.com/.well-known/api-docs.md",
+          "type": "text/markdown"
+        }
+      ],
+      "status": [
+        {
+          "href": "https://pinpointaccountingservice.com/api/status",
+          "type": "application/json"
+        }
+      ],
+      "service-meta": [
+        {
+          "href": "https://pinpointaccountingservice.com/.well-known/oauth-protected-resource",
+          "type": "application/json"
+        },
+        {
+          "href": "https://pinpointaccountingservice.com/agents.txt",
+          "type": "text/plain"
+        }
+      ]
+    }
+  ]
+}

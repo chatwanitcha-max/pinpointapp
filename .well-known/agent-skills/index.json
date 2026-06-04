@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "pinpoint-service-intake",
+      "type": "skill-md",
+      "description": "Help agents answer Pinpoint Accounting & Service questions, route users to the right Thailand accounting service page, and submit public lead/contact requests when the user asks for human follow-up.",
+      "url": "/.well-known/agent-skills/pinpoint-service-intake/SKILL.md",
+      "digest": "sha256:1149bdd1320928a3c0dce8f283c7220eb4e17d2747fa687f903ee06a62550d2d"
+    }
+  ]
+}

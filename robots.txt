@@ -1,54 +1,67 @@
+Content-Signal: ai-train=no, search=yes, ai-input=no
+
 User-agent: *
+Content-Signal: ai-train=no, search=yes, ai-input=no
 Allow: /
 Disallow: /api/
 Disallow: /thank-you
 
 User-agent: GPTBot
+Content-Signal: ai-train=no, search=yes, ai-input=no
 Allow: /
 Disallow: /api/
 Disallow: /thank-you
 
 User-agent: ClaudeBot
+Content-Signal: ai-train=no, search=yes, ai-input=no
 Allow: /
 Disallow: /api/
 Disallow: /thank-you
 
 User-agent: PerplexityBot
+Content-Signal: ai-train=no, search=yes, ai-input=no
 Allow: /
 Disallow: /api/
 Disallow: /thank-you
 
 User-agent: Google-Extended
+Content-Signal: ai-train=no, search=yes, ai-input=no
 Allow: /
 Disallow: /api/
 Disallow: /thank-you
 
 User-agent: OAI-SearchBot
+Content-Signal: ai-train=no, search=yes, ai-input=no
 Allow: /
 Disallow: /api/
 Disallow: /thank-you
 
 User-agent: ChatGPT-User
+Content-Signal: ai-train=no, search=yes, ai-input=no
 Allow: /
 Disallow: /api/
 Disallow: /thank-you
 
 User-agent: Applebot
+Content-Signal: ai-train=no, search=yes, ai-input=no
 Allow: /
 Disallow: /api/
 Disallow: /thank-you
 
 User-agent: Claude-SearchBot
+Content-Signal: ai-train=no, search=yes, ai-input=no
 Allow: /
 Disallow: /api/
 Disallow: /thank-you
 
 User-agent: Perplexity-User
+Content-Signal: ai-train=no, search=yes, ai-input=no
 Allow: /
 Disallow: /api/
 Disallow: /thank-you
 
 User-agent: Bingbot
+Content-Signal: ai-train=no, search=yes, ai-input=no
 Allow: /
 Disallow: /api/
 Disallow: /thank-you

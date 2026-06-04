@@ -1,0 +1,407 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Pinpoint Accounting & Service Public Website API",
+    "version": "2026-06-04",
+    "description": "Public API surface used by the Pinpoint Accounting & Service website for configuration, lead intake, chat assistance, visitor counters, and conversion tracking."
+  },
+  "servers": [
+    {
+      "url": "https://pinpointaccountingservice.com"
+    }
+  ],
+  "paths": {
+    "/api/status": {
+      "get": {
+        "summary": "Return public API health status.",
+        "operationId": "getStatus",
+        "responses": {
+          "200": {
+            "description": "Current service status.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StatusResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/public-config": {
+      "get": {
+        "summary": "Return public website configuration.",
+        "operationId": "getPublicConfig",
+        "responses": {
+          "200": {
+            "description": "Public configuration flags and contact URLs.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicConfigResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/lead": {
+      "post": {
+        "summary": "Submit a website lead inquiry.",
+        "operationId": "submitLead",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LeadRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Lead accepted or ignored as honeypot traffic.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LeadResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Missing required fields."
+          },
+          "405": {
+            "description": "Method not allowed."
+          }
+        }
+      }
+    },
+    "/api/ai-chat": {
+      "post": {
+        "summary": "Ask the website assistant a service question.",
+        "operationId": "askWebsiteAssistant",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AiChatRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Assistant reply and routing metadata.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AiChatResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Message required."
+          },
+          "405": {
+            "description": "Method not allowed."
+          }
+        }
+      }
+    },
+    "/api/visitor-counter": {
+      "get": {
+        "summary": "Read visitor counter totals.",
+        "operationId": "getVisitorCounter",
+        "parameters": [
+          {
+            "name": "path",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "maxLength": 256
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Visitor counter totals."
+          }
+        }
+      },
+      "post": {
+        "summary": "Increment visitor counter totals.",
+        "operationId": "incrementVisitorCounter",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VisitorCounterRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Updated visitor counter totals."
+          }
+        }
+      }
+    },
+    "/api/conversion": {
+      "post": {
+        "summary": "Record a public conversion event.",
+        "operationId": "recordConversion",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConversionRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Analytics event dispatch result."
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "StatusResponse": {
+        "type": "object",
+        "properties": {
+          "ok": {
+            "type": "boolean"
+          },
+          "service": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": ["available"]
+          },
+          "time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "canonical": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": ["ok", "service", "status", "time", "canonical"]
+      },
+      "PublicConfigResponse": {
+        "type": "object",
+        "properties": {
+          "ok": {
+            "type": "boolean"
+          },
+          "config": {
+            "type": "object",
+            "properties": {
+              "lineOaUrl": {
+                "type": "string",
+                "format": "uri"
+              },
+              "ga4MeasurementId": {
+                "type": "string"
+              },
+              "googleAdsId": {
+                "type": "string"
+              },
+              "googleAdsLeadLabel": {
+                "type": "string"
+              },
+              "metaPixelId": {
+                "type": "string"
+              },
+              "emailLeadEnabled": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "required": ["ok", "config"]
+      },
+      "LeadRequest": {
+        "type": "object",
+        "properties": {
+          "fullName": {
+            "type": "string",
+            "maxLength": 120
+          },
+          "phone": {
+            "type": "string",
+            "maxLength": 40
+          },
+          "email": {
+            "type": "string",
+            "maxLength": 160
+          },
+          "businessName": {
+            "type": "string",
+            "maxLength": 160
+          },
+          "serviceNeed": {
+            "type": "string",
+            "maxLength": 80
+          },
+          "revenueRange": {
+            "type": "string",
+            "maxLength": 80
+          },
+          "preferredContact": {
+            "type": "string",
+            "enum": ["phone", "email", "line", ""]
+          },
+          "notes": {
+            "type": "string",
+            "maxLength": 2000
+          },
+          "pageUrl": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": ["fullName", "phone"]
+      },
+      "LeadResponse": {
+        "type": "object",
+        "properties": {
+          "ok": {
+            "type": "boolean"
+          },
+          "leadId": {
+            "type": "string"
+          },
+          "routing": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        },
+        "required": ["ok"]
+      },
+      "AiChatRequest": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "maxLength": 1200
+          },
+          "language": {
+            "type": "string",
+            "enum": ["th", "en", ""]
+          },
+          "pageUrl": {
+            "type": "string",
+            "format": "uri"
+          },
+          "sessionId": {
+            "type": "string",
+            "maxLength": 80
+          },
+          "visitorId": {
+            "type": "string",
+            "maxLength": 80
+          },
+          "history": {
+            "type": "array",
+            "maxItems": 16,
+            "items": {
+              "type": "object",
+              "properties": {
+                "role": {
+                  "type": "string",
+                  "enum": ["user", "assistant"]
+                },
+                "text": {
+                  "type": "string",
+                  "maxLength": 420
+                }
+              }
+            }
+          }
+        },
+        "required": ["message"]
+      },
+      "AiChatResponse": {
+        "type": "object",
+        "properties": {
+          "ok": {
+            "type": "boolean"
+          },
+          "sessionId": {
+            "type": "string"
+          },
+          "replyText": {
+            "type": "string"
+          },
+          "language": {
+            "type": "string"
+          },
+          "intentKey": {
+            "type": "string"
+          },
+          "serviceBucket": {
+            "type": "string"
+          }
+        },
+        "required": ["ok", "sessionId", "replyText"]
+      },
+      "VisitorCounterRequest": {
+        "type": "object",
+        "properties": {
+          "pagePath": {
+            "type": "string",
+            "maxLength": 256
+          },
+          "visitorId": {
+            "type": "string",
+            "maxLength": 120
+          }
+        }
+      },
+      "ConversionRequest": {
+        "type": "object",
+        "properties": {
+          "eventName": {
+            "type": "string",
+            "maxLength": 80
+          },
+          "eventId": {
+            "type": "string",
+            "maxLength": 120
+          },
+          "value": {
+            "type": "number"
+          },
+          "currency": {
+            "type": "string",
+            "maxLength": 8
+          },
+          "email": {
+            "type": "string",
+            "maxLength": 160
+          },
+          "phone": {
+            "type": "string",
+            "maxLength": 40
+          }
+        }
+      }
+    }
+  }
+}
