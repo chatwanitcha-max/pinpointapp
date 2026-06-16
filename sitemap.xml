@@ -1,236 +1,295 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <urlset
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
 >
+  <!-- Homepage (Thai) + English alternate -->
   <url>
     <loc>https://pinpointaccountingservice.com/</loc>
     <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://pinpointaccountingservice.com/en" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pinpointaccountingservice.com/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pinpointaccountingservice.com/en" />
     <lastmod>2026-06-04</lastmod>
   </url>
+  <!-- English homepage -->
   <url>
     <loc>https://pinpointaccountingservice.com/en</loc>
     <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://pinpointaccountingservice.com/en" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pinpointaccountingservice.com/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pinpointaccountingservice.com/en" />
     <lastmod>2026-05-30</lastmod>
   </url>
+  <!-- Thai service/content pages -->
   <url>
     <loc>https://pinpointaccountingservice.com/bangkok-accounting</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/bangkok-accounting" />
     <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://pinpointaccountingservice.com/bangkok-accounting-firm-answer</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/bangkok-accounting-firm-answer" />
     <lastmod>2026-05-31</lastmod>
   </url>
   <url>
     <loc>https://pinpointaccountingservice.com/monthly-accounting</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/monthly-accounting" />
     <lastmod>2026-04-09</lastmod>
   </url>
   <url>
     <loc>https://pinpointaccountingservice.com/company-registration</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/company-registration" />
     <lastmod>2026-04-09</lastmod>
   </url>
   <url>
     <loc>https://pinpointaccountingservice.com/register-company-thailand-foreigner</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pinpointaccountingservice.com/register-company-thailand-foreigner" />
     <lastmod>2026-06-03</lastmod>
   </url>
   <url>
     <loc>https://pinpointaccountingservice.com/services/company-registration-foreigners</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pinpointaccountingservice.com/services/company-registration-foreigners" />
     <lastmod>2026-06-03</lastmod>
   </url>
   <url>
     <loc>https://pinpointaccountingservice.com/dbd-amendments</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/dbd-amendments" />
     <lastmod>2026-04-09</lastmod>
   </url>
   <url>
     <loc>https://pinpointaccountingservice.com/visa-work-permit</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/visa-work-permit" />
     <lastmod>2026-04-09</lastmod>
   </url>
   <url>
     <loc>https://pinpointaccountingservice.com/business-licenses</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/business-licenses" />
     <lastmod>2026-04-09</lastmod>
   </url>
   <url>
     <loc>https://pinpointaccountingservice.com/payroll-social-security</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/payroll-social-security" />
     <lastmod>2026-04-09</lastmod>
   </url>
   <url>
     <loc>https://pinpointaccountingservice.com/corporate-tax-planning</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/corporate-tax-planning" />
     <lastmod>2026-04-09</lastmod>
   </url>
   <url>
     <loc>https://pinpointaccountingservice.com/audit-preparation</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/audit-preparation" />
     <lastmod>2026-04-09</lastmod>
   </url>
   <url>
     <loc>https://pinpointaccountingservice.com/foreign-business-support</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/foreign-business-support" />
     <lastmod>2026-04-09</lastmod>
   </url>
   <url>
     <loc>https://pinpointaccountingservice.com/company-dissolution</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/company-dissolution" />
     <lastmod>2026-04-09</lastmod>
   </url>
   <url>
     <loc>https://pinpointaccountingservice.com/services</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/services" />
     <lastmod>2026-04-09</lastmod>
   </url>
   <url>
     <loc>https://pinpointaccountingservice.com/about</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/about" />
     <lastmod>2026-04-09</lastmod>
   </url>
   <url>
     <loc>https://pinpointaccountingservice.com/contact</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/contact" />
     <lastmod>2026-06-02</lastmod>
   </url>
   <url>
     <loc>https://pinpointaccountingservice.com/resources</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/resources" />
     <lastmod>2026-06-04</lastmod>
   </url>
   <url>
     <loc>https://pinpointaccountingservice.com/verify-pinpoint-accounting</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/verify-pinpoint-accounting" />
     <lastmod>2026-06-04</lastmod>
   </url>
   <url>
     <loc>https://pinpointaccountingservice.com/faq</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/faq" />
     <lastmod>2026-05-30</lastmod>
   </url>
   <url>
     <loc>https://pinpointaccountingservice.com/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/privacy" />
     <lastmod>2026-04-09</lastmod>
   </url>
   <url>
     <loc>https://pinpointaccountingservice.com/terms</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/terms" />
     <lastmod>2026-04-09</lastmod>
   </url>
   <url>
     <loc>https://pinpointaccountingservice.com/blog</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/blog" />
     <lastmod>2026-04-09</lastmod>
   </url>
+  <!-- Blog posts -->
   <url>
     <loc>https://pinpointaccountingservice.com/blog/monthly-accounting-handover-checklist</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/blog/monthly-accounting-handover-checklist" />
     <lastmod>2026-03-19</lastmod>
   </url>
   <url>
     <loc>https://pinpointaccountingservice.com/blog/vat-readiness-before-expansion</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/blog/vat-readiness-before-expansion" />
     <lastmod>2026-03-19</lastmod>
   </url>
   <url>
     <loc>https://pinpointaccountingservice.com/blog/outsource-accounting-vs-inhouse-team</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/blog/outsource-accounting-vs-inhouse-team" />
     <lastmod>2026-03-19</lastmod>
   </url>
   <url>
     <loc>https://pinpointaccountingservice.com/blog/payroll-social-security-system-checklist</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/blog/payroll-social-security-system-checklist" />
     <lastmod>2026-03-19</lastmod>
   </url>
   <url>
     <loc>https://pinpointaccountingservice.com/blog/tax-audit-preparation-documents</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/blog/tax-audit-preparation-documents" />
     <lastmod>2026-03-19</lastmod>
   </url>
   <url>
     <loc>https://pinpointaccountingservice.com/blog/year-end-document-close-checklist</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/blog/year-end-document-close-checklist" />
     <lastmod>2026-03-19</lastmod>
   </url>
   <url>
     <loc>https://pinpointaccountingservice.com/blog/foreign-director-document-flow</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/blog/foreign-director-document-flow" />
     <lastmod>2026-03-19</lastmod>
   </url>
   <url>
     <loc>https://pinpointaccountingservice.com/blog/closing-bank-and-contracts-before-dissolution</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/blog/closing-bank-and-contracts-before-dissolution" />
     <lastmod>2026-03-19</lastmod>
   </url>
   <url>
     <loc>https://pinpointaccountingservice.com/blog/change-company-address-dbd-guide</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/blog/change-company-address-dbd-guide" />
     <lastmod>2026-03-18</lastmod>
   </url>
   <url>
     <loc>https://pinpointaccountingservice.com/blog/change-director-dbd-guide</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/blog/change-director-dbd-guide" />
     <lastmod>2026-03-18</lastmod>
   </url>
   <url>
     <loc>https://pinpointaccountingservice.com/blog/capital-increase-preparation-guide</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/blog/capital-increase-preparation-guide" />
     <lastmod>2026-03-18</lastmod>
   </url>
   <url>
     <loc>https://pinpointaccountingservice.com/blog/work-permit-renewal-business-checklist</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/blog/work-permit-renewal-business-checklist" />
     <lastmod>2026-03-18</lastmod>
   </url>
   <url>
     <loc>https://pinpointaccountingservice.com/blog/foreign-shareholder-document-preparation</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/blog/foreign-shareholder-document-preparation" />
     <lastmod>2026-03-18</lastmod>
   </url>
   <url>
     <loc>https://pinpointaccountingservice.com/blog/business-license-readiness-checklist</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/blog/business-license-readiness-checklist" />
     <lastmod>2026-03-18</lastmod>
   </url>
   <url>
     <loc>https://pinpointaccountingservice.com/blog/company-dissolution-aftercare-checklist</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/blog/company-dissolution-aftercare-checklist" />
     <lastmod>2026-03-18</lastmod>
   </url>
   <url>
     <loc>https://pinpointaccountingservice.com/blog/company-registration-thailand-checklist</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/blog/company-registration-thailand-checklist" />
     <lastmod>2026-03-13</lastmod>
   </url>
   <url>
     <loc>https://pinpointaccountingservice.com/blog/dbd-amendment-checklist</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/blog/dbd-amendment-checklist" />
     <lastmod>2026-03-13</lastmod>
   </url>
   <url>
     <loc>https://pinpointaccountingservice.com/blog/vat-readiness-thailand</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/blog/vat-readiness-thailand" />
     <lastmod>2026-03-13</lastmod>
   </url>
   <url>
     <loc>https://pinpointaccountingservice.com/blog/corporate-tax-planning-thailand</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/blog/corporate-tax-planning-thailand" />
     <lastmod>2026-03-13</lastmod>
   </url>
   <url>
     <loc>https://pinpointaccountingservice.com/blog/payroll-social-security-guide</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/blog/payroll-social-security-guide" />
     <lastmod>2026-03-13</lastmod>
   </url>
   <url>
     <loc>https://pinpointaccountingservice.com/blog/visa-work-permit-business-guide</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/blog/visa-work-permit-business-guide" />
     <lastmod>2026-03-13</lastmod>
   </url>
   <url>
     <loc>https://pinpointaccountingservice.com/blog/company-dissolution-process-thailand</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/blog/company-dissolution-process-thailand" />
     <lastmod>2026-03-13</lastmod>
   </url>
   <url>
     <loc>https://pinpointaccountingservice.com/blog/sme-year-end-closing</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/blog/sme-year-end-closing" />
     <lastmod>2026-03-13</lastmod>
   </url>
+  <!-- Location pages (Thai) -->
   <url>
     <loc>https://pinpointaccountingservice.com/accounting-huai-khwang</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/accounting-huai-khwang" />
     <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://pinpointaccountingservice.com/accounting-ratchada</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/accounting-ratchada" />
     <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://pinpointaccountingservice.com/accounting-rama9</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/accounting-rama9" />
     <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://pinpointaccountingservice.com/accounting-asoke</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/accounting-asoke" />
     <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://pinpointaccountingservice.com/accounting-sukhumvit</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/accounting-sukhumvit" />
     <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://pinpointaccountingservice.com/accounting-ladprao</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/accounting-ladprao" />
     <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://pinpointaccountingservice.com/accounting-din-daeng</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/accounting-din-daeng" />
     <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://pinpointaccountingservice.com/accounting-chatuchak</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://pinpointaccountingservice.com/accounting-chatuchak" />
     <lastmod>2026-04-16</lastmod>
   </url>
 </urlset>
